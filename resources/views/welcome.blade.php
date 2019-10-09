@@ -71,6 +71,25 @@
                         <a class="dropdown-item" href="#">Events</a>
                     </div>
                 </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Items
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                        <a class="dropdown-item" href="#">Recovery</a>
+                        <a class="dropdown-item" href="#">Status</a>
+                        <a class="dropdown-item" href="#">Strengthening</a>
+                        <a class="dropdown-item" href="#">Teleport</a>
+                        <a class="dropdown-item" href="#">Skills</a>
+                        <a class="dropdown-item" href="#">Chests</a>
+                        <a class="dropdown-item" href="#">Collectables</a>
+                        <a class="dropdown-item" href="#">Ores</a>
+                        <a class="dropdown-item" href="#">Island Objects</a>
+                        <a class="dropdown-item" href="#">Store Items</a>
+                        <a class="dropdown-item" href="#">Pets</a>
+                        <a class="dropdown-item" href="#">Others</a>
+                    </div>
+                </li>
                 @if (Route::has('login')) 
                     @auth
                         <li class="nav-item">
