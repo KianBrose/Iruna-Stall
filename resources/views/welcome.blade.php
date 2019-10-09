@@ -49,10 +49,10 @@
         </div>
     </nav>
     <div class="container">
-        <div class="row" style="height: auto !important;">
-            <div class="col-md-7 offset-md-3" style="height: auto !important; min-height: 0px !important;">
+        <div class="row" >
+            <div class="col-md-7 offset-md-3" >
 
-                <div style="height: auto !important;">
+                <div>
                     <h4>Welcome!</h4>
                     <hr>
 
@@ -66,7 +66,7 @@
                             </div>
                         </div>
                     </form>
-                    <div class="row divider" role="separator" style="margin-top:20px;"></div>
+                    <div class="row divider" role="separator" ></div>
 
                     <p>Welcome to our Iruna Database</p>
                     <br> Uncheck to Reduce Data
