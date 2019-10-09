@@ -56,6 +56,21 @@
                         <a class="dropdown-item" href="#">Christmas</a>
                     </div>
                 </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Zones
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                        <a class="dropdown-item" href="#">Zones: Episode 1</a>
+                        <a class="dropdown-item" href="#">Zones: Episode 2</a>
+                        <a class="dropdown-item" href="#">Zones: Episode 3</a>
+                        <a class="dropdown-item" href="#">Zones: Episode 4</a>
+                        <a class="dropdown-item" href="#">Zones: Episode 5</a>
+                        <a class="dropdown-item" href="#">Zones: Episode 6</a>
+                        <a class="dropdown-item" href="#">Raids</a>
+                        <a class="dropdown-item" href="#">Events</a>
+                    </div>
+                </li>
                 @if (Route::has('login')) 
                     @auth
                         <li class="nav-item">
