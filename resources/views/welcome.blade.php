@@ -24,6 +24,133 @@
         <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
             <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
 
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Guides
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                        <a class="dropdown-item" href="#">Pets Guide</a>
+                        <a class="dropdown-item" href="#">Classes</a>
+                        <a class="dropdown-item" href="#">Stats</a>
+                        <a class="dropdown-item" href="#">Abilities</a>
+                        <a class="dropdown-item" href="#">Apostolia</a>
+                        <a class="dropdown-item" href="#">Refinement</a>
+                        <a class="dropdown-item" href="#">Quests</a>
+                        <a class="dropdown-item" href="#">Raids</a>
+                        <a class="dropdown-item" href="#">Lottery</a>
+                        <a class="dropdown-item" href="#">Background Music</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Events
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                        <a class="dropdown-item" href="#">Anniversary</a>
+                        <a class="dropdown-item" href="#">Academy</a>
+                        <a class="dropdown-item" href="#">Setsubun</a>
+                        <a class="dropdown-item" href="#">Valentienes Day</a>
+                        <a class="dropdown-item" href="#">White Day</a>
+                        <a class="dropdown-item" href="#">Easter</a>
+                        <a class="dropdown-item" href="#">Summer</a>
+                        <a class="dropdown-item" href="#">Halloween</a>
+                        <a class="dropdown-item" href="#">Christmas</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Zones
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                        <a class="dropdown-item" href="#">Zones: Episode 1</a>
+                        <a class="dropdown-item" href="#">Zones: Episode 2</a>
+                        <a class="dropdown-item" href="#">Zones: Episode 3</a>
+                        <a class="dropdown-item" href="#">Zones: Episode 4</a>
+                        <a class="dropdown-item" href="#">Zones: Episode 5</a>
+                        <a class="dropdown-item" href="#">Zones: Episode 6</a>
+                        <a class="dropdown-item" href="#">Raids</a>
+                        <a class="dropdown-item" href="#">Events</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Items
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                        <a class="dropdown-item" href="#">Recovery</a>
+                        <a class="dropdown-item" href="#">Status</a>
+                        <a class="dropdown-item" href="#">Strengthening</a>
+                        <a class="dropdown-item" href="#">Teleport</a>
+                        <a class="dropdown-item" href="#">Skills</a>
+                        <a class="dropdown-item" href="#">Chests</a>
+                        <a class="dropdown-item" href="#">Collectables</a>
+                        <a class="dropdown-item" href="#">Ores</a>
+                        <a class="dropdown-item" href="#">Island Objects</a>
+                        <a class="dropdown-item" href="#">Store Items</a>
+                        <a class="dropdown-item" href="#">Pets</a>
+                        <a class="dropdown-item" href="#">Others</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Items
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                        <a class="dropdown-item" href="#">Recovery</a>
+                        <a class="dropdown-item" href="#">Status</a>
+                        <a class="dropdown-item" href="#">Strengthening</a>
+                        <a class="dropdown-item" href="#">Teleport</a>
+                        <a class="dropdown-item" href="#">Skills</a>
+                        <a class="dropdown-item" href="#">Chests</a>
+                        <a class="dropdown-item" href="#">Collectables</a>
+                        <a class="dropdown-item" href="#">Ores</a>
+                        <a class="dropdown-item" href="#">Island Objects</a>
+                        <a class="dropdown-item" href="#">Store Items</a>
+                        <a class="dropdown-item" href="#">Pets</a>
+                        <a class="dropdown-item" href="#">Others</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Equipment
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                        <a class="dropdown-item" href="#">Swords</a>
+                        <a class="dropdown-item" href="#">Bows</a>
+                        <a class="dropdown-item" href="#">Canes</a>
+                        <a class="dropdown-item" href="#">Claws</a>
+                        <a class="dropdown-item" href="#">Throwing</a>
+                        <a class="dropdown-item" href="#">Armour</a>
+                        <a class="dropdown-item" href="#">Additional</a>
+                        <a class="dropdown-item" href="#">Special</a>
+                        <a class="dropdown-item" href="#">Crystas</a>
+                        <a class="dropdown-item" href="#">Al crystas</a>
+                        <a class="dropdown-item" href="#">Relic crystas</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Production
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                        <a class="dropdown-item" href="#">Smithing</a>
+                        <a class="dropdown-item" href="#">Carpentry</a>
+                        <a class="dropdown-item" href="#">Tailoring</a>
+                        <a class="dropdown-item" href="#">Chasing</a>
+                        <a class="dropdown-item" href="#">Alchemy</a>
+                        <a class="dropdown-item" href="#">Cooking</a>
+                        <a class="dropdown-item" href="#">Calculator</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        About Us
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                        <a class="dropdown-item" href="#">About Us</a>
+                        <a class="dropdown-item" href="#">Contact Us</a>
+                    </div>
+                </li>
                 @if (Route::has('login')) 
                     @auth
                         <li class="nav-item">
@@ -42,41 +169,41 @@
                 @endif
 
             </ul>
-            <form class="form-inline my-2 my-lg-0">
-                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-            </form>
         </div>
     </nav>
     <div class="container">
-        <div class="row" style="height: auto !important;">
-            <div class="col-md-7 offset-md-3" style="height: auto !important; min-height: 0px !important;">
+        <div class="row" >
+            <div class="col-md-7 offset-md-3" >
 
                 <div style="height: auto !important;">
+					<br>
                     <h4>Welcome!</h4>
                     <hr>
 
                     <form class="form-horizontal" name="form1" id="form1" action="/search" method="get">
                         <div class="row">
-                            <div class="col-md-9 col-xs-8">
+                            <div class="col-md-7 col-xs-8">
                                 <input type="text" class="form-control" name="search" id="search" value="">
                             </div>
+							<div class="form-group">
+								<select id="searchtype" class="form-control" name="searchtype">
+									<option value="equipment" selected="selected">Equipment</option>
+									<option value="items">Items</option>
+									<option value="xtal">Xtal</option>
+									<option value="al">AL crystal</option>
+									<option value="relic">Relic</option>
+									<option value="ability">Ability</option>
+								</select>
+							</div>
                             <div class="col-md-2 col-xs-3">
                                 <input type="button" class="btn btn-default btn-block" name="search_button" id="search_button" value="Search">
                             </div>
                         </div>
                     </form>
-                    <div class="row divider" role="separator" style="margin-top:20px;"></div>
+                    <div class="row divider" role="separator" ></div>
 
                     <p>Welcome to our Iruna Database</p>
-                    <br> Uncheck to Reduce Data
-                    <br>
-                    <input type="checkbox" id="mob_images"> Display Monsters
-                    <br>
-                    <input type="checkbox" id="item_images" > Display Items
-                    <br>
-                    <br>
-                    <br>
+					<p>Enter the item name, select type and press search</p>
 
                     <div class="row divider" role="separator" style="margin-top:20px;"></div>
                 </div>
