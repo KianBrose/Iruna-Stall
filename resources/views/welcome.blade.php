@@ -80,14 +80,7 @@
                     <div class="row divider" role="separator" style="margin-top:20px;"></div>
 
                     <p>Welcome to our Iruna Database</p>
-                    <br> Uncheck to Reduce Data
-                    <br>
-                    <input type="checkbox" id="mob_images"> Display Monsters
-                    <br>
-                    <input type="checkbox" id="item_images" > Display Items
-                    <br>
-                    <br>
-                    <br>
+					<p>Enter the item name, select type and press search</p>
 
                     <div class="row divider" role="separator" style="margin-top:20px;"></div>
                 </div>
