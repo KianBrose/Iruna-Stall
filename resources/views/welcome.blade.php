@@ -29,6 +29,7 @@
                         Guides
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                        <a class="dropdown-item" href="#">Pets Guide</a>
                         <a class="dropdown-item" href="#">Classes</a>
                         <a class="dropdown-item" href="#">Stats</a>
                         <a class="dropdown-item" href="#">Abilities</a>
