@@ -40,7 +40,22 @@
                         <a class="dropdown-item" href="#">Background Music</a>
                     </div>
                 </li>
-                
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Events
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                        <a class="dropdown-item" href="#">Anniversary</a>
+                        <a class="dropdown-item" href="#">Academy</a>
+                        <a class="dropdown-item" href="#">Setsubun</a>
+                        <a class="dropdown-item" href="#">Valentienes Day</a>
+                        <a class="dropdown-item" href="#">White Day</a>
+                        <a class="dropdown-item" href="#">Easter</a>
+                        <a class="dropdown-item" href="#">Summer</a>
+                        <a class="dropdown-item" href="#">Halloween</a>
+                        <a class="dropdown-item" href="#">Christmas</a>
+                    </div>
+                </li>
                 @if (Route::has('login')) 
                     @auth
                         <li class="nav-item">
