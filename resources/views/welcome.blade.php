@@ -24,6 +24,23 @@
         <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
             <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
 
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Guides
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                        <a class="dropdown-item" href="#">Classes</a>
+                        <a class="dropdown-item" href="#">Stats</a>
+                        <a class="dropdown-item" href="#">Abilities</a>
+                        <a class="dropdown-item" href="#">Apostolia</a>
+                        <a class="dropdown-item" href="#">Refinement</a>
+                        <a class="dropdown-item" href="#">Quests</a>
+                        <a class="dropdown-item" href="#">Raids</a>
+                        <a class="dropdown-item" href="#">Lottery</a>
+                        <a class="dropdown-item" href="#">Background Music</a>
+                    </div>
+                </li>
+                
                 @if (Route::has('login')) 
                     @auth
                         <li class="nav-item">
