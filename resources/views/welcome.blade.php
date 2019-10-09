@@ -90,6 +90,43 @@
                         <a class="dropdown-item" href="#">Others</a>
                     </div>
                 </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Items
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                        <a class="dropdown-item" href="#">Recovery</a>
+                        <a class="dropdown-item" href="#">Status</a>
+                        <a class="dropdown-item" href="#">Strengthening</a>
+                        <a class="dropdown-item" href="#">Teleport</a>
+                        <a class="dropdown-item" href="#">Skills</a>
+                        <a class="dropdown-item" href="#">Chests</a>
+                        <a class="dropdown-item" href="#">Collectables</a>
+                        <a class="dropdown-item" href="#">Ores</a>
+                        <a class="dropdown-item" href="#">Island Objects</a>
+                        <a class="dropdown-item" href="#">Store Items</a>
+                        <a class="dropdown-item" href="#">Pets</a>
+                        <a class="dropdown-item" href="#">Others</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Equipment
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                        <a class="dropdown-item" href="#">Swords</a>
+                        <a class="dropdown-item" href="#">Bows</a>
+                        <a class="dropdown-item" href="#">Canes</a>
+                        <a class="dropdown-item" href="#">Claws</a>
+                        <a class="dropdown-item" href="#">Throwing</a>
+                        <a class="dropdown-item" href="#">Armour</a>
+                        <a class="dropdown-item" href="#">Additional</a>
+                        <a class="dropdown-item" href="#">Special</a>
+                        <a class="dropdown-item" href="#">Crystas</a>
+                        <a class="dropdown-item" href="#">Al crystas</a>
+                        <a class="dropdown-item" href="#">Relic crystas</a>
+                    </div>
+                </li>
                 @if (Route::has('login')) 
                     @auth
                         <li class="nav-item">
