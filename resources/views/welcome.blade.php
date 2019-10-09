@@ -52,15 +52,26 @@
         <div class="row" >
             <div class="col-md-7 offset-md-3" >
 
-                <div>
+                <div style="height: auto !important;">
+					<br>
                     <h4>Welcome!</h4>
                     <hr>
 
                     <form class="form-horizontal" name="form1" id="form1" action="/search" method="get">
                         <div class="row">
-                            <div class="col-md-9 col-xs-8">
+                            <div class="col-md-7 col-xs-8">
                                 <input type="text" class="form-control" name="search" id="search" value="">
                             </div>
+							<div class="form-group">
+								<select id="searchtype" class="form-control" name="searchtype">
+									<option value="equipment" selected="selected">Equipment</option>
+									<option value="items">Items</option>
+									<option value="xtal">Xtal</option>
+									<option value="al">AL crystal</option>
+									<option value="relic">Relic</option>
+									<option value="ability">Ability</option>
+								</select>
+							</div>
                             <div class="col-md-2 col-xs-3">
                                 <input type="button" class="btn btn-default btn-block" name="search_button" id="search_button" value="Search">
                             </div>
@@ -69,14 +80,7 @@
                     <div class="row divider" role="separator" ></div>
 
                     <p>Welcome to our Iruna Database</p>
-                    <br> Uncheck to Reduce Data
-                    <br>
-                    <input type="checkbox" id="mob_images"> Display Monsters
-                    <br>
-                    <input type="checkbox" id="item_images" > Display Items
-                    <br>
-                    <br>
-                    <br>
+					<p>Enter the item name, select type and press search</p>
 
                     <div class="row divider" role="separator" style="margin-top:20px;"></div>
                 </div>
