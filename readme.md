@@ -9,6 +9,7 @@ git clone <url>
 sudo composer install
 
 chown -R www-data.www-data /var/www/laravel
+
 sudo chmod -R 755 /var/www/
 
 
