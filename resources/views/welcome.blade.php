@@ -96,7 +96,6 @@
                         <li><a href="http://irunaonline.boards.net/">Iruna Boards Forum</a></li>
                         <li><a href="http://iruna-online.weebly.com/">Iruna Weebly</a></li>
                         <li><a href="https://wikiwiki.jp/iruna-online/">Iruna JP Wiki</a></li>
-                        <li><a href="https://ameblo.jp/irunaken217/">Ameblo JP - Irunaken217</a></li>
                     </ul>
                     <br>
 
