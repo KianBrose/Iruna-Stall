@@ -127,6 +127,20 @@
                         <a class="dropdown-item" href="#">Relic crystas</a>
                     </div>
                 </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Production
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                        <a class="dropdown-item" href="#">Smithing</a>
+                        <a class="dropdown-item" href="#">Carpentry</a>
+                        <a class="dropdown-item" href="#">Tailoring</a>
+                        <a class="dropdown-item" href="#">Chasing</a>
+                        <a class="dropdown-item" href="#">Alchemy</a>
+                        <a class="dropdown-item" href="#">Cooking</a>
+                        <a class="dropdown-item" href="#">Calculator</a>
+                    </div>
+                </li>
                 @if (Route::has('login')) 
                     @auth
                         <li class="nav-item">
