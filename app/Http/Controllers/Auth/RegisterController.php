@@ -66,7 +66,27 @@ class RegisterController extends Controller
         return User::create([
             'name' => $data['name'],
             'email' => $data['email'],
+            'user_id' => $this->generateUserId(),
             'password' => Hash::make($data['password']),
         ]);
+    }
+    public function generateUserId(){
+        $length = 14;
+        $characters = '1234567890abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+        $charactersLength = strlen($characters);
+        $randomID = '';
+        for ($i = 0; $i < $length; $i++){
+            $randomID .= $characters[rand(0, $charactersLength - 1)];
+        }
+        return $this->checkID($randomID);
+    }
+
+    public function checkID($id){
+        if(User::where('user_id', $id)->first()){
+            $this->generateID();
+        }
+        else{
+            return $id;
+        }
     }
 }

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\User;
 use Illuminate\Http\Request;
 
 class AccountController extends Controller
@@ -24,5 +25,11 @@ class AccountController extends Controller
     public function index()
     {
         return view('account');
+    }
+
+    public function getUserId($id){
+        $user = User::where('user_id', $id)->firstOrFail();
+        
+        return view('user', compact('user'));
     }
 }
