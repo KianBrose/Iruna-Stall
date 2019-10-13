@@ -11,6 +11,7 @@
 |
 */
 
+
 Route::get('/', function () {
     return view('welcome');
 });
@@ -19,3 +20,7 @@ Auth::routes();
 
 
 Route::get('/account', 'AccountController@index');
+Route::post('/createAi', 'ItemController@createAi');
+Route::get('/item/ai/{id}', 'AiController@show');
+Route::get('/item', 'ItemController@showItem');
+
