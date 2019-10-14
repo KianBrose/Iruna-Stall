@@ -3,7 +3,8 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link ref="stylesheet" href="css/style.css">
 
     <title>Iruna Global Stall</title>
 
@@ -28,16 +29,16 @@
                     <!-- Left Side Of Navbar -->
 		    <ul class="navbar-nav ml-auto">
 		    	<li class="nav-item">
-                             <a class="nav-link" href="#">Account</a>
+                             <a class="nav-link" href="/account">Account</a>
                         </li>
 			<li class="nav-item">
-                             <a class="nav-link" href="#">Add item</a>
+                             <a class="nav-link" href="/additem">Add item</a>
                         </li>
 			<li class="nav-item">
-                             <a class="nav-link" href="#">View my items</a>
+                             <a class="nav-link" href="/viewitem">View my items</a>
                         </li>
 			<li class="nav-item">
-                             <a class="nav-link" href="#">About</a>
+                             <a class="nav-link" href="/about">About</a>
                         </li>
 		    </ul>
                     <!-- Right Side Of Navbar -->
@@ -86,7 +87,7 @@
                     <hr>
 					<div>
 						<p>Welcome to the add item page! If this is your first time here, please refer to this <a>quick guide</a> on how to add an item!</p>
-						<form method="post" action="itemcore.php">
+		
 							<select name="itemtype" class="form-control2" id="itemtype"> 
 							   <option>Choose type</option>
 							   <option value="1">Equipment</option>
@@ -276,47 +277,59 @@
 							</tr>
 								<br><input type="submit" class="button btn" style="width: 150px" name="search_button" id="search_button" value="Add new item" onclick="window.location.href='/additem.php'"/>
 							</div>
-
+						
 							<div id="al" style="display:none;">
+								<form action="/createAi" method="POST">
+									@csrf
 							<tr>
 								<td>
-									<label for="Test">Item Name:</label>
+									<label for="name">Item Name:</label>
 								</td>
 								<td  style="padding-left:10px;">
-									<input type="text" class="form-control iteminput" style="width: 400px" name="alname" id="alname"/>
+									<input type="text" class="form-control iteminput" style="width: 400px" name="name" id="name"/>
 								</td>
 							</tr>
 							<tr>
 								<td>
-									<label for="Test">Quantity:</label>
+									<label for="quantity">Quantity:</label>
 								</td>
 								<td  style="padding-left:10px;">
-									<input type="text" class="form-control iteminput" style="width: 400px" name="alqty" id="alqty"/>
+									<input type="text" class="form-control iteminput" style="width: 400px" name="quantity" id="quantity"/>
 								</td>
 							</tr>
 							<tr>
 								<br>
 								<td>
-									<label for="Test">Color:</label>
+									<label for="color">Color:</label>
 								</td>
 								<td  style="padding-left:10px;">
-									<select name="alcolor" class="form-control2" id="alcolor"> 
-									   <option value="R">Red</option>
-									   <option value="G">Green</option>
-									   <option value="B">Blue</option>
+									<select name="color" class="form-control2" id="color"> 
+									   <option selected>Red</option>
+									   <option>Green</option>
+									   <option>Blue</option>
 									</select>
 								</td>
 							</tr>
 							<tr>
 								<br>
 								<td>
-									<label for="Test">Price:</label>
+									<label for="price">Price:</label>
 								</td>
 								<td  style="padding-left:10px;">
-									<input type="text" class="form-control iteminput" style="width: 400px" name="alprice" id="alprice"/>
+									<input type="number" class="form-control iteminput" style="width: 400px" name="price" id="price"/>
 								</td>
 							</tr>
-								<br><input type="submit" class="button btn" style="width: 150px" name="search_button" id="search_button" value="Add new item" onclick="window.location.href='/additem.php'"/>
+							<tr>
+								<br>
+								<td>
+									<label for="contact">Owner:</label>
+								</td>
+								<td  style="padding-left:10px;">
+									<input type="text" class="form-control iteminput" style="width: 400px" name="contact" id="contact"/>
+								</td>
+							</tr>
+								<br><input type="submit" class="button btn" style="width: 150px" name="search_button" id="search_button" value="Add new item" "/>
+								</form>
 							</div>
 
 							<div id="relic" style="display:none;">
@@ -341,16 +354,19 @@
 									<label for="Test">Price:</label>
 								</td>
 								<td  style="padding-left:10px;">
-									<input type="text" class="form-control iteminput" style="width: 400px" name="relicprice" id="relicprice"/>
+									<input type="number" class="form-control iteminput" style="width: 400px" name="relicprice" id="relicprice"/>
 								</td>
 							</tr>
 								<br><input type="submit" class="button btn" style="width: 150px" name="search_button" id="search_button" value="Add new item" onclick="window.location.href='/additem.php'"/>
 							</div>
 
-						</form>	
-					<script type="text/javascript" src="jquery-ui-1.10.0/tests/jquery-1.9.0.js"></script>
-					<script src="jquery-ui-1.10.0/ui/jquery-ui.js"></script>
 
+					
+					<script src="https://code.jquery.com/jquery-3.4.1.min.js"   integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="   crossorigin="anonymous"></script>
+					<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"   integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU="   crossorigin="anonymous"></script>
+    				<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    				<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    				<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 					<script>    
 					$('#itemtype').on('change',function(){
 					var selection = $(this).val();
@@ -486,10 +502,8 @@
         </div>
     </div>
     @include('sweetalert::alert')
-    <!-- bootstrap js -->
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+	<!-- bootstrap js -->
+	
 </body>
 
 </html>

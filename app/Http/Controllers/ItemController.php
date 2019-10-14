@@ -29,7 +29,7 @@ class ItemController extends Controller
         $ai->contact = request('contact');
         $ai->save();
         Alert::toast('Successfully added an item', 'success');
-
+        
         return redirect('/account');
     }
 

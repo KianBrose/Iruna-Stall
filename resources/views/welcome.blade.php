@@ -28,16 +28,16 @@
                     <!-- Left Side Of Navbar -->
 		    <ul class="navbar-nav ml-auto">
 		    	<li class="nav-item">
-                             <a class="nav-link" href="#">Account</a>
+                             <a class="nav-link" href="/account">Account</a>
                         </li>
 			<li class="nav-item">
-                             <a class="nav-link" href="#">Add item</a>
+                             <a class="nav-link" href="/additem">Add item</a>
                         </li>
 			<li class="nav-item">
-                             <a class="nav-link" href="#">View my items</a>
+                             <a class="nav-link" href="/viewitem">View my items</a>
                         </li>
 			<li class="nav-item">
-                             <a class="nav-link" href="#">About</a>
+                             <a class="nav-link" href="/about">About</a>
                         </li>
 		    </ul>
                     <!-- Right Side Of Navbar -->
