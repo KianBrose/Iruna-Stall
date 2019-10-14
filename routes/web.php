@@ -18,7 +18,9 @@ Route::get('/', function () {
 
 Auth::routes();
 
-
+Route::get('/about', function () {
+    return view('about');
+});
 Route::get('/account', 'AccountController@index');
 Route::post('/createAi', 'ItemController@createAi');
 Route::get('/item/ai/{id}', 'AiController@show');
