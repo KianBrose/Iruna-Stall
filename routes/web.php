@@ -19,7 +19,7 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/about', function () {
-    return view('about.blade');
+    return view('about');
 });
 Route::get('/account', 'AccountController@index');
 Route::post('/createAi', 'ItemController@createAi');
