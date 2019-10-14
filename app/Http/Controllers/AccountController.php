@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\User;
+use App\Ai;
 use Illuminate\Http\Request;
 
 class AccountController extends Controller
