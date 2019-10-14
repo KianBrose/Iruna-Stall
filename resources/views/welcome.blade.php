@@ -14,150 +14,74 @@
 </head>
 
 <body>
+<div id="app">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container">
+                <a class="navbar-brand" href="{{ url('/') }}">
+                    Iruna Global Stall
+                </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
 
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <a class="navbar-brand" href="#">Iruna Global Stall</a>
-
-        <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
-            <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Guides
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                        <a class="dropdown-item" href="#">Pets Guide</a>
-                        <a class="dropdown-item" href="#">Classes</a>
-                        <a class="dropdown-item" href="#">Stats</a>
-                        <a class="dropdown-item" href="#">Abilities</a>
-                        <a class="dropdown-item" href="#">Apostolia</a>
-                        <a class="dropdown-item" href="#">Refinement</a>
-                        <a class="dropdown-item" href="#">Quests</a>
-                        <a class="dropdown-item" href="#">Raids</a>
-                        <a class="dropdown-item" href="#">Lottery</a>
-                        <a class="dropdown-item" href="#">Background Music</a>
-                    </div>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Events
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                        <a class="dropdown-item" href="#">Anniversary</a>
-                        <a class="dropdown-item" href="#">Academy</a>
-                        <a class="dropdown-item" href="#">Setsubun</a>
-                        <a class="dropdown-item" href="#">Valentienes Day</a>
-                        <a class="dropdown-item" href="#">White Day</a>
-                        <a class="dropdown-item" href="#">Easter</a>
-                        <a class="dropdown-item" href="#">Summer</a>
-                        <a class="dropdown-item" href="#">Halloween</a>
-                        <a class="dropdown-item" href="#">Christmas</a>
-                    </div>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Zones
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                        <a class="dropdown-item" href="#">Zones: Episode 1</a>
-                        <a class="dropdown-item" href="#">Zones: Episode 2</a>
-                        <a class="dropdown-item" href="#">Zones: Episode 3</a>
-                        <a class="dropdown-item" href="#">Zones: Episode 4</a>
-                        <a class="dropdown-item" href="#">Zones: Episode 5</a>
-                        <a class="dropdown-item" href="#">Zones: Episode 6</a>
-                        <a class="dropdown-item" href="#">Raids</a>
-                        <a class="dropdown-item" href="#">Events</a>
-                    </div>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Items
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                        <a class="dropdown-item" href="#">Recovery</a>
-                        <a class="dropdown-item" href="#">Status</a>
-                        <a class="dropdown-item" href="#">Strengthening</a>
-                        <a class="dropdown-item" href="#">Teleport</a>
-                        <a class="dropdown-item" href="#">Skills</a>
-                        <a class="dropdown-item" href="#">Chests</a>
-                        <a class="dropdown-item" href="#">Collectables</a>
-                        <a class="dropdown-item" href="#">Ores</a>
-                        <a class="dropdown-item" href="#">Island Objects</a>
-                        <a class="dropdown-item" href="#">Store Items</a>
-                        <a class="dropdown-item" href="#">Pets</a>
-                        <a class="dropdown-item" href="#">Others</a>
-                    </div>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Equipment
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                        <a class="dropdown-item" href="#">Swords</a>
-                        <a class="dropdown-item" href="#">Bows</a>
-                        <a class="dropdown-item" href="#">Canes</a>
-                        <a class="dropdown-item" href="#">Claws</a>
-                        <a class="dropdown-item" href="#">Throwing</a>
-                        <a class="dropdown-item" href="#">Armour</a>
-                        <a class="dropdown-item" href="#">Additional</a>
-                        <a class="dropdown-item" href="#">Special</a>
-                        <a class="dropdown-item" href="#">Crystas</a>
-                        <a class="dropdown-item" href="#">Al crystas</a>
-                        <a class="dropdown-item" href="#">Relic crystas</a>
-                    </div>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Production
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                        <a class="dropdown-item" href="#">Smithing</a>
-                        <a class="dropdown-item" href="#">Carpentry</a>
-                        <a class="dropdown-item" href="#">Tailoring</a>
-                        <a class="dropdown-item" href="#">Chasing</a>
-                        <a class="dropdown-item" href="#">Alchemy</a>
-                        <a class="dropdown-item" href="#">Cooking</a>
-                        <a class="dropdown-item" href="#">Calculator</a>
-                    </div>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        About Us
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                        <a class="dropdown-item" href="#">About Us</a>
-                        <a class="dropdown-item" href="#">Contact Us</a>
-                    </div>
-                </li>
-                @if (Route::has('login')) 
-                    @auth
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ url('/account') }}">Account</a>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <!-- Left Side Of Navbar -->
+		    <ul class="navbar-nav ml-auto">
+		    	<li class="nav-item">
+                             <a class="nav-link" href="#">Account</a>
                         </li>
-                    @else
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ route('login') }}">Login</a>
+			<li class="nav-item">
+                             <a class="nav-link" href="#">Add item</a>
                         </li>
-                        @if (Route::has('register'))
+			<li class="nav-item">
+                             <a class="nav-link" href="#">View my items</a>
+                        </li>
+			<li class="nav-item">
+                             <a class="nav-link" href="#">About</a>
+                        </li>
+		    </ul>
+                    <!-- Right Side Of Navbar -->
+                    <ul class="navbar-nav ml-auto">
+                        <!-- Authentication Links -->
+                        @guest
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('register') }}">Register</a>
+                                <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
                             </li>
-                        @endif 
-                    @endauth 
-                @endif
+                            @if (Route::has('register'))
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                                </li>
+                            @endif
+                        @else
+                            <li class="nav-item dropdown">
+                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                    {{ Auth::user()->name }} <span class="caret"></span>
+                                </a>
 
-            </ul>
-        </div>
-    </nav>
+                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" href="{{ route('logout') }}"
+                                       onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                        {{ __('Logout') }}
+                                    </a>
+
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                        @csrf
+                                    </form>
+                                </div>
+                            </li>
+                        @endguest
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div>
     <div class="container">
         <div class="row" >
             <div class="col-md-7 offset-md-3" >
 
                 <div style="height: auto !important;">
-					<br>
+		    <br>
                     <h4>Welcome!</h4>
                     <hr>
 
