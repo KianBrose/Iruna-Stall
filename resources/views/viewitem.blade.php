@@ -63,15 +63,15 @@
                                         <th>Price</th>
                                 </tr>
                                 @foreach ( $equipitem as $equipitem)
-                                <form action="/item/equip/{{ $equipitem->owner_id }}/update" method="POST">
+                                <form action="/item/equip/{{ $equipitem->item_id }}/update" method="POST">
                                     @method('patch')
                                     @csrf
                                     <tr>
                                         <td>{{ $equipitem->name }}</td>
-                                        <td><input style='width: 30px; font-size:12px;' type='text' name='' value='{{ $equipitem->atk }}'></td>
-                                            <td><input style='width: 30px; font-size:12px;' type='text' name='' value='{{ $equipitem->def }}'></td>
+                                        <td><input style='width: 30px; font-size:12px;' type='text' name='atk' value='{{ $equipitem->atk }}'></td>
+                                            <td><input style='width: 30px; font-size:12px;' type='text' name='def' value='{{ $equipitem->def }}'></td>
                                             <td style="width: 50px;">
-                                                <select name='equipref' style='height: 26px; width: 50px; font-size:12px;' id='equipref'> 
+                                                <select name='refinement' style='height: 26px; width: 50px; font-size:12px;' id='equipref'> 
                                                 <option selected>{{ $equipitem->refinement }}</option>
                                                     <option value='0'>0</option>
                                                     <option value='1'>1</option>
@@ -86,19 +86,19 @@
                                                 </select>
                                             </td>
                                             <td>
-                                                <select name='slotsamount' style='height: 26px; width: 35px' id='equipref'> 
-                                                    <option value=''>{{ $equipitem->slots }}</option>
+                                                <select name='slots' style='height: 26px; width: 35px' id='equipref'> 
+                                                    <option selected>{{ $equipitem->slots }}</option>
                                                     <option value='0'>0</option>
                                                     <option value='1'>1</option>
                                                     <option value='2'>2</option>
                                                 </select>
                                             </td>
-                                            <td><input style='width: 100px; font-size:12px;' type='text' name='' value='{{ $equipitem->slot1 }}'></td>
-                                            <td><input style='width: 100px; font-size:12px;' type='text' name='' value='{{ $equipitem->slot2}}'></td>
-                                        <td><input style='width: 100px; font-size:12px;' type='text' name='' value='{{ $equipitem->ability}}'></td>
+                                            <td><input style='width: 100px; font-size:12px;' type='text' required name='slot1' value='{{ $equipitem->slot1 }}'></td>
+                                            <td><input style='width: 100px; font-size:12px;' type='text' required name='slot2' value='{{ $equipitem->slot2 }}'></td>
+                                        <td><input style='width: 100px; font-size:12px;' type='text' required name='ability' value='{{ $equipitem->ability }}'></td>
                                             <td>
-                                                <select name='abilitylv' style='height: 26px; width: 50px' id='equipref'> 
-                                                <option value=''>{{ $equipitem->ability_level }}</option>
+                                                <select name='ability_level' style='height: 26px; width: 50px' id='equipref'> 
+                                                <option selected>{{ $equipitem->ability_level }}</option>
                                                     <option value='0'>0</option>
                                                     <option value='1'>1</option>
                                                     <option value='2'>2</option>
@@ -107,10 +107,14 @@
                                                     <option value='5'>5</option>
                                                 </select>
                                             </td>
-                                        <td><input style='width: 100px; font-size:12px;' type='text' name='' value='{{ $equipitem->price }}'></td>
+                                        <td><input style='width: 100px; font-size:12px;' type='text' name='price' value='{{ $equipitem->price }}'></td>
                                             <td><input type='submit' class='btn btn-success' style='font-size:12px;' name='search_button' id='search_button' value='Change'/></td>
                                         </form>
+                                        <form action="/item/equip/{{ $equipitem->item_id }}/delete" method="POST">
+                                            @method('delete')
+                                            @csrf
                                             <td><input type='submit' class='btn btn-danger' style='font-size:12px;' name='search_button' id='search_button' value='Delete'/></td>
+                                        </form>
                                         </tr>
                                         @endforeach
                         </table>
