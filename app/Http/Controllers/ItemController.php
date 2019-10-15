@@ -55,7 +55,7 @@ class ItemController extends Controller
         $equip->save();
         Alert::toast('Successfully added an item', 'success');
 
-        return redirect('account');
+        return redirect('/account');
         
     }
 

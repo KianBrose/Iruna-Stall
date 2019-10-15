@@ -31,17 +31,15 @@ class AiController extends Controller
                 abort(403);
             }
             else{
-                $item->name = request('name');
-                $item->item_id = $id;
+                //$item->name = request('name');
                 $item->price = request('price');
                 $item->color = request('color');
                 $item->routes = "item/ai/{$id}";
                 $item->owner_id = Auth::user()->id;
                 $item->quantity = request('quantity');
-                $item->contact = request('contact');
                 $item->save();
                 Alert::toast('Successfully edited an item', 'success');
-                return view('account');
+                return redirect('/viewitem');
             }
 
         }
@@ -61,7 +59,7 @@ class AiController extends Controller
                 Ai::where('item_id', $id)->firstOrFail()->delete();
                 $aiitem = Ai::where('owner_id', auth()->id())->get();
                 Alert::toast('You have deleted an item', 'warning');
-                return view('viewitem', compact('aiitem'));
+                return redirect('/viewitem');
             }
 
         }
