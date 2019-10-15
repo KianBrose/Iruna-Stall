@@ -384,7 +384,7 @@
 									<input type="number" class="form-control iteminput" style="width: 400px" name="relicprice" id="relicprice"/>
 								</td>
 							</tr>
-								<br><input type="submit" class="button btn" style="width: 150px" name="search_button" id="search_button" value="Add new item" onclick="window.location.href='/additem.php'"/>
+								<br><input type="submit" class="button btn" style="width: 150px" name="search_button" id="search_button" value="Add new item"/>
 							</div>
 
 

@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Ai;
 use App\Equipment;
 use Auth;
+use Spatie\Searchable\Search;
 use RealRashid\SweetAlert\Facades\Alert;
 
 class ItemController extends Controller
@@ -86,5 +87,15 @@ class ItemController extends Controller
     public function showItem(){
         $item = Ai::all();
         return view('item', compact('item'));
+    }
+
+    public function search(Request $request)
+    {
+        
+        $searchResults = (new Search())
+            ->registerModel(Ai::class, 'name')
+            ->search($request->input('search'));
+
+        return view('search', compact('searchResults'));
     }
 }

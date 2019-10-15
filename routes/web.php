@@ -22,6 +22,8 @@ Route::get('/about', function () {
     return view('about');
 });
 
+Route::post('/search', 'ItemController@search')->name('search');
+
 /**
  * 
  * User section
@@ -37,7 +39,7 @@ Route::get('/viewitem', 'AccountController@view')->middleware('auth');
 *
 */
 Route::post('/createAi', 'ItemController@createAi')->middleware('auth');
-Route::get('/item/ai/{id}', 'AiController@show');
+Route::get('/item/ai/{id}', 'AiController@show')->name('Ai');
 Route::get('/item/ai/{id}/edit', 'AiController@edit')->middleware('auth');
 Route::patch('/updateAi/{id}', 'AiController@update')->middleware('auth');
 Route::delete('/item/ai/{id}/delete', 'AiController@delete')->middleware('auth');

@@ -85,11 +85,13 @@
                     <h4>Welcome!</h4>
                     <hr>
 
-                    <form class="form-horizontal" name="form1" id="form1" action="/search" method="get">
+                    <form class="form-horizontal" name="form1" id="form1" action="/search" method="POST">
+                        @csrf
                         <div class="row">
                             <div class="col-md-7 col-xs-8">
-                                <input type="text" class="form-control" name="search" id="search" value="">
+                                <input type="text" class="form-control" name="search" id="search">
                             </div>
+
                             <div class="col-md-3 col-xs-3">
 							     <div class="form-group">
 							     	<select id="searchtype" class="form-control" name="searchtype">
