@@ -33,4 +33,9 @@ class AccountController extends Controller
         
         return view('user', compact('user'));
     }
+    
+    public function view(){
+        $aiitem = Ai::where('owner_id', auth()->id())->get();
+        return view('viewitem', compact('aiitem'));
+    }
 }
