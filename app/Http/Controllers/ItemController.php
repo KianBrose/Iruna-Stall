@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Ai;
 use App\Equipment;
 use Auth;
+use Spatie\Searchable\Search;
 use RealRashid\SweetAlert\Facades\Alert;
 
 class ItemController extends Controller
@@ -29,11 +30,11 @@ class ItemController extends Controller
         $ai->contact = request('contact');
         $ai->save();
         Alert::toast('Successfully added an item', 'success');
-
+        
         return redirect('/account');
     }
 
-    public function createEquipment(){
+    public function createEquip(){
         $idTobeUsed = $this->generateID(8);
         $equip = new Equipment();
         $equip->name = request('name');
@@ -43,7 +44,7 @@ class ItemController extends Controller
         $equip->atk = request('atk');
         $equip->def = request('def');
         $equip->price = request('price');
-        $equip->slots = request('slots');
+        $equip->slots = request('equipslotamount');
         $equip->slot1 = request('slot1');
         $equip->slot2 = request('slot2');
         $equip->ability = request('ability');
@@ -54,7 +55,8 @@ class ItemController extends Controller
         $equip->save();
         Alert::toast('Successfully added an item', 'success');
 
-
+        return redirect('account');
+        
     }
 
     public function addItem(){
@@ -85,5 +87,15 @@ class ItemController extends Controller
     public function showItem(){
         $item = Ai::all();
         return view('item', compact('item'));
+    }
+
+    public function search(Request $request)
+    {
+        
+        $searchResults = (new Search())
+            ->registerModel(Ai::class, 'name')
+            ->search($request->input('search'));
+
+        return view('search', compact('searchResults'));
     }
 }
