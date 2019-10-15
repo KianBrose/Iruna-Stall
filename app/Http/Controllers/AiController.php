@@ -13,6 +13,7 @@ class AiController extends Controller
         $item = Ai::where('item_id', $id)->firstOrFail();
         return view('show', compact('item'));
     }
+    
     public function edit($id){
         $item = Ai::where('item_id', $id)->firstOrFail();
         if($item->owner_id != Auth::user()->id){

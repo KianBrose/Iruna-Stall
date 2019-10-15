@@ -14,6 +14,11 @@
     </form>
 
 @endforeach
+<h2>Equipment</h2>
+@foreach ($equipitem as $equipitem)
+<li><a href="{{ $equipitem->routes }}">{{ $equipitem->name }}</a></li>
+@endforeach
+
 
 
 @endsection

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\User;
 use App\Ai;
 use Illuminate\Http\Request;
+use App\Equipment;
 
 class AccountController extends Controller
 {
@@ -36,6 +37,7 @@ class AccountController extends Controller
     
     public function view(){
         $aiitem = Ai::where('owner_id', auth()->id())->get();
-        return view('viewitem', compact('aiitem'));
+        $equipitem = Equipment::where('owner_id', auth()->id())->get();
+        return view('viewitem', compact('aiitem', 'equipitem'));
     }
 }

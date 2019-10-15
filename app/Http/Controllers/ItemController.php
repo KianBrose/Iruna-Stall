@@ -33,7 +33,7 @@ class ItemController extends Controller
         return redirect('/account');
     }
 
-    public function createEquipment(){
+    public function createEquip(){
         $idTobeUsed = $this->generateID(8);
         $equip = new Equipment();
         $equip->name = request('name');
@@ -43,7 +43,7 @@ class ItemController extends Controller
         $equip->atk = request('atk');
         $equip->def = request('def');
         $equip->price = request('price');
-        $equip->slots = request('slots');
+        $equip->slots = request('equipslotamount');
         $equip->slot1 = request('slot1');
         $equip->slot2 = request('slot2');
         $equip->ability = request('ability');
@@ -54,7 +54,8 @@ class ItemController extends Controller
         $equip->save();
         Alert::toast('Successfully added an item', 'success');
 
-
+        return redirect('account');
+        
     }
 
     public function addItem(){

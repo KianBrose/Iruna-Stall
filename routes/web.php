@@ -42,3 +42,10 @@ Route::get('/item/ai/{id}/edit', 'AiController@edit')->middleware('auth');
 Route::patch('/updateAi/{id}', 'AiController@update')->middleware('auth');
 Route::delete('/item/ai/{id}/delete', 'AiController@delete')->middleware('auth');
 
+
+/**
+ * 
+ * Equipment section
+ */
+Route::post('/createEquip', 'ItemController@createEquip')->middleware('auth');
+

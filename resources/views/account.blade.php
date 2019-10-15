@@ -98,28 +98,30 @@
 							</select>
 
 							<div id="equip" style="display:none;">
+								<form action="/createEquip" method="POST">
+									@csrf
 							<tr>
 								<td>
-									<label for="Test">Item Name:</label>
+									<label for="name">Item Name:</label>
 								</td>
 								<td  style="padding-left:10px;">
-									<input type="text" class="form-control iteminput" style="width: 400px" name="equipname" id="equipname"/>
+									<input type="text" class="form-control iteminput" style="width: 400px" name="name" id="name"/>
 								</td>
 							</tr>
 							<tr>
 								<td>
-									<label for="Test">ATK:</label>
+									<label for="atk">ATK:</label>
 								</td>
 								<td  style="padding-left:10px;">
-									<input type="text" class="form-control iteminput" style="width: 400px" name="equipatk" id="equipatk"/>
+									<input type="number" class="form-control iteminput" style="width: 400px" name="atk" id="atk"/>
 								</td>
 							</tr>
 							<tr>
 								<td>
-									<label for="Test">DEF:</label>
+									<label for="def">DEF:</label>
 								</td>
 								<td  style="padding-left:10px;">
-									<input type="text" class="form-control iteminput" style="width: 400px" name="equipdef" id="equipdef"/>
+									<input type="number" class="form-control iteminput" style="width: 400px" name="def" id="def"/>
 								</td>
 							</tr>
 							<tr>
@@ -128,8 +130,8 @@
 									<label for="Test">Refinement:</label>
 								</td>
 								<td  style="padding-left:10px;">
-									<select name="equipref" class="form-control2" id="equipref"> 
-									   <option value="0">0</option>
+									<select name="refinement" class="form-control2" id="refinement"> 
+									   <option selected value="0">0</option>
 									   <option value="1">1</option>
 									   <option value="2">2</option>
 									   <option value="3">3</option>
@@ -144,13 +146,36 @@
 								</td>
 							</tr>
 							<tr>
+								<td>
+									<label for="Test">Contact:</label>
+								</td>
+								<td  style="padding-left:10px;">
+									<input type="text" class="form-control iteminput" style="width: 400px" name="contact" id="contact"/>
+								</td>
+							</tr>
+							<tr>
+								<br>
+								<td>
+									<label for="type">Type:</label>
+								</td>
+								<td  style="padding-left:10px;">
+									<select name="type" class="form-control2" id="type"> 
+									   <option selected value="0">Weapon</option>
+									   <option value="1">Body</option>
+									   <option value="2">Additional</option>
+									   <option value="3">Special</option>
+									</select>
+									<br>
+								</td>
+							</tr>
+							<tr>
 								<br>
 								<td>
 									<label for="Test">Slots:</label>
 								</td>
 								<td  style="padding-left:10px;">
 									<select name="equipslotamount" class="form-control2" id="equipslotamount"> 
-									   <option value="0">0</option>
+									   <option selected value="0">0</option>
 									   <option value="1">1</option>
 									   <option value="2">2</option>
 									</select>
@@ -161,10 +186,10 @@
 							<div id="slot1" style="display:none;">
 							<tr>
 								<td>
-									<label for="Test">Slot 1:</label>
+									<label for="slot1">Slot 1:</label>
 								</td>
 								<td  style="padding-left:10px;">
-									<input type="text" class="form-control iteminput" style="width: 400px" name="equips1" id="equips1"/>
+									<input type="text" class="form-control iteminput" style="width: 400px" name="slot1" id="slot1" value="0"/>
 								</td>
 								<br>
 							</tr>
@@ -175,7 +200,7 @@
 									<label for="Test">Slot 2:</label>
 								</td>
 								<td  style="padding-left:10px;">
-									<input type="text" class="form-control iteminput" style="width: 400px" name="equips2" id="equips2"/>
+									<input type="text" class="form-control iteminput" style="width: 400px" name="slot2" id="slot" value="0"/>
 								</td>
 								<br>
 							</tr>
@@ -186,7 +211,7 @@
 								</td>
 								<td  style="padding-left:10px;">
 									<select name="abidrop" class="form-control2" id="abidrop"> 
-									   <option value="0">No</option>
+									   <option selected value="0">No</option>
 									   <option value="1">Yes</option>
 									</select>
 								</td>
@@ -198,7 +223,7 @@
 									<label for="Test">Ability name:</label>
 								</td>
 								<td  style="padding-left:10px;">
-									<input type="text" class="form-control iteminput" style="width: 400px" name="equipaname" id="equipaname"/>
+									<input type="text" class="form-control iteminput" style="width: 400px" name="ability" id="ability" value="0"/>
 								</td>
 							</tr>
 							<tr>
@@ -206,7 +231,7 @@
 									<label for="Test">Ability level:</label>
 								</td>
 								<td  style="padding-left:10px;">
-									<input type="text" class="form-control iteminput" style="width: 400px" name="equipalevel" id="equipalevel"/>
+									<input type="number" max="5" class="form-control iteminput" style="width: 400px" name="ability_level" id="ability_level" value="0"/>
 								</td>
 							</tr>
 							</div>
@@ -216,10 +241,11 @@
 									<label for="Test">Price:</label>
 								</td>
 								<td  style="padding-left:10px;">
-									<input type="text" class="form-control iteminput" style="width: 400px" name="equipprice" id="equipprice"/>
+									<input type="number" class="form-control iteminput" style="width: 400px" name="price" id="price" val/>
 								</td>
 							</tr>
 								<br><input type="submit" class="button btn" style="width: 150px" name="search_button" id="search_button" value="Add new item"/>
+							</form>
 							</div>
 
 							<div id="item" style="display:none;">
@@ -272,10 +298,11 @@
 									<label for="Test">Price:</label>
 								</td>
 								<td  style="padding-left:10px;">
-									<input type="text" class="form-control iteminput" style="width: 400px" name="xtalprice" id="xtalprice"/>
+									<input type="number" class="form-control iteminput" style="width: 400px" name="price" id="xtalprice"/>
 								</td>
 							</tr>
-								<br><input type="submit" class="button btn" style="width: 150px" name="search_button" id="search_button" value="Add new item" onclick="window.location.href='/additem.php'"/>
+								<br><input type="submit" class="button btn" style="width: 150px" name="search_button" id="search_button" value="Add new item"/>
+						
 							</div>
 						
 							<div id="al" style="display:none;">
