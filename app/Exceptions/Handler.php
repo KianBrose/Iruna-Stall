@@ -4,6 +4,8 @@ namespace App\Exceptions;
 
 use Exception;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
+use Symfony\Component\HttpKernel\Exception\MethodNotAllowedHttpException;
+use Facade\Ignition\Exceptions\ViewException;
 
 class Handler extends ExceptionHandler
 {
@@ -46,6 +48,15 @@ class Handler extends ExceptionHandler
      */
     public function render($request, Exception $exception)
     {
+        if ($exception instanceof MethodNotAllowedHttpException) 
+        {
+            return redirect('/');
+        }
+        else if ($exception instanceof ViewException){
+            return redirect('/viewitem');
+        }
         return parent::render($request, $exception);
     }
+
+
 }

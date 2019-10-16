@@ -50,4 +50,7 @@ Route::delete('/item/ai/{id}/delete', 'AiController@delete')->middleware('auth')
  * Equipment section
  */
 Route::post('/createEquip', 'ItemController@createEquip')->middleware('auth');
+Route::patch('/item/equip/{id}/update', 'EquipmentController@update')->middleware('auth');
+Route::delete('/item/equip/{id}/delete', 'EquipmentController@delete')->middleware('auth');
+Route::get('/item/equip/{id}', 'EquipmentController@show');
 
