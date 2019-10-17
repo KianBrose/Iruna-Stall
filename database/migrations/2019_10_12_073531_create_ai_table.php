@@ -16,12 +16,13 @@ class CreateAiTable extends Migration
         Schema::create('ai', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('item_id');
+            $table->string('category')->default('ai');
             $table->unsignedBigInteger('owner_id');
             $table->string('name');
             $table->string('routes');
             $table->integer('quantity');
             $table->string('color');
-            $table->integer('price');
+            $table->bigInteger('price');
             $table->string('contact');
             $table->timestamps();
 

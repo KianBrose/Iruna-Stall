@@ -40,7 +40,7 @@ Route::get('/viewitem', 'AccountController@view')->middleware('auth');
 */
 Route::post('/createAi', 'ItemController@createAi')->middleware('auth');
 Route::get('/item/ai/{id}', 'AiController@show')->name('Ai');
-Route::get('/item/ai/{id}/edit', 'AiController@edit')->middleware('auth');
+Route::get('/item/ai/{id}/edit', 'AiController@edit')->middleware('isAdmin');
 Route::patch('/updateAi/{id}', 'AiController@update')->middleware('auth');
 Route::delete('/item/ai/{id}/delete', 'AiController@delete')->middleware('auth');
 
@@ -53,4 +53,7 @@ Route::post('/createEquip', 'ItemController@createEquip')->middleware('auth');
 Route::patch('/item/equip/{id}/update', 'EquipmentController@update')->middleware('auth');
 Route::delete('/item/equip/{id}/delete', 'EquipmentController@delete')->middleware('auth');
 Route::get('/item/equip/{id}', 'EquipmentController@show');
+Route::get('.item/equip/{id}/edit', 'EquipmentController@edit')->middleware('isAdmin');
+
+
 

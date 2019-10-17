@@ -7,7 +7,7 @@ class isAdmin{
         if(\Auth::user()->isAdmin == 1){
             return $next($request);
         }
-        abort(403);
+        return redirect('/');
     }
 }
 ?>

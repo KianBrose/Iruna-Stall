@@ -323,6 +323,11 @@
 								<td  style="padding-left:10px;">
 									<input type="text" class="form-control iteminput" style="width: 400px" name="quantity" id="quantity"/>
 								</td>
+								@error('field')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
 							</tr>
 							<tr>
 								<br>

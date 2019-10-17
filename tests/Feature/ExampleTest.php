@@ -4,8 +4,9 @@ namespace Tests\Feature;
 
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Tests\TestCase;
+use App\User;
 
-class ExampleTest extends TestCase
+class RoutesStatus extends TestCase
 {
     /**
      * A basic test example.
@@ -17,5 +18,26 @@ class ExampleTest extends TestCase
         $response = $this->get('/');
 
         $response->assertStatus(200);
+    }
+
+    public function testAbout(){
+        $response = $this->get('/about');
+
+        $response->assertStatus(200);
+    }
+
+    public function testviewitem(){
+        $response = $this->get('/viewitem');
+        $response->assertStatus(302);
+    }
+
+    public function testViewItemAsUser()
+    {
+        //$user = factory(User::class)->create();
+
+        $response = $this->actingAs(User::find(1))
+                         ->get('/viewitem');
+        $response->assertStatus(200);
+        
     }
 }

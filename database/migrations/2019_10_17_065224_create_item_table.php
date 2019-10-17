@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateEquipmentTable extends Migration
+class CreateItemTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,26 +13,16 @@ class CreateEquipmentTable extends Migration
      */
     public function up()
     {
-        Schema::create('equipment', function (Blueprint $table) {
+        Schema::create('item', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('item_id');
-            $table->string('category')->default('equipment');
             $table->unsignedBigInteger('owner_id');
+            $table->string('category')->default('item');
             $table->string('name');
-            $table->string('type');
-            $table->integer('atk');
-            $table->integer('def');
-            $table->bigInteger('price');
-            $table->integer('slots');
-            $table->string('slot1');
-            $table->string('slot2');
-            $table->string('ability');
-            $table->integer('ability_level');
-            $table->integer('refinement');
+            $table->integer('quantity');
             $table->string('routes');
+            $table->bigInteger('price');
             $table->string('contact');
             $table->timestamps();
-
             $table->foreign('owner_id')->references('id')->on('users')->onDelete('cascade');
         });
     }
@@ -44,6 +34,6 @@ class CreateEquipmentTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('equipment');
+        Schema::dropIfExists('item');
     }
 }
