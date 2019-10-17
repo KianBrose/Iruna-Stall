@@ -6,13 +6,14 @@ use Illuminate\Http\Request;
 use App\Ai;
 use App\Equipment;
 use Auth;
+use Illuminate\Support\Facades\Validator;
 use Spatie\Searchable\Search;
 use RealRashid\SweetAlert\Facades\Alert;
 
 class ItemController extends Controller
 {
-    public function createAi(){
-        request()->validate([
+    public function createAi(Request $request){
+        $validator = Validator::make($request->all(),[
             'name' => 'required',
             'color' => 'required',
             'price' => 'required',
@@ -22,16 +23,46 @@ class ItemController extends Controller
         $ai = new Ai();
         $ai->name = request('name');
         $ai->item_id = $idTobeUsed;
-        $ai->price = request('price');
-        $ai->color = request('color');
+        
+        // check color 
+        
+        if(request('color') == 'Red' || request('color') == 'Blue' || request('color') == 'Green'){
+            $ai->color = request('color');
+        }
+        else{
+            Alert::toast('You have previously entered the wrong format');
+            return redirect('/account');
+        }
+
         $ai->routes = "item/ai/{$idTobeUsed}";
         $ai->owner_id = Auth::user()->id;
-        $ai->quantity = request('quantity');
+
+        // check quantity
+        if($this->checkValidNumber(request('quantity'))){
+            $ai->quantity = request('quantity');
+        }
+        else{
+            $validator->errors()->add('field', 'Please only input number');
+            Alert::toast('You have previously entered the wrong format qty', 'warning');
+            return redirect('/account');
+        }
+
+        // check price
+        if($this->checkValidNumber(request('price'))){
+            $ai->price = request('price');
+        }
+        else{
+            Alert::toast('You have previously entered the wrong format', 'warning');
+            return redirect('/account');
+        }
+
         $ai->contact = request('contact');
         $ai->save();
         Alert::toast('Successfully added an item', 'success');
-        
+
         return redirect('/account');
+        
+       
     }
 
     public function createEquip(){
@@ -97,5 +128,16 @@ class ItemController extends Controller
             ->search($request->input('search'));
 
         return view('search', compact('searchResults'));
+    }
+
+    public function checkValidNumber($number){
+        $number = (string) $number;
+        if(ctype_digit($number)){
+            return true;
+        }
+        else{
+            return false;
+        }
+        
     }
 }
