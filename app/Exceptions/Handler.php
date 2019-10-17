@@ -52,9 +52,6 @@ class Handler extends ExceptionHandler
         {
             return redirect('/');
         }
-        else if ($exception instanceof ViewException){
-            return redirect('/viewitem');
-        }
         return parent::render($request, $exception);
     }
 

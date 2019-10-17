@@ -122,12 +122,11 @@ class ItemController extends Controller
 
     public function search(Request $request)
     {
-        
-        $searchResults = (new Search())
-            ->registerModel(Ai::class, 'name')
-            ->search($request->input('search'));
+        $input = $request->input('search');
+        $aiSearch = Ai::where('name', 'LIKE', "%{$input}%")->get();
+        $equipSearch = Equipment::where('name', 'LIKE', "%{$input}%")->get();
 
-        return view('search', compact('searchResults'));
+        return view('search', compact('aiSearch', 'equipSearch'));
     }
 
     public function checkValidNumber($number){
