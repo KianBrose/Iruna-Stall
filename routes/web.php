@@ -28,7 +28,7 @@ Route::post('/search', 'ItemController@search')->name('search');
  * 
  * User section
  */
-Route::get('/account', 'AccountController@index')->middleware('auth');
+Route::get('/additem', 'AccountController@index')->middleware('auth');
 Route::get('/item', 'ItemController@showItem');
 Route::get('/user/{id}', 'AccountController@getUserId');
 Route::get('/viewitem', 'AccountController@view')->middleware('auth');

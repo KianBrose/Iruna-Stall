@@ -57,7 +57,7 @@ class AiController extends Controller
             }
             else{
                 Ai::where('item_id', $id)->firstOrFail()->delete();
-                $aiitem = Ai::where('owner_id', auth()->id())->get();
+                //$aiitem = Ai::where('owner_id', auth()->id())->get();
                 Alert::toast('You have deleted an item', 'warning');
                 return redirect('/viewitem');
             }

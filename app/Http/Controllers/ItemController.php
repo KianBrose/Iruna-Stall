@@ -31,7 +31,7 @@ class ItemController extends Controller
         }
         else{
             Alert::toast('You have previously entered the wrong format');
-            return redirect('/account');
+            return redirect('/additem');
         }
 
         $ai->routes = "item/ai/{$idTobeUsed}";
@@ -44,7 +44,7 @@ class ItemController extends Controller
         else{
             $validator->errors()->add('field', 'Please only input number');
             Alert::toast('You have previously entered the wrong format qty', 'warning');
-            return redirect('/account');
+            return redirect('/additem');
         }
 
         // check price
@@ -53,14 +53,14 @@ class ItemController extends Controller
         }
         else{
             Alert::toast('You have previously entered the wrong format', 'warning');
-            return redirect('/account');
+            return redirect('/additem');
         }
 
         $ai->contact = request('contact');
         $ai->save();
         Alert::toast('Successfully added an item', 'success');
 
-        return redirect('/account');
+        return redirect('/additem');
         
        
     }
@@ -86,7 +86,7 @@ class ItemController extends Controller
         $equip->save();
         Alert::toast('Successfully added an item', 'success');
 
-        return redirect('/account');
+        return redirect('/additem');
         
     }
 
