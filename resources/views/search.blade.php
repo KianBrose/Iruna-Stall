@@ -1,15 +1,43 @@
 @extends('layouts.main')
 
 @section('content')
+<div class="container">
+    <div class="row" >
+        <div class="col-md-7 offset-md-3" >
+<form class="form-horizontal" name="form1" id="form1" action="/search" method="POST">
+    @csrf
+    <div class="row">
+        <div class="col-md-7 col-xs-8">
+        <input type="text" class="form-control" name="search" id="search" value="{{ $input }}">
+        </div>
 
-
+        <div class="col-md-3 col-xs-3">
+             <div class="form-group">
+                 <select id="searchtype" class="form-control" name="searchtype">
+                    <option value="equipment" selected="selected">Equipment</option>
+                   <option value="items">Items</option>
+                   <option value="xtal">Xtal</option>
+                   <option value="al">AL crystal</option>
+                   <option value="relic">Relic</option>
+                   <option value="ability">Ability</option>
+                </select>
+             </div>
+        </div>
+        <div class="col-md-2 col-xs-3">
+            <input type="button" class="btn btn-default btn-block" name="search_button" id="search_button" value="Search">
+        </div>
+    </div>
+</form>
+        </div>
+    </div>
+</div>
 <div class="container">
     <div class="row" >
         <div class="col-md-7 offset-md-3" >
 
             <div style="height: auto !important;">
                 <br>
-                <h4>Search Results: </h4>
+            <h4>Search Results: {{ $input }}</h4>
                 <div></div>
                 <hr>
                 <div>

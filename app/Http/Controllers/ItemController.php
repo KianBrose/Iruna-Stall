@@ -126,7 +126,7 @@ class ItemController extends Controller
         $aiSearch = Ai::where('name', 'LIKE', "%{$input}%")->get();
         $equipSearch = Equipment::where('name', 'LIKE', "%{$input}%")->get();
 
-        return view('search', compact('aiSearch', 'equipSearch'));
+        return view('search', compact('aiSearch', 'equipSearch', 'input'));
     }
 
     public function checkValidNumber($number){
