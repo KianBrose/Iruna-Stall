@@ -15,7 +15,7 @@
                 <div>
                     <table class="table table-condensed table-bordered">
                             <tr>
-                                   <th class="col-md-4">Item: 
+                                   <th class="col-md-4">Name
                             </th>
                             <h3>AI crystal</h3>
                             <th>Color</th>
@@ -33,6 +33,39 @@
                                             </tr>
                             @endforeach
                     </table>
+                    <table class="table table-condensed table-bordered">
+                            <tr>
+                                    <th class="col-md-4">Name
+                             </th>
+                             <h3>Equipment</h3>
+                             <th>ATK</th>
+											<th>DEF</th>
+											<th>Refinement</th>
+											<th>Slots</th>
+											<th>Slot 1</th>
+											<th>Slot 2</th>
+											<th>Ability</th>
+											<th>Ability Lv</th>
+											<th>Price</th>
+											<th>Contact seller</th>
+                                        </tr>
+                            @foreach($equipSearch as $equipSearch)
+                            <tr>
+                                <td>{{ $equipSearch->name }}</td>
+                                <td>{{ $equipSearch->atk }}</td>
+                                <td>{{ $equipSearch->def }}</td>
+                                <td>{{ $equipSearch->refinement}}</td>
+                                <td>{{ $equipSearch->slots }}</td>
+                                <td>{{ $equipSearch->slot1 }}</td>
+                                <td>{{ $equipSearch->slot2 }}</td>
+                                <td>{{ $equipSearch->ability }}</td>
+                                <td>{{ $equipSearch->ability_level }}</td>
+                                <td>{{ $equipSearch->price}}</td>
+                                <td><a href='/user/{{ $equipSearch->owner_id }}''>Facebook</a></td>
+                            </tr>
+                            @endforeach
+                    </table>
+                    
                             
                 </div>
             </div>

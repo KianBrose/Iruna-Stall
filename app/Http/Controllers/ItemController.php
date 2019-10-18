@@ -35,7 +35,7 @@ class ItemController extends Controller
         }
 
         $ai->routes = "item/ai/{$idTobeUsed}";
-        $ai->owner_id = Auth::user()->id;
+        $ai->owner_id = Auth::user()->user_id;
 
         // check quantity
         if($this->checkValidNumber(request('quantity'))){
@@ -70,7 +70,7 @@ class ItemController extends Controller
         $equip = new Equipment();
         $equip->name = request('name');
         $equip->item_id = $idTobeUsed;
-        $equip->owner_id = Auth::user()->id;
+        $equip->owner_id = Auth::user()->user_id;
         $equip->type = request('type');
         $equip->atk = request('atk');
         $equip->def = request('def');
@@ -138,5 +138,17 @@ class ItemController extends Controller
             return false;
         }
         
+    }
+
+    public function checkAbiliyName($abilityName){
+        $ability = array('gentleness', 'provoke', "magic", "mp cost", "intelligent", "strength", "agility", 
+        "evasion", "fixed melee", "fixed magic", "rate cut", "melee defense", "magic defense", "dexterity", "critical",
+        "attack", "quick cool", "quick use", "wind blessing", "earth blessing", "fire blessing", "water blessing");
+        if(in_array($abilityName, $ability)){
+            return true;
+        }
+        else{
+            return false;
+        }
     }
 }

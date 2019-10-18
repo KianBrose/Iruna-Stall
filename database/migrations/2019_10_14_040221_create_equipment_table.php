@@ -17,7 +17,7 @@ class CreateEquipmentTable extends Migration
             $table->bigIncrements('id');
             $table->string('item_id');
             $table->string('category')->default('equipment');
-            $table->unsignedBigInteger('owner_id');
+            $table->string('owner_id');
             $table->string('name');
             $table->string('type');
             $table->integer('atk');
@@ -33,7 +33,7 @@ class CreateEquipmentTable extends Migration
             $table->string('contact');
             $table->timestamps();
 
-            $table->foreign('owner_id')->references('id')->on('users')->onDelete('cascade');
+            //$table->foreign('owner_id')->references('id')->on('users')->onDelete('cascade');
         });
     }
 
