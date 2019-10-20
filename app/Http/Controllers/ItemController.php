@@ -13,7 +13,7 @@ use RealRashid\SweetAlert\Facades\Alert;
 class ItemController extends Controller
 {
     public function createAi(Request $request){
-        $validator = Validator::make($request->all(),[
+        $request->validate([
             'name' => 'required',
             'color' => 'required',
             'price' => 'required',
@@ -39,11 +39,17 @@ class ItemController extends Controller
 
         // check quantity
         if($this->checkValidNumber(request('quantity'))){
-            $ai->quantity = request('quantity');
+            if(request('quantity') > 99){
+                $quantity = 99;
+                $ai->quantity = $quantity;
+            }
+            else{
+                $ai->quantity = request('quantity');
+            }
+            
         }
         else{
-            $validator->errors()->add('field', 'Please only input number');
-            Alert::toast('You have previously entered the wrong format qty', 'warning');
+            Alert::toast('You have previously entered the wrong format quantity', 'warning');
             return redirect('/additem');
         }
 
@@ -122,11 +128,15 @@ class ItemController extends Controller
 
     public function search(Request $request)
     {
-        $input = $request->input('search');
-        $aiSearch = Ai::where('name', 'LIKE', "%{$input}%")->get();
-        $equipSearch = Equipment::where('name', 'LIKE', "%{$input}%")->get();
+        if($request->isMethod('POST')){
+            $input = $request->input('search');
+            $aiSearch = Ai::where('name', 'LIKE', "%{$input}%")->get();
+            $equipSearch = Equipment::where('name', 'LIKE', "%{$input}%")->get();
 
-        return view('search', compact('aiSearch', 'equipSearch', 'input'));
+            return view('search', compact('aiSearch', 'equipSearch', 'input'));
+        }
+        else{
+        }
     }
 
     public function checkValidNumber($number){
@@ -143,7 +153,7 @@ class ItemController extends Controller
     public function checkAbiliyName($abilityName){
         $ability = array('gentleness', 'provoke', "magic", "mp cost", "intelligent", "strength", "agility", 
         "evasion", "fixed melee", "fixed magic", "rate cut", "melee defense", "magic defense", "dexterity", "critical",
-        "attack", "quick cool", "quick use", "wind blessing", "earth blessing", "fire blessing", "water blessing");
+        "attack", "quick cool", "quick use", "wind blessing", "earth blessing", "fire blessing", "water blessing", "striver");
         if(in_array($abilityName, $ability)){
             return true;
         }
