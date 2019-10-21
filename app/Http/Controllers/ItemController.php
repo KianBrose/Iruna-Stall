@@ -13,11 +13,11 @@ use RealRashid\SweetAlert\Facades\Alert;
 class ItemController extends Controller
 {
     public function createAi(Request $request){
-        $validator = Validator::make($request->all(),[
+        $request->validate([
             'name' => 'required',
             'color' => 'required',
             'price' => 'required',
-            'quantity' => 'required'
+            'quantity' => 'required||max:99'
         ]);
         $idTobeUsed = $this->generateID(10);
         $ai = new Ai();
@@ -31,20 +31,26 @@ class ItemController extends Controller
         }
         else{
             Alert::toast('You have previously entered the wrong format');
-            return redirect('/account');
+            return redirect('/additem');
         }
 
         $ai->routes = "item/ai/{$idTobeUsed}";
-        $ai->owner_id = Auth::user()->id;
+        $ai->owner_id = Auth::user()->user_id;
 
         // check quantity
         if($this->checkValidNumber(request('quantity'))){
-            $ai->quantity = request('quantity');
+            if(request('quantity') > 99){
+                $quantity = 99;
+                $ai->quantity = $quantity;
+            }
+            else{
+                $ai->quantity = request('quantity');
+            }
+            
         }
         else{
-            $validator->errors()->add('field', 'Please only input number');
-            Alert::toast('You have previously entered the wrong format qty', 'warning');
-            return redirect('/account');
+            Alert::toast('You have previously entered the wrong format quantity', 'warning');
+            return redirect('/additem');
         }
 
         // check price
@@ -53,25 +59,42 @@ class ItemController extends Controller
         }
         else{
             Alert::toast('You have previously entered the wrong format', 'warning');
-            return redirect('/account');
+            return redirect('/additem');
         }
 
         $ai->contact = request('contact');
         $ai->save();
         Alert::toast('Successfully added an item', 'success');
 
-        return redirect('/account');
+        return redirect('/additem');
         
        
     }
 
-    public function createEquip(){
+    public function createEquip(Request $request){
         $idTobeUsed = $this->generateID(8);
         $equip = new Equipment();
+
+        $request->validate([
+            'name' => 'required',
+            'atk' => 'required||max:400',
+            'def' => 'required||max:100',
+            'type' => 'required',
+            'price' => 'required',
+        ]);
         $equip->name = request('name');
         $equip->item_id = $idTobeUsed;
-        $equip->owner_id = Auth::user()->id;
-        $equip->type = request('type');
+        $equip->owner_id = Auth::user()->user_id;
+        // handle type input
+        if($this->validEquipmentType(request('type'))){
+            
+            $equip->type = request('type');
+        }
+        else{
+            Alert::toast('You have previously entered the wrong input', 'warning');
+            return redirect('/additem');
+        }    
+
         $equip->atk = request('atk');
         $equip->def = request('def');
         $equip->price = request('price');
@@ -86,7 +109,7 @@ class ItemController extends Controller
         $equip->save();
         Alert::toast('Successfully added an item', 'success');
 
-        return redirect('/account');
+        return redirect('/additem');
         
     }
 
@@ -122,12 +145,15 @@ class ItemController extends Controller
 
     public function search(Request $request)
     {
-        
-        $searchResults = (new Search())
-            ->registerModel(Ai::class, 'name')
-            ->search($request->input('search'));
+        if($request->isMethod('POST')){
+            $input = $request->input('search');
+            $aiSearch = Ai::where('name', 'LIKE', "%{$input}%")->get();
+            $equipSearch = Equipment::where('name', 'LIKE', "%{$input}%")->get();
 
-        return view('search', compact('searchResults'));
+            return view('search', compact('aiSearch', 'equipSearch', 'input'));
+        }
+        else{
+        }
     }
 
     public function checkValidNumber($number){
@@ -139,5 +165,27 @@ class ItemController extends Controller
             return false;
         }
         
+    }
+
+    public function validAbiliyName($abilityName){
+        $ability = array('gentleness', 'provoke', "magic", "mp cost", "intelligent", "strength", "agility", 
+        "evasion", "fixed melee", "fixed magic", "rate cut", "melee defense", "magic defense", "dexterity", "critical",
+        "attack", "quick cool", "quick use", "wind blessing", "earth blessing", "fire blessing", "water blessing", "striver");
+        if(in_array($abilityName, $ability)){
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
+
+    public function validEquipmentType($equipment){
+        $equip = array('Weapon', 'Body', 'Additional', 'Special');
+        if(in_array($equipment, $equip)){
+            return true;
+        }
+        else{
+            return false;
+        }
     }
 }

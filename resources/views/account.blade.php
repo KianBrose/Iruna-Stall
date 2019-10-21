@@ -113,7 +113,7 @@
 									<label for="atk">ATK:</label>
 								</td>
 								<td  style="padding-left:10px;">
-									<input type="number" class="form-control iteminput" style="width: 400px" name="atk" id="atk"/>
+								<input type="number" class="form-control iteminput" style="width: 400px" name="atk" id="atk" value="{{ old('atk') }}"/>
 								</td>
 							</tr>
 							<tr>
@@ -160,10 +160,10 @@
 								</td>
 								<td  style="padding-left:10px;">
 									<select name="type" class="form-control2" id="type"> 
-									   <option selected value="0">Weapon</option>
-									   <option value="1">Body</option>
-									   <option value="2">Additional</option>
-									   <option value="3">Special</option>
+									   <option selected>Weapon</option>
+									   <option>Body</option>
+									   <option>Additional</option>
+									   <option>Special</option>
 									</select>
 									<br>
 								</td>
@@ -312,22 +312,25 @@
 								<td>
 									<label for="name">Item Name:</label>
 								</td>
+								
 								<td  style="padding-left:10px;">
-									<input type="text" class="form-control iteminput" style="width: 400px" name="name" id="name"/>
+								<input type="text" class="form-control iteminput" style="width: 400px" name="name" id="name" value="{{ old('name') }}"/>
 								</td>
+								@error('name')
+						<div style="color:red;"> {{ $message }}</div>
+						@enderror
 							</tr>
 							<tr>
 								<td>
 									<label for="quantity">Quantity:</label>
 								</td>
 								<td  style="padding-left:10px;">
-									<input type="text" class="form-control iteminput" style="width: 400px" name="quantity" id="quantity"/>
+									<input type="number" max="99" class="form-control iteminput" style="width: 400px" name="quantity" id="quantity" value="{{ old('quantity') }}"/>
 								</td>
-								@error('field')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
+								@error('quantity')
+							<div style="color:red;"> {{ $message }}</div>
+							@enderror
+		
 							</tr>
 							<tr>
 								<br>
@@ -348,8 +351,11 @@
 									<label for="price">Price:</label>
 								</td>
 								<td  style="padding-left:10px;">
-									<input type="number" class="form-control iteminput" style="width: 400px" name="price" id="price"/>
+									<input type="number" class="form-control iteminput" style="width: 400px" name="price" id="price" value="{{ old('price') }}"/>
 								</td>
+								@error('price')
+						<div style="color:red;"> {{ $message }}</div>
+						@enderror
 							</tr>
 							<tr>
 								<br>
@@ -360,7 +366,7 @@
 									<input type="text" class="form-control iteminput" style="width: 400px" name="contact" id="contact"/>
 								</td>
 							</tr>
-								<br><input type="submit" class="button btn" style="width: 150px" name="search_button" id="search_button" value="Add new item" "/>
+								<br><input type="submit" class="btn btn-success" style="width: 150px" name="search_button" id="search_button" value="Add new item" "/>
 								</form>
 							</div>
 
@@ -391,8 +397,7 @@
 							</tr>
 								<br><input type="submit" class="button btn" style="width: 150px" name="search_button" id="search_button" value="Add new item"/>
 							</div>
-
-
+					
 					
 					<script src="https://code.jquery.com/jquery-3.4.1.min.js"   integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="   crossorigin="anonymous"></script>
 					<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"   integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU="   crossorigin="anonymous"></script>

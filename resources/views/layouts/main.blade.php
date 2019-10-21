@@ -3,7 +3,9 @@
 
 <head>
     <meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="This is the global stall for iruna online">
+    <meta name="keywords" content="Iruna, Iruna online, Iruna global stall, Marketplace, Search">
 	<link ref="stylesheet" href="css/style.css">
 
     <title>Iruna Global Stall</title>

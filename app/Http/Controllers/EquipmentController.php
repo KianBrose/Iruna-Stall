@@ -14,7 +14,7 @@ class EquipmentController extends Controller
         if(Auth::check()){
             $item = Equipment::where('item_id', $id)->firstOrFail();
             
-            if($item->owner_id != Auth::user()->id){
+            if($item->owner_id != Auth::user()->user_id){
                 abort(403);
             }
             else{
@@ -37,7 +37,7 @@ class EquipmentController extends Controller
     public function delete($id){
         if(Auth::check()){
             $item = Equipment::where('item_id', $id)->firstOrFail();
-            if($item->owner_id != Auth::user()->id){
+            if($item->owner_id != Auth::user()->user_id){
                 abort(403);
             }
             else{
