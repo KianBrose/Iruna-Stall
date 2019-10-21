@@ -113,7 +113,7 @@
 									<label for="atk">ATK:</label>
 								</td>
 								<td  style="padding-left:10px;">
-									<input type="number" class="form-control iteminput" style="width: 400px" name="atk" id="atk"/>
+								<input type="number" class="form-control iteminput" style="width: 400px" name="atk" id="atk" value="{{ old('atk') }}"/>
 								</td>
 							</tr>
 							<tr>
@@ -160,10 +160,10 @@
 								</td>
 								<td  style="padding-left:10px;">
 									<select name="type" class="form-control2" id="type"> 
-									   <option selected value="0">Weapon</option>
-									   <option value="1">Body</option>
-									   <option value="2">Additional</option>
-									   <option value="3">Special</option>
+									   <option selected>Weapon</option>
+									   <option>Body</option>
+									   <option>Additional</option>
+									   <option>Special</option>
 									</select>
 									<br>
 								</td>

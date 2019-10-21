@@ -17,7 +17,7 @@ class ItemController extends Controller
             'name' => 'required',
             'color' => 'required',
             'price' => 'required',
-            'quantity' => 'required'
+            'quantity' => 'required||max:99'
         ]);
         $idTobeUsed = $this->generateID(10);
         $ai = new Ai();
@@ -71,13 +71,30 @@ class ItemController extends Controller
        
     }
 
-    public function createEquip(){
+    public function createEquip(Request $request){
         $idTobeUsed = $this->generateID(8);
         $equip = new Equipment();
+
+        $request->validate([
+            'name' => 'required',
+            'atk' => 'required||max:400',
+            'def' => 'required||max:100',
+            'type' => 'required',
+            'price' => 'required',
+        ]);
         $equip->name = request('name');
         $equip->item_id = $idTobeUsed;
         $equip->owner_id = Auth::user()->user_id;
-        $equip->type = request('type');
+        // handle type input
+        if($this->validEquipmentType(request('type'))){
+            
+            $equip->type = request('type');
+        }
+        else{
+            Alert::toast('You have previously entered the wrong input', 'warning');
+            return redirect('/additem');
+        }    
+
         $equip->atk = request('atk');
         $equip->def = request('def');
         $equip->price = request('price');
@@ -150,11 +167,21 @@ class ItemController extends Controller
         
     }
 
-    public function checkAbiliyName($abilityName){
+    public function validAbiliyName($abilityName){
         $ability = array('gentleness', 'provoke', "magic", "mp cost", "intelligent", "strength", "agility", 
         "evasion", "fixed melee", "fixed magic", "rate cut", "melee defense", "magic defense", "dexterity", "critical",
         "attack", "quick cool", "quick use", "wind blessing", "earth blessing", "fire blessing", "water blessing", "striver");
         if(in_array($abilityName, $ability)){
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
+
+    public function validEquipmentType($equipment){
+        $equip = array('Weapon', 'Body', 'Additional', 'Special');
+        if(in_array($equipment, $equip)){
             return true;
         }
         else{
