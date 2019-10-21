@@ -11,6 +11,7 @@ class Ai extends Model
 {
     protected $table = 'ai';
     protected $guarded = [];
+    protected $fillable = ['name', 'price', 'color', 'quantity', 'contact'];
 
     
 }

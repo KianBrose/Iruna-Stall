@@ -25,12 +25,11 @@ class ItemController extends Controller
         $ai->item_id = $idTobeUsed;
         
         // check color 
-        
         if(request('color') == 'Red' || request('color') == 'Blue' || request('color') == 'Green'){
             $ai->color = request('color');
         }
         else{
-            Alert::toast('You have previously entered the wrong format');
+            Alert::toast('You have previously entered the wrong format', 'warning');
             return redirect('/additem');
         }
 
@@ -85,9 +84,9 @@ class ItemController extends Controller
         $equip->name = request('name');
         $equip->item_id = $idTobeUsed;
         $equip->owner_id = Auth::user()->user_id;
+
         // handle type input
         if($this->validEquipmentType(request('type'))){
-            
             $equip->type = request('type');
         }
         else{
@@ -95,8 +94,20 @@ class ItemController extends Controller
             return redirect('/additem');
         }    
 
-        $equip->atk = request('atk');
-        $equip->def = request('def');
+        if($this->checkValidNumber(request('atk'))){
+            $equip->atk = request('atk');
+        }
+        else{
+            $this->showWarningMessage();
+        }
+
+        if($this->checkValidNumber(request('def'))){
+            $equip->def = request('def');
+        }
+        else{
+            $this->showWarningMessage();
+        }
+        
         $equip->price = request('price');
         $equip->slots = request('equipslotamount');
         $equip->slot1 = request('slot1');
@@ -188,4 +199,21 @@ class ItemController extends Controller
             return false;
         }
     }
+
+    public function validColor($color){
+        if($color == 'Red' || $color == 'Blue' || $color == 'Green'){
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
+
+    public function showWarningMessage(){
+        Alert::toast('You have previously entered the wrong input', 'warning');
+        return redirect('/additem');
+    }
+
+
+
 }
