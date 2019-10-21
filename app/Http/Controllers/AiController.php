@@ -32,12 +32,18 @@ class AiController extends Controller
             }
             else{
                 //$item->name = request('name');
-                $item->price = request('price');
-                $item->color = request('color');
-                $item->routes = "item/ai/{$id}";
-                $item->owner_id = Auth::user()->user_id;
-                $item->quantity = request('quantity');
+                if($this->validColor(request('color'))){
+                    $item->color = request('color');
+                }
+                if($this->validNumber(request('price'))){
+                    $item->price = request('price');
+                }
+                if($this->validNumber(request('quantity'))){
+                    $item->quantity = request('quantity');
+                }
+                
                 $item->save();
+
                 Alert::toast('Successfully edited an item', 'success');
                 return redirect('/viewitem');
             }
@@ -63,6 +69,26 @@ class AiController extends Controller
             }
 
         }
+    }
+
+    public function validColor($color){
+        if($color == 'Red' || $color == 'Blue' || $color == 'Green'){
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
+
+    public function validNumber($number){
+        $number = (string) $number;
+        if(ctype_digit($number)){
+            return true;
+        }
+        else{
+            return false;
+        }
+        
     }
     
 }

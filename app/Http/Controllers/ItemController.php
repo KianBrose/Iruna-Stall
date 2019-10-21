@@ -94,6 +94,7 @@ class ItemController extends Controller
             return redirect('/additem');
         }    
 
+        // check atk
         if($this->checkValidNumber(request('atk'))){
             $equip->atk = request('atk');
         }
@@ -101,14 +102,23 @@ class ItemController extends Controller
             $this->showWarningMessage();
         }
 
+        // check def
         if($this->checkValidNumber(request('def'))){
             $equip->def = request('def');
         }
         else{
             $this->showWarningMessage();
         }
+
+        // check price
+        if($this->checkValidNumber(request('price'))){
+            $equip->price = request('price');
+        }
+        else{
+            $this->showWarningMessage();
+        }
+
         
-        $equip->price = request('price');
         $equip->slots = request('equipslotamount');
         $equip->slot1 = request('slot1');
         $equip->slot2 = request('slot2');
