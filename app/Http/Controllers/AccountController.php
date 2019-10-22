@@ -43,4 +43,8 @@ class AccountController extends Controller
         $item = Items::where('owner_id', Auth::user()->user_id)->get();
         return view('viewitem', compact('aiitem', 'equipitem', 'item'));
     }
+
+    public function show(){
+        return view('accsettings');
+    }
 }

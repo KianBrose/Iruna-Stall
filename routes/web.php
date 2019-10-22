@@ -23,6 +23,7 @@ Route::get('/about', function () {
 });
 
 Route::post('/search', 'ItemController@search')->name('search');
+Route::get('/account', 'AccountController@show');
 
 /**
  * 
