@@ -78,7 +78,7 @@ class ItemController extends Controller
         $request->validate([
             'name' => 'required|alpha',
             'atk' => 'required|max:400|integer|min:0',
-            'def' => 'required|max:100|integer|min:0',
+            'def' => 'required|max:70|integer|min:0',
             'type' => 'required|alpha',
             'slot1' => 'required',
             'slot2' => 'required',
@@ -200,8 +200,9 @@ class ItemController extends Controller
             $input = $request->input('search');
             $aiSearch = Ai::where('name', 'LIKE', "%{$input}%")->get();
             $equipSearch = Equipment::where('name', 'LIKE', "%{$input}%")->get();
+            $itemSearch = Items::where('name', 'LIKE', "%{$input}%")->get();
 
-            return view('search', compact('aiSearch', 'equipSearch', 'input'));
+            return view('search', compact('aiSearch', 'equipSearch', 'itemSearch', 'input'));
         }
         else{
         }

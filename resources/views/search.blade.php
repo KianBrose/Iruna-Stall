@@ -4,6 +4,8 @@
 <div class="container">
     <div class="row" >
         <div class="col-md-7 offset-md-3" >
+            <br>
+            <br>
 <form class="form-horizontal" name="form1" id="form1" action="/search" method="POST">
     @csrf
     <div class="row">
@@ -51,13 +53,13 @@
                                             <th>Quantity</th>
 											<th>Contact Seller</th>
                                         </tr>
-                            @foreach($aiSearch as $aiSearch)
+                            @foreach($aiSearch as $ai)
                                         <tr>
-                                                <td>{{ $aiSearch->name }}</td>
-                                                <td>{{ $aiSearch->color }}</td>
-                                                <td>{{ $aiSearch->price }}</td>
-                                                <td>{{ $aiSearch->quantity }}</td>
-                                                <td><a href='/user/{{$aiSearch->owner_id}}'>Facebook</a></td>
+                                                <td>{{ $ai->name }}</td>
+                                                <td>{{ $ai->color }}</td>
+                                                <td>{{ number_format($ai->price) }} </td>
+                                                <td>{{ $ai->quantity }}</td>
+                                                <td><a href='/user/{{$ai->owner_id}}'>Facebook</a></td>
                                             </tr>
                             @endforeach
                     </table>
@@ -93,7 +95,24 @@
                             </tr>
                             @endforeach
                     </table>
-                    
+                    <table class="table table-condensed table-bordered">
+                            <tr>
+                                   <th class="col-md-4">Name
+                            </th>
+                            <h3>Item</h3>
+                                            <th>Price</th>
+                                            <th>Quantity</th>
+											<th>Contact Seller</th>
+                                        </tr>
+                            @foreach($itemSearch as $itemSearch)
+                                        <tr>
+                                                <td>{{ $itemSearch->name }}</td>
+                                                <td>{{ number_format($itemSearch->price) }} </td>
+                                                <td>{{ $itemSearch->quantity }}</td>
+                                                <td><a href='/user/{{$itemSearch->owner_id}}'>Facebook</a></td>
+                                            </tr>
+                            @endforeach
+                    </table>
                             
                 </div>
             </div>
