@@ -23,6 +23,7 @@ Route::get('/about', function () {
 });
 
 Route::post('/search', 'ItemController@search')->name('search');
+Route::get('/account', 'AccountController@show');
 
 /**
  * 
@@ -56,4 +57,14 @@ Route::get('/item/equip/{id}', 'EquipmentController@show');
 Route::get('/item/equip/{id}/edit', 'EquipmentController@edit')->middleware('isAdmin');
 
 
+/**
+ * 
+ * 
+ * Item section
+ */
+Route::post('/createItem', 'ItemController@createItem')->middleware('auth');
+Route::patch('/item/items/{id}/update', 'ItemsController@update')->middleware('auth');
+Route::delete('/item/items/{id}/delete', 'ItemsController@delete')->middleware('auth');
+Route::get('/item/items/{id}', 'ItemsController@show');
+Route::get('/item/items/{id}/edit', 'ItemsController@edit')->middleware('isAdmin');
 

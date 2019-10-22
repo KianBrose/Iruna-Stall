@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Ai;
 use App\Equipment;
+use App\Items;
 use Auth;
 use Illuminate\Support\Facades\Validator;
 use Spatie\Searchable\Search;
@@ -14,10 +15,10 @@ class ItemController extends Controller
 {
     public function createAi(Request $request){
         $request->validate([
-            'name' => 'required',
-            'color' => 'required',
-            'price' => 'required',
-            'quantity' => 'required||max:99'
+            'name' => 'required|alpha',
+            'color' => 'required|alpha',
+            'price' => 'required|integer|min:1',
+            'quantity' => 'required||max:99|min:1'
         ]);
         $idTobeUsed = $this->generateID(10);
         $ai = new Ai();
@@ -25,12 +26,11 @@ class ItemController extends Controller
         $ai->item_id = $idTobeUsed;
         
         // check color 
-        
         if(request('color') == 'Red' || request('color') == 'Blue' || request('color') == 'Green'){
             $ai->color = request('color');
         }
         else{
-            Alert::toast('You have previously entered the wrong format');
+            Alert::toast('You have previously entered the wrong format', 'warning');
             return redirect('/additem');
         }
 
@@ -76,18 +76,21 @@ class ItemController extends Controller
         $equip = new Equipment();
 
         $request->validate([
-            'name' => 'required',
-            'atk' => 'required||max:400',
-            'def' => 'required||max:100',
-            'type' => 'required',
-            'price' => 'required',
+            'name' => 'required|alpha',
+            'atk' => 'required|max:400|integer|min:0',
+            'def' => 'required|max:70|integer|min:0',
+            'type' => 'required|alpha',
+            'slot1' => 'required',
+            'slot2' => 'required',
+            'refinement' => 'required|integer|max:9|min:0',
+            'price' => 'required|integer|min:0',
         ]);
         $equip->name = request('name');
         $equip->item_id = $idTobeUsed;
         $equip->owner_id = Auth::user()->user_id;
+
         // handle type input
         if($this->validEquipmentType(request('type'))){
-            
             $equip->type = request('type');
         }
         else{
@@ -95,10 +98,36 @@ class ItemController extends Controller
             return redirect('/additem');
         }    
 
-        $equip->atk = request('atk');
-        $equip->def = request('def');
-        $equip->price = request('price');
-        $equip->slots = request('equipslotamount');
+        // check atk
+        if(request('atk') > 400){
+            $equip->atk = 400;
+        }
+        else{
+            $equip->atk = request('atk');
+        }
+
+        // check def
+        if(request('def') > 70){
+            $equip->def = 70;
+        }
+        else{
+            $equip->def = request('def');
+        }
+        // check price
+        if($this->checkValidNumber(request('price'))){
+            $equip->price = request('price');
+        }
+        else{
+            $this->showWarningMessage();
+        }
+        if(request('equipslotamount') > 9){
+            $slot = 9;
+            $equip->slots = $slot;
+        }
+        else{
+            $equip->slots = request('equipslotamount');
+        }
+
         $equip->slot1 = request('slot1');
         $equip->slot2 = request('slot2');
         $equip->ability = request('ability');
@@ -111,6 +140,28 @@ class ItemController extends Controller
 
         return redirect('/additem');
         
+    }
+
+    public function createItem(Request $request){
+        $request->validate([
+            'name' => 'required|alpha',
+            'quantity' => 'required|integer|max:99',
+            'price' => 'required|integer'
+        ]);
+        $items = new Items();
+        $item_id = $this->generateID(9);
+        $items->owner_id = Auth::user()->user_id;
+        $items->name = request('name');
+        $items->price = request('price');
+        $items->quantity = request('quantity');
+        $items->routes = "item/items/{$item_id}";
+        $items->item_id = $item_id;
+        $items->contact = auth()->user()->name;
+        $items->save();
+        Alert::toast('Successfully added an item', 'success');
+
+        return redirect('/additem');
+
     }
 
     public function addItem(){
@@ -130,7 +181,7 @@ class ItemController extends Controller
     }
 
     public function checkID($id, $length){
-        if(Ai::where('item_id', $id)->first()){
+        if(Ai::where('item_id', $id)->first() || Equipment::where('item_id', $id)->first() || Items::where('item_id', $id)->first()){
             $this->generateID($length);
         }
         else{
@@ -149,8 +200,9 @@ class ItemController extends Controller
             $input = $request->input('search');
             $aiSearch = Ai::where('name', 'LIKE', "%{$input}%")->get();
             $equipSearch = Equipment::where('name', 'LIKE', "%{$input}%")->get();
+            $itemSearch = Items::where('name', 'LIKE', "%{$input}%")->get();
 
-            return view('search', compact('aiSearch', 'equipSearch', 'input'));
+            return view('search', compact('aiSearch', 'equipSearch', 'itemSearch', 'input'));
         }
         else{
         }
@@ -188,4 +240,21 @@ class ItemController extends Controller
             return false;
         }
     }
+
+    public function validColor($color){
+        if($color == 'Red' || $color == 'Blue' || $color == 'Green'){
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
+
+    public function showWarningMessage(){
+        Alert::toast('You have previously entered the wrong input', 'warning');
+        return redirect('/additem');
+    }
+
+
+
 }

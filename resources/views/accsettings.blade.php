@@ -14,6 +14,7 @@
 </head>
 
 <body>
+        @include('cookieConsent::index')
 <div id="app">
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <div class="container">
@@ -90,19 +91,19 @@
 					<form method="post" action="accsettings.php">
 						<div class="input-group">
 							<label>Old Password</label>
-							<input class="form-control" type="password" name="password_old">
+							<input class="form-control" type="password" name="password_old" style="margin-left:20px;">
 						</div>
 						<div class="input-group">
 							<label>New Password</label>
-							<input class="form-control" type="password" name="password_1">
+							<input class="form-control" type="password" name="password_1" style="margin-left:13px;">
 						</div>
 						<div class="input-group">
 							<label>Confirm New Password</label>
-							<input class="form-control" type="password" name="password_2">
+							<input class="form-control" type="password" name="password_2" style="margin-left:10px;">
 						</div>
 						<div class="input-group">
 							<br>
-							<button type="submit" class="btn btn-default btn-block" name="user_changepass">Change Password</button>
+							<button type="submit" class="btn btn-success" name="user_changepass">Change Password</button>
 						</div>
 					</form> 
 					<hr/>
@@ -110,15 +111,15 @@
 					<form method="post" action="accsettings.php">
 						<div class="input-group">
 							<label>Email</label>
-							<input class="form-control" type="text" name="email">
+							<input class="form-control" type="text" name="email" style="margin-left:45px;">
 						</div>
 						<div class="input-group">
 							<label>Password</label>
-							<input class="form-control" type="password" name="password_1">
+							<input class="form-control" type="password" name="password_1" style="margin-left:14px;">
 						</div>
 						<div class="input-group">
 							<br>
-							<button type="submit" class="btn btn-default btn-block" name="user_delacc" style="color:red;"><b>DELETE ACCOUNT</b></button>
+							<button type="submit" class="btn btn-danger"style="margin-top: 10px;" name="user_delacc"><b>DELETE ACCOUNT</b></button>
 						</div>
 					</form> 
 				</div>
@@ -135,7 +136,7 @@
 
                     <div>
                         <h4>Useful Links</h4></div>
-                    <ul class="decoration_none">
+                    <ul class="decoration_none" style="font-size: 12px;">
                         <li><a href="http://iruna-online.com/">Official Iruna Website</a></li>
                         <li><a href="http://irunaonline.boards.net/">Iruna Boards Forum</a></li>
                         <li><a href="http://iruna-online.weebly.com/">Iruna Weebly</a></li>

@@ -11,7 +11,8 @@
     <!-- bootstrap css -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
+	<link href="css/style.css" rel="stylesheet">
 </head>
 
 <body>
@@ -107,6 +108,10 @@
 								<td  style="padding-left:10px;">
 									<input type="text" class="form-control iteminput" style="width: 400px" name="name" id="name"/>
 								</td>
+								@error('name')
+						<div style="color:red;"> {{ $message }}</div>
+						@enderror
+
 							</tr>
 							<tr>
 								<td>
@@ -115,6 +120,9 @@
 								<td  style="padding-left:10px;">
 								<input type="number" class="form-control iteminput" style="width: 400px" name="atk" id="atk" value="{{ old('atk') }}"/>
 								</td>
+								@error('atk')
+								<div style="color:red;"> {{ $message }}</div>
+								@enderror
 							</tr>
 							<tr>
 								<td>
@@ -123,6 +131,9 @@
 								<td  style="padding-left:10px;">
 									<input type="number" class="form-control iteminput" style="width: 400px" name="def" id="def"/>
 								</td>
+								@error('def')
+								<div style="color:red;"> {{ $message }}</div>
+								@enderror
 							</tr>
 							<tr>
 								<br>
@@ -249,12 +260,14 @@
 							</div>
 
 							<div id="item" style="display:none;">
+								<form action="/createItem" method="POST">
+									@csrf
 							<tr>
 								<td>
 									<label for="Test">Item Name:</label>
 								</td>
 								<td  style="padding-left:10px;">
-									<input type="text" class="form-control iteminput" style="width: 400px" name="itemname" id="itemname"/>
+									<input type="text" class="form-control iteminput" style="width: 400px" name="name" id="itemname"/>
 								</td>
 							</tr>
 							<tr>
@@ -262,7 +275,7 @@
 									<label for="Test">Quantity:</label>
 								</td>
 								<td  style="padding-left:10px;">
-									<input type="text" class="form-control iteminput" style="width: 400px" name="itemqty" id="itemqty"/>
+									<input type="number" class="form-control iteminput" style="width: 400px" name="quantity" id="itemqty"/>
 								</td>
 							</tr>
 							<tr>
@@ -270,11 +283,12 @@
 									<label for="Test">Price(per piece):</label>
 								</td>
 								<td  style="padding-left:10px;">
-									<input type="text" class="form-control iteminput" style="width: 400px" name="itemprice" id="itemprice"/>
+									<input type="number" class="form-control iteminput" style="width: 400px" name="price" id="itemprice"/>
 								</td>
 							</tr>
 								<br><input type="submit" class="button btn" style="width: 150px" name="search_button" id="search_button" value="Add new item" onclick="window.location.href='/additem.php'"/>
 							</div>
+						</form>
 
 							<div id="xtal" style="display:none;">
 							<tr>
@@ -344,7 +358,9 @@
 									   <option>Blue</option>
 									</select>
 								</td>
+								
 							</tr>
+
 							<tr>
 								<br>
 								<td>
@@ -526,7 +542,7 @@
 
                     <div>
                         <h4>Useful Links</h4></div>
-                    <ul class="decoration_none">
+                    <ul class="decoration_none" style="font-size: 12px;">
                         <li><a href="http://iruna-online.com/">Official Iruna Website</a></li>
                         <li><a href="http://irunaonline.boards.net/">Iruna Boards Forum</a></li>
                         <li><a href="http://iruna-online.weebly.com/">Iruna Weebly</a></li>

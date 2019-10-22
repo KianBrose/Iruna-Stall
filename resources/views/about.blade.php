@@ -108,8 +108,8 @@
 
 
                     <div>
-                        <h4>Useful Links</h4></div>
-                    <ul class="decoration_none">
+                        <h5>Useful Links</h5></div>
+                    <ul class="decoration_none" style="font-size: 12px;">
                         <li><a href="http://iruna-online.com/">Official Iruna Website</a></li>
                         <li><a href="http://irunaonline.boards.net/">Iruna Boards Forum</a></li>
                         <li><a href="http://iruna-online.weebly.com/">Iruna Weebly</a></li>
