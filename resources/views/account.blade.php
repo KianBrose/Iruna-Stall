@@ -11,7 +11,8 @@
     <!-- bootstrap css -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
+	<link href="css/style.css" rel="stylesheet">
 </head>
 
 <body>
@@ -541,7 +542,7 @@
 
                     <div>
                         <h4>Useful Links</h4></div>
-                    <ul class="decoration_none">
+                    <ul class="decoration_none" style="font-size: 12px;">
                         <li><a href="http://iruna-online.com/">Official Iruna Website</a></li>
                         <li><a href="http://irunaonline.boards.net/">Iruna Boards Forum</a></li>
                         <li><a href="http://iruna-online.weebly.com/">Iruna Weebly</a></li>
