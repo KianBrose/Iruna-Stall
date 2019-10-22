@@ -36,7 +36,7 @@
                                                 <option>Blue</option>
                                             </select>
                                         </td>
-                                    <td><input style='width: 120px; font-size: 12px;' class="price" required type='text' name='price' value='{{ $aiitem->price }}'></td>
+                                    <td><input style='width: 120px; font-size: 12px;' class="price" required type='text' name='price' value='{{ number_format($aiitem->price) }}'></td>
                                     
                                         <td><input type='submit' class='btn btn-success' style='font-size: 10px;' name='search_button' id='search_button' value='Change'/></td>
                                     </form>
@@ -126,7 +126,7 @@
 									<th>Price</th>
                                 </tr>
                                 @foreach ($item as $item)
-                                <form action="item/items/update/{{ $item->item_id }}" method="POST">
+                                <form action="item/items/{{ $item->item_id }}/update" method="POST">
                                     @method('patch')
                                     @csrf
                                 <tr>
