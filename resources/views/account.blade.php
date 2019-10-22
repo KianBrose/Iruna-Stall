@@ -107,6 +107,10 @@
 								<td  style="padding-left:10px;">
 									<input type="text" class="form-control iteminput" style="width: 400px" name="name" id="name"/>
 								</td>
+								@error('name')
+						<div style="color:red;"> {{ $message }}</div>
+						@enderror
+
 							</tr>
 							<tr>
 								<td>
@@ -115,6 +119,9 @@
 								<td  style="padding-left:10px;">
 								<input type="number" class="form-control iteminput" style="width: 400px" name="atk" id="atk" value="{{ old('atk') }}"/>
 								</td>
+								@error('atk')
+								<div style="color:red;"> {{ $message }}</div>
+								@enderror
 							</tr>
 							<tr>
 								<td>
@@ -123,6 +130,9 @@
 								<td  style="padding-left:10px;">
 									<input type="number" class="form-control iteminput" style="width: 400px" name="def" id="def"/>
 								</td>
+								@error('def')
+								<div style="color:red;"> {{ $message }}</div>
+								@enderror
 							</tr>
 							<tr>
 								<br>
@@ -249,12 +259,14 @@
 							</div>
 
 							<div id="item" style="display:none;">
+								<form action="/createItem" method="POST">
+									@csrf
 							<tr>
 								<td>
 									<label for="Test">Item Name:</label>
 								</td>
 								<td  style="padding-left:10px;">
-									<input type="text" class="form-control iteminput" style="width: 400px" name="itemname" id="itemname"/>
+									<input type="text" class="form-control iteminput" style="width: 400px" name="name" id="itemname"/>
 								</td>
 							</tr>
 							<tr>
@@ -262,7 +274,7 @@
 									<label for="Test">Quantity:</label>
 								</td>
 								<td  style="padding-left:10px;">
-									<input type="text" class="form-control iteminput" style="width: 400px" name="itemqty" id="itemqty"/>
+									<input type="number" class="form-control iteminput" style="width: 400px" name="quantity" id="itemqty"/>
 								</td>
 							</tr>
 							<tr>
@@ -270,11 +282,12 @@
 									<label for="Test">Price(per piece):</label>
 								</td>
 								<td  style="padding-left:10px;">
-									<input type="text" class="form-control iteminput" style="width: 400px" name="itemprice" id="itemprice"/>
+									<input type="number" class="form-control iteminput" style="width: 400px" name="price" id="itemprice"/>
 								</td>
 							</tr>
 								<br><input type="submit" class="button btn" style="width: 150px" name="search_button" id="search_button" value="Add new item" onclick="window.location.href='/additem.php'"/>
 							</div>
+						</form>
 
 							<div id="xtal" style="display:none;">
 							<tr>

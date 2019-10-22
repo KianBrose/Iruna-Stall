@@ -16,6 +16,7 @@ class CreateItemTable extends Migration
         Schema::create('item', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('owner_id');
+            $table->string('item_id');
             $table->string('category')->default('item');
             $table->string('name');
             $table->integer('quantity');
