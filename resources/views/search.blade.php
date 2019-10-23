@@ -47,7 +47,7 @@
                             <tr>
                                    <th class="col-md-4">Name
                             </th>
-                            <h3>AI crystal</h3>
+                            <h4>AI crystal</h4>
                             <th>Color</th>
                                             <th>Price</th>
                                             <th>Quantity</th>
@@ -67,7 +67,7 @@
                             <tr>
                                     <th class="col-md-4">Name
                              </th>
-                             <h3>Equipment</h3>
+                             <h4>Equipment</h4>
                              <th>ATK</th>
 											<th>DEF</th>
 											<th>Refinement</th>
@@ -90,7 +90,7 @@
                                 <td>{{ $equipSearch->slot2 }}</td>
                                 <td>{{ $equipSearch->ability }}</td>
                                 <td>{{ $equipSearch->ability_level }}</td>
-                                <td>{{ $equipSearch->price}}</td>
+                                <td>{{ number_format($equipSearch->price) }}</td>
                                 <td><a href='/user/{{ $equipSearch->owner_id }}''>Facebook</a></td>
                             </tr>
                             @endforeach
@@ -99,7 +99,7 @@
                             <tr>
                                    <th class="col-md-4">Name
                             </th>
-                            <h3>Item</h3>
+                            <h4>Item</h4>
                                             <th>Price</th>
                                             <th>Quantity</th>
 											<th>Contact Seller</th>
@@ -113,6 +113,25 @@
                                             </tr>
                             @endforeach
                     </table>
+                    <table class="table table-condensed table-bordered">
+                        <tr>
+                               <th class="col-md-4">Name
+                        </th>
+                        <h4>Crystas</h4>
+                                        <th>Price</th>
+                                            <th>Quantity</th>
+											<th>Contact Seller</th>
+                                        </tr>
+                            @foreach($xtalSearch as $itemSearch)
+                                        <tr>
+                                                <td>{{ $itemSearch->name }}</td>
+                                                <td>{{ number_format($itemSearch->price) }} </td>
+                                                <td>{{ $itemSearch->quantity }}</td>
+                                                <td><a href='/user/{{$itemSearch->owner_id}}'>Facebook</a></td>
+                                            </tr>
+                            @endforeach
+                    
+
                             
                 </div>
             </div>

@@ -206,8 +206,9 @@ class ItemController extends Controller
             $aiSearch = Ai::where('name', 'LIKE', "%{$input}%")->get();
             $equipSearch = Equipment::where('name', 'LIKE', "%{$input}%")->get();
             $itemSearch = Items::where('name', 'LIKE', "%{$input}%")->get();
+            $xtalSearch = Xtal::where('name', 'LIKE', "%{$input}%")->get();
 
-            return view('search', compact('aiSearch', 'equipSearch', 'itemSearch', 'input'));
+            return view('search', compact('aiSearch', 'equipSearch', 'itemSearch', 'xtalSearch', 'input'));
         }
         else{
         }
