@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Ai;
 use App\Equipment;
 use App\Items;
+use App\Xtal;
 use Auth;
 use Illuminate\Support\Facades\Validator;
 use Spatie\Searchable\Search;
@@ -38,29 +39,12 @@ class ItemController extends Controller
         $ai->owner_id = Auth::user()->user_id;
 
         // check quantity
-        if($this->checkValidNumber(request('quantity'))){
-            if(request('quantity') > 99){
-                $quantity = 99;
-                $ai->quantity = $quantity;
-            }
-            else{
-                $ai->quantity = request('quantity');
-            }
-            
-        }
-        else{
-            Alert::toast('You have previously entered the wrong format quantity', 'warning');
-            return redirect('/additem');
-        }
+    
+        $ai->quantity = request('quantity');
+           
 
         // check price
-        if($this->checkValidNumber(request('price'))){
-            $ai->price = request('price');
-        }
-        else{
-            Alert::toast('You have previously entered the wrong format', 'warning');
-            return redirect('/additem');
-        }
+        $ai->price = request('price');
 
         $ai->contact = request('contact');
         $ai->save();
@@ -149,7 +133,7 @@ class ItemController extends Controller
             'price' => 'required|integer'
         ]);
         $items = new Items();
-        $item_id = $this->generateID(9);
+        $item_id = $this->generateID(12);
         $items->owner_id = Auth::user()->user_id;
         $items->name = request('name');
         $items->price = request('price');
@@ -162,6 +146,27 @@ class ItemController extends Controller
 
         return redirect('/additem');
 
+    }
+
+    public function createXtal(Request $request){
+        $request->validate([
+            'name' => 'required|alpha',
+            'quantity' => 'required|integer|max:99',
+            'price' => 'required|integer'
+        ]);
+        $xtal = new Xtal();
+        $item_id = $this->generateID(7);
+        $xtal->name = request('name');
+        $xtal->owner_id = Auth::user()->user_id;
+        $xtal->price = request('price');
+        $xtal->quantity = request('quantity');
+        $xtal->routes = "item/xtal/{$item_id}";
+        $xtal->item_id = $item_id;
+        $xtal->contact = auth()->user()->name;
+        $xtal->save();
+        Alert::toast('Successfully added an item', 'success');
+
+        return redirect('/additem');
     }
 
     public function addItem(){
@@ -181,7 +186,7 @@ class ItemController extends Controller
     }
 
     public function checkID($id, $length){
-        if(Ai::where('item_id', $id)->first() || Equipment::where('item_id', $id)->first() || Items::where('item_id', $id)->first()){
+        if(Ai::where('item_id', $id)->first() || Equipment::where('item_id', $id)->first() || Items::where('item_id', $id)->first() || Xtal::where('item_id', $id)->first()){
             $this->generateID($length);
         }
         else{

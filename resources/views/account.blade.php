@@ -286,17 +286,19 @@
 									<input type="number" class="form-control iteminput" style="width: 400px" name="price" id="itemprice"/>
 								</td>
 							</tr>
-								<br><input type="submit" class="button btn" style="width: 150px" name="search_button" id="search_button" value="Add new item" onclick="window.location.href='/additem.php'"/>
+								<br><input type="submit" class="btn btn-success" style="width: 150px" name="search_button" id="search_button" value="Add new item" onclick="window.location.href='/additem.php'"/>
 							</div>
 						</form>
 
 							<div id="xtal" style="display:none;">
+								<form action="/createXtal" method="POST">
+									@csrf
 							<tr>
 								<td>
 									<label for="Test">Xtal Name:</label>
 								</td>
 								<td  style="padding-left:10px;">
-									<input type="text" class="form-control iteminput" style="width: 400px" name="xtalname" id="xtalname"/>
+									<input type="text" class="form-control iteminput" style="width: 400px" name="name" id="name"/>
 								</td>
 							</tr>
 							<tr>
@@ -304,19 +306,20 @@
 									<label for="Test">Quantity:</label>
 								</td>
 								<td  style="padding-left:10px;">
-									<input type="text" class="form-control iteminput" style="width: 400px" name="xtalqty" id="xtalqty"/>
+									<input type="number" max="99" class="form-control iteminput" style="width: 400px" name="quantity" id="quantity"/>
 								</td>
+							
 							</tr>
 							<tr>
 								<td>
 									<label for="Test">Price:</label>
 								</td>
 								<td  style="padding-left:10px;">
-									<input type="number" class="form-control iteminput" style="width: 400px" name="price" id="xtalprice"/>
+									<input type="number" min='1' class="form-control iteminput" style="width: 400px" name="price" id="xtalprice"/>
 								</td>
 							</tr>
-								<br><input type="submit" class="button btn" style="width: 150px" name="search_button" id="search_button" value="Add new item"/>
-						
+								<br><input type="submit" class="btn btn-success" style="width: 150px" name="search_button" id="search_button" value="Add new item"/>
+								</form>
 							</div>
 						
 							<div id="al" style="display:none;">
@@ -411,7 +414,7 @@
 									<input type="number" class="form-control iteminput" style="width: 400px" name="relicprice" id="relicprice"/>
 								</td>
 							</tr>
-								<br><input type="submit" class="button btn" style="width: 150px" name="search_button" id="search_button" value="Add new item"/>
+								<br><input type="submit" class="btn btn-success" style="width: 150px" name="search_button" id="search_button" value="Add new item"/>
 							</div>
 					
 					
