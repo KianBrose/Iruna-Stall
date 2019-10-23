@@ -559,7 +559,9 @@
     </div>
     @include('sweetalert::alert')
 	<!-- bootstrap js -->
-	
+<script type="text/javascript" id="cookieinfo"
+    src="//cookieinfoscript.com/js/cookieinfo.min.js">
+</script>
 </body>
 
 </html>
