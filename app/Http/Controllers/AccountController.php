@@ -7,6 +7,7 @@ use App\Ai;
 use Illuminate\Http\Request;
 use App\Equipment;
 use App\Items;
+use App\Xtal;
 use Auth;
 
 class AccountController extends Controller
@@ -41,7 +42,8 @@ class AccountController extends Controller
         $aiitem = Ai::where('owner_id', Auth::user()->user_id)->get();
         $equipitem = Equipment::where('owner_id', Auth::user()->user_id)->get();
         $item = Items::where('owner_id', Auth::user()->user_id)->get();
-        return view('viewitem', compact('aiitem', 'equipitem', 'item'));
+        $xtal = Xtal::where('owner_id', Auth::user()->user_id)->get();
+        return view('viewitem', compact('aiitem', 'equipitem', 'item', 'xtal'));
     }
 
     public function show(){

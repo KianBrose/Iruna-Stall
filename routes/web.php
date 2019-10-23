@@ -68,3 +68,11 @@ Route::delete('/item/items/{id}/delete', 'ItemsController@delete')->middleware('
 Route::get('/item/items/{id}', 'ItemsController@show');
 Route::get('/item/items/{id}/edit', 'ItemsController@edit')->middleware('isAdmin');
 
+/**
+ * 
+ * Xtal section
+ * 
+ */
+Route::post('/createXtal', 'ItemController@createXtal')->middleware('auth');
+Route::patch('/item/xtal/{id}/update', 'XtalController@update')->middleware('auth');
+Route::delete('/item/xtal/{id/delete', 'XtalController@delete')->middleware('auth');
