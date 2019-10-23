@@ -42,8 +42,8 @@ Route::get('/viewitem', 'AccountController@view')->middleware('verified');
 Route::post('/createAi', 'ItemController@createAi')->middleware('verified');
 Route::get('/item/ai/{id}', 'AiController@show')->name('Ai');
 Route::get('/item/ai/{id}/edit', 'AiController@edit')->middleware('isAdmin');
-Route::patch('/updateAi/{id}', 'AiController@update')->middleware('verfied');
-Route::delete('/item/ai/{id}/delete', 'AiController@delete')->middleware('verfied');
+Route::patch('/updateAi/{id}', 'AiController@update')->middleware('verified');
+Route::delete('/item/ai/{id}/delete', 'AiController@delete')->middleware('verified');
 
 
 /**
