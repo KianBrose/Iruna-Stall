@@ -91,7 +91,7 @@
                                 <td>{{ $equipSearch->ability }}</td>
                                 <td>{{ $equipSearch->ability_level }}</td>
                                 <td>{{ number_format($equipSearch->price) }}</td>
-                                <td><a href='/user/{{ $equipSearch->owner_id }}''>Facebook</a></td>
+                                <td><a href='/user/{{ $equipSearch->owner_id }}'>Facebook</a></td>
                             </tr>
                             @endforeach
                     </table>
