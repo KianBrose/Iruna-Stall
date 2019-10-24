@@ -95,16 +95,16 @@
                             </div>
 
                             <div class="col-md-3 col-xs-3">
-							     <div class="form-group">
-							     	<select id="searchtype" class="form-control" name="searchtype">
-								    	<option value="equipment" selected="selected">Equipment</option>
-									   <option value="items">Items</option>
-									   <option value="xtal">Xtal</option>
-									   <option value="al">AL crystal</option>
-									   <option value="relic">Relic</option>
-									   <option value="ability">Ability</option>
-								    </select>
-							     </div>
+                                 <div class="form-group">
+                                    <select id="searchtype" class="form-control" name="searchtype">
+                                        <option value="equipment" selected="selected">Equipment</option>
+                                       <option value="items">Items</option>
+                                       <option value="xtal">Xtal</option>
+                                       <option value="al">AL crystal</option>
+                                       <option value="relic">Relic</option>
+                                       <option value="ability">Ability</option>
+                                    </select>
+                                 </div>
                             </div>
                             <div class="col-md-2 col-xs-3">
                                 <input type="button" class="btn btn-default btn-block" name="search_button" id="search_button" value="Search">
@@ -112,32 +112,12 @@
                         </div>
                     </form>
                     <div class="row divider" role="separator" ></div>
-
                     <p style="font-size: 14px;">Welcome to our Iruna Global Stall</p>
 					<p style="font-size: 14px;">Enter the item name, select type and press search</p>
 
                     <div class="row divider" role="separator" style="margin-top:20px;"></div>
                 </div>
                 <div></div>
-            </div>
-            <div class="col-md-2">
-                <div>
-
-                    <h4>&nbsp;</h4>
-                    <hr>
-
-
-                    <div>
-                        <h5>Useful Links</h5></div>
-                    <ul class="decoration_none" style="font-size: 12px;">
-                        <li><a href="http://iruna-online.com/">Official Iruna Website</a></li>
-                        <li><a href="http://irunaonline.boards.net/">Iruna Boards Forum</a></li>
-                        <li><a href="http://iruna-online.weebly.com/">Iruna Weebly</a></li>
-                        <li><a href="https://wikiwiki.jp/iruna-online/">Iruna JP Wiki</a></li>
-                    </ul>
-                    <br>
-
-                </div>
             </div>
         </div>
     </div>
