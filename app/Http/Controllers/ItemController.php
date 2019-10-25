@@ -7,6 +7,7 @@ use App\Ai;
 use App\Equipment;
 use App\Items;
 use App\Xtal;
+use App\Relic;
 use Auth;
 use Illuminate\Support\Facades\Validator;
 use Spatie\Searchable\Search;
@@ -167,6 +168,28 @@ class ItemController extends Controller
         Alert::toast('Successfully added an item', 'success');
 
         return redirect('/additem');
+    }
+
+    public function createRelic(Request $request){
+        $request->validate([
+            'name' => 'required|alpha',
+            'quantity' => 'required|integer|min:0|max:99',
+            'price' => 'required|integer|min:0'
+        ]);
+        $id = $this->generateID(8);
+        $relic = new Relic();
+        $relic->name = request('name');
+        $relic->quantity = request('quantity');
+        $relic->price = request('price');
+        $relic->owner_id = Auth::user()->owner_id;
+        $relic->item_id = $id;
+        $relic->routes = "item/relic/{$id}";
+        $relic->contact = auth()->user()->name;
+        $relic->save();
+        Alert::toast('Successfully added an item', 'success');
+
+        return redirect('/additem');
+
     }
 
     public function addItem(){

@@ -390,12 +390,14 @@
 							</div>
 
 							<div id="relic" style="display:none;">
+								<form action="/createRelic" method="POST">
+									@csrf
 							<tr>
 								<td>
 									<label for="Test">Relic Name:</label>
 								</td>
 								<td  style="padding-left:10px;">
-									<input type="text" class="form-control iteminput" style="width: 400px" name="relicname" id="relicname"/>
+									<input type="text" class="form-control iteminput" style="width: 400px" name="name" id="name"/>
 								</td>
 							</tr>
 							<tr>
@@ -403,7 +405,7 @@
 									<label for="Test">Quantity:</label>
 								</td>
 								<td  style="padding-left:10px;">
-									<input type="text" class="form-control iteminput" style="width: 400px" name="relicqty" id="relicqty"/>
+									<input type="number" max="99" min="0" class="form-control iteminput" style="width: 400px" name="quantity" id="quantity"/>
 								</td>
 							</tr>
 							<tr>
@@ -411,10 +413,11 @@
 									<label for="Test">Price:</label>
 								</td>
 								<td  style="padding-left:10px;">
-									<input type="number" class="form-control iteminput" style="width: 400px" name="relicprice" id="relicprice"/>
+									<input type="number" min="0" class="form-control iteminput" style="width: 400px" name="price" id="price"/>
 								</td>
 							</tr>
 								<br><input type="submit" class="btn btn-success" style="width: 150px" name="search_button" id="search_button" value="Add new item"/>
+								</form>
 							</div>
 					
 					

@@ -76,3 +76,13 @@ Route::get('/item/items/{id}/edit', 'ItemsController@edit')->middleware('isAdmin
 Route::post('/createXtal', 'ItemController@createXtal')->middleware('verified');
 Route::patch('/item/xtal/{id}/update', 'XtalController@update')->middleware('verified');
 Route::delete('/item/xtal/{id/delete', 'XtalController@delete')->middleware('verified');
+
+
+/**
+ * 
+ * Relic section
+ */
+
+ Route::post('/createRelic', 'ItemController@createRelic')->middleware('verified');
+ Route::patch('/item/relic/{id}/update', 'RelicController@update')->middleware('verified');
+ Route::delete('/item/relic/{id}/delete', 'RelicController@delete')->middleware('verified');
