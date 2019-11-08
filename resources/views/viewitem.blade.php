@@ -11,35 +11,41 @@
 			<br>
 			<h4>View my items</h4>
 			<hr>
+            <h4>Equipment</h4>
 			<div>
 				<div>
 					<table>
 						<thead>
 							<tr class="table100-head">
-								<th class="column1">T1</th>
-								<th class="column2">T2</th>
-								<th class="column3">T3</th>
-								<th class="column4">T4</th>
-								<th class="column5">T5</th>
-								<th class="column6">T6</th>
+								<th class="column1">Name</th>
+								<th class="column1">ID</th>
+								<th class="column1">ATK</th>
+								<th class="column1">DEF</th>
+								<th class="column1">Refinement</th>
+								<th class="column1">Slots</th>
+								<th class="column1">Slot 1</th>
+								<th class="column1">Slot 2</th>
+								<th class="column1">Ability</th>
+								<th class="column1">Ability Lv</th>
+								<th class="column1">Price</th>
 							</tr>
 						</thead>
 						<tbody>
 							<tr>
 								<td class="column1">1</td>
-								<td class="column2">2</td>
-								<td class="column3">3</td>
-								<td class="column4">4</td>
-								<td class="column5">5</td>
-								<td class="column6">6</td>
+								<td class="column1">2</td>
+								<td class="column1">3</td>
+								<td class="column1">4</td>
+								<td class="column1">5</td>
+								<td class="column1">6</td>
 							</tr>
 							<tr>
 								<td class="column1">1</td>
-								<td class="column2">2</td>
-								<td class="column3">3</td>
-								<td class="column4">4</td>
-								<td class="column5">5</td>
-								<td class="column6">6</td>
+								<td class="column1">2</td>
+								<td class="column1">3</td>
+								<td class="column1">4</td>
+								<td class="column1">5</td>
+								<td class="column1">6</td>
 							</tr>
 						</tbody>
 					</table>
