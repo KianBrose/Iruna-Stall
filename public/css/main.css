@@ -184,28 +184,8 @@ tbody tr:hover {
 }
 
 .column3 {
-  width: 245px;
-}
-
-.column4 {
-  width: 110px;
   text-align: right;
-}
-
-.column5 {
-  width: 170px;
-  text-align: right;
-}
-
-.column6 {
-  width: 222px;
-  text-align: right;
-  padding-right: 62px;
-}
-
-.column7 {
-  width: 300px;
-  text-align: center;
+  padding-right: 40px;
 }
 
 @media screen and (max-width: 992px) {
