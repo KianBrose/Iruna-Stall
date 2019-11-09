@@ -15,9 +15,9 @@
             <br>
 			<div>
 				<div>
-					<table>
+					<table class="equipment">
 						<thead>
-							<tr class="table100-head">
+							<tr class="table100-head equipment">
 								<th>Name</th>
 								<th>ID</th>
 								<th>ATK</th>
@@ -31,32 +31,32 @@
 								<th>Price</th>
 							</tr>
 						</thead>
-						<tbody>
-							<tr>
-								<td>1</td>
-								<td>2</td>
-								<td>3</td>
-								<td>4</td>
-								<td>5</td>
-								<td>6</td>
-								<td>7</td>
-								<td>8</td>
-								<td>9</td>
-								<td>10</td>
-								<td>11</td>
+						<tbody class="equipment">
+							<tr class="equipment">
+								<td class="equipment">1</td>
+								<td class="equipment">2</td>
+								<td class="equipment">3</td>
+								<td class="equipment">4</td>
+								<td class="equipment">5</td>
+								<td class="equipment">6</td>
+								<td class="equipment">7</td>
+								<td class="equipment">8</td>
+								<td class="equipment">9</td>
+								<td class="equipment">10</td>
+								<td class="equipment">11</td>
 							</tr>
-							<tr>
-								<td>1</td>
-								<td>2</td>
-								<td>3</td>
-								<td>4</td>
-								<td>5</td>
-								<td>6</td>
-								<td>7</td>
-								<td>8</td>
-								<td>9</td>
-								<td>10</td>
-								<td>11</td>
+							<tr class="equipment">
+								<td class="equipment">1</td>
+								<td class="equipment">2</td>
+								<td class="equipment">3</td>
+								<td class="equipment">4</td>
+								<td class="equipment">5</td>
+								<td class="equipment">6</td>
+								<td class="equipment">7</td>
+								<td class="equipment">8</td>
+								<td class="equipment">9</td>
+								<td class="equipment">10</td>
+								<td class="equipment">11</td>
 							</tr>
 						</tbody>
 					</table>
