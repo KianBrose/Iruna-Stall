@@ -18,17 +18,17 @@
 					<table class="equipment">
 						<thead>
 							<tr class="table100-head equipment">
-								<th>Name</th>
-								<th>ID</th>
-								<th>ATK</th>
-								<th>DEF</th>
-								<th>Refinement</th>
-								<th>Slots</th>
-								<th>Slot 1</th>
-								<th>Slot 2</th>
-								<th>Ability</th>
-								<th>Ability Lv</th>
-								<th>Price</th>
+								<th class="equipment">Name</th>
+								<th class="equipment">ID</th>
+								<th class="equipment">ATK</th>
+								<th class="equipment">DEF</th>
+								<th class="equipment">Refinement</th>
+								<th class="equipment">Slots</th>
+								<th class="equipment">Slot 1</th>
+								<th class="equipment">Slot 2</th>
+								<th class="equipment">Ability</th>
+								<th class="equipment">Ability Lv</th>
+								<th class="equipment">Price</th>
 							</tr>
 						</thead>
 						<tbody class="equipment">
