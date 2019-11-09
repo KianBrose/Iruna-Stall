@@ -255,23 +255,39 @@ tbody tr:hover {
     top: 0;
   }
   table tbody tr td:nth-child(1):before {
-    content: "Date";
-  }
-  table tbody tr td:nth-child(2):before {
-    content: "Order ID";
-  }
-  table tbody tr td:nth-child(3):before {
     content: "Name";
   }
+  table tbody tr td:nth-child(2):before {
+    content: "ID";
+  }
+  table tbody tr td:nth-child(3):before {
+    content: "ATK";
+  }
   table tbody tr td:nth-child(4):before {
-    content: "Price";
+    content: "DEF";
   }
   table tbody tr td:nth-child(5):before {
-    content: "Quantity";
+    content: "Refinement";
   }
   table tbody tr td:nth-child(6):before {
-    content: "Total";
+    content: "Slots";
   }
+  table tbody tr td:nth-child(7):before {
+    content: "Slot 1";
+  }
+  table tbody tr td:nth-child(8):before {
+    content: "Slot 2";
+  }
+  table tbody tr td:nth-child(9):before {
+    content: "Ability";
+  }
+  table tbody tr td:nth-child(10):before {
+    content: "Ability Lv";
+  }
+  table tbody tr td:nth-child(11):before {
+    content: "Price";
+  }
+
 
   .column4,
   .column5,
