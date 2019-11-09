@@ -169,7 +169,7 @@ table td.r, table th.r {
 .table100-head th{
   font-family: OpenSans-Regular;
   font-size: 18px;
-  color: #fff;
+  color: #000;
   line-height: 1.2;
   font-weight: unset;
 }
