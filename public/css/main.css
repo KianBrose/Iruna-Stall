@@ -254,8 +254,6 @@ tbody tr:hover {
     left: 30px;
     top: 0;
   }
-    
-    /*
   table tbody tr td:nth-child(1):before {
     content: "Name";
   }
@@ -289,43 +287,7 @@ tbody tr:hover {
   table tbody tr td:nth-child(11):before {
     content: "Price";
   }
-  */
     
-    .equipment{
-        table tbody tr td:nth-child(1):before {
-            content: "Name";
-        }
-        table tbody tr td:nth-child(2):before {
-            content: "ID";
-        }
-        table tbody tr td:nth-child(3):before {
-            content: "ATK";
-        }
-        table tbody tr td:nth-child(4):before {
-            content: "DEF";
-        }
-        table tbody tr td:nth-child(5):before {
-            content: "Refinement";
-        }
-        table tbody tr td:nth-child(6):before {
-            content: "Slots";
-        }
-        table tbody tr td:nth-child(7):before {
-            content: "Slot 1";
-        }
-        table tbody tr td:nth-child(8):before {
-            content: "Slot 2";
-        }
-        table tbody tr td:nth-child(9):before {
-            content: "Ability";
-        }
-        table tbody tr td:nth-child(10):before {
-            content: "Ability Lv";
-        }
-        table tbody tr td:nth-child(11):before {
-            content: "Price";
-        }
-    }
 
   .column4,
   .column5,

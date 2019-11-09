@@ -17,7 +17,7 @@
 				<div>
 					<table>
 						<thead>
-							<tr class="table100-head equipment">
+							<tr class="table100-head">
 								<th>Name</th>
 								<th>ID</th>
 								<th>ATK</th>
@@ -31,8 +31,8 @@
 								<th>Price</th>
 							</tr>
 						</thead>
-						<tbody class="equipment">
-							<tr class="equipment">
+						<tbody>
+							<tr>
 								<td>1</td>
 								<td>2</td>
 								<td>3</td>
@@ -45,7 +45,7 @@
 								<td>10</td>
 								<td>11</td>
 							</tr>
-							<tr class="equipment">
+							<tr>
 								<td>1</td>
 								<td>2</td>
 								<td>3</td>
