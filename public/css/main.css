@@ -1,6 +1,17 @@
 
 
 /*//////////////////////////////////////////////////////////////////
+[ FONT ]*/
+
+
+@font-face {
+  font-family: OpenSans-Regular;
+  src: url('../fonts/OpenSans/OpenSans-Regular.ttf'); 
+}
+
+
+
+/*//////////////////////////////////////////////////////////////////
 [ RESTYLE TAG ]*/
 * {
 	margin: 0px; 
@@ -94,6 +105,11 @@ iframe {
 .container-table100 {
   width: 100%;
   min-height: 100vh;
+  background: #c850c0;
+  background: -webkit-linear-gradient(45deg, #4158d0, #c850c0);
+  background: -o-linear-gradient(45deg, #4158d0, #c850c0);
+  background: -moz-linear-gradient(45deg, #4158d0, #c850c0);
+  background: linear-gradient(45deg, #4158d0, #c850c0);
 
   display: -webkit-box;
   display: -webkit-flex;
@@ -153,6 +169,7 @@ table td.r, table th.r {
 .table100-head th{
   font-family: OpenSans-Regular;
   font-size: 18px;
+  color: #fff;
   line-height: 1.2;
   font-weight: unset;
 }
@@ -164,6 +181,7 @@ tbody tr:nth-child(even) {
 tbody tr {
   font-family: OpenSans-Regular;
   font-size: 15px;
+  color: #808080;
   line-height: 1.2;
   font-weight: unset;
 }
@@ -184,9 +202,25 @@ tbody tr:hover {
 }
 
 .column3 {
-  text-align: right;
-  padding-right: 40px;
+  width: 245px;
 }
+
+.column4 {
+  width: 110px;
+  text-align: right;
+}
+
+.column5 {
+  width: 170px;
+  text-align: right;
+}
+
+.column6 {
+  width: 222px;
+  text-align: right;
+  padding-right: 62px;
+}
+
 
 @media screen and (max-width: 992px) {
   table {
@@ -242,7 +276,7 @@ tbody tr:hover {
   .column4,
   .column5,
   .column6 {
-    text-align: center;
+    text-align: left;
   }
 
   .column4,
