@@ -62,6 +62,37 @@
 					</table>
 				</div>
 			</div>
+            <br>
+            <h4>Materials</h4>
+            <br>
+			<div>
+				<div>
+					<table>
+						<thead>
+							<tr class="table100-head">
+								<th>Name</th>
+								<th>ID</th>
+								<th>QTY</th>
+								<th>Price</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>1</td>
+								<td>2</td>
+								<td>3</td>
+								<td>4</td>
+							</tr>
+							<tr>
+								<td>1</td>
+								<td>2</td>
+								<td>3</td>
+								<td>4</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
 		</div>
 	</div>
 
