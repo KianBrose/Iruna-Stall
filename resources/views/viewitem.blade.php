@@ -151,7 +151,7 @@
 								<td class="als">1</td>
 								<td class="als">2</td>
 								<td class="als">3</td>
-								<td class="als">4<td>
+                                <td class="als">4</td>
 								<td class="als">5</td>
 							</tr>
 						</tbody>
