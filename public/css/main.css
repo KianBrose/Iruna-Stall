@@ -323,6 +323,21 @@ tbody tr:hover {
         content: "Price";
     }
     
+    
+    
+    .materials:nth-child(1):before {
+        content: "Name";
+    }
+    .materials:nth-child(2):before {
+        content: "ID";
+    }
+    .materials:nth-child(3):before {
+        content: "QTY";
+    }
+    .materials:nth-child(4):before {
+        content: "Price";
+    }
+    
 
   .column4,
   .column5,
