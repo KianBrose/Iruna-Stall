@@ -93,6 +93,102 @@
 					</table>
 				</div>
 			</div>
+            <br>
+            <h4>Xtals</h4>
+            <br>
+			<div>
+				<div>
+					<table>
+						<thead>
+							<tr class="table100-head">
+								<th class="xtals">Name</th>
+								<th class="xtals">ID</th>
+								<th class="xtals">QTY</th>
+								<th class="xtals">Price</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td class="xtals">1</td>
+								<td class="xtals">2</td>
+								<td class="xtals">3</td>
+								<td class="xtals">4</td>
+							</tr>
+							<tr>
+								<td class="xtals">1</td>
+								<td class="xtals">2</td>
+								<td class="xtals">3</td>
+								<td class="xtals">4</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+            <br>
+            <h4>AL's</h4>
+            <br>
+			<div>
+				<div>
+					<table>
+						<thead>
+							<tr class="table100-head">
+								<th class="als">Name</th>
+								<th class="als">ID</th>
+								<th class="als">QTY</th>
+								<th class="als">Color</th>
+								<th class="als">Price</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td class="als">1</td>
+								<td class="als">2</td>
+								<td class="als">3</td>
+								<td class="als">4</td>
+								<td class="als">5</td>
+							</tr>
+							<tr>
+								<td class="als">1</td>
+								<td class="als">2</td>
+								<td class="als">3</td>
+								<td class="als">4<td>
+								<td class="als">5</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+            <br>
+            <h4>Relics</h4>
+            <br>
+			<div>
+				<div>
+					<table>
+						<thead>
+							<tr class="table100-head">
+								<th class="relics">Name</th>
+								<th class="relics">ID</th>
+								<th class="relics">QTY</th>
+								<th class="relics">Price</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td class="relics">1</td>
+								<td class="relics">2</td>
+								<td class="relics">3</td>
+								<td class="relics">4</td>
+							</tr>
+							<tr>
+								<td class="relics">1</td>
+								<td class="relics">2</td>
+								<td class="relics">3</td>
+								<td class="relics">4</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
 		</div>
 	</div>
 

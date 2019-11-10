@@ -338,6 +338,48 @@ tbody tr:hover {
         content: "Price";
     }
     
+    .xtals:nth-child(1):before {
+        content: "Name";
+    }
+    .xtals:nth-child(2):before {
+        content: "ID";
+    }
+    .xtals:nth-child(3):before {
+        content: "QTY";
+    }
+    .xtals:nth-child(4):before {
+        content: "Price";
+    }
+    
+    .als:nth-child(1):before {
+        content: "Name";
+    }
+    .als:nth-child(2):before {
+        content: "ID";
+    }
+    .als:nth-child(3):before {
+        content: "QTY";
+    }
+    .als:nth-child(4):before {
+        content: "Color";
+    }
+    .als:nth-child(5):before {
+        content: "Price";
+    }
+    
+    .relics:nth-child(1):before {
+        content: "Name";
+    }
+    .relics:nth-child(2):before {
+        content: "ID";
+    }
+    .relics:nth-child(3):before {
+        content: "QTY";
+    }
+    .relics:nth-child(4):before {
+        content: "Price";
+    }
+    
 
   .column4,
   .column5,
