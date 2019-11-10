@@ -10,43 +10,23 @@ use App\Xtal;
 use App\Relic;
 use Auth;
 use Illuminate\Support\Facades\Validator;
-use Spatie\Searchable\Search;
+use App\Http\Requests\StoreIrunaItem;
 use RealRashid\SweetAlert\Facades\Alert;
+use App\Http\Requests\StoreIrunaAi;
 
 class ItemController extends Controller
 {
-    public function createAi(Request $request){
-        $request->validate([
-            'name' => 'required|alpha',
-            'color' => 'required|alpha',
-            'price' => 'required|integer|min:1',
-            'quantity' => 'required||max:99|min:1'
-        ]);
+    public function createAi(StoreIrunaAi $request){
+        $request->validated();
         $idTobeUsed = $this->generateID(10);
         $ai = new Ai();
         $ai->name = request('name');
         $ai->item_id = $idTobeUsed;
-        
-        // check color 
-        if(request('color') == 'Red' || request('color') == 'Blue' || request('color') == 'Green'){
-            $ai->color = request('color');
-        }
-        else{
-            Alert::toast('You have previously entered the wrong format', 'warning');
-            return redirect('/additem');
-        }
-
+        $ai->color = request('color');
         $ai->routes = "item/ai/{$idTobeUsed}";
         $ai->owner_id = Auth::user()->user_id;
-
-        // check quantity
-    
         $ai->quantity = request('quantity');
-           
-
-        // check price
         $ai->price = request('price');
-
         $ai->contact = request('contact');
         $ai->save();
         Alert::toast('Successfully added an item', 'success');
@@ -84,20 +64,11 @@ class ItemController extends Controller
         }    
 
         // check atk
-        if(request('atk') > 400){
-            $equip->atk = 400;
-        }
-        else{
-            $equip->atk = request('atk');
-        }
+        $equip->atk = request('atk');
 
         // check def
-        if(request('def') > 70){
-            $equip->def = 70;
-        }
-        else{
-            $equip->def = request('def');
-        }
+        $equip->def = request('def');
+        
         // check price
         if($this->checkValidNumber(request('price'))){
             $equip->price = request('price');
@@ -127,12 +98,8 @@ class ItemController extends Controller
         
     }
 
-    public function createItem(Request $request){
-        $request->validate([
-            'name' => 'required|alpha',
-            'quantity' => 'required|integer|max:99',
-            'price' => 'required|integer'
-        ]);
+    public function createItem(StoreIrunaItem $request){
+        $request->validated();
         $items = new Items();
         $item_id = $this->generateID(12);
         $items->owner_id = Auth::user()->user_id;
@@ -153,7 +120,7 @@ class ItemController extends Controller
         $request->validate([
             'name' => 'required|alpha',
             'quantity' => 'required|integer|max:99',
-            'price' => 'required|integer'
+            'price' => 'required|integer|min:0'
         ]);
         $xtal = new Xtal();
         $item_id = $this->generateID(7);
@@ -269,16 +236,6 @@ class ItemController extends Controller
             return false;
         }
     }
-
-    public function validColor($color){
-        if($color == 'Red' || $color == 'Blue' || $color == 'Green'){
-            return true;
-        }
-        else{
-            return false;
-        }
-    }
-
     public function showWarningMessage(){
         Alert::toast('You have previously entered the wrong input', 'warning');
         return redirect('/additem');
