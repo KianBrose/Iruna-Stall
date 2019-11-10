@@ -39,7 +39,8 @@ class AccountController extends Controller
     }
     
     public function view(){
-        $aiitem = Ai::where('owner_id', Auth::user()->user_id)->get();
+        $Ai = new Ai();
+        $aiitem = $Ai->getAiItem();
         $equipitem = Equipment::where('owner_id', Auth::user()->user_id)->get();
         $item = Items::where('owner_id', Auth::user()->user_id)->get();
         $xtal = Xtal::where('owner_id', Auth::user()->user_id)->get();

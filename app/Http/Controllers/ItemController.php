@@ -84,20 +84,11 @@ class ItemController extends Controller
         }    
 
         // check atk
-        if(request('atk') > 400){
-            $equip->atk = 400;
-        }
-        else{
-            $equip->atk = request('atk');
-        }
+        $equip->atk = request('atk');
 
         // check def
-        if(request('def') > 70){
-            $equip->def = 70;
-        }
-        else{
-            $equip->def = request('def');
-        }
+        $equip->def = request('def');
+        
         // check price
         if($this->checkValidNumber(request('price'))){
             $equip->price = request('price');
@@ -153,7 +144,7 @@ class ItemController extends Controller
         $request->validate([
             'name' => 'required|alpha',
             'quantity' => 'required|integer|max:99',
-            'price' => 'required|integer'
+            'price' => 'required|integer|min:0'
         ]);
         $xtal = new Xtal();
         $item_id = $this->generateID(7);
@@ -286,4 +277,13 @@ class ItemController extends Controller
 
 
 
+}
+class PostRequest extends Request{
+    public function rules(){
+        return [
+            'name' => 'required|alpha',
+            'quantity' => 'required|integer|max:99',
+            'price' => 'required|integer|min:0'
+        ];
+    }
 }
