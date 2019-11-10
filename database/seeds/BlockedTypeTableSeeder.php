@@ -78,6 +78,6 @@ class BlockedTypeTableSeeder extends Seeder
                 }
             }
         }
-        echo "\e[32mSeeding:\e[0m BlockedTypeTableSeeder\r\n";
+        $this->command->info("\e[32mSeeding:\e[0m BlockedTypeTableSeeder\r\n");
     }
 }

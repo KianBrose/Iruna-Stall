@@ -67,6 +67,6 @@ class BlockedItemsTableSeeder extends Seeder
                 }
             }
         }
-        echo "\e[32mSeeding:\e[0m BlockedItemsTableSeeder\r\n";
+        $this->command->info("\e[32mSeeding:\e[0m BlockedItemsTableSeeder\r\n");
     }
 }
