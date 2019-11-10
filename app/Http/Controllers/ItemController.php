@@ -10,7 +10,7 @@ use App\Xtal;
 use App\Relic;
 use Auth;
 use Illuminate\Support\Facades\Validator;
-use Spatie\Searchable\Search;
+use App\Http\Requests\StoreIrunaItem;
 use RealRashid\SweetAlert\Facades\Alert;
 
 class ItemController extends Controller
@@ -118,12 +118,8 @@ class ItemController extends Controller
         
     }
 
-    public function createItem(Request $request){
-        $request->validate([
-            'name' => 'required|alpha',
-            'quantity' => 'required|integer|max:99',
-            'price' => 'required|integer'
-        ]);
+    public function createItem(StoreIrunaItem $request){
+        $request->validated();
         $items = new Items();
         $item_id = $this->generateID(12);
         $items->owner_id = Auth::user()->user_id;
@@ -277,13 +273,4 @@ class ItemController extends Controller
 
 
 
-}
-class PostRequest extends Request{
-    public function rules(){
-        return [
-            'name' => 'required|alpha',
-            'quantity' => 'required|integer|max:99',
-            'price' => 'required|integer|min:0'
-        ];
-    }
 }
