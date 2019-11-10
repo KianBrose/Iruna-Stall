@@ -12,41 +12,21 @@ use Auth;
 use Illuminate\Support\Facades\Validator;
 use App\Http\Requests\StoreIrunaItem;
 use RealRashid\SweetAlert\Facades\Alert;
+use App\Http\Requests\StoreIrunaAi;
 
 class ItemController extends Controller
 {
-    public function createAi(Request $request){
-        $request->validate([
-            'name' => 'required|alpha',
-            'color' => 'required|alpha',
-            'price' => 'required|integer|min:1',
-            'quantity' => 'required||max:99|min:1'
-        ]);
+    public function createAi(StoreIrunaAi $request){
+        $request->validated();
         $idTobeUsed = $this->generateID(10);
         $ai = new Ai();
         $ai->name = request('name');
         $ai->item_id = $idTobeUsed;
-        
-        // check color 
-        if(request('color') == 'Red' || request('color') == 'Blue' || request('color') == 'Green'){
-            $ai->color = request('color');
-        }
-        else{
-            Alert::toast('You have previously entered the wrong format', 'warning');
-            return redirect('/additem');
-        }
-
+        $ai->color = request('color');
         $ai->routes = "item/ai/{$idTobeUsed}";
         $ai->owner_id = Auth::user()->user_id;
-
-        // check quantity
-    
         $ai->quantity = request('quantity');
-           
-
-        // check price
         $ai->price = request('price');
-
         $ai->contact = request('contact');
         $ai->save();
         Alert::toast('Successfully added an item', 'success');
@@ -256,16 +236,6 @@ class ItemController extends Controller
             return false;
         }
     }
-
-    public function validColor($color){
-        if($color == 'Red' || $color == 'Blue' || $color == 'Green'){
-            return true;
-        }
-        else{
-            return false;
-        }
-    }
-
     public function showWarningMessage(){
         Alert::toast('You have previously entered the wrong input', 'warning');
         return redirect('/additem');
