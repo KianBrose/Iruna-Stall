@@ -112,4 +112,16 @@ class StoreIrunaEquip extends FormRequest
         }
     }
 
+    public function invalidEquipType($equip){
+        if($this->invalidEquipName($equip) == false){
+            $item = Irunaitem::where('name', $equip);
+            $type = $this->request->get('type');
+            if($item->category != $type){
+                return true;
+            } else{
+                return false;
+            }
+        }
+    }
+
 }
