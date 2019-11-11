@@ -11,7 +11,5 @@ class AutoCompleteController extends Controller
         $search = $request->get('term');
         $result = Irunaitem::where('name', 'LIKE',  '%'. $search. '%')->get();
         return response()->json($result);
-
-
     }
 }

@@ -13,6 +13,7 @@ use Illuminate\Support\Facades\Validator;
 use App\Http\Requests\StoreIrunaItem;
 use RealRashid\SweetAlert\Facades\Alert;
 use App\Http\Requests\StoreIrunaAi;
+use App\Http\Requests\StoreIrunaEquip;
 
 class ItemController extends Controller
 {
@@ -36,32 +37,17 @@ class ItemController extends Controller
        
     }
 
-    public function createEquip(Request $request){
+    public function createEquip(StoreIrunaEquip $request){
+        $request->validated();
         $idTobeUsed = $this->generateID(8);
         $equip = new Equipment();
-
-        $request->validate([
-            'name' => 'required|alpha',
-            'atk' => 'required|max:400|integer|min:0',
-            'def' => 'required|max:70|integer|min:0',
-            'type' => 'required|alpha',
-            'slot1' => 'required',
-            'slot2' => 'required',
-            'refinement' => 'required|integer|max:9|min:0',
-            'price' => 'required|integer|min:0',
-        ]);
         $equip->name = request('name');
         $equip->item_id = $idTobeUsed;
         $equip->owner_id = Auth::user()->user_id;
 
         // handle type input
-        if($this->validEquipmentType(request('type'))){
-            $equip->type = request('type');
-        }
-        else{
-            Alert::toast('You have previously entered the wrong input', 'warning');
-            return redirect('/additem');
-        }    
+        
+        $equip->type = request('type');
 
         // check atk
         $equip->atk = request('atk');
@@ -70,19 +56,10 @@ class ItemController extends Controller
         $equip->def = request('def');
         
         // check price
-        if($this->checkValidNumber(request('price'))){
-            $equip->price = request('price');
-        }
-        else{
-            $this->showWarningMessage();
-        }
-        if(request('equipslotamount') > 9){
-            $slot = 9;
-            $equip->slots = $slot;
-        }
-        else{
-            $equip->slots = request('equipslotamount');
-        }
+        
+        $equip->price = request('price');
+        
+        $equip->slots = request('equipslotamount');
 
         $equip->slot1 = request('slot1');
         $equip->slot2 = request('slot2');
