@@ -73,9 +73,14 @@ class StoreIrunaAi extends FormRequest
     public function invalidItemName($name){
         $item = Irunaitem::where('name', $name)->first();
         if($item){
-            return false;
+            if($item->category == 'AlCrystas'){
+                return false;
+            } else{
+                return true;
+            }
         } else{
             return true;
         }
+        
     }
 }
