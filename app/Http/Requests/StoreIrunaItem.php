@@ -46,11 +46,16 @@ class StoreIrunaItem extends FormRequest
 
     public function invalidItemName($name){
         $item = Irunaitem::where('name', $name)->first();
-        if($this->validType($item)){
-            return false;
+        if($item){
+            if($this->validType($item)){
+                return false;
+            } else{
+                return true;
+            }
         } else{
             return true;
         }
+        
     }
 
     public function validType($item){
