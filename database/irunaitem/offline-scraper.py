@@ -5,22 +5,22 @@ import csv
 import sqlite3
 import re
 
-recovery_html = BeautifulSoup(open("status-items.html"), 'html5lib') 
-status_html = BeautifulSoup(open("relic-scrape.html"), 'html5lib')
+#recovery_html = BeautifulSoup(open("status-items.html"), 'html5lib') 
+status_html = BeautifulSoup(open("test.html"), 'html5lib')
 
 #print(soup.prettify)
 
 items = [];
 
-recovery_items = [];
+"""recovery_items = [];
 for recovery_item in recovery_html.find_all('a'):
-	recovery_items.append(recovery_item.get_text())
+	recovery_items.append(recovery_item.get_text())"""
 
 status_items = [];
 for status_item in status_html.find_all('a'):
 	status_items.append(status_item.get_text())
 
-items.append(recovery_items);
+"""items.append(recovery_items);"""
 
 #items.append(status_items)
 conn = sqlite3.connect('item.db')
@@ -35,7 +35,7 @@ for i in status_items:
 	for j in x:
 		bracket = re.findall("\[(.*?)\]", j)
 		a = " ".join(bracket)
-		y = j.replace("[RelicCrystas]", "")
+		y = j.replace("[Strengthening]", "")
 		item_list.append((y, a))
 print(item_list)
 	
