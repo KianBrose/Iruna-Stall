@@ -15,7 +15,8 @@ class CreateItemTable extends Migration
     {
         Schema::create('item', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->unsignedBigInteger('owner_id');
+            $table->string('owner_id');
+            $table->string('item_id');
             $table->string('category')->default('item');
             $table->string('name');
             $table->integer('quantity');
@@ -23,7 +24,7 @@ class CreateItemTable extends Migration
             $table->bigInteger('price');
             $table->string('contact');
             $table->timestamps();
-            $table->foreign('owner_id')->references('id')->on('users')->onDelete('cascade');
+            //$table->foreign('owner_id')->references('id')->on('users')->onDelete('cascade');
         });
     }
 

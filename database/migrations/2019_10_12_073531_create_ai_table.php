@@ -17,7 +17,7 @@ class CreateAiTable extends Migration
             $table->bigIncrements('id');
             $table->string('item_id');
             $table->string('category')->default('ai');
-            $table->unsignedBigInteger('owner_id');
+            $table->string('owner_id');
             $table->string('name');
             $table->string('routes');
             $table->integer('quantity');
@@ -26,7 +26,7 @@ class CreateAiTable extends Migration
             $table->string('contact');
             $table->timestamps();
 
-            $table->foreign('owner_id')->references('id')->on('users')->onDelete('cascade');
+            //$table->foreign('owner_id')->references('user_id')->on('users')->onDelete('cascade');
         });
     }
 

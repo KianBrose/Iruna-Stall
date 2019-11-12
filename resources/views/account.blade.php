@@ -11,7 +11,8 @@
     <!-- bootstrap css -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
+	<link href="css/style.css" rel="stylesheet">
 </head>
 
 <body>
@@ -87,7 +88,9 @@
                     <hr>
 					<div>
 						<p>Welcome to the add item page! If this is your first time here, please refer to this <a>quick guide</a> on how to add an item!</p>
-		
+							@error('mainError')
+									<div class="alert alert-danger"> {{ $message }}</div>
+								@enderror
 							<select name="itemtype" class="form-control2" id="itemtype"> 
 							   <option>Choose type</option>
 							   <option value="1">Equipment</option>
@@ -107,14 +110,21 @@
 								<td  style="padding-left:10px;">
 									<input type="text" class="form-control iteminput" style="width: 400px" name="name" id="name"/>
 								</td>
+								@error('name')
+						<div style="color:red;"> {{ $message }}</div>
+						@enderror
+
 							</tr>
 							<tr>
 								<td>
 									<label for="atk">ATK:</label>
 								</td>
 								<td  style="padding-left:10px;">
-									<input type="number" class="form-control iteminput" style="width: 400px" name="atk" id="atk"/>
+								<input type="number" class="form-control iteminput" style="width: 400px" name="atk" id="atk" value="{{ old('atk') }}"/>
 								</td>
+								@error('atk')
+								<div style="color:red;"> {{ $message }}</div>
+								@enderror
 							</tr>
 							<tr>
 								<td>
@@ -123,6 +133,9 @@
 								<td  style="padding-left:10px;">
 									<input type="number" class="form-control iteminput" style="width: 400px" name="def" id="def"/>
 								</td>
+								@error('def')
+								<div style="color:red;"> {{ $message }}</div>
+								@enderror
 							</tr>
 							<tr>
 								<br>
@@ -160,10 +173,10 @@
 								</td>
 								<td  style="padding-left:10px;">
 									<select name="type" class="form-control2" id="type"> 
-									   <option selected value="0">Weapon</option>
-									   <option value="1">Body</option>
-									   <option value="2">Additional</option>
-									   <option value="3">Special</option>
+									   <option selected>Weapon</option>
+									   <option>Body</option>
+									   <option>Additional</option>
+									   <option>Special</option>
 									</select>
 									<br>
 								</td>
@@ -249,20 +262,28 @@
 							</div>
 
 							<div id="item" style="display:none;">
+								<form action="/createItem" method="POST">
+									@csrf
 							<tr>
 								<td>
 									<label for="Test">Item Name:</label>
 								</td>
 								<td  style="padding-left:10px;">
-									<input type="text" class="form-control iteminput" style="width: 400px" name="itemname" id="itemname"/>
+									<input type="text" class="form-control iteminput" style="width: 400px" name="name" id="itemname"/>
 								</td>
+								@error('fielderror')
+									<div style="color:red;"> {{ $message }}</div>
+								@enderror
+								@error('name')
+									<div style="color:red;"> {{ $message }}</div>
+								@enderror
 							</tr>
 							<tr>
 								<td>
 									<label for="Test">Quantity:</label>
 								</td>
 								<td  style="padding-left:10px;">
-									<input type="text" class="form-control iteminput" style="width: 400px" name="itemqty" id="itemqty"/>
+									<input type="number" class="form-control iteminput" style="width: 400px" name="quantity" id="itemqty"/>
 								</td>
 							</tr>
 							<tr>
@@ -270,19 +291,22 @@
 									<label for="Test">Price(per piece):</label>
 								</td>
 								<td  style="padding-left:10px;">
-									<input type="text" class="form-control iteminput" style="width: 400px" name="itemprice" id="itemprice"/>
+									<input type="number" class="form-control iteminput" style="width: 400px" name="price" id="itemprice"/>
 								</td>
 							</tr>
-								<br><input type="submit" class="button btn" style="width: 150px" name="search_button" id="search_button" value="Add new item" onclick="window.location.href='/additem.php'"/>
+								<br><input type="submit" class="btn btn-success" style="width: 150px" name="search_button" id="search_button" value="Add new item" onclick="window.location.href='/additem.php'"/>
 							</div>
+						</form>
 
 							<div id="xtal" style="display:none;">
+								<form action="/createXtal" method="POST">
+									@csrf
 							<tr>
 								<td>
 									<label for="Test">Xtal Name:</label>
 								</td>
 								<td  style="padding-left:10px;">
-									<input type="text" class="form-control iteminput" style="width: 400px" name="xtalname" id="xtalname"/>
+									<input type="text" class="form-control iteminput" style="width: 400px" name="name" id="name"/>
 								</td>
 							</tr>
 							<tr>
@@ -290,19 +314,20 @@
 									<label for="Test">Quantity:</label>
 								</td>
 								<td  style="padding-left:10px;">
-									<input type="text" class="form-control iteminput" style="width: 400px" name="xtalqty" id="xtalqty"/>
+									<input type="number" max="99" class="form-control iteminput" style="width: 400px" name="quantity" id="quantity"/>
 								</td>
+							
 							</tr>
 							<tr>
 								<td>
 									<label for="Test">Price:</label>
 								</td>
 								<td  style="padding-left:10px;">
-									<input type="number" class="form-control iteminput" style="width: 400px" name="price" id="xtalprice"/>
+									<input type="number" min='1' class="form-control iteminput" style="width: 400px" name="price" id="xtalprice"/>
 								</td>
 							</tr>
-								<br><input type="submit" class="button btn" style="width: 150px" name="search_button" id="search_button" value="Add new item"/>
-						
+								<br><input type="submit" class="btn btn-success" style="width: 150px" name="search_button" id="search_button" value="Add new item"/>
+								</form>
 							</div>
 						
 							<div id="al" style="display:none;">
@@ -312,22 +337,25 @@
 								<td>
 									<label for="name">Item Name:</label>
 								</td>
+								
 								<td  style="padding-left:10px;">
-									<input type="text" class="form-control iteminput" style="width: 400px" name="name" id="name"/>
+								<input type="text" class="form-control iteminput" style="width: 400px" name="name" id="name" value="{{ old('name') }}"/>
 								</td>
+								@error('name')
+						<div style="color:red;"> {{ $message }}</div>
+						@enderror
 							</tr>
 							<tr>
 								<td>
 									<label for="quantity">Quantity:</label>
 								</td>
 								<td  style="padding-left:10px;">
-									<input type="text" class="form-control iteminput" style="width: 400px" name="quantity" id="quantity"/>
+									<input type="number" max="99" class="form-control iteminput" style="width: 400px" name="quantity" id="quantity" value="{{ old('quantity') }}"/>
 								</td>
-								@error('field')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
+								@error('quantity')
+							<div style="color:red;"> {{ $message }}</div>
+							@enderror
+		
 							</tr>
 							<tr>
 								<br>
@@ -341,15 +369,20 @@
 									   <option>Blue</option>
 									</select>
 								</td>
+								
 							</tr>
+
 							<tr>
 								<br>
 								<td>
 									<label for="price">Price:</label>
 								</td>
 								<td  style="padding-left:10px;">
-									<input type="number" class="form-control iteminput" style="width: 400px" name="price" id="price"/>
+									<input type="number" class="form-control iteminput" style="width: 400px" name="price" id="price" value="{{ old('price') }}"/>
 								</td>
+								@error('price')
+						<div style="color:red;"> {{ $message }}</div>
+						@enderror
 							</tr>
 							<tr>
 								<br>
@@ -360,17 +393,19 @@
 									<input type="text" class="form-control iteminput" style="width: 400px" name="contact" id="contact"/>
 								</td>
 							</tr>
-								<br><input type="submit" class="button btn" style="width: 150px" name="search_button" id="search_button" value="Add new item" "/>
+								<br><input type="submit" class="btn btn-success" style="width: 150px" name="search_button" id="search_button" value="Add new item" "/>
 								</form>
 							</div>
 
 							<div id="relic" style="display:none;">
+								<form action="/createRelic" method="POST">
+									@csrf
 							<tr>
 								<td>
 									<label for="Test">Relic Name:</label>
 								</td>
 								<td  style="padding-left:10px;">
-									<input type="text" class="form-control iteminput" style="width: 400px" name="relicname" id="relicname"/>
+									<input type="text" class="form-control iteminput" style="width: 400px" name="name" id="name"/>
 								</td>
 							</tr>
 							<tr>
@@ -378,7 +413,7 @@
 									<label for="Test">Quantity:</label>
 								</td>
 								<td  style="padding-left:10px;">
-									<input type="text" class="form-control iteminput" style="width: 400px" name="relicqty" id="relicqty"/>
+									<input type="number" max="99" min="0" class="form-control iteminput" style="width: 400px" name="quantity" id="quantity"/>
 								</td>
 							</tr>
 							<tr>
@@ -386,13 +421,13 @@
 									<label for="Test">Price:</label>
 								</td>
 								<td  style="padding-left:10px;">
-									<input type="number" class="form-control iteminput" style="width: 400px" name="relicprice" id="relicprice"/>
+									<input type="number" min="0" class="form-control iteminput" style="width: 400px" name="price" id="price"/>
 								</td>
 							</tr>
-								<br><input type="submit" class="button btn" style="width: 150px" name="search_button" id="search_button" value="Add new item"/>
+								<br><input type="submit" class="btn btn-success" style="width: 150px" name="search_button" id="search_button" value="Add new item"/>
+								</form>
 							</div>
-
-
+					
 					
 					<script src="https://code.jquery.com/jquery-3.4.1.min.js"   integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="   crossorigin="anonymous"></script>
 					<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"   integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU="   crossorigin="anonymous"></script>
@@ -521,7 +556,7 @@
 
                     <div>
                         <h4>Useful Links</h4></div>
-                    <ul class="decoration_none">
+                    <ul class="decoration_none" style="font-size: 12px;">
                         <li><a href="http://iruna-online.com/">Official Iruna Website</a></li>
                         <li><a href="http://irunaonline.boards.net/">Iruna Boards Forum</a></li>
                         <li><a href="http://iruna-online.weebly.com/">Iruna Weebly</a></li>
@@ -535,7 +570,9 @@
     </div>
     @include('sweetalert::alert')
 	<!-- bootstrap js -->
-	
+<script type="text/javascript" id="cookieinfo"
+    src="//cookieinfoscript.com/js/cookieinfo.min.js">
+</script>
 </body>
 
 </html>

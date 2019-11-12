@@ -36,7 +36,7 @@
                                                 <option>Blue</option>
                                             </select>
                                         </td>
-                                    <td><input style='width: 120px; font-size: 12px;' class="price" required type='text' name='price' value='{{ $aiitem->price }}'></td>
+                                    <td><input style='width: 120px; font-size: 12px;' class="price" required type='text' name='price' value='{{ number_format($aiitem->price) }}'></td>
                                     
                                         <td><input type='submit' class='btn btn-success' style='font-size: 10px;' name='search_button' id='search_button' value='Change'/></td>
                                     </form>
@@ -54,7 +54,7 @@
                                         <th>Name</th>
                                         <th>ATK</th>
                                         <th>DEF</th>
-                                        <th>Refinement</th>
+                                        <th>Refine</th>
                                         <th>Slots</th>
                                         <th>Slot 1</th>
                                         <th>Slot 2</th>
@@ -117,6 +117,34 @@
                                         </form>
                                         </tr>
                                         @endforeach
+                        </table>
+                        <h3><b>Item</b></h3>
+                        <table class="table table-condensed table-bordered">
+                                <tr>
+                                    <th class="col-md-4">Name:</th>
+									<th>Quantity</th>
+									<th>Price</th>
+                                </tr>
+                                @foreach ($item as $item)
+                                <form action="item/items/{{ $item->item_id }}/update" method="POST">
+                                    @method('patch')
+                                    @csrf
+                                <tr>
+                                        <td>{{ $item->name }}</td>
+                                        <!--<td>{{ $item->item_id }}</td>-->
+                                        <td><input style='width: 70px; font-size:12px;' type='text' required name='quantity' value='{{ $item->quantity }}'></td>
+                
+                                    <td><input style='width: 120px; font-size: 12px;' class="price" required type='text' name='price' value='{{ $item->price }}'></td>
+                                    
+                                        <td><input type='submit' class='btn btn-success' style='font-size: 10px;' name='search_button' id='search_button' value='Change'/></td>
+                                    </form>
+                                    <form action="/item/items/{{ $item->item_id }}/delete" method="POST">
+                                        @method('delete')
+                                        @csrf
+                                        <td><input type='submit' class='btn btn-danger' style='font-size: 10px;' name='search_button' id='search_button' value='Delete'/></td>
+                                    </form>
+                                    </tr>
+                                @endforeach
                         </table>
 
                 </div>

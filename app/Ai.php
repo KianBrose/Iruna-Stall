@@ -4,22 +4,15 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-use Spatie\Searchable\Searchable;
-use Spatie\Searchable\SearchResult;
+use Auth;
 
-class Ai extends Model implements Searchable
+class Ai extends Model
 {
     protected $table = 'ai';
     protected $guarded = [];
+    protected $fillable = ['name', 'price', 'color', 'quantity', 'contact'];
 
-    public function getSearchResult(): SearchResult
-    {
-        $url = route('Ai', $this->item_id);
-
-        return new SearchResult(
-            $this,
-            $this->name,
-            $url
-        );
+    public function getAiItem(){
+        return Ai::where('owner_id', Auth::user()->user_id)->get();
     }
 }

@@ -16,7 +16,7 @@ class AiController extends Controller
     
     public function edit($id){
         $item = Ai::where('item_id', $id)->firstOrFail();
-        if($item->owner_id != Auth::user()->id){
+        if($item->owner_id != Auth::user()->user_id){
             abort(403);
         }
         else{
@@ -27,17 +27,23 @@ class AiController extends Controller
     public function update($id){
         if(Auth::check()){
             $item = Ai::where('item_id', $id)->firstOrFail();
-            if($item->owner_id != Auth::user()->id){
+            if($item->owner_id != Auth::user()->user_id){
                 abort(403);
             }
             else{
                 //$item->name = request('name');
-                $item->price = request('price');
-                $item->color = request('color');
-                $item->routes = "item/ai/{$id}";
-                $item->owner_id = Auth::user()->id;
-                $item->quantity = request('quantity');
+                if($this->validColor(request('color'))){
+                    $item->color = request('color');
+                }
+                if($this->validNumber(request('price'))){
+                    $item->price = request('price');
+                }
+                if($this->validNumber(request('quantity'))){
+                    $item->quantity = request('quantity');
+                }
+                
                 $item->save();
+
                 Alert::toast('Successfully edited an item', 'success');
                 return redirect('/viewitem');
             }
@@ -52,17 +58,37 @@ class AiController extends Controller
     public function delete($id){
         if(Auth::check()){
             $item = Ai::where('item_id', $id)->firstOrFail();
-            if($item->owner_id != Auth::user()->id){
+            if($item->owner_id != Auth::user()->user_id){
                 abort(403);
             }
             else{
                 Ai::where('item_id', $id)->firstOrFail()->delete();
-                $aiitem = Ai::where('owner_id', auth()->id())->get();
+                //$aiitem = Ai::where('owner_id', auth()->id())->get();
                 Alert::toast('You have deleted an item', 'warning');
                 return redirect('/viewitem');
             }
 
         }
+    }
+
+    public function validColor($color){
+        if($color == 'Red' || $color == 'Blue' || $color == 'Green'){
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
+
+    public function validNumber($number){
+        $number = (string) $number;
+        if(ctype_digit($number)){
+            return true;
+        }
+        else{
+            return false;
+        }
+        
     }
     
 }

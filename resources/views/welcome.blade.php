@@ -11,9 +11,12 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link href="css/style.css" rel="stylesheet">
 </head>
 
 <body>
+        
 <div id="app">
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <div class="container">
@@ -93,16 +96,16 @@
                             </div>
 
                             <div class="col-md-3 col-xs-3">
-							     <div class="form-group">
-							     	<select id="searchtype" class="form-control" name="searchtype">
-								    	<option value="equipment" selected="selected">Equipment</option>
-									   <option value="items">Items</option>
-									   <option value="xtal">Xtal</option>
-									   <option value="al">AL crystal</option>
-									   <option value="relic">Relic</option>
-									   <option value="ability">Ability</option>
-								    </select>
-							     </div>
+                                 <div class="form-group">
+                                    <select id="searchtype" class="form-control" name="searchtype">
+                                        <option value="equipment" selected="selected">Equipment</option>
+                                       <option value="items">Items</option>
+                                       <option value="xtal">Xtal</option>
+                                       <option value="al">AL crystal</option>
+                                       <option value="relic">Relic</option>
+                                       <option value="ability">Ability</option>
+                                    </select>
+                                 </div>
                             </div>
                             <div class="col-md-2 col-xs-3">
                                 <input type="button" class="btn btn-default btn-block" name="search_button" id="search_button" value="Search">
@@ -110,40 +113,50 @@
                         </div>
                     </form>
                     <div class="row divider" role="separator" ></div>
-
-                    <p>Welcome to our Iruna Database</p>
-					<p>Enter the item name, select type and press search</p>
+                    <p style="font-size: 14px;">Welcome to our Iruna Global Stall</p>
+					<p style="font-size: 14px;">Enter the item name, select type and press search</p>
 
                     <div class="row divider" role="separator" style="margin-top:20px;"></div>
                 </div>
                 <div></div>
             </div>
-            <div class="col-md-2">
-                <div>
-
-                    <h4>&nbsp;</h4>
-                    <hr>
-
-
-                    <div>
-                        <h4>Useful Links</h4></div>
-                    <ul class="decoration_none">
-                        <li><a href="http://iruna-online.com/">Official Iruna Website</a></li>
-                        <li><a href="http://irunaonline.boards.net/">Iruna Boards Forum</a></li>
-                        <li><a href="http://iruna-online.weebly.com/">Iruna Weebly</a></li>
-                        <li><a href="https://wikiwiki.jp/iruna-online/">Iruna JP Wiki</a></li>
-                    </ul>
-                    <br>
-
-                </div>
-            </div>
         </div>
     </div>
     @include('sweetalert::alert')
     <!-- bootstrap js -->
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"   integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="   crossorigin="anonymous"></script>
+	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"   integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU="   crossorigin="anonymous"></script>
+    
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script type="text/javascript" id="cookieinfo"
+    src="//cookieinfoscript.com/js/cookieinfo.min.js">
+</script>
+    <script>
+        $(document).ready(function() {
+            
+        $( "#search" ).autocomplete({
+       
+        source: function(request, response) {
+            $.ajax({
+            url: "{{url('searchitem')}}",
+            data: {
+                    term : request.term
+             },
+            dataType: "json",
+            success: function(data){
+               var resp = $.map(data,function(obj){
+                    return obj.name;
+               }); 
+ 
+               response(resp);
+            }
+        });
+    },
+    minLength: 3
+ });
+});
+        </script>
 </body>
 
 </html>

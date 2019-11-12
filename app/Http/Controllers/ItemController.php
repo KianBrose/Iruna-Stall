@@ -5,77 +5,62 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Ai;
 use App\Equipment;
+use App\Items;
+use App\Xtal;
+use App\Relic;
 use Auth;
 use Illuminate\Support\Facades\Validator;
-use Spatie\Searchable\Search;
+use App\Http\Requests\StoreIrunaItem;
 use RealRashid\SweetAlert\Facades\Alert;
+use App\Http\Requests\StoreIrunaAi;
+use App\Http\Requests\StoreIrunaEquip;
 
 class ItemController extends Controller
 {
-    public function createAi(Request $request){
-        $validator = Validator::make($request->all(),[
-            'name' => 'required',
-            'color' => 'required',
-            'price' => 'required',
-            'quantity' => 'required'
-        ]);
+    public function createAi(StoreIrunaAi $request){
+        $request->validated();
         $idTobeUsed = $this->generateID(10);
         $ai = new Ai();
         $ai->name = request('name');
         $ai->item_id = $idTobeUsed;
-        
-        // check color 
-        
-        if(request('color') == 'Red' || request('color') == 'Blue' || request('color') == 'Green'){
-            $ai->color = request('color');
-        }
-        else{
-            Alert::toast('You have previously entered the wrong format');
-            return redirect('/account');
-        }
-
+        $ai->color = request('color');
         $ai->routes = "item/ai/{$idTobeUsed}";
-        $ai->owner_id = Auth::user()->id;
-
-        // check quantity
-        if($this->checkValidNumber(request('quantity'))){
-            $ai->quantity = request('quantity');
-        }
-        else{
-            $validator->errors()->add('field', 'Please only input number');
-            Alert::toast('You have previously entered the wrong format qty', 'warning');
-            return redirect('/account');
-        }
-
-        // check price
-        if($this->checkValidNumber(request('price'))){
-            $ai->price = request('price');
-        }
-        else{
-            Alert::toast('You have previously entered the wrong format', 'warning');
-            return redirect('/account');
-        }
-
+        $ai->owner_id = Auth::user()->user_id;
+        $ai->quantity = request('quantity');
+        $ai->price = request('price');
         $ai->contact = request('contact');
         $ai->save();
         Alert::toast('Successfully added an item', 'success');
 
-        return redirect('/account');
+        return redirect('/additem');
         
        
     }
 
-    public function createEquip(){
+    public function createEquip(StoreIrunaEquip $request){
+        $request->validated();
         $idTobeUsed = $this->generateID(8);
         $equip = new Equipment();
         $equip->name = request('name');
         $equip->item_id = $idTobeUsed;
-        $equip->owner_id = Auth::user()->id;
+        $equip->owner_id = Auth::user()->user_id;
+
+        // handle type input
+        
         $equip->type = request('type');
+
+        // check atk
         $equip->atk = request('atk');
+
+        // check def
         $equip->def = request('def');
+        
+        // check price
+        
         $equip->price = request('price');
+        
         $equip->slots = request('equipslotamount');
+
         $equip->slot1 = request('slot1');
         $equip->slot2 = request('slot2');
         $equip->ability = request('ability');
@@ -86,8 +71,69 @@ class ItemController extends Controller
         $equip->save();
         Alert::toast('Successfully added an item', 'success');
 
-        return redirect('/account');
+        return redirect('/additem');
         
+    }
+
+    public function createItem(StoreIrunaItem $request){
+        $request->validated();
+        $items = new Items();
+        $item_id = $this->generateID(12);
+        $items->owner_id = Auth::user()->user_id;
+        $items->name = request('name');
+        $items->price = request('price');
+        $items->quantity = request('quantity');
+        $items->routes = "item/items/{$item_id}";
+        $items->item_id = $item_id;
+        $items->contact = auth()->user()->name;
+        $items->save();
+        Alert::toast('Successfully added an item', 'success');
+
+        return redirect('/additem');
+
+    }
+
+    public function createXtal(Request $request){
+        $request->validate([
+            'name' => 'required|alpha',
+            'quantity' => 'required|integer|max:99',
+            'price' => 'required|integer|min:0'
+        ]);
+        $xtal = new Xtal();
+        $item_id = $this->generateID(7);
+        $xtal->name = request('name');
+        $xtal->owner_id = Auth::user()->user_id;
+        $xtal->price = request('price');
+        $xtal->quantity = request('quantity');
+        $xtal->routes = "item/xtal/{$item_id}";
+        $xtal->item_id = $item_id;
+        $xtal->contact = auth()->user()->name;
+        $xtal->save();
+        Alert::toast('Successfully added an item', 'success');
+
+        return redirect('/additem');
+    }
+
+    public function createRelic(Request $request){
+        $request->validate([
+            'name' => 'required|alpha',
+            'quantity' => 'required|integer|min:0|max:99',
+            'price' => 'required|integer|min:0'
+        ]);
+        $id = $this->generateID(8);
+        $relic = new Relic();
+        $relic->name = request('name');
+        $relic->quantity = request('quantity');
+        $relic->price = request('price');
+        $relic->owner_id = Auth::user()->owner_id;
+        $relic->item_id = $id;
+        $relic->routes = "item/relic/{$id}";
+        $relic->contact = auth()->user()->name;
+        $relic->save();
+        Alert::toast('Successfully added an item', 'success');
+
+        return redirect('/additem');
+
     }
 
     public function addItem(){
@@ -107,7 +153,7 @@ class ItemController extends Controller
     }
 
     public function checkID($id, $length){
-        if(Ai::where('item_id', $id)->first()){
+        if(Ai::where('item_id', $id)->first() || Equipment::where('item_id', $id)->first() || Items::where('item_id', $id)->first() || Xtal::where('item_id', $id)->first()){
             $this->generateID($length);
         }
         else{
@@ -122,12 +168,17 @@ class ItemController extends Controller
 
     public function search(Request $request)
     {
-        
-        $searchResults = (new Search())
-            ->registerModel(Ai::class, 'name')
-            ->search($request->input('search'));
+        if($request->isMethod('POST')){
+            $input = $request->input('search');
+            $aiSearch = Ai::where('name', 'LIKE', "%{$input}%")->get();
+            $equipSearch = Equipment::where('name', 'LIKE', "%{$input}%")->get();
+            $itemSearch = Items::where('name', 'LIKE', "%{$input}%")->get();
+            $xtalSearch = Xtal::where('name', 'LIKE', "%{$input}%")->get();
 
-        return view('search', compact('searchResults'));
+            return view('search', compact('aiSearch', 'equipSearch', 'itemSearch', 'xtalSearch', 'input'));
+        }
+        else{
+        }
     }
 
     public function checkValidNumber($number){
@@ -140,4 +191,33 @@ class ItemController extends Controller
         }
         
     }
+
+    public function validAbiliyName($abilityName){
+        $ability = array('gentleness', 'provoke', "magic", "mp cost", "intelligent", "strength", "agility", 
+        "evasion", "fixed melee", "fixed magic", "rate cut", "melee defense", "magic defense", "dexterity", "critical",
+        "attack", "quick cool", "quick use", "wind blessing", "earth blessing", "fire blessing", "water blessing", "striver");
+        if(in_array($abilityName, $ability)){
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
+
+    public function validEquipmentType($equipment){
+        $equip = array('Weapon', 'Body', 'Additional', 'Special');
+        if(in_array($equipment, $equip)){
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
+    public function showWarningMessage(){
+        Alert::toast('You have previously entered the wrong input', 'warning');
+        return redirect('/additem');
+    }
+
+
+
 }
