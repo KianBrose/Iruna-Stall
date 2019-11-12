@@ -17,6 +17,7 @@ class CreateItemsListsTable extends Migration
             $table->bigIncrements('id');
             $table->string('item_name');
             $table->mediumText('item_description');
+            $table->string('categories');
             $table->timestamps();
         });
     }
