@@ -39,9 +39,12 @@ class AccountController extends Controller
     }
     
     public function view(){
-        $aiitem = Ai::where('owner_id', Auth::user()->user_id)->get();
-        $equipitem = Equipment::where('owner_id', Auth::user()->user_id)->get();
-        $item = Items::where('owner_id', Auth::user()->user_id)->get();
+        $Ai = new Ai();
+        $Equip = new Equipment();
+        $Item = new Items();
+        $aiitem = $Ai->getAiItem();
+        $equipitem = $Equip->getEquipmentItems();
+        $item = $Item->getItems();
         $xtal = Xtal::where('owner_id', Auth::user()->user_id)->get();
         return view('viewitem', compact('aiitem', 'equipitem', 'item', 'xtal'));
     }
