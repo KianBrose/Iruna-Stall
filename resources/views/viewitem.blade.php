@@ -6,7 +6,7 @@
 <link href="{{ asset('css/util.css') }}" rel="stylesheet">
 <div class="container">
 	<div class="row">
-		<div class="col-md-7 offset-md-3" >
+		<div class="col-md-11 offset-md-1" >
 		<div style="height: auto !important;">
 			<br>
 			<h4>View my items</h4>
@@ -15,6 +15,7 @@
             <br>
 			<div>
 				<div>
+				<div class="row">
 					<table>
 						<thead>
 							<tr class="table100-head">
@@ -29,6 +30,8 @@
 								<th class="equipment">Ability</th>
 								<th class="equipment">Ability Lv</th>
 								<th class="equipment">Price</th>
+								<th class="equipment">Controls</th>
+								<th class="equipment">Controls</th>
 							</tr>
 						</thead>
 						<tbody>
@@ -44,6 +47,12 @@
 								<td class="equipment">9</td>
 								<td class="equipment">10</td>
 								<td class="equipment">11</td>
+								<td class="equipment">
+									<button type="button" class="btn btn-primary">Edit</button>
+								</td>
+								<td class="equipment">
+									<button type="button" class="btn btn-secondary">delete</button>
+								</td>
 							</tr>
 							<tr>
 								<td class="equipment">1</td>
@@ -57,9 +66,16 @@
 								<td class="equipment">9</td>
 								<td class="equipment">10</td>
 								<td class="equipment">11</td>
+								<td class="equipment">
+									<button type="button" class="btn btn-primary">Edit</button>
+								</td>
+								<td class="equipment">
+									<button type="button" class="btn btn-secondary">delete</button>
+								</td>
 							</tr>
 						</tbody>
 					</table>
+				</div>
 				</div>
 			</div>
             <br>
@@ -74,6 +90,8 @@
 								<th class="materials">ID</th>
 								<th class="materials">QTY</th>
 								<th class="materials">Price</th>
+								<th class="materials">Controls</th>
+								<th class="materials">Controls</th>
 							</tr>
 						</thead>
 						<tbody>
@@ -82,12 +100,24 @@
 								<td class="materials">2</td>
 								<td class="materials">3</td>
 								<td class="materials">4</td>
+								<td class="materials">
+									<button type="button" class="btn btn-primary">Edit</button>
+								</td>
+								<td class="materials">
+									<button type="button" class="btn btn-secondary">delete</button>
+								</td>
 							</tr>
 							<tr>
 								<td class="materials">1</td>
 								<td class="materials">2</td>
 								<td class="materials">3</td>
 								<td class="materials">4</td>
+								<td class="materials">
+									<button type="button" class="btn btn-primary">Edit</button>
+								</td>
+								<td class="materials">
+									<button type="button" class="btn btn-secondary">delete</button>
+								</td>
 							</tr>
 						</tbody>
 					</table>
@@ -105,6 +135,8 @@
 								<th class="xtals">ID</th>
 								<th class="xtals">QTY</th>
 								<th class="xtals">Price</th>
+								<th class="xtals">Controls</th>
+								<th class="xtals">Controls</th>
 							</tr>
 						</thead>
 						<tbody>
@@ -113,12 +145,24 @@
 								<td class="xtals">2</td>
 								<td class="xtals">3</td>
 								<td class="xtals">4</td>
+								<td class="xtals">
+									<button type="button" class="btn btn-primary">Edit</button>
+								</td>
+								<td class="xtals">
+									<button type="button" class="btn btn-secondary">delete</button>
+								</td>
 							</tr>
 							<tr>
 								<td class="xtals">1</td>
 								<td class="xtals">2</td>
 								<td class="xtals">3</td>
 								<td class="xtals">4</td>
+								<td class="xtals">
+									<button type="button" class="btn btn-primary">Edit</button>
+								</td>
+								<td class="xtals">
+									<button type="button" class="btn btn-secondary">delete</button>
+								</td>
 							</tr>
 						</tbody>
 					</table>
@@ -137,6 +181,8 @@
 								<th class="als">QTY</th>
 								<th class="als">Color</th>
 								<th class="als">Price</th>
+								<th class="als">Controls</th>
+								<th class="als">Controls</th>
 							</tr>
 						</thead>
 						<tbody>
@@ -146,6 +192,12 @@
 								<td class="als">3</td>
 								<td class="als">4</td>
 								<td class="als">5</td>
+								<td class="als">
+									<button type="button" class="btn btn-primary">Edit</button>
+								</td>
+								<td class="als">
+									<button type="button" class="btn btn-secondary">delete</button>
+								</td>
 							</tr>
 							<tr>
 								<td class="als">1</td>
@@ -153,6 +205,12 @@
 								<td class="als">3</td>
                                 <td class="als">4</td>
 								<td class="als">5</td>
+								<td class="als">
+									<button type="button" class="btn btn-primary">Edit</button>
+								</td>
+								<td class="als">
+									<button type="button" class="btn btn-secondary">delete</button>
+								</td>
 							</tr>
 						</tbody>
 					</table>
@@ -170,6 +228,8 @@
 								<th class="relics">ID</th>
 								<th class="relics">QTY</th>
 								<th class="relics">Price</th>
+								<th class="relics">Controls</th>
+								<th class="relics">Controls</th>
 							</tr>
 						</thead>
 						<tbody>
@@ -178,12 +238,24 @@
 								<td class="relics">2</td>
 								<td class="relics">3</td>
 								<td class="relics">4</td>
+								<td class="relics">
+									<button type="button" class="btn btn-primary">Edit</button>
+								</td>
+								<td class="relics">
+									<button type="button" class="btn btn-secondary">delete</button>
+								</td>
 							</tr>
 							<tr>
 								<td class="relics">1</td>
 								<td class="relics">2</td>
 								<td class="relics">3</td>
 								<td class="relics">4</td>
+								<td class="relics">
+									<button type="button" class="btn btn-primary">Edit</button>
+								</td>
+								<td class="relics">
+									<button type="button" class="btn btn-secondary">delete</button>
+								</td>
 							</tr>
 						</tbody>
 					</table>
