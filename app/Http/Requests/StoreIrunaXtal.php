@@ -3,13 +3,13 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
-use Illuminate\Contracts\Validation\Validator;
-use App\Irunaitem;
 use Auth;
-class StoreIrunaItem extends FormRequest
-{
+use App\Irunaitem;
+use Illuminate\Contracts\Validation\Validator;
 
-    const Type = array('Collectibles', 'Status', 'Strengthening', 'Recovery', 'Teleports', 'IslandItems', 'Chests');
+class StoreIrunaXtal extends FormRequest
+{
+    const Category = "Crystas";
     /**
      * Determine if the user is authorized to make this request.
      *
@@ -37,33 +37,23 @@ class StoreIrunaItem extends FormRequest
     public function withValidator(Validator $validator){
         $validator->after(function($validator){
             $name = $this->request->get('name');
-            if($this->invalidItemName($name)){
-                $validator->errors()->add('nameError', 'Please check your spelling again');
-                $validator->errors()->add('mainError', 'Please check your previous submission, something went wrong');
-            } 
+            if($this->invalidName($name)){
+                $validator->errors()->add('mainError', 'Something went wrong, please check your form again');   
+            }
         });
     }
 
-    public function invalidItemName($name){
-        $item = Irunaitem::where('name', $name)->first();
+
+    public function invalidName($name){
+        $item = Irunaitem::item($name)->first();
         if($item){
-            if($this->validType($item)){
+            if($item->category == StoreIrunaXtal::Category){
                 return false;
             } else{
                 return true;
             }
-        } else{
+        } else {
             return true;
         }
-        
-    }
-
-    public function validType($item){
-        if(in_array($item->category, StoreIrunaItem::Type)){
-            return true;
-        } else{
-            return false;
-        }
-
     }
 }

@@ -14,6 +14,7 @@ use App\Http\Requests\StoreIrunaItem;
 use RealRashid\SweetAlert\Facades\Alert;
 use App\Http\Requests\StoreIrunaAi;
 use App\Http\Requests\StoreIrunaEquip;
+use App\Http\Requests\StoreIrunaXtal;
 
 class ItemController extends Controller
 {
@@ -51,12 +52,7 @@ class ItemController extends Controller
 
         // check atk
         $equip->atk = request('atk');
-
-        // check def
         $equip->def = request('def');
-        
-        // check price
-        
         $equip->price = request('price');
         
         $equip->slots = request('equipslotamount');
@@ -93,12 +89,8 @@ class ItemController extends Controller
 
     }
 
-    public function createXtal(Request $request){
-        $request->validate([
-            'name' => 'required|alpha',
-            'quantity' => 'required|integer|max:99',
-            'price' => 'required|integer|min:0'
-        ]);
+    public function createXtal(StoreIrunaXtal $request){
+        $request->validated();
         $xtal = new Xtal();
         $item_id = $this->generateID(7);
         $xtal->name = request('name');

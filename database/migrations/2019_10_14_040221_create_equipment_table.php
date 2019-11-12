@@ -23,12 +23,12 @@ class CreateEquipmentTable extends Migration
             $table->integer('atk');
             $table->integer('def');
             $table->bigInteger('price');
-            $table->integer('slots');
-            $table->string('slot1');
-            $table->string('slot2');
-            $table->string('ability');
-            $table->integer('ability_level');
-            $table->integer('refinement');
+            $table->integer('slots')->nullable();
+            $table->string('slot1')->nullable();
+            $table->string('slot2')->nullable();
+            $table->string('ability')->nullable();
+            $table->integer('ability_level')->nullable();
+            $table->integer('refinement')->nullable();
             $table->string('routes');
             $table->string('contact');
             $table->timestamps();
