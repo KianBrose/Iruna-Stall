@@ -8,6 +8,8 @@ use App\Irunaitem;
 use Auth;
 class StoreIrunaItem extends FormRequest
 {
+
+    const Type = array('Collectibles', 'Status', 'Strengthening', 'Recovery', 'Teleports', 'IslandItems');
     /**
      * Determine if the user is authorized to make this request.
      *
@@ -44,10 +46,19 @@ class StoreIrunaItem extends FormRequest
 
     public function invalidItemName($name){
         $item = Irunaitem::where('name', $name)->first();
-        if($item){
+        if($this->validType($item)){
             return false;
         } else{
             return true;
         }
+    }
+
+    public function validType($item){
+        if(in_array($item->category, StoreIrunaItem::Type)){
+            return true;
+        } else{
+            return false;
+        }
+
     }
 }

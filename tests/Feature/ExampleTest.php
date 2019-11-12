@@ -30,14 +30,4 @@ class RoutesStatus extends TestCase
         $response = $this->get('/viewitem');
         $response->assertStatus(302);
     }
-
-    public function testViewItemAsUser()
-    {
-        //$user = factory(User::class)->create();
-
-        $response = $this->actingAs(User::find(1))
-                         ->get('/viewitem');
-        $response->assertStatus(200);
-        
-    }
 }
