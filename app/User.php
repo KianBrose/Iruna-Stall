@@ -37,4 +37,12 @@ class User extends Authenticatable implements MustVerifyEmail
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function isAdmin(){
+        return $this->isAdmin === '1';
+    }
+
+    public function isBanned(){
+        return $this->activate === '0';
+    }
 }
