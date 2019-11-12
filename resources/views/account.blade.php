@@ -88,7 +88,9 @@
                     <hr>
 					<div>
 						<p>Welcome to the add item page! If this is your first time here, please refer to this <a>quick guide</a> on how to add an item!</p>
-		
+							@error('mainError')
+									<div class="alert alert-danger"> {{ $message }}</div>
+								@enderror
 							<select name="itemtype" class="form-control2" id="itemtype"> 
 							   <option>Choose type</option>
 							   <option value="1">Equipment</option>
@@ -269,6 +271,12 @@
 								<td  style="padding-left:10px;">
 									<input type="text" class="form-control iteminput" style="width: 400px" name="name" id="itemname"/>
 								</td>
+								@error('fielderror')
+									<div style="color:red;"> {{ $message }}</div>
+								@enderror
+								@error('name')
+									<div style="color:red;"> {{ $message }}</div>
+								@enderror
 							</tr>
 							<tr>
 								<td>
