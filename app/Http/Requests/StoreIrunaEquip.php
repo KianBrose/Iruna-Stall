@@ -11,9 +11,9 @@ class StoreIrunaEquip extends FormRequest
 {
 
     const Category = array('Swords', 'Bows', 'Claws', 'Throwing', 'Canes', 'Special', 'Additional', 'Armor');
-    const Ability = array('gentleness', 'provoke', "magic", "mp cost", "intelligent", "strength", "agility", 
-    "evasion", "fixed melee", "fixed magic", "rate cut", "melee defense", "magic defense", "dexterity", "critical",
-    "attack", "quick cool", "quick use", "wind blessing", "earth blessing", "fire blessing", "water blessing", "striver");
+    const Ability = array('Gentleness', 'Provoke', "Magic", "Mp Cost", "Intelligence", "Strength", "Agility", 
+    "Evasion", "Fixed Melee", "Fixed Magic", "Rate Cut", "Melee Defense", "Magic Defense", "Dexterity", "Critical",
+    "Attack", "Quick cool", "Quick use", "Wind blessing", "Earth blessing", "Fire blessing", "Water blessing", "Striver");
     const Xtal = 'Crystas';
     const Null = "";
     const Type = array('Additional','Weapon', 'Special', 'Body');
