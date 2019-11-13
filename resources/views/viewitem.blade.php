@@ -38,22 +38,38 @@
 								<form>
 									<td class="equipment">Name</td>
 									<td class="equipment">
-										<input type="text" class="form-control iteminput" style="width: 40px" name="atk" id="atk"/>
+										<input type="text" class="form-control iteminput" style="width: 50px" name="atk" id="atk"/>
 									</td>
 									<td class="equipment">
-										<input type="text" class="form-control iteminput" style="width: 40px" name="def" id="def"/>
+										<input type="text" class="form-control iteminput" style="width: 50px" name="def" id="def"/>
 									</td>
 									<td class="equipment">
-										<input type="text" class="form-control iteminput" style="width: 40px" name="ref" id="ref"/>
+										<select name="refinement" class="form-control iteminput" id="refinement"> 
+										   <option selected value="0">0</option>
+										   <option value="1">1</option>
+										   <option value="2">2</option>
+										   <option value="3">3</option>
+										   <option value="4">4</option>
+										   <option value="5">5</option>
+										   <option value="6">6</option>
+										   <option value="7">7</option>
+										   <option value="8">8</option>
+										   <option value="9">9</option>
+										</select>
 									</td>
 									<td class="equipment">
-										<input type="text" class="form-control iteminput" style="width: 40px" name="slots" id="slots"/>
+										<select name="equipslotamount" class="form-control iteminput" id="equipslotamount"> 
+										   <option selected value="0">0</option>
+										   <option value="0">0</option>
+										   <option value="1">1</option>
+										   <option value="2">2</option>
+										</select>
 									</td>
 									<td class="equipment">
-										<input type="text" class="form-control iteminput" style="width: 40px" name="s1" id="s1"/>
+										<input type="text" class="form-control iteminput" style="width: 130px" name="s1" id="s1"/>
 									</td>
 									<td class="equipment">
-										<input type="text" class="form-control iteminput" style="width: 40px" name="s2" id="s2"/>
+										<input type="text" class="form-control iteminput" style="width: 130px" name="s2" id="s2"/>
 									</td>
 									<td class="equipment">
 										<input type="text" class="form-control iteminput" style="width: 40px" name="abil" id="abil"/>
