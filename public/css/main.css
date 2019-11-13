@@ -293,33 +293,30 @@ tbody tr:hover {
         content: "Name";
     }
     .equipment:nth-child(2):before {
-        content: "ID";
-    }
-    .equipment:nth-child(3):before {
         content: "ATK";
     }
-    .equipment:nth-child(4):before {
+    .equipment:nth-child(3):before {
         content: "DEF";
     }
-    .equipment:nth-child(5):before {
+    .equipment:nth-child(4):before {
         content: "Refinement";
     }
-    .equipment:nth-child(6):before {
+    .equipment:nth-child(5):before {
         content: "Slots";
     }
-    .equipment:nth-child(7):before {
+    .equipment:nth-child(6):before {
         content: "Slot 1";
     }
-    .equipment:nth-child(8):before {
+    .equipment:nth-child(7):before {
         content: "Slot 2";
     }
-    .equipment:nth-child(9):before {
+    .equipment:nth-child(8):before {
         content: "Ability";
     }
-    .equipment:nth-child(10):before {
+    .equipment:nth-child(9):before {
         content: "Ability Lv";
     }
-    .equipment:nth-child(11):before {
+    .equipment:nth-child(10):before {
         content: "Price";
     }
     
@@ -329,12 +326,9 @@ tbody tr:hover {
         content: "Name";
     }
     .materials:nth-child(2):before {
-        content: "ID";
-    }
-    .materials:nth-child(3):before {
         content: "QTY";
     }
-    .materials:nth-child(4):before {
+    .materials:nth-child(3):before {
         content: "Price";
     }
     
@@ -342,12 +336,9 @@ tbody tr:hover {
         content: "Name";
     }
     .xtals:nth-child(2):before {
-        content: "ID";
-    }
-    .xtals:nth-child(3):before {
         content: "QTY";
     }
-    .xtals:nth-child(4):before {
+    .xtals:nth-child(3):before {
         content: "Price";
     }
     
@@ -355,15 +346,12 @@ tbody tr:hover {
         content: "Name";
     }
     .als:nth-child(2):before {
-        content: "ID";
-    }
-    .als:nth-child(3):before {
         content: "QTY";
     }
-    .als:nth-child(4):before {
+    .als:nth-child(3):before {
         content: "Color";
     }
-    .als:nth-child(5):before {
+    .als:nth-child(4):before {
         content: "Price";
     }
     
@@ -371,12 +359,9 @@ tbody tr:hover {
         content: "Name";
     }
     .relics:nth-child(2):before {
-        content: "ID";
-    }
-    .relics:nth-child(3):before {
         content: "QTY";
     }
-    .relics:nth-child(4):before {
+    .relics:nth-child(3):before {
         content: "Price";
     }
     

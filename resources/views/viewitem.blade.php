@@ -20,7 +20,6 @@
 						<thead>
 							<tr class="table100-head">
 								<th class="equipment">Name</th>
-								<th class="equipment">ID</th>
 								<th class="equipment">ATK</th>
 								<th class="equipment">DEF</th>
 								<th class="equipment">Refinement</th>
@@ -46,7 +45,6 @@
 								<td class="equipment">8</td>
 								<td class="equipment">9</td>
 								<td class="equipment">10</td>
-								<td class="equipment">11</td>
 								<td class="equipment">
 									<button type="button" class="btn btn-primary">Apply</button>
 								</td>
@@ -65,7 +63,6 @@
 								<td class="equipment">8</td>
 								<td class="equipment">9</td>
 								<td class="equipment">10</td>
-								<td class="equipment">11</td>
 								<td class="equipment">
 									<button type="button" class="btn btn-primary">Apply</button>
 								</td>
@@ -87,7 +84,6 @@
 						<thead>
 							<tr class="table100-head">
 								<th class="materials">Name</th>
-								<th class="materials">ID</th>
 								<th class="materials">QTY</th>
 								<th class="materials">Price</th>
 								<th class="materials">Controls</th>
@@ -99,7 +95,6 @@
 								<td class="materials">1</td>
 								<td class="materials">2</td>
 								<td class="materials">3</td>
-								<td class="materials">4</td>
 								<td class="materials">
 									<button type="button" class="btn btn-primary">Apply</button>
 								</td>
@@ -111,7 +106,6 @@
 								<td class="materials">1</td>
 								<td class="materials">2</td>
 								<td class="materials">3</td>
-								<td class="materials">4</td>
 								<td class="materials">
 									<button type="button" class="btn btn-primary">Apply</button>
 								</td>
@@ -132,7 +126,6 @@
 						<thead>
 							<tr class="table100-head">
 								<th class="xtals">Name</th>
-								<th class="xtals">ID</th>
 								<th class="xtals">QTY</th>
 								<th class="xtals">Price</th>
 								<th class="xtals">Controls</th>
@@ -144,7 +137,6 @@
 								<td class="xtals">1</td>
 								<td class="xtals">2</td>
 								<td class="xtals">3</td>
-								<td class="xtals">4</td>
 								<td class="xtals">
 									<button type="button" class="btn btn-primary">Apply</button>
 								</td>
@@ -156,7 +148,6 @@
 								<td class="xtals">1</td>
 								<td class="xtals">2</td>
 								<td class="xtals">3</td>
-								<td class="xtals">4</td>
 								<td class="xtals">
 									<button type="button" class="btn btn-primary">Apply</button>
 								</td>
@@ -177,7 +168,6 @@
 						<thead>
 							<tr class="table100-head">
 								<th class="als">Name</th>
-								<th class="als">ID</th>
 								<th class="als">QTY</th>
 								<th class="als">Color</th>
 								<th class="als">Price</th>
@@ -191,7 +181,6 @@
 								<td class="als">2</td>
 								<td class="als">3</td>
 								<td class="als">4</td>
-								<td class="als">5</td>
 								<td class="als">
 									<button type="button" class="btn btn-primary">Apply</button>
 								</td>
@@ -204,7 +193,6 @@
 								<td class="als">2</td>
 								<td class="als">3</td>
                                 <td class="als">4</td>
-								<td class="als">5</td>
 								<td class="als">
 									<button type="button" class="btn btn-primary">Apply</button>
 								</td>
@@ -225,7 +213,6 @@
 						<thead>
 							<tr class="table100-head">
 								<th class="relics">Name</th>
-								<th class="relics">ID</th>
 								<th class="relics">QTY</th>
 								<th class="relics">Price</th>
 								<th class="relics">Controls</th>
@@ -237,7 +224,6 @@
 								<td class="relics">1</td>
 								<td class="relics">2</td>
 								<td class="relics">3</td>
-								<td class="relics">4</td>
 								<td class="relics">
 									<button type="button" class="btn btn-primary">Apply</button>
 								</td>
@@ -249,7 +235,6 @@
 								<td class="relics">1</td>
 								<td class="relics">2</td>
 								<td class="relics">3</td>
-								<td class="relics">4</td>
 								<td class="relics">
 									<button type="button" class="btn btn-primary">Apply</button>
 								</td>
