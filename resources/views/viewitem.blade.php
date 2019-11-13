@@ -48,10 +48,10 @@
 								<td class="equipment">10</td>
 								<td class="equipment">11</td>
 								<td class="equipment">
-									<button type="button" class="btn btn-primary">Edit</button>
+									<button type="button" class="btn btn-primary">Apply</button>
 								</td>
 								<td class="equipment">
-									<button type="button" class="btn btn-secondary">delete</button>
+									<button type="button" class="btn btn-secondary">Delete</button>
 								</td>
 							</tr>
 							<tr>
@@ -67,10 +67,10 @@
 								<td class="equipment">10</td>
 								<td class="equipment">11</td>
 								<td class="equipment">
-									<button type="button" class="btn btn-primary">Edit</button>
+									<button type="button" class="btn btn-primary">Apply</button>
 								</td>
 								<td class="equipment">
-									<button type="button" class="btn btn-secondary">delete</button>
+									<button type="button" class="btn btn-secondary">Delete</button>
 								</td>
 							</tr>
 						</tbody>
@@ -101,10 +101,10 @@
 								<td class="materials">3</td>
 								<td class="materials">4</td>
 								<td class="materials">
-									<button type="button" class="btn btn-primary">Edit</button>
+									<button type="button" class="btn btn-primary">Apply</button>
 								</td>
 								<td class="materials">
-									<button type="button" class="btn btn-secondary">delete</button>
+									<button type="button" class="btn btn-secondary">Delete</button>
 								</td>
 							</tr>
 							<tr>
@@ -113,10 +113,10 @@
 								<td class="materials">3</td>
 								<td class="materials">4</td>
 								<td class="materials">
-									<button type="button" class="btn btn-primary">Edit</button>
+									<button type="button" class="btn btn-primary">Apply</button>
 								</td>
 								<td class="materials">
-									<button type="button" class="btn btn-secondary">delete</button>
+									<button type="button" class="btn btn-secondary">Delete</button>
 								</td>
 							</tr>
 						</tbody>
@@ -146,10 +146,10 @@
 								<td class="xtals">3</td>
 								<td class="xtals">4</td>
 								<td class="xtals">
-									<button type="button" class="btn btn-primary">Edit</button>
+									<button type="button" class="btn btn-primary">Apply</button>
 								</td>
 								<td class="xtals">
-									<button type="button" class="btn btn-secondary">delete</button>
+									<button type="button" class="btn btn-secondary">Delete</button>
 								</td>
 							</tr>
 							<tr>
@@ -158,10 +158,10 @@
 								<td class="xtals">3</td>
 								<td class="xtals">4</td>
 								<td class="xtals">
-									<button type="button" class="btn btn-primary">Edit</button>
+									<button type="button" class="btn btn-primary">Apply</button>
 								</td>
 								<td class="xtals">
-									<button type="button" class="btn btn-secondary">delete</button>
+									<button type="button" class="btn btn-secondary">Delete</button>
 								</td>
 							</tr>
 						</tbody>
@@ -193,10 +193,10 @@
 								<td class="als">4</td>
 								<td class="als">5</td>
 								<td class="als">
-									<button type="button" class="btn btn-primary">Edit</button>
+									<button type="button" class="btn btn-primary">Apply</button>
 								</td>
 								<td class="als">
-									<button type="button" class="btn btn-secondary">delete</button>
+									<button type="button" class="btn btn-secondary">Delete</button>
 								</td>
 							</tr>
 							<tr>
@@ -206,10 +206,10 @@
                                 <td class="als">4</td>
 								<td class="als">5</td>
 								<td class="als">
-									<button type="button" class="btn btn-primary">Edit</button>
+									<button type="button" class="btn btn-primary">Apply</button>
 								</td>
 								<td class="als">
-									<button type="button" class="btn btn-secondary">delete</button>
+									<button type="button" class="btn btn-secondary">Delete</button>
 								</td>
 							</tr>
 						</tbody>
@@ -239,10 +239,10 @@
 								<td class="relics">3</td>
 								<td class="relics">4</td>
 								<td class="relics">
-									<button type="button" class="btn btn-primary">Edit</button>
+									<button type="button" class="btn btn-primary">Apply</button>
 								</td>
 								<td class="relics">
-									<button type="button" class="btn btn-secondary">delete</button>
+									<button type="button" class="btn btn-secondary">Delete</button>
 								</td>
 							</tr>
 							<tr>
@@ -251,10 +251,10 @@
 								<td class="relics">3</td>
 								<td class="relics">4</td>
 								<td class="relics">
-									<button type="button" class="btn btn-primary">Edit</button>
+									<button type="button" class="btn btn-primary">Apply</button>
 								</td>
 								<td class="relics">
-									<button type="button" class="btn btn-secondary">delete</button>
+									<button type="button" class="btn btn-secondary">Delete</button>
 								</td>
 							</tr>
 						</tbody>
