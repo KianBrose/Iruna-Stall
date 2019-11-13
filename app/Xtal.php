@@ -8,4 +8,6 @@ class Xtal extends Model
 {
     //
     protected $table = 'xtal';
+
+    
 }

@@ -11,9 +11,9 @@ class StoreIrunaEquip extends FormRequest
 {
 
     const Category = array('Swords', 'Bows', 'Claws', 'Throwing', 'Canes', 'Special', 'Additional', 'Armor');
-    const Ability = array('gentleness', 'provoke', "magic", "mp cost", "intelligent", "strength", "agility", 
-    "evasion", "fixed melee", "fixed magic", "rate cut", "melee defense", "magic defense", "dexterity", "critical",
-    "attack", "quick cool", "quick use", "wind blessing", "earth blessing", "fire blessing", "water blessing", "striver");
+    const Ability = array('Gentleness', 'Provoke', "Magic", "Mp Cost", "Intelligence", "Strength", "Agility", 
+    "Evasion", "Fixed Melee", "Fixed Magic", "Rate Cut", "Melee Defense", "Magic Defense", "Dexterity", "Critical",
+    "Attack", "Quick cool", "Quick use", "Wind blessing", "Earth blessing", "Fire blessing", "Water blessing", "Striver");
     const Xtal = 'Crystas';
     const Null = "";
     const Type = array('Additional','Weapon', 'Special', 'Body');
@@ -55,20 +55,12 @@ class StoreIrunaEquip extends FormRequest
            $slot2 = $this->request->get('slot2');
            $type = $this->request->get('type');
 
-           if($this->invalidEquipName($name)){
+           if($this->invalidEquipName($name, $type)){
             $validator->errors()->add('nameError', 'The name does not seem right');
             $validator->errors()->add('mainError', 'Please check your previous submission, something went wrong');
            }
            if($this->invalidAbility($ability)){
             $validator->error()->add('abilityError', 'The name does not seem right');
-            $validator->error()->add('mainError', 'Please check your previous submission');
-           }
-           if ($this->invalidSlotXtal($slot1)){
-            $validator->error()->add('slot1Error', 'The name does not seem right');
-            $validator->error()->add('mainError', 'Please check your previous submission');
-           }
-           if ($this->invalidSlotXtal($slot2)){
-            $validator->error()->add('slot2Error', 'The name does not seem right');
             $validator->error()->add('mainError', 'Please check your previous submission');
            }
            if ($this->invalidType($type)){
@@ -78,13 +70,22 @@ class StoreIrunaEquip extends FormRequest
         });
     }
 
-    public function invalidEquipName($name){
+    public function invalidEquipName($name, $type){
         $item = Irunaitem::where('name', $name)->first();
-       if(in_array($item->category, StoreIrunaEquip::Category)){
-            return false;
-       } else{
-           return true;
-       }
+        if($item){
+            if(in_array($item->category, StoreIrunaEquip::Category)){
+                if($this->invalidEquipType($name, $type)){
+                    return true;
+                } else{
+                    return false;
+                }
+            } else{
+               return true;
+            }
+        } else{
+            return true;
+        }
+       
     }
 
     public function invalidAbility($ability){
@@ -95,12 +96,18 @@ class StoreIrunaEquip extends FormRequest
         }
     }
 
-    public function invalidSlotXtal($xtal){
-        $item = Irunaitem::where('name', $xtal)->first();
-        if($item->category == StoreIrunaEquip::Xtal || $item->category == StoreIrunaEquip::Null){
-            return false;
+    public function invalidSlotXtal($xtal1, $xtal2){
+        $item1 = Irunaitem::item($xtal1)->first();
+        $item2 = Irunaitem::item($xtal2)->first();
+        if($item1){
+            return $this->invalidSlot($item1);
         } else{
-            return true;
+            return false;
+        }
+        if($item2){
+            return $this->invalidSlot($item2);
+        } else{
+            return false;
         }
     }
 
@@ -112,15 +119,27 @@ class StoreIrunaEquip extends FormRequest
         }
     }
 
-    public function invalidEquipType($equip){
-        if($this->invalidEquipName($equip) == false){
-            $item = Irunaitem::where('name', $equip);
-            $type = $this->request->get('type');
-            if($item->category != $type){
-                return true;
-            } else{
-                return false;
-            }
+    public function invalidEquipType($equip, $type){
+        if($equip->category != $type){
+            return true;
+        } else{
+            return false;
+        }
+    }
+
+    public function invalidEquipment($name, $ability, $type, $slot1, $slot2){
+        if($this->invalidAbility($ability) || $this->invalidEquipName($name, $type) || $this->invalidSlotXtal($slot1, $slot2)){
+            return true;
+        } else{
+            return false;
+        }
+    }
+
+    public function invalidSlot($xtal){
+        if($xtal->category != StoreIrunaEquip::Category){
+            return true;
+        } else{
+            return false;
         }
     }
 

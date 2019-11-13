@@ -15,4 +15,12 @@ class Ai extends Model
     public function getAiItem(){
         return Ai::where('owner_id', Auth::user()->user_id)->get();
     }
+
+    public function scopeAdd($name, $color, $price, $quantity){
+        $createAi = $this->createAi($name, $color, $price, $quantity);
+    }
+
+    private function createAi($name, $color, $price, $quantity){
+        
+    } 
 }
