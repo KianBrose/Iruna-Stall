@@ -46,6 +46,15 @@ class StoreIrunaEquip extends FormRequest
                 'price' => 'required|integer|min:0',
         ];
     }
+    
+    public function messages()
+    {
+        return [
+            'name.required' => 'The item name cannot be blank',
+            'atk.required' => 'The atk of your equipment cannot be blank',
+            'def.required' => 'The def of your equipment cannot be blank'
+        ];
+    }
 
     public function withValidator(Validator $validator){
         $validator->after(function($validator){
