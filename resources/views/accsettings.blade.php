@@ -14,7 +14,7 @@
 </head>
 
 <body>
-        @include('cookieConsent::index')
+        
 <div id="app">
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <div class="container">
