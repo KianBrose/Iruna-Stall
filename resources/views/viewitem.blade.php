@@ -293,11 +293,11 @@
 										<input type="text" class="form-control iteminput" style="width: 80px" name="qty" id="qty"/>
 									</td>
 									<td class="als">
-										<select name="color" class="form-control iteminput" id="color" style="width: 60px"> 
-										   <option selected value="R">R</option>
-										   <option value="R">R</option>
-										   <option value="G">G</option>
-										   <option value="B">B</option>
+										<select name="color" class="form-control iteminput" id="color" style="width: 120px"> 
+										   <option selected value="R">Red</option>
+										   <option value="R">Red</option>
+										   <option value="G">Green</option>
+										   <option value="B">Blue</option>
 										</select>
 									</td>
 									<td class="als">
