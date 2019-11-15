@@ -15,7 +15,6 @@
             <br>
 			<div>
 				<div>
-				<div class="row">
 					<table>
 						<thead>
 							<tr class="table100-head">
@@ -72,13 +71,21 @@
 										<input type="text" class="form-control iteminput" style="width: 130px" name="s2" id="s2"/>
 									</td>
 									<td class="equipment">
-										<input type="text" class="form-control iteminput" style="width: 40px" name="abil" id="abil"/>
+										<input type="text" class="form-control iteminput" style="width: 160px" name="abil" id="abil"/>
 									</td>
 									<td class="equipment">
-										<input type="text" class="form-control iteminput" style="width: 40px" name="abilv" id="abilv"/>
+										<select name="abilv" class="form-control iteminput" id="abilv"> 
+										   <option selected value="0">0</option>
+										   <option value="0">0</option>
+										   <option value="1">1</option>
+										   <option value="2">2</option>
+										   <option value="3">3</option>
+										   <option value="4">4</option>
+										   <option value="5">5</option>
+										</select>
 									</td>
 									<td class="equipment">
-										<input type="text" class="form-control iteminput" style="width: 40px" name="price" id="price"/>
+										<input type="text" class="form-control iteminput" style="width: 140px" name="price" id="price"/>
 									</td>
 									<td class="equipment">
 										<button type="submit" class="btn btn-outline-success">Apply</button>
@@ -89,26 +96,69 @@
 								</form>
 							</tr>
 							<tr>
-								<td class="equipment">1</td>
-								<td class="equipment">2</td>
-								<td class="equipment">3</td>
-								<td class="equipment">4</td>
-								<td class="equipment">5</td>
-								<td class="equipment">6</td>
-								<td class="equipment">7</td>
-								<td class="equipment">8</td>
-								<td class="equipment">9</td>
-								<td class="equipment">10</td>
-								<td class="equipment">
-									<button type="button" class="btn btn-outline-success">Apply</button>
-								</td>
-								<td class="equipment">
-									<button type="button" class="btn btn-outline-danger">Delete</button>
-								</td>
+								<form>
+									<td class="equipment">Name</td>
+									<td class="equipment">
+										<input type="text" class="form-control iteminput" style="width: 50px" name="atk" id="atk"/>
+									</td>
+									<td class="equipment">
+										<input type="text" class="form-control iteminput" style="width: 50px" name="def" id="def"/>
+									</td>
+									<td class="equipment">
+										<select name="refinement" class="form-control iteminput" id="refinement"> 
+										   <option selected value="0">0</option>
+										   <option value="1">1</option>
+										   <option value="2">2</option>
+										   <option value="3">3</option>
+										   <option value="4">4</option>
+										   <option value="5">5</option>
+										   <option value="6">6</option>
+										   <option value="7">7</option>
+										   <option value="8">8</option>
+										   <option value="9">9</option>
+										</select>
+									</td>
+									<td class="equipment">
+										<select name="equipslotamount" class="form-control iteminput" id="equipslotamount"> 
+										   <option selected value="0">0</option>
+										   <option value="0">0</option>
+										   <option value="1">1</option>
+										   <option value="2">2</option>
+										</select>
+									</td>
+									<td class="equipment">
+										<input type="text" class="form-control iteminput" style="width: 130px" name="s1" id="s1"/>
+									</td>
+									<td class="equipment">
+										<input type="text" class="form-control iteminput" style="width: 130px" name="s2" id="s2"/>
+									</td>
+									<td class="equipment">
+										<input type="text" class="form-control iteminput" style="width: 160px" name="abil" id="abil"/>
+									</td>
+									<td class="equipment">
+										<select name="abilv" class="form-control iteminput" id="abilv"> 
+										   <option selected value="0">0</option>
+										   <option value="0">0</option>
+										   <option value="1">1</option>
+										   <option value="2">2</option>
+										   <option value="3">3</option>
+										   <option value="4">4</option>
+										   <option value="5">5</option>
+										</select>
+									</td>
+									<td class="equipment">
+										<input type="text" class="form-control iteminput" style="width: 140px" name="price" id="price"/>
+									</td>
+									<td class="equipment">
+										<button type="submit" class="btn btn-outline-success">Apply</button>
+									</td>
+									<td class="equipment">
+										<button type="submit" class="btn btn-outline-danger">Delete</button>
+									</td>
+								</form>
 							</tr>
 						</tbody>
 					</table>
-				</div>
 				</div>
 			</div>
             <br>
