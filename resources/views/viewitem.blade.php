@@ -95,68 +95,6 @@
 									</td>
 								</form>
 							</tr>
-							<tr>
-								<form>
-									<td class="equipment">Name</td>
-									<td class="equipment">
-										<input type="text" class="form-control iteminput" style="width: 50px" name="atk" id="atk"/>
-									</td>
-									<td class="equipment">
-										<input type="text" class="form-control iteminput" style="width: 50px" name="def" id="def"/>
-									</td>
-									<td class="equipment">
-										<select name="refinement" class="form-control iteminput" id="refinement"> 
-										   <option selected value="0">0</option>
-										   <option value="1">1</option>
-										   <option value="2">2</option>
-										   <option value="3">3</option>
-										   <option value="4">4</option>
-										   <option value="5">5</option>
-										   <option value="6">6</option>
-										   <option value="7">7</option>
-										   <option value="8">8</option>
-										   <option value="9">9</option>
-										</select>
-									</td>
-									<td class="equipment">
-										<select name="equipslotamount" class="form-control iteminput" id="equipslotamount" style="width: 60px"> 
-										   <option selected value="0">0</option>
-										   <option value="0">0</option>
-										   <option value="1">1</option>
-										   <option value="2">2</option>
-										</select>
-									</td>
-									<td class="equipment">
-										<input type="text" class="form-control iteminput" style="width: 130px" name="s1" id="s1"/>
-									</td>
-									<td class="equipment">
-										<input type="text" class="form-control iteminput" style="width: 130px" name="s2" id="s2"/>
-									</td>
-									<td class="equipment">
-										<input type="text" class="form-control iteminput" style="width: 160px" name="abil" id="abil"/>
-									</td>
-									<td class="equipment">
-										<select name="abilv" class="form-control iteminput" id="abilv" style="width: 60px"> 
-										   <option selected value="0">0</option>
-										   <option value="0">0</option>
-										   <option value="1">1</option>
-										   <option value="2">2</option>
-										   <option value="3">3</option>
-										   <option value="4">4</option>
-										   <option value="5">5</option>
-										</select>
-									</td>
-									<td class="equipment">
-										<input type="text" class="form-control iteminput" style="width: 140px" name="price" id="price"/>
-									</td>
-									<td class="equipment">
-										<button type="submit" class="btn btn-outline-success">Apply</button>
-									</td>
-									<td class="equipment">
-										<button type="submit" class="btn btn-outline-danger">Delete</button>
-									</td>
-								</form>
-							</tr>
 						</tbody>
 					</table>
 				</div>
@@ -194,23 +132,6 @@
 									</td>
 								</form>
 							</tr>
-							<tr>
-								<form>
-									<td class="materials">1</td>
-									<td class="materials">
-										<input type="text" class="form-control iteminput" style="width: 80px" name="qty" id="qty"/>
-									</td>
-									<td class="materials">
-										<input type="text" class="form-control iteminput" style="width: 160px" name="price" id="price"/>
-									</td>
-									<td class="materials">
-										<button type="submit" class="btn btn-outline-success">Apply</button>
-									</td>
-									<td class="materials">
-										<button type="submit" class="btn btn-outline-danger">Delete</button>
-									</td>
-								</form>
-							</tr>
 						</tbody>
 					</table>
 				</div>
@@ -231,23 +152,6 @@
 							</tr>
 						</thead>
 						<tbody>
-							<tr>
-								<form>
-									<td class="xtals">1</td>
-									<td class="xtals">
-										<input type="text" class="form-control iteminput" style="width: 80px" name="qty" id="qty"/>
-									</td>
-									<td class="xtals">
-										<input type="text" class="form-control iteminput" style="width: 160px" name="price" id="price"/>
-									</td>
-									<td class="xtals">
-										<button type="submit" class="btn btn-outline-success">Apply</button>
-									</td>
-									<td class="xtals">
-										<button type="submit" class="btn btn-outline-danger">Delete</button>
-									</td>
-								</form>
-							</tr>
 							<tr>
 								<form>
 									<td class="xtals">1</td>
@@ -311,31 +215,6 @@
 									</td>
 								</form>
 							</tr>
-							<tr>
-								<form>
-									<td class="als">1</td>
-									<td class="als">
-										<input type="text" class="form-control iteminput" style="width: 80px" name="qty" id="qty"/>
-									</td>
-									<td class="als">
-										<select name="color" class="form-control iteminput" id="color" style="width: 60px"> 
-										   <option selected value="R">R</option>
-										   <option value="R">R</option>
-										   <option value="G">G</option>
-										   <option value="B">B</option>
-										</select>
-									</td>
-									<td class="als">
-										<input type="text" class="form-control iteminput" style="width: 160px" name="price" id="price"/>
-									</td>
-									<td class="als">
-										<button type="submit" class="btn btn-outline-success">Apply</button>
-									</td>
-									<td class="als">
-										<button type="submit" class="btn btn-outline-danger">Delete</button>
-									</td>
-								</form>
-							</tr>
 						</tbody>
 					</table>
 				</div>
@@ -356,23 +235,6 @@
 							</tr>
 						</thead>
 						<tbody>
-							<tr>
-								<form>
-									<td class="relics">1</td>
-									<td class="relics">
-										<input type="text" class="form-control iteminput" style="width: 80px" name="qty" id="qty"/>
-									</td>
-									<td class="relics">
-										<input type="text" class="form-control iteminput" style="width: 160px" name="price" id="price"/>
-									</td>
-									<td class="relics">
-										<button type="submit" class="btn btn-outline-success">Apply</button>
-									</td>
-									<td class="relics">
-										<button type="submit" class="btn btn-outline-danger">Delete</button>
-									</td>
-								</form>
-							</tr>
 							<tr>
 								<form>
 									<td class="relics">1</td>
