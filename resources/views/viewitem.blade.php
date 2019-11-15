@@ -287,28 +287,54 @@
 						</thead>
 						<tbody>
 							<tr>
-								<td class="als">1</td>
-								<td class="als">2</td>
-								<td class="als">3</td>
-								<td class="als">4</td>
-								<td class="als">
-									<button type="button" class="btn btn-outline-success">Apply</button>
-								</td>
-								<td class="als">
-									<button type="button" class="btn btn-outline-danger">Delete</button>
-								</td>
+								<form>
+									<td class="als">1</td>
+									<td class="als">
+										<input type="text" class="form-control iteminput" style="width: 80px" name="qty" id="qty"/>
+									</td>
+									<td class="als">
+										<select name="color" class="form-control iteminput" id="color" style="width: 60px"> 
+										   <option selected value="R">R</option>
+										   <option value="R">R</option>
+										   <option value="G">G</option>
+										   <option value="B">B</option>
+										</select>
+									</td>
+									<td class="als">
+										<input type="text" class="form-control iteminput" style="width: 160px" name="price" id="price"/>
+									</td>
+									<td class="als">
+										<button type="submit" class="btn btn-outline-success">Apply</button>
+									</td>
+									<td class="als">
+										<button type="submit" class="btn btn-outline-danger">Delete</button>
+									</td>
+								</form>
 							</tr>
 							<tr>
-								<td class="als">1</td>
-								<td class="als">2</td>
-								<td class="als">3</td>
-                                <td class="als">4</td>
-								<td class="als">
-									<button type="button" class="btn btn-outline-success">Apply</button>
-								</td>
-								<td class="als">
-									<button type="button" class="btn btn-outline-danger">Delete</button>
-								</td>
+								<form>
+									<td class="als">1</td>
+									<td class="als">
+										<input type="text" class="form-control iteminput" style="width: 80px" name="qty" id="qty"/>
+									</td>
+									<td class="als">
+										<select name="color" class="form-control iteminput" id="color" style="width: 60px"> 
+										   <option selected value="R">R</option>
+										   <option value="R">R</option>
+										   <option value="G">G</option>
+										   <option value="B">B</option>
+										</select>
+									</td>
+									<td class="als">
+										<input type="text" class="form-control iteminput" style="width: 160px" name="price" id="price"/>
+									</td>
+									<td class="als">
+										<button type="submit" class="btn btn-outline-success">Apply</button>
+									</td>
+									<td class="als">
+										<button type="submit" class="btn btn-outline-danger">Delete</button>
+									</td>
+								</form>
 							</tr>
 						</tbody>
 					</table>
