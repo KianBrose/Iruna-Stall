@@ -357,26 +357,38 @@
 						</thead>
 						<tbody>
 							<tr>
-								<td class="relics">1</td>
-								<td class="relics">2</td>
-								<td class="relics">3</td>
-								<td class="relics">
-									<button type="button" class="btn btn-outline-success">Apply</button>
-								</td>
-								<td class="relics">
-									<button type="button" class="btn btn-outline-danger">Delete</button>
-								</td>
+								<form>
+									<td class="relics">1</td>
+									<td class="relics">
+										<input type="text" class="form-control iteminput" style="width: 80px" name="qty" id="qty"/>
+									</td>
+									<td class="relics">
+										<input type="text" class="form-control iteminput" style="width: 160px" name="price" id="price"/>
+									</td>
+									<td class="relics">
+										<button type="submit" class="btn btn-outline-success">Apply</button>
+									</td>
+									<td class="relics">
+										<button type="submit" class="btn btn-outline-danger">Delete</button>
+									</td>
+								</form>
 							</tr>
 							<tr>
-								<td class="relics">1</td>
-								<td class="relics">2</td>
-								<td class="relics">3</td>
-								<td class="relics">
-									<button type="button" class="btn btn-outline-success">Apply</button>
-								</td>
-								<td class="relics">
-									<button type="button" class="btn btn-outline-danger">Delete</button>
-								</td>
+								<form>
+									<td class="relics">1</td>
+									<td class="relics">
+										<input type="text" class="form-control iteminput" style="width: 80px" name="qty" id="qty"/>
+									</td>
+									<td class="relics">
+										<input type="text" class="form-control iteminput" style="width: 160px" name="price" id="price"/>
+									</td>
+									<td class="relics">
+										<button type="submit" class="btn btn-outline-success">Apply</button>
+									</td>
+									<td class="relics">
+										<button type="submit" class="btn btn-outline-danger">Delete</button>
+									</td>
+								</form>
 							</tr>
 						</tbody>
 					</table>
