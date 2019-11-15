@@ -178,26 +178,38 @@
 						</thead>
 						<tbody>
 							<tr>
-								<td class="materials">1</td>
-								<td class="materials">2</td>
-								<td class="materials">3</td>
-								<td class="materials">
-									<button type="button" class="btn btn-outline-success">Apply</button>
-								</td>
-								<td class="materials">
-									<button type="button" class="btn btn-outline-danger">Delete</button>
-								</td>
+								<form>
+									<td class="materials">1</td>
+									<td class="materials">
+										<input type="text" class="form-control iteminput" style="width: 80px" name="qty" id="qty"/>
+									</td>
+									<td class="materials">
+										<input type="text" class="form-control iteminput" style="width: 160px" name="price" id="price"/>
+									</td>
+									<td class="materials">
+										<button type="submit" class="btn btn-outline-success">Apply</button>
+									</td>
+									<td class="materials">
+										<button type="submit" class="btn btn-outline-danger">Delete</button>
+									</td>
+								</form>
 							</tr>
 							<tr>
-								<td class="materials">1</td>
-								<td class="materials">2</td>
-								<td class="materials">3</td>
-								<td class="materials">
-									<button type="button" class="btn btn-outline-success">Apply</button>
-								</td>
-								<td class="materials">
-									<button type="button" class="btn btn-outline-danger">Delete</button>
-								</td>
+								<form>
+									<td class="materials">1</td>
+									<td class="materials">
+										<input type="text" class="form-control iteminput" style="width: 80px" name="qty" id="qty"/>
+									</td>
+									<td class="materials">
+										<input type="text" class="form-control iteminput" style="width: 160px" name="price" id="price"/>
+									</td>
+									<td class="materials">
+										<button type="submit" class="btn btn-outline-success">Apply</button>
+									</td>
+									<td class="materials">
+										<button type="submit" class="btn btn-outline-danger">Delete</button>
+									</td>
+								</form>
 							</tr>
 						</tbody>
 					</table>
