@@ -232,26 +232,38 @@
 						</thead>
 						<tbody>
 							<tr>
-								<td class="xtals">1</td>
-								<td class="xtals">2</td>
-								<td class="xtals">3</td>
-								<td class="xtals">
-									<button type="button" class="btn btn-outline-success">Apply</button>
-								</td>
-								<td class="xtals">
-									<button type="button" class="btn btn-outline-danger">Delete</button>
-								</td>
+								<form>
+									<td class="xtals">1</td>
+									<td class="xtals">
+										<input type="text" class="form-control iteminput" style="width: 80px" name="qty" id="qty"/>
+									</td>
+									<td class="xtals">
+										<input type="text" class="form-control iteminput" style="width: 160px" name="price" id="price"/>
+									</td>
+									<td class="xtals">
+										<button type="submit" class="btn btn-outline-success">Apply</button>
+									</td>
+									<td class="xtals">
+										<button type="submit" class="btn btn-outline-danger">Delete</button>
+									</td>
+								</form>
 							</tr>
 							<tr>
-								<td class="xtals">1</td>
-								<td class="xtals">2</td>
-								<td class="xtals">3</td>
-								<td class="xtals">
-									<button type="button" class="btn btn-outline-success">Apply</button>
-								</td>
-								<td class="xtals">
-									<button type="button" class="btn btn-outline-danger">Delete</button>
-								</td>
+								<form>
+									<td class="xtals">1</td>
+									<td class="xtals">
+										<input type="text" class="form-control iteminput" style="width: 80px" name="qty" id="qty"/>
+									</td>
+									<td class="xtals">
+										<input type="text" class="form-control iteminput" style="width: 160px" name="price" id="price"/>
+									</td>
+									<td class="xtals">
+										<button type="submit" class="btn btn-outline-success">Apply</button>
+									</td>
+									<td class="xtals">
+										<button type="submit" class="btn btn-outline-danger">Delete</button>
+									</td>
+								</form>
 							</tr>
 						</tbody>
 					</table>
