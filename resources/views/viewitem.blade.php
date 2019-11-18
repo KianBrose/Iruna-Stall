@@ -57,7 +57,7 @@
 										</select>
 									</td>
 									<td class="equipment">
-										<select name="equipslotamount" class="form-control iteminput" id="equipslotamount"> 
+										<select name="equipslotamount" class="form-control iteminput" id="equipslotamount" style="width: 60px"> 
 										   <option selected value="0">0</option>
 										   <option value="0">0</option>
 										   <option value="1">1</option>
@@ -74,7 +74,7 @@
 										<input type="text" class="form-control iteminput" style="width: 160px" name="abil" id="abil"/>
 									</td>
 									<td class="equipment">
-										<select name="abilv" class="form-control iteminput" id="abilv"> 
+										<select name="abilv" class="form-control iteminput" id="abilv" style="width: 60px"> 
 										   <option selected value="0">0</option>
 										   <option value="0">0</option>
 										   <option value="1">1</option>
