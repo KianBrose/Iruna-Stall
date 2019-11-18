@@ -1,6 +1,9 @@
 @extends('layouts.main')
 
 @section('content')
+
+<link href="{{ asset('css/main.css') }}" rel="stylesheet">
+<link href="{{ asset('css/util.css') }}" rel="stylesheet">
 <div class="container">
     <div class="row" >
         <div class="col-md-7 offset-md-3" >
@@ -40,101 +43,152 @@
 
             <div style="height: auto !important;">
                 <br>
-            <h4>Search Results: {{ $input }}</h4>
-                <div></div>
+				<h4>Search Results: {{ $input }}</h4>
                 <hr>
-                <div>
-                    <table class="table table-condensed table-bordered">
-                            <tr>
-                                   <th class="col-md-4">Name
-                            </th>
-                            <h4>AI crystal</h4>
-                            <th>Color</th>
-                                            <th>Price</th>
-                                            <th>Quantity</th>
-											<th>Contact Seller</th>
-                                        </tr>
-                            @foreach($aiSearch as $ai)
-                                        <tr>
-                                                <td>{{ $ai->name }}</td>
-                                                <td>{{ $ai->color }}</td>
-                                                <td>{{ number_format($ai->price) }} </td>
-                                                <td>{{ $ai->quantity }}</td>
-                                                <td><a href='/user/{{$ai->owner_id}}'>Facebook</a></td>
-                                            </tr>
-                            @endforeach
-                    </table>
-                    <table class="table table-condensed table-bordered">
-                            <tr>
-                                    <th class="col-md-4">Name
-                             </th>
-                             <h4>Equipment</h4>
-                             <th>ATK</th>
-											<th>DEF</th>
-											<th>Refinement</th>
-											<th>Slots</th>
-											<th>Slot 1</th>
-											<th>Slot 2</th>
-											<th>Ability</th>
-											<th>Ability Lv</th>
-											<th>Price</th>
-											<th>Contact seller</th>
-                                        </tr>
-                            @foreach($equipSearch as $equipSearch)
-                            <tr>
-                                <td>{{ $equipSearch->name }}</td>
-                                <td>{{ $equipSearch->atk }}</td>
-                                <td>{{ $equipSearch->def }}</td>
-                                <td>{{ $equipSearch->refinement}}</td>
-                                <td>{{ $equipSearch->slots }}</td>
-                                <td>{{ $equipSearch->slot1 }}</td>
-                                <td>{{ $equipSearch->slot2 }}</td>
-                                <td>{{ $equipSearch->ability }}</td>
-                                <td>{{ $equipSearch->ability_level }}</td>
-                                <td>{{ number_format($equipSearch->price) }}</td>
-                                <td><a href='/user/{{ $equipSearch->owner_id }}'>Facebook</a></td>
-                            </tr>
-                            @endforeach
-                    </table>
-                    <table class="table table-condensed table-bordered">
-                            <tr>
-                                   <th class="col-md-4">Name
-                            </th>
-                            <h4>Item</h4>
-                                            <th>Price</th>
-                                            <th>Quantity</th>
-											<th>Contact Seller</th>
-                                        </tr>
-                            @foreach($itemSearch as $itemSearch)
-                                        <tr>
-                                                <td>{{ $itemSearch->name }}</td>
-                                                <td>{{ number_format($itemSearch->price) }} </td>
-                                                <td>{{ $itemSearch->quantity }}</td>
-                                                <td><a href='/user/{{$itemSearch->owner_id}}'>Facebook</a></td>
-                                            </tr>
-                            @endforeach
-                    </table>
-                    <table class="table table-condensed table-bordered">
-                        <tr>
-                               <th class="col-md-4">Name
-                        </th>
-                        <h4>Crystas</h4>
-                                        <th>Price</th>
-                                            <th>Quantity</th>
-											<th>Contact Seller</th>
-                                        </tr>
-                            @foreach($xtalSearch as $itemSearch)
-                                        <tr>
-                                                <td>{{ $itemSearch->name }}</td>
-                                                <td>{{ number_format($itemSearch->price) }} </td>
-                                                <td>{{ $itemSearch->quantity }}</td>
-                                                <td><a href='/user/{{$itemSearch->owner_id}}'>Facebook</a></td>
-                                            </tr>
-                            @endforeach
-                    
-
-                            
-                </div>
+				<h4>Equipment</h4>
+				<br>
+				<div>
+					<div>
+						<table>
+							<thead>
+								<tr class="table100-head">
+									<th class="equipment">Name</th>
+									<th class="equipment">ATK</th>
+									<th class="equipment">DEF</th>
+									<th class="equipment">Refinement</th>
+									<th class="equipment">Slots</th>
+									<th class="equipment">Slot 1</th>
+									<th class="equipment">Slot 2</th>
+									<th class="equipment">Ability</th>
+									<th class="equipment">Ability Lv</th>
+									<th class="equipment">Price</th>
+									<th class="equipment">Contact</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td class="equipment">Name</th>
+									<td class="equipment">ATK</th>
+									<td class="equipment">DEF</th>
+									<td class="equipment">Refinement</th>
+									<td class="equipment">Slots</th>
+									<td class="equipment">Slot 1</th>
+									<td class="equipment">Slot 2</th>
+									<td class="equipment">Ability</th>
+									<td class="equipment">Ability Lv</th>
+									<td class="equipment">Price</th>
+									<td class="equipment">Contact</th>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+				
+				<br>
+				<h4>Materials</h4>
+				<br>
+				<div>
+					<div>
+						<table>
+							<thead>
+								<tr class="table100-head">
+									<th class="materials">Name</th>
+									<th class="materials">QTY</th>
+									<th class="materials">Price</th>
+									<th class="materials">Contact</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td class="materials">Name</th>
+									<td class="materials">QTY</th>
+									<td class="materials">Price</th>
+									<td class="materials">Contact</th>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+				
+				<br>
+				<h4>Xtals</h4>
+				<br>
+				<div>
+					<div>
+						<table>
+							<thead>
+								<tr class="table100-head">
+									<th class="xtals">Name</th>
+									<th class="xtals">QTY</th>
+									<th class="xtals">Price</th>
+									<th class="xtals">Contact</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td class="xtals">Name</th>
+									<td class="xtals">QTY</th>
+									<td class="xtals">Price</th>
+									<td class="xtals">Contact</th>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+				
+				<br>
+				<h4>AL Crystals</h4>
+				<br>
+				<div>
+					<div>
+						<table>
+							<thead>
+								<tr class="table100-head">
+									<th class="als">Name</th>
+									<th class="als">Color</th>
+									<th class="als">QTY</th>
+									<th class="als">Price</th>
+									<th class="als">Contact</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td class="als">Name</th>
+									<td class="als">Color</th>
+									<td class="als">QTY</th>
+									<td class="als">Price</th>
+									<td class="als">Contact</th>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+				
+				<br>
+				<h4>Relics</h4>
+				<br>
+				<div>
+					<div>
+						<table>
+							<thead>
+								<tr class="table100-head">
+									<th class="relics">Name</th>
+									<th class="relics">QTY</th>
+									<th class="relics">Price</th>
+									<th class="relics">Contact</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td class="relics">Name</th>
+									<td class="relics">QTY</th>
+									<td class="relics">Price</th>
+									<td class="relics">Contact</th>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
             </div>
         </div>
 
