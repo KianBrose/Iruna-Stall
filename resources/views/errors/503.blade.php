@@ -1,8 +1,4 @@
-@extends('errors::minimal')
 
-@section('title', __('Unauthorized'))
-@section('code', '503')
-@section('message', __('Unauthorized'))
 
 <link href="{{ asset('css/error.css') }}" rel="stylesheet">
 <div class="container">
@@ -26,4 +22,3 @@
 
 
 
-@endsection

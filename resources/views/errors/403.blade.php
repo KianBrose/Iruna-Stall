@@ -1,8 +1,4 @@
-@extends('errors::minimal')
 
-@section('title', __('Unauthorized'))
-@section('code', '403')
-@section('message', __('Unauthorized'))
 
 <link href="{{ asset('css/error.css') }}" rel="stylesheet">
 <div class="container">
@@ -10,8 +6,7 @@
 		<div class="col-md-11 offset-md-1" >
 		<div style="height: auto !important;">
 			<br>
-			<h4>Error!</h4>
-			<hr>
+			
 			<div id="notfound">
 				<div class="notfound">
 					<div class="notfound-404">
@@ -26,4 +21,3 @@
 
 
 
-@endsection
