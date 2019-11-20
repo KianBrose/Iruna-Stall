@@ -14,6 +14,7 @@ use App\Http\Requests\StoreIrunaItem;
 use RealRashid\SweetAlert\Facades\Alert;
 use App\Http\Requests\StoreIrunaAi;
 use App\Http\Requests\StoreIrunaEquip;
+use App\Http\Requests\StoreIrunaRelic;
 use App\Http\Requests\StoreIrunaXtal;
 
 class ItemController extends Controller
@@ -106,18 +107,14 @@ class ItemController extends Controller
         return redirect('/additem');
     }
 
-    public function createRelic(Request $request){
-        $request->validate([
-            'name' => 'required|alpha',
-            'quantity' => 'required|integer|min:0|max:99',
-            'price' => 'required|integer|min:0'
-        ]);
+    public function createRelic(StoreIrunaRelic $request){
+        $request->validated();
         $id = $this->generateID(8);
         $relic = new Relic();
         $relic->name = request('name');
         $relic->quantity = request('quantity');
         $relic->price = request('price');
-        $relic->owner_id = Auth::user()->owner_id;
+        $relic->owner_id = Auth::user()->user_id;
         $relic->item_id = $id;
         $relic->routes = "item/relic/{$id}";
         $relic->contact = auth()->user()->name;

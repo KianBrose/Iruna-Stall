@@ -38,18 +38,23 @@ class StoreIrunaRelic extends FormRequest
         $validator->after(function($validator){
             $relic = $this->request->get('name');
             if($this->invalidRelicName($relic)){
-                $validator->error()->add('nameError', 'The name does not seem right');
-                $validator->error()->add('mainError', 'Please check your previous submission, something went wrong');
+                $validator->errors()->add('nameError', 'The name does not seem right');
+                $validator->errors()->add('mainError', 'Please check your previous submission, something went wrong');
             }
         });
     }
 
     public function invalidRelicName($relic){
         $item = Irunaitem::where('name', $relic)->first();
-        if($item->category == StoreIrunaRelic::Category){
-            return false;
-        } else{
+        if($item){
+            if($item->category == StoreIrunaRelic::Category){
+                return false;
+            } else{
+                return true;
+            }
+        }else{
             return true;
         }
-    }
+        }
+        
 }
