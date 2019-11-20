@@ -108,7 +108,7 @@
                                  </div>
                             </div>
                             <div class="col-md-2 col-xs-3">
-                                <input type="button" class="btn btn-default btn-block" name="search_button" id="search_button" value="Search">
+                                <input type="button" class="btn btn-dark" name="search_button" id="search_button" value="Search">
                             </div>
                         </div>
                     </form>
