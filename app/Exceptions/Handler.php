@@ -5,6 +5,7 @@ namespace App\Exceptions;
 use Exception;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
 use Symfony\Component\HttpKernel\Exception\MethodNotAllowedHttpException;
+use Illuminate\Session\TokenMismatchException;
 use Facade\Ignition\Exceptions\ViewException;
 
 class Handler extends ExceptionHandler
@@ -52,6 +53,13 @@ class Handler extends ExceptionHandler
         {
             return redirect('/');
         }
+
+        if($exception instanceof TokenMismatchException){
+            return redirect()
+            ->back()
+            ->withInput($request->except('_token'));
+        }
+
         return parent::render($request, $exception);
     }
 
