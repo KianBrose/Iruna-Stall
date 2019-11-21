@@ -64,19 +64,12 @@ class StoreIrunaEquip extends FormRequest
            $slot1 = $this->request->get('slot1');
            $slot2 = $this->request->get('slot2');
            $type = $this->request->get('type');
-
-           if($this->invalidEquipName($name, $type)){
+            
+           if($this->invalidEquipment($name, $ability, $type, $slot1, $slot2)){
             $validator->errors()->add('nameError', 'The name does not seem right');
             $validator->errors()->add('mainError', 'Please check your previous submission, something went wrong');
            }
-           if($this->invalidAbility($ability)){
-            $validator->error()->add('abilityError', 'The name does not seem right');
-            $validator->error()->add('mainError', 'Please check your previous submission');
-           }
-           if ($this->invalidType($type)){
-            $validator->error()->add('typeError', 'Something does not seem right');
-            $validator->error()->add('mainError', 'Please check your previous submission');
-           }
+           
         });
     }
 
@@ -110,20 +103,33 @@ class StoreIrunaEquip extends FormRequest
             return true;
         }
     }
-
+    /**
+     * 
+     * Check if xtal is valid or not
+     */
     public function invalidSlotXtal($xtal1, $xtal2){
-        $item1 = Irunaitem::item($xtal1)->first();
-        $item2 = Irunaitem::item($xtal2)->first();
-        if($item1){
-            return $this->invalidSlot($item1);
-        } else{
+        if($xtal1 == ""){
             return false;
-        }
-        if($item2){
-            return $this->invalidSlot($item2);
         } else{
-            return false;
+            $item1 = Irunaitem::item($xtal1)->first();
+            if($item1){
+                return $this->checkForValidSlot($item1);
+            } else{
+                return false;
+            }
         }
+        if($xtal2 == ""){
+            return false;
+        } else{
+            $item2 = Irunaitem::item($xtal2)->first();
+        
+            if($item2){
+                return $this->checkForValidSlot($item2);
+            } else{
+                return false;
+            }
+        }
+        
     }
 
     public function invalidType($type){
@@ -150,8 +156,8 @@ class StoreIrunaEquip extends FormRequest
         }
     }
 
-    public function invalidSlot($xtal){
-        if($xtal->category != StoreIrunaEquip::Category){
+    public function checkForValidSlot($xtal){
+        if($xtal->category != StoreIrunaEquip::Xtal){
             return true;
         } else{
             return false;
