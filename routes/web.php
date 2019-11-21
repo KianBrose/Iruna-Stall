@@ -96,4 +96,5 @@ Route::get('/searchability', 'AutoCompleteController@searchAbility')->middleware
 Route::get('/searchequip', 'AutoCompleteController@searchEquip')->middleware('verified');
 Route::get('/searchal', 'AutoCompleteController@searchAL')->middleware('verified');
 Route::get('/searchmaterial', 'AutoCompleteController@searchMaterial')->middleware('verified');
+Route::get('/searchcrystas', 'AutoCompleteController@searchCrystas')->middleware('verified');
 

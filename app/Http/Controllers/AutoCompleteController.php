@@ -52,12 +52,25 @@ class AutoCompleteController extends Controller
         return response()->json($result);
     }
 
+    /**
+     * 
+     * search common material
+     */
+
     public function searchMaterial(Request $request){
         $search = $request->get('term');
         $result = Irunaitem::whereIn('category', AutoCompleteController::Material)
             ->where('name', 'LIKE', '%'.$search.'%')->get();
         return response()->json($result);
 
+    }
+
+    public function searchCrystas(Request $request){
+        $search = $request->get('term');
+        $result = Irunaitem::where('category', 'Crystas')
+                ->where('name', 'LIKE', '%'.$search.'%')
+                ->get();
+        return response()->json($result);
     }
 
 
