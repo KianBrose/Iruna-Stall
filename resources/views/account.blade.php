@@ -340,11 +340,11 @@
 								</td>
 								
 								<td  style="padding-left:10px;">
-								<input type="text" class="form-control iteminput" style="width: 400px" name="name" id="name" value="{{ old('name') }}"/>
+								<input type="text" class="form-control iteminput" style="width: 400px" name="name" id="alcrystas" value="{{ old('name') }}"/>
 								</td>
 								@error('name')
-						<div style="color:red;"> {{ $message }}</div>
-						@enderror
+									<div style="color:red;"> {{ $message }}</div>
+								@enderror
 							</tr>
 							<tr>
 								<td>
@@ -354,8 +354,8 @@
 									<input type="number" max="99" class="form-control iteminput" style="width: 400px" name="quantity" id="quantity" value="{{ old('quantity') }}"/>
 								</td>
 								@error('quantity')
-							<div style="color:red;"> {{ $message }}</div>
-							@enderror
+									<div style="color:red;"> {{ $message }}</div>
+								@enderror
 		
 							</tr>
 							<tr>
@@ -595,10 +595,7 @@
 		},
 		minLength: 3
 		});
-	});
 
-	$(document).ready(function() {
-		
 		$( "#equipment" ).autocomplete({
 			source: function(request, response) {
 				$.ajax({
@@ -618,7 +615,30 @@
 		},
 		minLength: 3
 		});
+		$( "#alcrystas" ).autocomplete({
+			source: function(request, response) {
+				$.ajax({
+				url: "{{url('searchal')}}",
+				data: {
+						term : request.term
+				},
+				dataType: "json",
+				success: function(data){
+				var resp = $.map(data,function(obj){
+						return obj.name;
+				}); 
+
+				response(resp);
+				}
+			});
+		},
+		minLength: 3
+		});
+
+		
 	});
+		
+
 	</script>
 </body>
 
