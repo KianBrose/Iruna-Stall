@@ -60,7 +60,7 @@ class StoreIrunaEquip extends FormRequest
     public function withValidator(Validator $validator){
         $validator->after(function($validator){
            $name = $this->request->get('name');
-           $ability = $this->reuqest->get('ability');
+           $ability = $this->request->get('ability');
            $slot1 = $this->request->get('slot1');
            $slot2 = $this->request->get('slot2');
            $type = $this->request->get('type');
@@ -111,7 +111,7 @@ class StoreIrunaEquip extends FormRequest
         if($xtal1 == ""){
             return false;
         } else{
-            $item1 = Irunaitem::item($xtal1)->first();
+            $item1 = Irunaitem::getItem($xtal1)->first();
             if($item1){
                 return $this->checkForValidSlot($item1);
             } else{
@@ -121,7 +121,7 @@ class StoreIrunaEquip extends FormRequest
         if($xtal2 == ""){
             return false;
         } else{
-            $item2 = Irunaitem::item($xtal2)->first();
+            $item2 = Irunaitem::getItem($xtal2)->first();
         
             if($item2){
                 return $this->checkForValidSlot($item2);
