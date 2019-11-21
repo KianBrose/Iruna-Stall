@@ -9,7 +9,8 @@
     <title>Iruna Global Stall</title>
 
     <!-- bootstrap css -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
     <!-- Fonts -->
 	<link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
 	<link href="css/style.css" rel="stylesheet">
@@ -108,7 +109,7 @@
 									<label for="name">Item Name:</label>
 								</td>
 								<td  style="padding-left:10px;">
-									<input type="text" class="form-control iteminput" style="width: 400px" name="name" id="name"/>
+									<input type="text" class="form-control iteminput" style="width: 400px" name="name" id="equipment"/>
 								</td>
 								@error('name')
 						<div style="color:red;"> {{ $message }}</div>
@@ -202,7 +203,7 @@
 									<label for="slot1">Slot 1:</label>
 								</td>
 								<td  style="padding-left:10px;">
-									<input type="text" class="form-control iteminput" style="width: 400px" name="slot1" id="slot1" value="0"/>
+									<input type="text" class="form-control iteminput crystas" style="width: 400px" name="slot1" id="slot1"/>
 								</td>
 								<br>
 							</tr>
@@ -213,7 +214,7 @@
 									<label for="Test">Slot 2:</label>
 								</td>
 								<td  style="padding-left:10px;">
-									<input type="text" class="form-control iteminput" style="width: 400px" name="slot2" id="slot" value="0"/>
+									<input type="text" class="form-control iteminput crystas" style="width: 400px" name="slot2" id="slot"/>
 								</td>
 								<br>
 							</tr>
@@ -236,7 +237,7 @@
 									<label for="Test">Ability name:</label>
 								</td>
 								<td  style="padding-left:10px;">
-									<input type="text" class="form-control iteminput" style="width: 400px" name="ability" id="ability" value="0"/>
+									<input type="text" class="form-control iteminput" style="width: 400px" name="ability" id="ability" value=""/>
 								</td>
 							</tr>
 							<tr>
@@ -269,7 +270,7 @@
 									<label for="Test">Item Name:</label>
 								</td>
 								<td  style="padding-left:10px;">
-									<input type="text" class="form-control iteminput" style="width: 400px" name="name" id="itemname"/>
+									<input type="text" class="form-control iteminput" style="width: 400px" name="name" id="material"/>
 								</td>
 								@error('fielderror')
 									<div style="color:red;"> {{ $message }}</div>
@@ -306,7 +307,7 @@
 									<label for="Test">Xtal Name:</label>
 								</td>
 								<td  style="padding-left:10px;">
-									<input type="text" class="form-control iteminput" style="width: 400px" name="name" id="name"/>
+									<input type="text" class="form-control iteminput crystas" style="width: 400px" name="name" id="name"/>
 								</td>
 							</tr>
 							<tr>
@@ -339,11 +340,11 @@
 								</td>
 								
 								<td  style="padding-left:10px;">
-								<input type="text" class="form-control iteminput" style="width: 400px" name="name" id="name" value="{{ old('name') }}"/>
+								<input type="text" class="form-control iteminput" style="width: 400px" name="name" id="alcrystas" value="{{ old('name') }}"/>
 								</td>
 								@error('name')
-						<div style="color:red;"> {{ $message }}</div>
-						@enderror
+									<div style="color:red;"> {{ $message }}</div>
+								@enderror
 							</tr>
 							<tr>
 								<td>
@@ -353,8 +354,8 @@
 									<input type="number" max="99" class="form-control iteminput" style="width: 400px" name="quantity" id="quantity" value="{{ old('quantity') }}"/>
 								</td>
 								@error('quantity')
-							<div style="color:red;"> {{ $message }}</div>
-							@enderror
+									<div style="color:red;"> {{ $message }}</div>
+								@enderror
 		
 							</tr>
 							<tr>
@@ -405,7 +406,7 @@
 									<label for="Test">Relic Name:</label>
 								</td>
 								<td  style="padding-left:10px;">
-									<input type="text" class="form-control iteminput" style="width: 400px" name="name" id="name"/>
+									<input type="text" class="form-control iteminput" style="width: 400px" name="name" id="relicname"/>
 								</td>
 							</tr>
 							<tr>
@@ -431,7 +432,6 @@
 					
 					<script src="https://code.jquery.com/jquery-3.4.1.min.js"   integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="   crossorigin="anonymous"></script>
 					<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"   integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU="   crossorigin="anonymous"></script>
-    				<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     				<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     				<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 					<script>    
@@ -573,6 +573,134 @@
 <script type="text/javascript" id="cookieinfo"
     src="//cookieinfoscript.com/js/cookieinfo.min.js">
 </script>
+<script>
+	$(document).ready(function() {
+		
+		$( "#ability" ).autocomplete({
+			source: function(request, response) {
+				$.ajax({
+				url: "{{url('searchability')}}",
+				data: {
+						term : request.term
+				},
+				dataType: "json",
+				success: function(data){
+				var resp = $.map(data,function(obj){
+						return obj.type;
+				}); 
+
+				response(resp);
+				}
+			});
+		},
+		minLength: 3
+		});
+
+		$( "#equipment" ).autocomplete({
+			source: function(request, response) {
+				$.ajax({
+				url: "{{url('searchequip')}}",
+				data: {
+						term : request.term
+				},
+				dataType: "json",
+				success: function(data){
+				var resp = $.map(data,function(obj){
+						return obj.name;
+				}); 
+
+				response(resp);
+				}
+			});
+		},
+		minLength: 3
+		});
+		$( "#alcrystas" ).autocomplete({
+			source: function(request, response) {
+				$.ajax({
+				url: "{{url('searchal')}}",
+				data: {
+						term : request.term
+				},
+				dataType: "json",
+				success: function(data){
+				var resp = $.map(data,function(obj){
+						return obj.name;
+				}); 
+
+				response(resp);
+				}
+			});
+		},
+		minLength: 3
+		});
+
+		$( "#material" ).autocomplete({
+			source: function(request, response) {
+				$.ajax({
+				url: "{{url('searchmaterial')}}",
+				data: {
+						term : request.term
+				},
+				dataType: "json",
+				success: function(data){
+				var resp = $.map(data,function(obj){
+						return obj.name;
+				}); 
+
+				response(resp);
+				}
+			});
+		},
+		minLength: 3
+		});
+		$( "#relicname" ).autocomplete({
+			source: function(request, response) {
+				$.ajax({
+				url: "{{url('searchrelic')}}",
+				data: {
+						term : request.term
+				},
+				dataType: "json",
+				success: function(data){
+				var resp = $.map(data,function(obj){
+						return obj.name;
+				}); 
+
+				response(resp);
+				}
+			});
+		},
+		minLength: 3
+		});
+
+		$( ".crystas" ).autocomplete({
+			source: function(request, response) {
+				$.ajax({
+				url: "{{url('searchcrystas')}}",
+				data: {
+						term : request.term
+				},
+				dataType: "json",
+				success: function(data){
+				var resp = $.map(data,function(obj){
+						return obj.name;
+				}); 
+
+				response(resp);
+				}
+			});
+		},
+		minLength: 3
+		});
+
+
+
+		
+	});
+		
+
+	</script>
 </body>
 
 </html>
