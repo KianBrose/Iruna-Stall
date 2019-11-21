@@ -93,4 +93,5 @@ Route::delete('/item/xtal/{id/delete', 'XtalController@delete')->middleware('ver
   */
 Route::get('/searchitem', 'AutoCompleteController@search')->middleware('verified');
 Route::get('/searchability', 'AutoCompleteController@searchAbility')->middleware('verified');
+Route::get('/searchequip', 'AutoCompleteController@searchEquip')->middleware('verified');
 

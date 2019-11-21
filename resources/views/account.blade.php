@@ -109,7 +109,7 @@
 									<label for="name">Item Name:</label>
 								</td>
 								<td  style="padding-left:10px;">
-									<input type="text" class="form-control iteminput" style="width: 400px" name="name" id="name"/>
+									<input type="text" class="form-control iteminput" style="width: 400px" name="name" id="equipment"/>
 								</td>
 								@error('name')
 						<div style="color:red;"> {{ $message }}</div>
@@ -587,6 +587,29 @@
 				success: function(data){
 				var resp = $.map(data,function(obj){
 						return obj.type;
+				}); 
+
+				response(resp);
+				}
+			});
+		},
+		minLength: 3
+		});
+	});
+
+	$(document).ready(function() {
+		
+		$( "#equipment" ).autocomplete({
+			source: function(request, response) {
+				$.ajax({
+				url: "{{url('searchequip')}}",
+				data: {
+						term : request.term
+				},
+				dataType: "json",
+				success: function(data){
+				var resp = $.map(data,function(obj){
+						return obj.name;
 				}); 
 
 				response(resp);
