@@ -270,7 +270,7 @@
 									<label for="Test">Item Name:</label>
 								</td>
 								<td  style="padding-left:10px;">
-									<input type="text" class="form-control iteminput" style="width: 400px" name="name" id="itemname"/>
+									<input type="text" class="form-control iteminput" style="width: 400px" name="name" id="material"/>
 								</td>
 								@error('fielderror')
 									<div style="color:red;"> {{ $message }}</div>
@@ -633,6 +633,25 @@
 			});
 		},
 		minLength: 3
+		});
+
+		$( "#material" ).autocomplete({
+			source: function(request, response) {
+				$.ajax({
+				url: "{{url('searchmaterial')}}",
+				data: {
+						term : request.term
+				},
+				dataType: "json",
+				success: function(data){
+				var resp = $.map(data,function(obj){
+						return obj.name;
+				}); 
+
+				response(resp);
+				}
+			});
+		},
 		});
 
 		
