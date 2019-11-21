@@ -91,10 +91,11 @@ Route::delete('/item/xtal/{id/delete', 'XtalController@delete')->middleware('ver
   * 
   *Autocomplete
   */
-Route::get('/searchitem', 'AutoCompleteController@search')->middleware('verified');
-Route::get('/searchability', 'AutoCompleteController@searchAbility')->middleware('verified');
-Route::get('/searchequip', 'AutoCompleteController@searchEquip')->middleware('verified');
-Route::get('/searchal', 'AutoCompleteController@searchAL')->middleware('verified');
-Route::get('/searchmaterial', 'AutoCompleteController@searchMaterial')->middleware('verified');
-Route::get('/searchcrystas', 'AutoCompleteController@searchCrystas')->middleware('verified');
+Route::get('/searchitem', 'AutoCompleteController@search');
+Route::get('/searchability', 'AutoCompleteController@searchAbility');
+Route::get('/searchequip', 'AutoCompleteController@searchEquip');
+Route::get('/searchal', 'AutoCompleteController@searchAL');
+Route::get('/searchmaterial', 'AutoCompleteController@searchMaterial');
+Route::get('/searchcrystas', 'AutoCompleteController@searchCrystas');
+Route::get('/searchrelic', 'AutoCompleteController@searchRelic');
 

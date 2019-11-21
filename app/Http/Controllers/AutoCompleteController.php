@@ -15,6 +15,10 @@ class AutoCompleteController extends Controller
      * 
      * Global search
      */
+    public function __construct()
+    {
+        $this->middleware('verified');
+    }
     public function search(Request $request){
         $search = $request->get('term');
         $result = Irunaitem::where('name', 'LIKE',  '%'. $search. '%')->get();
@@ -65,9 +69,25 @@ class AutoCompleteController extends Controller
 
     }
 
+    /**
+     * 
+     * search crystas
+     */
     public function searchCrystas(Request $request){
         $search = $request->get('term');
         $result = Irunaitem::where('category', 'Crystas')
+                ->where('name', 'LIKE', '%'.$search.'%')
+                ->get();
+        return response()->json($result);
+    }
+
+    /**
+     * 
+     * search relic
+     */
+    public function searchRelic(Request $request){
+        $search = $request->get('term');
+        $result = Irunaitem::where('category', 'RelicCrystas')
                 ->where('name', 'LIKE', '%'.$search.'%')
                 ->get();
         return response()->json($result);
