@@ -2,6 +2,7 @@
 
 namespace App\Http\Requests;
 
+use App\Ability;
 use Illuminate\Foundation\Http\FormRequest;
 use Auth;
 use App\Irunaitem;
@@ -98,8 +99,13 @@ class StoreIrunaEquip extends FormRequest
     }
 
     public function invalidAbility($ability){
-        if(in_array($ability, StoreIrunaEquip::Ability)){
-            return false;
+        if($ability){
+            $validAbi = Ability::where('type', $ability)->first();
+            if($validAbi){
+                return false;
+            }else{
+                return true;
+            } 
         } else{
             return true;
         }
