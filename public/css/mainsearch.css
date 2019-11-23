@@ -319,6 +319,9 @@ tbody tr:hover {
     .equipment:nth-child(11):before {
         content: "Price";
     }
+    .equipment:nth-child(12):before {
+        content: "Contact";
+    }
     
     
     
@@ -331,6 +334,9 @@ tbody tr:hover {
     .materials:nth-child(4):before {
         content: "Price";
     }
+    .materials:nth-child(5):before {
+        content: "Contact";
+    }
     
     .xtals:nth-child(2):before {
         content: "Name";
@@ -340,6 +346,9 @@ tbody tr:hover {
     }
     .xtals:nth-child(4):before {
         content: "Price";
+    }
+    .xtals:nth-child(5):before {
+        content: "Contact";
     }
     
     .als:nth-child(2):before {
@@ -354,6 +363,9 @@ tbody tr:hover {
     .als:nth-child(5):before {
         content: "Price";
     }
+    .als:nth-child(6):before {
+        content: "Contact";
+    }
     
     .relics:nth-child(2):before {
         content: "Name";
@@ -363,6 +375,9 @@ tbody tr:hover {
     }
     .relics:nth-child(4):before {
         content: "Price";
+    }
+    .relics:nth-child(5):before {
+        content: "Contact";
     }
     
 
