@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\StoreIrunaItem;
 use App\Items;
 use Illuminate\Http\Request;
 use Auth;
@@ -13,22 +14,22 @@ class ItemsController extends Controller
         if(Auth::check()){
             $item = Items::where('item_id', $id)->firstOrFail();
             if($item->owner_id != Auth::user()->user_id){
-                abort(403);
+                abort(404);
             }
             else{
+                
                 if($this->validNumber(request('price'))){
                     $item->price = request('price');
-                }
+                } 
+                
                 if($this->validNumber(request('quantity'))){
                     if(request('quantity') > 99){
                         $item->quantity = 99;
-                    }
-                    else{
+                    } else{
                         $item->quantity = request('quantity');
                     }
                     
-                }
-                
+                } 
                 $item->save();
 
                 Alert::toast('Successfully edited an item', 'success');

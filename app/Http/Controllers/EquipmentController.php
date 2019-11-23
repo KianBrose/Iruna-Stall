@@ -16,7 +16,7 @@ class EquipmentController extends Controller
             $item = Equipment::where('item_id', $id)->firstOrFail();
             
             if($item->owner_id != Auth::user()->user_id){
-                abort(403);
+                abort(404);
             }
             else{
                 $request->validated();

@@ -17,7 +17,7 @@ class AiController extends Controller
     public function edit($id){
         $item = Ai::where('item_id', $id)->firstOrFail();
         if($item->owner_id != Auth::user()->user_id){
-            abort(403);
+            abort(404);
         }
         else{
             return view('item.ai', compact('item'));

@@ -131,11 +131,11 @@
 							@foreach ($item as $item)
 							<tr>
 									<td class="materials">{{ $item->name }}</td>
-									<form action="item/items/{{ $item->item_id }}/update">
+									<form action="item/items/{{ $item->item_id }}/update" method="POST">
 										@method('patch')
 										@csrf
 										<td class="materials">
-										<input type="text" class="form-control iteminput" style="width: 80px" name="qty" id="qty" value="{{ $item->quantity }}"/>
+										<input type="text" class="form-control iteminput" style="width: 80px" name="quantity" id="qty" value="{{ $item->quantity }}"/>
 										</td>
 										<td class="materials">
 										<input type="text" class="form-control iteminput" style="width: 160px" name="price" id="price" value="{{ $item->price }}"/>
@@ -143,10 +143,11 @@
 										<td class="materials">
 											<button type="submit" class="btn btn-outline-success">Apply</button>
 										</td>
-										<td class="materials">
+										
+									</form>
+									<td class="materials">
 											<button type="submit" class="btn btn-outline-danger">Delete</button>
 										</td>
-									</form>
 									@endforeach
 								</tr>
 							</tbody>
