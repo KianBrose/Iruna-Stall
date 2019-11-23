@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use App\Equipment;
 use App\Items;
 use App\Xtal;
+use App\Relic;
 use Auth;
 
 class AccountController extends Controller
@@ -46,7 +47,8 @@ class AccountController extends Controller
         $equipitem = $Equip->getEquipmentItems();
         $item = $Item->getItems();
         $xtal = Xtal::where('owner_id', Auth::user()->user_id)->get();
-        return view('viewitem', compact('alitem', 'equipitem', 'item', 'xtal'));
+        $relic = Relic::where('owner_id', Auth::user()->user_id)->get();
+        return view('viewitem', compact('alitem', 'equipitem', 'item', 'xtal', 'relic'));
     }
 
     public function show(){

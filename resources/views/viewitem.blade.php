@@ -14,7 +14,7 @@
 			<hr>
 			@if($equipitem->count() >= 1) 
 			<h4>Equipment</h4>
-			@endif
+			
             <br>
 			<div>
 				<div>
@@ -106,6 +106,7 @@
 							</tr>
 						</tbody>
 					</table>
+					@endif
 				</div>
 			</div>
 			
@@ -113,7 +114,6 @@
 			<br>
 			@if($item->count() >= 1)
 			<h4>Materials</h4>
-			@endif
             <br>
 			<div>
 				<div>
@@ -151,6 +151,7 @@
 								</tr>
 							</tbody>
 						</table>
+						@endif
 					</div>
 				</div>
 							
@@ -158,7 +159,7 @@
 			<br>
 			@if($xtal->count() >= 1)
 			<h4>Xtals</h4>
-			@endif
+			
             <br>
 			<div>
 				<div>
@@ -190,14 +191,18 @@
 										<button type="submit" class="btn btn-outline-danger">Delete</button>
 									</td>
 								</form>
-								@endforeach
+								
 							</tr>
+							@endforeach
 						</tbody>
 					</table>
+					@endif
 				</div>
 			</div>
-            <br>
-            <h4>AL's</h4>
+			<br>
+			@if($alitem->count() >= 1)
+			<h4>AL's</h4>
+			
             <br>
 			<div>
 				<div>
@@ -212,10 +217,12 @@
 								<th class="als">Controls</th>
 							</tr>
 						</thead>
+			
 						<tbody>
+							@foreach($alitem as $alitem)
 							<tr>
 								<form>
-									<td class="als">1</td>
+								<td class="als">{{ $alitem->name }}</td>
 									<td class="als">
 										<input type="text" class="form-control iteminput" style="width: 80px" name="qty" id="qty"/>
 									</td>
@@ -236,13 +243,16 @@
 									<td class="als">
 										<button type="submit" class="btn btn-outline-danger">Delete</button>
 									</td>
-								</form>
+								</form>	
 							</tr>
+							@endforeach
 						</tbody>
 					</table>
+					@endif
 				</div>
 			</div>
-            <br>
+			<br>
+			@if($relic->count() >= 1)
             <h4>Relics</h4>
             <br>
 			<div>
@@ -277,6 +287,7 @@
 							</tr>
 						</tbody>
 					</table>
+					@endif
 				</div>
 			</div>
 		</div>
