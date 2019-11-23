@@ -4,7 +4,9 @@
 @section('code', '401')
 @section('message', __('Unauthorized'))
 
-<link href="{{ asset('css/error.css') }}" rel="stylesheet">
+<link href="{{ asset('css/newerror.css') }}" rel="stylesheet">
+<script src="{{ asset('js/error.js') }}"></script>
+
 <div class="container">
 	<div class="row">
 		<div class="col-md-11 offset-md-1" >
@@ -12,14 +14,9 @@
 			<br>
 			<h4>Error!</h4>
 			<hr>
-			<div id="notfound">
-				<div class="notfound">
-					<div class="notfound-404">
-						<h1>Oops!</h1>
-					</div>
-					<p>{{ $exception->getMessage() }}</p>
-					<a href="/">Go To Homepage</a>
-				</div>
+			<div class="error-page">
+				<h1>401</h1>
+				<p>{{ $exception->getMessage() }}</p>
 			</div>
 		</div>
 	</div>
