@@ -4,12 +4,13 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Equipment;
+use App\Http\Requests\StoreIrunaEquip;
 use RealRashid\SweetAlert\Facades\Alert;
 use Auth;
 
 class EquipmentController extends Controller
 {
-    public function update($id){
+    public function update($id, StoreIrunaEquip $request){
         
         if(Auth::check()){
             $item = Equipment::where('item_id', $id)->firstOrFail();
@@ -18,6 +19,7 @@ class EquipmentController extends Controller
                 abort(403);
             }
             else{
+                $request->validated();
                 $item->price = request('price');
                 $item->atk = request('atk');
                 $item->def = request('def');

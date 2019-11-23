@@ -579,7 +579,7 @@
 		$( "#ability" ).autocomplete({
 			source: function(request, response) {
 				$.ajax({
-				url: "{{url('searchability')}}",
+				url: "{{url('api/searchability')}}",
 				data: {
 						term : request.term
 				},
@@ -599,7 +599,7 @@
 		$( "#equipment" ).autocomplete({
 			source: function(request, response) {
 				$.ajax({
-				url: "{{url('searchequip')}}",
+				url: "{{url('api/searchequip')}}",
 				data: {
 						term : request.term
 				},
@@ -618,7 +618,7 @@
 		$( "#alcrystas" ).autocomplete({
 			source: function(request, response) {
 				$.ajax({
-				url: "{{url('searchal')}}",
+				url: "{{url('api/searchal')}}",
 				data: {
 						term : request.term
 				},
@@ -638,7 +638,7 @@
 		$( "#material" ).autocomplete({
 			source: function(request, response) {
 				$.ajax({
-				url: "{{url('searchmaterial')}}",
+				url: "{{url('api/searchmaterial')}}",
 				data: {
 						term : request.term
 				},
@@ -657,7 +657,7 @@
 		$( "#relicname" ).autocomplete({
 			source: function(request, response) {
 				$.ajax({
-				url: "{{url('searchrelic')}}",
+				url: "{{url('api/searchrelic')}}",
 				data: {
 						term : request.term
 				},
@@ -677,7 +677,7 @@
 		$( ".crystas" ).autocomplete({
 			source: function(request, response) {
 				$.ajax({
-				url: "{{url('searchcrystas')}}",
+				url: "{{url('api/searchcrystas')}}",
 				data: {
 						term : request.term
 				},

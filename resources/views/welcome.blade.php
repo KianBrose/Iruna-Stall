@@ -139,7 +139,7 @@
        
         source: function(request, response) {
             $.ajax({
-            url: "{{url('searchitem')}}",
+            url: "{{url('api/searchitem')}}",
             data: {
                     term : request.term
              },

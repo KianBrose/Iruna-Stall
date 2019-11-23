@@ -41,11 +41,9 @@ class StoreIrunaEquip extends FormRequest
                 'atk' => 'required|max:400|integer|min:0',
                 'def' => 'required|max:70|integer|min:0',
                 'type' => 'required|alpha',
-                'slot1' => 'required',
-                'slot2' => 'required',
                 'refinement' => 'required|integer|max:9|min:0',
                 'price' => 'required|integer|min:0',
-                "ability_level" => 'integer|min:1|max:5'
+                "ability_level" => 'integer|min:0|max:5'
         ];
     }
     
@@ -93,7 +91,7 @@ class StoreIrunaEquip extends FormRequest
     }
 
     public function invalidAbility($ability){
-        if($ability){
+        if($ability != ""){
             $validAbi = Ability::where('type', $ability)->first();
             if($validAbi){
                 return false;
@@ -101,7 +99,7 @@ class StoreIrunaEquip extends FormRequest
                 return true;
             } 
         } else{
-            return true;
+            return false;
         }
     }
     /**
@@ -133,19 +131,11 @@ class StoreIrunaEquip extends FormRequest
         
     }
 
-    public function invalidType($type){
-        if(in_array($type, StoreIrunaEquip::Type) || $type == StoreIrunaEquip::Null || $type == NULL){
-            return false;
-        } else{
-            return true;
-        }
-    }
-
     public function invalidEquipType($equip, $type){
-        if($equip->category != $type){
-            return true;
-        } else{
+        if(in_array($type, StoreIrunaEquip::Type)){
             return false;
+        } else{
+            return true;
         }
     }
 

@@ -91,11 +91,5 @@ Route::delete('/item/xtal/{id/delete', 'XtalController@delete')->middleware('ver
   * 
   *Autocomplete
   */
-Route::get('/searchitem', 'AutoCompleteController@search');
-Route::get('/searchability', 'AutoCompleteController@searchAbility');
-Route::get('/searchequip', 'AutoCompleteController@searchEquip');
-Route::get('/searchal', 'AutoCompleteController@searchAL');
-Route::get('/searchmaterial', 'AutoCompleteController@searchMaterial');
-Route::get('/searchcrystas', 'AutoCompleteController@searchCrystas');
-Route::get('/searchrelic', 'AutoCompleteController@searchRelic');
+
 

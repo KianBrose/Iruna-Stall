@@ -17,7 +17,7 @@ class AutoCompleteController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('verified');
+       
     }
     public function search(Request $request){
         $search = $request->get('term');

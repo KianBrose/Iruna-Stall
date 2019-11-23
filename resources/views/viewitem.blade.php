@@ -4,6 +4,7 @@
 
 <link href="{{ asset('css/main.css') }}" rel="stylesheet">
 <link href="{{ asset('css/util.css') }}" rel="stylesheet">
+<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 <div class="container">
 	<div class="row">
 		<div class="col-md-11 offset-md-1" >
@@ -11,17 +12,17 @@
 			<br>
 			<h4>View my items</h4>
 			<hr>
-            <h4>Equipment</h4>
+			@if($equipitem->count() >= 1) 
+			<h4>Equipment</h4>
             <br>
 			<div>
 				<div>
 					<table>
 						<thead>
 							<tr class="table100-head">
-								<th class="equipment">Name</th>
 								<th class="equipment">ATK</th>
 								<th class="equipment">DEF</th>
-								<th class="equipment">Refinement</th>
+								<th class="equipment">Ref</th>
 								<th class="equipment">Slots</th>
 								<th class="equipment">Slot 1</th>
 								<th class="equipment">Slot 2</th>
@@ -34,71 +35,77 @@
 						</thead>
 						<tbody>
 							<tr>
-								<form>
-									<td class="equipment">Name</td>
-									<td class="equipment">
-										<input type="text" class="form-control iteminput" style="width: 50px" name="atk" id="atk"/>
-									</td>
-									<td class="equipment">
-										<input type="text" class="form-control iteminput" style="width: 50px" name="def" id="def"/>
-									</td>
-									<td class="equipment">
-										<select name="refinement" class="form-control iteminput" id="refinement"> 
-										   <option selected value="0">0</option>
-										   <option value="1">1</option>
-										   <option value="2">2</option>
-										   <option value="3">3</option>
-										   <option value="4">4</option>
-										   <option value="5">5</option>
-										   <option value="6">6</option>
-										   <option value="7">7</option>
-										   <option value="8">8</option>
-										   <option value="9">9</option>
-										</select>
-									</td>
-									<td class="equipment">
-										<select name="equipslotamount" class="form-control iteminput" id="equipslotamount" style="width: 60px"> 
-										   <option selected value="0">0</option>
-										   <option value="0">0</option>
-										   <option value="1">1</option>
-										   <option value="2">2</option>
-										</select>
-									</td>
-									<td class="equipment">
-										<input type="text" class="form-control iteminput" style="width: 130px" name="s1" id="s1"/>
-									</td>
-									<td class="equipment">
-										<input type="text" class="form-control iteminput" style="width: 130px" name="s2" id="s2"/>
-									</td>
-									<td class="equipment">
-										<input type="text" class="form-control iteminput" style="width: 160px" name="abil" id="abil"/>
-									</td>
-									<td class="equipment">
-										<select name="abilv" class="form-control iteminput" id="abilv" style="width: 60px"> 
-										   <option selected value="0">0</option>
-										   <option value="0">0</option>
-										   <option value="1">1</option>
-										   <option value="2">2</option>
-										   <option value="3">3</option>
-										   <option value="4">4</option>
-										   <option value="5">5</option>
-										</select>
-									</td>
-									<td class="equipment">
-										<input type="text" class="form-control iteminput" style="width: 140px" name="price" id="price"/>
-									</td>
-									<td class="equipment">
-										<button type="submit" class="btn btn-outline-success">Apply</button>
-									</td>
-									<td class="equipment">
-										<button type="submit" class="btn btn-outline-danger">Delete</button>
-									</td>
-								</form>
+								@foreach( $equipitem as $equipitem)
+								<p>{{$equipitem->name }} </p>
+							<form action="/item/equip/{{ $equipitem->item_id }}">
+								<td class="equipment">
+								<input type="text" class="form-control iteminput" style="width: 50px" name="atk" id="atk" value="{{ $equipitem->atk }}"/>
+								</td>
+								<td class="equipment">
+								<input type="text" class="form-control iteminput" style="width: 50px" name="def" id="def" value="{{ $equipitem->def }}"/>
+								</td>
+								<td class="equipment">
+									<select name="refinement" class="form-control iteminput" id="refinement"> 
+									<option selected value="{{ $equipitem->refinement }}">{{ $equipitem->refinement }}</option>
+									   <option value="1">1</option>
+									   <option value="2">2</option>
+									   <option value="3">3</option>
+									   <option value="4">4</option>
+									   <option value="5">5</option>
+									   <option value="6">6</option>
+									   <option value="7">7</option>
+									   <option value="8">8</option>
+									   <option value="9">9</option>
+									</select>
+								</td>
+								<td class="equipment">
+									<select name="equipslotamount" class="form-control iteminput" id="equipslotamount" style="width: 60px"> 
+									<option selected value="0">{{ $equipitem->slots }}</option>
+									   <option value="0">0</option>
+									   <option value="1">1</option>
+									   <option value="2">2</option>
+									</select>
+								</td>
+								<td class="equipment">
+								<input type="text" class="form-control iteminput crystas" style="width: 130px" name="slot1" id="s1" value="{{ $equipitem->slot1 }}"/>
+								</td>
+								<td class="equipment">
+								<input type="text" class="form-control iteminput crystas" style="width: 130px" name="slot2" id="s2" value="{{ $equipitem->slot2 }}"/>
+								</td>
+								<td class="equipment">
+								<input type="text" class="form-control iteminput" style="width: 160px" name="ability" id="ability" value="{{ $equipitem->ability}}"/>
+								</td>
+								<td class="equipment">
+									<select name="ability_level" class="form-control iteminput" id="abilv" style="width: 60px"> 
+									<option selected value="0">{{ $equipitem->ability_level }}</option>
+									   <option value="0">0</option>
+									   <option value="1">1</option>
+									   <option value="2">2</option>
+									   <option value="3">3</option>
+									   <option value="4">4</option>
+									   <option value="5">5</option>
+									</select>
+								</td>
+								<td class="equipment">
+									<input type="text" class="form-control iteminput" style="width: 140px" name="price" id="price" value="{{ number_format($equipitem->price) }}"/>
+								</td>
+								<td class="equipment">
+									<button type="submit" class="btn btn-outline-success">Apply</button>
+								</td>
+								<td class="equipment">
+									<button type="submit" class="btn btn-outline-danger">Delete</button>
+								</td>
+							</form>
+								@endforeach
+								
+									
 							</tr>
 						</tbody>
 					</table>
 				</div>
 			</div>
+			@endif
+            
             <br>
             <h4>Materials</h4>
             <br>
@@ -258,6 +265,138 @@
 			</div>
 		</div>
 	</div>
+	<script src="https://code.jquery.com/jquery-3.4.1.min.js"   integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="   crossorigin="anonymous"></script>
+	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"   integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU="   crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>		
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+	<script>
+			$(document).ready(function() {
+				
+				$( "#ability" ).autocomplete({
+					source: function(request, response) {
+						$.ajax({
+						url: "{{url('api/searchability')}}",
+						data: {
+								term : request.term
+						},
+						dataType: "json",
+						success: function(data){
+						var resp = $.map(data,function(obj){
+								return obj.type;
+						}); 
+		
+						response(resp);
+						}
+					});
+				},
+				minLength: 3
+				});
+		
+				$( "#equipment" ).autocomplete({
+					source: function(request, response) {
+						$.ajax({
+						url: "{{url('api/searchequip')}}",
+						data: {
+								term : request.term
+						},
+						dataType: "json",
+						success: function(data){
+						var resp = $.map(data,function(obj){
+								return obj.name;
+						}); 
+		
+						response(resp);
+						}
+					});
+				},
+				minLength: 3
+				});
+				$( "#alcrystas" ).autocomplete({
+					source: function(request, response) {
+						$.ajax({
+						url: "{{url('api/searchal')}}",
+						data: {
+								term : request.term
+						},
+						dataType: "json",
+						success: function(data){
+						var resp = $.map(data,function(obj){
+								return obj.name;
+						}); 
+		
+						response(resp);
+						}
+					});
+				},
+				minLength: 3
+				});
+		
+				$( "#material" ).autocomplete({
+					source: function(request, response) {
+						$.ajax({
+						url: "{{url('api/searchmaterial')}}",
+						data: {
+								term : request.term
+						},
+						dataType: "json",
+						success: function(data){
+						var resp = $.map(data,function(obj){
+								return obj.name;
+						}); 
+		
+						response(resp);
+						}
+					});
+				},
+				minLength: 3
+				});
+				$( "#relicname" ).autocomplete({
+					source: function(request, response) {
+						$.ajax({
+						url: "{{url('api/searchrelic')}}",
+						data: {
+								term : request.term
+						},
+						dataType: "json",
+						success: function(data){
+						var resp = $.map(data,function(obj){
+								return obj.name;
+						}); 
+		
+						response(resp);
+						}
+					});
+				},
+				minLength: 3
+				});
+		
+				$( ".crystas" ).autocomplete({
+					source: function(request, response) {
+						$.ajax({
+						url: "{{url('api/searchcrystas')}}",
+						data: {
+								term : request.term
+						},
+						dataType: "json",
+						success: function(data){
+						var resp = $.map(data,function(obj){
+								return obj.name;
+						}); 
+		
+						response(resp);
+						}
+					});
+				},
+				minLength: 3
+				});
+		
+		
+		
+				
+			});
+				
+		
+			</script>
 
 
 
