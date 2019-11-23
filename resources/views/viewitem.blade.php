@@ -105,10 +105,13 @@
 									
 							</tr>
 						</tbody>
+						
 					</table>
-					@endif
+					
 				</div>
+				
 			</div>
+			@endif
 			
             
 			<br>
@@ -145,9 +148,13 @@
 										</td>
 										
 									</form>
+									<form action="/item/items/{{ $item->item_id }}/delete" method="POST">
+										@method('delete')
+										@csrf
 									<td class="materials">
 											<button type="submit" class="btn btn-outline-danger">Delete</button>
 										</td>
+									</form>
 									@endforeach
 								</tr>
 							</tbody>
@@ -197,9 +204,10 @@
 							@endforeach
 						</tbody>
 					</table>
-					@endif
+					
 				</div>
 			</div>
+			@endif
 			<br>
 			@if($alitem->count() >= 1)
 			<h4>AL's</h4>
