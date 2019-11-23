@@ -14,12 +14,14 @@
 			<hr>
 			@if($equipitem->count() >= 1) 
 			<h4>Equipment</h4>
+			@endif
             <br>
 			<div>
 				<div>
 					<table>
 						<thead>
 							<tr class="table100-head">
+								<th class="equipment">Name</th>
 								<th class="equipment">ATK</th>
 								<th class="equipment">DEF</th>
 								<th class="equipment">Ref</th>
@@ -29,15 +31,17 @@
 								<th class="equipment">Ability</th>
 								<th class="equipment">Ability Lv</th>
 								<th class="equipment">Price</th>
-								<th class="equipment">Controls</th>
-								<th class="equipment">Controls</th>
+								<th class="equipment">Edit</th>
+								<th class="equipment">Delete</th>
 							</tr>
 						</thead>
 						<tbody>
-							<tr>
 								@foreach( $equipitem as $equipitem)
-								<p>{{$equipitem->name }} </p>
-							<form action="/item/equip/{{ $equipitem->item_id }}">
+								<tr>
+								<td class="equipment">{{$equipitem->name }}</td>
+							<form action="/item/equip/{{ $equipitem->item_id }}" method="POST">
+								@method('patch')
+								@csrf
 								<td class="equipment">
 								<input type="text" class="form-control iteminput" style="width: 50px" name="atk" id="atk" value="{{ $equipitem->atk }}"/>
 								</td>
@@ -104,10 +108,12 @@
 					</table>
 				</div>
 			</div>
-			@endif
+			
             
-            <br>
-            <h4>Materials</h4>
+			<br>
+			@if($item->count() >= 1)
+			<h4>Materials</h4>
+			@endif
             <br>
 			<div>
 				<div>
@@ -115,36 +121,44 @@
 						<thead>
 							<tr class="table100-head">
 								<th class="materials">Name</th>
-								<th class="materials">QTY</th>
+								<th class="materials">Quantity</th>
 								<th class="materials">Price</th>
 								<th class="materials">Controls</th>
 								<th class="materials">Controls</th>
 							</tr>
 						</thead>
 						<tbody>
+							@foreach ($item as $item)
 							<tr>
-								<form>
-									<td class="materials">1</td>
-									<td class="materials">
-										<input type="text" class="form-control iteminput" style="width: 80px" name="qty" id="qty"/>
-									</td>
-									<td class="materials">
-										<input type="text" class="form-control iteminput" style="width: 160px" name="price" id="price"/>
-									</td>
-									<td class="materials">
-										<button type="submit" class="btn btn-outline-success">Apply</button>
-									</td>
-									<td class="materials">
-										<button type="submit" class="btn btn-outline-danger">Delete</button>
-									</td>
-								</form>
-							</tr>
-						</tbody>
-					</table>
+									<td class="materials">{{ $item->name }}</td>
+									<form action="item/items/{{ $item->item_id }}/update">
+										@method('patch')
+										@csrf
+										<td class="materials">
+										<input type="text" class="form-control iteminput" style="width: 80px" name="qty" id="qty" value="{{ $item->quantity }}"/>
+										</td>
+										<td class="materials">
+										<input type="text" class="form-control iteminput" style="width: 160px" name="price" id="price" value="{{ $item->price }}"/>
+										</td>
+										<td class="materials">
+											<button type="submit" class="btn btn-outline-success">Apply</button>
+										</td>
+										<td class="materials">
+											<button type="submit" class="btn btn-outline-danger">Delete</button>
+										</td>
+									</form>
+									@endforeach
+								</tr>
+							</tbody>
+						</table>
+					</div>
 				</div>
-			</div>
-            <br>
-            <h4>Xtals</h4>
+							
+							
+			<br>
+			@if($xtal->count() >= 1)
+			<h4>Xtals</h4>
+			@endif
             <br>
 			<div>
 				<div>
@@ -152,21 +166,22 @@
 						<thead>
 							<tr class="table100-head">
 								<th class="xtals">Name</th>
-								<th class="xtals">QTY</th>
+								<th class="xtals">Quantity</th>
 								<th class="xtals">Price</th>
 								<th class="xtals">Controls</th>
 								<th class="xtals">Controls</th>
 							</tr>
 						</thead>
 						<tbody>
+							@foreach( $xtal as $xtal )
 							<tr>
+								<td class="xtals">{{ $xtal->name }}</td>
 								<form>
-									<td class="xtals">1</td>
 									<td class="xtals">
-										<input type="text" class="form-control iteminput" style="width: 80px" name="qty" id="qty"/>
+									<input type="text" class="form-control iteminput" style="width: 80px" name="qty" id="qty" value="{{ $xtal->quantity }}"/>
 									</td>
 									<td class="xtals">
-										<input type="text" class="form-control iteminput" style="width: 160px" name="price" id="price"/>
+										<input type="text" class="form-control iteminput" style="width: 160px" name="price" id="price" value="{{ number_format($xtal->price) }}"/>
 									</td>
 									<td class="xtals">
 										<button type="submit" class="btn btn-outline-success">Apply</button>
@@ -175,6 +190,7 @@
 										<button type="submit" class="btn btn-outline-danger">Delete</button>
 									</td>
 								</form>
+								@endforeach
 							</tr>
 						</tbody>
 					</table>

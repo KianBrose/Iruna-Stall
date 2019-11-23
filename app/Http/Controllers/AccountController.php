@@ -42,11 +42,11 @@ class AccountController extends Controller
         $Ai = new Ai();
         $Equip = new Equipment();
         $Item = new Items();
-        $aiitem = $Ai->getAiItem();
+        $alitem = $Ai->getAiItem();
         $equipitem = $Equip->getEquipmentItems();
         $item = $Item->getItems();
         $xtal = Xtal::where('owner_id', Auth::user()->user_id)->get();
-        return view('viewitem', compact('aiitem', 'equipitem', 'item', 'xtal'));
+        return view('viewitem', compact('alitem', 'equipitem', 'item', 'xtal'));
     }
 
     public function show(){
