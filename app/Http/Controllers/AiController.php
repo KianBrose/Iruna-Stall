@@ -38,7 +38,10 @@ class AiController extends Controller
                     $item->price = request('price');
                 }
                 if($this->validNumber(request('quantity'))){
-                    $item->quantity = request('quantity');
+                    if((int)request('quantity') > 0 && (int)request('quantity') <= 99){
+                        $item->quantity = request('quantity');
+                    }
+                    
                 }
                 
                 $item->save();
