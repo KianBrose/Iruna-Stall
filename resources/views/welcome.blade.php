@@ -94,7 +94,7 @@
                             <div class="col-md-7 col-xs-8">
                                 <input type="text" class="form-control" name="search" id="search">
                             </div>
-
+							<!--
                             <div class="col-md-3 col-xs-3">
                                  <div class="form-group">
                                     <select id="searchtype" class="form-control" name="searchtype">
@@ -107,8 +107,9 @@
                                     </select>
                                  </div>
                             </div>
+							-->
                             <div class="col-md-2 col-xs-3">
-                                <input type="button" class="btn btn-dark" name="search_button" id="search_button" value="Search">
+                                <input type="submit" class="btn btn-default btn-block" name="search_button" id="search_button" value="Search">
                             </div>
                         </div>
                     </form>
@@ -139,7 +140,7 @@
        
         source: function(request, response) {
             $.ajax({
-            url: "{{url('searchitem')}}",
+            url: "{{url('api/searchitem')}}",
             data: {
                     term : request.term
              },

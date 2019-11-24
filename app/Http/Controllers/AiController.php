@@ -17,7 +17,7 @@ class AiController extends Controller
     public function edit($id){
         $item = Ai::where('item_id', $id)->firstOrFail();
         if($item->owner_id != Auth::user()->user_id){
-            abort(403);
+            abort(404);
         }
         else{
             return view('item.ai', compact('item'));
@@ -31,7 +31,6 @@ class AiController extends Controller
                 abort(403);
             }
             else{
-                //$item->name = request('name');
                 if($this->validColor(request('color'))){
                     $item->color = request('color');
                 }
@@ -39,7 +38,10 @@ class AiController extends Controller
                     $item->price = request('price');
                 }
                 if($this->validNumber(request('quantity'))){
-                    $item->quantity = request('quantity');
+                    if((int)request('quantity') > 0 && (int)request('quantity') <= 99){
+                        $item->quantity = request('quantity');
+                    }
+                    
                 }
                 
                 $item->save();

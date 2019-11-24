@@ -16,3 +16,11 @@ use Illuminate\Http\Request;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::get('/searchitem', 'AutoCompleteController@search');
+Route::get('/searchability', 'AutoCompleteController@searchAbility');
+Route::get('/searchequip', 'AutoCompleteController@searchEquip');
+Route::get('/searchal', 'AutoCompleteController@searchAL');
+Route::get('/searchmaterial', 'AutoCompleteController@searchMaterial');
+Route::get('/searchcrystas', 'AutoCompleteController@searchCrystas');
+Route::get('/searchrelic', 'AutoCompleteController@searchRelic');

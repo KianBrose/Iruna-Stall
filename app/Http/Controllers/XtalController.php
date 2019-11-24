@@ -21,7 +21,7 @@ class XtalController extends Controller
                     if(request('quantity') > 99){
                         $item->quantity = 99;
                     }
-                    else{
+                    else{  
                         $item->quantity = request('quantity');
                     }
                     
