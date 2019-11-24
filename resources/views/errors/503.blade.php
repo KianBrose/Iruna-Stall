@@ -21,7 +21,7 @@
     <div>
       <span>sorry about that!</span>
       <span>
-        <a>
+        <a href="/">
           <b>return home?</b>
         </a>
       </span>
