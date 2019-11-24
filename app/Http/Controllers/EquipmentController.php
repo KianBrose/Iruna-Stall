@@ -19,10 +19,21 @@ class EquipmentController extends Controller
                 abort(404);
             }
             else{
-                $request->validated();
-                $item->price = request('price');
-                $item->atk = request('atk');
-                $item->def = request('def');
+                if($this->validNumber(request('price'))){
+                    $item->price = request('price');
+                }
+
+                if($this->validNumber(request('atk'))){
+                    if(request('atk') < 400 && request('atk') > 0){
+                        $item->atk = request('atk');
+                    }
+                }
+
+                if($this->validNumber(request('def'))){
+                    if(request('atk') < 70 && request('def') > 0){
+                        $item->atk = request('def');
+                    }
+                }
                 $item->slots = request('slots');
                 $item->slot1 = request('slot1');
                 $item->slot2 = request('slot2');
@@ -49,6 +60,17 @@ class EquipmentController extends Controller
                 return redirect('/viewitem');
             }
         }
+    }
+
+    public function validNumber($number){
+        $number = (string) $number;
+        if(ctype_digit($number)){
+            return true;
+        }
+        else{
+            return false;
+        }
+        
     }
     
 }

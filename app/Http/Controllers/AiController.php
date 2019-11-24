@@ -31,7 +31,6 @@ class AiController extends Controller
                 abort(403);
             }
             else{
-                //$item->name = request('name');
                 if($this->validColor(request('color'))){
                     $item->color = request('color');
                 }

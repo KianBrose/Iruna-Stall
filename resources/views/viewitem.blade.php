@@ -113,6 +113,7 @@
 			</div>
 			@endif
 			
+			
             
 			<br>
 			@if($item->count() >= 1)
@@ -159,9 +160,10 @@
 								</tr>
 							</tbody>
 						</table>
-						@endif
+						
 					</div>
 				</div>
+				@endif
 							
 							
 			<br>
@@ -257,9 +259,10 @@
 							@endforeach
 						</tbody>
 					</table>
-					@endif
+					
 				</div>
 			</div>
+			@endif
 			<br>
 			@if($relic->count() >= 1)
             <h4>Relics</h4>
@@ -296,9 +299,10 @@
 							</tr>
 						</tbody>
 					</table>
-					@endif
+					
 				</div>
 			</div>
+			@endif
 		</div>
 	</div>
 	<script src="https://code.jquery.com/jquery-3.4.1.min.js"   integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="   crossorigin="anonymous"></script>
