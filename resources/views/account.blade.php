@@ -547,25 +547,6 @@
                     <div class="row divider" role="separator" style="margin-top:20px;"></div>
                 </div>
             </div>
-            <div class="col-md-2">
-                <div>
-
-                    <h4>&nbsp;</h4>
-                    <hr>
-
-
-                    <div>
-                        <h4>Useful Links</h4></div>
-                    <ul class="decoration_none" style="font-size: 12px;">
-                        <li><a href="http://iruna-online.com/">Official Iruna Website</a></li>
-                        <li><a href="http://irunaonline.boards.net/">Iruna Boards Forum</a></li>
-                        <li><a href="http://iruna-online.weebly.com/">Iruna Weebly</a></li>
-                        <li><a href="https://wikiwiki.jp/iruna-online/">Iruna JP Wiki</a></li>
-                    </ul>
-                    <br>
-
-                </div>
-            </div>
         </div>
     </div>
     @include('sweetalert::alert')
