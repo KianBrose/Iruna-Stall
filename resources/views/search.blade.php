@@ -186,6 +186,7 @@
 				</div>
 				@endif
 				<br>
+				@if($relicSearch->count() >= 1)
 				<h4>Relics</h4>
 				<br>
 				<div>
@@ -200,16 +201,19 @@
 								</tr>
 							</thead>
 							<tbody>
+								@foreach($relicSearch as $relicSearch)
 								<tr>
-									<td class="relics">Name</th>
-									<td class="relics">QTY</th>
-									<td class="relics">Price</th>
+									<td class="relics">{{ $relicSearch->name }}</th>
+									<td class="relics">{{ $relicSearch->quantity }}</th>
+									<td class="relics">{{ number_format($relicSearch->price) }}</th>
 									<td class="relics">Contact</th>
 								</tr>
+								@endforeach
 							</tbody>
 						</table>
 					</div>
 				</div>
+				@endif
             </div>
         </div>
 
