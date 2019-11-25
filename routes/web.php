@@ -22,7 +22,7 @@ Route::get('/about', function () {
     return view('about');
 });
 
-Route::post('/search', 'ItemController@search')->name('search');
+Route::post('/search', 'SearchController@search')->name('search');
 Route::get('/account', 'AccountController@show');
 
 /**
@@ -87,9 +87,7 @@ Route::delete('/item/xtal/{id/delete', 'XtalController@delete')->middleware('ver
  Route::patch('/item/relic/{id}/update', 'RelicController@update')->middleware('verified');
  Route::delete('/item/relic/{id}/delete', 'RelicController@delete')->middleware('verified');
 
- /**
-  * 
-  *Autocomplete
-  */
 
+
+Route::post('/user/updatepassword', 'ProfileController@update')->middleware('verified');
 
