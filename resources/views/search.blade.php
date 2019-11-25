@@ -45,7 +45,7 @@
                 <br>
 				<h4>Search Results: {{ $input }}</h4>
 				<br>
-			<p>There are {{ $equipSearch->count() + $aiSearch->count() + $relicSearch->count() + $xtalSearch->count() }} results</p>
+			<p>There are {{ $equipSearch->count() + $aiSearch->count() + $relicSearch->count() + $xtalSearch->count() + $itemSearch->count() }} results</p>
 				<hr>
 				@if($equipSearch->count() >= 1)
 				<h4>Equipment</h4>
@@ -93,7 +93,7 @@
 				@endif
 				
 				<br>
-				
+				@if($itemSearch->count() >= 1)
 				<h4>Materials</h4>
 				<br>
 				<div>
@@ -108,12 +108,14 @@
 								</tr>
 							</thead>
 							<tbody>
+								@foreach($itemSearch as $itemSearch)
 								<tr>
-									<td class="materials">Name</th>
-									<td class="materials">QTY</th>
-									<td class="materials">Price</th>
+									<td class="materials">{{ $itemSearch->name }}</th>
+									<td class="materials">{{ $itemSearch->quantity }}</th>
+									<td class="materials">{{ $itemSearch->price }}</th>
 									<td class="materials">Contact</th>
 								</tr>
+								@endforeach
 							</tbody>
 						</table>
 					</div>
@@ -144,7 +146,7 @@
 						</table>
 					</div>
 				</div>
-				
+				@endif
 				<br>
 				<h4>AL Crystals</h4>
 				<br>
