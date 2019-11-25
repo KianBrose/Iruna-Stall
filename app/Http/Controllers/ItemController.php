@@ -46,16 +46,10 @@ class ItemController extends Controller
         $equip->name = request('name');
         $equip->item_id = $idTobeUsed;
         $equip->owner_id = Auth::user()->user_id;
-
-        // handle type input
-        
         $equip->type = request('type');
-
-        // check atk
         $equip->atk = request('atk');
         $equip->def = request('def');
         $equip->price = request('price');
-        
         $equip->slots = request('equipslotamount');
 
         $equip->slot1 = request('slot1');

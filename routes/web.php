@@ -22,7 +22,7 @@ Route::get('/about', function () {
     return view('about');
 });
 
-Route::post('/search', 'ItemController@search')->name('search');
+Route::post('/search', 'SearchController@search')->name('search');
 Route::get('/account', 'AccountController@show');
 
 /**

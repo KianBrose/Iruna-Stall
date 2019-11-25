@@ -44,7 +44,10 @@
             <div style="height: auto !important;">
                 <br>
 				<h4>Search Results: {{ $input }}</h4>
-                <hr>
+				<br>
+			<p>There are {{ $equipSearch->count() + $aiSearch->count() + $relicSearch->count() + $xtalSearch->count() }} results</p>
+				<hr>
+				@if($equipSearch->count() >= 1)
 				<h4>Equipment</h4>
 				<br>
 				<div>
@@ -66,25 +69,31 @@
 								</tr>
 							</thead>
 							<tbody>
+								@foreach ($equipSearch as $equipSearch)
+									
+								
 								<tr>
-									<td class="equipment">Name</th>
-									<td class="equipment">ATK</th>
-									<td class="equipment">DEF</th>
-									<td class="equipment">Refinement</th>
-									<td class="equipment">Slots</th>
-									<td class="equipment">Slot 1</th>
-									<td class="equipment">Slot 2</th>
-									<td class="equipment">Ability</th>
-									<td class="equipment">Ability Lv</th>
-									<td class="equipment">Price</th>
+									<td class="equipment">{{ $equipSearch->name }}</th>
+									<td class="equipment">{{ $equipSearch->atk }}</th>
+									<td class="equipment">{{ $equipSearch->def }}</th>
+									<td class="equipment">{{ $equipSearch->refinement }}</th>
+									<td class="equipment">{{ $equipSearch->slots }}</th>
+									<td class="equipment">{{ $equipSearch->slot1 }}</th>
+									<td class="equipment">{{ $equipSearch->slot2 }}</th>
+									<td class="equipment">{{ $equipSearch->ability }}</th>
+									<td class="equipment">{{ $equipSearch->ability_level}}</th>
+									<td class="equipment">{{ number_format($equipSearch->price )}}</th>
 									<td class="equipment">Contact</th>
 								</tr>
+								@endforeach
 							</tbody>
 						</table>
 					</div>
 				</div>
+				@endif
 				
 				<br>
+				
 				<h4>Materials</h4>
 				<br>
 				<div>
@@ -192,5 +201,39 @@
             </div>
         </div>
 
+
+		<script src="https://code.jquery.com/jquery-3.4.1.min.js"   integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="   crossorigin="anonymous"></script>
+		<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"   integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU="   crossorigin="anonymous"></script>
+		
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+		<script type="text/javascript" id="cookieinfo"
+		src="//cookieinfoscript.com/js/cookieinfo.min.js"></script>
+
+		<script>
+				$(document).ready(function() {
+					
+				$( "#search" ).autocomplete({
+			   
+				source: function(request, response) {
+					$.ajax({
+					url: "{{url('api/searchitem')}}",
+					data: {
+							term : request.term
+					 },
+					dataType: "json",
+					success: function(data){
+					   var resp = $.map(data,function(obj){
+							return obj.name;
+					   }); 
+		 
+					   response(resp);
+					}
+				});
+			},
+			minLength: 3
+		 });
+		});
+		</script>
 
 @endsection
