@@ -45,7 +45,7 @@
                 <br>
 				<h4>Search Results: {{ $input }}</h4>
 				<br>
-			<p>There are {{ $equipSearch->count() + $aiSearch->count() + $relicSearch->count() + $xtalSearch->count() + $itemSearch->count() }} results</p>
+			<p>There are {{ $equipSearch->count() + $alSearch->count() + $relicSearch->count() + $xtalSearch->count() + $itemSearch->count() }} results</p>
 				<hr>
 				@if($equipSearch->count() >= 1)
 				<h4>Equipment</h4>
@@ -112,7 +112,7 @@
 								<tr>
 									<td class="materials">{{ $itemSearch->name }}</th>
 									<td class="materials">{{ $itemSearch->quantity }}</th>
-									<td class="materials">{{ $itemSearch->price }}</th>
+									<td class="materials">{{ number_format($itemSearch->price) }}</th>
 									<td class="materials">Contact</th>
 								</tr>
 								@endforeach
@@ -120,8 +120,9 @@
 						</table>
 					</div>
 				</div>
-				
+				@endif
 				<br>
+				@if($xtalSearch->count() >= 1)
 				<h4>Xtals</h4>
 				<br>
 				<div>
@@ -136,18 +137,23 @@
 								</tr>
 							</thead>
 							<tbody>
+								@foreach ($xtalSearch as $xtalSearch)
+									
+								
 								<tr>
-									<td class="xtals">Name</th>
-									<td class="xtals">QTY</th>
-									<td class="xtals">Price</th>
+									<td class="xtals">{{ $xtalSearch->name }}</th>
+									<td class="xtals">{{ $xtalSearch->quantity }}</th>
+									<td class="xtals">{{ number_format($xtalSearch->price) }}</th>
 									<td class="xtals">Contact</th>
 								</tr>
+								@endforeach
 							</tbody>
 						</table>
 					</div>
 				</div>
 				@endif
 				<br>
+				@if($alSearch->count() >= 1)
 				<h4>AL Crystals</h4>
 				<br>
 				<div>
@@ -163,18 +169,22 @@
 								</tr>
 							</thead>
 							<tbody>
+								@foreach($alSearch as $alSearch)
+									
+								
 								<tr>
-									<td class="als">Name</th>
-									<td class="als">Color</th>
-									<td class="als">QTY</th>
-									<td class="als">Price</th>
+									<td class="als">{{ $alSearch->name }}</th>
+									<td class="als">{{ $alSearch->color }}</th>
+									<td class="als">{{ $alSearch->quantity }}</th>
+									<td class="als">{{ number_format($alSearch->price) }}</th>
 									<td class="als">Contact</th>
 								</tr>
+								@endforeach
 							</tbody>
 						</table>
 					</div>
 				</div>
-				
+				@endif
 				<br>
 				<h4>Relics</h4>
 				<br>
