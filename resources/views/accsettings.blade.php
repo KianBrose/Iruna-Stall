@@ -91,9 +91,15 @@
                     @error('current_password')
                     <div style="color:red;"> {{ $message }}</div>
                     @enderror
+
                     @error('current_email')
                     <div style="color:red;"> {{ $message }}</div>
                     @enderror
+
+                    @error('success')
+                    <div style="color:green;"> {{ $message }}</div>
+                    @enderror
+
                     <form  action="/user/updatepassword" method="POST">
                         @csrf
 						<div class="input-group">

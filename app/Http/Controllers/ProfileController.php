@@ -11,6 +11,7 @@ use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Str;
 
 
 class ProfileController extends Controller
@@ -30,7 +31,7 @@ class ProfileController extends Controller
             if(auth()->user()->email == request('email')){
                 DB::table('password_resets')->insert([
                     'email' => $request->email,
-                    'token' => str_random(60),
+                    'token' => Str::random(60),
                     'created_at' => Carbon::now()
                 ]);
 
@@ -54,12 +55,13 @@ class ProfileController extends Controller
     private function sendResetEmail($userEmail, $email, $token)
         {
         //Retrieve the user from the database
-        $user = User::where('email', $email)->select('firstname', 'email')->first();
+        $user = User::where('email', $email)->select('email')->first();
         //Generate, the password reset link. The token generated is embedded in the link
-        $link = config('base_url') . 'password/reset/' . $token . '?email=' . urlencode($user->email);
+        $link = config('APP_URL') . 'password/reset/' . $token . '?email=' . urlencode($user->email);
 
             try {
-                return Mail::to($userEmail)->send(new PasswordChange($link))->render();
+                Mail::to($userEmail)->send(new PasswordChange($link));
+                return redirect()->back()->withErrors(['success' => trans('check your inbox')]);
             } catch (\Exception $e) {
                 return false;
             }
