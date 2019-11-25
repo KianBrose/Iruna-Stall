@@ -87,19 +87,19 @@
                     <hr>
 
                     <div>
-					<h3>Change Password</h3>
-					<form method="post" action="password/email">
+                    <h3>Change Password</h3>
+                    @error('current_password')
+                    <div style="color:red;"> {{ $message }}</div>
+                    @enderror
+                    <form  action="/user/updatepassword" method="POST">
+                        @csrf
 						<div class="input-group">
-							<label>Old Password</label>
-							<input class="form-control" type="password" name="password_old" style="margin-left:20px;">
+							<label>Old password</label>
+							<input class="form-control" type="password" name="password" style="margin-left:20px;">
 						</div>
 						<div class="input-group">
-							<label>New Password</label>
-							<input class="form-control" type="password" name="password_1" style="margin-left:13px;">
-						</div>
-						<div class="input-group">
-							<label>Confirm New Password</label>
-							<input class="form-control" type="password" name="password_2" style="margin-left:10px;">
+							<label>Email address</label>
+							<input class="form-control" type="text" name="email" style="margin-left:13px;">
 						</div>
 						<div class="input-group">
 							<br>

@@ -22,6 +22,8 @@ class ProfileController extends Controller
 
     public function update(Request $request){
         $userMail = $request->user();
+        
+
         if ( !Hash::check(request('password'), auth()->user()->password) ) {
             return redirect()->back()->withErrors('current_password', 'Your current password is incorrect.');
         } else{
@@ -93,11 +95,15 @@ class ProfileController extends Controller
             ->delete();
         
             if ($this->sendSuccessEmail($tokenData->email)) {
-                return view('index');
+                return view('welcome');
             } else {
                 return redirect()->back()->withErrors(['email' => trans('A Network Error occurred. Please try again.')]);
             }
         
         }
+    
+    private function sendSuccessEmail($email){
+
+    }
 
 }

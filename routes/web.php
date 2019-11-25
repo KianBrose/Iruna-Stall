@@ -89,5 +89,5 @@ Route::delete('/item/xtal/{id/delete', 'XtalController@delete')->middleware('ver
 
 
 
-Route::get('/user/updatepassword', 'ProfileController@update')->middleware('verfied');
+Route::post('/user/updatepassword', 'ProfileController@update')->middleware('verified');
 
