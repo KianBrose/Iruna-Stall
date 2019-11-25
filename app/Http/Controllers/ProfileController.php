@@ -25,7 +25,7 @@ class ProfileController extends Controller
         
 
         if ( !Hash::check(request('password'), auth()->user()->password) ) {
-            return redirect()->back()->withErrors('current_password', 'Your current password is incorrect.');
+            return redirect()->back()->withErrors(['current_password' => trans('Your current password is incorrect.')]);
         } else{
             if(auth()->user()->email == request('email')){
                 DB::table('password_resets')->insert([
@@ -43,6 +43,9 @@ class ProfileController extends Controller
                         return redirect()->back()->withErrors(['error' => trans('A Network Error occurred. Please try again.')]);
                     }
                 }
+            else{
+                return redirect()->back()->withErrors(['current_email' => trans('Your email does not match with our records.')]);
+            }
         }
 
        
