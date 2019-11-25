@@ -87,9 +87,7 @@ Route::delete('/item/xtal/{id/delete', 'XtalController@delete')->middleware('ver
  Route::patch('/item/relic/{id}/update', 'RelicController@update')->middleware('verified');
  Route::delete('/item/relic/{id}/delete', 'RelicController@delete')->middleware('verified');
 
- /**
-  * 
-  *Autocomplete
-  */
 
+
+Route::get('/user/updatepassword', 'ProfileController@update')->middleware('verfied');
 

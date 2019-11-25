@@ -88,7 +88,7 @@
 
                     <div>
 					<h3>Change Password</h3>
-					<form method="post" action="accsettings.php">
+					<form method="post" action="password/email">
 						<div class="input-group">
 							<label>Old Password</label>
 							<input class="form-control" type="password" name="password_old" style="margin-left:20px;">

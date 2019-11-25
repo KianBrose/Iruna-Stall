@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Support\Facades\Hash;
-
+use App\User;
 class editProfile extends FormRequest
 {
     /**
@@ -40,5 +40,12 @@ class editProfile extends FormRequest
             }
         });
         return;
+    }
+
+    public function invalidEmail($validator){
+        $user = User::where('email', request('email'))->first();
+        if(count($user) < 1){
+            return true;
+        }
     }
 }
