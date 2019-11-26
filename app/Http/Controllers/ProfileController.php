@@ -12,7 +12,12 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Str;
-
+use App\Ai;
+use App\Equipment;
+use App\Items;
+use App\Relic;
+use App\Xtal;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class ProfileController extends Controller
 {
@@ -109,6 +114,32 @@ class ProfileController extends Controller
     
     private function sendSuccessEmail($email){
 
+    }
+
+
+    public function delete(Request $request){
+        $user = $request->user();
+
+        if ( !Hash::check(request('password'), auth()->user()->password) ) {
+            return redirect()->back()->withErrors(['wrong_password' => trans('Your current password is wrong')]);
+        } else{
+            if(auth()->user()->email == request('email')){
+                auth()->user()->activate = '2';
+                Relic::where('owner_id', auth()->user()->user_id)->delete();
+                Ai::where('owner_id', auth()->user()->user_id)->delete();
+                Equipment::where('owner_id', auth()->user()->user_id)->delete();
+                Items::where('owner_id', auth()->user()->user_id)->delete();
+                Xtal::where('owner_id', auth()->user()->user_id)->delete();
+                Alert::toast('Successfully deactivated your account', 'success');
+                redirect('/');
+                auth()->logout();
+               
+                
+            }
+            return redirect()->back()->withErrors(['wrong_email' => trans('Your current password is wrong')]);
+
+           
+        }
     }
 
 }

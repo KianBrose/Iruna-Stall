@@ -75,7 +75,7 @@ Route::get('/item/items/{id}/edit', 'ItemsController@edit')->middleware('isAdmin
  */
 Route::post('/createXtal', 'ItemController@createXtal')->middleware('verified');
 Route::patch('/item/xtal/{id}/update', 'XtalController@update')->middleware('verified');
-Route::delete('/item/xtal/{id/delete', 'XtalController@delete')->middleware('verified');
+Route::delete('/item/xtal/{id}/delete', 'XtalController@delete')->middleware('verified');
 
 
 /**
@@ -90,4 +90,5 @@ Route::delete('/item/xtal/{id/delete', 'XtalController@delete')->middleware('ver
 
 
 Route::post('/user/updatepassword', 'ProfileController@update')->middleware('verified');
+Route::delete('/user/delete', 'ProfileController@delete')->middleware('verified');
 

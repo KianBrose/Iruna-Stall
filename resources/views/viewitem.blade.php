@@ -96,10 +96,15 @@
 								<td class="equipment">
 									<button type="submit" class="btn btn-outline-success">Apply</button>
 								</td>
+							</form>
+							<form action="/item/equip/{{ $equipitem->item_id }}/delete" method="POST">
+								@csrf
+								@method('delete')
 								<td class="equipment">
 									<button type="submit" class="btn btn-outline-danger">Delete</button>
 								</td>
 							</form>
+							
 								@endforeach
 								
 									
@@ -189,7 +194,7 @@
 								<td class="xtals">{{ $xtal->name }}</td>
 								<form>
 									<td class="xtals">
-									<input type="text" class="form-control iteminput" style="width: 80px" name="qty" id="qty" value="{{ $xtal->quantity }}"/>
+									<input type="text" class="form-control iteminput" style="width: 80px" name="quantity" id="qty" value="{{ $xtal->quantity }}"/>
 									</td>
 									<td class="xtals">
 										<input type="text" class="form-control iteminput" style="width: 160px" name="price" id="price" value="{{ number_format($xtal->price) }}"/>
@@ -197,10 +202,15 @@
 									<td class="xtals">
 										<button type="submit" class="btn btn-outline-success">Apply</button>
 									</td>
+								</form>
+								<form action="/item/xtal/{{ $xtal->item_id }}/delete" method="POST">
+									@csrf
+									@method('delete')
 									<td class="xtals">
 										<button type="submit" class="btn btn-outline-danger">Delete</button>
 									</td>
 								</form>
+								
 								
 							</tr>
 							@endforeach
@@ -235,26 +245,31 @@
 								<form>
 								<td class="als">{{ $alitem->name }}</td>
 									<td class="als">
-										<input type="text" class="form-control iteminput" style="width: 80px" name="qty" id="qty"/>
+									<input type="text" class="form-control iteminput" style="width: 80px" name="quantity" id="qty" value="{{ $alitem->quantity}}"/>
 									</td>
 									<td class="als">
 										<select name="color" class="form-control iteminput" id="color" style="width: 120px"> 
-										   <option selected value="R">Red</option>
-										   <option value="R">Red</option>
-										   <option value="G">Green</option>
-										   <option value="B">Blue</option>
+										<option selected>{{ $alitem->color }}</option>
+										   <option>Red</option>
+										   <option>Green</option>
+										   <option>Blue</option>
 										</select>
 									</td>
 									<td class="als">
-										<input type="text" class="form-control iteminput" style="width: 160px" name="price" id="price"/>
+									<input type="text" class="form-control iteminput" style="width: 160px" name="price" id="price" value="{{ number_format($alitem->price) }}"/>
 									</td>
 									<td class="als">
 										<button type="submit" class="btn btn-outline-success">Apply</button>
 									</td>
+								</form>	
+								<form action="/item/al/{{$alitem->item_id}}/delete" method="POST">
+									@csrf
+									@method('delete')
 									<td class="als">
 										<button type="submit" class="btn btn-outline-danger">Delete</button>
 									</td>
-								</form>	
+								</form>
+								
 							</tr>
 							@endforeach
 						</tbody>
@@ -281,21 +296,24 @@
 						</thead>
 						<tbody>
 							<tr>
+								@foreach($relic as $relic)
 								<form>
-									<td class="relics">1</td>
+								<td class="relics">{{ $relic->name }}</td>
 									<td class="relics">
-										<input type="text" class="form-control iteminput" style="width: 80px" name="qty" id="qty"/>
+									<input type="text" class="form-control iteminput" style="width: 80px" name="quantity" id="qty" value="{{ $relic->quantity }}"/>
 									</td>
 									<td class="relics">
-										<input type="text" class="form-control iteminput" style="width: 160px" name="price" id="price"/>
+									<input type="text" class="form-control iteminput" style="width: 160px" name="price" id="price" value={{ number_format($relic->price) }}/>
 									</td>
 									<td class="relics">
 										<button type="submit" class="btn btn-outline-success">Apply</button>
 									</td>
+								</form>
 									<td class="relics">
 										<button type="submit" class="btn btn-outline-danger">Delete</button>
 									</td>
-								</form>
+								
+								@endforeach
 							</tr>
 						</tbody>
 					</table>
