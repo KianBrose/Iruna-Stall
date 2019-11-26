@@ -96,10 +96,15 @@
 								<td class="equipment">
 									<button type="submit" class="btn btn-outline-success">Apply</button>
 								</td>
+							</form>
+							<form action="/item/equip/{{ $equipitem->item_id }}/delete" method="POST">
+								@csrf
+								@method('delete')
 								<td class="equipment">
 									<button type="submit" class="btn btn-outline-danger">Delete</button>
 								</td>
 							</form>
+							
 								@endforeach
 								
 									
@@ -197,10 +202,15 @@
 									<td class="xtals">
 										<button type="submit" class="btn btn-outline-success">Apply</button>
 									</td>
+								</form>
+								<form action="/item/xtal/{{ $xtal->item_id }}/delete" method="POST">
+									@csrf
+									@method('delete')
 									<td class="xtals">
 										<button type="submit" class="btn btn-outline-danger">Delete</button>
 									</td>
 								</form>
+								
 								
 							</tr>
 							@endforeach
@@ -251,10 +261,11 @@
 									<td class="als">
 										<button type="submit" class="btn btn-outline-success">Apply</button>
 									</td>
+								</form>	
 									<td class="als">
 										<button type="submit" class="btn btn-outline-danger">Delete</button>
 									</td>
-								</form>	
+								
 							</tr>
 							@endforeach
 						</tbody>
