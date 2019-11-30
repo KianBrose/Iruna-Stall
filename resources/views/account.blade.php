@@ -160,14 +160,6 @@
 								</td>
 							</tr>
 							<tr>
-								<td>
-									<label for="Test">Contact:</label>
-								</td>
-								<td  style="padding-left:10px;">
-									<input type="text" class="form-control iteminput" style="width: 400px" name="contact" id="contact"/>
-								</td>
-							</tr>
-							<tr>
 								<br>
 								<td>
 									<label for="type">Type:</label>
@@ -289,7 +281,7 @@
 							</tr>
 							<tr>
 								<td>
-									<label for="Test">Price(per piece):</label>
+									<label for="Test">Price:</label>
 								</td>
 								<td  style="padding-left:10px;">
 									<input type="number" class="form-control iteminput" style="width: 400px" name="price" id="itemprice"/>
@@ -384,15 +376,6 @@
 								@error('price')
 						<div style="color:red;"> {{ $message }}</div>
 						@enderror
-							</tr>
-							<tr>
-								<br>
-								<td>
-									<label for="contact">Owner:</label>
-								</td>
-								<td  style="padding-left:10px;">
-									<input type="text" class="form-control iteminput" style="width: 400px" name="contact" id="contact"/>
-								</td>
 							</tr>
 								<br><input type="submit" class="btn btn-success" style="width: 150px" name="search_button" id="search_button" value="Add new item" "/>
 								</form>
