@@ -95,3 +95,9 @@ Route::delete('/user/delete', 'ProfileController@delete')->middleware('verified'
 
 Route::post('/item/add', 'IrunaitemController@add')->middleware('isAdmin');
 
+/**
+ * Admin
+ */
+
+Route::get('/admin', 'Admin\AdminController@index');
+
