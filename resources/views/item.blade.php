@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
+<meta name="robots" content="index, follow"/>
+<meta name="description" content="Find and sell items easily on Iruna Global Stall for free!"/>
+<meta name="keywords" content="Iruna, Stall, Global, iruna, stall, global"/>
     <title>Irune Global stall</title>
 </head>
 <body>

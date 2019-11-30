@@ -4,7 +4,9 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
+	<meta name="robots" content="index, follow"/>
+	<meta name="description" content="Find and sell items easily on Iruna Global Stall for free!"/>
+	<meta name="keywords" content="Iruna, Stall, Global, iruna, stall, global"/>
     <title>Iruna Global Stall</title>
 
     <!-- bootstrap css -->
