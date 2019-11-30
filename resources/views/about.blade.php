@@ -95,12 +95,13 @@
 			            <br>
                         
 			            <h3><b>Terms of Service</b></h3>
-						<p>By signing up to our service, you agree to let us store information such as email, passwords, usernames and email addresses so we can provide you with the best possible experience. <br>
-                        We reserve the right to delete and modify your information without notice. This would only happen in rare occasions where your account is believed to be related to fraudulent activity. <br>
-                        You are not allowed to create multiple accounts. Anyone having created multiple accounts will have all of the duplicate accounts permanently terminated without notice when discovered. <br>
-                        When posting an item in our “Add Items” page, you are not allowed to enter a “fake price” to make your post appear higher than others on the search rankings. Anyone discovered doing this activity will have their post removed and their account heavily penalized. <br>
-                        You are not allowed to have over 4 posts of the same item (at the exception of equipment) since we have a quantity system set in place, simply put your available quantity all into one item. <br>
+						<p>By signing up to our service, you agree to let us store information such as email, passwords, usernames and email addresses so we can provide you with the best possible experience. <br> <br>
+                        We reserve the right to delete and modify your information without notice. This would only happen in rare occasions where your account is believed to be related to fraudulent activity. <br> <br>
+                        You are not allowed to create multiple accounts. Anyone having created multiple accounts will have all of the duplicate accounts permanently terminated without notice when discovered. <br> <br>
+                        When posting an item in our “Add Items” page, you are not allowed to enter a “fake price” to make your post appear higher than others on the search rankings. Anyone discovered doing this activity will have their post removed and their account heavily penalized. <br> <br>
+                        You are not allowed to have over 4 posts of the same item (at the exception of equipment) since we have a quantity system set in place, simply put your available quantity all into one item. <br><br>
                         If you have been scammed and have proof of fraudulent activity, please send us an email with proof so we can review it and add it to the scammer page. <br>
+                        <br>
                         <b>We do not take responsibility for any loss of funds, be it digital currency of real money that may be caused by scammers. </b><br>
                         Please refer to our “Trusted Midmans” page to get options on different midmans that we offer.<br>
                         Inactive accounts will be automatically terminated after 3 months of inactivity. Posts will be automatically removed 1 month after they get posted.</p>
