@@ -4,10 +4,15 @@ use Closure;
 
 class isAdmin{
     public function handle($request, Closure $next){
-        if(\Auth::user()->isAdmin == 1){
-            return $next($request);
+        if(\Auth::check()){
+            if(\Auth::user()->isAdmin == 1){
+                return $next($request);
+            }
+            return abort(404);
+        } else{
+            return abort(404);
         }
-        return abort(404);
+        
     }
 }
 ?>
