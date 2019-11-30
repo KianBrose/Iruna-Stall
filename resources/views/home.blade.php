@@ -20,4 +20,7 @@
         </div>
     </div>
 </div>
+<script type="text/javascript" id="cookieinfo"
+    src="//cookieinfoscript.com/js/cookieinfo.min.js">
+	</script>
 @endsection

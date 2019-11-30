@@ -455,6 +455,9 @@
 				
 		
 			</script>
+			<script type="text/javascript" id="cookieinfo"
+    src="//cookieinfoscript.com/js/cookieinfo.min.js">
+	</script>
 
 
 
