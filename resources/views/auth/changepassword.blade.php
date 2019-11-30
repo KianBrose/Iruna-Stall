@@ -318,7 +318,7 @@ ul.social li{
 	      </tr><!-- end tr -->
 				<tr>
           <td valign="middle" class="hero hero-2 bg_white" style="padding: 2em 0 4em 0;">
-            <table>
+            <table style="width:600px">
             	<tr>
             		<td>
             			<div class="text" style="padding: 0 2.5em; text-align: center;">
@@ -326,7 +326,7 @@ ul.social li{
                         <p><a href="{{ $password_reset_link }}" class="btn btn-primary">Reset Password</a></p>
 							<br>
 							<h3 class="heading">Button not working?</h3>
-                        <p><a href="#" >{{ $password_reset_link }}</a></p>
+                        <p><a href="#" style="word-wrap: break-word;">{{ $password_reset_link }}</a></p>
             			</div>
             		</td>
             	</tr>
