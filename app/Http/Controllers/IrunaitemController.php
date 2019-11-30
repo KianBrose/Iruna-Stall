@@ -12,6 +12,8 @@ class IrunaitemController extends Controller
     const Xtal = 'Crystas';
     const Relic = 'RelicCrystas';
     const AL = 'Alcrystas';
+
+
     public function __construct()
     {
         $this->middleware('isAdmin');
@@ -44,6 +46,9 @@ class IrunaitemController extends Controller
             $irunaitem->save();
         }
         else{
+            if(Irunaitem::where('name', request('name'))->first()){
+
+            }
             $irunaitem->category = request('type');
             $irunaitem->name = request('name');
             $irunaitem->save();

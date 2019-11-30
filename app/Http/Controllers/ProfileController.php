@@ -62,7 +62,7 @@ class ProfileController extends Controller
         //Retrieve the user from the database
         $user = User::where('email', $email)->select('email')->first();
         //Generate, the password reset link. The token generated is embedded in the link
-        $link = config('APP_URL') . 'password/reset/' . $token . '?email=' . urlencode($user->email);
+        $link = 'https://irunastall.com/password/reset/' . $token . '?email=' . urlencode($user->email);
 
             try {
                 Mail::to($userEmail)->send(new PasswordChange($link));
