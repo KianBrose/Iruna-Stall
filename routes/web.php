@@ -92,3 +92,6 @@ Route::delete('/item/xtal/{id}/delete', 'XtalController@delete')->middleware('ve
 Route::post('/user/updatepassword', 'ProfileController@update')->middleware('verified');
 Route::delete('/user/delete', 'ProfileController@delete')->middleware('verified');
 
+
+Route::post('/item/add', 'IrunaitemController@add')->middleware('isAdmin');
+
