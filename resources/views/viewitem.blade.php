@@ -11,6 +11,10 @@
 		<div style="height: auto !important;">
 			<br>
 			<h4>View my items</h4>
+
+			@if($equipitem->count() + $item->count() + $xtal->count() + $alitem->count() + $relic->count() < 1)
+			You have no item on your stall
+			@endif
 			<hr>
 			@if($equipitem->count() >= 1) 
 			<h4>Equipment</h4>
@@ -309,9 +313,13 @@
 										<button type="submit" class="btn btn-outline-success">Apply</button>
 									</td>
 								</form>
+								<form action="item/relic/{{$relic->item_id}}/delete" method="POST">
+									@csrf
+									@method('delete')
 									<td class="relics">
 										<button type="submit" class="btn btn-outline-danger">Delete</button>
 									</td>
+								</form>
 								
 								@endforeach
 							</tr>

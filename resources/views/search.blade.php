@@ -83,7 +83,7 @@
 									<td class="equipment">{{ $equipSearch->ability }}</th>
 									<td class="equipment">{{ $equipSearch->ability_level}}</th>
 									<td class="equipment">{{ number_format($equipSearch->price )}}</th>
-									<td class="equipment">Contact</th>
+									<td class="equipment">{{ $equipSearch->contact }}</th>
 								</tr>
 								@endforeach
 							</tbody>
@@ -113,7 +113,7 @@
 									<td class="materials">{{ $itemSearch->name }}</th>
 									<td class="materials">{{ $itemSearch->quantity }}</th>
 									<td class="materials">{{ number_format($itemSearch->price) }}</th>
-									<td class="materials">Contact</th>
+									<td class="materials">{{ $itemSearch->contact }}</th>
 								</tr>
 								@endforeach
 							</tbody>
@@ -144,7 +144,7 @@
 									<td class="xtals">{{ $xtalSearch->name }}</th>
 									<td class="xtals">{{ $xtalSearch->quantity }}</th>
 									<td class="xtals">{{ number_format($xtalSearch->price) }}</th>
-									<td class="xtals">Contact</th>
+									<td class="xtals">{{ $xtalSearch->contact }}t</th>
 								</tr>
 								@endforeach
 							</tbody>
@@ -177,7 +177,7 @@
 									<td class="als">{{ $alSearch->color }}</th>
 									<td class="als">{{ $alSearch->quantity }}</th>
 									<td class="als">{{ number_format($alSearch->price) }}</th>
-									<td class="als">Contact</th>
+									<td class="als">{{ $alSearch->contact }}</th>
 								</tr>
 								@endforeach
 							</tbody>
@@ -206,7 +206,7 @@
 									<td class="relics">{{ $relicSearch->name }}</th>
 									<td class="relics">{{ $relicSearch->quantity }}</th>
 									<td class="relics">{{ number_format($relicSearch->price) }}</th>
-									<td class="relics">Contact</th>
+									<td class="relics">{{ $relicSearch->contact }}</th>
 								</tr>
 								@endforeach
 							</tbody>
