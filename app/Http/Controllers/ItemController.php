@@ -30,7 +30,7 @@ class ItemController extends Controller
         $ai->owner_id = Auth::user()->user_id;
         $ai->quantity = request('quantity');
         $ai->price = request('price');
-        $ai->contact = request('contact');
+        $ai->contact = auth()->user()->name;
         $ai->save();
         Alert::toast('Successfully added an item', 'success');
 
@@ -58,7 +58,7 @@ class ItemController extends Controller
         $equip->ability_level = request('ability_level');
         $equip->refinement = request('refinement');
         $equip->routes = "item/equip/{$idTobeUsed}";
-        $equip->contact = request('contact');
+        $equip->contact = auth()->user()->name;
         $equip->save();
         Alert::toast('Successfully added an item', 'success');
 

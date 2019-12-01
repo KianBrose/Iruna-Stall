@@ -391,7 +391,7 @@
 									<label for="Test">Relic Name:</label>
 								</td>
 								<td  style="padding-left:10px;">
-									<input type="text" class="form-control iteminput" style="width: 400px" name="name" id="relicname"/>
+								<input type="text" class="form-control iteminput" style="width: 400px" name="name" id="relicname" value="{{ old('name')}}"/>
 								</td>
 							</tr>
 							<tr>
