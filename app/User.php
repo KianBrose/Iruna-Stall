@@ -45,14 +45,4 @@ class User extends Authenticatable implements MustVerifyEmail
     public function isBanned(){
         return $this->activate === '0';
     }
-
-    // Only accept a valid password and 
-    // hash a password before saving
-    public function setPasswordAttribute($password)
-    {
-        if ( $password !== null & $password !== "" )
-        {
-            $this->attributes['password'] = bcrypt($password);
-        }
-    }
 }
