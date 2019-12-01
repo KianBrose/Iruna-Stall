@@ -7,7 +7,7 @@
 	<link ref="stylesheet" href="css/style.css">
 	<meta name="robots" content="index, follow"/>
 	<meta name="description" content="Find, buy and sell items for free on the Iruna Online Global Stall! In the Global Stall, you can post your items as a seller and search for items as a buyer. The stall is free to use and requires no account to search for items."/>
-	<meta name="keywords" content="Iruna, Stall, Global, iruna, stall, global"/>
+	<meta name="keywords" content="Iruna, Stall, Global, iruna, stall, global, Iruna Global stall"/>
     <title>Iruna Global Stall</title>
 
     <!-- bootstrap css -->
@@ -545,7 +545,7 @@
 		$( "#ability" ).autocomplete({
 			source: function(request, response) {
 				$.ajax({
-				url: "{{url('api/searchability')}}",
+				url: "{{secure_url('api/searchability')}}",
 				data: {
 						term : request.term
 				},
@@ -565,7 +565,7 @@
 		$( "#equipment" ).autocomplete({
 			source: function(request, response) {
 				$.ajax({
-				url: "{{url('api/searchequip')}}",
+				url: "{{secure_url('api/searchequip')}}",
 				data: {
 						term : request.term
 				},
@@ -584,7 +584,7 @@
 		$( "#alcrystas" ).autocomplete({
 			source: function(request, response) {
 				$.ajax({
-				url: "{{url('api/searchal')}}",
+				url: "{{secure_url('api/searchal')}}",
 				data: {
 						term : request.term
 				},
@@ -604,7 +604,7 @@
 		$( "#material" ).autocomplete({
 			source: function(request, response) {
 				$.ajax({
-				url: "{{url('api/searchmaterial')}}",
+				url: "{{secure_url('api/searchmaterial')}}",
 				data: {
 						term : request.term
 				},
@@ -623,7 +623,7 @@
 		$( "#relicname" ).autocomplete({
 			source: function(request, response) {
 				$.ajax({
-				url: "{{url('api/searchrelic')}}",
+				url: "{{secure_url('api/searchrelic')}}",
 				data: {
 						term : request.term
 				},
@@ -643,7 +643,7 @@
 		$( ".crystas" ).autocomplete({
 			source: function(request, response) {
 				$.ajax({
-				url: "{{url('api/searchcrystas')}}",
+				url: "{{secure_url('api/searchcrystas')}}",
 				data: {
 						term : request.term
 				},
