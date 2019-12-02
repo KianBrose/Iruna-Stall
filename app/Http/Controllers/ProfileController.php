@@ -68,7 +68,7 @@ class ProfileController extends Controller
                 Mail::to($userEmail)->send(new PasswordChange($link));
                 return redirect()->back()->withErrors(['success' => trans('check your inbox')]);
             } catch (\Exception $e) {
-                return false;
+                return redirect()->back()->withErrors(['mailError' => trans('An errors has occured')]);
             }
         }
     
