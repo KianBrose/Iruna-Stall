@@ -42,7 +42,7 @@ Route::get('/viewitem', 'AccountController@view')->middleware('verified');
 Route::post('/createAi', 'ItemController@createAi')->middleware('verified', 'checkblocked');
 Route::get('/item/al/{id}', 'AiController@show')->name('Ai');
 Route::get('/item/al/{id}/edit', 'AiController@edit')->middleware('isAdmin');
-Route::patch('/updateAl/{id}', 'AiController@update')->middleware('verified', 'checkblocked');
+Route::patch('/item/al/{id}/update', 'AiController@update')->middleware('verified', 'checkblocked');
 Route::delete('/item/al/{id}/delete', 'AiController@delete')->middleware('verified', 'checkblocked');
 
 

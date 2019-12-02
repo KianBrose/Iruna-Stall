@@ -196,7 +196,9 @@
 							@foreach( $xtal as $xtal )
 							<tr>
 								<td class="xtals">{{ $xtal->name }}</td>
-								<form>
+								<form action="/item/xtal/{{ $xtal->item_id }}/update" method="POST">
+									@csrf
+									@method('patch')
 									<td class="xtals">
 									<input type="text" class="form-control iteminput" style="width: 80px" name="quantity" id="qty" value="{{ $xtal->quantity }}"/>
 									</td>
@@ -246,7 +248,9 @@
 						<tbody>
 							@foreach($alitem as $alitem)
 							<tr>
-								<form>
+								<form action="/item/al/{{ $alitem->item_id }}/update" method="POST">
+									@csrf
+									@method('patch')
 								<td class="als">{{ $alitem->name }}</td>
 									<td class="als">
 									<input type="text" class="form-control iteminput" style="width: 80px" name="quantity" id="qty" value="{{ $alitem->quantity}}"/>
@@ -301,7 +305,9 @@
 						<tbody>
 							<tr>
 								@foreach($relic as $relic)
-								<form>
+								<form action="/item/relic/{{ $relic->item_id }}/update" method="POST">
+									@csrf
+									@method('patch')
 								<td class="relics">{{ $relic->name }}</td>
 									<td class="relics">
 									<input type="text" class="form-control iteminput" style="width: 80px" name="quantity" id="qty" value="{{ $relic->quantity }}"/>
