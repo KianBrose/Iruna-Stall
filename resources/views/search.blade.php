@@ -233,7 +233,7 @@
 			   
 				source: function(request, response) {
 					$.ajax({
-					url: "{{url('api/searchitem')}}",
+					url: "{{secure_url('api/searchitem')}}",
 					data: {
 							term : request.term
 					 },
