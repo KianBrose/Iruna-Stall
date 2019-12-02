@@ -117,6 +117,10 @@
                             </div>
                         </div>
                     </form>
+                    @error('searcherror')
+                    <div style="color:red">{{$message}}</div>
+                    <br>
+                    @enderror
                     <div class="row divider" role="separator" ></div>
                     <p style="font-size: 14px;">Welcome to our Iruna Global Stall</p>
 					<p style="font-size: 14px;">Enter the item name, select type and press search</p>

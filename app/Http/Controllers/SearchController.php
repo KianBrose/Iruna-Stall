@@ -15,15 +15,21 @@ class SearchController extends Controller
     {
         if($request->isMethod('POST')){
             $input = $request->input('search');
-            $alSearch = Ai::where('name', 'LIKE', "%{$input}%")->get();
-            $equipSearch = Equipment::where('name', 'LIKE', "%{$input}%")->orWhere('ability', 'LIKE', "%{$input}%")->get();
-            $itemSearch = Items::where('name', 'LIKE', "%{$input}%")->get();
-            $xtalSearch = Xtal::where('name', 'LIKE', "%{$input}%")->get();
-            $relicSearch = Relic::where('name', 'LIKE', "%{$input}%")->get();
+            if(strlen($input) < 3){
+                return redirect()->back()->withErrors(['searcherror' => trans('Please provide more details')]);
+            }else{
+                $alSearch = Ai::where('name', 'LIKE', "%{$input}%")->get();
+                $equipSearch = Equipment::where('name', 'LIKE', "%{$input}%")->orWhere('ability', 'LIKE', "%{$input}%")->get();
+                $itemSearch = Items::where('name', 'LIKE', "%{$input}%")->get();
+                $xtalSearch = Xtal::where('name', 'LIKE', "%{$input}%")->get();
+                $relicSearch = Relic::where('name', 'LIKE', "%{$input}%")->get();
 
-            return view('search', compact('alSearch', 'equipSearch', 'itemSearch', 'xtalSearch', 'input', 'relicSearch'));
+                return view('search', compact('alSearch', 'equipSearch', 'itemSearch', 'xtalSearch', 'input', 'relicSearch'));
+            }
+            
         }
         else{
+            abort(404);
         }
     }
 }

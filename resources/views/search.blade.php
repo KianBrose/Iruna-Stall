@@ -45,6 +45,10 @@
                 <br>
 				<h4>Search Results: {{ $input }}</h4>
 				<br>
+				@error('searcherror')
+				<div style="color:red">{{$message}}</div>
+				<br>
+				@enderror
 			<p>There are {{ $equipSearch->count() + $alSearch->count() + $relicSearch->count() + $xtalSearch->count() + $itemSearch->count() }} results</p>
 				<hr>
 				@if($equipSearch->count() >= 1)
