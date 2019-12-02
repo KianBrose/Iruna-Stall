@@ -28,7 +28,7 @@ class Kernel extends ConsoleKernel
         // $schedule->command('inspire')
         //          ->hourly();
         $schedule->call(function(){
-            DB::table('ai')->where('created_at', '<', 'NOW() - INTERVAL 30 DAYS')->delete()->hourly();
+            DB::table('ai')->where('created_at', '<', 'NOW() - INTERVAL 30 DAYS')->delete();
             DB::table('relic')->where('created_at', '<', 'NOW() - INTERVAL 30 DAYS')->delete();
             DB::table('xtal')->where('created_at', '<', 'NOW() - INTERVAL 30 DAYS')->delete();
             DB::table('equipment')->where('created_at', '<', 'NOW() - INTERVAL 30 DAYS')->delete();
