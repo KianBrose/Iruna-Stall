@@ -8,7 +8,9 @@
 	<meta name="robots" content="index, follow"/>
 	<meta name="description" content="Find, buy and sell items for free on the Iruna Online Global Stall! In the Global Stall, you can post your items as a seller and search for items as a buyer. The stall is free to use and requires no account to search for items."/>
 	<meta name="keywords" content="Iruna, Stall, Global, iruna, stall, global, Iruna Global stall"/>
-    <title>Iruna Global Stall</title>
+	<title>Iruna Global Stall</title>
+	<meta name="hostname" content="irunastall.com"/>
+	<meta name="csrf-token" content="{{ csrf_token() }}">
 
     <!-- bootstrap css -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
