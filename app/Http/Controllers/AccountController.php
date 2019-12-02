@@ -35,8 +35,15 @@ class AccountController extends Controller
 
     public function getUserId($id){
         $user = User::where('user_id', $id)->firstOrFail();
+        if($user != null){
+            $equipSearch = Equipment::where('owner_id', $id)->get();
+            $xtalSearch = Xtal::where('owner_id', $id)->get();
+            $itemSearch = Items::where('owner_id', $id)->get();
+            $aiSearch = Ai::where('owner_id', $id)->get();
+            return view('seller', compact('user', 'equipSearch', 'xtalSearch', 'itemSearch', 'aiSearch'));
+        }
         
-        return view('user', compact('user'));
+       
     }
     
     public function view(){
@@ -53,5 +60,12 @@ class AccountController extends Controller
 
     public function show(){
         return view('accsettings');
+    }
+
+    public function addDiscordLink(){
+        $discordName = request('name');
+        if(preg_match('.*#\d{4}', $discordName)){
+            auth()->user()->discord = $discordName;
+        }
     }
 }

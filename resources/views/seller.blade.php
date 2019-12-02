@@ -89,14 +89,14 @@
                     <h4>Seller's Profile</h4>
                     <hr>
                     <div class="row divider" role="separator" ></div>
-					<h6>Username: </h6>
-					<h6>Date registered: </h6>
+                    <h6>Username: {{ $user->name }}</h6>
+					<h6>Date registered: {{ $user->created_at }} </h6>
 					<br>
 					<h4>Contact</h4>
 					<hr>
 					<div class="row divider" role="separator" ></div>
-					<h6>Facebook: </h6>
-					<h6>Discord: </h6>
+					<h6>Facebook: {{$user->facebook }} </h6>
+					<h6>Discord: {{$user->discord }} </h6>
 					<h6>Whatsapp: </h6>
 					<br>
 					<h4>Seller's items</h4>
@@ -111,7 +111,7 @@
                             <th>Color</th>
                                             <th>Price</th>
                                             <th>Quantity</th>
-											<th>Contact Seller</th>
+											
                                         </tr>
                             @foreach($aiSearch as $ai)
                                         <tr>
@@ -137,7 +137,6 @@
 											<th>Ability</th>
 											<th>Ability Lv</th>
 											<th>Price</th>
-											<th>Contact seller</th>
                                         </tr>
                             @foreach($equipSearch as $equipSearch)
                             <tr>
@@ -151,7 +150,6 @@
                                 <td>{{ $equipSearch->ability }}</td>
                                 <td>{{ $equipSearch->ability_level }}</td>
                                 <td>{{ number_format($equipSearch->price) }}</td>
-                                <td><a href='/user/{{ $equipSearch->owner_id }}'>Facebook</a></td>
                             </tr>
                             @endforeach
                     </table>
@@ -162,14 +160,14 @@
                             <h4>Item</h4>
                                             <th>Price</th>
                                             <th>Quantity</th>
-											<th>Contact Seller</th>
+											
                                         </tr>
                             @foreach($itemSearch as $itemSearch)
                                         <tr>
                                                 <td>{{ $itemSearch->name }}</td>
                                                 <td>{{ number_format($itemSearch->price) }} </td>
                                                 <td>{{ $itemSearch->quantity }}</td>
-                                                <td><a href='/user/{{$itemSearch->owner_id}}'>Facebook</a></td>
+                                               
                                             </tr>
                             @endforeach
                     </table>
@@ -180,14 +178,14 @@
                         <h4>Crystas</h4>
                                         <th>Price</th>
                                             <th>Quantity</th>
-											<th>Contact Seller</th>
+											
                                         </tr>
                             @foreach($xtalSearch as $itemSearch)
                                         <tr>
                                                 <td>{{ $itemSearch->name }}</td>
                                                 <td>{{ number_format($itemSearch->price) }} </td>
                                                 <td>{{ $itemSearch->quantity }}</td>
-                                                <td><a href='/user/{{$itemSearch->owner_id}}'>Facebook</a></td>
+                                                
                                             </tr>
                             @endforeach
                     
