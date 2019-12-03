@@ -42,10 +42,9 @@ class IrunaEmailVerification extends Notification
      */
     public function toMail($notifiable)
     {
-        $url_temp = URL::temporarySignedRoute(
+        $url = URL::temporarySignedRoute(
             'verification.verify', Carbon::now()->addMinutes(60), ['id'=> $notifiable->getKey(), 'hash' => sha1($notifiable->getEmailForVerification())]
         );
-        $url = secure_url($url_temp);
         return (new MailMessage)
                     ->greeting('Hello!')
                     ->line('Please click the button below to verify email address')
