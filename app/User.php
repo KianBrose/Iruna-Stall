@@ -6,6 +6,7 @@ use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\CanResetPassword;
+use App\Notifications\IrunaEmailVerification;
 
 class User extends Authenticatable implements MustVerifyEmail
 {
@@ -44,5 +45,10 @@ class User extends Authenticatable implements MustVerifyEmail
 
     public function isBanned(){
         return $this->activate === '0';
+    }
+
+    public function sendEmailVerificationNotification()
+    {
+        $this->notify(new IrunaEmailVerification);
     }
 }
