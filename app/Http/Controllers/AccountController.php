@@ -20,7 +20,7 @@ class AccountController extends Controller
      */
     public function __construct()
     {
-        
+        $this->middleware('auth');
     }
 
     /**
@@ -59,11 +59,8 @@ class AccountController extends Controller
     }
 
     public function show(){
-        if(Auth::check()){
             return view('accsettings');
-        } else{
-            return redirect()->route('login');
-        }
+        
        
     }
 

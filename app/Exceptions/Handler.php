@@ -49,10 +49,7 @@ class Handler extends ExceptionHandler
      */
     public function render($request, Exception $exception)
     {
-        if ($exception instanceof MethodNotAllowedHttpException) 
-        {
-            return redirect('/');
-        }
+       
 
         if($exception instanceof TokenMismatchException){
             return redirect()
