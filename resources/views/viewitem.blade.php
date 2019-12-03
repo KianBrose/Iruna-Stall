@@ -11,7 +11,7 @@
 		<div style="height: auto !important;">
 			<br>
 			<h4>View my items</h4>
-
+			<br>
 			@if($equipitem->count() + $item->count() + $xtal->count() + $alitem->count() + $relic->count() < 1)
 			You have no item on your stall
 			@endif
