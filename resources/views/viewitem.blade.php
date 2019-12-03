@@ -367,7 +367,7 @@
 				$( "#equipment" ).autocomplete({
 					source: function(request, response) {
 						$.ajax({
-						url: "{{url('api/searchequip')}}",
+						url: "{{secure_url('api/searchequip')}}",
 						data: {
 								term : request.term
 						},
@@ -386,7 +386,7 @@
 				$( "#alcrystas" ).autocomplete({
 					source: function(request, response) {
 						$.ajax({
-						url: "{{url('api/searchal')}}",
+						url: "{{secure_url('api/searchal')}}",
 						data: {
 								term : request.term
 						},
@@ -406,7 +406,7 @@
 				$( "#material" ).autocomplete({
 					source: function(request, response) {
 						$.ajax({
-						url: "{{url('api/searchmaterial')}}",
+						url: "{{secure_url('api/searchmaterial')}}",
 						data: {
 								term : request.term
 						},
@@ -425,7 +425,7 @@
 				$( "#relicname" ).autocomplete({
 					source: function(request, response) {
 						$.ajax({
-						url: "{{url('api/searchrelic')}}",
+						url: "{{secure_url('api/searchrelic')}}",
 						data: {
 								term : request.term
 						},
@@ -445,7 +445,7 @@
 				$( ".crystas" ).autocomplete({
 					source: function(request, response) {
 						$.ajax({
-						url: "{{url('api/searchcrystas')}}",
+						url: "{{secure_url('api/searchcrystas')}}",
 						data: {
 								term : request.term
 						},

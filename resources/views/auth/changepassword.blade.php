@@ -326,6 +326,7 @@ ul.social li{
                         <p><a href="{{ $password_reset_link }}" class="btn btn-primary">Reset Password</a></p>
 							<br>
 							<h3 class="heading">Button not working?</h3>
+							<p>Use this link below</p>
                         <p><a href="#" style="word-wrap: break-word;">{{ $password_reset_link }}</a></p>
             			</div>
             		</td>
