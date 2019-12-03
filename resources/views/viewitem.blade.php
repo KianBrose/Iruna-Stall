@@ -303,8 +303,8 @@
 							</tr>
 						</thead>
 						<tbody>
+						@foreach($relic as $relic)
 							<tr>
-								@foreach($relic as $relic)
 								<form action="/item/relic/{{ $relic->item_id }}/update" method="POST">
 									@csrf
 									@method('patch')
@@ -327,8 +327,8 @@
 									</td>
 								</form>
 								
-								@endforeach
 							</tr>
+															@endforeach
 						</tbody>
 					</table>
 					
