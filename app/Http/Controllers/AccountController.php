@@ -62,7 +62,7 @@ class AccountController extends Controller
         if(Auth::check()){
             return view('accsettings');
         } else{
-            return redirect('/login');
+            return redirect()->route('login');
         }
        
     }
