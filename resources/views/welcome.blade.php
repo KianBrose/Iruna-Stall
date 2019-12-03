@@ -22,6 +22,7 @@
     <meta name='apple-touch-fullscreen' content='yes'>
     <meta name='apple-touch-fullscreen' content='yes'>
     <meta name='application-name' content="Iruna Global Stall">
+    <link rel="apple-touch-icon" href="https://irunastall.com/img/iruna.jpg">
     <meta name="twitter:card" content="summary" >
     <meta name="twitter:title" content="Iruna Global Stall" >
     <meta name="twitter:description" content="Iruna global stall is platform to find, buy and sell items of Iruna online game. Account is not needed for searching for items" >
@@ -31,6 +32,8 @@
     <meta property="og:image" content="https://irunastall.com/img/iruna.jpg">
     <meta property="og:url" content="https://irunastall.com" >
     <meta name="csrf-token" content="{{ csrf_token() }}">
+
+
     <link rel="canonical" href="https://irunastall.com" >
     <!-- bootstrap css -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
