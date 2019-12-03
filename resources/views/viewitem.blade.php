@@ -313,7 +313,7 @@
 									<input type="text" class="form-control iteminput" style="width: 80px" name="quantity" id="qty" value="{{ $relic->quantity }}"/>
 									</td>
 									<td class="relics">
-									<input type="text" class="form-control iteminput" style="width: 160px" name="price" id="price" value={{ number_format($relic->price) }}/>
+									<input type="text" class="form-control iteminput" style="width: 160px" name="price" id="price" value="{{ number_format($relic->price) }}"/>
 									</td>
 									<td class="relics">
 										<button type="submit" class="btn btn-outline-success">Apply</button>
