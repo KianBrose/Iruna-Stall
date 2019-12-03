@@ -20,6 +20,8 @@
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
+    <link href="{{ asset('css/main.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/util.css') }}" rel="stylesheet">
 </head>
 
 <body>
@@ -108,96 +110,141 @@
 					<h4>Seller's items</h4>
 					<hr>
 					<div class="row divider" role="separator" ></div>
-					<div>
-                    <table class="table table-condensed table-bordered">
-                            <tr>
-                                   <th class="col-md-4">Name
-                            </th>
-                            <h4>AI crystal</h4>
-                            <th>Color</th>
-                                            <th>Price</th>
-                                            <th>Quantity</th>
-											
-                                        </tr>
-                            @foreach($aiSearch as $ai)
-                                        <tr>
-                                                <td>{{ $ai->name }}</td>
-                                                <td>{{ $ai->color }}</td>
-                                                <td>{{ number_format($ai->price) }} </td>
-                                                <td>{{ $ai->quantity }}</td>
-                                                <td><a href='/user/{{$ai->owner_id}}'>Facebook</a></td>
-                                            </tr>
-                            @endforeach
-                    </table>
-                    <table class="table table-condensed table-bordered">
-                            <tr>
-                                    <th class="col-md-4">Name
-                             </th>
-                             <h4>Equipment</h4>
-                             <th>ATK</th>
-											<th>DEF</th>
-											<th>Refinement</th>
-											<th>Slots</th>
-											<th>Slot 1</th>
-											<th>Slot 2</th>
-											<th>Ability</th>
-											<th>Ability Lv</th>
-											<th>Price</th>
-                                        </tr>
-                            @foreach($equipSearch as $equipSearch)
-                            <tr>
-                                <td>{{ $equipSearch->name }}</td>
-                                <td>{{ $equipSearch->atk }}</td>
-                                <td>{{ $equipSearch->def }}</td>
-                                <td>{{ $equipSearch->refinement}}</td>
-                                <td>{{ $equipSearch->slots }}</td>
-                                <td>{{ $equipSearch->slot1 }}</td>
-                                <td>{{ $equipSearch->slot2 }}</td>
-                                <td>{{ $equipSearch->ability }}</td>
-                                <td>{{ $equipSearch->ability_level }}</td>
-                                <td>{{ number_format($equipSearch->price) }}</td>
-                            </tr>
-                            @endforeach
-                    </table>
-                    <table class="table table-condensed table-bordered">
-                            <tr>
-                                   <th class="col-md-4">Name
-                            </th>
-                            <h4>Item</h4>
-                                            <th>Price</th>
-                                            <th>Quantity</th>
-											
-                                        </tr>
-                            @foreach($itemSearch as $itemSearch)
-                                        <tr>
-                                                <td>{{ $itemSearch->name }}</td>
-                                                <td>{{ number_format($itemSearch->price) }} </td>
-                                                <td>{{ $itemSearch->quantity }}</td>
-                                               
-                                            </tr>
-                            @endforeach
-                    </table>
-                    <table class="table table-condensed table-bordered">
-                        <tr>
-                               <th class="col-md-4">Name
-                        </th>
-                        <h4>Crystas</h4>
-                                        <th>Price</th>
-                                            <th>Quantity</th>
-											
-                                        </tr>
-                            @foreach($xtalSearch as $itemSearch)
-                                        <tr>
-                                                <td>{{ $itemSearch->name }}</td>
-                                                <td>{{ number_format($itemSearch->price) }} </td>
-                                                <td>{{ $itemSearch->quantity }}</td>
-                                                
-                                            </tr>
-                            @endforeach
-                    
-
-                            
-                </div>
+                    <h3>Equipment</h3>
+                    <hr>
+                    <br>
+                    <div>
+                        <div>
+                            <table>
+                                <thead>
+                                    <tr class="table100-head">
+                                        <th class="equipment">Name</th>
+                                        <th class="equipment">ATK</th>
+                                        <th class="equipment">DEF</th>
+                                        <th class="equipment">Refinement</th>
+                                        <th class="equipment">Slots</th>
+                                        <th class="equipment">Slot 1</th>
+                                        <th class="equipment">Slot 2</th>
+                                        <th class="equipment">Ability</th>
+                                        <th class="equipment">Ability Lv</th>
+                                        <th class="equipment">Price</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="equipment">Name</td>
+                                        <td class="equipment">ATK</td>
+                                        <td class="equipment">DEF</td>
+                                        <td class="equipment">Refinement</td>
+                                        <td class="equipment">Slots</td>
+                                        <td class="equipment">Slot 1</td>
+                                        <td class="equipment">Slot 2</td>
+                                        <td class="equipment">Ability</td>
+                                        <td class="equipment">Ability Lv</td>
+                                        <td class="equipment">Price</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+				    </div>
+                    <br>
+                    <h3>Materials</h3>
+                    <hr>
+                    <br>
+                    <div>
+                        <div>
+                            <table>
+                                <thead>
+                                    <tr class="table100-head">
+                                        <th class="materials">Name</th>
+                                        <th class="materials">QTY</th>
+                                        <th class="materials">Price</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="materials">Name</td>
+                                        <td class="materials">QTY</td>
+                                        <td class="materials">Price</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+				    </div>
+                    <br>
+                    <h3>Xtals</h3>
+                    <hr>
+                    <br>
+                    <div>
+                        <div>
+                            <table>
+                                <thead>
+                                    <tr class="table100-head">
+                                        <th class="xtals">Name</th>
+                                        <th class="xtals">QTY</th>
+                                        <th class="xtals">Price</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="xtals">Name</td>
+                                        <td class="xtals">QTY</td>
+                                        <td class="xtals">Price</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+				    </div>
+                    <br>
+                    <h3>AL's</h3>
+                    <hr>
+                    <br>
+                    <div>
+                        <div>
+                            <table>
+                                <thead>
+                                    <tr class="table100-head">
+                                        <th class="materials">Name</th>
+                                        <th class="materials">QTY</th>
+                                        <th class="materials">Color</th>
+                                        <th class="materials">Price</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="materials">Name</td>
+                                        <td class="materials">QTY</td>
+                                        <td class="materials">Color</td>
+                                        <td class="materials">Price</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+				    </div>
+                    <br>
+                    <h3>Relics</h3>
+                    <hr>
+                    <br>
+                    <div>
+                        <div>
+                            <table>
+                                <thead>
+                                    <tr class="table100-head">
+                                        <th class="relics">Name</th>
+                                        <th class="relics">QTY</th>
+                                        <th class="relics">Price</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="relics">Name</td>
+                                        <td class="relics">QTY</td>
+                                        <td class="relics">Price</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+				    </div>
                 </div>
             </div>
         </div>
