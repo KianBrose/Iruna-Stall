@@ -104,10 +104,6 @@
 								<input class="form-control" type="text" name="facebook1" style="margin-left:18px;">
 							</div>
 							<div class="input-group">
-								<label>Confirm profile link</label>
-								<input class="form-control" type="text" name="facebook2" style="margin-left:15px;">
-							</div>
-							<div class="input-group">
 								<br>
 								<button type="submit" class="btn btn-success" name="user_changefacebook">Apply changes</button>
 							</div>
@@ -120,10 +116,6 @@
 							<div class="input-group">
 								<label>New Discord Tag</label>
 								<input class="form-control" type="text" name="discord1" style="margin-left:40px;">
-							</div>
-							<div class="input-group">
-								<label>Confirm Discord Tag</label>
-								<input class="form-control" type="text" name="discord2" style="margin-left:16px;">
 							</div>
 							<div class="input-group">
 								<br>
