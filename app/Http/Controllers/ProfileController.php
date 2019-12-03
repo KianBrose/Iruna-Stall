@@ -18,6 +18,7 @@ use App\Items;
 use App\Relic;
 use App\Xtal;
 use RealRashid\SweetAlert\Facades\Alert;
+use Illuminate\Support\Facades\Password;
 
 class ProfileController extends Controller
 {
@@ -64,13 +65,13 @@ class ProfileController extends Controller
         //Generate, the password reset link. The token generated is embedded in the link
         $link = 'https://irunastall.com/password/reset/' . $token . '?email=' . urlencode($user->email);
 
-            try {
+        try {
                 Mail::to($userEmail)->send(new PasswordChange($link));
                 return redirect()->back()->withErrors(['success' => trans('check your inbox')]);
-            } catch (\Exception $e) {
-                return redirect()->back()->withErrors(['mailError' => trans('An errors has occured')]);
-            }
+        } catch (\Exception $e) {
+            return redirect()->back()->withErrors(['mailError' => trans('An errors has occured')]);
         }
+    }
     
     public function resetPassword(Request $request)
         {
@@ -142,4 +143,20 @@ class ProfileController extends Controller
         }
     }
 
+    public function sendEmail($email_address)
+    {
+        $credentials = ['email' => $email_address];
+        $response = Password::sendResetLink($credentials, function (Message $message) {
+            $message->subject($this->getEmailSubject());
+        });
+
+        switch ($response) {
+            case Password::RESET_LINK_SENT:
+                return redirect()->back()->with('status', trans($response));
+            case Password::INVALID_USER:
+                return redirect()->back()->withErrors(['email' => trans($response)]);
+        }
+    }
 }
+
+
