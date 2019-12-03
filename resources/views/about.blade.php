@@ -24,7 +24,7 @@
     <meta name='application-name' content="Iruna Global Stall">
     <link rel="apple-touch-icon" href="https://irunastall.com/img/iruna.jpg">
     <meta name="twitter:card" content="summary" >
-    <meta name="twitter:title" content="Iruna Global Stall" >
+    <meta name="twitter:title" content="About | Iruna Global Stall" >
     <meta name="twitter:description" content="Know about Iruna global stall. This is a platform to find, buy and sell items of Iruna online game. Account is not needed for searching for items" >
     <meta property="og:title" content="Iruna Stall">
     <meta property="og:type" content="website" >
