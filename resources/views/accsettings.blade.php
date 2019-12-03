@@ -112,11 +112,11 @@
                         @csrf
 						<div class="input-group">
 							<label>Old password</label>
-							<input class="form-control" type="password" name="password" style="margin-left:20px;">
+							<input class="form-control" type="password" name="password" style="margin-left:15px;">
 						</div>
 						<div class="input-group">
 							<label>Email address</label>
-							<input class="form-control" type="text" name="email" style="margin-left:13px;">
+							<input class="form-control" type="text" name="email" style="margin-left:15px;">
 						</div>
 						<div class="input-group">
 							<br>
@@ -142,13 +142,49 @@
 						</div>
 						<div class="input-group">
 							<label>Password</label>
-							<input class="form-control" type="password" name="password" style="margin-left:14px;">
+							<input class="form-control" type="password" name="password" style="margin-left:17px;">
 						</div>
 						<div class="input-group">
 							<br>
 							<button type="submit" class="btn btn-danger"style="margin-top: 10px;"><b>DELETE ACCOUNT</b></button>
 						</div>
 					</form> 
+						<hr>
+						<h3>Facebook Profile Link</h3>
+						<form  action="/user/updateprofile" method="POST">
+							<p>Your current facebook profile link: </p>
+							<br>
+							<div class="input-group">
+								<label>New FB profile link</label>
+								<input class="form-control" type="text" name="facebook1" style="margin-left:20px;">
+							</div>
+							<div class="input-group">
+								<label>Confirm profile link</label>
+								<input class="form-control" type="text" name="facebook2" style="margin-left:14px;">
+							</div>
+							<div class="input-group">
+								<br>
+								<button type="submit" class="btn btn-success" name="user_changefacebook">Apply changes</button>
+							</div>
+						</form> 
+						<hr>
+						<h3>Discord Tag</h3>
+						<form  action="/user/updateprofile" method="POST">
+							<p>Your current discord tag: </p>
+							<br>
+							<div class="input-group">
+								<label>New Discord Tag</label>
+								<input class="form-control" type="text" name="discord1" style="margin-left:20px;">
+							</div>
+							<div class="input-group">
+								<label>Confirm Discord Tag</label>
+								<input class="form-control" type="text" name="discord2" style="margin-left:14px;">
+							</div>
+							<div class="input-group">
+								<br>
+								<button type="submit" class="btn btn-success" name="user_changediscord">Apply changes</button>
+							</div>
+						</form> 
 				</div>
                     <div class="row divider" role="separator" style="margin-top:20px;"></div>
                 </div>
