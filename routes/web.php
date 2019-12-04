@@ -24,7 +24,7 @@ Route::get('/about', function () {
 
 
 Route::get('/search', 'SearchController@search')->name('search');
-Route::get('/account', 'AccountController@show');
+Route::get('/account', 'AccountController@show')->middleware('auth', 'checkblocked');
 
 /**
  * 
