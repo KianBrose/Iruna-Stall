@@ -100,7 +100,7 @@
 									<div class="alert alert-danger"> {{ $message }}</div>
 							@enderror
 							@if ($errors->any())
-    						<div class="alert alert-danger">{{ implode('', $errors->all(':messagez')) }}</div>
+    						<div class="alert alert-danger">{{ $errors->first() }}</div>
 							@endif
 							<select name="itemtype" class="form-control2" id="itemtype"> 
 							   <option>Choose type</option>
@@ -320,7 +320,7 @@
 									<label for="Test">Quantity:</label>
 								</td>
 								<td  style="padding-left:10px;">
-								<input type="number" max="99" class="form-control iteminput" style="width: 400px" name="quantity" id="quantity" value={{ old('quantity')}}/>
+								<input type="number"  class="form-control iteminput" style="width: 400px" name="quantity" id="quantity" value={{ old('quantity')}}/>
 								</td>
 								@error('quantity')
 								<div style="color:red;"> {{ $message }}</div>
@@ -362,7 +362,7 @@
 									<label for="quantity">Quantity:</label>
 								</td>
 								<td  style="padding-left:10px;">
-									<input type="number" max="99" class="form-control iteminput" style="width: 400px" name="quantity" id="quantity" value="{{ old('quantity') }}"/>
+									<input type="number"  class="form-control iteminput" style="width: 400px" name="quantity" id="quantity" value="{{ old('quantity') }}"/>
 								</td>
 								@error('quantity')
 									<div style="color:red;"> {{ $message }}</div>
@@ -416,7 +416,7 @@
 									<label for="Test">Quantity:</label>
 								</td>
 								<td  style="padding-left:10px;">
-								<input type="number" max="99" min="0" class="form-control iteminput" style="width: 400px" name="quantity" id="quantity" value="{{ old('quantity') }}"/>
+								<input type="number"  min="0" class="form-control iteminput" style="width: 400px" name="quantity" id="quantity" value="{{ old('quantity') }}"/>
 								</td>
 								@error('quantity')
 								<div style="color:red;"> {{ $message }}</div>
