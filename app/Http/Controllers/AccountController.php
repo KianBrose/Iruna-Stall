@@ -20,7 +20,7 @@ class AccountController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth');
+       
     }
 
     /**
@@ -39,8 +39,9 @@ class AccountController extends Controller
             $equipSearch = Equipment::where('owner_id', $id)->get();
             $xtalSearch = Xtal::where('owner_id', $id)->get();
             $itemSearch = Items::where('owner_id', $id)->get();
-            $aiSearch = Ai::where('owner_id', $id)->get();
-            return view('seller', compact('user', 'equipSearch', 'xtalSearch', 'itemSearch', 'aiSearch'));
+            $alSearch = Ai::where('owner_id', $id)->get();
+            $relicSearch = Relic::where('owner_id', $id)->get();
+            return view('seller', compact('user', 'equipSearch', 'xtalSearch', 'itemSearch', 'alSearch', 'relicSearch'));
         }
         
        

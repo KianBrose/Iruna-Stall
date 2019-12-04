@@ -109,7 +109,9 @@
 					<br>
 					<h4>Seller's items</h4>
 					<hr>
-					<div class="row divider" role="separator" ></div>
+                    <div class="row divider" role="separator" ></div>
+                    @if($equipSearch->count() >= 1)
+        
                     <h3>Equipment</h3>
                     <hr>
                     <br>
@@ -131,23 +133,28 @@
                                     </tr>
                                 </thead>
                                 <tbody>
+                                    @foreach($equipSearch as $equip)
                                     <tr>
-                                        <td class="equipment">Name</td>
-                                        <td class="equipment">ATK</td>
-                                        <td class="equipment">DEF</td>
-                                        <td class="equipment">Refinement</td>
-                                        <td class="equipment">Slots</td>
-                                        <td class="equipment">Slot 1</td>
-                                        <td class="equipment">Slot 2</td>
-                                        <td class="equipment">Ability</td>
-                                        <td class="equipment">Ability Lv</td>
-                                        <td class="equipment">Price</td>
+                                        <td class="equipment">{{ $equip->name}}</td>
+                                        <td class="equipment">{{ $equip->atk }}</td>
+                                        <td class="equipment">{{ $equip->def }}</td>
+                                        <td class="equipment">{{ $equip->refinement}}</td>
+                                        <td class="equipment">{{ $equip->slots}}</td>
+                                        <td class="equipment">{{ $equip->slot1}}</td>
+                                        <td class="equipment">{{ $equip->slot2}}</td>
+                                        <td class="equipment">{{ $equip->ability}}</td>
+                                        <td class="equipment">{{ $equip->ability_level}}</td>
+                                        <td class="equipment">{{ number_format($equip->price)}}</td>
                                     </tr>
+                                    @endforeach
                                 </tbody>
                             </table>
+                            
                         </div>
-				    </div>
+                    </div>
+                    @endif
                     <br>
+                    @if($itemSearch->count() >= 1)
                     <h3>Materials</h3>
                     <hr>
                     <br>
@@ -162,16 +169,20 @@
                                     </tr>
                                 </thead>
                                 <tbody>
+                                    @foreach($itemSearch as $material)
                                     <tr>
-                                        <td class="materials">Name</td>
-                                        <td class="materials">QTY</td>
-                                        <td class="materials">Price</td>
+                                        <td class="materials">{{ $material->name }}</td>
+                                        <td class="materials">{{ $material->quantity }}</td>
+                                    <td class="materials">{{ number_format($material->price) }}</td>
                                     </tr>
+                                    @endforeach
                                 </tbody>
                             </table>
                         </div>
-				    </div>
+                    </div>
+                    @endif
                     <br>
+                    @if($xtalSearch->count() >= 1)
                     <h3>Xtals</h3>
                     <hr>
                     <br>
@@ -186,16 +197,20 @@
                                     </tr>
                                 </thead>
                                 <tbody>
+                                    @foreach($xtalSearch as $xtal)
                                     <tr>
-                                        <td class="xtals">Name</td>
-                                        <td class="xtals">QTY</td>
-                                        <td class="xtals">Price</td>
+                                        <td class="xtals">{{ $xtal->name }}</td>
+                                        <td class="xtals">{{ $xtal->quantity }}</td>
+                                        <td class="xtals">{{ number_format($xtal->price) }}</td>
                                     </tr>
+                                    @endforeach
                                 </tbody>
                             </table>
                         </div>
-				    </div>
+                    </div>
+                    @endif
                     <br>
+                    @if($alSearch->count() >= 1)
                     <h3>AL's</h3>
                     <hr>
                     <br>
@@ -211,17 +226,21 @@
                                     </tr>
                                 </thead>
                                 <tbody>
+                                    @foreach($alSearch as $al)
                                     <tr>
-                                        <td class="materials">Name</td>
-                                        <td class="materials">QTY</td>
-                                        <td class="materials">Color</td>
-                                        <td class="materials">Price</td>
+                                    <td class="materials">{{ $al->name }}</td>
+                                    <td class="materials">{{ $al->quantity }}</td>
+                                    <td class="materials">{{ $al->color }}</td>
+                                    <td class="materials">{{ number_format($al->price) }}</td>
                                     </tr>
+                                    @endforeach
                                 </tbody>
                             </table>
                         </div>
-				    </div>
+                    </div>
+                    @endif
                     <br>
+                    @if($relicSearch->count() >= 1)
                     <h3>Relics</h3>
                     <hr>
                     <br>
@@ -236,15 +255,18 @@
                                     </tr>
                                 </thead>
                                 <tbody>
+                                    @foreach($relicSearch as $relic)
                                     <tr>
-                                        <td class="relics">Name</td>
-                                        <td class="relics">QTY</td>
-                                        <td class="relics">Price</td>
+                                        <td class="relics">{{ $relic->name }}</td>
+                                        <td class="relics">{{ $relic->quantity}}</td>
+                                        <td class="relics">{{ $relic->price }}</td>
                                     </tr>
+                                    @endforeach
                                 </tbody>
                             </table>
                         </div>
-				    </div>
+                    </div>
+                    @endif
                 </div>
             </div>
         </div>

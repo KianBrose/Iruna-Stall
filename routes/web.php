@@ -32,7 +32,7 @@ Route::get('/account', 'AccountController@show');
 Route::get('/additem', 'AccountController@index')->middleware('verified', 'checkblocked');
 Route::get('/item', 'ItemController@showItem');
 Route::get('/user/{id}', 'AccountController@getUserId');
-Route::get('/viewitem', 'AccountController@view')->middleware('verified');
+Route::get('/viewitem', 'AccountController@view')->middleware('verified', 'checkblocked');
 
 /*
 *
