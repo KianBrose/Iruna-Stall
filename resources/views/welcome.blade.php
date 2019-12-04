@@ -148,7 +148,10 @@
                     <div class="row divider" role="separator" ></div>
                     <p style="font-size: 14px;">Welcome to our Iruna Global Stall</p>
 					<p style="font-size: 14px;">Enter the item name, select type and press search</p>
-
+                    <hr>
+                    <p>To search for an item, simply enter its name in the search field above and press search! An account is not required to search for items.</p>
+                    <p>To sell an item, press the “Add Item” on our menu. Note that you need to register a free account to be able to use this feature.</p>
+                    <p>When you search for an item, simply press on the seller’s name in the contact column to view their profile. You can then see their contact information: Either Facebook profile or Discord tag.</p>
                     <div class="row divider" role="separator" style="margin-top:20px;"></div>
                 </div>
                 <div></div>
