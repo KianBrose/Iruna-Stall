@@ -87,7 +87,7 @@
 									<td class="equipment">{{ $equip->ability }}</th>
 									<td class="equipment">{{ $equip->ability_level}}</th>
 									<td class="equipment">{{ number_format($equip->price )}}</th>
-									<td class="equipment">{{ $equip->contact }}</th>
+									<td class="equipment"><a href="/user/{{$equip->owner_id}}">{{ $equip->contact }}</a></th>
 								</tr>
 								@endforeach
 							</tbody>
@@ -118,7 +118,7 @@
 									<td class="materials">{{ $item->name }}</th>
 									<td class="materials">{{ $item->quantity }}</th>
 									<td class="materials">{{ number_format($item->price) }}</th>
-									<td class="materials">{{ $item->contact }}</th>
+									<td class="materials"><a href="/user/{{ $item->owner_id}}">{{ $item->contact }}</a></th>
 								</tr>
 								@endforeach
 							</tbody>
@@ -150,7 +150,7 @@
 									<td class="xtals">{{ $xtal->name }}</th>
 									<td class="xtals">{{ $xtal->quantity }}</th>
 									<td class="xtals">{{ number_format($xtal->price) }}</th>
-									<td class="xtals">{{ $xtal->contact }}t</th>
+									<td class="xtals"><a href="/user/{{ $xtal->owner_id}}">{{ $xtal->contact }}</a></th>
 								</tr>
 								@endforeach
 							</tbody>
@@ -184,7 +184,7 @@
 									<td class="als">{{ $al->color }}</th>
 									<td class="als">{{ $al->quantity }}</th>
 									<td class="als">{{ number_format($al->price) }}</th>
-									<td class="als">{{ $al->contact }}</th>
+									<td class="als"><a href="/user/{{ $al->owner_id}}">{{ $al->contact }}</a></th>
 								</tr>
 								@endforeach
 							</tbody>
@@ -214,7 +214,7 @@
 									<td class="relics">{{ $relic->name }}</th>
 									<td class="relics">{{ $relic->quantity }}</th>
 									<td class="relics">{{ number_format($relic->price) }}</th>
-									<td class="relics">{{ $relic->contact }}</th>
+									<td class="relics"><a href="/user/{{$relic->owner_id}}">{{ $relic->contact }}</a></th>
 								</tr>
 								@endforeach
 							</tbody>
