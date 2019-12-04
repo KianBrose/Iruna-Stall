@@ -40,7 +40,20 @@ class StoreIrunaXtal extends FormRequest
             if($this->invalidName($name)){
                 $validator->errors()->add('mainError', 'Something went wrong, please check your form again');   
             }
+
+            if($this->doNotHaveContactLink()){
+                $validator->errors()->add('nameError', 'Please check your spelling again');
+                $validator->errors()->add('mainError', 'You do not have contact link, go to /account to edit your contact information');
+            }
         });
+    }
+
+    public function doNotHaveContactLink(){
+        if((auth()->user()->facebook == null or auth()->user()->facebook == "") and (auth()->user()->discord == null or auth()->user()->discord == "" )){
+            return true;
+        } else{
+            return false;
+        }
     }
 
 
