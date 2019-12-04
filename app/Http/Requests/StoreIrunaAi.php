@@ -50,6 +50,12 @@ class StoreIrunaAi extends FormRequest
                 $validator->errors()->add('nameError', 'Something is going wrong with this field');
                 $validator->errors()->add('mainError', 'Please check your previous submission, something went wrong');
             }
+
+            if($this->doNotHaveContactLink()){
+                $validator->errors()->add('nameError', 'Please check your spelling again');
+                $validator->errors()->add('mainError', 'You do not have contact link, go to /account to edit your contact information');
+            }
+            
         });
     }
     /**
@@ -65,6 +71,15 @@ class StoreIrunaAi extends FormRequest
            return true;
        }
     }
+
+    public function doNotHaveContactLink(){
+        if((auth()->user()->facebook == null or auth()->user()->facebook == "") and (auth()->user()->discord == null or auth()->user()->discord == "" )){
+            return true;
+        } else{
+            return false;
+        }
+    }
+
     /**
      * 
      * 

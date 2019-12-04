@@ -93,7 +93,10 @@
 		    		<br>
                     <h4>Account settings</h4>
                     <hr>
-
+					@if((auth()->user()->facebook == null or auth()->user()->facebook == "") and (auth()->user()->discord == null or auth()->user()->discord == "" ))
+					<div class="alert alert-danger"> You're missing contact information. How should we contact you?
+					</div>
+					@endif
                     <div>
 						<h3>Facebook Profile Link</h3>
 						<form  action="/user/update/facebook" method="POST">
