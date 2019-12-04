@@ -116,7 +116,7 @@
                     <h4>Welcome!</h4>
                     <hr>
 
-                    <form class="form-horizontal" name="form1" id="form1" action="/search" method="POST">
+                    <form class="form-horizontal" name="form1" id="form1" action="/search" method="GET">
                         @csrf
                         <div class="row">
                             <div class="col-md-7 col-xs-8">

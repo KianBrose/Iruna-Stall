@@ -22,7 +22,8 @@ Route::get('/about', function () {
     return view('about');
 });
 
-Route::post('/search', 'SearchController@search')->name('search');
+
+Route::get('/search', 'SearchController@search')->name('search');
 Route::get('/account', 'AccountController@show');
 
 /**
@@ -32,7 +33,9 @@ Route::get('/account', 'AccountController@show');
 Route::get('/additem', 'AccountController@index')->middleware('verified', 'checkblocked');
 Route::get('/item', 'ItemController@showItem');
 Route::get('/user/{id}', 'AccountController@getUserId');
-Route::get('/viewitem', 'AccountController@view')->middleware('verified');
+Route::get('/viewitem', 'AccountController@view')->middleware('verified', 'checkblocked');
+Route::post('user/update/discord', 'AccountController@addDiscordLink')->middleware('auth', 'checkblocked');
+Route::post('/user/update/facebook', 'AccountController@addFacebookLink')->middleware('auth', 'checkblocked');
 
 /*
 *

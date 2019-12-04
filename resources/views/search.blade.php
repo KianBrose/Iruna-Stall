@@ -9,7 +9,7 @@
         <div class="col-md-7 offset-md-3" >
             <br>
             <br>
-			<form class="form-horizontal" name="form1" id="form1" action="/search" method="POST">
+			<form class="form-horizontal" name="form1" id="form1" action="/search" method="GET">
 				@csrf
 				<div class="row">
 					<div class="col-md-7 col-xs-8">
@@ -73,25 +73,26 @@
 								</tr>
 							</thead>
 							<tbody>
-								@foreach ($equipSearch as $equipSearch)
+								@foreach ($equipSearch as $equip)
 									
 								
 								<tr>
-									<td class="equipment">{{ $equipSearch->name }}</th>
-									<td class="equipment">{{ $equipSearch->atk }}</th>
-									<td class="equipment">{{ $equipSearch->def }}</th>
-									<td class="equipment">{{ $equipSearch->refinement }}</th>
-									<td class="equipment">{{ $equipSearch->slots }}</th>
-									<td class="equipment">{{ $equipSearch->slot1 }}</th>
-									<td class="equipment">{{ $equipSearch->slot2 }}</th>
-									<td class="equipment">{{ $equipSearch->ability }}</th>
-									<td class="equipment">{{ $equipSearch->ability_level}}</th>
-									<td class="equipment">{{ number_format($equipSearch->price )}}</th>
-									<td class="equipment">{{ $equipSearch->contact }}</th>
+									<td class="equipment">{{ $equip->name }}</th>
+									<td class="equipment">{{ $equip->atk }}</th>
+									<td class="equipment">{{ $equip->def }}</th>
+									<td class="equipment">{{ $equip->refinement }}</th>
+									<td class="equipment">{{ $equip->slots }}</th>
+									<td class="equipment">{{ $equip->slot1 }}</th>
+									<td class="equipment">{{ $equip->slot2 }}</th>
+									<td class="equipment">{{ $equip->ability }}</th>
+									<td class="equipment">{{ $equip->ability_level}}</th>
+									<td class="equipment">{{ number_format($equip->price )}}</th>
+									<td class="equipment"><a href="/user/{{$equip->owner_id}}">{{ $equip->contact }}</a></th>
 								</tr>
 								@endforeach
 							</tbody>
 						</table>
+						{{$equipSearch->appends(['search' => request('search')])->links()}}
 					</div>
 				</div>
 				@endif
@@ -112,16 +113,17 @@
 								</tr>
 							</thead>
 							<tbody>
-								@foreach($itemSearch as $itemSearch)
+								@foreach($itemSearch as $item)
 								<tr>
-									<td class="materials">{{ $itemSearch->name }}</th>
-									<td class="materials">{{ $itemSearch->quantity }}</th>
-									<td class="materials">{{ number_format($itemSearch->price) }}</th>
-									<td class="materials">{{ $itemSearch->contact }}</th>
+									<td class="materials">{{ $item->name }}</th>
+									<td class="materials">{{ $item->quantity }}</th>
+									<td class="materials">{{ number_format($item->price) }}</th>
+									<td class="materials"><a href="/user/{{ $item->owner_id}}">{{ $item->contact }}</a></th>
 								</tr>
 								@endforeach
 							</tbody>
 						</table>
+						{{$itemSearch->appends(['search' => request('search')])->links()}}
 					</div>
 				</div>
 				@endif
@@ -141,18 +143,19 @@
 								</tr>
 							</thead>
 							<tbody>
-								@foreach ($xtalSearch as $xtalSearch)
+								@foreach ($xtalSearch as $xtal)
 									
 								
 								<tr>
-									<td class="xtals">{{ $xtalSearch->name }}</th>
-									<td class="xtals">{{ $xtalSearch->quantity }}</th>
-									<td class="xtals">{{ number_format($xtalSearch->price) }}</th>
-									<td class="xtals">{{ $xtalSearch->contact }}t</th>
+									<td class="xtals">{{ $xtal->name }}</th>
+									<td class="xtals">{{ $xtal->quantity }}</th>
+									<td class="xtals">{{ number_format($xtal->price) }}</th>
+									<td class="xtals"><a href="/user/{{ $xtal->owner_id}}">{{ $xtal->contact }}</a></th>
 								</tr>
 								@endforeach
 							</tbody>
 						</table>
+						{{$xtalSearch->appends(['search' => request('search')])->links()}}
 					</div>
 				</div>
 				@endif
@@ -173,19 +176,20 @@
 								</tr>
 							</thead>
 							<tbody>
-								@foreach($alSearch as $alSearch)
+								@foreach($alSearch as $al)
 									
 								
 								<tr>
-									<td class="als">{{ $alSearch->name }}</th>
-									<td class="als">{{ $alSearch->color }}</th>
-									<td class="als">{{ $alSearch->quantity }}</th>
-									<td class="als">{{ number_format($alSearch->price) }}</th>
-									<td class="als">{{ $alSearch->contact }}</th>
+									<td class="als">{{ $al->name }}</th>
+									<td class="als">{{ $al->color }}</th>
+									<td class="als">{{ $al->quantity }}</th>
+									<td class="als">{{ number_format($al->price) }}</th>
+									<td class="als"><a href="/user/{{ $al->owner_id}}">{{ $al->contact }}</a></th>
 								</tr>
 								@endforeach
 							</tbody>
 						</table>
+						{{$alSearch->appends(['search' => request('search')])->links()}}
 					</div>
 				</div>
 				@endif
@@ -205,16 +209,17 @@
 								</tr>
 							</thead>
 							<tbody>
-								@foreach($relicSearch as $relicSearch)
+								@foreach($relicSearch as $relic)
 								<tr>
-									<td class="relics">{{ $relicSearch->name }}</th>
-									<td class="relics">{{ $relicSearch->quantity }}</th>
-									<td class="relics">{{ number_format($relicSearch->price) }}</th>
-									<td class="relics">{{ $relicSearch->contact }}</th>
+									<td class="relics">{{ $relic->name }}</th>
+									<td class="relics">{{ $relic->quantity }}</th>
+									<td class="relics">{{ number_format($relic->price) }}</th>
+									<td class="relics"><a href="/user/{{$relic->owner_id}}">{{ $relic->contact }}</a></th>
 								</tr>
 								@endforeach
 							</tbody>
 						</table>
+						{{$relicSearch->appends(['search' => request('search')])->links()}}
 					</div>
 				</div>
 				@endif

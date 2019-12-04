@@ -93,15 +93,19 @@
 		    		<br>
                     <h4>Account settings</h4>
                     <hr>
-
+					@if((auth()->user()->facebook == null or auth()->user()->facebook == "") and (auth()->user()->discord == null or auth()->user()->discord == "" ))
+					<div class="alert alert-danger"> You're missing contact information. How should we contact you?
+					</div>
+					@endif
                     <div>
 						<h3>Facebook Profile Link</h3>
-						<form  action="/user/updateprofile" method="POST">
-							<p>Your current facebook profile link: </p>
+						<form  action="/user/update/facebook" method="POST">
+							@csrf
+						<p>Your current facebook profile link: {{ auth()->user()->facebook }}</p>
 							<br>
 							<div class="input-group">
 								<label>New FB profile link</label>
-								<input class="form-control" type="text" name="facebook1" style="margin-left:18px;">
+								<input class="form-control" type="text" name="name" style="margin-left:18px;">
 							</div>
 							<div class="input-group">
 								<br>
@@ -110,12 +114,13 @@
 						</form> 
 						<hr>
 						<h3>Discord Tag</h3>
-						<form  action="/user/updateprofile" method="POST">
-							<p>Your current discord tag: </p>
+						<form  action="user/update/discord" method="POST">
+							@csrf
+						<p>Your current discord tag: {{ auth()->user()->discord }} </p>
 							<br>
 							<div class="input-group">
 								<label>New Discord Tag</label>
-								<input class="form-control" type="text" name="discord1" style="margin-left:40px;">
+								<input class="form-control" type="text" name="name" style="margin-left:40px;">
 							</div>
 							<div class="input-group">
 								<br>
