@@ -33,6 +33,8 @@ Route::get('/additem', 'AccountController@index')->middleware('verified', 'check
 Route::get('/item', 'ItemController@showItem');
 Route::get('/user/{id}', 'AccountController@getUserId');
 Route::get('/viewitem', 'AccountController@view')->middleware('verified', 'checkblocked');
+Route::post('user/update/discord', 'AccountController@addDiscordLink')->middleware('auth', 'checkblocked');
+Route::post('/user/update/facebook', 'AccountController@addFacebookLink')->middleware('auth', 'checkblocked');
 
 /*
 *

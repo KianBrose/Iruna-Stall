@@ -10,6 +10,7 @@ use App\Items;
 use App\Xtal;
 use App\Relic;
 use Auth;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class AccountController extends Controller
 {
@@ -67,8 +68,29 @@ class AccountController extends Controller
 
     public function addDiscordLink(){
         $discordName = request('name');
-        if(preg_match('.*#\d{4}', $discordName)){
-            auth()->user()->discord = $discordName;
+        $user = User::where('user_id', auth()->user()->user_id)->firstorFail();
+        if(preg_match('/.*#\d{4}/', $discordName)){
+            $user->discord = $discordName;
+            $user->save();
+            Alert::toast('Successfully updated discord link', 'success');
+            return redirect('/account');
+        } else{
+            Alert::toast('It does not look like the correct discord tag', 'warning');
+            return redirect('/account');
+        }
+    }
+
+    public function addFacebookLink(){
+        $facebookName = request('name');
+        $user = User::where('user_id', auth()->user()->user_id)->firstOrFail();
+        if(preg_match('/(?:(?:http|https):\/\/)?(?:www.)?facebook.com\/(?:(?:\w)*#!\/)?(?:pages\/)?(?:[?\w\-]*\/)?(?:profile.php\?id=(?=\d.*))?([\w\-]*)?/', $facebookName)){
+            $user->facebook = $facebookName;
+            $user->save();
+            Alert::toast('Successfully updated facebook link', 'success');
+            return redirect('/account');
+        } else{
+            Alert::toast('It does not look like a valid facebook link', 'warning');
+            return redirect('/account');
         }
     }
 }
