@@ -9,7 +9,7 @@
         <div class="col-md-7 offset-md-3" >
             <br>
             <br>
-			<form class="form-horizontal" name="form1" id="form1" action="/search" method="POST">
+			<form class="form-horizontal" name="form1" id="form1" action="/search" method="GET">
 				@csrf
 				<div class="row">
 					<div class="col-md-7 col-xs-8">
@@ -112,16 +112,17 @@
 								</tr>
 							</thead>
 							<tbody>
-								@foreach($itemSearch as $itemSearch)
+								@foreach($itemSearch as $item)
 								<tr>
-									<td class="materials">{{ $itemSearch->name }}</th>
-									<td class="materials">{{ $itemSearch->quantity }}</th>
-									<td class="materials">{{ number_format($itemSearch->price) }}</th>
-									<td class="materials">{{ $itemSearch->contact }}</th>
+									<td class="materials">{{ $item->name }}</th>
+									<td class="materials">{{ $item->quantity }}</th>
+									<td class="materials">{{ number_format($item->price) }}</th>
+									<td class="materials">{{ $item->contact }}</th>
 								</tr>
 								@endforeach
 							</tbody>
 						</table>
+						{{$itemSearch->appends(['search' => request('search')])->links()}}
 					</div>
 				</div>
 				@endif
@@ -141,18 +142,19 @@
 								</tr>
 							</thead>
 							<tbody>
-								@foreach ($xtalSearch as $xtalSearch)
+								@foreach ($xtalSearch as $xtal)
 									
 								
 								<tr>
-									<td class="xtals">{{ $xtalSearch->name }}</th>
-									<td class="xtals">{{ $xtalSearch->quantity }}</th>
-									<td class="xtals">{{ number_format($xtalSearch->price) }}</th>
-									<td class="xtals">{{ $xtalSearch->contact }}t</th>
+									<td class="xtals">{{ $xtal->name }}</th>
+									<td class="xtals">{{ $xtal->quantity }}</th>
+									<td class="xtals">{{ number_format($xtal->price) }}</th>
+									<td class="xtals">{{ $xtal->contact }}t</th>
 								</tr>
 								@endforeach
 							</tbody>
 						</table>
+						{{$xtalSearch->appends(['search' => request('search')])->links()}}
 					</div>
 				</div>
 				@endif

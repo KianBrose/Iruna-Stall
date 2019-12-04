@@ -22,7 +22,8 @@ Route::get('/about', function () {
     return view('about');
 });
 
-Route::post('/search', 'SearchController@search')->name('search');
+
+Route::get('/search', 'SearchController@search')->name('search');
 Route::get('/account', 'AccountController@show');
 
 /**
