@@ -66,7 +66,7 @@ class ItemController extends Controller
         
     }
 
-    public function createItem(StoreIrunaItem $request){
+    public function createItem(StoreIrunaItem $request, Validator $validator){
         $request->validated();
         $items = new Items();
         $item_id = $this->generateID(12);

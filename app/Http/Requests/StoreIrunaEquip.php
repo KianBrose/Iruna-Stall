@@ -42,7 +42,7 @@ class StoreIrunaEquip extends FormRequest
                 'def' => 'required|max:70|integer|min:0',
                 'type' => 'required|alpha',
                 'refinement' => 'required|integer|max:9|min:0',
-                'price' => 'required|integer|min:0',
+                'price' => 'required|integer|min:0|max:999999999999',
                 "ability_level" => 'integer|min:0|max:5'
         ];
     }

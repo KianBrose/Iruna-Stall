@@ -98,7 +98,10 @@
 						<p>Welcome to the add item page! If this is your first time here, please refer to this <a>quick guide</a> on how to add an item!</p>
 							@error('mainError')
 									<div class="alert alert-danger"> {{ $message }}</div>
-								@enderror
+							@enderror
+							@if ($errors->any())
+    						<div class="alert alert-danger">{{ implode('', $errors->all(':messagez')) }}</div>
+							@endif
 							<select name="itemtype" class="form-control2" id="itemtype"> 
 							   <option>Choose type</option>
 							   <option value="1">Equipment</option>
@@ -269,7 +272,7 @@
 									<label for="Test">Item Name:</label>
 								</td>
 								<td  style="padding-left:10px;">
-									<input type="text" class="form-control iteminput" style="width: 400px" name="name" id="material"/>
+								<input type="text" class="form-control iteminput" style="width: 400px" name="name" id="material" value="{{ old('name') }}"/>
 								</td>
 								@error('fielderror')
 									<div style="color:red;"> {{ $message }}</div>
@@ -283,15 +286,18 @@
 									<label for="Test">Quantity:</label>
 								</td>
 								<td  style="padding-left:10px;">
-									<input type="number" class="form-control iteminput" style="width: 400px" name="quantity" id="itemqty"/>
+								<input type="number" class="form-control iteminput" style="width: 400px" name="quantity" id="itemqty" value={{ old('quantity') }}/>
 								</td>
+								@error('quantity')
+								<div style="color:red;"> {{ $message }}</div>
+								@enderror
 							</tr>
 							<tr>
 								<td>
 									<label for="Test">Price:</label>
 								</td>
 								<td  style="padding-left:10px;">
-									<input type="number" class="form-control iteminput" style="width: 400px" name="price" id="itemprice"/>
+								<input type="number" class="form-control iteminput" style="width: 400px" name="price" id="itemprice" value="{{ old('price')}}"/>
 								</td>
 							</tr>
 								<br><input type="submit" class="btn btn-success" style="width: 150px" name="search_button" id="search_button" value="Add new item" onclick="window.location.href='/additem.php'"/>
@@ -306,7 +312,7 @@
 									<label for="Test">Xtal Name:</label>
 								</td>
 								<td  style="padding-left:10px;">
-									<input type="text" class="form-control iteminput crystas" style="width: 400px" name="name" id="name"/>
+								<input type="text" class="form-control iteminput crystas" style="width: 400px" name="name" id="name" value="{{ old('name')}}"/>
 								</td>
 							</tr>
 							<tr>
@@ -314,8 +320,11 @@
 									<label for="Test">Quantity:</label>
 								</td>
 								<td  style="padding-left:10px;">
-									<input type="number" max="99" class="form-control iteminput" style="width: 400px" name="quantity" id="quantity"/>
+								<input type="number" max="99" class="form-control iteminput" style="width: 400px" name="quantity" id="quantity" value={{ old('quantity')}}/>
 								</td>
+								@error('quantity')
+								<div style="color:red;"> {{ $message }}</div>
+								@enderror
 							
 							</tr>
 							<tr>
@@ -325,6 +334,9 @@
 								<td  style="padding-left:10px;">
 									<input type="number" min='1' class="form-control iteminput" style="width: 400px" name="price" id="xtalprice"/>
 								</td>
+								@error('price')
+								<div style="color:red;"> {{ $message }}</div>
+								@enderror
 							</tr>
 								<br><input type="submit" class="btn btn-success" style="width: 150px" name="search_button" id="search_button" value="Add new item"/>
 								</form>
@@ -396,7 +408,7 @@
 									<label for="Test">Relic Name:</label>
 								</td>
 								<td  style="padding-left:10px;">
-								<input type="text" class="form-control iteminput" style="width: 400px" name="name" id="relicname" value="{{ old('name')}}"/>
+								<input type="text" class="form-control iteminput" style="width: 400px" name="name" id="relicname" value="{{ old('name') }}"/>
 								</td>
 							</tr>
 							<tr>
@@ -404,16 +416,22 @@
 									<label for="Test">Quantity:</label>
 								</td>
 								<td  style="padding-left:10px;">
-									<input type="number" max="99" min="0" class="form-control iteminput" style="width: 400px" name="quantity" id="quantity"/>
+								<input type="number" max="99" min="0" class="form-control iteminput" style="width: 400px" name="quantity" id="quantity" value="{{ old('quantity') }}"/>
 								</td>
+								@error('quantity')
+								<div style="color:red;"> {{ $message }}</div>
+								@enderror
 							</tr>
 							<tr>
 								<td>
 									<label for="Test">Price:</label>
 								</td>
 								<td  style="padding-left:10px;">
-									<input type="number" min="0" class="form-control iteminput" style="width: 400px" name="price" id="price"/>
+								<input type="number" min="0" class="form-control iteminput" style="width: 400px" name="price" id="price" value="{{ old('price')}}"/>
 								</td>
+								@error('price')
+								<div style="color:red;"> {{ $message }}</div>
+								@enderror
 							</tr>
 								<br><input type="submit" class="btn btn-success" style="width: 150px" name="search_button" id="search_button" value="Add new item"/>
 								</form>

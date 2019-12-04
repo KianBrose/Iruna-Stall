@@ -29,8 +29,8 @@ class StoreIrunaXtal extends FormRequest
     {
         return [
             'name' => 'required',
-            'quantity' => 'required|integer|max:99',
-            'price' => 'required|integer|min:0'
+            'quantity' => 'required|integer|max:9999|min:1',
+            'price' => 'required|integer|min:0|max:999999999999'
         ];
     }
 

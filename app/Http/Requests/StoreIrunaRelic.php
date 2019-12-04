@@ -30,8 +30,8 @@ class StoreIrunaRelic extends FormRequest
     {
         return [
             'name' => 'required',
-            'quantity' => 'required|integer|min:0|max:99',
-            'price' => 'required|integer|min:0'
+            'quantity' => 'required|integer|min:1|max:9999',
+            'price' => 'required|integer|min:0|999999999999'
         ];
     }
     public function withValidator(Validator $validator){
