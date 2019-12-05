@@ -26,14 +26,17 @@ class XtalController extends Controller
                     
                 } 
                 if($this->validNumber(request('quantity'))){
-                    if(request('quantity') > 99){
-                        $item->quantity = 99;
-                    }
-                    else{  
+                    if(request('quantity') > 9999){
+                        $item->quantity = 9999;
+                    } 
+                    else if((int)request('quantity') < 1)
+                    {
+                        $item->quantity = 1;
+                    } else{
                         $item->quantity = request('quantity');
                     }
                     
-                }
+                } 
                 
                 $item->save();
 
