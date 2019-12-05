@@ -22,6 +22,10 @@ Route::get('/about', function () {
     return view('about');
 });
 
+Route::get('/scammers', function () {
+    return view('scammers');
+});
+
 
 Route::get('/search', 'SearchController@search')->name('search');
 Route::get('/account', 'AccountController@show')->middleware('auth', 'checkblocked');
