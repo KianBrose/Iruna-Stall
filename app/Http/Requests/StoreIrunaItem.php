@@ -9,7 +9,7 @@ use Auth;
 class StoreIrunaItem extends FormRequest
 {
 
-    const Type = array('Collectibles', 'Status', 'Strengthening', 'Recovery', 'Teleports', 'IslandItems', 'Chests');
+    const Type = array('Collectibles', 'Status', 'Strengthening', 'Recovery', 'Teleport', 'IslandItems', 'Chests', 'Ores');
     /**
      * Determine if the user is authorized to make this request.
      *
