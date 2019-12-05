@@ -61,7 +61,7 @@ class StoreIrunaRelic extends FormRequest
 
 
     public function invalidRelicName($relic){
-        if($relic[0] != '□'){
+        if(substr($relic, 0, 3) != '□'){
             $relic = '□'.$relic;
         }
         $item = Irunaitem::where('name', $relic)->first();

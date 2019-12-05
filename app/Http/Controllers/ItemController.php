@@ -23,7 +23,7 @@ class ItemController extends Controller
         $request->validated();
         $idTobeUsed = $this->generateID(10);
         $al = new Ai();
-        if(request('name')[0] != '▲'){
+        if(substr(request('name'), 0, 3) != '▲'){
             //$xtalname = ucwords(request('name'));
             
             $alname = preg_replace_callback('/\b(?=[LXIVCDM]+\b)([a-z]+)\b/i', 
@@ -44,7 +44,6 @@ class ItemController extends Controller
         $al->contact = auth()->user()->name;
         $al->save();
         Alert::toast('Successfully added an item', 'success');
-
         return redirect('/additem');
         
        
@@ -67,6 +66,18 @@ class ItemController extends Controller
         $equip->def = request('def');
         $equip->price = request('price');
         $equip->slots = request('equipslotamount');
+        if(request('slot1')[0] != '◇'){
+            //$xtalname = ucwords(request('name'));
+            
+            $xtalname = preg_replace_callback('/\b(?=[LXIVCDM]+\b)([a-z]+)\b/i', 
+            function($matches) {
+                return strtoupper($matches[0]);
+            }, ucwords(strtolower(request('name'))));
+            $equip->slot1 = '◇'.$xtalname;
+
+        }else{
+             $equip->slot1 = request('slot1');
+        }
         $equip->slot1 = request('slot1');
         $equip->slot2 = request('slot2');
         $equip->ability = request('ability');
@@ -104,7 +115,7 @@ class ItemController extends Controller
         $request->validated();
         $xtal = new Xtal();
         $item_id = $this->generateID(7);
-        if(request('name')[0] != '◇'){
+        if(substr(request('name'), 0, 3) != '◇'){
             //$xtalname = ucwords(request('name'));
             
             $xtalname = preg_replace_callback('/\b(?=[LXIVCDM]+\b)([a-z]+)\b/i', 
@@ -132,7 +143,7 @@ class ItemController extends Controller
         $request->validated();
         $id = $this->generateID(8);
         $relic = new Relic(); 
-        if(request('name')[0] != '□'){
+        if(substr(request('name'), 0, 3) != '□'){
             //$xtalname = ucwords(request('name'));
             
             $relicname = preg_replace_callback('/\b(?=[LXIVCDM]+\b)([a-z]+)\b/i', 
@@ -234,6 +245,7 @@ class ItemController extends Controller
             return false;
         }
     }
+
     public function showWarningMessage(){
         Alert::toast('You have previously entered the wrong input', 'warning');
         return redirect('/additem');

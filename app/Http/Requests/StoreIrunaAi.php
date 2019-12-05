@@ -48,7 +48,7 @@ class StoreIrunaAi extends FormRequest
             }
             if($this->invalidItemName($name)){
                 $validator->errors()->add('nameError', 'Something is going wrong with this field');
-                $validator->errors()->add('mainError', 'Please check your previous submission, something went wrong');
+                $validator->errors()->add('mainError', 'Please check your previous submission, something went wrong ');
             }
 
             if($this->doNotHaveContactLink()){
@@ -86,7 +86,8 @@ class StoreIrunaAi extends FormRequest
      * @return bool
      */
     public function invalidItemName($name){
-        if($name[0] != '▲'){
+        
+        if(substr($name, 0, 3) != '▲'){
             $name = '▲'.$name;
         }
         $item = Irunaitem::where('name', $name)->first();
