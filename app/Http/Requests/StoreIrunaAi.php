@@ -30,7 +30,7 @@ class StoreIrunaAi extends FormRequest
         return [
             'name' => 'required',
             'color' => 'required|alpha',
-            'price' => 'required|integer|min:0|max:999999999999',
+            'price' => 'required|integer|min:1|max:999999999999',
             'quantity' => 'required||max:99|min:1|max:9999'
         ];
     }
@@ -86,6 +86,9 @@ class StoreIrunaAi extends FormRequest
      * @return bool
      */
     public function invalidItemName($name){
+        if($name[0] != '▲'){
+            $name = '▲'.$name;
+        }
         $item = Irunaitem::where('name', $name)->first();
         if($item){
             if($item->category == 'AlCrystas'){

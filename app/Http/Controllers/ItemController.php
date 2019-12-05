@@ -22,16 +22,27 @@ class ItemController extends Controller
     public function createAi(StoreIrunaAi $request){
         $request->validated();
         $idTobeUsed = $this->generateID(10);
-        $ai = new Ai();
-        $ai->name = request('name');
-        $ai->item_id = $idTobeUsed;
-        $ai->color = request('color');
-        $ai->routes = "item/ai/{$idTobeUsed}";
-        $ai->owner_id = Auth::user()->user_id;
-        $ai->quantity = request('quantity');
-        $ai->price = request('price');
-        $ai->contact = auth()->user()->name;
-        $ai->save();
+        $al = new Ai();
+        if(request('name')[0] != '▲'){
+            //$xtalname = ucwords(request('name'));
+            
+            $alname = preg_replace_callback('/\b(?=[LXIVCDM]+\b)([a-z]+)\b/i', 
+            function($matches) {
+                return strtoupper($matches[0]);
+            }, ucwords(strtolower(request('name'))));
+            $al->name = '▲'.$alname;
+
+        }else{
+             $al->name = request('name');
+        }
+        $al->item_id = $idTobeUsed;
+        $al->color = request('color');
+        $al->routes = "item/ai/{$idTobeUsed}";
+        $al->owner_id = Auth::user()->user_id;
+        $al->quantity = request('quantity');
+        $al->price = request('price');
+        $al->contact = auth()->user()->name;
+        $al->save();
         Alert::toast('Successfully added an item', 'success');
 
         return redirect('/additem');
