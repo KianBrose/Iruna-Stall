@@ -82,7 +82,7 @@ class EquipmentController extends Controller
 
                 $validAbi = Ability::where('type', request('ability'))->first();
                 if($validAbi){
-                    $item->ability = request('ability');
+                    $item->ability = $validAbi->type;
                 }
                 if($this->validNumber(request('ability_level'))){
                     if((int)request('ability_level') >= 1 && (int)request('ability_level') <=5){
