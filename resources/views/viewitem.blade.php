@@ -54,7 +54,7 @@
 								<input type="text" class="form-control iteminput" style="width: 50px" name="def" id="def" value="{{ $equipitem->def }}"/>
 								</td>
 								<td class="equipment">
-									<select name="refinement" class="form-control iteminput" id="refinement"> 
+									<select name="refinement" class="form-control iteminput" id="refinement" style="width: 60px"> 
 									<option selected value="{{ $equipitem->refinement }}">{{ $equipitem->refinement }}</option>
 									   <option value="1">1</option>
 									   <option value="2">2</option>
