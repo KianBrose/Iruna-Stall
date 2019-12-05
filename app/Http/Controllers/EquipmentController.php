@@ -48,7 +48,13 @@ class EquipmentController extends Controller
                     }
                 }
 
-                if($xtal1 == null or $xtal1 == ""){
+                if($this->validNumber(request('equipslotamount'))){
+                    if(in_array(request('equipslotamount'), array('0', '1', '2'))){
+                        $item->slots = request('equipslotamount');
+                    }
+                }
+
+                if($xtal1 == null or $xtal1 == "" or request('equipslotamount') == '0'){
                     $item->slot1 = null;
                 }
 
@@ -73,7 +79,7 @@ class EquipmentController extends Controller
                 
 
 
-                if($xtal2 == null or $xtal2 == ""){
+                if($xtal2 == null or $xtal2 == "" or request('equipslotamount') == '0' or request('equipslotamount') == '1' ){
                     $item->slot2 = null;
                 }
                 else{
