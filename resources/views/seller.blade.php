@@ -221,19 +221,19 @@
                             <table>
                                 <thead>
                                     <tr class="table100-head">
-                                        <th class="materials">Name</th>
-                                        <th class="materials">QTY</th>
-                                        <th class="materials">Color</th>
-                                        <th class="materials">Price</th>
+                                        <th class="als">Name</th>
+                                        <th class="als">QTY</th>
+                                        <th class="als">Color</th>
+                                        <th class="als">Price</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     @foreach($alSearch as $al)
                                     <tr>
-                                    <td class="materials">{{ $al->name }}</td>
-                                    <td class="materials">{{ $al->quantity }}</td>
-                                    <td class="materials">{{ $al->color }}</td>
-                                    <td class="materials">{{ number_format($al->price) }}</td>
+                                    <td class="als">{{ $al->name }}</td>
+                                    <td class="als">{{ $al->quantity }}</td>
+                                    <td class="als">{{ $al->color }}</td>
+                                    <td class="als">{{ number_format($al->price) }}</td>
                                     </tr>
                                     @endforeach
                                 </tbody>

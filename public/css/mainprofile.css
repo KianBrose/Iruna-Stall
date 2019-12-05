@@ -258,31 +258,31 @@ tbody tr:hover {
     .equipment:nth-child(1):before {
         content: "Name";
     }
-    .equipment:nth-child(5):before {
+    .equipment:nth-child(2):before {
         content: "ATK";
     }
-    .equipment:nth-child(6):before {
+    .equipment:nth-child(3):before {
         content: "DEF";
     }
-    .equipment:nth-child(7):before {
+    .equipment:nth-child(4):before {
         content: "Refinement";
     }
-    .equipment:nth-child(8):before {
+    .equipment:nth-child(5):before {
         content: "Slots";
     }
-    .equipment:nth-child(9):before {
+    .equipment:nth-child(6):before {
         content: "Slot 1";
     }
-    .equipment:nth-child(10):before {
+    .equipment:nth-child(7):before {
         content: "Slot 2";
     }
-    .equipment:nth-child(11):before {
+    .equipment:nth-child(8):before {
         content: "Ability";
     }
-    .equipment:nth-child(12):before {
+    .equipment:nth-child(9):before {
         content: "Ability Lv";
     }
-    .equipment:nth-child(13):before {
+    .equipment:nth-child(10):before {
         content: "Price";
     }
     
@@ -291,43 +291,43 @@ tbody tr:hover {
     .materials:nth-child(1):before {
         content: "Name";
     }
-    .materials:nth-child(5):before {
+    .materials:nth-child(2):before {
         content: "QTY";
     }
-    .materials:nth-child(6):before {
+    .materials:nth-child(3):before {
         content: "Price";
     }
     
     .xtals:nth-child(1):before {
         content: "Name";
     }
-    .xtals:nth-child(5):before {
+    .xtals:nth-child(2):before {
         content: "QTY";
     }
-    .xtals:nth-child(6):before {
+    .xtals:nth-child(3):before {
         content: "Price";
     }
     
-    .als:nth-child(4):before {
+    .als:nth-child(1):before {
         content: "Name";
     }
-    .als:nth-child(5):before {
+    .als:nth-child(2):before {
         content: "QTY";
     }
-    .als:nth-child(6):before {
+    .als:nth-child(3):before {
         content: "Color";
     }
-    .als:nth-child(7):before {
+    .als:nth-child(4):before {
         content: "Price";
     }
     
-    .relics:nth-child(4):before {
+    .relics:nth-child(1):before {
         content: "Name";
     }
-    .relics:nth-child(5):before {
+    .relics:nth-child(2):before {
         content: "QTY";
     }
-    .relics:nth-child(6):before {
+    .relics:nth-child(3):before {
         content: "Price";
     }
     
