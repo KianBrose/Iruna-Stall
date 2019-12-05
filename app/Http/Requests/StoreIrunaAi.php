@@ -30,7 +30,7 @@ class StoreIrunaAi extends FormRequest
         return [
             'name' => 'required',
             'color' => 'required|alpha',
-            'price' => 'required|integer|min:1|max:999999999999',
+            'price' => 'required|numeric|min:1|max:999999999999',
             'quantity' => 'required||max:99|min:1|max:9999'
         ];
     }
