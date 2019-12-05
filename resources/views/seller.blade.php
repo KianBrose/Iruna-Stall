@@ -166,9 +166,11 @@
 													<td class="equipment">none</td>
 													<td class="equipment">none</td>
 												@endif
-											@else
-												<td class="equipment">none</td>
-												<td class="equipment">{{ $equip->slot2 }}</td>
+											@elseif ($equip->slot1 == null)
+												@if ($equip->slot2 != null)
+													<td class="equipment">none</td>
+													<td class="equipment">{{ $equip->slot2 }}</td>
+												@endif
 											@endif
 										@endif
 
