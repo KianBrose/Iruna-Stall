@@ -20,7 +20,7 @@
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
-    <link href="{{ asset('css/main.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/mainprofile.css') }}" rel="stylesheet">
     <link href="{{ asset('css/util.css') }}" rel="stylesheet">
 </head>
 
@@ -103,7 +103,7 @@
 					<h4>Contact</h4>
 					<hr>
 					<div class="row divider" role="separator" ></div>
-					<h6>Facebook: {{$user->facebook }} </h6>
+					<h6>Facebook: <a href="{{$user->facebook }}">{{$user->facebook }}</a></h6>
 					<h6>Discord: {{$user->discord }} </h6>
 					<h6>Whatsapp: </h6>
 					<br>
