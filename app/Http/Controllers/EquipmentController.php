@@ -48,11 +48,11 @@ class EquipmentController extends Controller
                     }
                 }
 
-                if($this->validNumber(request('equipslotamount'))){
-                    if(in_array(request('equipslotamount'), array('0', '1', '2'))){
+               
+                if(in_array(request('equipslotamount'), array('0', '1', '2'))){
                         $item->slots = request('equipslotamount');
-                    }
                 }
+                
 
                 if($xtal1 == null or $xtal1 == "" or request('equipslotamount') == '0'){
                     $item->slot1 = null;
