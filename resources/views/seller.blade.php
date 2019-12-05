@@ -146,7 +146,7 @@
 											<td class="equipment">/</td>
 										@elseif ($equip->slots == 1)
 											@if ($equip->slot1 == null)
-												<td class="equipment">none</td>
+												<td class="equipment">empty</td>
 												<td class="equipment">/</td>
 											@else
 												<td class="equipment">{{ $equip->slot1 }}</td>
@@ -159,14 +159,14 @@
 													<td class="equipment">{{ $equip->slot2 }}</td>
 												@else
 													<td class="equipment">{{ $equip->slot1 }}</td>
-													<td class="equipment">none</td>
+													<td class="equipment">empty</td>
 												@endif
 											@elseif ($equip->slot1 == null)
 												@if ($equip->slot2 == null)
-													<td class="equipment">none</td>
-													<td class="equipment">none</td>
+													<td class="equipment">empty</td>
+													<td class="equipment">empty</td>
 												@else
-													<td class="equipment">none</td>
+													<td class="equipment">empty</td>
 													<td class="equipment">{{ $equip->slot2 }}</td>
 												@endif
 											@endif
