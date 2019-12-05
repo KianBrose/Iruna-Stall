@@ -21,6 +21,13 @@
     <!-- Fonts -->
 	<link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
 	<link href="css/style.css" rel="stylesheet">
+	<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+	<script>
+		 (adsbygoogle = window.adsbygoogle || []).push({
+			  google_ad_client: "ca-pub-8585623774913935",
+			  enable_page_level_ads: true
+		 });
+	</script>
 </head>
 
 <body>
