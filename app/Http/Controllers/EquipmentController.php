@@ -103,6 +103,7 @@ class EquipmentController extends Controller
 
                 if(request('ability') == null or request('ability') == ""){
                    $item->ability = null;
+				   $item->ability_level = 0;
                 } else{
                     $validAbi = Ability::where('type', request('ability'))->first();
                     if($validAbi){
