@@ -145,7 +145,9 @@
 											<td class="equipment">/</td>
 										@elseif ($equip->slot1 != null)
 											<td class="equipment">{{ $equip->slot1 }}</td>
-										@elseif ($equip->slot2 == null)
+										@endif
+										
+										@if ($equip->slot2 == null)
 											<td class="equipment">/</td>
 										@elseif ($equip->slot2 != null)
 											<td class="equipment">{{ $equip->slot2 }}</td>
