@@ -103,6 +103,7 @@ class EquipmentController extends Controller
 
                 if(request('ability') == null or request('ability') == ""){
                    $item->ability = null;
+				   $item->ability_level = 0;
                 } else{
                     $validAbi = Ability::where('type', request('ability'))->first();
                     if($validAbi){
@@ -112,9 +113,16 @@ class EquipmentController extends Controller
                 }
 
                 if($this->validNumber(request('ability_level'))){
-                    if((int)request('ability_level') >= 1 && (int)request('ability_level') <=5){
-                        $item->ability_level = request('ability_level');
-                    }
+					if(request('ability') != null or request('ability') != ""){
+						if((int)request('ability_level') >= 1 && (int)request('ability_level') <=5){
+							$item->ability_level = request('ability_level');}
+						else{
+							$item->ability_level = 1;
+						}
+					}
+					else{
+						$item->ability_level = 0;
+					}
                 }
 
                 if($this->validNumber(request('refinement'))){
