@@ -72,7 +72,7 @@ class ItemController extends Controller
             $xtalname1 = preg_replace_callback('/\b(?=[LXIVCDM]+\b)([a-z]+)\b/i', 
             function($matches) {
                 return strtoupper($matches[0]);
-            }, ucwords(strtolower(request('name'))));
+            }, ucwords(strtolower(request('slot1'))));
             $equip->slot1 = '◇'.$xtalname1;
 
         }
@@ -87,7 +87,7 @@ class ItemController extends Controller
             $xtalname2 = preg_replace_callback('/\b(?=[LXIVCDM]+\b)([a-z]+)\b/i', 
             function($matches) {
                 return strtoupper($matches[0]);
-            }, ucwords(strtolower(request('name'))));
+            }, ucwords(strtolower(request('slot2'))));
             $equip->slot2 = '◇'.$xtalname2;
 
         }else{
