@@ -291,10 +291,10 @@ tbody tr:hover {
     .materials:nth-child(1):before {
         content: "Name";
     }
-    .materials:nth-child(5):before {
+    .materials:nth-child(2):before {
         content: "QTY";
     }
-    .materials:nth-child(6):before {
+    .materials:nth-child(3):before {
         content: "Price";
     }
     
