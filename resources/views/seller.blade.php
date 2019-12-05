@@ -140,8 +140,35 @@
                                         <td class="equipment">{{ $equip->def }}</td>
                                         <td class="equipment">{{ $equip->refinement}}</td>
                                         <td class="equipment">{{ $equip->slots}}</td>
-                                        <td class="equipment">{{ $equip->slot1}}</td>
-                                        <td class="equipment">{{ $equip->slot2}}</td>
+										@if $equip->slots == 0
+											<td class="equipment">/</td>
+											<td class="equipment">/</td>
+										@elseif $equip->slots == 1
+											@if $equip->slot1 == null
+												<td class="equipment">none</td>
+												<td class="equipment">/</td>
+											@else
+												<td class="equipment">{{ $equip->slot1}}</td>
+												<td class="equipment">/</td>
+										@elseif $equip->slots == 2
+											@if $equip->slot1 == null
+												@if $equip->slot2 == null
+													<td class="equipment">none</td>
+													<td class="equipment">none</td>
+													
+													
+											@elseif $equip->slot1 != null
+												@if $equip->slot2 != null
+													<td class="equipment">{{ $equip->slot1}}</td>
+													<td class="equipment">{{ $equip->slot2}}</td>
+												@else
+													<td class="equipment">{{ $equip->slot1}}</td>
+													<td class="equipment">none</td>
+											@elseif $equip->slot2 != null
+												@if $equip->slot1 == null
+													<td class="equipment">none</td>
+													<td class="equipment">{{ $equip->slot2}}</td>	
+										@endif
                                         <td class="equipment">{{ $equip->ability}}</td>
                                         <td class="equipment">{{ $equip->ability_level}}</td>
                                         <td class="equipment">{{ number_format($equip->price)}}</td>
