@@ -43,7 +43,12 @@ class ItemController extends Controller
         $request->validated();
         $idTobeUsed = $this->generateID(8);
         $equip = new Equipment();
-        $equip->name = request('name');
+        
+        $equipname = preg_replace_callback('/\b(?=[LXIVCDM]+\b)([a-z]+)\b/i', 
+        function($matches) {
+            return strtoupper($matches[0]);
+        }, ucwords(strtolower(request('name'))));
+        $equip->name = $equipname;
         $equip->item_id = $idTobeUsed;
         $equip->owner_id = Auth::user()->user_id;
         $equip->type = request('type');
@@ -51,7 +56,6 @@ class ItemController extends Controller
         $equip->def = request('def');
         $equip->price = request('price');
         $equip->slots = request('equipslotamount');
-
         $equip->slot1 = request('slot1');
         $equip->slot2 = request('slot2');
         $equip->ability = request('ability');
@@ -71,7 +75,8 @@ class ItemController extends Controller
         $items = new Items();
         $item_id = $this->generateID(12);
         $items->owner_id = Auth::user()->user_id;
-        $items->name = request('name');
+        $materialname = str_replace(['Of'], ['of'],ucwords(request('name')));
+        $items->name = $materialname;
         $items->price = request('price');
         $items->quantity = request('quantity');
         $items->routes = "item/items/{$item_id}";
@@ -88,7 +93,18 @@ class ItemController extends Controller
         $request->validated();
         $xtal = new Xtal();
         $item_id = $this->generateID(7);
-        $xtal->name = request('name');
+        if(request('name')[0] != '◇'){
+            //$xtalname = ucwords(request('name'));
+            
+            $xtalname = preg_replace_callback('/\b(?=[LXIVCDM]+\b)([a-z]+)\b/i', 
+            function($matches) {
+                return strtoupper($matches[0]);
+            }, ucwords(strtolower(request('name'))));
+            $xtal->name = '◇'.$xtalname;
+
+        }else{
+             $xtal->name = request('name');
+        }
         $xtal->owner_id = Auth::user()->user_id;
         $xtal->price = request('price');
         $xtal->quantity = request('quantity');
@@ -199,6 +215,14 @@ class ItemController extends Controller
     public function showWarningMessage(){
         Alert::toast('You have previously entered the wrong input', 'warning');
         return redirect('/additem');
+    }
+
+    public function covertRomanNumeric($string)
+    {
+        $string = preg_replace_callback('/\b(?=[LXIVCDM]+\b)([a-z]+)\b/i', 
+        function($matches) {
+            return strtoupper($matches[0]);
+        }, ucwords(strtolower($string)));
     }
 
 

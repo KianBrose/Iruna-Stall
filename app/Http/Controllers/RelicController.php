@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Relic;
 use Illuminate\Http\Request;
 use Auth;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class RelicController extends Controller
 {

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use App\Xtal;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class XtalController extends Controller
 {
