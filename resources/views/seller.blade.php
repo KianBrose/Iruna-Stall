@@ -135,22 +135,41 @@
                                 <tbody>
                                     @foreach($equipSearch as $equip)
                                     <tr>
-                                        <td class="equipment">{{ $equip->name}}</td>
+                                        <td class="equipment">{{ $equip->name }}</td>
                                         <td class="equipment">{{ $equip->atk }}</td>
                                         <td class="equipment">{{ $equip->def }}</td>
-                                        <td class="equipment">{{ $equip->refinement}}</td>
-                                        <td class="equipment">{{ $equip->slots}}</td>
+                                        <td class="equipment">{{ $equip->refinement }}</td>
+                                        <td class="equipment">{{ $equip->slots }}</td>
 										
-										@if ($equip->slot1 == null)
+										@if ($equip->slots == 0)
 											<td class="equipment">/</td>
-										@elseif ($equip->slot1 != null)
-											<td class="equipment">{{ $equip->slot1 }}</td>
-										@endif
-										
-										@if ($equip->slot2 == null)
 											<td class="equipment">/</td>
-										@elseif ($equip->slot2 != null)
-											<td class="equipment">{{ $equip->slot2 }}</td>
+										@elseif ($equip->slots == 1)
+											@if ($equip->slot1 == null)
+												<td class="equipment">none</td>
+												<td class="equipment">/</td>
+											@else
+												<td class="equipment">{{ $equip->slot1 }}</td>
+												<td class="equipment">/</td>
+											@endif
+										@elseif ($equip->slots == 2)
+											@if ($equip->slot1 != null)
+												@if ($equip->slot2 != null)
+													<td class="equipment">{{ $equip->slot1 }}</td>
+													<td class="equipment">{{ $equip->slot2 }}</td>
+												@else
+													<td class="equipment">{{ $equip->slot1 }}</td>
+													<td class="equipment">none</td>
+												@endif
+											@elseif ($equip->slot1 == null)
+												@if ($equip->slot2 == null)
+													<td class="equipment">none</td>
+													<td class="equipment">none</td>
+												@endif
+											@else
+												<td class="equipment">none</td>
+												<td class="equipment">{{ $equip->slot2 }}</td>
+											@endif
 										@endif
 
                                         <td class="equipment">{{ $equip->ability}}</td>
