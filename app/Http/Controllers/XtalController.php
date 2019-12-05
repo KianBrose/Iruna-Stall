@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use App\Xtal;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class XtalController extends Controller
 {
@@ -15,17 +16,28 @@ class XtalController extends Controller
             }
             else{
                 if($this->validNumber(request('price'))){
-                    $item->price = request('price');
-                }
-                if($this->validNumber(request('quantity'))){
-                    if(request('quantity') > 99){
-                        $item->quantity = 99;
+                    if((int)request('price') > 999999999999){
+                        $item->price = 999999999999;
                     }
-                    else{  
+                    else if((int)request('price') < 1){
+                        $item->price = 1;
+                    } else{
+                        $item->price = request('price');
+                    }
+                    
+                } 
+                if($this->validNumber(request('quantity'))){
+                    if(request('quantity') > 9999){
+                        $item->quantity = 9999;
+                    } 
+                    else if((int)request('quantity') < 1)
+                    {
+                        $item->quantity = 1;
+                    } else{
                         $item->quantity = request('quantity');
                     }
                     
-                }
+                } 
                 
                 $item->save();
 

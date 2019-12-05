@@ -69,6 +69,7 @@
                                 </a>
 
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+									<a class="dropdown-item" href="/user/{{ auth()->user()->user_id }}">Profile</a>
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
@@ -96,9 +97,8 @@
                     <hr>
 					<div>
 						<p>Welcome to the add item page! If this is your first time here, please refer to this <a>quick guide</a> on how to add an item!</p>
-							@error('mainError')
-									<div class="alert alert-danger"> {{ $message }}</div>
-							@enderror
+							<div class="alert alert-success">Please make the use of autocomplete</div>
+							
 							@if ($errors->any())
     						<div class="alert alert-danger">{{ $errors->first() }}</div>
 							@endif
