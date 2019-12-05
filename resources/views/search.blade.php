@@ -92,7 +92,7 @@
 								@endforeach
 							</tbody>
 						</table>
-						{{$equipSearch->appends(['search' => request('search')])->links()}}
+						{{$equipSearch->appends(['search' => request('search'), 'xtalPage' => request('xtalPage'), 'equipPage' => request('equipPage'), 'itemPage' => request('itemPage'), 'relicPage' => request('relicPage'), 'alPage' => request('alPage')])->links()}}
 					</div>
 				</div>
 				@endif
@@ -123,7 +123,7 @@
 								@endforeach
 							</tbody>
 						</table>
-						{{$itemSearch->appends(['search' => request('search')])->links()}}
+						{{$itemSearch->appends(['search' => request('search'), 'xtalPage' => request('xtalPage'), 'equipPage' => request('equipPage'), 'itemPage' => request('itemPage'), 'relicPage' => request('relicPage'), 'alPage' => request('alPage')])->links()}}
 					</div>
 				</div>
 				@endif
@@ -155,7 +155,7 @@
 								@endforeach
 							</tbody>
 						</table>
-						{{$xtalSearch->appends(['search' => request('search')])->links()}}
+						{{$xtalSearch->appends(['search' => request('search'), 'xtalPage' => request('xtalPage'), 'equipPage' => request('equipPage'), 'itemPage' => request('itemPage'), 'relicPage' => request('relicPage'), 'alPage' => request('alPage')])->links()}}
 					</div>
 				</div>
 				@endif
@@ -189,7 +189,7 @@
 								@endforeach
 							</tbody>
 						</table>
-						{{$alSearch->appends(['search' => request('search')])->links()}}
+						{{$alSearch->appends(['search' => request('search'), 'xtalPage' => request('xtalPage'), 'equipPage' => request('equipPage'), 'itemPage' => request('itemPage'), 'relicPage' => request('relicPage'), 'alPage' => request('alPage')])->links()}}
 					</div>
 				</div>
 				@endif
@@ -219,7 +219,7 @@
 								@endforeach
 							</tbody>
 						</table>
-						{{$relicSearch->appends(['search' => request('search')])->links()}}
+						{{$relicSearch->appends(['search' => request('search'), 'xtalPage' => request('xtalPage'), 'equipPage' => request('equipPage'), 'itemPage' => request('itemPage'), 'relicPage' => request('relicPage'), 'alPage' => request('alPage')])->links()}}
 					</div>
 				</div>
 				@endif

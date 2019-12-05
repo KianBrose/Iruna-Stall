@@ -8,10 +8,11 @@ use App\Http\Requests\StoreIrunaEquip;
 use App\Irunaitem;
 use RealRashid\SweetAlert\Facades\Alert;
 use Auth;
+use App\Ability;
 
 class EquipmentController extends Controller
 {
-    public function update($id, StoreIrunaEquip $request){
+    public function update($id){
         
         if(Auth::check()){
             $item = Equipment::where('item_id', $id)->firstOrFail();
@@ -20,9 +21,20 @@ class EquipmentController extends Controller
                 abort(404);
             }
             else{
+                
+                $xtal1 = request('slot1');
+                $xtal2 = request('slot2');
                 if($this->validNumber(request('price'))){
-                    $item->price = request('price');
-                }
+                    if((int)request('price') > 999999999999){
+                        $item->price = 999999999999;
+                    }
+                    else if((int)request('price') < 1){
+                        $item->price = 1;
+                    } else{
+                        $item->price = request('price');
+                    }
+                    
+                } 
 
                 if($this->validNumber(request('atk'))){
                     if(request('atk') < 400 && request('atk') > 0){
@@ -35,7 +47,14 @@ class EquipmentController extends Controller
                         $item->atk = request('def');
                     }
                 }
-                $slot1 = Irunaitem::getItem(request('slot1'))->first();
+                if(substr($xtal1, 0, 3) != '◇'){
+                    $xtalname1 = preg_replace_callback('/\b(?=[LXIVCDM]+\b)([a-z]+)\b/i', 
+                    function($matches) {
+                        return strtoupper($matches[0]);
+                    }, ucwords(strtolower($xtal1)));
+                    $xtal1 = '◇'.$xtalname1;
+                }
+                $slot1 = Irunaitem::getItem($xtal1)->first();
 
                 if($slot1) {
                     if($slot1->category == 'Crystas'){
@@ -44,10 +63,18 @@ class EquipmentController extends Controller
                    
                 }
 
-                $slot2 = Irunaitem::getItem(request('slot2'))->first();
+                if(substr($xtal2, 0, 3) != '◇'){
+                    $xtalname2 = preg_replace_callback('/\b(?=[LXIVCDM]+\b)([a-z]+)\b/i', 
+                    function($matches) {
+                        return strtoupper($matches[0]);
+                    }, ucwords(strtolower($xtal2)));
+                    $xtal2 = '◇'.$xtalname2;
+                }
+                $slot2 = Irunaitem::getItem($xtal2)->first();
 
                 if($slot2) {
                     if($slot2->category == 'Crystas'){
+
                         $item->slot2 = $slot2->name;
                     }
                     
@@ -55,7 +82,7 @@ class EquipmentController extends Controller
 
                 $validAbi = Ability::where('type', request('ability'))->first();
                 if($validAbi){
-                    $item->ability = request('ability');
+                    $item->ability = $validAbi->type;
                 }
                 if($this->validNumber(request('ability_level'))){
                     if((int)request('ability_level') >= 1 && (int)request('ability_level') <=5){
@@ -83,7 +110,6 @@ class EquipmentController extends Controller
             }
             else{
                 Equipment::where('item_id', $id)->firstOrFail()->delete();
-                //$item = Ai::where('owner_id', auth()->id())->get();
                 Alert::toast('You have deleted an item', 'warning');
                 return redirect('/viewitem');
             }

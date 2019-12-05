@@ -35,14 +35,28 @@ class AiController extends Controller
                     $item->color = request('color');
                 }
                 if($this->validNumber(request('price'))){
-                    $item->price = request('price');
-                }
+                    if((int)request('price') > 999999999999){
+                        $item->price = 999999999999;
+                    }
+                    else if((int)request('price') < 1){
+                        $item->price = 1;
+                    } else{
+                        $item->price = request('price');
+                    }
+                    
+                } 
                 if($this->validNumber(request('quantity'))){
-                    if((int)request('quantity') > 0 && (int)request('quantity') <= 99){
+                    if(request('quantity') > 9999){
+                        $item->quantity = 9999;
+                    } 
+                    else if((int)request('quantity') < 1)
+                    {
+                        $item->quantity = 1;
+                    } else{
                         $item->quantity = request('quantity');
                     }
                     
-                }
+                } 
                 
                 $item->save();
 

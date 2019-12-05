@@ -58,6 +58,9 @@ class StoreIrunaXtal extends FormRequest
 
 
     public function invalidName($name){
+        if(substr($name, 0, 3) != '◇'){
+            $name = '◇'.$name;
+        }
         $item = Irunaitem::getItem($name)->first();
         if($item){
             if($item->category == StoreIrunaXtal::Category){

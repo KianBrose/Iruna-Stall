@@ -22,18 +22,28 @@ class ItemController extends Controller
     public function createAi(StoreIrunaAi $request){
         $request->validated();
         $idTobeUsed = $this->generateID(10);
-        $ai = new Ai();
-        $ai->name = request('name');
-        $ai->item_id = $idTobeUsed;
-        $ai->color = request('color');
-        $ai->routes = "item/ai/{$idTobeUsed}";
-        $ai->owner_id = Auth::user()->user_id;
-        $ai->quantity = request('quantity');
-        $ai->price = request('price');
-        $ai->contact = auth()->user()->name;
-        $ai->save();
-        Alert::toast('Successfully added an item', 'success');
+        $al = new Ai();
+        if(substr(request('name'), 0, 3) != '▲'){
+            //$xtalname = ucwords(request('name'));
+            
+            $alname = preg_replace_callback('/\b(?=[LXIVCDM]+\b)([a-z]+)\b/i', 
+            function($matches) {
+                return strtoupper($matches[0]);
+            }, str_replace(['Of'], ['of'], ucwords(strtolower(request('name')))));
+            $al->name = '▲'.$alname;
 
+        }else{
+             $al->name = request('name');
+        }
+        $al->item_id = $idTobeUsed;
+        $al->color = request('color');
+        $al->routes = "item/ai/{$idTobeUsed}";
+        $al->owner_id = Auth::user()->user_id;
+        $al->quantity = request('quantity');
+        $al->price = request('price');
+        $al->contact = auth()->user()->name;
+        $al->save();
+        Alert::toast('Successfully added an item', 'success');
         return redirect('/additem');
         
        
@@ -43,7 +53,12 @@ class ItemController extends Controller
         $request->validated();
         $idTobeUsed = $this->generateID(8);
         $equip = new Equipment();
-        $equip->name = request('name');
+        
+        $equipname = preg_replace_callback('/\b(?=[LXIVCDM]+\b)([a-z]+)\b/i', 
+        function($matches) {
+            return strtoupper($matches[0]);
+        }, str_replace(['Of'], ['of'], ucwords(strtolower(request('name')))));
+        $equip->name = $equipname;
         $equip->item_id = $idTobeUsed;
         $equip->owner_id = Auth::user()->user_id;
         $equip->type = request('type');
@@ -51,10 +66,34 @@ class ItemController extends Controller
         $equip->def = request('def');
         $equip->price = request('price');
         $equip->slots = request('equipslotamount');
+        if(substr(request('slot1'), 0, 3) != '◇'){
+            //$xtalname = ucwords(request('name'));
+            
+            $xtalname1 = preg_replace_callback('/\b(?=[LXIVCDM]+\b)([a-z]+)\b/i', 
+            function($matches) {
+                return strtoupper($matches[0]);
+            }, ucwords(strtolower(request('slot1'))));
+            $equip->slot1 = '◇'.$xtalname1;
 
-        $equip->slot1 = request('slot1');
-        $equip->slot2 = request('slot2');
-        $equip->ability = request('ability');
+        }
+        else
+        {
+             $equip->slot1 = request('slot1');
+        }
+
+        if(substr(request('slot2'), 0, 3) != '◇'){
+            //$xtalname = ucwords(request('name'));
+            
+            $xtalname2 = preg_replace_callback('/\b(?=[LXIVCDM]+\b)([a-z]+)\b/i', 
+            function($matches) {
+                return strtoupper($matches[0]);
+            }, ucwords(strtolower(request('slot2'))));
+            $equip->slot2 = '◇'.$xtalname2;
+
+        }else{
+             $equip->slot2 = request('slot2');
+        }
+        $equip->ability = ucwords(request('ability'));
         $equip->ability_level = request('ability_level');
         $equip->refinement = request('refinement');
         $equip->routes = "item/equip/{$idTobeUsed}";
@@ -71,7 +110,8 @@ class ItemController extends Controller
         $items = new Items();
         $item_id = $this->generateID(12);
         $items->owner_id = Auth::user()->user_id;
-        $items->name = request('name');
+        $materialname = str_replace(['Of'], ['of'],ucwords(request('name')));
+        $items->name = $materialname;
         $items->price = request('price');
         $items->quantity = request('quantity');
         $items->routes = "item/items/{$item_id}";
@@ -88,7 +128,18 @@ class ItemController extends Controller
         $request->validated();
         $xtal = new Xtal();
         $item_id = $this->generateID(7);
-        $xtal->name = request('name');
+        if(substr(request('name'), 0, 3) != '◇'){
+            //$xtalname = ucwords(request('name'));
+            
+            $xtalname = preg_replace_callback('/\b(?=[LXIVCDM]+\b)([a-z]+)\b/i', 
+            function($matches) {
+                return strtoupper($matches[0]);
+            }, ucwords(strtolower(request('name'))));
+            $xtal->name = '◇'.$xtalname;
+
+        }else{
+             $xtal->name = request('name');
+        }
         $xtal->owner_id = Auth::user()->user_id;
         $xtal->price = request('price');
         $xtal->quantity = request('quantity');
@@ -104,8 +155,19 @@ class ItemController extends Controller
     public function createRelic(StoreIrunaRelic $request){
         $request->validated();
         $id = $this->generateID(8);
-        $relic = new Relic();
-        $relic->name = request('name');
+        $relic = new Relic(); 
+        if(substr(request('name'), 0, 3) != '□'){
+            //$xtalname = ucwords(request('name'));
+            
+            $relicname = preg_replace_callback('/\b(?=[LXIVCDM]+\b)([a-z]+)\b/i', 
+            function($matches) {
+                return strtoupper($matches[0]);
+            }, str_replace(['Of'], ['of'], ucwords(strtolower(request('name')))));
+            $relic->name = '□'.$relicname;
+
+        }else{
+             $relic->name = request('name');
+        }
         $relic->quantity = request('quantity');
         $relic->price = request('price');
         $relic->owner_id = Auth::user()->user_id;
@@ -196,9 +258,18 @@ class ItemController extends Controller
             return false;
         }
     }
+
     public function showWarningMessage(){
         Alert::toast('You have previously entered the wrong input', 'warning');
         return redirect('/additem');
+    }
+
+    public function covertRomanNumeric($string)
+    {
+        $string = preg_replace_callback('/\b(?=[LXIVCDM]+\b)([a-z]+)\b/i', 
+        function($matches) {
+            return strtoupper($matches[0]);
+        }, ucwords(strtolower($string)));
     }
 
 

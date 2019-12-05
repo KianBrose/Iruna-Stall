@@ -43,9 +43,10 @@
 								@foreach( $equipitem as $equipitem)
 								<tr>
 								<td class="equipment">{{$equipitem->name }}</td>
-							<form action="/item/equip/{{ $equipitem->item_id }}" method="POST">
-								@method('patch')
+							<form action="/item/equip/{{ $equipitem->item_id }}/update" method="POST">
 								@csrf
+								@method('patch')
+								
 								<td class="equipment">
 								<input type="text" class="form-control iteminput" style="width: 50px" name="atk" id="atk" value="{{ $equipitem->atk }}"/>
 								</td>
