@@ -149,7 +149,7 @@
                                     @endforeach
                                 </tbody>
                             </table>
-                            
+                            {{$equipSearch->appends(['xtalPage' => request('xtalPage'), 'equipPage'=> request('equipPage'), 'itemPage' => request('itemPage'), 'relicPage' => request('relicPage'), 'alPage' => request('alPage')])->links()}}
                         </div>
                     </div>
                     @endif
@@ -178,6 +178,7 @@
                                     @endforeach
                                 </tbody>
                             </table>
+                            {{$itemSearch->appends(['xtalPage' => request('xtalPage'), 'equipPage'=> request('equipPage'), 'itemPage' => request('itemPage'), 'relicPage' => request('relicPage'), 'alPage' => request('alPage')])->links()}}
                         </div>
                     </div>
                     @endif
@@ -206,6 +207,7 @@
                                     @endforeach
                                 </tbody>
                             </table>
+                            {{$xtalSearch->appends(['xtalPage' => request('xtalPage'), 'equipPage' => request('equipPage'), 'itemPage' => request('itemPage'), 'relicPage' => request('relicPage'), 'alPage' => request('alPage')])->links()}}
                         </div>
                     </div>
                     @endif
@@ -236,6 +238,7 @@
                                     @endforeach
                                 </tbody>
                             </table>
+                            {{$alSearch->appends(['xtalPage' => request('xtalPage'), 'equipPage'=> request('equipPage'), 'itemPage' => request('itemPage'), 'relicPage' => request('relicPage'), 'alPage' => request('alPage')])->links()}}
                         </div>
                     </div>
                     @endif
@@ -264,6 +267,7 @@
                                     @endforeach
                                 </tbody>
                             </table>
+                            {{$relicSearch->appends(['xtalPage' => request('xtalPage'), 'equipPage'=> request('equipPage'), 'itemPage' => request('itemPage'), 'relicPage' => request('relicPage'), 'alPage' => request('alPage')])->links()}}
                         </div>
                     </div>
                     @endif
