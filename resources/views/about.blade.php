@@ -123,10 +123,10 @@
                     <hr>
 
                     <div>
-						<p>The Iruna Online Global Stall is a project developed by Kumar, Polowis and KB that aims to facilitate the process of buying and selling items from the game Iruna Online. On this website, you can search for items stored on our database or post items as a seller.<br>Iruna Global Stall is in no way endorsed or affiliated to Iruna or Asobimo. The name Iruna and all of it’s assets belong to ASOBIMO.</p>
+						<p>The Iruna Online Global Stall is a project developed by kumars_gaming#9072, Polowis#4441 and K¹#8224 that aims to facilitate the process of buying and selling items from the game Iruna Online. On this website, you can search for items stored on our database or post items as a seller.<br>Iruna Global Stall is in no way endorsed or affiliated to Iruna or Asobimo. The name Iruna and all of it’s assets belong to ASOBIMO.</p>
                         
 						<h3><b>Contact/Suggestions</b></h3>
-						<p>Contact us at contact@irunastall.com if you have any difficulties, problems or suggestions about our site. If you wish to talk to us directly please join the Iruna online discord using the following link: https://discord.gg/NH75NqA </p>
+						<p>Contact K¹#8224 on discord if you have any difficulties, problems or suggestions about our site. If you wish to talk to us directly please join the Iruna online discord using the following link: https://discord.gg/NH75NqA </p>
 			            <br>
                         
 			            <h3><b>Terms of Service</b></h3>
