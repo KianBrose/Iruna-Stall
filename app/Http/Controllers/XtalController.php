@@ -15,8 +15,16 @@ class XtalController extends Controller
             }
             else{
                 if($this->validNumber(request('price'))){
-                    $item->price = request('price');
-                }
+                    if((int)request('price') > 999999999999){
+                        $item->price = 999999999999;
+                    }
+                    else if((int)request('price') < 1){
+                        $item->price = 1;
+                    } else{
+                        $item->price = request('price');
+                    }
+                    
+                } 
                 if($this->validNumber(request('quantity'))){
                     if(request('quantity') > 99){
                         $item->quantity = 99;

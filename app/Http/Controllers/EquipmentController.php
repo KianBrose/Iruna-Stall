@@ -21,8 +21,16 @@ class EquipmentController extends Controller
             }
             else{
                 if($this->validNumber(request('price'))){
-                    $item->price = request('price');
-                }
+                    if((int)request('price') > 999999999999){
+                        $item->price = 999999999999;
+                    }
+                    else if((int)request('price') < 1){
+                        $item->price = 1;
+                    } else{
+                        $item->price = request('price');
+                    }
+                    
+                } 
 
                 if($this->validNumber(request('atk'))){
                     if(request('atk') < 400 && request('atk') > 0){
@@ -83,7 +91,6 @@ class EquipmentController extends Controller
             }
             else{
                 Equipment::where('item_id', $id)->firstOrFail()->delete();
-                //$item = Ai::where('owner_id', auth()->id())->get();
                 Alert::toast('You have deleted an item', 'warning');
                 return redirect('/viewitem');
             }
