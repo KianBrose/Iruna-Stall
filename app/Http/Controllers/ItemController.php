@@ -66,21 +66,34 @@ class ItemController extends Controller
         $equip->def = request('def');
         $equip->price = request('price');
         $equip->slots = request('equipslotamount');
-        if(request('slot1')[0] != '◇'){
+        if(substr(request('slot1'), 0, 3) != '◇'){
             //$xtalname = ucwords(request('name'));
             
-            $xtalname = preg_replace_callback('/\b(?=[LXIVCDM]+\b)([a-z]+)\b/i', 
+            $xtalname1 = preg_replace_callback('/\b(?=[LXIVCDM]+\b)([a-z]+)\b/i', 
             function($matches) {
                 return strtoupper($matches[0]);
             }, ucwords(strtolower(request('name'))));
-            $equip->slot1 = '◇'.$xtalname;
+            $equip->slot1 = '◇'.$xtalname1;
 
-        }else{
+        }
+        else
+        {
              $equip->slot1 = request('slot1');
         }
-        $equip->slot1 = request('slot1');
-        $equip->slot2 = request('slot2');
-        $equip->ability = request('ability');
+
+        if(substr(request('slot2'), 0, 3) != '◇'){
+            //$xtalname = ucwords(request('name'));
+            
+            $xtalname2 = preg_replace_callback('/\b(?=[LXIVCDM]+\b)([a-z]+)\b/i', 
+            function($matches) {
+                return strtoupper($matches[0]);
+            }, ucwords(strtolower(request('name'))));
+            $equip->slot2 = '◇'.$xtalname2;
+
+        }else{
+             $equip->slot2 = request('slot2');
+        }
+        $equip->ability = ucwords(request('ability'));
         $equip->ability_level = request('ability_level');
         $equip->refinement = request('refinement');
         $equip->routes = "item/equip/{$idTobeUsed}";

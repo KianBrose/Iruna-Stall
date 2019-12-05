@@ -123,6 +123,9 @@ class StoreIrunaEquip extends FormRequest
         if($xtal1 == ""){
             return false;
         } else{
+            if(substr($xtal1, 0, 3) != '◇'){
+                $xtal1 = '◇'.$xtal1;
+            }
             $item1 = Irunaitem::getItem($xtal1)->first();
             if($item1){
                 return $this->checkForValidSlot($item1);
@@ -133,6 +136,9 @@ class StoreIrunaEquip extends FormRequest
         if($xtal2 == ""){
             return false;
         } else{
+            if(substr($xtal2, 0, 3) != '◇'){
+                $xtal2 = '◇'.$xtal2;
+            }
             $item2 = Irunaitem::getItem($xtal2)->first();
         
             if($item2){
