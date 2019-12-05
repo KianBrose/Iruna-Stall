@@ -159,9 +159,10 @@
                     <p style="font-size: 14px;">Welcome to our Iruna Global Stall</p>
 					<p style="font-size: 14px;">Enter the item name and press search</p>
                     <hr>
-                    <p>To search for an item, simply enter its name in the search field above and press search! An account is not required to search for items.</p>
-                    <p>To sell an item, press the “Add Item” on our menu. Note that you need to register a free account to be able to use this feature.</p>
-                    <p>When you search for an item, simply press on the seller’s name in the contact column to view their profile. You can then see their contact information: Either Facebook profile or Discord tag.</p>
+                    <p style="font-size: 14px;">To search for an item, simply enter its name in the search field above and press search! An account is not required to search for items.</p>
+                    <p style="font-size: 14px;">To sell an item, press the “Add Item” on our menu. Note that you need to register a free account to be able to use this feature.</p>
+                    <p style="font-size: 14px;">When you search for an item, simply press on the seller’s name in the contact column to view their profile. You can then see their contact information: Either Facebook profile or Discord tag.</p>
+                    <h6>You may encounter bugs or errors in the website that we may not have found, if you find anything we should know please contact K¹#8224 on discord or <a href="https://www.facebook.com/kian.brosebrito">https://www.facebook.com/kian.brosebrito</a> on facebook</h6>
                     <div class="row divider" role="separator" style="margin-top:20px;"></div>
                 </div>
                 <div></div>
