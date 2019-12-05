@@ -29,7 +29,7 @@ class ItemController extends Controller
             $alname = preg_replace_callback('/\b(?=[LXIVCDM]+\b)([a-z]+)\b/i', 
             function($matches) {
                 return strtoupper($matches[0]);
-            }, ucwords(strtolower(request('name'))));
+            }, str_replace(['Of'], ['of'], ucwords(strtolower(request('name')))));
             $al->name = '▲'.$alname;
 
         }else{
@@ -58,7 +58,7 @@ class ItemController extends Controller
         $equipname = preg_replace_callback('/\b(?=[LXIVCDM]+\b)([a-z]+)\b/i', 
         function($matches) {
             return strtoupper($matches[0]);
-        }, ucwords(strtolower(request('name'))));
+        }, str_replace(['Of'], ['of'], ucwords(strtolower(request('name')))));
         $equip->name = $equipname;
         $equip->item_id = $idTobeUsed;
         $equip->owner_id = Auth::user()->user_id;
@@ -131,8 +131,19 @@ class ItemController extends Controller
     public function createRelic(StoreIrunaRelic $request){
         $request->validated();
         $id = $this->generateID(8);
-        $relic = new Relic();
-        $relic->name = request('name');
+        $relic = new Relic(); 
+        if(request('name')[0] != '□'){
+            //$xtalname = ucwords(request('name'));
+            
+            $relicname = preg_replace_callback('/\b(?=[LXIVCDM]+\b)([a-z]+)\b/i', 
+            function($matches) {
+                return strtoupper($matches[0]);
+            }, str_replace(['Of'], ['of'], ucwords(strtolower(request('name')))));
+            $relic->name = '□'.$relicname;
+
+        }else{
+             $relic->name = request('name');
+        }
         $relic->quantity = request('quantity');
         $relic->price = request('price');
         $relic->owner_id = Auth::user()->user_id;
