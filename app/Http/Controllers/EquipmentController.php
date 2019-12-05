@@ -20,43 +20,87 @@ class EquipmentController extends Controller
                 abort(404);
             }
             else{
+                $xtal1 = request('slot1');
+                $xtal2 = request('slot2');
                 if($this->validNumber(request('price'))){
                     $item->price = request('price');
                 }
 
                 if($this->validNumber(request('atk'))){
-                    if(request('atk') < 400 && request('atk') > 0){
+                    if((int)request('atk') < 400 && (int)request('atk') > 0){
                         $item->atk = request('atk');
                     }
                 }
 
                 if($this->validNumber(request('def'))){
                     if((int)request('atk') < 70 && (int)request('def') > 0){
-                        $item->atk = request('def');
+                        $item->def = request('def');
                     }
                 }
-                $slot1 = Irunaitem::getItem(request('slot1'))->first();
 
-                if($slot1) {
-                    if($slot1->category == 'Crystas'){
-                        $item->slot1 = $slot1->name;
+                if($xtal1 == null or $xtal1 == ""){
+                    $item->slot1 = null;
+                }
+                else{
+                    if(substr($xtal1, 0, 3) != '◇'){
+                        $xtalname1 = preg_replace_callback('/\b(?=[LXIVCDM]+\b)([a-z]+)\b/i', 
+                        function($matches) {
+                            return strtoupper($matches[0]);
+                        }, ucwords(strtolower($xtal1)));
+                        $xtal1 = '◇'.$xtalname1;
                     }
-                   
-                }
+                    $slot1 = Irunaitem::getItem($xtal1)->first();
+                
 
-                $slot2 = Irunaitem::getItem(request('slot2'))->first();
 
-                if($slot2) {
-                    if($slot2->category == 'Crystas'){
-                        $item->slot2 = $slot2->name;
+                    if($slot1) {
+                        if($slot1->category == 'Crystas'){
+                            $item->slot1 = $slot1->name;
+                        }
+                       
                     }
-                    
                 }
 
-                $validAbi = Ability::where('type', request('ability'))->first();
-                if($validAbi){
-                    $item->ability = request('ability');
+                
+                if($xtal2 == null or $xtal2 == ""){
+                    $item->slot2 = null;
                 }
+                else
+                {
+                    if(substr($xtal2, 0, 3) != '◇'){
+                        $xtalname2 = preg_replace_callback('/\b(?=[LXIVCDM]+\b)([a-z]+)\b/i', 
+                        function($matches) {
+                            return strtoupper($matches[0]);
+                        }, ucwords(strtolower($xtal2)));
+                        $xtal2 = '◇'.$xtalname2;
+                    }
+                    $slot2 = Irunaitem::getItem($xtal2)->first();
+    
+                    if($slot2) {
+                        if($slot2->category == 'Crystas'){
+    
+                            $item->slot2 = $slot2->name;
+                        }
+                        
+                    }
+                }
+
+               
+
+                if(request('ability') == null or request('ability') == ""){
+                   $item->ability = null;
+                } else{
+                    $validAbi = Ability::where('type', request('ability'))->first();
+                    if($validAbi){
+                        $item->ability = $validAbi->type;
+
+                    }
+                }
+
+
+               
+
+
                 if($this->validNumber(request('ability_level'))){
                     if((int)request('ability_level') >= 1 && (int)request('ability_level') <=5){
                         $item->ability_level = request('ability_level');
