@@ -157,7 +157,7 @@
                     @enderror
                     <div class="row divider" role="separator" ></div>
                     <p style="font-size: 14px;">Welcome to our Iruna Global Stall</p>
-					<p style="font-size: 14px;">Enter the item name, select type and press search</p>
+					<p style="font-size: 14px;">Enter the item name and press search</p>
                     <hr>
                     <p>To search for an item, simply enter its name in the search field above and press search! An account is not required to search for items.</p>
                     <p>To sell an item, press the “Add Item” on our menu. Note that you need to register a free account to be able to use this feature.</p>
