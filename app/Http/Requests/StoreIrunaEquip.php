@@ -70,7 +70,7 @@ class StoreIrunaEquip extends FormRequest
            }
 
            if($this->doNotHaveContactLink()){
-            $validator->errors()->add('nameError', 'Please check your spelling again');
+            $validator->errors()->add('nameError', 'You do not have contact link, go to /account to edit your contact information');
             $validator->errors()->add('mainError', 'You do not have contact link, go to /account to edit your contact information');
         }
            
