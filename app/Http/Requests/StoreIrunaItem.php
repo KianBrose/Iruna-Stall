@@ -30,7 +30,7 @@ class StoreIrunaItem extends FormRequest
         return [
             'name' => 'required',
             'quantity' => 'required|integer|min:1|max:9999',
-            'price' => 'required|integer|min:0|max:999999999999'
+            'price' => 'required|numeric|min:0|max:999999999999'
         ];
     }
 
