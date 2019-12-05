@@ -24,7 +24,7 @@ class EquipmentController extends Controller
                 $xtal1 = request('slot1');
                 $xtal2 = request('slot2');
                 if($this->validNumber(request('price'))){
-                    if((int)request('price') > 999999999999){
+                    if(strlen(request('price')) > 12){
                         $item->price = 999999999999;
                     }
                     else if((int)request('price') < 1){
