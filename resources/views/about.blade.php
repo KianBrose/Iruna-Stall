@@ -40,6 +40,13 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
+	<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+	<script>
+		 (adsbygoogle = window.adsbygoogle || []).push({
+			  google_ad_client: "ca-pub-8585623774913935",
+			  enable_page_level_ads: true
+		 });
+	</script>
 </head>
 
 <body>
@@ -64,6 +71,9 @@
                         </li>
 			<li class="nav-item">
                              <a class="nav-link" href="/viewitem">View my items</a>
+                        </li>
+			<li class="nav-item">
+                             <a class="nav-link" href="/scammers">Scammer list</a>
                         </li>
 			<li class="nav-item">
                              <a class="nav-link" href="/about">About</a>
@@ -116,22 +126,21 @@
                     <hr>
 
                     <div>
-						<p>The Iruna Online Global Stall is a project developed by Kumar, Polowis and KB that aims to facilitate the process of buying and selling items from the game Iruna Online. On this website, you can search for items stored on our database or post items as a seller.<br>Iruna Global Stall is in no way endorsed or affiliated to Iruna or Asobimo. The name Iruna and all of it’s assets belong to ASOBIMO.</p>
+						<p>The Iruna Online Global Stall is a project developed by kumars_gaming#9072, Polowis#4441 and K¹#8224 that aims to facilitate the process of buying and selling items from the game Iruna Online. On this website, you can search for items stored on our database or post items as a seller.<br>Iruna Global Stall is in no way endorsed or affiliated to Iruna or Asobimo. The name Iruna and all of it’s assets belong to ASOBIMO.</p>
                         
 						<h3><b>Contact/Suggestions</b></h3>
-						<p>Contact us at contact@irunastall.com if you have any difficulties, problems or suggestions about our site. If you wish to talk to us directly please join the Iruna online discord using the following link: https://discord.gg/NH75NqA </p>
+						<p>Contact K¹#8224 on discord if you have any difficulties, problems or suggestions about our site. If you wish to talk to us directly please join the Iruna online discord using the following link: https://discord.gg/NH75NqA </p>
 			            <br>
                         
 			            <h3><b>Terms of Service</b></h3>
-						<p>By signing up to our service, you agree to let us store information such as email, passwords, usernames and email addresses so we can provide you with the best possible experience. <br> <br>
+						<p>By signing up to our service, you agree that you are 14 years old or older and let us store information such as email, passwords, usernames and email addresses so we can provide you with the best possible experience. <br> <br>
                         We reserve the right to delete and modify your information without notice. This would only happen in rare occasions where your account is believed to be related to fraudulent activity. <br> <br>
                         You are not allowed to create multiple accounts. Anyone having created multiple accounts will have all of the duplicate accounts permanently terminated without notice when discovered. <br> <br>
                         When posting an item in our “Add Items” page, you are not allowed to enter a “fake price” to make your post appear higher than others on the search rankings. Anyone discovered doing this activity will have their post removed and their account heavily penalized. <br> <br>
                         You are not allowed to have over 4 posts of the same item (at the exception of equipment) since we have a quantity system set in place, simply put your available quantity all into one item. <br><br>
                         If you have been scammed and have proof of fraudulent activity, please send us an email with proof so we can review it and add it to the scammer page. <br>
                         <br>
-                        <b>We do not take responsibility for any loss of funds, be it digital currency of real money that may be caused by scammers. </b><br>
-                        Please refer to our “Trusted Midmans” page to get options on different midmans that we offer.<br>
+                        <b>We do not take responsibility for any loss of funds, be it digital currency of real money that may be caused by scammers. </b>
                         Inactive accounts will be automatically terminated after 3 months of inactivity. Posts will be automatically removed 1 month after they get posted.</p>
                         <br>
                         

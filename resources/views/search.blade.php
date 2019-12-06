@@ -4,6 +4,7 @@
 
 <link href="{{ asset('css/mainsearch.css') }}" rel="stylesheet">
 <link href="{{ asset('css/util.css') }}" rel="stylesheet">
+<link href="{{ asset('css/style.css') }}" rel="stylesheet">
 <div class="container">
     <div class="row" >
         <div class="col-md-7 offset-md-3" >

@@ -22,6 +22,13 @@
     <link href="css/style.css" rel="stylesheet">
     <link href="{{ asset('css/mainprofile.css') }}" rel="stylesheet">
     <link href="{{ asset('css/util.css') }}" rel="stylesheet">
+	<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+	<script>
+		 (adsbygoogle = window.adsbygoogle || []).push({
+			  google_ad_client: "ca-pub-8585623774913935",
+			  enable_page_level_ads: true
+		 });
+	</script>
 </head>
 
 <body>
@@ -47,6 +54,9 @@
                         </li>
 			<li class="nav-item">
                              <a class="nav-link" href="/viewitem">View my items</a>
+                        </li>
+			<li class="nav-item">
+                             <a class="nav-link" href="/scammers">Scammer list</a>
                         </li>
 			<li class="nav-item">
                              <a class="nav-link" href="/about">About</a>
@@ -135,13 +145,43 @@
                                 <tbody>
                                     @foreach($equipSearch as $equip)
                                     <tr>
-                                        <td class="equipment">{{ $equip->name}}</td>
+                                        <td class="equipment">{{ $equip->name }}</td>
                                         <td class="equipment">{{ $equip->atk }}</td>
                                         <td class="equipment">{{ $equip->def }}</td>
-                                        <td class="equipment">{{ $equip->refinement}}</td>
-                                        <td class="equipment">{{ $equip->slots}}</td>
-                                        <td class="equipment">{{ $equip->slot1}}</td>
-                                        <td class="equipment">{{ $equip->slot2}}</td>
+                                        <td class="equipment">{{ $equip->refinement }}</td>
+                                        <td class="equipment">{{ $equip->slots }}</td>
+										
+										@if ($equip->slots == 0)
+											<td class="equipment">/</td>
+											<td class="equipment">/</td>
+										@elseif ($equip->slots == 1)
+											@if ($equip->slot1 == null)
+												<td class="equipment">empty</td>
+												<td class="equipment">/</td>
+											@else
+												<td class="equipment">{{ $equip->slot1 }}</td>
+												<td class="equipment">/</td>
+											@endif
+										@elseif ($equip->slots == 2)
+											@if ($equip->slot1 != null)
+												@if ($equip->slot2 != null)
+													<td class="equipment">{{ $equip->slot1 }}</td>
+													<td class="equipment">{{ $equip->slot2 }}</td>
+												@else
+													<td class="equipment">{{ $equip->slot1 }}</td>
+													<td class="equipment">empty</td>
+												@endif
+											@elseif ($equip->slot1 == null)
+												@if ($equip->slot2 == null)
+													<td class="equipment">empty</td>
+													<td class="equipment">empty</td>
+												@else
+													<td class="equipment">empty</td>
+													<td class="equipment">{{ $equip->slot2 }}</td>
+												@endif
+											@endif
+										@endif
+
                                         <td class="equipment">{{ $equip->ability}}</td>
                                         <td class="equipment">{{ $equip->ability_level}}</td>
                                         <td class="equipment">{{ number_format($equip->price)}}</td>
