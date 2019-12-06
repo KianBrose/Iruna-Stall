@@ -83,9 +83,42 @@
 									<td class="equipment">{{ $equip->def }}</th>
 									<td class="equipment">{{ $equip->refinement }}</th>
 									<td class="equipment">{{ $equip->slots }}</th>
-									<td class="equipment">{{ $equip->slot1 }}</th>
-									<td class="equipment">{{ $equip->slot2 }}</th>
-									<td class="equipment">{{ $equip->ability }}</th>
+									@if ($equip->slots == 0)
+										<td class="equipment">/</td>
+										<td class="equipment">/</td>
+									@elseif ($equip->slots == 1)
+										@if ($equip->slot1 == null)
+											<td class="equipment">empty</td>
+											<td class="equipment">/</td>
+										@else
+											<td class="equipment">{{ $equip->slot1 }}</td>
+											<td class="equipment">/</td>
+										@endif
+									@elseif ($equip->slots == 2)
+										@if ($equip->slot1 != null)
+											@if ($equip->slot2 != null)
+												<td class="equipment">{{ $equip->slot1 }}</td>
+												<td class="equipment">{{ $equip->slot2 }}</td>
+											@else
+												<td class="equipment">{{ $equip->slot1 }}</td>
+												<td class="equipment">empty</td>
+											@endif
+										@elseif ($equip->slot1 == null)
+											@if ($equip->slot2 == null)
+												<td class="equipment">empty</td>
+												<td class="equipment">empty</td>
+											@else
+												<td class="equipment">empty</td>
+												<td class="equipment">{{ $equip->slot2 }}</td>
+											@endif
+										@endif
+									@endif
+									
+									@if ($equip->ability == null)
+										<td class="equipment">none</th>
+									@else
+										<td class="equipment">{{ $equip->ability }}</th>
+									@endif
 									<td class="equipment">{{ $equip->ability_level}}</th>
 									<td class="equipment">{{ number_format($equip->price )}}</th>
 									<td class="equipment"><a href="/user/{{$equip->owner_id}}">{{ $equip->contact }}</a></th>

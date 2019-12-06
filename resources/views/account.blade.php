@@ -304,7 +304,7 @@
 							</tr>
 							<tr>
 								<td>
-									<label for="Test">Price:</label>
+									<label for="Test">Price per item:</label>
 								</td>
 								<td  style="padding-left:10px;">
 								<input type="number" class="form-control iteminput" style="width: 400px" name="price" id="itemprice" value="{{ old('price')}}"/>
@@ -339,7 +339,7 @@
 							</tr>
 							<tr>
 								<td>
-									<label for="Test">Price:</label>
+									<label for="Test">Price per item:</label>
 								</td>
 								<td  style="padding-left:10px;">
 									<input type="number" min='1' class="form-control iteminput" style="width: 400px" name="price" id="xtalprice"/>
@@ -397,7 +397,7 @@
 							<tr>
 								<br>
 								<td>
-									<label for="price">Price:</label>
+									<label for="price">Price per item:</label>
 								</td>
 								<td  style="padding-left:10px;">
 									<input type="number" class="form-control iteminput" style="width: 400px" name="price" id="price" value="{{ old('price') }}"/>
@@ -434,7 +434,7 @@
 							</tr>
 							<tr>
 								<td>
-									<label for="Test">Price:</label>
+									<label for="Test">Price per item:</label>
 								</td>
 								<td  style="padding-left:10px;">
 								<input type="number" min="0" class="form-control iteminput" style="width: 400px" name="price" id="price" value="{{ old('price')}}"/>
