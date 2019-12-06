@@ -120,6 +120,7 @@
             </div>
         </nav>
     </div>
+
     <div class="container">
         <div class="row" >
             <div class="col-md-7 offset-md-3" >
@@ -128,7 +129,15 @@
 		    <br>
                     <h4>Welcome!</h4>
                     <hr>
-
+					
+					<form class="form-inline" name="form1" id="form1" action="/search" method="GET">
+					  <div class="form-group mx-sm-3 mb-2">
+						<label for="search" class="sr-only">Item name</label>
+						<input type="text" class="form-control" id="search" placeholder="Password" id="search">
+					  </div>
+					  <button type="submit" class="btn btn-primary mb-2" name="search_button" id="search_button" value="Search">Search</button>
+					</form>
+					
                     <form class="form-horizontal" name="form1" id="form1" action="/search" method="GET">
                         @csrf
                         <div class="row">
