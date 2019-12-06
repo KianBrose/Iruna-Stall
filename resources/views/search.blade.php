@@ -10,31 +10,18 @@
         <div class="col-md-7 offset-md-3" >
             <br>
             <br>
-			<form class="form-horizontal" name="form1" id="form1" action="/search" method="GET">
+			<form class="form-inline" name="form1" id="form1" action="/search" method="GET">
 				@csrf
-				<div class="row">
-					<div class="col-md-7 col-xs-8">
-						<input type="text" class="form-control" name="search" id="search">
-					</div>
-					<!--
-					<div class="col-md-3 col-xs-3">
-						 <div class="form-group">
-							<select id="searchtype" class="form-control" name="searchtype">
-								<option value="equipment" selected="selected">Equipment</option>
-							   <option value="items">Items</option>
-							   <option value="xtal">Xtal</option>
-							   <option value="al">AL crystal</option>
-							   <option value="relic">Relic</option>
-							   <option value="ability">Ability</option>
-							</select>
-						 </div>
-					</div>
-					-->
-					<div class="col-md-2 col-xs-3">
-						<input type="submit" class="btn btn-default btn-block" name="search_button" id="search_button" value="Search">
-					</div>
-				</div>
+			  <div class="form-group mb-2" style="width:80%">
+				<label for="search" class="sr-only">Item name</label>
+				<input type="text" class="form-control ui-autocomplete-input" id="search"  name="search" placeholder="Item name" autocomplete="off" style="width:98%">
+			  </div>
+			  <button type="submit" class="btn btn-primary mb-2" name="search_button" id="search_button" value="Search" style="width:20%">Search</button>
 			</form>
+			@error('searcherror')
+			<div style="color:red">{{$message}}</div>
+			<br>
+			@enderror
         </div>
     </div>
 </div>
