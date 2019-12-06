@@ -141,9 +141,9 @@
                     @error('searcherror')
                     <div style="color:red">{{$message}}</div>
                     <br>
-					<br>
                     @enderror
                     <div class="row divider" role="separator" ></div>
+					<br>
                     <p style="font-size: 14px;">Welcome to our Iruna Global Stall</p>
 					<p style="font-size: 14px;">Enter the item name and press search</p>
                     <hr>
