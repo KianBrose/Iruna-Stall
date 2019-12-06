@@ -15,7 +15,7 @@ class SearchController extends Controller
     {
         if($request->isMethod('GET')){
             $input = $request->get('search');
-            if(strlen($input) < 3){
+            if(strlen($input) <= 3 && strlen($input) >= 1){
                 return redirect()->back()->withErrors(['searcherror' => trans('Please provide more details')]);
             }else{
                 $alSearch = Ai::where('name', 'LIKE', "%{$input}%")->paginate(10, ['*'], 'alPage');
