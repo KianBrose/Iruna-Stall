@@ -44,7 +44,7 @@
 				<br>
 				<div>
 					<div>
-						<table>
+						<table id="equip">
 							<thead>
 								<tr class="table100-head">
 									<th class="equipment">Name</th>
@@ -124,7 +124,7 @@
 				<br>
 				<div>
 					<div>
-						<table>
+						<table id="material">
 							<thead>
 								<tr class="table100-head">
 									<th class="materials">Name</th>
@@ -144,7 +144,7 @@
 								@endforeach
 							</tbody>
 						</table>
-						{{$itemSearch->appends(['search' => request('search'), 'xtalPage' => request('xtalPage'), 'equipPage' => request('equipPage'), 'itemPage' => request('itemPage'), 'relicPage' => request('relicPage'), 'alPage' => request('alPage')])->links()}}
+						{{$itemSearch->appends(['search' => request('search'), 'xtalPage' => request('xtalPage'), 'equipPage' => request('equipPage'), 'itemPage' => request('itemPage'), 'relicPage' => request('relicPage'), 'alPage' => request('alPage')])->links() }}
 					</div>
 				</div>
 				@endif
@@ -154,7 +154,7 @@
 				<br>
 				<div>
 					<div>
-						<table>
+						<table class="xtal">
 							<thead>
 								<tr class="table100-head">
 									<th class="xtals">Name</th>
@@ -186,7 +186,7 @@
 				<br>
 				<div>
 					<div>
-						<table>
+						<table id="alcrystas">
 							<thead>
 								<tr class="table100-head">
 									<th class="als">Name</th>
@@ -220,7 +220,7 @@
 				<br>
 				<div>
 					<div>
-						<table>
+						<table class="reliccrystas">
 							<thead>
 								<tr class="table100-head">
 									<th class="relics">Name</th>
@@ -280,6 +280,21 @@
 			minLength: 3
 		 });
 		});
+
+		(function($){
+			window.onbeforeunload = function(e){    
+				window.name += ' [' + $(window).scrollTop().toString() + '[' + $(window).scrollLeft().toString();
+			};
+				$.maintainscroll = function() {
+				if(window.name.indexOf('[') > 0)
+				{
+				var parts = window.name.split('['); 
+				window.name = $.trim(parts[0]);
+				window.scrollTo(parseInt(parts[parts.length - 1]), parseInt(parts[parts.length - 2]));
+				}   
+			};  
+			$.maintainscroll();
+		})(jQuery);
 		</script>
 
 @endsection
