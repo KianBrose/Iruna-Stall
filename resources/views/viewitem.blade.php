@@ -86,7 +86,7 @@
 								</td>
 								<td class="equipment">
 									<select name="ability_level" class="form-control iteminput" id="abilv" style="width: 60px"> 
-									<option selected value="0">{{ $equipitem->ability_level }}</option>
+									<option selected value="{{ $equipitem->ability_level }}">{{ $equipitem->ability_level }}</option>
 									   <option value="0">0</option>
 									   <option value="1">1</option>
 									   <option value="2">2</option>

@@ -16,6 +16,7 @@ use App\Http\Requests\StoreIrunaAi;
 use App\Http\Requests\StoreIrunaEquip;
 use App\Http\Requests\StoreIrunaRelic;
 use App\Http\Requests\StoreIrunaXtal;
+use App\Irunaitem;
 
 class ItemController extends Controller
 {
@@ -73,7 +74,10 @@ class ItemController extends Controller
             function($matches) {
                 return strtoupper($matches[0]);
             }, ucwords(strtolower(request('slot1'))));
-            $equip->slot1 = '◇'.$xtalname1;
+            if(Irunaitem::getItem('◇'.$xtalname1)->first() != null){
+                $equip->slot1 = '◇'.$xtalname1;
+            }
+           
 
         }
         else
@@ -82,13 +86,14 @@ class ItemController extends Controller
         }
 
         if(substr(request('slot2'), 0, 3) != '◇'){
-            //$xtalname = ucwords(request('name'));
-            
             $xtalname2 = preg_replace_callback('/\b(?=[LXIVCDM]+\b)([a-z]+)\b/i', 
             function($matches) {
                 return strtoupper($matches[0]);
             }, ucwords(strtolower(request('slot2'))));
-            $equip->slot2 = '◇'.$xtalname2;
+            if(Irunaitem::getItem('◇'.$xtalname2)->first() != null){
+                $equip->slot2 = '◇'.$xtalname2;
+            }
+           
 
         }else{
              $equip->slot2 = request('slot2');
@@ -206,6 +211,7 @@ class ItemController extends Controller
         }
 
     }
+
     public function showItem(){
         $item = Ai::all();
         return view('item', compact('item'));
