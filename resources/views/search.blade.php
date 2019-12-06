@@ -37,7 +37,7 @@
 				<div style="color:red">{{$message}}</div>
 				<br>
 				@enderror
-			<p>There are {{ $equipSearch->count() + $alSearch->count() + $relicSearch->count() + $xtalSearch->count() + $itemSearch->count() }} results</p>
+				<p>There are {{$totalCount }} results</p>
 				<hr>
 				@if($equipSearch->count() >= 1)
 				<h4>Equipment</h4>
