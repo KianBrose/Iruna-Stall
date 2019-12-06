@@ -131,38 +131,13 @@
                     <hr>
 					
 					<form class="form-inline" name="form1" id="form1" action="/search" method="GET">
-					  <div class="form-group mx-sm-3 mb-2">
+						@csrf
+					  <div class="form-group mb-2" style="width:80%">
 						<label for="search" class="sr-only">Item name</label>
-						<input type="text" class="form-control" id="search" placeholder="Password" id="search">
+						<input type="text" class="form-control ui-autocomplete-input" id="search"  name="search" placeholder="Item name" autocomplete="off" style="width:95%">
 					  </div>
-					  <button type="submit" class="btn btn-primary mb-2" name="search_button" id="search_button" value="Search">Search</button>
+					  <button type="submit" class="btn btn-primary mb-2" name="search_button" id="search_button" value="Search" style="width:20%">Search</button>
 					</form>
-					
-                    <form class="form-horizontal" name="form1" id="form1" action="/search" method="GET">
-                        @csrf
-                        <div class="row">
-                            <div class="col-md-7 col-xs-8">
-                                <input type="text" class="form-control" name="search" id="search">
-                            </div>
-							<!--
-                            <div class="col-md-3 col-xs-3">
-                                 <div class="form-group">
-                                    <select id="searchtype" class="form-control" name="searchtype">
-                                        <option value="equipment" selected="selected">Equipment</option>
-                                       <option value="items">Items</option>
-                                       <option value="xtal">Xtal</option>
-                                       <option value="al">AL crystal</option>
-                                       <option value="relic">Relic</option>
-                                       <option value="ability">Ability</option>
-                                    </select>
-                                 </div>
-                            </div>
-							-->
-                            <div class="col-md-2 col-xs-3">
-                                <input type="submit" class="btn btn-default btn-block" name="search_button" id="search_button" value="Search">
-                            </div>
-                        </div>
-                    </form>
                     @error('searcherror')
                     <div style="color:red">{{$message}}</div>
                     <br>
