@@ -146,6 +146,9 @@
 					<br>
                     <p style="font-size: 14px;">Welcome to our Iruna Global Stall</p>
 					<p style="font-size: 14px;">Enter the item name and press search</p>
+					<form class="form-inline" name="form1" id="form1" action="/search" method="GET">
+							<button type="submit" class="btn btn-primary mb-2" name="search_button" id="search_button" value="Search" style="width:100%">Browse all items</button>
+					</form>
                     <hr>
                     <p style="font-size: 14px;">To search for an item, simply enter its name in the search field above and press search! An account is not required to search for items.</p>
                     <p style="font-size: 14px;">To sell an item, press the “Add Item” on our menu. Note that you need to register a free account to be able to use this feature.</p>
