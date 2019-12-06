@@ -139,6 +139,7 @@ class EquipmentController extends Controller
         }
     }
 }
+
     public function delete($id){
         if(Auth::check()){
             $item = Equipment::where('item_id', $id)->firstOrFail();

@@ -46,7 +46,7 @@ class AiController extends Controller
                     
                 } 
                 if($this->validNumber(request('quantity'))){
-                    if(request('quantity') > 9999){
+                    if((int)request('quantity') > 9999){
                         $item->quantity = 9999;
                     } 
                     else if((int)request('quantity') < 1)
