@@ -17,6 +17,7 @@ use App\Equipment;
 use App\Items;
 use App\Relic;
 use App\Xtal;
+use Illuminate\Notifications\Messages\MailMessage;
 use RealRashid\SweetAlert\Facades\Alert;
 use Illuminate\Support\Facades\Password;
 
@@ -34,7 +35,19 @@ class ProfileController extends Controller
         if ( !Hash::check(request('password'), auth()->user()->password) ) {
             return redirect()->back()->withErrors(['current_password' => trans('Your current password is incorrect.')]);
         } else{
-            if(auth()->user()->email == request('email')){
+            $broker = $this->getBroker();
+            $response = Password::broker($broker)->sendResetLink($request->only('email'), function (Message $message) {
+                $message->subject('Your password reset link');
+            });
+            switch ($response) {
+                case Password::RESET_LINK_SENT:
+                    Alert::toast('We sent you a link to reset your password', 'success');
+                    return redirect()->back()->with('status', trans('A reset link has been sent to your email address.'));
+                case Password::INVALID_USER:
+                default:
+                    $this->response->error('Invalid email or email does not exist', 422);
+            }
+            /*if(auth()->user()->email == request('email')){
                 DB::table('password_resets')->insert([
                     'email' => $request->email,
                     'token' => Str::random(60),
@@ -44,15 +57,16 @@ class ProfileController extends Controller
                     $tokenData = DB::table('password_resets')
                                 ->where('email', $request->email)->first();
 
-                    if ($this->sendResetEmail($userMail, $request->email, $tokenData->token)) {
+                    //if ($this->sendResetEmail($userMail, $request->email, $tokenData->token)) {
+                        if($this->password->sendResetLink()){
                         return redirect()->back()->with('status', trans('A reset link has been sent to your email address.'));
                     } else {
                         return redirect()->back()->withErrors(['error' => trans('A Network Error occurred. Please try again.')]);
                     }
-                }
+            }
             else{
                 return redirect()->back()->withErrors(['current_email' => trans('Your email does not match with our records.')]);
-            }
+            }*/
         }
 
        
@@ -66,7 +80,10 @@ class ProfileController extends Controller
         $link = 'https://irunastall.com/password/reset/' . $token . '?email=' . urlencode($user->email);
 
         try {
-                Mail::to($userEmail)->send(new PasswordChange($link));
+                (new MailMessage)->greeting('Hello!')
+                ->line('Please click the button below to change your password')
+                ->action('Change password', $link)
+                ->line('Thank you for using our application');
                 return redirect()->back()->withErrors(['success' => trans('check your inbox')]);
         } catch (\Exception $e) {
             return redirect()->back()->withErrors(['mailError' => trans('An errors has occured')]);
@@ -156,6 +173,11 @@ class ProfileController extends Controller
             case Password::INVALID_USER:
                 return redirect()->back()->withErrors(['email' => trans($response)]);
         }
+    }
+
+    public function getBroker()
+    {
+        return property_exists($this, 'broker') ? $this->broker : null;
     }
 }
 
