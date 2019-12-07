@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title> About | Iruna Global Stall</title>
+    <title> Scammer list | Iruna Global Stall</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="robots" content="index, follow" >
     <meta name="description" content="Find about Iruna Stall on how it used to find, buy and sell items for free! In the Iruna Global Stall, you can post your items as a seller and search for items without the need for registration.">
