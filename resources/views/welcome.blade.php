@@ -156,6 +156,18 @@
 							<button type="submit" class="btn btn-primary mb-2" value="Search" style="width:100%; background-color: green; ">Iruna stall tutorial</button>
 					</form>
                     <hr>
+                    <h3>2019-12-06 Update 1.1</h3>
+                    <p>Here are the latest features we added:</p>
+                    <ul>
+                      <li>You can now search for Abilities inside equipment! Note that the name of the ability has to be added manually, our autocomplete only works for items</li>
+                      <li>We have added a brand new <a href="/tutorial"><b>Tutorial</b></a> page for all new users!</li>
+                    </ul>
+                    <p>We plan on adding the following features soon:</p>
+                    <ul>
+                        <li>We are currently working on changing the color of the AL Crystal name to the correct color</li>
+                        <li>We are trying to implement a system so that sellers can enter K / M / B instead of full numeric values, but this might take a while</li>
+                        <li>We are working on a "Request item" page where buyers can request what they want</li>
+                    </ul>
                     <div class="row divider" role="separator" style="margin-top:20px;"></div>
                 </div>
                 <div></div>
