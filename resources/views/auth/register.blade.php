@@ -65,6 +65,8 @@
                                 <button type="submit" class="btn btn-primary">
                                     {{ __('Register') }}
                                 </button>
+                                <br>
+                                <br>
                                 <p>By registering to our service you agree to our <a href="/about">Terms of Service &amp; Privacy Policy</a></p>
                             </div>
                         </div>
