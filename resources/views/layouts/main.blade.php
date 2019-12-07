@@ -44,6 +44,9 @@
                              <a class="nav-link" href="/viewitem">View my items</a>
                         </li>
 			<li class="nav-item">
+                             <a class="nav-link" href="/scammers">Scammer list</a>
+                        </li>
+			<li class="nav-item">
                              <a class="nav-link" href="/about">About</a>
                         </li>
 		    </ul>
