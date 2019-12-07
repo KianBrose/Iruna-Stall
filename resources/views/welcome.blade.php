@@ -156,6 +156,8 @@
 							<button type="submit" class="btn btn-primary mb-2" value="Search" style="width:100%; background-color: green; ">Iruna stall tutorial</button>
 					</form>
                     <hr>
+                    <h3>2019-12-06 Iruna Stall Update 1.02</h3>
+                    <p>The AL Crystal section now has <FONT COLOR="#FF0000">C</FONT><FONT COLOR="#FFff00">o</FONT><FONT COLOR="#00ff00">l</FONT><FONT COLOR="#00ffff">o</FONT><FONT COLOR="#0000ff">r</FONT> text!</p>
                     <h3>2019-12-06 Iruna Stall Update 1.01</h3>
                     <p>Here are the latest features we added:</p>
                     <ul>
