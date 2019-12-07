@@ -281,8 +281,8 @@
 			minLength: 3
 		 });
 		});
-
-		(function($){
+            
+		setTimeout(function($){
 			window.onbeforeunload = function(e){    
 				window.name += ' [' + $(window).scrollTop().toString() + '[' + $(window).scrollLeft().toString();
 			};
@@ -295,7 +295,7 @@
 				}   
 			};  
 			$.maintainscroll();
-		})(jQuery);
+		},1)(jQuery);
 		</script>
 
 @endsection
