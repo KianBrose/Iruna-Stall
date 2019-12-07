@@ -149,6 +149,9 @@
 					<form class="form-inline" name="form1" id="form1" action="/search" method="GET">
 							<button type="submit" class="btn btn-primary mb-2" name="search_button" id="search_button" value="Search" style="width:100%">Browse all items</button>
 					</form>
+                    <form class="form-inline" name="form1" id="form1" action="/scammers" method="GET">
+							<button type="submit" class="btn btn-primary mb-2" name="search_button" id="search_button" value="Search" style="width:100%">View scammer list</button>
+					</form>
                     <hr>
                     <div class="row divider" role="separator" style="margin-top:20px;"></div>
                 </div>
