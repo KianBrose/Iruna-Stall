@@ -134,7 +134,7 @@
 						@csrf
 					  <div class="form-group mb-2" style="width:80%">
 						<label for="search" class="sr-only">Item name</label>
-						<input type="text" class="form-control ui-autocomplete-input" id="search"  name="search" placeholder="Item name" autocomplete="off" style="width:98%">
+						<input type="text" class="form-control ui-autocomplete-input" id="search"  name="search" placeholder="Item/Ability name" autocomplete="off" style="width:98%">
 					  </div>
 					  <button type="submit" class="btn btn-primary mb-2" name="search_button" id="search_button" value="Search" style="width:20%">Search</button>
 					</form>
