@@ -65,11 +65,11 @@
 									
 								
 								<tr>
-									<td class="equipment">{{ $equip->name }}</th>
-									<td class="equipment">{{ $equip->atk }}</th>
-									<td class="equipment">{{ $equip->def }}</th>
-									<td class="equipment">{{ $equip->refinement }}</th>
-									<td class="equipment">{{ $equip->slots }}</th>
+									<td class="equipment">{{ $equip->name }}</td>
+									<td class="equipment">{{ $equip->atk }}</td>
+									<td class="equipment">{{ $equip->def }}</td>
+									<td class="equipment">{{ $equip->refinement }}</td>
+									<td class="equipment">{{ $equip->slots }}</td>
 									@if ($equip->slots == 0)
 										<td class="equipment">/</td>
 										<td class="equipment">/</td>
@@ -102,13 +102,13 @@
 									@endif
 									
 									@if ($equip->ability == null)
-										<td class="equipment">none</th>
+										<td class="equipment">none</td>
 									@else
-										<td class="equipment">{{ $equip->ability }}</th>
+										<td class="equipment">{{ $equip->ability }}</td>
 									@endif
-									<td class="equipment">{{ $equip->ability_level}}</th>
-									<td class="equipment">{{ number_format($equip->price )}}</th>
-									<td class="equipment"><a href="/user/{{$equip->owner_id}}">{{ $equip->contact }}</a></th>
+									<td class="equipment">{{ $equip->ability_level}}</td>
+									<td class="equipment">{{ number_format($equip->price )}}</td>
+									<td class="equipment"><a href="/user/{{$equip->owner_id}}">{{ $equip->contact }}</a></td>
 								</tr>
 								@endforeach
 							</tbody>
@@ -136,10 +136,10 @@
 							<tbody>
 								@foreach($itemSearch as $item)
 								<tr>
-									<td class="materials">{{ $item->name }}</th>
-									<td class="materials">{{ $item->quantity }}</th>
-									<td class="materials">{{ number_format($item->price) }}</th>
-									<td class="materials"><a href="/user/{{ $item->owner_id}}">{{ $item->contact }}</a></th>
+									<td class="materials">{{ $item->name }}</td>
+									<td class="materials">{{ $item->quantity }}</td>
+									<td class="materials">{{ number_format($item->price) }}</td>
+									<td class="materials"><a href="/user/{{ $item->owner_id}}">{{ $item->contact }}</a></td>
 								</tr>
 								@endforeach
 							</tbody>
@@ -168,10 +168,10 @@
 									
 								
 								<tr>
-									<td class="xtals">{{ $xtal->name }}</th>
-									<td class="xtals">{{ $xtal->quantity }}</th>
-									<td class="xtals">{{ number_format($xtal->price) }}</th>
-									<td class="xtals"><a href="/user/{{ $xtal->owner_id}}">{{ $xtal->contact }}</a></th>
+									<td class="xtals">{{ $xtal->name }}</td>
+									<td class="xtals">{{ $xtal->quantity }}</td>
+									<td class="xtals">{{ number_format($xtal->price) }}</td>
+									<td class="xtals"><a href="/user/{{ $xtal->owner_id}}">{{ $xtal->contact }}</a></td>
 								</tr>
 								@endforeach
 							</tbody>
@@ -201,11 +201,17 @@
 									
 								
 								<tr>
-									<td class="als">{{ $al->name }}</th>
-									<td class="als">{{ $al->color }}</th>
-									<td class="als">{{ $al->quantity }}</th>
-									<td class="als">{{ number_format($al->price) }}</th>
-									<td class="als"><a href="/user/{{ $al->owner_id}}">{{ $al->contact }}</a></th>
+                                    @if($al->color == Red)
+                                    <td class="als" style="color:red;">{{ $al->name }}</td>
+                                    @elseif($al->color == Blue)
+                                    <td class="als" style="color:blue;">{{ $al->name }}</td>
+                                    @elseif($al->color == Green)
+                                    <td class="als" style="color:green;">{{ $al->name }}</td>
+                                    @endif
+									<td class="als">{{ $al->color }}</td>
+									<td class="als">{{ $al->quantity }}</td>
+									<td class="als">{{ number_format($al->price) }}</td>
+									<td class="als"><a href="/user/{{ $al->owner_id}}">{{ $al->contact }}</a></td>
 								</tr>
 								@endforeach
 							</tbody>
@@ -232,10 +238,10 @@
 							<tbody>
 								@foreach($relicSearch as $relic)
 								<tr>
-									<td class="relics">{{ $relic->name }}</th>
-									<td class="relics">{{ $relic->quantity }}</th>
-									<td class="relics">{{ number_format($relic->price) }}</th>
-									<td class="relics"><a href="/user/{{$relic->owner_id}}">{{ $relic->contact }}</a></th>
+									<td class="relics">{{ $relic->name }}</td>
+                                    <td class="relics">{{ $relic->quantity }}</td>
+									<td class="relics">{{ number_format($relic->price) }}</td>
+									<td class="relics"><a href="/user/{{$relic->owner_id}}">{{ $relic->contact }}</a></td>
 								</tr>
 								@endforeach
 							</tbody>
