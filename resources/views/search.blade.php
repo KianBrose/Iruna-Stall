@@ -201,11 +201,11 @@
 									
 								
 								<tr>
-                                    @if($al->color == Red)
+                                    @if($al->color == "Red")
                                     <td class="als" style="color:red;">{{ $al->name }}</td>
-                                    @elseif($al->color == Blue)
+                                    @elseif($al->color == "Blue")
                                     <td class="als" style="color:blue;">{{ $al->name }}</td>
-                                    @elseif($al->color == Green)
+                                    @elseif($al->color == "Green")
                                     <td class="als" style="color:green;">{{ $al->name }}</td>
                                     @endif
 									<td class="als">{{ $al->color }}</td>
