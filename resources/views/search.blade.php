@@ -257,6 +257,7 @@
 		src="//cookieinfoscript.com/js/cookieinfo.min.js"></script>
 
 		<script>
+			
 				$(document).ready(function() {
 					
 				$( "#search" ).autocomplete({
