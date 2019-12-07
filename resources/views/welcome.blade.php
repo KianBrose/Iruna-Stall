@@ -156,7 +156,7 @@
 							<button type="submit" class="btn btn-primary mb-2" value="Search" style="width:100%; background-color: green; ">Iruna stall tutorial</button>
 					</form>
                     <hr>
-                    <h3>2019-12-06 Update 1.1</h3>
+                    <h3>2019-12-06 Iruna Stall Update 1.01</h3>
                     <p>Here are the latest features we added:</p>
                     <ul>
                       <li>You can now search for Abilities inside equipment! Note that the name of the ability has to be added manually, our autocomplete only works for items</li>
