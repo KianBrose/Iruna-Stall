@@ -148,24 +148,6 @@
                     </div>
                     
                     <hr>
-                    <table>
-                      <tr>
-                        <th>Scammer ID</th>
-                        <th>IGN</th>
-                        <th>ID</th>
-                        <th>Facebook Name</th>
-                        <th>Facebook Profile</th>
-                        <th>Discord Name</th>
-                      </tr>
-                      <tr>
-                        <td>1</td>
-                        <td>?</td>
-                        <td>?</td>
-                        <td>?</td>
-                        <td>?</td>
-                        <td>?</td>
-                      </tr>
-                    </table>
                     <div class="row divider" role="separator" style="margin-top:20px;"></div>
                 </div>
                 <div></div>
