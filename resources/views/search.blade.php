@@ -113,7 +113,7 @@
 								@endforeach
 							</tbody>
 						</table>
-						{{$equipSearch->appends(['search' => request('search'), 'xtalPage' => request('xtalPage'), 'equipPage' => request('equipPage'), 'itemPage' => request('itemPage'), 'relicPage' => request('relicPage'), 'alPage' => request('alPage')])->links()}}
+						{{$equipSearch->appends(['search' => request('search'), 'xtalPage' => request('xtalPage'), 'equipPage' => request('equipPage'), 'itemPage' => request('itemPage'), 'relicPage' => request('relicPage'), 'alPage' => request('alPage')])->fragment('equip')->links()}}
 					</div>
 				</div>
 				@endif
@@ -144,7 +144,7 @@
 								@endforeach
 							</tbody>
 						</table>
-						{{$itemSearch->appends(['search' => request('search'), 'xtalPage' => request('xtalPage'), 'equipPage' => request('equipPage'), 'itemPage' => request('itemPage'), 'relicPage' => request('relicPage'), 'alPage' => request('alPage')])->links() }}
+						{{$itemSearch->appends(['search' => request('search'), 'xtalPage' => request('xtalPage'), 'equipPage' => request('equipPage'), 'itemPage' => request('itemPage'), 'relicPage' => request('relicPage'), 'alPage' => request('alPage')])->fragment('material')->links() }}
 					</div>
 				</div>
 				@endif
@@ -154,7 +154,7 @@
 				<br>
 				<div>
 					<div>
-						<table class="xtal">
+						<table id="xtal">
 							<thead>
 								<tr class="table100-head">
 									<th class="xtals">Name</th>
@@ -176,7 +176,7 @@
 								@endforeach
 							</tbody>
 						</table>
-						{{$xtalSearch->appends(['search' => request('search'), 'xtalPage' => request('xtalPage'), 'equipPage' => request('equipPage'), 'itemPage' => request('itemPage'), 'relicPage' => request('relicPage'), 'alPage' => request('alPage')])->links()}}
+						{{$xtalSearch->appends(['search' => request('search'), 'xtalPage' => request('xtalPage'), 'equipPage' => request('equipPage'), 'itemPage' => request('itemPage'), 'relicPage' => request('relicPage'), 'alPage' => request('alPage')])->fragment('xtal')->links()}}
 					</div>
 				</div>
 				@endif
@@ -216,7 +216,7 @@
 								@endforeach
 							</tbody>
 						</table>
-						{{$alSearch->appends(['search' => request('search'), 'xtalPage' => request('xtalPage'), 'equipPage' => request('equipPage'), 'itemPage' => request('itemPage'), 'relicPage' => request('relicPage'), 'alPage' => request('alPage')])->links()}}
+						{{$alSearch->appends(['search' => request('search'), 'xtalPage' => request('xtalPage'), 'equipPage' => request('equipPage'), 'itemPage' => request('itemPage'), 'relicPage' => request('relicPage'), 'alPage' => request('alPage')])->fragment('alcrystas')->links()}}
 					</div>
 				</div>
 				@endif
@@ -226,7 +226,7 @@
 				<br>
 				<div>
 					<div>
-						<table class="reliccrystas">
+						<table id="reliccrystas">
 							<thead>
 								<tr class="table100-head">
 									<th class="relics">Name</th>
@@ -246,7 +246,7 @@
 								@endforeach
 							</tbody>
 						</table>
-						{{$relicSearch->appends(['search' => request('search'), 'xtalPage' => request('xtalPage'), 'equipPage' => request('equipPage'), 'itemPage' => request('itemPage'), 'relicPage' => request('relicPage'), 'alPage' => request('alPage')])->links()}}
+						{{$relicSearch->appends(['search' => request('search'), 'xtalPage' => request('xtalPage'), 'equipPage' => request('equipPage'), 'itemPage' => request('itemPage'), 'relicPage' => request('relicPage'), 'alPage' => request('alPage')])->fragment('reliccrystas')->links()}}
 					</div>
 				</div>
 				@endif
@@ -288,7 +288,7 @@
 		 });
 		});
 
-		(function($){
+		/*(function($){
 			window.onbeforeunload = function(e){    
 				window.name += ' [' + $(window).scrollTop().toString() + '[' + $(window).scrollLeft().toString();
 			};
@@ -299,9 +299,9 @@
 				window.name = $.trim(parts[0]);
 				window.scrollTo(parseInt(parts[parts.length - 1]), parseInt(parts[parts.length - 2]));
 				}   
-			}, 100) 
+			}) 
 			$.maintainscroll();
-		})(jQuery);
+		})(jQuery);*/
 		</script>
 
 @endsection
