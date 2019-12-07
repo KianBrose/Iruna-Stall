@@ -157,7 +157,7 @@
 					</form>
                     <hr>
                     <h3>2019-12-06 Iruna Stall Update 1.02</h3>
-                    <p>The AL Crystal section now has <span style="color:#ff0000;">C</span><span style="color:#ff7f00;">o</span><span style="color:#ffff00;">l</span><span style="color:#00ff00;">o</span><span style="color:#00ffff;">r</span> text!</p>
+                    <p>The AL Crystal section now has <span style="color:#ff0000;">C</span><span style="color:#ff7f00;">o</span><span style="color:#ff0000;">l</span><span style="color:#00ff00;">o</span><span style="color:#00ffff;">r</span> text!</p>
                     <h3>2019-12-06 Iruna Stall Update 1.01</h3>
                     <p>Here are the latest features we added:</p>
                     <ul>
