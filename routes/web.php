@@ -35,7 +35,7 @@ Route::get('/guides', function () {
 });
 
 Route::get('/guides/ninja1', function () {
-    return view('ninja1');
+    return view('guides/ninja1');
 });
 
 Route::get('/search', 'SearchController@search')->name('search');
