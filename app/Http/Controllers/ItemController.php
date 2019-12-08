@@ -149,7 +149,10 @@ class ItemController extends Controller
              $xtal->name = request('name');
         }
         $xtal->owner_id = Auth::user()->user_id;
-        $xtal->price = request('price');
+        $priceNumber = substr(request('price'), 0, -1);
+        $priceDenote = strtolower(substr(request('price'), -1));
+        $storedPrice = $this->convertPrice($priceDenote, $priceNumber);
+        $xtal->price = $storedPrice;
         $xtal->quantity = request('quantity');
         $xtal->routes = "item/xtal/{$item_id}";
         $xtal->item_id = $item_id;
