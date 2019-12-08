@@ -126,28 +126,7 @@
                     <hr>
                     <div>
                         <article>
-<div>
-<div><a href="/thread/17424/samurai-guide">Samurai Guide</a><abbr title="Thu Feb 18 2016 02:57:34 GMT+0100 (Central European Standard Time)" data-timestamp="1455760654000">Feb 18, 2016 at 2:57am</abbr><a title="@kidcloid" href="/user/309">Lurker</a>, <a title="@soul" href="/user/401">ℓ&sigma;&eta;є&omega;&sigma;ℓ&fnof;</a>, and <a> 11 more </a> like this</div>
-<div><a role="button" href="/post/169853/quote/17424">Quote</a><a role="button" href="#" data-id="169853"><img src="//storage.proboards.com/forum/images/icon-like-button.png" alt="like" /></a>
-<ul style="display: none;">
-<li><a>Select Post</a></li>
-<li><a>Deselect Post</a></li>
-<li><a>Link to Post</a></li>
-<li><a>Report Post</a></li>
-<li><a>Member</a>
-<ul>
-<li><a href="/conversation/new/3597">Send Message</a></li>
-<li><a href="/user/3597/gift">Give Gift</a></li>
-</ul>
-</li>
-<li><a>Back to Top</a></li>
-</ul>
-<div style="display: inline-block;" role="button">
-<div><img title="Post Options" src="//storage.proboards.com/forum/images/icon-options.png" alt="Post Options" /></div>
-</div>
-<input type="checkbox" /></div>
-</div>
-<h3>Post by Mary on <abbr title="Thu Feb 18 2016 02:57:34 GMT+0100 (Central European Standard Time)" data-timestamp="1455760654000">Feb 18, 2016 at 2:57am</abbr></h3>
+
 <div>
 <div align="center"><br /><img style="max-width: 100%;" src="http://i172.photobucket.com/albums/w40/maryroll3/imageedit_1_9152716267_zpsvd8vqvds.png" alt="Samurai Guide" /><br /><img style="max-width: 100%;" src="http://i172.photobucket.com/albums/w40/maryroll3/imageedit_1_4960584793_zpsd3eev7nb.png" alt="" /></div>
 <div style="text-align: center;"><br /><span style="color: #740404;"><strong>.....ANYTHING MISSING OR INCORRECT LMK, I WILL FIX IT....</strong></span></div>
