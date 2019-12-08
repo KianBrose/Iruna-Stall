@@ -130,8 +130,8 @@
                         <hr>
                         <h4>Ninja guides:</h4>
                         <ul>
-                          <li>Magic &amp; SK/Hybrid Guide</li>
-                          <li>DoC Spam Ninja Guide (Post-Balance Patch)</li>
+                            <li><a href="/guides/ninja1">Magic &amp; SK/Hybrid Guide</a></li>
+                            <li><a href="/guides/ninja2">DoC Spam Ninja Guide (Post-Balance Patch)</a></li>
                         </ul>
                         <hr>
                         <h4>Samurai guides:</h4>
@@ -212,9 +212,7 @@
                           <li></li>
                         </ul>
                         <hr>
-					</div>
-                    <hr>
-                        
+					</div>                 
                     <div class="row divider" role="separator" style="margin-top:20px;"></div>
                 </div>
                 <div></div>

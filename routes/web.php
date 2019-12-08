@@ -34,6 +34,10 @@ Route::get('/guides', function () {
     return view('guides');
 });
 
+Route::get('/guides/ninja1', function () {
+    return view('guides/ninja1');
+});
+
 Route::get('/search', 'SearchController@search')->name('search');
 Route::get('/account', 'AccountController@show')->middleware('auth', 'checkblocked');
 
