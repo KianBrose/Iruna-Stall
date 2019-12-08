@@ -41,7 +41,10 @@ class ItemController extends Controller
         $al->routes = "item/ai/{$idTobeUsed}";
         $al->owner_id = Auth::user()->user_id;
         $al->quantity = request('quantity');
-        $al->price = request('price');
+        $priceNumber = substr(request('price'), 0, -1);
+        $priceDenote = strtolower(substr(request('price'), -1));
+        $storedPrice = $this->convertPrice($priceDenote, $priceNumber);
+        $al->price = $storedPrice;
         $al->contact = auth()->user()->name;
         $al->save();
         Alert::toast('Successfully added an item', 'success');
