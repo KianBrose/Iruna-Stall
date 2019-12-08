@@ -151,8 +151,7 @@
                         <hr>
                         <h4>Monk guides:</h4>
                         <ul>
-                          <li></li>
-                          <li></li>
+                          <li><a href="/guides/monk1">Complete Monk Guide</a></li>
                         </ul>
                         <hr>
                         <h4>Bishop guides:</h4>
