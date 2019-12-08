@@ -127,6 +127,91 @@
                     <div>
 						<p>Here you can find recently updated guides for each individual class in the game:</p>
                         <br>
+                        <hr>
+                        <h4>Ninja guides:</h4>
+                        <ul>
+                          <li>Magic &amp; SK/Hybrid Guide</li>
+                          <li>DoC Spam Ninja Guide (Post-Balance Patch)</li>
+                        </ul>
+                        <hr>
+                        <h4>Samurai guides:</h4>
+                        <ul>
+                          <li></li>
+                          <li></li>
+                        </ul>
+                        <hr>
+                        <h4>Ministrel guides:</h4>
+                        <ul>
+                          <li></li>
+                          <li></li>
+                        </ul>
+                        <hr>
+                        <h4>Alchemist guides:</h4>
+                        <ul>
+                          <li></li>
+                          <li></li>
+                        </ul>
+                        <hr>
+                        <h4>Monk guides:</h4>
+                        <ul>
+                          <li></li>
+                          <li></li>
+                        </ul>
+                        <hr>
+                        <h4>Bishop guides:</h4>
+                        <ul>
+                          <li></li>
+                          <li></li>
+                        </ul>
+                        <hr>
+                        <h4>Servant guides:</h4>
+                        <ul>
+                          <li></li>
+                          <li></li>
+                        </ul>
+                        <hr>
+                        <h4>Enchanter guides:</h4>
+                        <ul>
+                          <li></li>
+                          <li></li>
+                        </ul>
+                        <hr>
+                        <h4>High Wizard guides:</h4>
+                        <ul>
+                          <li></li>
+                          <li></li>
+                        </ul>
+                        <hr>
+                        <h4>Necromancer guides:</h4>
+                        <ul>
+                          <li></li>
+                          <li></li>
+                        </ul>
+                        <hr>
+                        <h4>Assasin guides:</h4>
+                        <ul>
+                          <li></li>
+                          <li></li>
+                        </ul>
+                        <hr>
+                        <h4>Sniper guides:</h4>
+                        <ul>
+                          <li></li>
+                          <li></li>
+                        </ul>
+                        <hr>
+                        <h4>Gladiator guides:</h4>
+                        <ul>
+                          <li></li>
+                          <li></li>
+                        </ul>
+                        <hr>
+                        <h4>Paladin guides:</h4>
+                        <ul>
+                          <li></li>
+                          <li></li>
+                        </ul>
+                        <hr>
 					</div>
                     <hr>
                         

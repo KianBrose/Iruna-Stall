@@ -30,6 +30,10 @@ Route::get('/tutorial', function () {
     return view('tutorial');
 });
 
+Route::get('/guides', function () {
+    return view('guides');
+});
+
 Route::get('/search', 'SearchController@search')->name('search');
 Route::get('/account', 'AccountController@show')->middleware('auth', 'checkblocked');
 
