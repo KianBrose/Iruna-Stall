@@ -267,7 +267,7 @@
 									<label for="Test">Price:</label>
 								</td>
 								<td  style="padding-left:10px;">
-									<input type="number" class="form-control iteminput" style="width: 400px" name="price" id="price" val/>
+									<input  class="form-control iteminput" style="width: 400px" name="price" id="price" val/>
 								</td>
 							</tr>
 								<br><input type="submit" class="btn btn-success" style="width: 150px" name="search_button" id="search_button" value="Add new item"/>
@@ -307,7 +307,7 @@
 									<label for="Test">Price per item:</label>
 								</td>
 								<td  style="padding-left:10px;">
-								<input type="number" class="form-control iteminput" style="width: 400px" name="price" id="itemprice" value="{{ old('price')}}"/>
+								<input  class="form-control iteminput" style="width: 400px" name="price" id="itemprice" value="{{ old('price')}}"/>
 								</td>
 							</tr>
 								<br><input type="submit" class="btn btn-success" style="width: 150px" name="search_button" id="search_button" value="Add new item" onclick="window.location.href='/additem.php'"/>
@@ -342,7 +342,7 @@
 									<label for="Test">Price per item:</label>
 								</td>
 								<td  style="padding-left:10px;">
-									<input type="number" min='1' class="form-control iteminput" style="width: 400px" name="price" id="xtalprice"/>
+									<input   class="form-control iteminput" style="width: 400px" name="price" id="xtalprice"/>
 								</td>
 								@error('price')
 								<div style="color:red;"> {{ $message }}</div>
@@ -400,7 +400,7 @@
 									<label for="price">Price per item:</label>
 								</td>
 								<td  style="padding-left:10px;">
-									<input type="number" class="form-control iteminput" style="width: 400px" name="price" id="price" value="{{ old('price') }}"/>
+									<input  class="form-control iteminput" style="width: 400px" name="price" id="price" value="{{ old('price') }}"/>
 								</td>
 								@error('price')
 						<div style="color:red;"> {{ $message }}</div>
@@ -437,7 +437,7 @@
 									<label for="Test">Price per item:</label>
 								</td>
 								<td  style="padding-left:10px;">
-								<input type="number" min="0" class="form-control iteminput" style="width: 400px" name="price" id="price" value="{{ old('price')}}"/>
+								<input  min="0" class="form-control iteminput" style="width: 400px" name="price" id="price" value="{{ old('price')}}"/>
 								</td>
 								@error('price')
 								<div style="color:red;"> {{ $message }}</div>
