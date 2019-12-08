@@ -161,6 +161,7 @@
                     <hr>
                     <h3>2019-12-06 Iruna Stall Update 1.02</h3>
                     <p>The AL Crystal section now has <span style="color:#ff0000;">C</span><span style="color:#ff7f00;">o</span><span style="color:#ff0000;">l</span><span style="color:#00ff00;">o</span><span style="color:#00ffff;">r</span> text!</p>
+                    <hr>
                     <h3>2019-12-06 Iruna Stall Update 1.01</h3>
                     <p>Here are the latest features we added:</p>
                     <ul>
@@ -173,6 +174,7 @@
                         <li>We are trying to implement a system so that sellers can enter K / M / B instead of full numeric values, but this might take a while</li>
                         <li>We are working on a "Request item" page where buyers can request what they want</li>
                     </ul>
+                    <hr>
                     <div class="row divider" role="separator" style="margin-top:20px;"></div>
                 </div>
                 <div></div>
