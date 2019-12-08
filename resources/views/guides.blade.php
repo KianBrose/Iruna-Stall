@@ -137,7 +137,7 @@
                         <h4>Samurai guides:</h4>
                         <ul>
                           <li><a href="/guides/samurai1">Autoskill Samurai Guide by Tamagu/Ymir</a></li>
-                          <li><a href="/guides/samurai2"></a></li>
+                          <li><a href="/guides/samurai2">Samurai Guide</a></li>
                           <li><a href="/guides/samurai3"></a></li>
                         </ul>
                         <hr>
