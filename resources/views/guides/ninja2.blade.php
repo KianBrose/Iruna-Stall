@@ -129,7 +129,7 @@
 <div>
 <div>
 <div style="text-align: justify;">
-<div style="text-align: center;"><span style="font-family: verdana; font-size: x-large;"><u>DoC Spam Ninja Guide</u></span></div>
+<div style="text-align: center;"></div>
 <span style="font-family: verdana;"><br /><br /><span style="font-size: 10pt;">Hello everyone, and welcome to my first guide! Don't hesitate to lay down the hammer of justice on anything you find incorrect. I won't bite </span><em style="font-size: 10pt;">*rawr*</em><span style="font-size: 10pt;"> Also, please drop down any comments and suggestions to make the guide better. This guide is a product of months of research, testing, and info sharing with trustworthy forum members. It aims to guide confused old ninjas and newbies toward a build that fits their own playstyle, as well as to stand as a sort of 'help me' thread for those that refuse to read guides and make redundant threads concerning questions that have already been answered numerous times. For the love of all that is good, please ask here instead of making a new thread.</span></span></div>
 <span style="font-family: verdana;"><span style="font-family: verdana;"><br /><br /></span></span>
 <div style="text-align: justify;"><strong style="font-size: 10pt;"><span style="font-size: large;">I n t r o d u c t i o n</span></strong></div>
