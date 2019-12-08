@@ -68,6 +68,10 @@ class ItemController extends Controller
         $equip->type = request('type');
         $equip->atk = request('atk');
         $equip->def = request('def');
+        $priceNumber = substr(request('price'), 0, -1);
+        $priceDenote = strtolower(substr(request('price'), -1));
+        $storedPrice = $this->convertPrice($priceDenote, $priceNumber);
+        $equip->price = $storedPrice;
         $equip->price = request('price');
         $equip->slots = request('equipslotamount');
         if(substr(request('slot1'), 0, 3) != '◇'){
