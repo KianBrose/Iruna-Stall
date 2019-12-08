@@ -138,7 +138,7 @@ class StoreIrunaItem extends FormRequest
         }
 
         if($priceDenote == 'k'){
-            if($this->validMillionPrice($priceDenote, $priceNumber)){
+            if($this->validThousandsPrice($priceDenote, $priceNumber)){
                 return true;
             } else{
                 return false;
