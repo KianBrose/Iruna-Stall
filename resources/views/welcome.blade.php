@@ -149,12 +149,18 @@
 					<form class="form-inline" name="form1" id="form1" action="/search" method="GET">
 							<button type="submit" class="btn btn-primary mb-2" name="search_button" id="search_button" value="Search" style="width:100%">Browse all items</button>
 					</form>
+                    <form class="form-inline" name="form1" id="form1" action="/guides" method="GET">
+							<button type="submit" class="btn btn-primary mb-2" value="Search" style="width:100%">View Guides</button>
+					</form>
                     <form class="form-inline" name="form1" id="form1" action="/scammers" method="GET">
-							<button type="submit" class="btn btn-primary mb-2" value="Search" style="width:100%">View scammer list</button>
+							<button type="submit" class="btn btn-primary mb-2" value="Search" style="width:100%">View Scammer List</button>
 					</form>
                     <form class="form-inline" name="form1" id="form1" action="/tutorial" method="GET">
 							<button type="submit" class="btn btn-primary mb-2" value="Search" style="width:100%; background-color: green; ">Iruna stall tutorial</button>
 					</form>
+                    <hr>
+                    <h3>2019-12-06 Iruna Stall Update 1.12</h3>
+                    <p>The <a href="/guides">guides section</a> has been added with the permission of Ryu! More guides shall be updated soon</p>
                     <hr>
                     <h3>2019-12-06 Iruna Stall Update 1.1</h3>
                     <p>You can now enter prices with K / M / B as shortcuts! Example: 100K 100k 100M 100M 100B 100b</p><br><p>This feature works both in add item and in view my items page!</p>
