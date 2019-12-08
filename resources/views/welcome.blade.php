@@ -156,6 +156,9 @@
 							<button type="submit" class="btn btn-primary mb-2" value="Search" style="width:100%; background-color: green; ">Iruna stall tutorial</button>
 					</form>
                     <hr>
+                    <h3>2019-12-06 Iruna Stall Update 1.1</h3>
+                    <p>You can now enter prices with K / M / B as shortcuts! Example: 100K 100k 100M 100M 100B 100b</p><br><p>This feature works both in add item and in view my items page!</p>
+                    <hr>
                     <h3>2019-12-06 Iruna Stall Update 1.02</h3>
                     <p>The AL Crystal section now has <span style="color:#ff0000;">C</span><span style="color:#ff7f00;">o</span><span style="color:#ff0000;">l</span><span style="color:#00ff00;">o</span><span style="color:#00ffff;">r</span> text!</p>
                     <h3>2019-12-06 Iruna Stall Update 1.01</h3>
