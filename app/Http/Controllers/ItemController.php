@@ -117,7 +117,10 @@ class ItemController extends Controller
         $items->owner_id = Auth::user()->user_id;
         $materialname = str_replace(['Of'], ['of'],ucwords(request('name')));
         $items->name = $materialname;
-        $items->price = request('price');
+        $priceDenote = strtolower(substr(request('price'), -1));
+        $priceNumber = substr(request('price'), 0, -1);
+        $storedPrice = $this->convertPrice($priceDenote, $priceNumber);
+        $items->price = $storedPrice;
         $items->quantity = request('quantity');
         $items->routes = "item/items/{$item_id}";
         $items->item_id = $item_id;
@@ -276,6 +279,18 @@ class ItemController extends Controller
         function($matches) {
             return strtoupper($matches[0]);
         }, ucwords(strtolower($string)));
+    }
+
+    public function convertPrice($priceDenote, $priceNumber){
+        if($priceDenote == 'b'){
+            return (int)$priceNumber * 1000000000;
+        } 
+        if($priceDenote == 'm'){
+           return (int)$priceNumber * 1000000;
+        }
+        if($priceDenote == 'k'){
+            return (int)$priceNumber * 1000;
+        }
     }
 
 
