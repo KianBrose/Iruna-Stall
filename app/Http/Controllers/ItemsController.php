@@ -20,7 +20,7 @@ class ItemsController extends Controller
                 if(strlen(request('price')) > 12){
                     $item->price = 999999999999;
                 }
-                if(strlen(request('price')) < 1){
+                else if(strlen(request('price')) < 1){
                     $item->price = 1;
                 } else{
                     if(in_array(strtolower(substr(request('price'), -1)), StoreIrunaItem::PriceType)){
