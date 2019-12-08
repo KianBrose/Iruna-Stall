@@ -50,6 +50,10 @@ Route::get('/guides/samurai2', function () {
     return view('guides/samurai2');
 });
 
+Route::get('/guides/ministrel1', function () {
+    return view('guides/ministrel1');
+});
+
 Route::get('/search', 'SearchController@search')->name('search');
 Route::get('/account', 'AccountController@show')->middleware('auth', 'checkblocked');
 

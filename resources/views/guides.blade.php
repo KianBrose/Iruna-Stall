@@ -138,13 +138,11 @@
                         <ul>
                           <li><a href="/guides/samurai1">Autoskill Samurai Guide by Tamagu/Ymir</a></li>
                           <li><a href="/guides/samurai2">Samurai Guide</a></li>
-                          <li><a href="/guides/samurai3"></a></li>
                         </ul>
                         <hr>
                         <h4>Ministrel guides:</h4>
                         <ul>
-                          <li></li>
-                          <li></li>
+                          <li><a href="/guides/ministrel1">NightinGal's Minstrel Guide [Updated~Post Patch]</a></li>
                         </ul>
                         <hr>
                         <h4>Alchemist guides:</h4>
