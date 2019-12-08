@@ -156,8 +156,7 @@
                         <hr>
                         <h4>Bishop guides:</h4>
                         <ul>
-                          <li></li>
-                          <li></li>
+                          <li><a href="/guides/bishop1">Skyfallx's Mini Bishop Guide</a></li>
                         </ul>
                         <hr>
                         <h4>Servant guides:</h4>
