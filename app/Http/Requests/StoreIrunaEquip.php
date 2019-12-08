@@ -42,7 +42,7 @@ class StoreIrunaEquip extends FormRequest
                 'def' => 'required|max:70|integer|min:0',
                 'type' => 'required|alpha',
                 'refinement' => 'required|integer|max:9|min:0',
-                'price' => 'required|numeric|min:0|max:999999999999',
+                'price' => 'required|alpha_num|min:1|max:12',
                 "ability_level" => 'integer|min:0|max:5'
         ];
     }
@@ -52,7 +52,8 @@ class StoreIrunaEquip extends FormRequest
         return [
             'name.required' => 'The item name cannot be blank',
             'atk.required' => 'The atk of your equipment cannot be blank',
-            'def.required' => 'The def of your equipment cannot be blank'
+            'def.required' => 'The def of your equipment cannot be blank',
+            'price.max' => 'The price cannot be greater than 999,999,999,999'
         ];
     }
 
@@ -72,7 +73,14 @@ class StoreIrunaEquip extends FormRequest
            if($this->doNotHaveContactLink()){
             $validator->errors()->add('nameError', 'You do not have contact link, go to /account to edit your contact information');
             $validator->errors()->add('mainError', 'You do not have contact link, go to /account to edit your contact information');
-        }
+            }
+
+
+            if($this->invalidPrice()){
+                $validator->errors()->add('nameError', 'The price is not valid');
+                $validator->errors()->add('mainError', 'The price is not valid');
+            }
+        
            
         });
     }
@@ -169,6 +177,98 @@ class StoreIrunaEquip extends FormRequest
     public function checkForValidSlot($xtal){
         if($xtal->category != StoreIrunaEquip::Xtal){
             return true;
+        } else{
+            return false;
+        }
+    }
+
+    public function invalidPrice(): bool{
+        if(in_array(strtolower(substr(request('price'), -1)), StoreIrunaItem::PriceType)){
+            $priceDenote = strtolower(substr(request('price'), -1));
+            $priceNumber = substr(request('price'), 0, -1);
+            try{
+                if($this->validConvertPrice($priceDenote, $priceNumber)){
+                    return false;
+                } else{
+                    return true;
+                }
+            } catch(Exception $e){
+
+            }
+           return false;
+
+        } else
+        {
+            if(is_numeric(request('price'))){
+                return false;
+            } 
+            else{
+                return true;
+            }
+        }
+    }
+
+    public function validConvertPrice($priceDenote, $priceNumber){
+        if($priceDenote == 'b'){
+            
+            if($this->validBillionPrice($priceDenote, $priceNumber)){
+                return true;
+            }else{
+                return false;
+            }
+            
+        }
+        if($priceDenote == 'm'){
+            
+            if($this->validMillionPrice($priceDenote, $priceNumber)){
+                return true;
+            } else{
+                return false;
+            }
+        }
+
+        if($priceDenote == 'k'){
+            if($this->validThousandsPrice($priceDenote, $priceNumber)){
+                return true;
+            } else{
+                return false;
+            }
+        }
+    }
+
+    private function validBillionPrice($priceDenote, $priceNumber){
+        if(is_numeric($priceNumber)){
+                
+            if((int)$priceNumber * 1000000000 > 999999999999){
+                return false;
+            } else{
+                
+                return true;
+            }
+        } else{
+            return false;
+        }
+    }
+
+    private function validMillionPrice($priceDenote, $priceNumber){
+        if(is_numeric($priceNumber)){
+            if((int)$priceNumber * 1000000 > 999999999999){
+                return false;
+            } else{
+                return true;
+            }
+        } else{
+            return false;
+        }
+    }
+
+    private function validThousandsPrice($priceDenote, $priceNumber){
+        if(is_numeric($priceNumber)){
+            if((int)$priceNumber * 1000 > 999999999999){
+                return false;
+            } else{
+                return true;
+            }
         } else{
             return false;
         }

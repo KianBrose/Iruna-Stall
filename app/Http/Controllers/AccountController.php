@@ -55,8 +55,8 @@ class AccountController extends Controller
         $alitem = $Ai->getAiItem();
         $equipitem = $Equip->getEquipmentItems();
         $item = $Item->getItems();
-        $xtal = Xtal::where('owner_id', Auth::user()->user_id)->get();
-        $relic = Relic::where('owner_id', Auth::user()->user_id)->get();
+        $xtal = Xtal::where('owner_id', Auth::user()->user_id)->paginate(10, ['*'], 'xtalPage');
+        $relic = Relic::where('owner_id', Auth::user()->user_id)->paginate(10, ['*'], 'relicPage');
         return view('viewitem', compact('alitem', 'equipitem', 'item', 'xtal', 'relic'));
     }
 

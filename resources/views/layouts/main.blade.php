@@ -9,6 +9,7 @@
     <link ref="stylesheet" href="css/style.css">
     <link rel="shortcut icon" href="favicon.ico">
     <meta name="hostname" content="irunastall.com"/>
+    @yield('title')
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <title>Iruna Global Stall</title>

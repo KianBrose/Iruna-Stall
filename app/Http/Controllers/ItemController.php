@@ -41,7 +41,10 @@ class ItemController extends Controller
         $al->routes = "item/ai/{$idTobeUsed}";
         $al->owner_id = Auth::user()->user_id;
         $al->quantity = request('quantity');
-        $al->price = request('price');
+        $priceNumber = substr(request('price'), 0, -1);
+        $priceDenote = strtolower(substr(request('price'), -1));
+        $storedPrice = $this->convertPrice($priceDenote, $priceNumber);
+        $al->price = $storedPrice;
         $al->contact = auth()->user()->name;
         $al->save();
         Alert::toast('Successfully added an item', 'success');
@@ -65,7 +68,10 @@ class ItemController extends Controller
         $equip->type = request('type');
         $equip->atk = request('atk');
         $equip->def = request('def');
-        $equip->price = request('price');
+        $priceNumber = substr(request('price'), 0, -1);
+        $priceDenote = strtolower(substr(request('price'), -1));
+        $storedPrice = $this->convertPrice($priceDenote, $priceNumber);
+        $equip->price = $storedPrice;
         $equip->slots = request('equipslotamount');
         if(substr(request('slot1'), 0, 3) != '◇'){
             //$xtalname = ucwords(request('name'));
@@ -117,7 +123,10 @@ class ItemController extends Controller
         $items->owner_id = Auth::user()->user_id;
         $materialname = str_replace(['Of'], ['of'],ucwords(request('name')));
         $items->name = $materialname;
-        $items->price = request('price');
+        $priceDenote = strtolower(substr(request('price'), -1));
+        $priceNumber = substr(request('price'), 0, -1);
+        $storedPrice = $this->convertPrice($priceDenote, $priceNumber);
+        $items->price = $storedPrice;
         $items->quantity = request('quantity');
         $items->routes = "item/items/{$item_id}";
         $items->item_id = $item_id;
@@ -146,7 +155,10 @@ class ItemController extends Controller
              $xtal->name = request('name');
         }
         $xtal->owner_id = Auth::user()->user_id;
-        $xtal->price = request('price');
+        $priceNumber = substr(request('price'), 0, -1);
+        $priceDenote = strtolower(substr(request('price'), -1));
+        $storedPrice = $this->convertPrice($priceDenote, $priceNumber);
+        $xtal->price = $storedPrice;
         $xtal->quantity = request('quantity');
         $xtal->routes = "item/xtal/{$item_id}";
         $xtal->item_id = $item_id;
@@ -174,7 +186,10 @@ class ItemController extends Controller
              $relic->name = request('name');
         }
         $relic->quantity = request('quantity');
-        $relic->price = request('price');
+        $priceNumber = substr(request('price'), 0, -1);
+        $priceDenote = strtolower(substr(request('price'), -1));
+        $storedPrice = $this->convertPrice($priceDenote, $priceNumber);
+        $relic->price = $storedPrice;
         $relic->owner_id = Auth::user()->user_id;
         $relic->item_id = $id;
         $relic->routes = "item/relic/{$id}";
@@ -276,6 +291,18 @@ class ItemController extends Controller
         function($matches) {
             return strtoupper($matches[0]);
         }, ucwords(strtolower($string)));
+    }
+
+    public function convertPrice($priceDenote, $priceNumber){
+        if($priceDenote == 'b'){
+            return (int)$priceNumber * 1000000000;
+        } 
+        if($priceDenote == 'm'){
+           return (int)$priceNumber * 1000000;
+        }
+        if($priceDenote == 'k'){
+            return (int)$priceNumber * 1000;
+        }
     }
 
 

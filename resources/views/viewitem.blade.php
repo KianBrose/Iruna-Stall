@@ -22,7 +22,7 @@
             <br>
 			<div>
 				<div>
-					<table>
+					<table id="equip">
 						<thead>
 							<tr class="table100-head">
 								<th class="equipment">Name</th>
@@ -40,22 +40,22 @@
 							</tr>
 						</thead>
 						<tbody>
-								@foreach( $equipitem as $equipitem)
+								@foreach( $equipitem as $equip)
 								<tr>
-								<td class="equipment">{{$equipitem->name }}</td>
-							<form action="/item/equip/{{ $equipitem->item_id }}/update" method="POST">
+								<td class="equipment">{{$equip->name }}</td>
+							<form action="/item/equip/{{ $equip->item_id }}/update" method="POST">
 								@csrf
 								@method('patch')
 								
 								<td class="equipment">
-								<input type="text" class="form-control iteminput" style="width: 50px" name="atk" id="atk" value="{{ $equipitem->atk }}"/>
+								<input type="text" class="form-control iteminput" style="width: 50px" name="atk" id="atk" value="{{ $equip->atk }}"/>
 								</td>
 								<td class="equipment">
-								<input type="text" class="form-control iteminput" style="width: 50px" name="def" id="def" value="{{ $equipitem->def }}"/>
+								<input type="text" class="form-control iteminput" style="width: 50px" name="def" id="def" value="{{ $equip->def }}"/>
 								</td>
 								<td class="equipment">
 									<select name="refinement" class="form-control iteminput" id="refinement" style="width: 60px"> 
-									<option selected value="{{ $equipitem->refinement }}">{{ $equipitem->refinement }}</option>
+									<option selected value="{{ $equip->refinement }}">{{ $equip->refinement }}</option>
 									   <option value="1">1</option>
 									   <option value="2">2</option>
 									   <option value="3">3</option>
@@ -69,24 +69,24 @@
 								</td>
 								<td class="equipment">
 									<select name="equipslotamount" class="form-control iteminput" id="equipslotamount" style="width: 60px"> 
-									<option selected value="{{ $equipitem->slots }}">{{ $equipitem->slots }}</option>
+									<option selected value="{{ $equip->slots }}">{{ $equip->slots }}</option>
 									   <option value="0">0</option>
 									   <option value="1">1</option>
 									   <option value="2">2</option>
 									</select>
 								</td>
 								<td class="equipment">
-								<input type="text" class="form-control iteminput crystas" style="width: 130px" name="slot1" id="s1" value="{{ $equipitem->slot1 }}"/>
+								<input type="text" class="form-control iteminput crystas" style="width: 130px" name="slot1" id="s1" value="{{ $equip->slot1 }}"/>
 								</td>
 								<td class="equipment">
-								<input type="text" class="form-control iteminput crystas" style="width: 130px" name="slot2" id="s2" value="{{ $equipitem->slot2 }}"/>
+								<input type="text" class="form-control iteminput crystas" style="width: 130px" name="slot2" id="s2" value="{{ $equip->slot2 }}"/>
 								</td>
 								<td class="equipment">
-								<input type="text" class="form-control iteminput" style="width: 160px" name="ability" id="ability" value="{{ $equipitem->ability}}"/>
+								<input type="text" class="form-control iteminput" style="width: 160px" name="ability" id="ability" value="{{ $equip->ability}}"/>
 								</td>
 								<td class="equipment">
 									<select name="ability_level" class="form-control iteminput" id="abilv" style="width: 60px"> 
-									<option selected value="{{ $equipitem->ability_level }}">{{ $equipitem->ability_level }}</option>
+									<option selected value="{{ $equip->ability_level }}">{{ $equip->ability_level }}</option>
 									   <option value="0">0</option>
 									   <option value="1">1</option>
 									   <option value="2">2</option>
@@ -96,13 +96,13 @@
 									</select>
 								</td>
 								<td class="equipment">
-									<input type="text" class="form-control iteminput" style="width: 140px" name="price" id="price" value="{{ $equipitem->price }}"/>
+									<input type="text" class="form-control iteminput" style="width: 140px" name="price" id="price" value="{{ $equip->price }}"/>
 								</td>
 								<td class="equipment">
 									<button type="submit" class="btn btn-outline-success">Apply</button>
 								</td>
 							</form>
-							<form action="/item/equip/{{ $equipitem->item_id }}/delete" method="POST">
+							<form action="/item/equip/{{ $equip->item_id }}/delete" method="POST">
 								@csrf
 								@method('delete')
 								<td class="equipment">
@@ -117,6 +117,7 @@
 						</tbody>
 						
 					</table>
+					{{$equipitem->appends(['search' => request('search'), 'xtalPage' => request('xtalPage'), 'equipPage' => request('equipPage'), 'itemPage' => request('itemPage'), 'relicPage' => request('relicPage'), 'alPage' => request('alPage')])->fragment('equip')->links()}}
 					
 				</div>
 				
@@ -131,7 +132,7 @@
             <br>
 			<div>
 				<div>
-					<table>
+					<table id="material">
 						<thead>
 							<tr class="table100-head">
 								<th class="materials">Name</th>
@@ -142,24 +143,24 @@
 							</tr>
 						</thead>
 						<tbody>
-							@foreach ($item as $item)
+							@foreach ($item as $material)
 							<tr>
-									<td class="materials">{{ $item->name }}</td>
-									<form action="item/items/{{ $item->item_id }}/update" method="POST">
+									<td class="materials">{{ $material->name }}</td>
+									<form action="item/items/{{ $material->item_id }}/update" method="POST">
 										@method('patch')
 										@csrf
 										<td class="materials">
-										<input type="text" class="form-control iteminput" style="width: 80px" name="quantity" id="qty" value="{{ $item->quantity }}"/>
+										<input type="text" class="form-control iteminput" style="width: 80px" name="quantity" id="qty" value="{{ $material->quantity }}"/>
 										</td>
 										<td class="materials">
-										<input type="text" class="form-control iteminput" style="width: 160px" name="price" id="price" value="{{ $item->price }}"/>
+										<input type="text" class="form-control iteminput" style="width: 160px" name="price" id="price" value="{{ $material->price }}"/>
 										</td>
 										<td class="materials">
 											<button type="submit" class="btn btn-outline-success">Apply</button>
 										</td>
 										
 									</form>
-									<form action="/item/items/{{ $item->item_id }}/delete" method="POST">
+									<form action="/item/items/{{ $material->item_id }}/delete" method="POST">
 										@method('delete')
 										@csrf
 									<td class="materials">
@@ -170,6 +171,7 @@
 								</tr>
 							</tbody>
 						</table>
+						{{$item->appends(['search' => request('search'), 'xtalPage' => request('xtalPage'), 'equipPage' => request('equipPage'), 'itemPage' => request('itemPage'), 'relicPage' => request('relicPage'), 'alPage' => request('alPage')])->fragment('material')->links()}}
 						
 					</div>
 				</div>
@@ -183,7 +185,7 @@
             <br>
 			<div>
 				<div>
-					<table>
+					<table id="xtal">
 						<thead>
 							<tr class="table100-head">
 								<th class="xtals">Name</th>
@@ -194,23 +196,23 @@
 							</tr>
 						</thead>
 						<tbody>
-							@foreach( $xtal as $xtal )
+							@foreach( $xtal as $xtalitem )
 							<tr>
-								<td class="xtals">{{ $xtal->name }}</td>
-								<form action="/item/xtal/{{ $xtal->item_id }}/update" method="POST">
+								<td class="xtals">{{ $xtalitem->name }}</td>
+								<form action="/item/xtal/{{ $xtalitem->item_id }}/update" method="POST">
 									@csrf
 									@method('patch')
 									<td class="xtals">
-									<input type="text" class="form-control iteminput" style="width: 80px" name="quantity" id="qty" value="{{ $xtal->quantity }}"/>
+									<input type="text" class="form-control iteminput" style="width: 80px" name="quantity" id="qty" value="{{ $xtalitem->quantity }}"/>
 									</td>
 									<td class="xtals">
-										<input type="text" class="form-control iteminput" style="width: 160px" name="price" id="price" value="{{ $xtal->price }}"/>
+										<input type="text" class="form-control iteminput" style="width: 160px" name="price" id="price" value="{{ $xtalitem->price }}"/>
 									</td>
 									<td class="xtals">
 										<button type="submit" class="btn btn-outline-success">Apply</button>
 									</td>
 								</form>
-								<form action="/item/xtal/{{ $xtal->item_id }}/delete" method="POST">
+								<form action="/item/xtal/{{ $xtalitem->item_id }}/delete" method="POST">
 									@csrf
 									@method('delete')
 									<td class="xtals">
@@ -223,6 +225,7 @@
 							@endforeach
 						</tbody>
 					</table>
+					{{$xtal->appends(['search' => request('search'), 'xtalPage' => request('xtalPage'), 'equipPage' => request('equipPage'), 'itemPage' => request('itemPage'), 'relicPage' => request('relicPage'), 'alPage' => request('alPage')])->fragment('xtal')->links()}}
 					
 				</div>
 			</div>
@@ -234,7 +237,7 @@
             <br>
 			<div>
 				<div>
-					<table>
+					<table id="alcrystas">
 						<thead>
 							<tr class="table100-head">
 								<th class="als">Name</th>
@@ -247,31 +250,31 @@
 						</thead>
 			
 						<tbody>
-							@foreach($alitem as $alitem)
+							@foreach($alitem as $al)
 							<tr>
-								<form action="/item/al/{{ $alitem->item_id }}/update" method="POST">
+								<form action="/item/al/{{ $al->item_id }}/update" method="POST">
 									@csrf
 									@method('patch')
-								<td class="als">{{ $alitem->name }}</td>
+								<td class="als">{{ $al->name }}</td>
 									<td class="als">
-									<input type="text" class="form-control iteminput" style="width: 80px" name="quantity" id="qty" value="{{ $alitem->quantity}}"/>
+									<input type="text" class="form-control iteminput" style="width: 80px" name="quantity" id="qty" value="{{ $al->quantity}}"/>
 									</td>
 									<td class="als">
 										<select name="color" class="form-control iteminput" id="color" style="width: 120px"> 
-										<option selected>{{ $alitem->color }}</option>
+										<option selected>{{ $al->color }}</option>
 										   <option>Red</option>
 										   <option>Green</option>
 										   <option>Blue</option>
 										</select>
 									</td>
 									<td class="als">
-									<input type="text" class="form-control iteminput" style="width: 160px" name="price" id="price" value="{{ $alitem->price }}"/>
+									<input type="text" class="form-control iteminput" style="width: 160px" name="price" id="price" value="{{ $al->price }}"/>
 									</td>
 									<td class="als">
 										<button type="submit" class="btn btn-outline-success">Apply</button>
 									</td>
 								</form>	
-								<form action="/item/al/{{$alitem->item_id}}/delete" method="POST">
+								<form action="/item/al/{{$al->item_id}}/delete" method="POST">
 									@csrf
 									@method('delete')
 									<td class="als">
@@ -283,7 +286,7 @@
 							@endforeach
 						</tbody>
 					</table>
-					
+					{{$alitem->appends(['search' => request('search'), 'xtalPage' => request('xtalPage'), 'equipPage' => request('equipPage'), 'itemPage' => request('itemPage'), 'relicPage' => request('relicPage'), 'alPage' => request('alPage')])->fragment('alcrystas')->links()}}
 				</div>
 			</div>
 			@endif
@@ -293,7 +296,7 @@
             <br>
 			<div>
 				<div>
-					<table>
+					<table id="reliccrystas">
 						<thead>
 							<tr class="table100-head">
 								<th class="relics">Name</th>
@@ -304,23 +307,23 @@
 							</tr>
 						</thead>
 						<tbody>
-						@foreach($relic as $relic)
+						@foreach($relic as $relicitem)
 							<tr>
-								<form action="/item/relic/{{ $relic->item_id }}/update" method="POST">
+								<form action="/item/relic/{{ $relicitem->item_id }}/update" method="POST">
 									@csrf
 									@method('patch')
-								<td class="relics">{{ $relic->name }}</td>
+								<td class="relics">{{ $relicitem->name }}</td>
 									<td class="relics">
-									<input type="text" class="form-control iteminput" style="width: 80px" name="quantity" id="qty" value="{{ $relic->quantity }}"/>
+									<input type="text" class="form-control iteminput" style="width: 80px" name="quantity" id="qty" value="{{ $relicitem->quantity }}"/>
 									</td>
 									<td class="relics">
-									<input type="text" class="form-control iteminput" style="width: 160px" name="price" id="price" value="{{ $relic->price }}"/>
+									<input type="text" class="form-control iteminput" style="width: 160px" name="price" id="price" value="{{ $relicitem->price }}"/>
 									</td>
 									<td class="relics">
 										<button type="submit" class="btn btn-outline-success">Apply</button>
 									</td>
 								</form>
-								<form action="item/relic/{{$relic->item_id}}/delete" method="POST">
+								<form action="item/relic/{{$relicitem->item_id}}/delete" method="POST">
 									@csrf
 									@method('delete')
 									<td class="relics">
@@ -332,7 +335,7 @@
 															@endforeach
 						</tbody>
 					</table>
-					
+					{{$relic->appends(['search' => request('search'), 'xtalPage' => request('xtalPage'), 'equipPage' => request('equipPage'), 'itemPage' => request('itemPage'), 'relicPage' => request('relicPage'), 'alPage' => request('alPage')])->fragment('reliccrystas')->links()}}
 				</div>
 			</div>
 			@endif

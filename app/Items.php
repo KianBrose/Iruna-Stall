@@ -11,6 +11,6 @@ class Items extends Model
     protected $table = 'item';
 
     public function getItems(){
-        return Items::where('owner_id', Auth::user()->user_id)->get();
+        return Items::where('owner_id', Auth::user()->user_id)->paginate(10, ['*'], 'itemPage');
     }
 }
