@@ -130,14 +130,15 @@
                         <hr>
                         <h4>Ninja guides:</h4>
                         <ul>
-                            <li><a href="/guides/ninja1">Magic &amp; SK/Hybrid Guide</a></li>
+                            <li><a href="/guides/ninja1">Magic &amp; SK/Hybrid GuideMagic &amp; SK/Hybrid Guide</a></li>
                             <li><a href="/guides/ninja2">DoC Spam Ninja Guide (Post-Balance Patch)</a></li>
                         </ul>
                         <hr>
                         <h4>Samurai guides:</h4>
                         <ul>
-                          <li></li>
-                          <li></li>
+                          <li><a href="/guides/samurai1">Autoskill Samurai Guide by Tamagu/Ymir</a></li>
+                          <li><a href="/guides/samurai2"></a></li>
+                          <li><a href="/guides/samurai3"></a></li>
                         </ul>
                         <hr>
                         <h4>Ministrel guides:</h4>
