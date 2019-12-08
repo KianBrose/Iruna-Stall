@@ -1,4 +1,26 @@
 @extends('layouts.main')
+@section('title')
+<meta name='coverage' content='Worldwide'>
+    <meta name='distribution' content='Global'>
+    <meta name='rating' content='General'>
+    <meta name='HandheldFriendly' content='True'>
+    <meta name='MobileOptimized' content='320'>
+    <meta name='target' content='all'>
+    <meta name="apple-mobile-web-app-title" content="Iruna Global Stall">
+    <meta name='apple-mobile-web-app-capable' content='yes'>
+    <meta name='apple-touch-fullscreen' content='yes'>
+    <meta name='apple-touch-fullscreen' content='yes'>
+    <meta name='application-name' content="Iruna Global Stall">
+    <link rel="apple-touch-icon" href="https://irunastall.com/img/iruna.jpg">
+    <meta name="twitter:card" content="summary" >
+    <meta name="twitter:title" content="Search | Iruna Global Stall" >
+    <meta name="twitter:description" content="Search for item in Iruna Global Stall" >
+    <meta property="og:title" content="Search | Iruna Global Stall">
+    <meta property="og:type" content="website" >
+    <meta property="og:description" content="Search for item in Iruna Global Stall">
+    <meta property="og:image" content="https://irunastall.com/img/iruna.jpg">
+	<meta property="og:url" content="https://irunastall.com" >
+@endsection
 
 @section('content')
 
