@@ -127,7 +127,6 @@
                     <div>
 						<p>Here you can find recently updated guides for each individual class in the game:</p>
                         <br>
-                        <hr>
                         <h4>Ninja guides:</h4>
                         <ul>
                             <li><a href="/guides/ninja1">Magic &amp; SK/Hybrid GuideMagic &amp; SK/Hybrid Guide</a></li>
@@ -147,8 +146,7 @@
                         <hr>
                         <h4>Alchemist guides:</h4>
                         <ul>
-                          <li></li>
-                          <li></li>
+                          <li><a href="/guides/alchemist1">Alchemist Guide</a></li>
                         </ul>
                         <hr>
                         <h4>Monk guides:</h4>

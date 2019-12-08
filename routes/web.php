@@ -54,6 +54,10 @@ Route::get('/guides/ministrel1', function () {
     return view('guides/ministrel1');
 });
 
+Route::get('/guides/alchemist1', function () {
+    return view('guides/alchemist1');
+});
+
 Route::get('/search', 'SearchController@search')->name('search');
 Route::get('/account', 'AccountController@show')->middleware('auth', 'checkblocked');
 
