@@ -161,8 +161,7 @@
                         <hr>
                         <h4>Servant guides:</h4>
                         <ul>
-                          <li></li>
-                          <li></li>
+                          <li><a href="/guides/servant1">Short Servant Guide</a></li>
                         </ul>
                         <hr>
                         <h4>Enchanter guides:</h4>
