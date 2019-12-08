@@ -180,7 +180,10 @@ class ItemController extends Controller
              $relic->name = request('name');
         }
         $relic->quantity = request('quantity');
-        $relic->price = request('price');
+        $priceNumber = substr(request('price'), 0, -1);
+        $priceDenote = strtolower(substr(request('price'), -1));
+        $storedPrice = $this->convertPrice($priceDenote, $priceNumber);
+        $relic->price = $storedPrice;
         $relic->owner_id = Auth::user()->user_id;
         $relic->item_id = $id;
         $relic->routes = "item/relic/{$id}";
