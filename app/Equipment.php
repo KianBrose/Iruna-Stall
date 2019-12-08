@@ -11,6 +11,6 @@ class Equipment extends Model
     protected $guarded = [];
 
     public function getEquipmentItems(){
-        return Equipment::where('owner_id', Auth::user()->user_id)->get();
+        return Equipment::where('owner_id', Auth::user()->user_id)->paginate(10, ['*'], 'equipPage');
     }
 }

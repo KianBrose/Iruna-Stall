@@ -45,7 +45,7 @@ class ItemsController extends Controller
                 $item->save();
 
                 Alert::toast('Successfully edited an item', 'success');
-                return redirect('/viewitem');
+                return redirect()->back();
             }
         }
     }
@@ -59,7 +59,7 @@ class ItemsController extends Controller
             else{
                 Items::where('item_id', $id)->firstOrFail()->delete();
                 Alert::toast('You have deleted an item', 'warning');
-                return redirect('/viewitem');
+                return redirect()->back();
             }
 
         }

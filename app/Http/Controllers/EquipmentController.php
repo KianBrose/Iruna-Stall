@@ -133,7 +133,7 @@ class EquipmentController extends Controller
                 }
                 $item->save();
                 Alert::toast('successfully edited an item', 'success');
-                return redirect('/viewitem');
+                return redirect()->back();
 
             
         }
@@ -149,7 +149,7 @@ class EquipmentController extends Controller
             else{
                 Equipment::where('item_id', $id)->firstOrFail()->delete();
                 Alert::toast('You have deleted an item', 'warning');
-                return redirect('/viewitem');
+                return redirect()->back();
             }
         }
     }

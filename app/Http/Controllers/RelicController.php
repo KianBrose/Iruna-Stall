@@ -40,7 +40,7 @@ class RelicController extends Controller
                 } 
                 $item->save();
                 Alert::toast('Successfully edited an item', 'success');
-                return redirect('/viewitem');
+                return redirect()->back();
             }
         }
     }

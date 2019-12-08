@@ -42,7 +42,7 @@ class XtalController extends Controller
                 $item->save();
 
                 Alert::toast('Successfully edited an item', 'success');
-                return redirect('/viewitem');
+                return redirect()->back();
             }
         }
     }
@@ -56,7 +56,7 @@ class XtalController extends Controller
             else{
                 Xtal::where('item_id', $id)->firstOrFail()->delete();
                 Alert::toast('You have deleted an item', 'warning');
-                return redirect('/viewitem');
+                return redirect()->back();
             }
 
         }

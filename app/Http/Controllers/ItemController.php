@@ -72,7 +72,6 @@ class ItemController extends Controller
         $priceDenote = strtolower(substr(request('price'), -1));
         $storedPrice = $this->convertPrice($priceDenote, $priceNumber);
         $equip->price = $storedPrice;
-        $equip->price = request('price');
         $equip->slots = request('equipslotamount');
         if(substr(request('slot1'), 0, 3) != '◇'){
             //$xtalname = ucwords(request('name'));
