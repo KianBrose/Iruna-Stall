@@ -451,7 +451,6 @@
 <div data-tag="spoiler"><br /><span style="font-family: 'comic sans ms';">⚔After finishing mq you should reach about 230-220 level (MQ EXP: 414,746,5230). After doing you mq it be good idea to level up till 240 and then change job to samurai , if you are not in rush have fun with struggle.&nbsp;<br />⚔Spend whole day at grinding and you&nbsp;gain at least 1-2 lv.<br />⚔It fun and easy to level up by farming bosses, as ouvel, There chance of getting spina plus you won&rsquo;t get bored.<br /><br />⚔Quests:<br /><br />⚔Mobs for leveling:<br /><br /><strong>-Megaroches</strong> (MATK): <br />EXP: 149600 &middot; 151055 <br />HP: 527,000 <br /><br /><strong>-Balor</strong>(245-247)(MATK): <br />EXP: 99930-101528<br /><br /><strong>-Yarde</strong> (275-276): Recommended <br />EXP: 325421 &middot; 327740 <br />HP: about 847,750 <br /><br /><strong>-Nommar</strong> (247 -249)(Stun): Def=0 <br />EXP: 85277 &middot; 85949 <br /><br /><strong>-GateKeeper</strong><br />EXP: 11280 &middot; 11370</span></div>
 </div>
 </article>
-<p>Dont worry when you forget the syntax of an HTML element, like and iframe, a link, a table, an image or anything else. Go to <a href="https://htmlcheatsheet.com/">HTML CheatSheet</a> and generate the code you need.</p>
                         <hr>
                         <p>Author: <a href="http://irunaonline.boards.net/user/3597">Mary</a></p>
 					</div>
