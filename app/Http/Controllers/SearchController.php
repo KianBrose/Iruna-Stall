@@ -92,6 +92,23 @@ class SearchController extends Controller
                     $relicSearch = Relic::where('name', 'LIKE', "%{$random}%")->paginate(10, ['*'], 'relicPage');
                     return view('search', compact('alSearch', 'equipSearch', 'itemSearch', 'xtalSearch', 'input', 'relicSearch', 'totalCount'));
                 }
+                else if(strtolower($arr) == 'relic' || strtolower($arr) == 'reliccrystas'){
+                    $inputString = preg_replace('/@([^\s]+)/', '', $input);
+                    $input = trim($inputString);
+                    $random = 'dsfghdjkfdkfdlefrgffefr';
+                    $alCount = collect();
+                    $equipCount = collect();
+                    $itemCount = collect();
+                    $xtalCount = collect();
+                    $relicCount = Relic::where('name', 'LIKE', "%{$input}%")->get();
+                    $totalCount = $alCount->count() + $equipCount->count() + $relicCount->count() + $xtalCount->count() + $itemCount->count();
+                    $alSearch = Ai::where('name', 'LIKE', "%{$random}%")->paginate(10, ['*'], 'alPage');
+                    $equipSearch = Equipment::where('name', 'LIKE', "%{$random}%")->orWhere('ability', 'LIKE', "%{$random}%")->orWhere('slot1', 'LIKE', "%{$random}%")->orWhere('slot2', 'LIKE', "%{$random}%")->paginate(10, ['*'], 'equipPage');
+                    $itemSearch = Items::where('name', 'LIKE', "%{$random}%")->paginate(10, ['*'], 'itemPage');
+                    $xtalSearch = Xtal::where('name', 'LIKE', "%{$random}%")->paginate(10, ['*'], 'xtalPage');
+                    $relicSearch = Relic::where('name', 'LIKE', "%{$input}%")->paginate(10, ['*'], 'relicPage');
+                    return view('search', compact('alSearch', 'equipSearch', 'itemSearch', 'xtalSearch', 'input', 'relicSearch', 'totalCount'));
+                }
 
                 else{
                    
