@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Irunaitem;
 use App\Ability;
 use App\Http\Requests\StoreIrunaEquip;
+use App\Equipment;
 
 class AutoCompleteController extends Controller
 {
@@ -92,6 +93,7 @@ class AutoCompleteController extends Controller
                 ->get();
         return response()->json($result);
     }
+
 
 
 

@@ -125,13 +125,25 @@ class SearchController extends Controller
         $input = $inputString;
         $random = 'dsfghdjkfdkfdlefrgffefr';
         $alCount = collect();
-        $equipCount = Equipment::where('type', 'Additional')->where('name', 'LIKE', "%{$inputString}%")->orWhere('ability', 'LIKE', "%{$inputString}%")->orWhere('slot1', 'LIKE', "%{$inputString}%")->orWhere('slot2', 'LIKE', "%{$inputString}%")->get();
+        if($inputString == ""){
+            $equipCount = Equipment::where('type', 'Additional')->get();
+        }else{
+            $equipCount = Equipment::where('type', 'Additional')->where('name', 'LIKE', "%{$inputString}%")->orWhere('ability', 'LIKE', "%{$inputString}%")->orWhere('slot1', 'LIKE', "%{$inputString}%")->orWhere('slot2', 'LIKE', "%{$inputString}%")->get();
+        }
+        
         $itemCount = collect();
         $xtalCount = collect();
         $relicCount = collect();
         $totalCount = $alCount->count() + $equipCount->count() + $relicCount->count() + $xtalCount->count() + $itemCount->count();
         $alSearch = Ai::where('name', 'LIKE', "%{$random}%")->paginate(10, ['*'], 'alPage');
-        $equipSearch = Equipment::where('type', 'Additional')->where('name', 'LIKE', "%{$inputString}%")->orWhere('ability', 'LIKE', "%{$inputString}%")->orWhere('slot1', 'LIKE', "%{$inputString}%")->orWhere('slot2', 'LIKE', "%{$inputString}%")->paginate(10, ['*'], 'equipPage');
+
+        if($inputString == ""){
+            $equipSearch = Equipment::where('type', 'Additional')->paginate(10, ['*'], 'equipPage');
+            
+        }else{
+            $equipSearch = Equipment::where('type', 'Additional')->where('name', 'LIKE', "%{$inputString}%")->orWhere('ability', 'LIKE', "%{$inputString}%")->orWhere('slot1', 'LIKE', "%{$inputString}%")->orWhere('slot2', 'LIKE', "%{$inputString}%")->paginate(10, ['*'], 'equipPage');
+        }
+        
         $itemSearch = Items::where('name', 'LIKE', "%{$random}%")->paginate(10, ['*'], 'itemPage');
         $xtalSearch = Xtal::where('name', 'LIKE', "%{$random}%")->paginate(10, ['*'], 'xtalPage');
         $relicSearch = Relic::where('name', 'LIKE', "%{$random}%")->paginate(10, ['*'], 'relicPage');
@@ -142,13 +154,30 @@ class SearchController extends Controller
         $input = $inputString;
         $random = 'dsfghdjkfdkfdlefrgffefr';
         $alCount = collect();
-        $equipCount = Equipment::where('type', 'Weapon')->where('name', 'LIKE', "%{$inputString}%")->orWhere('ability', 'LIKE', "%{$inputString}%")->orWhere('slot1', 'LIKE', "%{$inputString}%")->orWhere('slot2', 'LIKE', "%{$inputString}%")->get();
+        if($inputString == ""){
+            $equipCount = Equipment::where('type', 'Weapon')->get();
+        }else{
+            $equipCount = Equipment::where('type', 'Weapon')->where('name', 'LIKE', "%{$input}%")->orWhere('ability', 'LIKE', "%{$input}%")->orWhere('slot1', 'LIKE', "%{$input}%")->orWhere('slot2', 'LIKE', "%{$input}%")->get();
+        }
+       
         $itemCount = collect();
         $xtalCount = collect();
         $relicCount = collect();
         $totalCount = $alCount->count() + $equipCount->count() + $relicCount->count() + $xtalCount->count() + $itemCount->count();
-        $alSearch = Ai::where('name', 'LIKE', "%{$random}%")->paginate(10, ['*'], 'alPage');
-        $equipSearch = Equipment::where('type','Weapon')->where('name', 'LIKE', "%{$inputString}%")->orWhere('ability', 'LIKE', "%{$inputString}%")->orWhere('slot1', 'LIKE', "%{$inputString}%")->orWhere('slot2', 'LIKE', "%{$inputString}%")->paginate(10, ['*'], 'equipPage');
+        $alSearch = Ai::where('name', 'LIKE', "%{$random}%")
+                    ->paginate(10, ['*'], 'alPage');
+        if($inputString == ""){
+            $equipSearch = Equipment::where('type', 'Weapon')->paginate(10, ['*'], 'equipPage');
+        } else{
+            $equipSearch = Equipment::where('type','Weapon')
+            ->where('name', 'LIKE', "%{$input}%")
+            ->orWhere('ability', 'LIKE', "%{$input}%")
+            ->orWhere('slot1', 'LIKE', "%{$input}%")
+            ->orWhere('slot2', 'LIKE', "%{$input}%")
+            ->paginate(10, ['*'], 'equipPage');
+        }
+       
+
         $itemSearch = Items::where('name', 'LIKE', "%{$random}%")->paginate(10, ['*'], 'itemPage');
         $xtalSearch = Xtal::where('name', 'LIKE', "%{$random}%")->paginate(10, ['*'], 'xtalPage');
         $relicSearch = Relic::where('name', 'LIKE', "%{$random}%")->paginate(10, ['*'], 'relicPage');
