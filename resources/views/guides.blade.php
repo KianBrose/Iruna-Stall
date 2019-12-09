@@ -127,47 +127,41 @@
                     <div>
 						<p>Here you can find recently updated guides for each individual class in the game:</p>
                         <br>
-                        <hr>
                         <h4>Ninja guides:</h4>
                         <ul>
-                            <li><a href="/guides/ninja1">Magic &amp; SK/Hybrid Guide</a></li>
+                            <li><a href="/guides/ninja1">Magic &amp; SK/Hybrid GuideMagic &amp; SK/Hybrid Guide</a></li>
                             <li><a href="/guides/ninja2">DoC Spam Ninja Guide (Post-Balance Patch)</a></li>
                         </ul>
                         <hr>
                         <h4>Samurai guides:</h4>
                         <ul>
-                          <li></li>
-                          <li></li>
+                          <li><a href="/guides/samurai1">Autoskill Samurai Guide by Tamagu/Ymir</a></li>
+                          <li><a href="/guides/samurai2">Samurai Guide</a></li>
                         </ul>
                         <hr>
                         <h4>Ministrel guides:</h4>
                         <ul>
-                          <li></li>
-                          <li></li>
+                          <li><a href="/guides/ministrel1">NightinGal's Minstrel Guide [Updated~Post Patch]</a></li>
                         </ul>
                         <hr>
                         <h4>Alchemist guides:</h4>
                         <ul>
-                          <li></li>
-                          <li></li>
+                          <li><a href="/guides/alchemist1">Alchemist Guide</a></li>
                         </ul>
                         <hr>
                         <h4>Monk guides:</h4>
                         <ul>
-                          <li></li>
-                          <li></li>
+                          <li><a href="/guides/monk1">Complete Monk Guide</a></li>
                         </ul>
                         <hr>
                         <h4>Bishop guides:</h4>
                         <ul>
-                          <li></li>
-                          <li></li>
+                          <li><a href="/guides/bishop1">Skyfallx's Mini Bishop Guide</a></li>
                         </ul>
                         <hr>
                         <h4>Servant guides:</h4>
                         <ul>
-                          <li></li>
-                          <li></li>
+                          <li><a href="/guides/servant1">Short Servant Guide</a></li>
                         </ul>
                         <hr>
                         <h4>Enchanter guides:</h4>

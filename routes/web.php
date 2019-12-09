@@ -38,6 +38,38 @@ Route::get('/guides/ninja1', function () {
     return view('guides/ninja1');
 });
 
+Route::get('/guides/ninja2', function () {
+    return view('guides/ninja2');
+});
+
+Route::get('/guides/samurai1', function () {
+    return view('guides/samurai1');
+});
+
+Route::get('/guides/samurai2', function () {
+    return view('guides/samurai2');
+});
+
+Route::get('/guides/ministrel1', function () {
+    return view('guides/ministrel1');
+});
+
+Route::get('/guides/alchemist1', function () {
+    return view('guides/alchemist1');
+});
+
+Route::get('/guides/monk1', function () {
+    return view('guides/monk1');
+});
+
+Route::get('/guides/bishop1', function () {
+    return view('guides/bishop1');
+});
+
+Route::get('/guides/servant1', function () {
+    return view('guides/servant1');
+});
+
 Route::get('/search', 'SearchController@search')->name('search');
 Route::get('/account', 'AccountController@show')->middleware('auth', 'checkblocked');
 
