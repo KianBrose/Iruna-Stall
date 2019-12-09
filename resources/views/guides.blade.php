@@ -183,7 +183,7 @@
                         <h4>Assasin guides:</h4>
                         <ul>
                           <li><a href="/guides/assasin1">Complete Assassin Skill Database</a></li>
-                          <li><a href="/guides/assasin2"></a></li>
+                          <li><a href="/guides/assasin2">Damage Backstab Assassin Full Stat Guide</a></li>
                         </ul>
                         <hr>
                         <h4>Sniper guides:</h4>
