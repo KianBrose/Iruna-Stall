@@ -182,8 +182,8 @@
                         <hr>
                         <h4>Assasin guides:</h4>
                         <ul>
-                          <li></li>
-                          <li></li>
+                          <li><a href="/guides/assasin1">Complete Assassin Skill Database</a></li>
+                          <li><a href="/guides/assasin2"></a></li>
                         </ul>
                         <hr>
                         <h4>Sniper guides:</h4>
