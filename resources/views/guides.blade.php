@@ -193,8 +193,7 @@
                         <hr>
                         <h4>Gladiator guides:</h4>
                         <ul>
-                          <li></li>
-                          <li></li>
+                          <li><a href="/guides/gladiator1">The Gladiator guide</a></li>
                         </ul>
                         <hr>
                         <h4>Paladin guides:</h4>
