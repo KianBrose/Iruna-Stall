@@ -166,44 +166,39 @@
                         <hr>
                         <h4>Enchanter guides:</h4>
                         <ul>
-                          <li></li>
-                          <li></li>
+                          <li><a href="/guides/enchanter1">Enchanter Complete Guide</a></li>
+                          <li><a href="/guides/enchanter2">Enchanter Gear Review</a></li>
                         </ul>
                         <hr>
                         <h4>High Wizard guides:</h4>
                         <ul>
-                          <li></li>
-                          <li></li>
+                          <li><a href="/guides/hw1">Complete High Wizard Guide</a></li>
                         </ul>
                         <hr>
                         <h4>Necromancer guides:</h4>
                         <ul>
-                          <li></li>
-                          <li></li>
+                          <li><a href="/guides/necro1">Updated Necromancer's Guide</a></li>
                         </ul>
                         <hr>
                         <h4>Assasin guides:</h4>
                         <ul>
-                          <li></li>
-                          <li></li>
+                          <li><a href="/guides/assasin1">Complete Assassin Skill Database</a></li>
+                          <li><a href="/guides/assasin2">Damage Backstab Assassin Full Stat Guide</a></li>
                         </ul>
                         <hr>
                         <h4>Sniper guides:</h4>
                         <ul>
-                          <li></li>
-                          <li></li>
+                          <li><a href="/guides/sniper1">Simple Sniper Guide</a></li>
                         </ul>
                         <hr>
                         <h4>Gladiator guides:</h4>
                         <ul>
-                          <li></li>
-                          <li></li>
+                          <li><a href="/guides/gladiator1">The Gladiator guide</a></li>
                         </ul>
                         <hr>
                         <h4>Paladin guides:</h4>
                         <ul>
-                          <li></li>
-                          <li></li>
+                          <li><a href="/guides/paladin1">Pein's Paladin Guide! (Reworked by Krish)</a></li>
                         </ul>
                         <hr>
 					</div>                 

@@ -70,6 +70,42 @@ Route::get('/guides/servant1', function () {
     return view('guides/servant1');
 });
 
+Route::get('/guides/enchanter1', function () {
+    return view('guides/enchanter1');
+});
+
+Route::get('/guides/enchanter2', function () {
+    return view('guides/enchanter2');
+});
+
+Route::get('/guides/hw1', function () {
+    return view('guides/hw1');
+});
+
+Route::get('/guides/necro1', function () {
+    return view('guides/necro1');
+});
+
+Route::get('/guides/assasin1', function () {
+    return view('guides/assasin1');
+});
+
+Route::get('/guides/assasin2', function () {
+    return view('guides/assasin2');
+});
+
+Route::get('/guides/sniper1', function () {
+    return view('guides/sniper1');
+});
+
+Route::get('/guides/gladiator1', function () {
+    return view('guides/gladiator1');
+});
+
+Route::get('/guides/paladin1', function () {
+    return view('guides/paladin1');
+});
+
 Route::get('/search', 'SearchController@search')->name('search');
 Route::get('/account', 'AccountController@show')->middleware('auth', 'checkblocked');
 
