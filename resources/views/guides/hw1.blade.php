@@ -780,25 +780,6 @@
 <div><strong><span style="color: #000000;">- Moss Golem&nbsp;</span></strong></div>
 <div><span style="font-size: small;">Thanks you also to : <a style="color: #f9fd07;" title="@darkstorm" href="/user/123">Dark&sect;t&Oslash;rm</a> , <a title="@maryroll03" href="/user/3597">Mary</a> , <a title="@variz" href="/user/6853">Variz</a><a title="@kijimon" href="/user/35">Jichiro</a> , <a style="color: #e77a05;" title="@admin" href="/user/1">"K"</a> , <a title="@nyx0000" href="/user/6756">Nyx</a> , @mame , <a style="color: #32e619;" title="@yazmat" href="/user/3017">Yazmat</a> , <a title="@nic123" href="/user/3668">nic123</a> ,&nbsp;<a title="@mucc" href="/user/1244">Krish</a> ,&nbsp;<a title="@bikini" href="/user/4024">bikini</a> , <a title="@eurydice" href="/user/1073">eury quit iruna</a> , <a title="@alixciel" href="/user/754">Shori&gt;.&lt;</a> , <a title="@bluedragon107" href="/user/3887">Blue</a> , <a title="@soulburn" href="/user/185">SoulBurn</a> , <a title="@skyfall" href="/user/4282">Skyfall</a> @jeffreychea <a title="@kuurama" href="/user/10887">Kurama</a> and more</span></div>
 <br /><br /><br /><hr />
-<div><span style="font-size: xx-large;"><strong>BONUS</strong></span></div>
-<hr />
-<div>
-<div style="font-weight: bold;">
-<div><span style="font-size: large;">My video, sharing my stats and equipments</span></div>
-</div>
-<div>&nbsp;</div>
-<hr style="font-weight: bold;" />
-<div style="font-weight: bold;">Shayan is sharing too, and he also added some comments :</div>
-<div>
-<div>
-<div><br />
-<div>&nbsp;</div>
-</div>
-</div>
-</div>
-</div>
-<hr />
-<div>The video are a <u>bonus</u>, and not a guide , you are NOT forced to use the same equipments / stats / xtals than me or shayan !!</div>
 <hr /></div>
 </article>
                         <hr>
