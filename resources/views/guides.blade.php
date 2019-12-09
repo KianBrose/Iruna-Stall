@@ -167,6 +167,7 @@
                         <h4>Enchanter guides:</h4>
                         <ul>
                           <li><a href="/guides/enchanter1">Enchanter Complete Guide</a></li>
+                          <li><a href="/guides/enchanter2">Enchanter Gear Review</a></li>
                         </ul>
                         <hr>
                         <h4>High Wizard guides:</h4>
