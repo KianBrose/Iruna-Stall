@@ -94,6 +94,10 @@ Route::get('/guides/assasin2', function () {
     return view('guides/assasin2');
 });
 
+Route::get('/guides/sniper1', function () {
+    return view('guides/sniper1');
+});
+
 Route::get('/search', 'SearchController@search')->name('search');
 Route::get('/account', 'AccountController@show')->middleware('auth', 'checkblocked');
 

@@ -188,8 +188,7 @@
                         <hr>
                         <h4>Sniper guides:</h4>
                         <ul>
-                          <li></li>
-                          <li></li>
+                          <li><a href="/guides/sniper1">Simple Sniper Guide</a></li>
                         </ul>
                         <hr>
                         <h4>Gladiator guides:</h4>
