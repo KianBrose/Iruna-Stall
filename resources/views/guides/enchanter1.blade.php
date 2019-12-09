@@ -130,7 +130,7 @@
 <div align="center"><a href="https://www.directupload.net/" target="_blank" rel="nofollow noopener"><img style="max-width: 100%;" src="https://s15.directupload.net/images/181201/3hladeqx.png" /></a></div>
 <br />
 <div>
-<div align="center"><span style="font-family: 'courier new';">Main informations by : <a title="@shiruyui" href="/user/1276">Shiruyui</a> , <a style="color: #32e619;" title="@manakhe" href="/user/182">ManaKhe</a> , Takarra,<a style="color: #32e619;" title="@makinayuki" href="/user/10927">Makina Yuki</a> , <a style="color: #32e619;" title="@caporal84" href="/user/11515">caporal84</a></span></div>
+<div align="center"><span style="font-family: 'courier new';">Main informations by : <a title="@shiruyui" href="">Shiruyui</a> , <a style="color: #32e619;" title="@manakhe" href="">ManaKhe</a> , Takarra ,<a style="color: #32e619;" title="@makinayuki" href=""> Makina Yuki</a> , <a style="color: #32e619;" title="@caporal84" href="">caporal84</a></span></div>
 <div align="center"><strong>First of all</strong>, let me introduce myself : My IGN is <strong>Mikoto88</strong>, a lvl <strong>364 Enchanter</strong> from start<br />I noticed that enchanters guide from caporal is <strong>Outdated</strong>, so I decided to remaking his guide. I will add updated information such as newest gear and gameplay also with some Walktrough for newbies. Most information that I provide are either proven by myself or by other enchanters. Great credits I give to <a style="color: #32e619;" title="@caporal84" href="/user/11515">caporal84</a> as the original creator of this guide, that really help me in past when I still newb ench QwQ</div>
 </div>
 <br /><br />
