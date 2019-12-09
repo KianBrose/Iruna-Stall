@@ -119,3 +119,5 @@ Route::post('/item/add', 'IrunaitemController@add')->middleware('isAdmin');
 
 Route::get('/admin', 'Admin\AdminController@index');
 
+
+Route::get('/sitemap', 'SitemapController@index');
