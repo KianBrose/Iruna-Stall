@@ -78,6 +78,10 @@ Route::get('/guides/enchanter2', function () {
     return view('guides/enchanter2');
 });
 
+Route::get('/guides/hw1', function () {
+    return view('guides/hw1');
+});
+
 Route::get('/search', 'SearchController@search')->name('search');
 Route::get('/account', 'AccountController@show')->middleware('auth', 'checkblocked');
 
