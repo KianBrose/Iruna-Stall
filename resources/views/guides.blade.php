@@ -177,8 +177,7 @@
                         <hr>
                         <h4>Necromancer guides:</h4>
                         <ul>
-                          <li></li>
-                          <li></li>
+                          <li><a href="/guides/necro1">Updated Necromancer's Guide</a></li>
                         </ul>
                         <hr>
                         <h4>Assasin guides:</h4>

@@ -82,6 +82,10 @@ Route::get('/guides/hw1', function () {
     return view('guides/hw1');
 });
 
+Route::get('/guides/necro1', function () {
+    return view('guides/necro1');
+});
+
 Route::get('/search', 'SearchController@search')->name('search');
 Route::get('/account', 'AccountController@show')->middleware('auth', 'checkblocked');
 
