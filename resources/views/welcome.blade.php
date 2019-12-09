@@ -158,6 +158,9 @@
                     <form class="form-inline" name="form1" id="form1" action="/tutorial" method="GET">
 							<button type="submit" class="btn btn-primary mb-2" value="Search" style="width:100%; background-color: green; ">Iruna stall tutorial</button>
 					</form>
+					<hr>
+					<h3>2019-12-06 Iruna Stall Update 1.15</h3>
+					<p>We apologise for the error when adding items, it's fixed now.<br> You can now display all items within a category by searching for @equipment or @xtal ...</p>
                     <hr>
                     <h3>2019-12-06 Iruna Stall Update 1.12</h3>
                     <p>The <a href="/guides">guides section</a> has been added with the permission of Ryu! More guides shall be updated soon</p>
