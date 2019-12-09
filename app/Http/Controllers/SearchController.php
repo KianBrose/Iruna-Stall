@@ -32,7 +32,7 @@ class SearchController extends Controller
                     $relicCount = collect();
                     $totalCount = $alCount->count() + $equipCount->count() + $relicCount->count() + $xtalCount->count() + $itemCount->count();
                     $alSearch = Ai::where('name', 'LIKE', "%{$random}%")->paginate(10, ['*'], 'alPage');
-                    $equipSearch = Equipment::where('name', 'LIKE', "%{$input}%")->orWhere('ability', 'LIKE', "%{$input}%")->orWhere('slot1', 'LIKE', "%{$input}%")->orWhere('slot2', 'LIKE', "%{$input}%")->paginate(10, ['*'], 'equipPage');
+                    $equipSearch = Equipment::where('name', 'LIKE', "%{$input}%")->orWhere('ability', 'LIKE', "%{$input}%")->orWhere('slot1', 'LIKE', "%{$input}%")->orWhere('slot2', 'LIKE', "%{$input}%")->orderBy('created_at', 'desc')->paginate(10, ['*'], 'equipPage');
                     $itemSearch = Items::where('name', 'LIKE', "%{$random}%")->paginate(10, ['*'], 'itemPage');
                     $xtalSearch = Xtal::where('name', 'LIKE', "%{$random}%")->paginate(10, ['*'], 'xtalPage');
                     $relicSearch = Relic::where('name', 'LIKE', "%{$random}%")->paginate(10, ['*'], 'relicPage');
@@ -49,7 +49,7 @@ class SearchController extends Controller
                     $xtalCount = collect();
                     $relicCount = collect();
                     $totalCount = $alCount->count() + $equipCount->count() + $relicCount->count() + $xtalCount->count() + $itemCount->count();
-                    $alSearch = Ai::where('name', 'LIKE', "%{$input}%")->paginate(10, ['*'], 'alPage');
+                    $alSearch = Ai::where('name', 'LIKE', "%{$input}%")->orderBy('created_at', 'desc')->paginate(10, ['*'], 'alPage');
                     $equipSearch = Equipment::where('name', 'LIKE', "%{$random}%")->orWhere('ability', 'LIKE', "%{$random}%")->orWhere('slot1', 'LIKE', "%{$random}%")->orWhere('slot2', 'LIKE', "%{$random}%")->paginate(10, ['*'], 'equipPage');
                     $itemSearch = Items::where('name', 'LIKE', "%{$random}%")->paginate(10, ['*'], 'itemPage');
                     $xtalSearch = Xtal::where('name', 'LIKE', "%{$random}%")->paginate(10, ['*'], 'xtalPage');
@@ -69,7 +69,7 @@ class SearchController extends Controller
                     $totalCount = $alCount->count() + $equipCount->count() + $relicCount->count() + $xtalCount->count() + $itemCount->count();
                     $alSearch = Ai::where('name', 'LIKE', "%{$random}%")->paginate(10, ['*'], 'alPage');
                     $equipSearch = Equipment::where('name', 'LIKE', "%{$random}%")->orWhere('ability', 'LIKE', "%{$random}%")->orWhere('slot1', 'LIKE', "%{$random}%")->orWhere('slot2', 'LIKE', "%{$random}%")->paginate(10, ['*'], 'equipPage');
-                    $itemSearch = Items::where('name', 'LIKE', "%{$input}%")->paginate(10, ['*'], 'itemPage');
+                    $itemSearch = Items::where('name', 'LIKE', "%{$input}%")->orderBy('created_at', 'desc')->paginate(10, ['*'], 'itemPage');
                     $xtalSearch = Xtal::where('name', 'LIKE', "%{$random}%")->paginate(10, ['*'], 'xtalPage');
                     $relicSearch = Relic::where('name', 'LIKE', "%{$random}%")->paginate(10, ['*'], 'relicPage');
                     return view('search', compact('alSearch', 'equipSearch', 'itemSearch', 'xtalSearch', 'input', 'relicSearch', 'totalCount'));
@@ -86,9 +86,9 @@ class SearchController extends Controller
                     $relicCount = collect();
                     $totalCount = $alCount->count() + $equipCount->count() + $relicCount->count() + $xtalCount->count() + $itemCount->count();
                     $alSearch = Ai::where('name', 'LIKE', "%{$random}%")->paginate(10, ['*'], 'alPage');
-                    $equipSearch = Equipment::where('name', 'LIKE', "%{$random}%")->orWhere('ability', 'LIKE', "%{$random}%")->orWhere('slot1', 'LIKE', "%{$random}%")->orWhere('slot2', 'LIKE', "%{$random}%")->paginate(10, ['*'], 'equipPage');
+                    $equipSearch = Equipment::where('name', 'LIKE', "%{$random}%")->orWhere('ability', 'LIKE', "%{$random}%")->orWhere('slot1', 'LIKE', "%{$random}%")->orWhere('slot2', 'LIKE', "%{$random}%")->orderBy('created_at', 'desc')->paginate(10, ['*'], 'equipPage');
                     $itemSearch = Items::where('name', 'LIKE', "%{$random}%")->paginate(10, ['*'], 'itemPage');
-                    $xtalSearch = Xtal::where('name', 'LIKE', "%{$input}%")->paginate(10, ['*'], 'xtalPage');
+                    $xtalSearch = Xtal::where('name', 'LIKE', "%{$input}%")->orderBy('created_at', 'desc')->paginate(10, ['*'], 'xtalPage');
                     $relicSearch = Relic::where('name', 'LIKE', "%{$random}%")->paginate(10, ['*'], 'relicPage');
                     return view('search', compact('alSearch', 'equipSearch', 'itemSearch', 'xtalSearch', 'input', 'relicSearch', 'totalCount'));
                 }
@@ -104,9 +104,9 @@ class SearchController extends Controller
                     $totalCount = $alCount->count() + $equipCount->count() + $relicCount->count() + $xtalCount->count() + $itemCount->count();
                     $alSearch = Ai::where('name', 'LIKE', "%{$random}%")->paginate(10, ['*'], 'alPage');
                     $equipSearch = Equipment::where('name', 'LIKE', "%{$random}%")->orWhere('ability', 'LIKE', "%{$random}%")->orWhere('slot1', 'LIKE', "%{$random}%")->orWhere('slot2', 'LIKE', "%{$random}%")->paginate(10, ['*'], 'equipPage');
-                    $itemSearch = Items::where('name', 'LIKE', "%{$random}%")->paginate(10, ['*'], 'itemPage');
-                    $xtalSearch = Xtal::where('name', 'LIKE', "%{$random}%")->paginate(10, ['*'], 'xtalPage');
-                    $relicSearch = Relic::where('name', 'LIKE', "%{$input}%")->paginate(10, ['*'], 'relicPage');
+                    $itemSearch = Items::where('name', 'LIKE', "%{$random}%")->orderBy('created_at', 'desc')->paginate(10, ['*'], 'itemPage');
+                    $xtalSearch = Xtal::where('name', 'LIKE', "%{$random}%")->orderBy('created_at', 'desc')->paginate(10, ['*'], 'xtalPage');
+                    $relicSearch = Relic::where('name', 'LIKE', "%{$input}%")->orderBy('created_at', 'desc')->paginate(10, ['*'], 'relicPage');
                     return view('search', compact('alSearch', 'equipSearch', 'itemSearch', 'xtalSearch', 'input', 'relicSearch', 'totalCount'));
                 }
 
@@ -118,11 +118,11 @@ class SearchController extends Controller
                     $xtalCount = Xtal::where('name', 'LIKE', "%{$input}%")->get();
                     $relicCount = Relic::where('name', 'LIKE', "%{$input}%")->get();
                     $totalCount = $alCount->count() + $equipCount->count() + $relicCount->count() + $xtalCount->count() + $itemCount->count();
-                    $alSearch = Ai::where('name', 'LIKE', "%{$input}%")->paginate(10, ['*'], 'alPage');
-                    $equipSearch = Equipment::where('name', 'LIKE', "%{$input}%")->orWhere('ability', 'LIKE', "%{$input}%")->orWhere('slot1', 'LIKE', "%{$input}%")->orWhere('slot2', 'LIKE', "%{$input}%")->paginate(10, ['*'], 'equipPage');
-                    $itemSearch = Items::where('name', 'LIKE', "%{$input}%")->paginate(10, ['*'], 'itemPage');
-                    $xtalSearch = Xtal::where('name', 'LIKE', "%{$input}%")->paginate(10, ['*'], 'xtalPage');
-                    $relicSearch = Relic::where('name', 'LIKE', "%{$input}%")->paginate(10, ['*'], 'relicPage');
+                    $alSearch = Ai::where('name', 'LIKE', "%{$input}%")->orderBy('created_at', 'desc')->paginate(10, ['*'], 'alPage');
+                    $equipSearch = Equipment::where('name', 'LIKE', "%{$input}%")->orWhere('ability', 'LIKE', "%{$input}%")->orWhere('slot1', 'LIKE', "%{$input}%")->orWhere('slot2', 'LIKE', "%{$input}%")->orderBy('created_at', 'desc')->paginate(10, ['*'], 'equipPage');
+                    $itemSearch = Items::where('name', 'LIKE', "%{$input}%")->orderBy('created_at', 'desc')->paginate(10, ['*'], 'itemPage');
+                    $xtalSearch = Xtal::where('name', 'LIKE', "%{$input}%")->orderBy('created_at', 'desc')->paginate(10, ['*'], 'xtalPage');
+                    $relicSearch = Relic::where('name', 'LIKE', "%{$input}%")->orderBy('created_at', 'desc')->paginate(10, ['*'], 'relicPage');
     
                     return view('search', compact('alSearch', 'equipSearch', 'itemSearch', 'xtalSearch', 'input', 'relicSearch', 'totalCount'));
                 }
