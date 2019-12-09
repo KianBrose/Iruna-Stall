@@ -70,6 +70,10 @@ Route::get('/guides/servant1', function () {
     return view('guides/servant1');
 });
 
+Route::get('/guides/enchanter1', function () {
+    return view('guides/enchanter1');
+});
+
 Route::get('/search', 'SearchController@search')->name('search');
 Route::get('/account', 'AccountController@show')->middleware('auth', 'checkblocked');
 
