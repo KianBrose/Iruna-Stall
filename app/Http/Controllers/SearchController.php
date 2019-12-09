@@ -184,6 +184,40 @@ class SearchController extends Controller
         return view('search', compact('alSearch', 'equipSearch', 'itemSearch', 'xtalSearch', 'input', 'relicSearch', 'totalCount'));
     }
 
+    private function searchArmor($inputString){
+        $input = $inputString;
+        $random = 'dsfghdjkfdkfdlefrgffefr';
+        $alCount = collect();
+        if($inputString == ""){
+            $equipCount = Equipment::where('type', 'Body')->get();
+        }else{
+            $equipCount = Equipment::where('type', 'Body')->where('name', 'LIKE', "%{$input}%")->orWhere('ability', 'LIKE', "%{$input}%")->orWhere('slot1', 'LIKE', "%{$input}%")->orWhere('slot2', 'LIKE', "%{$input}%")->get();
+        }
+       
+        $itemCount = collect();
+        $xtalCount = collect();
+        $relicCount = collect();
+        $totalCount = $alCount->count() + $equipCount->count() + $relicCount->count() + $xtalCount->count() + $itemCount->count();
+        $alSearch = Ai::where('name', 'LIKE', "%{$random}%")
+                    ->paginate(10, ['*'], 'alPage');
+        if($inputString == ""){
+            $equipSearch = Equipment::where('type', 'Body')->paginate(10, ['*'], 'equipPage');
+        } else{
+            $equipSearch = Equipment::where('type','Body')
+            ->where('name', 'LIKE', "%{$input}%")
+            ->orWhere('ability', 'LIKE', "%{$input}%")
+            ->orWhere('slot1', 'LIKE', "%{$input}%")
+            ->orWhere('slot2', 'LIKE', "%{$input}%")
+            ->paginate(10, ['*'], 'equipPage');
+        }
+       
+
+        $itemSearch = Items::where('name', 'LIKE', "%{$random}%")->paginate(10, ['*'], 'itemPage');
+        $xtalSearch = Xtal::where('name', 'LIKE', "%{$random}%")->paginate(10, ['*'], 'xtalPage');
+        $relicSearch = Relic::where('name', 'LIKE', "%{$random}%")->paginate(10, ['*'], 'relicPage');
+        return view('search', compact('alSearch', 'equipSearch', 'itemSearch', 'xtalSearch', 'input', 'relicSearch', 'totalCount'));
+    }
+
     private function searchWeapon($inputString){
         $input = $inputString;
         $random = 'dsfghdjkfdkfdlefrgffefr';
@@ -281,7 +315,12 @@ class SearchController extends Controller
             $input = trim($inputString);
             return $this->searchSpecial($input);
         }
-        
+        else if(in_array(strtolower($arr), array('armors', 'armor', 'body', 'bodies'))){
+            $inputString = preg_replace('/@([^\s]+)/', '', $input);
+            $input = trim($inputString);
+            return $this->searchArmor($input);
+        }
+
         else{
             $alCount = Ai::where('name', 'LIKE', "%{$input}%")->get();
             $equipCount = Equipment::where('name', 'LIKE', "%{$input}%")->orWhere('ability', 'LIKE', "%{$input}%")->orWhere('slot1', 'LIKE', "%{$input}%")->orWhere('slot2', 'LIKE', "%{$input}%")->get();
