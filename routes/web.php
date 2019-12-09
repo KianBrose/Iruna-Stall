@@ -102,6 +102,10 @@ Route::get('/guides/gladiator1', function () {
     return view('guides/gladiator1');
 });
 
+Route::get('/guides/paladin1', function () {
+    return view('guides/paladin1');
+});
+
 Route::get('/search', 'SearchController@search')->name('search');
 Route::get('/account', 'AccountController@show')->middleware('auth', 'checkblocked');
 

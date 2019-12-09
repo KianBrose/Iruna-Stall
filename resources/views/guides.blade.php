@@ -198,8 +198,7 @@
                         <hr>
                         <h4>Paladin guides:</h4>
                         <ul>
-                          <li></li>
-                          <li></li>
+                          <li><a href="/guides/paladin1">Pein's Paladin Guide! (Reworked by Krish)</a></li>
                         </ul>
                         <hr>
 					</div>                 
