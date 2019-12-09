@@ -44,7 +44,11 @@ class ItemController extends Controller
         $priceNumber = substr(request('price'), 0, -1);
         $priceDenote = strtolower(substr(request('price'), -1));
         $storedPrice = $this->convertPrice($priceDenote, $priceNumber);
-        $al->price = $storedPrice;
+        if($storedPrice == null){
+            $al->price = request('price');
+        }else{
+            $al->price = $storedPrice;
+        }
         $al->contact = auth()->user()->name;
         $al->save();
         Alert::toast('Successfully added an item', 'success');
@@ -71,7 +75,11 @@ class ItemController extends Controller
         $priceNumber = substr(request('price'), 0, -1);
         $priceDenote = strtolower(substr(request('price'), -1));
         $storedPrice = $this->convertPrice($priceDenote, $priceNumber);
-        $equip->price = $storedPrice;
+        if($storedPrice == null){
+            $equip->price = request('price');
+        }else{
+            $equip->price = $storedPrice;
+        }
         $equip->slots = request('equipslotamount');
         if(substr(request('slot1'), 0, 3) != '◇'){
             //$xtalname = ucwords(request('name'));
@@ -126,7 +134,11 @@ class ItemController extends Controller
         $priceDenote = strtolower(substr(request('price'), -1));
         $priceNumber = substr(request('price'), 0, -1);
         $storedPrice = $this->convertPrice($priceDenote, $priceNumber);
-        $items->price = $storedPrice;
+        if($storedPrice == null){
+            $items->price = request('price');
+        }else{
+            $items->price = $storedPrice;
+        }
         $items->quantity = request('quantity');
         $items->routes = "item/items/{$item_id}";
         $items->item_id = $item_id;
@@ -158,7 +170,11 @@ class ItemController extends Controller
         $priceNumber = substr(request('price'), 0, -1);
         $priceDenote = strtolower(substr(request('price'), -1));
         $storedPrice = $this->convertPrice($priceDenote, $priceNumber);
-        $xtal->price = $storedPrice;
+        if($storedPrice == null){
+            $xtal->price = request('price');
+        }else{
+            $xtal->price = $storedPrice;
+        }
         $xtal->quantity = request('quantity');
         $xtal->routes = "item/xtal/{$item_id}";
         $xtal->item_id = $item_id;
@@ -189,7 +205,11 @@ class ItemController extends Controller
         $priceNumber = substr(request('price'), 0, -1);
         $priceDenote = strtolower(substr(request('price'), -1));
         $storedPrice = $this->convertPrice($priceDenote, $priceNumber);
-        $relic->price = $storedPrice;
+        if($storedPrice == null){
+            $relic->price = request('price');
+        }else{
+            $relic->price = $storedPrice;
+        }
         $relic->owner_id = Auth::user()->user_id;
         $relic->item_id = $id;
         $relic->routes = "item/relic/{$id}";
