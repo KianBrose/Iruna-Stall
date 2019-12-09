@@ -172,8 +172,7 @@
                         <hr>
                         <h4>High Wizard guides:</h4>
                         <ul>
-                          <li></li>
-                          <li></li>
+                          <li><a href="/guides/hw1">Complete High Wizard Guide</a></li>
                         </ul>
                         <hr>
                         <h4>Necromancer guides:</h4>
