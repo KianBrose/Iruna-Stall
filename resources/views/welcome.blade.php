@@ -159,6 +159,9 @@
                     <form class="form-inline" name="form1" id="form1" action="/tutorial" method="GET">
 							<button type="submit" class="btn btn-primary mb-2" value="Search" style="width:100%; background-color: green; ">Iruna stall tutorial</button>
 					</form>
+                    <hr>
+                    <h3>2019-12-06 Iruna Stall Update 1.17</h3>
+                    <p>We renamed the account page to "Settings" which can now be found under the name when loggin in</p>
 					<hr>
 					<h3>2019-12-06 Iruna Stall Update 1.15</h3>
 					<p>We apologise for the error when adding items, it's fixed now.<br> You can now display all items within a category by searching for @equipment or @xtal ...<br>Full list: @equip @equipment @al @alcrystas @xtal @crystas @relic @reliccrystas @item @items @material @add @adds @additional @gear @gears @spec @specs @special @specials @body @armor @armors @bodies</p>
