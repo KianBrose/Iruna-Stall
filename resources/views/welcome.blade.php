@@ -160,7 +160,7 @@
 					</form>
 					<hr>
 					<h3>2019-12-06 Iruna Stall Update 1.15</h3>
-					<p>We apologise for the error when adding items, it's fixed now.<br> You can now display all items within a category by searching for @equipment or @xtal ...<br>Full list: @equip @equipment @al @alcrystas @xtal @crystas @relic @reliccrystas @item @items @material</p>
+					<p>We apologise for the error when adding items, it's fixed now.<br> You can now display all items within a category by searching for @equipment or @xtal ...<br>Full list: @equip @equipment @al @alcrystas @xtal @crystas @relic @reliccrystas @item @items @material @add @adds @additional @gear @gears @spec @specs @special @specials @body @armor @armors @bodies</p>
                     <hr>
                     <h3>2019-12-06 Iruna Stall Update 1.12</h3>
                     <p>The <a href="/guides">guides section</a> has been added with the permission of Ryu! More guides shall be updated soon</p>
