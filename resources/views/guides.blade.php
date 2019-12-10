@@ -139,7 +139,7 @@
                           <li><a href="/guides/samurai2">Samurai Guide</a></li>
                         </ul>
                         <hr>
-                        <h4>Ministrel guides:</h4>
+                        <h4>Minstrel guides:</h4>
                         <ul>
                           <li><a href="/guides/ministrel1">NightinGal's Minstrel Guide [Updated~Post Patch]</a></li>
                         </ul>
@@ -180,7 +180,7 @@
                           <li><a href="/guides/necro1">Updated Necromancer's Guide</a></li>
                         </ul>
                         <hr>
-                        <h4>Assasin guides:</h4>
+                        <h4>Assassin guides:</h4>
                         <ul>
                           <li><a href="/guides/assasin1">Complete Assassin Skill Database</a></li>
                           <li><a href="/guides/assasin2">Damage Backstab Assassin Full Stat Guide</a></li>
