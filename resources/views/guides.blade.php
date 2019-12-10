@@ -17,14 +17,14 @@
     <meta name='HandheldFriendly' content='True'>
     <meta name='MobileOptimized' content='320'>
     <meta name='target' content='all'>
-    <meta name="apple-mobile-web-app-title" content="About | Iruna Global Stall">
+    <meta name="apple-mobile-web-app-title" content="Guides | Iruna Global Stall">
     <meta name='apple-mobile-web-app-capable' content='yes'>
     <meta name='apple-touch-fullscreen' content='yes'>
     <meta name='apple-touch-fullscreen' content='yes'>
     <meta name='application-name' content="Iruna Global Stall">
     <link rel="apple-touch-icon" href="https://irunastall.com/img/iruna.jpg">
     <meta name="twitter:card" content="summary" >
-    <meta name="twitter:title" content="About | Iruna Global Stall" >
+    <meta name="twitter:title" content="Guides | Iruna Global Stall" >
     <meta name="twitter:description" content="Know about Iruna global stall. This is a platform to find, buy and sell items of Iruna online game. Account is not needed for searching for items" >
     <meta property="og:title" content="Iruna Stall">
     <meta property="og:type" content="website" >
@@ -64,7 +64,7 @@
                     <!-- Left Side Of Navbar -->
 		    <ul class="navbar-nav ml-auto">
 		    	<li class="nav-item">
-                             <a class="nav-link" href="/account">Account</a>
+                             
                         </li>
 			<li class="nav-item">
                              <a class="nav-link" href="/additem">Add item</a>
