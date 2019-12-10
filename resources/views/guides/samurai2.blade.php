@@ -6,7 +6,7 @@
     <title> Samurai Guide | Iruna Global Stall</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="robots" content="index, follow" >
-    <meta name="description" content="Find about Iruna Stall on how it used to find, buy and sell items for free! In the Iruna Global Stall, you can post your items as a seller and search for items without the need for registration.">
+    <meta name="description" content="Find the recently updated guide about Samurai class on Iruna stall ">
     <meta name="keywords" content="Iruna, Stall, Global, iruna, stall, global, Iruna Online, buy, sell, trade, about, Kian Brose, Kumar, Polowis, terms, service, contact" >
     <meta name="hostname" content="irunastall.com" >
     <meta name='subject' content="About Iruna Global Stall">
@@ -24,11 +24,11 @@
     <meta name='application-name' content="Iruna Global Stall">
     <link rel="apple-touch-icon" href="https://irunastall.com/img/iruna.jpg">
     <meta name="twitter:card" content="summary" >
-    <meta name="twitter:title" content="About | Iruna Global Stall" >
-    <meta name="twitter:description" content="Know about Iruna global stall. This is a platform to find, buy and sell items of Iruna online game. Account is not needed for searching for items" >
+    <meta name="twitter:title" content="Guide Samurai | Iruna Global Stall" >
+    <meta name="twitter:description" content="Find the recently updated guide about Samurai class on Iruna stall " >
     <meta property="og:title" content="Iruna Stall">
     <meta property="og:type" content="website" >
-    <meta property="og:description" content="Know about on how to find, buy and sell items for free on the Iruna Online Global Stall! In the Global Stall, you can post your items as a seller and search for items as a buyer. The stall is free to use and requires no account to search for items.">
+    <meta property="og:description" content="Find the recently updated guide about Samurai class on Iruna stall ">
     <meta property="og:image" content="https://irunastall.com/img/iruna.jpg">
     <meta property="og:url" content="https://irunastall.com" >
     <meta name="csrf-token" content="{{ csrf_token() }}">

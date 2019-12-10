@@ -107,7 +107,7 @@
                     <hr>
 					<div>
 						<p>Welcome to the add item page! If this is your first time here, please refer to this <a>quick guide</a> on how to add an item!</p>
-							<div class="alert alert-success">Please make the use of autocomplete</div>
+							<div class="alert alert-success">Please make the use of autocomplete if you are not sure about spelling.</div>
 							
 							@if ($errors->any())
     						<div class="alert alert-danger">{{ $errors->first() }}</div>
