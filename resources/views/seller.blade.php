@@ -133,7 +133,11 @@
 					<h6>Facebook: <a href="{{$user->facebook }}">{{$user->facebook }}</a></h6>
 					<h6>Discord: {{$user->discord }} </h6>
 					<h6>Whatsapp: </h6>
-					<br>
+                    <br>
+                    <form action="/addFriend/{{$user->id}}" method="POST">
+                        @csrf
+                        <button class="btn btn-primary">Add</button>
+                    </form>
 					<h4>Seller's items</h4>
 					<hr>
                     <div class="row divider" role="separator" ></div>

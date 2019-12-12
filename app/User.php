@@ -7,6 +7,7 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\CanResetPassword;
 use App\Notifications\IrunaEmailVerification;
+use Auth;
 
 class User extends Authenticatable implements MustVerifyEmail
 {
@@ -39,6 +40,8 @@ class User extends Authenticatable implements MustVerifyEmail
         'email_verified_at' => 'datetime',
     ];
 
+   //protected $appends = ['friend'];
+
     public function isAdmin(){
         return $this->isAdmin === '1';
     }
@@ -51,4 +54,16 @@ class User extends Authenticatable implements MustVerifyEmail
     {
         $this->notify(new IrunaEmailVerification);
     }
+
+    public function messages()
+    {
+        return $this->hasMany(Message::class);
+    }
+
+    public function friends()
+    {
+        return $this->belongsToMany(User::class, 'friend', 'user_id', 'friend_id');
+    }
+
+    
 }
