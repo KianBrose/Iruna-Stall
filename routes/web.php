@@ -189,3 +189,10 @@ Route::get('/admin', 'Admin\AdminController@index');
 
 
 Route::get('/sitemap', 'SitemapController@index');
+
+Route::get('/messages/{user}', 'MessageController@fetch');
+Route::post('/messages/{user}', "MessageController@sendMessage");
+Route::get('/private', "MessageController@index");
+Route::get('/users', 'MessageController@users');
+
+Route::post('/addFriend/{id}', 'FriendController@add');
