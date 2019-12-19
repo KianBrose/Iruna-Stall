@@ -2013,6 +2013,7 @@ __webpack_require__.r(__webpack_exports__);
       })["catch"](function (error) {
         console.log(error);
       });
+      console.log(Echo.socketId());
     },
     fetchMessages: function fetchMessages() {
       var _this3 = this;
@@ -2059,7 +2060,6 @@ __webpack_require__.r(__webpack_exports__);
   created: function created() {
     var _this5 = this;
 
-    console.log('something');
     this.fetchUsers();
     Echo.join('plchat').here(function (users) {
       console.log('online', users);
@@ -98391,7 +98391,7 @@ window.Echo = new laravel_echo__WEBPACK_IMPORTED_MODULE_0__["default"]({
   broadcaster: 'pusher',
   key: '68c1e88034b990b9e75f',
   cluster: 'ap1',
-  encrypted: true
+  encrypted: false
 });
 
 /***/ }),
