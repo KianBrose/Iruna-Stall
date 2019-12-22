@@ -20,6 +20,9 @@
     <meta property="og:description" content="Search for item in Iruna Global Stall">
     <meta property="og:image" content="https://irunastall.com/img/iruna.jpg">
 	<meta property="og:url" content="https://irunastall.com" >
+	   
+    <!-- manifest for PWA -->
+    <link rel="manifest" href="manifest.json" >
 @endsection
 
 @section('content')
