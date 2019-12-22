@@ -160,6 +160,9 @@
 							<button type="submit" class="btn btn-primary mb-2" value="Search" style="width:100%; background-color: green; ">Iruna stall tutorial</button>
 					</form>
                     <hr>
+                    <h3>2019-12-22 Iruna Stall Update 1.5</h3>
+                    <p>Fixed some minor display issues for mobile devices, an "Add" button has been added to user profiles for the upcomming Chat feature (not implemented/working yet). The following new category searches have been added: @add @adds @additional @gear @gears @spec @specs, @special @specials @body @armor @armors @bodies</p>
+                    <hr>
                     <h3>2019-12-06 Iruna Stall Update 1.17</h3>
                     <p>We renamed the account page to "Settings" which can now be found under the name when loggin in</p>
 					<hr>

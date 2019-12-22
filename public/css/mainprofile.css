@@ -312,10 +312,10 @@ tbody tr:hover {
         content: "Name";
     }
     .als:nth-child(2):before {
-        content: "QTY";
+        content: "Color";
     }
     .als:nth-child(3):before {
-        content: "Color";
+        content: "QTY";
     }
     .als:nth-child(4):before {
         content: "Price";
