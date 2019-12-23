@@ -29,7 +29,7 @@ const staticAssets = [
     'https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css',
     'https://fonts.googleapis.com/css?family=Nunito:200,600',
     'https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css',
-    'css/style.css',
+    './css/style.css',
     'https://irunastall.com/vendor/sweetalert/sweetalert.all.js',
     'https://code.jquery.com/jquery-3.4.1.min.js',
     'https://code.jquery.com/ui/1.12.1/jquery-ui.min.js',
