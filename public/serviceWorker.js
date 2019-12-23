@@ -24,6 +24,7 @@ const staticAssets = [
     './sniper1',
     './gladiator1',
     './paladin1',
+    './js/serviceLoader.js',
     './serviceWorker.js',
     'https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css',
     'https://fonts.googleapis.com/css?family=Nunito:200,600',

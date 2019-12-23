@@ -23,6 +23,7 @@
 	   
     <!-- manifest for PWA -->
     <link rel="manifest" href="manifest.json" >
+    <script src="js/serviceLoader.js"></script>
 @endsection
 
 @section('content')

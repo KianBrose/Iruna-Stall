@@ -10,6 +10,8 @@
     <title>Iruna Global Stall</title>
 
     <link rel="shortcut icon" href="favicon.ico">
+    <link rel="manifest" href="manifest.json" >
+    <script src="js/serviceLoader.js"></script>
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>

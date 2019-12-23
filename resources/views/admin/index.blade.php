@@ -7,6 +7,7 @@
     <link href="https://fonts.googleapis.com/css?family=Droid+Sans" rel="stylesheet">
     <link rel="stylesheet" href="css/admin.css">
     <link rel="manifest" href="manifest.json" >
+    <script src="js/serviceLoader.js"></script>
   </head>
   <body>
     <aside class="side-nav" id="show-side-navigation1">
