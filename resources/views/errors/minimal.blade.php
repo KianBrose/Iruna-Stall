@@ -7,6 +7,7 @@
         <title>@yield('title')</title>
         
         <link rel="manifest" href="manifest.json" >
+        <script src="js/serviceLoader.js"></script>
         <!-- Fonts -->
         <link rel="dns-prefetch" href="//fonts.gstatic.com">
         <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
