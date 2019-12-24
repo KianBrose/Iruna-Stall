@@ -132,9 +132,9 @@ export default {
                         this.allMessages.push(response.data.message)
                         setTimeout(this.scrollToEnd,100);
             }).then((res) =>{
-                console.log('true');
+
             }).catch(error =>{
-                console.log(error);
+                
             });
             
            
@@ -182,8 +182,9 @@ export default {
     mounted(){
 
     },
-    created(){
 
+    created(){   
+        console.log(this.users)
         this.fetchUsers();
         Echo.join('plchat')
             .here((users) => {
@@ -201,7 +202,6 @@ export default {
              
             Echo.private('privatechat.'+this.user.id)
                 .listen('PrivateMessageSent',(e)=>{
-                    console.log('pmessage sent')
                     this.activeFriend=e.message.user_id;
                     this.allMessages.push(e.message)
                     setTimeout(this.scrollToEnd,100);
