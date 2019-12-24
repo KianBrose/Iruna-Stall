@@ -26,16 +26,8 @@ const staticAssets = [
     './paladin1',
     './js/serviceLoader.js',
     './serviceWorker.js',
-    'https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css',
-    'https://fonts.googleapis.com/css?family=Nunito:200,600',
-    'https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css',
     './css/style.css',
-    'https://irunastall.com/vendor/sweetalert/sweetalert.all.js',
-    'https://code.jquery.com/jquery-3.4.1.min.js',
-    'https://code.jquery.com/ui/1.12.1/jquery-ui.min.js',
-    'https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js',
-    'https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js',
-    'https://ajax.cloudflare.com/cdn-cgi/scripts/7089c43e/cloudflare-static/rocket-loader.min.js'
+    './vendor/sweetalert/sweetalert.all.js'
 ];
 
 self.addEventListener('install', async event => {
