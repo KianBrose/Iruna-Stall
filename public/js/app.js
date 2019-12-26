@@ -1957,11 +1957,7 @@ __webpack_require__.r(__webpack_exports__);
   },
   computed: {
     friends: function friends() {
-      var _this = this;
-
-      return this.users.filter(function (user) {
-        return user.id !== _this.user.id;
-      });
+      return this.users.friend;
     }
   },
   watch: {
@@ -1989,7 +1985,7 @@ __webpack_require__.r(__webpack_exports__);
       });
     },
     sendMessage: function sendMessage() {
-      var _this2 = this;
+      var _this = this;
 
       //check if there message
       if (!this.message) {
@@ -2003,38 +1999,33 @@ __webpack_require__.r(__webpack_exports__);
       axios.post('/messages/' + this.activeFriend, {
         message: this.message
       }).then(function (response) {
-        _this2.message = null;
+        _this.message = null;
 
-        _this2.allMessages.push(response.data.message);
+        _this.allMessages.push(response.data.message);
 
-        setTimeout(_this2.scrollToEnd, 100);
-      }).then(function (res) {
-        console.log('true');
-      })["catch"](function (error) {
-        console.log(error);
-      });
-      console.log(Echo.socketId());
+        setTimeout(_this.scrollToEnd, 100);
+      }).then(function (res) {})["catch"](function (error) {});
     },
     fetchMessages: function fetchMessages() {
-      var _this3 = this;
+      var _this2 = this;
 
       if (!this.activeFriend) {
         return alert('Please select friend');
       }
 
       axios.get('/messages/' + this.activeFriend).then(function (response) {
-        _this3.allMessages = response.data;
-        setTimeout(_this3.scrollToEnd, 100);
+        _this2.allMessages = response.data;
+        setTimeout(_this2.scrollToEnd, 100);
       });
     },
     fetchUsers: function fetchUsers() {
-      var _this4 = this;
+      var _this3 = this;
 
       axios.get('/users').then(function (response) {
-        _this4.users = response.data;
+        _this3.users = response.data;
 
-        if (_this4.friends.length > 0) {
-          _this4.activeFriend = _this4.friends[0].id;
+        if (_this3.friends.length > 0) {
+          _this3.activeFriend = _this3.friends[0].id;
         }
       });
     },
@@ -2058,34 +2049,34 @@ __webpack_require__.r(__webpack_exports__);
   },
   mounted: function mounted() {},
   created: function created() {
-    var _this5 = this;
+    var _this4 = this;
 
+    console.log(this.users);
     this.fetchUsers();
     Echo.join('plchat').here(function (users) {
       console.log('online', users);
-      _this5.onlineFriends = users;
+      _this4.onlineFriends = users;
     }).joining(function (user) {
-      _this5.onlineFriends.push(user);
+      _this4.onlineFriends.push(user);
 
       console.log('joining', user.name);
     }).leaving(function (user) {
-      _this5.onlineFriends.splice(_this5.onlineFriends.indexOf(user), 1);
+      _this4.onlineFriends.splice(_this4.onlineFriends.indexOf(user), 1);
 
       console.log('leaving', user.name);
     });
     Echo["private"]('privatechat.' + this.user.id).listen('PrivateMessageSent', function (e) {
-      console.log('pmessage sent');
-      _this5.activeFriend = e.message.user_id;
+      _this4.activeFriend = e.message.user_id;
 
-      _this5.allMessages.push(e.message);
+      _this4.allMessages.push(e.message);
 
-      setTimeout(_this5.scrollToEnd, 100);
+      setTimeout(_this4.scrollToEnd, 100);
     }).listenForWhisper('typing', function (e) {
-      if (e.user.id == _this5.activeFriend) {
-        _this5.typingFriend = e.user;
-        if (_this5.typingClock) clearTimeout();
-        _this5.typingClock = setTimeout(function () {
-          _this5.typingFriend = {};
+      if (e.user.id == _this4.activeFriend) {
+        _this4.typingFriend = e.user;
+        if (_this4.typingClock) clearTimeout();
+        _this4.typingClock = setTimeout(function () {
+          _this4.typingFriend = {};
         }, 9000);
       }
     });
@@ -98391,7 +98382,7 @@ window.Echo = new laravel_echo__WEBPACK_IMPORTED_MODULE_0__["default"]({
   broadcaster: 'pusher',
   key: '68c1e88034b990b9e75f',
   cluster: 'ap1',
-  encrypted: false
+  encrypted: true
 });
 
 /***/ }),

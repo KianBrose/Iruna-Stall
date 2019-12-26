@@ -87,9 +87,8 @@ export default {
 
     computed:{
       friends(){
-        return this.users.filter((user)=>{
-          return user.id !==this.user.id;
-        })
+        return this.users.friend
+        
       }
     },
 
