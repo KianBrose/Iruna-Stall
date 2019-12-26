@@ -46,6 +46,6 @@ class MessageController extends Controller
 
     public function users()
     {
-       return User::all();
+       return Auth::user();
     }
 }

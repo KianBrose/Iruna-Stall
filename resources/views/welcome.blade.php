@@ -135,13 +135,13 @@
                     <h4>Welcome!</h4>
                     <hr>
 					
-					<form class="form-inline" name="form1" id="form1" action="/search" method="GET">
+					<form class="form-inline" name="form1" id="form5" action="/search" method="GET">
 						@csrf
 					  <div class="form-group mb-2" style="width:80%">
 						<label for="search" class="sr-only">Item name</label>
 						<input type="text" class="form-control ui-autocomplete-input" id="search"  name="search" placeholder="Item/Ability name" autocomplete="off" style="width:98%">
 					  </div>
-					  <button type="submit" class="btn btn-primary mb-2" name="search_button" id="search_button" value="Search" style="width:20%">Search</button>
+					  <button type="submit" class="btn btn-primary mb-2" name="search_button" id="search_button1" value="Search" style="width:20%">Search</button>
 					</form>
                     @error('searcherror')
                     <div style="color:red">{{$message}}</div>
@@ -152,15 +152,15 @@
                     <p style="font-size: 14px;">Welcome to our Iruna Global Stall</p>
 					<p style="font-size: 14px;">Enter the item name and press search</p>
 					<form class="form-inline" name="form1" id="form1" action="/search" method="GET">
-							<button type="submit" class="btn btn-primary mb-2" name="search_button" id="search_button" value="Search" style="width:100%">Browse all items</button>
+							<button type="submit" class="btn btn-primary mb-2" name="search_button" id="search_button2" value="Search" style="width:100%">Browse all items</button>
 					</form>
-                    <form class="form-inline" name="form1" id="form1" action="/guides" method="GET">
+                    <form class="form-inline" name="form1" id="form2" action="/guides" method="GET">
 							<button type="submit" class="btn btn-primary mb-2" value="Search" style="width:100%">View Guides</button>
 					</form>
-                    <form class="form-inline" name="form1" id="form1" action="/scammers" method="GET">
+                    <form class="form-inline" name="form1" id="form3" action="/scammers" method="GET">
 							<button type="submit" class="btn btn-primary mb-2" value="Search" style="width:100%">View Scammer List</button>
 					</form>
-                    <form class="form-inline" name="form1" id="form1" action="/tutorial" method="GET">
+                    <form class="form-inline" name="form1" id="form4" action="/tutorial" method="GET">
 							<button type="submit" class="btn btn-primary mb-2" value="Search" style="width:100%; background-color: green; ">Iruna stall tutorial</button>
 					</form>
                     <hr>

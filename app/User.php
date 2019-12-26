@@ -8,6 +8,8 @@ use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\CanResetPassword;
 use App\Notifications\IrunaEmailVerification;
 use Auth;
+use App\Friend;
+
 
 class User extends Authenticatable implements MustVerifyEmail
 {
@@ -18,7 +20,7 @@ class User extends Authenticatable implements MustVerifyEmail
      *
      * @var array
      */
-    protected $fillable = [
+    protected $fillable = [             
         'name', 'email', 'password', 'user_id'
     ];
 
@@ -40,7 +42,7 @@ class User extends Authenticatable implements MustVerifyEmail
         'email_verified_at' => 'datetime',
     ];
 
-   //protected $appends = ['friend'];
+    protected $appends = ['friend'];
 
     public function isAdmin(){
         return $this->isAdmin === '1';
@@ -62,7 +64,12 @@ class User extends Authenticatable implements MustVerifyEmail
 
     public function friends()
     {
-        return $this->belongsToMany(User::class, 'friend', 'user_id', 'friend_id');
+        return $this->belongsToMany(User::class, 'friend', 'user_id', 'friend_id')->as('friends');
+    }
+
+    public function getFriendAttribute(){
+        $friendofuser = $this->friends()->get();
+        return $friendofuser;
     }
 
     
