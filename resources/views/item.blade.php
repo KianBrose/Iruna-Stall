@@ -8,6 +8,7 @@
        
     <!-- manifest for PWA -->
     <link rel="manifest" href="manifest.json" >
+    <script src="js/serviceLoader.js"></script>
 </head>
 <body>
     <h1>All item</h1>
