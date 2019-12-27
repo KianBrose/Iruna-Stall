@@ -45,15 +45,6 @@
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
     <link href="css/style.css" rel="stylesheet">
-	
-	<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-	<script>
-		 (adsbygoogle = window.adsbygoogle || []).push({
-			  google_ad_client: "ca-pub-8585623774913935",
-			  enable_page_level_ads: true
-		 });
-	</script>
-
 </head>
 
 <body>
@@ -154,29 +145,18 @@
 					<form class="form-inline" name="form1" id="form1" action="/search" method="GET">
 							<button type="submit" class="btn btn-primary mb-2" name="search_button" id="search_button2" value="Search" style="width:100%">Browse all items</button>
 					</form>
-                    <form class="form-inline" name="form1" id="form2" action="/guides" method="GET">
-							<button type="submit" class="btn btn-primary mb-2" value="Search" style="width:100%">View Guides</button>
-					</form>
                     <form class="form-inline" name="form1" id="form3" action="/scammers" method="GET">
 							<button type="submit" class="btn btn-primary mb-2" value="Search" style="width:100%">View Scammer List</button>
 					</form>
                     <form class="form-inline" name="form1" id="form4" action="/tutorial" method="GET">
 							<button type="submit" class="btn btn-primary mb-2" value="Search" style="width:100%; background-color: green; ">Iruna stall tutorial</button>
 					</form>
-<<<<<<< HEAD
-                 
-=======
                     <hr>
                     <script async="async" data-cfasync="false" src="//pl15254362.passeura.com/c5c40d3482902bda63cfdff1fee87e8b/invoke.js"></script>
-<<<<<<< HEAD
                     <div id="container-c5c40d3482902bda63cfdff1fee87e8b"></div>
                     <hr>
                     <h3>2019-12-27 Iruna Stall Update 1.51</h3>
                     <p>Removed Guides due to SEO issues</p>
->>>>>>> 97747661a6f26abd0a371261d2ee3848aaee1443
-=======
-<div id="container-c5c40d3482902bda63cfdff1fee87e8b"></div>
->>>>>>> 2fe86107d1a5fb3c61e1ea99f32e4f3a29684845
                     <hr>
                     <h3>2019-12-22 Iruna Stall Update 1.5</h3>
                     <p>Fixed some minor display issues for mobile devices, an "Add" button has been added to user profiles for the upcomming Chat feature (not implemented/working yet). The following new category searches have been added: @add @adds @additional @gear @gears @spec @specs, @special @specials @body @armor @armors @bodies</p>
