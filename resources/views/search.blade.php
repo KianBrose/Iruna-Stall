@@ -67,13 +67,13 @@
 				<hr>
 				<script type="text/javascript">
 					atOptions = {
-						'key' : '878145b0c856e9c76793514b178a3126',
+						'key' : '8f11a40258ed661c6ede5a95a5077578',
 						'format' : 'iframe',
-						'height' : 50,
-						'width' : 320,
+						'height' : 250,
+						'width' : 300,
 						'params' : {}
 					};
-					document.write('<scr' + 'ipt type="text/javascript" src="http' + (location.protocol === 'https:' ? 's' : '') + '://www.madcpms.com/878145b0c856e9c76793514b178a3126/invoke.js"></scr' + 'ipt>');
+					document.write('<scr' + 'ipt type="text/javascript" src="http' + (location.protocol === 'https:' ? 's' : '') + '://www.madcpms.com/8f11a40258ed661c6ede5a95a5077578/invoke.js"></scr' + 'ipt>');
 				</script>
 				<hr>
 				@if($equipSearch->count() >= 1)
@@ -154,18 +154,7 @@
 					</div>
 				</div>
 				@endif
-				<hr>
-				<script type="text/javascript">
-					atOptions = {
-						'key' : '878145b0c856e9c76793514b178a3126',
-						'format' : 'iframe',
-						'height' : 50,
-						'width' : 320,
-						'params' : {}
-					};
-					document.write('<scr' + 'ipt type="text/javascript" src="http' + (location.protocol === 'https:' ? 's' : '') + '://www.madcpms.com/878145b0c856e9c76793514b178a3126/invoke.js"></scr' + 'ipt>');
-				</script>
-				<hr>
+				
 				<br>
 				@if($itemSearch->count() >= 1)
 				<h4>Materials</h4>
@@ -196,18 +185,6 @@
 					</div>
 				</div>
 				@endif
-				<hr>
-				<script type="text/javascript">
-					atOptions = {
-						'key' : '878145b0c856e9c76793514b178a3126',
-						'format' : 'iframe',
-						'height' : 50,
-						'width' : 320,
-						'params' : {}
-					};
-					document.write('<scr' + 'ipt type="text/javascript" src="http' + (location.protocol === 'https:' ? 's' : '') + '://www.madcpms.com/878145b0c856e9c76793514b178a3126/invoke.js"></scr' + 'ipt>');
-				</script>
-				<hr>
 				<br>
 				@if($xtalSearch->count() >= 1)
 				<h4>Xtals</h4>
@@ -240,18 +217,6 @@
 					</div>
 				</div>
 				@endif
-				<hr>
-				<script type="text/javascript">
-					atOptions = {
-						'key' : '878145b0c856e9c76793514b178a3126',
-						'format' : 'iframe',
-						'height' : 50,
-						'width' : 320,
-						'params' : {}
-					};
-					document.write('<scr' + 'ipt type="text/javascript" src="http' + (location.protocol === 'https:' ? 's' : '') + '://www.madcpms.com/878145b0c856e9c76793514b178a3126/invoke.js"></scr' + 'ipt>');
-				</script>
-				<hr>
 				<br>
 				@if($alSearch->count() >= 1)
 				<h4>AL Crystals</h4>
@@ -292,18 +257,6 @@
 					</div>
 				</div>
 				@endif
-				<hr>
-				<script type="text/javascript">
-					atOptions = {
-						'key' : '878145b0c856e9c76793514b178a3126',
-						'format' : 'iframe',
-						'height' : 50,
-						'width' : 320,
-						'params' : {}
-					};
-					document.write('<scr' + 'ipt type="text/javascript" src="http' + (location.protocol === 'https:' ? 's' : '') + '://www.madcpms.com/878145b0c856e9c76793514b178a3126/invoke.js"></scr' + 'ipt>');
-				</script>
-				<hr>
 				<br>
 				@if($relicSearch->count() >= 1)
 				<h4>Relics</h4>
@@ -334,18 +287,6 @@
 					</div>
 				</div>
 				@endif
-				<hr>
-				<script type="text/javascript">
-					atOptions = {
-						'key' : '878145b0c856e9c76793514b178a3126',
-						'format' : 'iframe',
-						'height' : 50,
-						'width' : 320,
-						'params' : {}
-					};
-					document.write('<scr' + 'ipt type="text/javascript" src="http' + (location.protocol === 'https:' ? 's' : '') + '://www.madcpms.com/878145b0c856e9c76793514b178a3126/invoke.js"></scr' + 'ipt>');
-				</script>
-				<hr>
             </div>
         </div>
 
