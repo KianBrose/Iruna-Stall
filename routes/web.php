@@ -30,6 +30,82 @@ Route::get('/tutorial', function () {
     return view('tutorial');
 });
 
+Route::get('/guides', function () {
+    return view('guides');
+});
+
+Route::get('/guides/ninja1', function () {
+    return view('guides/ninja1');
+});
+
+Route::get('/guides/ninja2', function () {
+    return view('guides/ninja2');
+});
+
+Route::get('/guides/samurai1', function () {
+    return view('guides/samurai1');
+});
+
+Route::get('/guides/samurai2', function () {
+    return view('guides/samurai2');
+});
+
+Route::get('/guides/ministrel1', function () {
+    return view('guides/ministrel1');
+});
+
+Route::get('/guides/alchemist1', function () {
+    return view('guides/alchemist1');
+});
+
+Route::get('/guides/monk1', function () {
+    return view('guides/monk1');
+});
+
+Route::get('/guides/bishop1', function () {
+    return view('guides/bishop1');
+});
+
+Route::get('/guides/servant1', function () {
+    return view('guides/servant1');
+});
+
+Route::get('/guides/enchanter1', function () {
+    return view('guides/enchanter1');
+});
+
+Route::get('/guides/enchanter2', function () {
+    return view('guides/enchanter2');
+});
+
+Route::get('/guides/hw1', function () {
+    return view('guides/hw1');
+});
+
+Route::get('/guides/necro1', function () {
+    return view('guides/necro1');
+});
+
+Route::get('/guides/assasin1', function () {
+    return view('guides/assasin1');
+});
+
+Route::get('/guides/assasin2', function () {
+    return view('guides/assasin2');
+});
+
+Route::get('/guides/sniper1', function () {
+    return view('guides/sniper1');
+});
+
+Route::get('/guides/gladiator1', function () {
+    return view('guides/gladiator1');
+});
+
+Route::get('/guides/paladin1', function () {
+    return view('guides/paladin1');
+});
+
 Route::get('/search', 'SearchController@search')->name('search');
 Route::get('/account', 'AccountController@show')->middleware('auth', 'checkblocked');
 
