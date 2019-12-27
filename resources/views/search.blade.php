@@ -33,7 +33,7 @@
 <link href="{{ asset('css/style.css') }}" rel="stylesheet">
 <div class="container">
     <div class="row" >
-        <div class="col-md-7 offset-md-3" >
+        <div class="col-md-7 offset-md-2" >
             <br>
             <br>
 			<form class="form-inline" name="form1" id="form1" action="/search" method="GET">
@@ -53,7 +53,7 @@
 </div>
 <div class="container">
     <div class="row" >
-        <div class="col-md-7 offset-md-3" >
+        <div class="col-md-7 offset-md-2" >
 
             <div style="height: auto !important;">
                 <br>
