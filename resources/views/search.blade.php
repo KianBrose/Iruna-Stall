@@ -304,18 +304,6 @@
 					document.write('<scr' + 'ipt type="text/javascript" src="http' + (location.protocol === 'https:' ? 's' : '') + '://www.madcpms.com/878145b0c856e9c76793514b178a3126/invoke.js"></scr' + 'ipt>');
 				</script>
 				<hr>
-				<hr>
-				<script type="text/javascript">
-					atOptions = {
-						'key' : '878145b0c856e9c76793514b178a3126',
-						'format' : 'iframe',
-						'height' : 50,
-						'width' : 320,
-						'params' : {}
-					};
-					document.write('<scr' + 'ipt type="text/javascript" src="http' + (location.protocol === 'https:' ? 's' : '') + '://www.madcpms.com/878145b0c856e9c76793514b178a3126/invoke.js"></scr' + 'ipt>');
-				</script>
-				<hr>
 				<br>
 				@if($relicSearch->count() >= 1)
 				<h4>Relics</h4>
@@ -346,6 +334,18 @@
 					</div>
 				</div>
 				@endif
+				<hr>
+				<script type="text/javascript">
+					atOptions = {
+						'key' : '878145b0c856e9c76793514b178a3126',
+						'format' : 'iframe',
+						'height' : 50,
+						'width' : 320,
+						'params' : {}
+					};
+					document.write('<scr' + 'ipt type="text/javascript" src="http' + (location.protocol === 'https:' ? 's' : '') + '://www.madcpms.com/878145b0c856e9c76793514b178a3126/invoke.js"></scr' + 'ipt>');
+				</script>
+				<hr>
             </div>
         </div>
 
