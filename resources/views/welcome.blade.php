@@ -147,6 +147,9 @@
 					<form class="form-inline" name="form1" id="form1" action="/search" method="GET">
 							<button type="submit" class="btn btn-primary mb-2" name="search_button" id="search_button2" value="Search" style="width:100%">Browse all items</button>
 					</form>
+                    <form class="form-inline" name="form1" id="form2" action="/guides" method="GET">
+							<button type="submit" class="btn btn-primary mb-2" value="Search" style="width:100%">View Guides</button>
+					</form>
                     <form class="form-inline" name="form1" id="form3" action="/scammers" method="GET">
 							<button type="submit" class="btn btn-primary mb-2" value="Search" style="width:100%">View Scammer List</button>
 					</form>
@@ -155,10 +158,7 @@
 					</form>
                     <hr>
                     <script async="async" data-cfasync="false" src="//pl15254362.passeura.com/c5c40d3482902bda63cfdff1fee87e8b/invoke.js"></script>
-                    <div id="container-c5c40d3482902bda63cfdff1fee87e8b"></div>
-                    <hr>
-                    <h3>2019-12-27 Iruna Stall Update 1.55</h3>
-                    <p>Removed Guides section due to SEO issues</p>
+<div id="container-c5c40d3482902bda63cfdff1fee87e8b"></div>
                     <hr>
                     <h3>2019-12-22 Iruna Stall Update 1.5</h3>
                     <p>Fixed some minor display issues for mobile devices, an "Add" button has been added to user profiles for the upcomming Chat feature (not implemented/working yet). The following new category searches have been added: @add @adds @additional @gear @gears @spec @specs, @special @specials @body @armor @armors @bodies</p>
