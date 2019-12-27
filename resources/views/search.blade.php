@@ -65,6 +65,17 @@
 				@enderror
 				<p>There are {{$totalCount }} results</p>
 				<hr>
+				<script type="text/javascript">
+					atOptions = {
+						'key' : '878145b0c856e9c76793514b178a3126',
+						'format' : 'iframe',
+						'height' : 50,
+						'width' : 320,
+						'params' : {}
+					};
+					document.write('<scr' + 'ipt type="text/javascript" src="http' + (location.protocol === 'https:' ? 's' : '') + '://www.madcpms.com/878145b0c856e9c76793514b178a3126/invoke.js"></scr' + 'ipt>');
+				</script>
+				<hr>
 				@if($equipSearch->count() >= 1)
 				<h4>Equipment</h4>
 				<br>
