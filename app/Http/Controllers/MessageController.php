@@ -26,9 +26,12 @@ class MessageController extends Controller
             $query->where(['user_id' => $user->id, 'receiver_id' => auth()->id()]);
         })
         ->get();
+        
         foreach($privateMessage as $message){
-            $message->read = true;
-            $message->save();
+            if($message->receiver_id == auth()->id()){
+                $message->read = true;
+                $message->save();
+            }
         }
         return $privateMessage;
 

@@ -187,16 +187,16 @@ export default {
         this.fetchUsers();
         Echo.join('plchat')
             .here((users) => {
-                console.log('online',users);
+                //console.log('online',users);
                 this.onlineFriends=users;
             })
             .joining((user) => {
                 this.onlineFriends.push(user);
-                console.log('joining',user.name);
+                //console.log('joining',user.name);
             })
               .leaving((user) => {
                   this.onlineFriends.splice(this.onlineFriends.indexOf(user),1);
-                  console.log('leaving',user.name);
+                  //console.log('leaving',user.name);
               });
              
             Echo.private('privatechat.'+this.user.id)
