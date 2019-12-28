@@ -62,15 +62,60 @@ class User extends Authenticatable implements MustVerifyEmail
         return $this->hasMany(Message::class);
     }
 
-    public function friends()
+    public function friendsOfMine()
     {
-        return $this->belongsToMany(User::class, 'friend', 'user_id', 'friend_id')->as('friends');
+        return $this->belongsToMany('App\User', 'friend', 'user_id', 'friend_id')->get();
+    }
+
+    public function friendsOf()
+    {
+        return $this->belongsToMany('App\User', 'friend', 'friend_id', 'user_id')->get();
     }
 
     public function getFriendAttribute(){
-        $friendofuser = $this->friends()->get();
-        return $friendofuser;
+        //return Auth::user()->friendsOfMine()->merge(Auth::user()->friendsOf());
+    }
+    
+
+    
+    /*
+        // friendship that I started
+    function friendsOfMine()
+    {
+    return $this->belongsToMany('User', 'friends', 'user_id', 'friend_id')
+        ->wherePivot('accepted', '=', 1) // to filter only accepted
+        ->withPivot('accepted'); // or to fetch accepted value
     }
 
+    // friendship that I was invited to 
+    function friendOf()
+    {
+    return $this->belongsToMany('User', 'friends', 'friend_id', 'user_id')
+        ->wherePivot('accepted', '=', 1)
+        ->withPivot('accepted');
+    }
+
+    // accessor allowing you call $user->friends
+    public function getFriendsAttribute()
+    {
+        if ( ! array_key_exists('friends', $this->relations)) $this->loadFriends();
+
+        return $this->getRelation('friends');
+    }
+
+    protected function loadFriends()
+    {
+        if ( ! array_key_exists('friends', $this->relations))
+        {
+            $friends = $this->mergeFriends();
+
+            $this->setRelation('friends', $friends);
+        }
+    }
+
+    protected function mergeFriends()
+    {
+        return $this->friendsOfMine->merge($this->friendOf);
+    }*/
     
 }

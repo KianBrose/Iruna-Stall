@@ -87,7 +87,7 @@ export default {
 
     computed:{
       friends(){
-        return this.users.friend
+        return this.users
         
       }
     },

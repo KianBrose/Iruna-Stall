@@ -46,6 +46,6 @@ class MessageController extends Controller
 
     public function users()
     {
-       return Auth::user();
+       return Auth::user()->friendsOfMine()->merge(Auth::user()->friendsOf());
     }
 }

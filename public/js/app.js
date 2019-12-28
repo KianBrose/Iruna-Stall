@@ -1957,7 +1957,7 @@ __webpack_require__.r(__webpack_exports__);
   },
   computed: {
     friends: function friends() {
-      return this.users.friend;
+      return this.users;
     }
   },
   watch: {
