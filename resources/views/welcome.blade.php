@@ -152,9 +152,6 @@
 							<button type="submit" class="btn btn-primary mb-2" value="Search" style="width:100%; background-color: green; ">Iruna stall tutorial</button>
 					</form>
                     <hr>
-                    <script async="async" data-cfasync="false" src="//pl15254362.passeura.com/c5c40d3482902bda63cfdff1fee87e8b/invoke.js"></script>
-                    <div id="container-c5c40d3482902bda63cfdff1fee87e8b"></div>
-                    <hr>
                     <h3>2019-12-27 Iruna Stall Update 1.51</h3>
                     <p>Removed Guides due to SEO issues</p>
                     <hr>
