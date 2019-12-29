@@ -151,6 +151,17 @@
                     <form class="form-inline" name="form1" id="form4" action="/tutorial" method="GET">
 							<button type="submit" class="btn btn-primary mb-2" value="Search" style="width:100%; background-color: green; ">Iruna stall tutorial</button>
 					</form>
+					<hr>
+					<p style="color:red;"><b>We need your help to keep this website alive and ad-free!</b><br>
+					<a href="https://www.patreon.com/bePatron?u=27971018" data-patreon-widget-type="become-patron-button">Support us on Patreon!</a><script async src="https://c6.patreon.com/becomePatronButton.bundle.js"></script>
+					<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+					<input type="hidden" name="cmd" value="_donations" />
+					<input type="hidden" name="business" value="opencore0@gmail.com" />
+					<input type="hidden" name="item_name" value="Please donate so that we can keep the Iruna Stall project alive!" />
+					<input type="hidden" name="currency_code" value="USD" />
+					<input type="image" src="https://www.paypalobjects.com/en_US/SE/i/btn/btn_donateCC_LG.gif" border="0" name="submit" title="PayPal - The safer, easier way to pay online!" alt="Donate with PayPal button" />
+					<img alt="" border="0" src="https://www.paypal.com/en_SE/i/scr/pixel.gif" width="1" height="1" />
+					</form>
                     <hr>
                     <h3>2019-12-27 Iruna Stall Update 1.51</h3>
                     <p>Removed Guides due to SEO issues</p>
