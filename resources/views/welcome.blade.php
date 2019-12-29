@@ -152,7 +152,7 @@
 							<button type="submit" class="btn btn-primary mb-2" value="Search" style="width:100%; background-color: green; ">Iruna stall tutorial</button>
 					</form>
 					<hr>
-					<p>We need your help to keep this website alive and ad-free!<br>
+					<p style="color:red;"><b>We need your help to keep this website alive and ad-free!</b><br>
 					<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
 					<input type="hidden" name="cmd" value="_donations" />
 					<input type="hidden" name="business" value="opencore0@gmail.com" />
