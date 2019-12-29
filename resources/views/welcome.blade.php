@@ -162,7 +162,12 @@
 					<input type="image" src="https://www.paypalobjects.com/en_US/SE/i/btn/btn_donateCC_LG.gif" border="0" name="submit" title="PayPal - The safer, easier way to pay online!" alt="Donate with PayPal button" />
 					<img alt="" border="0" src="https://www.paypal.com/en_SE/i/scr/pixel.gif" width="1" height="1" />
 					</form>
-					<p>0$ / 5$ Monthly goal</p>
+					<p>5.45$ / 5$ Monthly goal</p>
+                    <h4>Special thanks to our supporters!</h4>
+                    <ul>
+                      <li><b>Crystal Huang / Akairi</b></li>
+                      <li><b>Robert Gord</b></li>
+                    </ul>  
                     <hr>
                     <h3>2019-12-27 Iruna Stall Update 1.51</h3>
                     <p>Removed Guides due to SEO issues</p>
