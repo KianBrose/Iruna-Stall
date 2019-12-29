@@ -162,6 +162,7 @@
 					<input type="image" src="https://www.paypalobjects.com/en_US/SE/i/btn/btn_donateCC_LG.gif" border="0" name="submit" title="PayPal - The safer, easier way to pay online!" alt="Donate with PayPal button" />
 					<img alt="" border="0" src="https://www.paypal.com/en_SE/i/scr/pixel.gif" width="1" height="1" />
 					</form>
+					<p>0$ / 5$ Monthly goal</p>
                     <hr>
                     <h3>2019-12-27 Iruna Stall Update 1.51</h3>
                     <p>Removed Guides due to SEO issues</p>
