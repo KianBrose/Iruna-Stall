@@ -154,7 +154,6 @@
 					<hr>
 					<p style="color:red;"><b>We need your help to keep this website alive and ad-free!</b><br>
 					<a href="https://www.patreon.com/bePatron?u=27971018" data-patreon-widget-type="become-patron-button">Support us on Patreon!</a><script async src="https://c6.patreon.com/becomePatronButton.bundle.js"></script>
-					<br>
 					<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
 					<input type="hidden" name="cmd" value="_donations" />
 					<input type="hidden" name="business" value="opencore0@gmail.com" />
