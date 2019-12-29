@@ -165,7 +165,7 @@
 					<p>5.45$ / 5$ Monthly goal</p>
                     <h4>Special thanks to our supporters!</h4>
                     <ul>
-                      <li><b>Crystal Huang / Akairi</b></li>
+                      <li><b>Akairi</b></li>
                       <li><b>Robert Gord</b></li>
                     </ul>  
                     <hr>
