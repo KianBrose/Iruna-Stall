@@ -22,7 +22,7 @@ class FriendController extends Controller
             $friends->friend_id = $id;
             $friends->save();
             
-            return redirect('/private');
+            return redirect()->back();
         }
         else{
             abort(404);

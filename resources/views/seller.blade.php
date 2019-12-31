@@ -138,10 +138,15 @@
 					<h6>Discord: {{$user->discord }} </h6>
 					<h6>Whatsapp: </h6>
                     <br>
-                    <form action="/addFriend/{{$user->id}}" method="POST">
-                        @csrf
-                        <button class="btn btn-primary">Add</button>
-                    </form>
+                    @if($add == true)
+                        <div class="alert alert-primary">You have followed this person or this person has followed you</div>
+                        <a href="/private" class="btn btn-primary">Say hi to {{$user->name}} </a>
+                    @else
+                        <form action="/addFriend/{{$user->id}}" method="POST">
+                            @csrf
+                            <button class="btn btn-primary">Follow {{$user->name}}</button>
+                        </form>
+                    @endif
 					<h4>Seller's items</h4>
 					<hr>
                     <div class="row divider" role="separator" ></div>

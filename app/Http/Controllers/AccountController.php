@@ -36,13 +36,21 @@ class AccountController extends Controller
 
     public function getUserId($id){
         $user = User::where('user_id', $id)->firstOrFail();
+        
         if($user != null){
+            $add = false;
+            $friends = Auth::user()->friendsOfMine()->merge(Auth::user()->friendsOf());
+            foreach($friends as $friend){
+                if($friend->user_id == $id){
+                    $add = true;
+                }
+            }
             $equipSearch = Equipment::where('owner_id', $id)->paginate(10, ['*'], 'equipPage');
             $xtalSearch = Xtal::where('owner_id', $id)->paginate(10, ['*'], 'xtalPage');
             $itemSearch = Items::where('owner_id', $id)->paginate(10, ['*'], 'itemPage');
             $alSearch = Ai::where('owner_id', $id)->paginate(10, ['*'], 'alPage');
             $relicSearch = Relic::where('owner_id', $id)->paginate(10, ['*'], 'relicPage');
-            return view('seller', compact('user', 'equipSearch', 'xtalSearch', 'itemSearch', 'alSearch', 'relicSearch'));
+            return view('seller', compact('user', 'equipSearch', 'xtalSearch', 'itemSearch', 'alSearch', 'relicSearch', 'add'));
         }
         
        
