@@ -228,11 +228,11 @@
 								
 								<tr>
                                     @if($al->color == "Red")
-                                    <td class="als" style="color:red;">{{ $al->name }}</td>
+                                    <td class="als" style="color:red;"><a href="/item/alcrystas/{{$al->item_id}}">{{ $al->name }}</a></td>
                                     @elseif($al->color == "Blue")
-                                    <td class="als" style="color:blue;">{{ $al->name }}</td>
+                                    <td class="als" style="color:blue;"><a href="/item/alcrystas/{{$al->item_id}}">{{ $al->name }}</a></td>
                                     @elseif($al->color == "Green")
-                                    <td class="als" style="color:green;">{{ $al->name }}</td>
+                                    <td class="als" style="color:green;"><a href="/item/alcrystas/{{$al->item_id}}">{{ $al->name }}</a></td>
                                     @endif
 									<td class="als">{{ $al->color }}</td>
 									<td class="als">{{ $al->quantity }}</td>
@@ -264,7 +264,7 @@
 							<tbody>
 								@foreach($relicSearch as $relic)
 								<tr>
-									<td class="relics">{{ $relic->name }}</td>
+									<td class="relics"><a href="/item/relic/{{$relic->item_id}}">{{ $relic->name }}</a></td>
                                     <td class="relics">{{ $relic->quantity }}</td>
 									<td class="relics">{{ number_format($relic->price) }}</td>
 									<td class="relics"><a href="/user/{{$relic->owner_id}}">{{ $relic->contact }}</a></td>

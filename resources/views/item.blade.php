@@ -171,6 +171,7 @@
                                         <h6>Ability: {{ $item->ability }}</h6>
                                         <h6> Ability's level: {{$item->ability_level}}</h6>
                                     @endif
+
                             @elseif($item->category == 'item')
                                 <h6>Name: {{$item->name }} </h6>
                             <br>
@@ -180,7 +181,30 @@
                             <br>
                             <h6>Posted at: {{date_format($item->created_at, "d/m/Y")}}</h6>
                             <h6>Seller: <a href="/user/{{ $item->owner_id}}">{{ $item->contact }}</a></h6>
+
+                            @elseif($item->category == 'ai')
+                                <h6>Name: {{$item->name }} </h6>
+                                <br>
+                                <h6>Price: {{ number_format($item->price)}} </h6>
+                                <br>
+                                <h6>Color: {{$item->color}}</h6>
+                                <h6>Quantity: {{number_format($item->quantity)}}</h6>
+                                <br>
+                                <h6>Posted at: {{date_format($item->created_at, "d/m/Y")}}</h6>
+                                <h6>Seller: <a href="/user/{{ $item->owner_id}}">{{ $item->contact }}</a></h6>
+
+                            @elseif($item->category == 'relic')
+                                <h6>Name: {{$item->name }} </h6>
+                                <br>
+                                <h6>Price: {{ number_format($item->price)}} </h6>
+                                <br>
+                                <h6>Quantity: {{number_format($item->quantity)}}</h6>
+                                <br>
+                                <h6>Posted at: {{date_format($item->created_at, "d/m/Y")}}</h6>
+                                <h6>Seller: <a href="/user/{{ $item->owner_id}}">{{ $item->contact }}</a></h6>
+                            
                             @endif
+
                     </div>
                 </div>
             </div>

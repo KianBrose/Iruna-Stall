@@ -133,4 +133,6 @@ Route::prefix('item')->group(function(){
     Route::get('/xtal/{id}', 'ItemViewController@getXtalItemId');
     Route::get('/equip/{id}', 'ItemViewController@getEquipmentItemId');
     Route::get('/material/{id}', 'ItemViewController@getMaterialItemId');
+    Route::get('/alcrystas/{id}', 'ItemViewController@getAlItemId');
+    Route::get('/relic/{id}', 'ItemViewController@getRelicItemId');
 });
