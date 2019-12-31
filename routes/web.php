@@ -128,3 +128,8 @@ Route::get('/users', 'MessageController@users');
 
 Route::post('/addFriend/{id}', 'FriendController@add');
 Route::get('/notification', 'MessageController@showUnreadMessage');
+
+Route::prefix('item')->group(function(){
+    Route::get('/xtal/{id}', 'ItemViewController@getXtalItemId');
+    Route::get('equip/{id}', 'ItemViewController@getEquipmentItemId');
+});

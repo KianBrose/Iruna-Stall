@@ -194,7 +194,7 @@
 									
 								
 								<tr>
-									<td class="xtals">{{ $xtal->name }}</td>
+								<td class="xtals"><a href="/item/xtal/{{$xtal->item_id}}">{{ $xtal->name }}</a></td>
 									<td class="xtals">{{ $xtal->quantity }}</td>
 									<td class="xtals">{{ number_format($xtal->price) }}</td>
 									<td class="xtals"><a href="/user/{{ $xtal->owner_id}}">{{ $xtal->contact }}</a></td>
