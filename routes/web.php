@@ -131,5 +131,6 @@ Route::get('/notification', 'MessageController@showUnreadMessage');
 
 Route::prefix('item')->group(function(){
     Route::get('/xtal/{id}', 'ItemViewController@getXtalItemId');
-    Route::get('equip/{id}', 'ItemViewController@getEquipmentItemId');
+    Route::get('/equip/{id}', 'ItemViewController@getEquipmentItemId');
+    Route::get('/material/{id}', 'ItemViewController@getMaterialItemId');
 });

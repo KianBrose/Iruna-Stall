@@ -162,7 +162,7 @@
 							<tbody>
 								@foreach($itemSearch as $item)
 								<tr>
-									<td class="materials">{{ $item->name }}</td>
+									<td class="materials"><a href="/item/material/{{$item->item_id}}">{{ $item->name }}</td>
 									<td class="materials">{{ $item->quantity }}</td>
 									<td class="materials">{{ number_format($item->price) }}</td>
 									<td class="materials"><a href="/user/{{ $item->owner_id}}">{{ $item->contact }}</a></td>
