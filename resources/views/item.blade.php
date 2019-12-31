@@ -125,9 +125,13 @@
                         <br>
                         <h6>Quantity: {{number_format($item->quantity)}}</h6>
                         <br>
+                        <h6>Posted at: {{date_format($item->created_at, "d/m/Y")}}</h6>
                         <h6>Seller: <a href="/user/{{ $item->owner_id}}">{{ $item->contact }}</a></h6>
+
                         @elseif($item->category == 'equipment')
                         <h6>Name: {{$item->name}}</h6>
+                        <h6>ATK: {{$item->atk}}</h6>
+                        <h6>DEF: {{$item->def}}</h6>
                         <br>
                         <h6>Price: {{ number_format($item->price) }}</h6>
                     <h6> Refinement: +{{$item->refinement}}</h6>
@@ -168,6 +172,7 @@
                                         <h6> Ability's level: {{$item->ability_level}}</h6>
 								    @endif
                         @endif
+                        <h6>Posted at: {{date_format($item->created_at, "d/m/Y")}}</h6>
                     </div>
                 </div>
             </div>

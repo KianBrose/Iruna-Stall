@@ -129,7 +129,7 @@
                     <hr>
                     <div class="row divider" role="separator" ></div>
                     <h6>Username: {{ $user->name }}</h6>
-					<h6>Date registered: {{ $user->created_at }} </h6>
+					<h6>Date registered: {{ date_format($user->created_at, "d/m/Y") }} </h6>
 					<br>
 					<h4>Contact</h4>
 					<hr>

@@ -36,13 +36,15 @@ class AccountController extends Controller
 
     public function getUserId($id){
         $user = User::where('user_id', $id)->firstOrFail();
-        
+
         if($user != null){
             $add = false;
-            $friends = Auth::user()->friendsOfMine()->merge(Auth::user()->friendsOf());
-            foreach($friends as $friend){
-                if($friend->user_id == $id){
-                    $add = true;
+            if(Auth::check()){
+                $friends = Auth::user()->friendsOfMine()->merge(Auth::user()->friendsOf());
+                foreach($friends as $friend){
+                    if($friend->user_id == $id){
+                        $add = true;
+                    }
                 }
             }
             $equipSearch = Equipment::where('owner_id', $id)->paginate(10, ['*'], 'equipPage');
