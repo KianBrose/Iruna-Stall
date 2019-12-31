@@ -127,3 +127,4 @@ Route::get('/private', "MessageController@index");
 Route::get('/users', 'MessageController@users');
 
 Route::post('/addFriend/{id}', 'FriendController@add');
+Route::get('/notification', 'MessageController@showUnreadMessage');

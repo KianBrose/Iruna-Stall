@@ -51,4 +51,13 @@ class MessageController extends Controller
     {
        return Auth::user()->friendsOfMine()->merge(Auth::user()->friendsOf());
     }
+
+    public function showUnreadMessage(){
+        $message = Message::with('user')->groupBy('user_id')->where('receiver_id', auth()->user()->id)->where('read', false)->get();
+
+        return $message;
+    }
+
+
 }
+ 
