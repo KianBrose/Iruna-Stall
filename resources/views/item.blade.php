@@ -92,7 +92,7 @@
                                     <a class="dropdown-item" href="/user/{{ auth()->user()->user_id }}">Profile</a>
                                     <a class="dropdown-item" href="/account">Settings</a>
                                     <a class="dropdown-item" href="{{ route('logout') }}"
-                                       onclick="event.preventDefault();
+                                       onclick="event.prevenh6efault();
                                                      document.getElementById('logout-form').submit();">
                                         {{ __('Logout') }}
                                     </a>
@@ -127,7 +127,46 @@
                         <br>
                         <h6>Seller: <a href="/user/{{ $item->owner_id}}">{{ $item->contact }}</a></h6>
                         @elseif($item->category == 'equipment')
-                        
+                        <h6>Name: {{$item->name}}</h6>
+                        <br>
+                        <h6>Price: {{ number_format($item->price) }}</h6>
+                    <h6> Refinement: +{{$item->refinement}}</h6>
+                        @if ($item->slots == 0)
+										<h6>Slot 1: No slot</h6>
+										<h6>Slot 2: No slot</h6>
+									@elseif ($item->slots == 1)
+										@if ($item->slot1 == null)
+											<h6>Slot 1: Empty slot</h6>
+											<h6 >Slot 2: No slot</h6>
+										@else
+											<h6>Slot 1: {{ $item->slot1 }}</h6>
+											<h6 >Slot 2: No slot</h6>
+										@endif
+									@elseif ($item->slots == 2)
+										@if ($item->slot1 != null)
+											@if ($item->slot2 != null)
+												<h6>Slot 1: {{ $item->slot1 }}</h6>
+												<h6>Slot 2: {{ $item->slot2 }}</h6>
+											@else
+												<h6>Slot 1: {{ $item->slot1 }}</h6>
+												<h6>Slot 2: Empty slot</h6>
+											@endif
+										@elseif ($item->slot1 == null)
+											@if ($item->slot2 == null)
+												<h6>Slot 1: Empty slot</h6>
+												<h6>Slot 2: Empty slot</h6>
+											@else
+												<h6>Slot 1: Empty slot</h6>
+												<h6>Slot 2: {{ $item->slot2 }}</h6>
+											@endif
+										@endif
+									@endif
+									@if ($item->ability == null)
+										<h6>Ability : None</h6>
+									@else
+                                        <h6>Ability: {{ $item->ability }}</h6>
+                                        <h6> Ability's level: {{$item->ability_level}}</h6>
+								    @endif
                         @endif
                     </div>
                 </div>

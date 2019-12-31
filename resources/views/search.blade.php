@@ -91,7 +91,7 @@
 									
 								
 								<tr>
-									<td class="equipment">{{ $equip->name }}</td>
+									<td class="equipment"><a href="item/equip/{{$equip->item_id}}">{{ $equip->name }}</a></td>
 									<td class="equipment">{{ $equip->atk }}</td>
 									<td class="equipment">{{ $equip->def }}</td>
 									<td class="equipment">{{ $equip->refinement }}</td>

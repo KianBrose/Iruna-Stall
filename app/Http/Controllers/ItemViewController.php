@@ -17,4 +17,5 @@ class ItemViewController extends Controller
         $item = Equipment::where('item_id', $id)->firstOrFail();
         return view('item', compact('item'));
     }
+    
 }
