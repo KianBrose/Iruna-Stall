@@ -170,7 +170,9 @@
 									@else
                                         <h6>Ability: {{ $item->ability }}</h6>
                                         <h6> Ability's level: {{$item->ability_level}}</h6>
-								    @endif
+                                    @endif
+                            @elseif($item->category == 'item')
+                            
                         @endif
                         <h6>Posted at: {{date_format($item->created_at, "d/m/Y")}}</h6>
                     </div>

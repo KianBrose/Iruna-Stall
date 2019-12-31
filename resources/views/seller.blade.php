@@ -138,15 +138,26 @@
 					<h6>Discord: {{$user->discord }} </h6>
 					<h6>Whatsapp: </h6>
                     <br>
+                    @auth
                     @if($add == true)
                         <div class="alert alert-primary">You have followed this person or this person has followed you</div>
                         <a href="/private" class="btn btn-primary">Say hi to {{$user->name}} </a>
+                    @elseif(Auth::user()->id == $user->id)
+                        <br>
                     @else
                         <form action="/addFriend/{{$user->id}}" method="POST">
                             @csrf
                             <button class="btn btn-primary">Follow {{$user->name}}</button>
                         </form>
                     @endif
+                    @endauth
+                    @guest
+                    <form action="/addFriend/{{$user->id}}" method="POST">
+                        @csrf
+                        <button class="btn btn-primary">Follow {{$user->name}}</button>
+                    </form>
+                    @endguest
+
 					<h4>Seller's items</h4>
 					<hr>
                     <div class="row divider" role="separator" ></div>
