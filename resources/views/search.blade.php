@@ -91,7 +91,7 @@
 									
 								
 								<tr>
-									<td class="equipment">{{ $equip->name }}</td>
+									<td class="equipment"><a href="item/equip/{{$equip->item_id}}">{{ $equip->name }}</a></td>
 									<td class="equipment">{{ $equip->atk }}</td>
 									<td class="equipment">{{ $equip->def }}</td>
 									<td class="equipment">{{ $equip->refinement }}</td>
@@ -162,7 +162,7 @@
 							<tbody>
 								@foreach($itemSearch as $item)
 								<tr>
-									<td class="materials">{{ $item->name }}</td>
+									<td class="materials"><a href="/item/material/{{$item->item_id}}">{{ $item->name }}</td>
 									<td class="materials">{{ $item->quantity }}</td>
 									<td class="materials">{{ number_format($item->price) }}</td>
 									<td class="materials"><a href="/user/{{ $item->owner_id}}">{{ $item->contact }}</a></td>
@@ -194,7 +194,7 @@
 									
 								
 								<tr>
-									<td class="xtals">{{ $xtal->name }}</td>
+								<td class="xtals"><a href="/item/xtal/{{$xtal->item_id}}">{{ $xtal->name }}</a></td>
 									<td class="xtals">{{ $xtal->quantity }}</td>
 									<td class="xtals">{{ number_format($xtal->price) }}</td>
 									<td class="xtals"><a href="/user/{{ $xtal->owner_id}}">{{ $xtal->contact }}</a></td>
@@ -228,11 +228,11 @@
 								
 								<tr>
                                     @if($al->color == "Red")
-                                    <td class="als" style="color:red;">{{ $al->name }}</td>
+                                    <td class="als" style="color:red;"><a href="/item/alcrystas/{{$al->item_id}}">{{ $al->name }}</a></td>
                                     @elseif($al->color == "Blue")
-                                    <td class="als" style="color:blue;">{{ $al->name }}</td>
+                                    <td class="als" style="color:blue;"><a href="/item/alcrystas/{{$al->item_id}}">{{ $al->name }}</a></td>
                                     @elseif($al->color == "Green")
-                                    <td class="als" style="color:green;">{{ $al->name }}</td>
+                                    <td class="als" style="color:green;"><a href="/item/alcrystas/{{$al->item_id}}">{{ $al->name }}</a></td>
                                     @endif
 									<td class="als">{{ $al->color }}</td>
 									<td class="als">{{ $al->quantity }}</td>
@@ -264,7 +264,7 @@
 							<tbody>
 								@foreach($relicSearch as $relic)
 								<tr>
-									<td class="relics">{{ $relic->name }}</td>
+									<td class="relics"><a href="/item/relic/{{$relic->item_id}}">{{ $relic->name }}</a></td>
                                     <td class="relics">{{ $relic->quantity }}</td>
 									<td class="relics">{{ number_format($relic->price) }}</td>
 									<td class="relics"><a href="/user/{{$relic->owner_id}}">{{ $relic->contact }}</a></td>

@@ -9,6 +9,9 @@ use App\User;
 
 class FriendController extends Controller
 {
+    public function __construct(){
+        $this->middleware('auth');
+    }
     public function add($id){
         if(User::where('id', $id)->exists()){
             $user = Auth::user()->friendsOfMine()->merge(Auth::user()->friendsOf());

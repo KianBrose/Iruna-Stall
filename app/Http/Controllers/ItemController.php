@@ -300,6 +300,8 @@ class ItemController extends Controller
         }
     }
 
+    
+
     public function showWarningMessage(){
         Alert::toast('You have previously entered the wrong input', 'warning');
         return redirect('/additem');

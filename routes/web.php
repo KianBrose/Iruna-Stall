@@ -114,13 +114,6 @@ Route::get('/admin', 'Admin\AdminController@index');
 
 Route::get('/sitemap', 'SitemapController@index');
 
-//Route::get('/messages/{user}', 'MessageController@fetch');
-//Route::post('/messages/{user}', "MessageController@sendMessage");
-//Route::get('/private', "MessageController@index");
-//Route::get('/users', 'MessageController@users');
-
-//Route::post('/addFriend/{id}', 'FriendController@add');
-
 Route::get('/messages/{user}', 'MessageController@fetch');
 Route::post('/messages/{user}', "MessageController@sendMessage");
 Route::get('/private', "MessageController@index");
@@ -128,3 +121,11 @@ Route::get('/users', 'MessageController@users');
 
 Route::post('/addFriend/{id}', 'FriendController@add');
 Route::get('/notification', 'MessageController@showUnreadMessage');
+
+Route::prefix('item')->group(function(){
+    Route::get('/xtal/{id}', 'ItemViewController@getXtalItemId');
+    Route::get('/equip/{id}', 'ItemViewController@getEquipmentItemId');
+    Route::get('/material/{id}', 'ItemViewController@getMaterialItemId');
+    Route::get('/alcrystas/{id}', 'ItemViewController@getAlItemId');
+    Route::get('/relic/{id}', 'ItemViewController@getRelicItemId');
+});

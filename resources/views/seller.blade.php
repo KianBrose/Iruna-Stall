@@ -38,7 +38,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
-    <link href="css/style.css" rel="stylesheet">
+    <link href="{{asset('css/style.css')}}" rel="stylesheet">
     <link href="{{ asset('css/mainprofile.css') }}" rel="stylesheet">
     <link href="{{ asset('css/util.css') }}" rel="stylesheet">
 	<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
@@ -130,7 +130,7 @@
                     <hr>
                     <div class="row divider" role="separator" ></div>
                     <h6>Username: {{ $user->name }}</h6>
-					<h6>Date registered: {{ $user->created_at }} </h6>
+					<h6>Date registered: {{ date_format($user->created_at, "d/m/Y") }} </h6>
 					<br>
 					<h4>Contact</h4>
 					<hr>
@@ -139,15 +139,26 @@
 					<h6>Discord: {{$user->discord }} </h6>
 					<h6>Whatsapp: </h6>
                     <br>
+                    @auth
                     @if($add == true)
                         <div class="alert alert-primary">You have followed this person or this person has followed you</div>
                         <a href="/private" class="btn btn-primary">Say hi to {{$user->name}} </a>
+                    @elseif(Auth::user()->id == $user->id)
+                        <br>
                     @else
                         <form action="/addFriend/{{$user->id}}" method="POST">
                             @csrf
                             <button class="btn btn-primary">Follow {{$user->name}}</button>
                         </form>
                     @endif
+                    @endauth
+                    @guest
+                    <form action="/addFriend/{{$user->id}}" method="POST">
+                        @csrf
+                        <button class="btn btn-primary">Follow {{$user->name}}</button>
+                    </form>
+                    @endguest
+
 					<h4>Seller's items</h4>
 					<hr>
                     <div class="row divider" role="separator" ></div>
