@@ -33,7 +33,6 @@
         >
             <v-layout row >
 
-                
                 <v-flex xs6 >
                     <v-text-field
                             rows=2
@@ -89,7 +88,8 @@ export default {
       friends(){
         return this.users
         
-      }
+      },
+      
     },
 
 
@@ -183,8 +183,10 @@ export default {
     },
 
     created(){   
-        console.log(this.users)
+        
+        //console.log(this.users)
         this.fetchUsers();
+        this.fetchMessages()
         Echo.join('plchat')
             .here((users) => {
                 //console.log('online',users);
