@@ -171,6 +171,7 @@
                                         <h6>Ability: {{ $item->ability }}</h6>
                                         <h6> Ability's level: {{$item->ability_level}}</h6>
                                     @endif
+                                <h6>Seller: <a href="/user/{{ $item->owner_id}}">{{ $item->contact }}</a></h6>
 
                             @elseif($item->category == 'item')
                                 <h6>Name: {{$item->name }} </h6>
