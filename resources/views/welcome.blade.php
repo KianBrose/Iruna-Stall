@@ -44,7 +44,8 @@
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-    <link href="css/style.css" rel="stylesheet">
+    <link href="{{asset('css/style.css')}}" rel="stylesheet">
+    <link href="{{asset('css/donationsbar.css')}}" rel="stylesheet">
 </head>
 
 <body>
@@ -71,9 +72,6 @@
 			<li class="nav-item">
                              <a class="nav-link" href="/viewitem">View my items</a>
                         </li>
-            <li class="nav-item">
-                             <a class="nav-link" href="/private">Chat</a>
-                        </li>
 			<li class="nav-item">
                              <a class="nav-link" href="/scammers">Scammer list</a>
                         </li>
@@ -94,7 +92,10 @@
                                 </li>
                             @endif
                         @else
-                            <li class="nav-item dropdown">
+                            <li class="nav-item dropdown notification">
+                                @if($message->count() >= 1)
+                            <span class="badge" style="font-weight: 900;">{{$message->count()}}</span>
+                                @endif
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     {{ Auth::user()->name }} <span class="caret"></span>
                                 </a>
@@ -102,7 +103,12 @@
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                                 <a class="dropdown-item" href="/user/{{ auth()->user()->user_id }}">Profile</a>
                                 <a class="dropdown-item" href="/account">Settings</a>
-                                <a class="dropdown-item" href="/private">Message</a>
+                                <a href="/private" class="dropdown-item">
+                                  <span>Messages</span>
+                                  @if($message->count() >= 1)
+                                <span style="color: red; font-weight: 900;">{{$message->count()}}</span>
+                                @endif
+                                </a>
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
@@ -166,12 +172,25 @@
 					<input type="image" src="https://www.paypalobjects.com/en_US/SE/i/btn/btn_donateCC_LG.gif" border="0" name="submit" title="PayPal - The safer, easier way to pay online!" alt="Donate with PayPal button" />
 					<img alt="" border="0" src="https://www.paypal.com/en_SE/i/scr/pixel.gif" width="1" height="1" />
 					</form>
-					<p>0$ / 5$ Monthly goal Jan 2020</p>
+                    <hr>
+                    <div>
+                    <div id=countdown-wrap>
+                      <div id="glass">
+                        <div id="progress">
+                        </div>
+                      </div>
+                    </div>
+                    <span style="float: left; font-size: 14px; font-weight: 800;">$0</span>
+                    <span style="float: right; font-size: 14px; font-weight: 800;">$5</span>
+                    <p style="text-align: center; font-size: 14px; font-weight: 800;">Jan 2020</p>
                     <h4>Special thanks to our supporters!</h4>
                     <ul>
                       <li><b>Akairi</b></li>
                       <li><b>Robert Gord</b></li>
                     </ul>  
+                    <hr>
+                    <h3>2020-01-02 Iruna Stall Update 2.1</h3>
+                    <p>You can now see the amount of new messages from any page on the site! Will be adding notifications soon!</p>
                     <hr>
                     <h3>2020-01-01 Iruna Stall Update 2.0</h3>
                     <p><b>CHRISTMAS UPDATE 2020</b><br>We now have a functioning chat feature! Check it out <a href="/private">here</a> or click on a user's profile to send them a message! (We are working on notifications and adding the chat to the navbar)</p>

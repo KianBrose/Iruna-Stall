@@ -228,11 +228,11 @@
 								
 								<tr>
                                     @if($al->color == "Red")
-                                    <td class="als" style="color:red;"><a href="/item/alcrystas/{{$al->item_id}}">{{ $al->name }}</a></td>
+                                    <td class="als" style="color:red;"><a style="color:red;" href="/item/alcrystas/{{$al->item_id}}">{{ $al->name }}</a></td>
                                     @elseif($al->color == "Blue")
-                                    <td class="als" style="color:blue;"><a href="/item/alcrystas/{{$al->item_id}}">{{ $al->name }}</a></td>
+                                    <td class="als" style="color:blue;"><a style="color:blue;" href="/item/alcrystas/{{$al->item_id}}">{{ $al->name }}</a></td>
                                     @elseif($al->color == "Green")
-                                    <td class="als" style="color:green;"><a href="/item/alcrystas/{{$al->item_id}}">{{ $al->name }}</a></td>
+                                    <td class="als" style="color:green;"><a style="color:green;" href="/item/alcrystas/{{$al->item_id}}">{{ $al->name }}</a></td>
                                     @endif
 									<td class="als">{{ $al->color }}</td>
 									<td class="als">{{ $al->quantity }}</td>

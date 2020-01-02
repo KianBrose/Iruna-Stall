@@ -11,6 +11,7 @@ use App\Xtal;
 use App\Relic;
 use Auth;
 use RealRashid\SweetAlert\Facades\Alert;
+use App\Message;
 
 class AccountController extends Controller
 {
@@ -31,7 +32,8 @@ class AccountController extends Controller
      */
     public function index()
     {
-        return view('account');
+        $message = Message::with('user')->groupBy('user_id')->where('receiver_id', auth()->user()->id)->where('read', false)->get();
+        return view('account', compact('message'));
     }
 
     public function getUserId($id){
@@ -52,7 +54,13 @@ class AccountController extends Controller
             $itemSearch = Items::where('owner_id', $id)->paginate(10, ['*'], 'itemPage');
             $alSearch = Ai::where('owner_id', $id)->paginate(10, ['*'], 'alPage');
             $relicSearch = Relic::where('owner_id', $id)->paginate(10, ['*'], 'relicPage');
-            return view('seller', compact('user', 'equipSearch', 'xtalSearch', 'itemSearch', 'alSearch', 'relicSearch', 'add'));
+            if(Auth::check()){
+                $message = Message::with('user')->groupBy('user_id')->where('receiver_id', auth()->user()->id)->where('read', false)->get();
+                return view('seller', compact('user', 'equipSearch', 'xtalSearch', 'itemSearch', 'alSearch', 'relicSearch', 'add', 'message'));
+            } else{
+                return view('seller', compact('user', 'equipSearch', 'xtalSearch', 'itemSearch', 'alSearch', 'relicSearch', 'add'));
+            }
+            
         }
         
        
@@ -67,11 +75,13 @@ class AccountController extends Controller
         $item = $Item->getItems();
         $xtal = Xtal::where('owner_id', Auth::user()->user_id)->paginate(10, ['*'], 'xtalPage');
         $relic = Relic::where('owner_id', Auth::user()->user_id)->paginate(10, ['*'], 'relicPage');
-        return view('viewitem', compact('alitem', 'equipitem', 'item', 'xtal', 'relic'));
+        $message = Message::with('user')->groupBy('user_id')->where('receiver_id', auth()->user()->id)->where('read', false)->get();
+        return view('viewitem', compact('alitem', 'equipitem', 'item', 'xtal', 'relic', 'message'));
     }
 
     public function show(){
-            return view('accsettings');
+            $message = Message::with('user')->groupBy('user_id')->where('receiver_id', auth()->user()->id)->where('read', false)->get();
+            return view('accsettings', compact('message'));
         
        
     }

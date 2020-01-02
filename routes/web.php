@@ -12,15 +12,11 @@
 */
 
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'HomeController@index');
 
 Auth::routes(['verify' => true]);
 
-Route::get('/about', function () {
-    return view('about');
-});
+Route::get('/about', 'HomeController@about');
 
 Route::get('/scammers', function () {
     return view('scammers');

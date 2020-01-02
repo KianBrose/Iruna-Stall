@@ -21,6 +21,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <!-- Fonts -->
     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link href="{{asset('css/style.css')}}" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
 </head>
 
@@ -67,7 +68,10 @@
                                 </li>
                             @endif
                         @else
-                            <li class="nav-item dropdown">
+                            <li class="nav-item dropdown notification">
+                                    @if($message->count() >= 1)
+                                    <span class="badge" style="font-weight: 900;">{{$message->count()}}</span>
+                                        @endif
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     {{ Auth::user()->name }} <span class="caret"></span>
                                 </a>
@@ -75,7 +79,13 @@
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                                     <a class="dropdown-item" href="/user/{{ auth()->user()->user_id }}">Profile</a>
                                     <a class="dropdown-item" href="/account">Settings</a>
-                                    <a class="dropdown-item" href="/private">Message</a>
+                                    <a class="dropdown-item" href="/private">
+                                        <span>Messages</span>
+                                  @if($message->count() >= 1)
+                                <span style="color: red; font-weight: 900;">{{$message->count()}}</span>
+
+                                    </a>
+                                    @endif
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
