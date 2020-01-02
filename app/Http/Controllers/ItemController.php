@@ -317,13 +317,13 @@ class ItemController extends Controller
 
     public function convertPrice($priceDenote, $priceNumber){
         if($priceDenote == 'b'){
-            return (int)$priceNumber * 1000000000;
+            return (double)$priceNumber * 1000000000;
         } 
         if($priceDenote == 'm'){
-           return (int)$priceNumber * 1000000;
+           return (double)$priceNumber * 1000000;
         }
         if($priceDenote == 'k'){
-            return (int)$priceNumber * 1000;
+            return (double)$priceNumber * 1000;
         }
     }
 
