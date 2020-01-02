@@ -104,8 +104,11 @@ Route::post('/item/add', 'IrunaitemController@add')->middleware('isAdmin');
 /**
  * Admin
  */
+Route::prefix('admin')->group(function(){
+    Route::get('/', 'Admin\AdminController@index');
+    Route::get('/irunaitem', 'Admin\AdminController@viewIrunaItem');
+});
 
-Route::get('/admin', 'Admin\AdminController@index');
 
 
 Route::get('/sitemap', 'SitemapController@index');

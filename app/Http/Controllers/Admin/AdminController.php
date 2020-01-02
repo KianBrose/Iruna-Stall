@@ -1,8 +1,14 @@
 <?php
 namespace App\Http\Controllers\Admin;
 
+use App\Ai;
+use App\Equipment;
 use App\Http\Controllers\Controller;
 use App\Irunaitem;
+use App\Items;
+use App\Relic;
+use App\User;
+use App\Xtal;
 
 class AdminController extends Controller
 {
@@ -13,7 +19,15 @@ class AdminController extends Controller
 
     public function index()
     {
-        return view('admin.index');
+        $users = User::all();
+        $items = Equipment::all()->count() + Items::all()->count() + Ai::all()->count() + Xtal::all()->count() + Relic::all()->count();
+        $usersVerified = User::whereNotNull('email_verified_at');
+        return view('admin.index', compact('users', 'items', 'usersVerified'));
+    }
+
+    public function viewIrunaItem(){
+        $irunaitem = Irunaitem::paginate(100);
+        return view('admin.irunaitem', compact('irunaitem'));
     }
 
     public function allItems()
