@@ -174,11 +174,10 @@
                         <div id="progress">
                         </div>
                       </div>
-                    <span style="float: left; font-size: 12px;">$0</span>
-                    <span style="float: right; font-size: 12px;">$5</span>
-
                     </div>
-					<p>0$ / 5$ Monthly goal Jan 2020</p>
+                    <span style="float: left; font-size: 14px; font-weight: 800;">$0</span>
+                    <span style="float: right; font-size: 14px; font-weight: 800;">$5</span>
+                    <p style="text-align: center; font-size: 14px; font-weight: 800;">Jan 2020</p>
                     <h4>Special thanks to our supporters!</h4>
                     <ul>
                       <li><b>Akairi</b></li>
