@@ -93,7 +93,9 @@
                             @endif
                         @else
                             <li class="nav-item dropdown notification">
-                                <span class="badge" style="font-weight: 900;">3</span>
+                                @if($message->count() >= 1)
+                            <span class="badge" style="font-weight: 900;">{{$message->count()}}</span>
+                                @endif
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     {{ Auth::user()->name }} <span class="caret"></span>
                                 </a>
@@ -103,7 +105,9 @@
                                 <a class="dropdown-item" href="/account">Settings</a>
                                 <a href="/private" class="dropdown-item">
                                   <span>Messages</span>
-                                  <span style="color: red; font-weight: 900;">3</span>
+                                  @if($message->count() >= 1)
+                                <span style="color: red; font-weight: 900;">{{$message->count()}}</span>
+                                @endif
                                 </a>
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
