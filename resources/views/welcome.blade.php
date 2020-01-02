@@ -45,6 +45,7 @@
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
     <link href="{{asset('css/style.css')}}" rel="stylesheet">
+    <link href="{{asset('css/donationsbar.css')}}" rel="stylesheet">
 </head>
 
 <body>
@@ -167,6 +168,22 @@
 					<input type="image" src="https://www.paypalobjects.com/en_US/SE/i/btn/btn_donateCC_LG.gif" border="0" name="submit" title="PayPal - The safer, easier way to pay online!" alt="Donate with PayPal button" />
 					<img alt="" border="0" src="https://www.paypal.com/en_SE/i/scr/pixel.gif" width="1" height="1" />
 					</form>
+                    <div>
+                    <div id=countdown-wrap>
+                      <div id="goals-wrap">
+                        <div id="goal">$5</div>
+                        <div id="goal-words">GOAL</div>
+                      </div>
+                      <div id="glass">
+                        <div id="progress">
+                        </div>
+                      </div>
+                      <div class="goal-stat">
+                            <span class="goal-number">$0</span>
+                        <span class="goal-label">RAISED</span>
+                      </div>
+
+                    </div>
 					<p>0$ / 5$ Monthly goal Jan 2020</p>
                     <h4>Special thanks to our supporters!</h4>
                     <ul>
