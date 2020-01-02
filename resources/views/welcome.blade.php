@@ -172,22 +172,25 @@
 					<input type="image" src="https://www.paypalobjects.com/en_US/SE/i/btn/btn_donateCC_LG.gif" border="0" name="submit" title="PayPal - The safer, easier way to pay online!" alt="Donate with PayPal button" />
 					<img alt="" border="0" src="https://www.paypal.com/en_SE/i/scr/pixel.gif" width="1" height="1" />
 					</form>
+                    <hr>
                     <div>
                     <div id=countdown-wrap>
                       <div id="glass">
                         <div id="progress">
                         </div>
                       </div>
-                    <span style="float: left; font-size: 12px;">$0</span>
-                    <span style="float: right; font-size: 12px;">$5</span>
-
                     </div>
-					<p>0$ / 5$ Monthly goal Jan 2020</p>
+                    <span style="float: left; font-size: 14px; font-weight: 800;">$0</span>
+                    <span style="float: right; font-size: 14px; font-weight: 800;">$5</span>
+                    <p style="text-align: center; font-size: 14px; font-weight: 800;">Jan 2020</p>
                     <h4>Special thanks to our supporters!</h4>
                     <ul>
                       <li><b>Akairi</b></li>
                       <li><b>Robert Gord</b></li>
                     </ul>  
+                    <hr>
+                    <h3>2020-01-02 Iruna Stall Update 2.1</h3>
+                    <p>You can now see the amount of new messages from any page on the site! Will be adding notifications soon!</p>
                     <hr>
                     <h3>2020-01-01 Iruna Stall Update 2.0</h3>
                     <p><b>CHRISTMAS UPDATE 2020</b><br>We now have a functioning chat feature! Check it out <a href="/private">here</a> or click on a user's profile to send them a message! (We are working on notifications and adding the chat to the navbar)</p>

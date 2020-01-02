@@ -2,7 +2,7 @@
   
   #progress {
       
-               width: 37.5%; 
+               width: 0%; 
 
 
     float: left;
@@ -18,16 +18,16 @@
   }
 
   #countdown-wrap {
-    width: 120%;
-    height: 160px;
-    padding: 20px;
+    width: 110%;
+    height: 30px;
+
     font-family: 'Roboto', sans-serif, Arial;
     font-weight: 500;
   }
   #goal {
     font-size: 35px;
     text-align: right;
-    width:80%;
+    width:100%;
   }
   @media only screen and (max-width: 540px) {
     #goal {
@@ -37,7 +37,7 @@
 
 
   #glass {
-    width: 80%;
+    width: 90%;
     height: 20px;
     border-radius: 6px;
     background: #ee0e0;
@@ -46,29 +46,4 @@
     background-color: #dee0e0;
     box-shadow: 0 2px 3px rgba(0,0,0,.5) inset;
   }
-  .goal-stat {
-    width: 20%;
-    height: 30px;
-    padding: 10px;
-    float: left;
-    margin: 0;
-  }
-  @media only screen and (max-width: 540px) {
-    .goal-stat {
-      width: 40%;
-      text-align: center;
-    }
-  }
-  .goal-number,
-  .goal-label {
-    display: block;
-    font-size: 15px;
-  }
-  .goal-number {
-    font-weight: bold;
-  }
-  #goal-words {
-    float: right;
-    width: 5%;
-    font-size: 20px;
   }
