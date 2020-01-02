@@ -170,18 +170,12 @@
 					</form>
                     <div>
                     <div id=countdown-wrap>
-                      <div id="goals-wrap">
-                        <div id="goal">$5</div>
-                        <div id="goal-words">GOAL</div>
-                      </div>
                       <div id="glass">
                         <div id="progress">
                         </div>
                       </div>
-                      <div class="goal-stat">
-                            <span class="goal-number">$0</span>
-                        <span class="goal-label">RAISED</span>
-                      </div>
+                    <span style="float: left; font-size: 12px;">$0</span>
+                    <span style="float: right; font-size: 12px;">$5</span>
 
                     </div>
 					<p>0$ / 5$ Monthly goal Jan 2020</p>

@@ -62,13 +62,13 @@
   .goal-number,
   .goal-label {
     display: block;
-    font-size: 20px;
+    font-size: 15px;
   }
   .goal-number {
     font-weight: bold;
   }
   #goal-words {
     float: right;
-    width: 26%;
-    font-size: 25px;
+    width: 5%;
+    font-size: 20px;
   }
