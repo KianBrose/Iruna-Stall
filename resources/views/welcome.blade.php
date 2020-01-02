@@ -71,9 +71,6 @@
 			<li class="nav-item">
                              <a class="nav-link" href="/viewitem">View my items</a>
                         </li>
-            <li class="nav-item">
-                             <a class="nav-link" href="/private">Chat</a>
-                        </li>
 			<li class="nav-item">
                              <a class="nav-link" href="/scammers">Scammer list</a>
                         </li>
@@ -102,7 +99,10 @@
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                                 <a class="dropdown-item" href="/user/{{ auth()->user()->user_id }}">Profile</a>
                                 <a class="dropdown-item" href="/account">Settings</a>
-                                <a class="dropdown-item" href="/private">Message</a>
+                                <a href="/private" class="notification dropdown-item">
+                                  <span>Messages</span>
+                                  <span class="badge">3</span>
+                                </a>
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
