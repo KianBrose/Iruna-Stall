@@ -32,7 +32,8 @@ class AccountController extends Controller
      */
     public function index()
     {
-        return view('account');
+        $message = Message::with('user')->groupBy('user_id')->where('receiver_id', auth()->user()->id)->where('read', false)->get();
+        return view('account', compact('message'));
     }
 
     public function getUserId($id){
