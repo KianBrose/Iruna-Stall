@@ -107,6 +107,9 @@ Route::post('/item/add', 'IrunaitemController@add')->middleware('isAdmin');
 Route::prefix('admin')->group(function(){
     Route::get('/', 'Admin\AdminController@index');
     Route::get('/irunaitem', 'Admin\AdminController@viewIrunaItem');
+    Route::get('/item/{id}', 'Admin\AdminController@showItem');
+    Route::post('/item/edit/{id}', 'Admin\AdminController@editItem');
+    Route::get('/search', 'Admin\AdminController@searchItem');
 });
 
 

@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 use App\Ai;
 use App\Equipment;
 use App\Http\Controllers\Controller;
+use Illuminate\Http\Request;
 use App\Irunaitem;
 use App\Items;
 use App\Relic;
@@ -44,9 +45,22 @@ class AdminController extends Controller
 
     public function editItem($id){
         $item = Irunaitem::findOrFail($id);
-        $item->name = request('name');
+        if(request('name') != null){
+            $item->name = request('name');
+        }
         $item->category = request('category');
         $item->save();
+    }
+
+    public function showItem($id){
+        $item = Irunaitem::findOrFail($id);
+        return view('admin.show', compact('item'));
+    }
+
+    public function searchItem(Request $request){
+        $input = $request->get('search');
+        $irunaitem = Irunaitem::where('name', 'LIKE', "%{$input}%")->paginate(100);
+        return view('admin.irunaitem', compact('irunaitem'));
     }
 }
 

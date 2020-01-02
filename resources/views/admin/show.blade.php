@@ -111,53 +111,44 @@
       </nav>
       <div class="welcome">
           <div class="container fluid">
-              <form action="/admin/search" method="GET">
-                @csrf
-              <div class="container mt-3" style="margin-top: 20px;">
-                    <input class="form-control" id="myInput" type="text" name="search" placeholder="Find item">
-              
-          </div>
-        </form>
-                    <br>          
-
-            <table class="table table-hover">
-            <thead>
-                <tr>
-                <th>ID</th>
-                <th>Name</th>
-                <th>Category</th>
-                </tr>
-            </thead>
-            <tbody id="myTable">
-                @foreach($irunaitem as $item)
-                <tr>
-                <td>{{$item->id }}</td>
-                <td><a style="color:white;" href="/admin/item/{{$item->id}}">{{ $item->name }}</a></td>
-                <td>{{$item->category}}</td>
-                </tr>
-                @endforeach
+          <form style="margin-top: 20px;" action="/admin/item/edit/{{$item->id}}" method="POST">
+            @csrf
+                        <div class="form-group">
+                          <label for="name">Name</label>
+                        <input type="text" name="name" class="form-control" id="exampleInputEmail1" aria-describedby="name" value="{{$item->name}}">
+                        </div>
+                        <div class="form-group">
+                                <label for="inputState">Category</label>
+                                <select id="inputState" class="form-control">
+                                <option selected>{{$item->category}}</option>
+                                  <option>Chests</option>
+                                  <option>Ores</option>
+                                  <option>Recovery</option>
+                                  <option>Chests</option>
+                                  <option>Bows</option>
+                                  <option>Claws</option>
+                                  <option>Canes</option>
+                                  <option>Collectibles</option>
+                                  <option>Chests</option>
+                                  <option>Swords</option>
+                                  <option>IslandItems</option>
+                                  <option>Crystas</option>
+                                  <option>Throwing</option>
+                                  <option>Additional</option>
+                                  <option>Special</option>
+                                  <option>AlCrystas</option>
+                                  <option>RelicCrystas</option>
+                                </select>
+                              </div>
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                      </form>
                 
-            </tbody>
-            {{ $irunaitem->links() }}
-        </table>
-                </div>
           </div>
       </div>
       <script src='http://code.jquery.com/jquery-latest.js'></script>
       <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
       <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.bundle.js"></script>
       <script src='{{asset('js/admin.js')}}'></script>-->
-      <script>
-            $(document).ready(function(){
-              $("#myInput").on("keyup", function() {
-                let value = $(this).val().toLowerCase();
-                console.log(value)
-                $("#myTable tr").filter(function() {
-                  $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
-                });
-              });
-            });
-        </script>
     </section>
   </body>
 </html>
