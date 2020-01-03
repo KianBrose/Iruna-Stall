@@ -16,7 +16,7 @@
           }
           .table-hover tbody tr:hover td, .table-hover tbody tr:hover th {
   background-color: black;
-}
+} 
           </style>
     <aside class="side-nav" id="show-side-navigation1">
       <i class="fa fa-bars close-aside hidden-sm hidden-md hidden-lg" data-close="show-side-navigation1"></i>
@@ -119,7 +119,7 @@
                         </div>
                         <div class="form-group">
                                 <label for="inputState">Category</label>
-                                <select id="inputState" class="form-control">
+                                <select id="inputState" class="form-control" name="category">
                                 <option selected>{{$item->category}}</option>
                                   <option>Chests</option>
                                   <option>Ores</option>

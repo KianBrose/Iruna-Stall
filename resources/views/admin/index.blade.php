@@ -22,7 +22,7 @@
         <input type="text" placeholder="Type here"><i class="fa fa-search"></i>
       </div>
       <ul class="categories">
-        <li><i class="fa fa-home fa-fw" aria-hidden="true"></i><a href="">Back to website</a>
+        <li><i class="fa fa-home fa-fw" aria-hidden="true"></i><a href="#">Back to website</a>
           <ul class="side-nav-dropdown">
             <li><a href="/">Home</a></li>
             <li><a href="/account">Account</a></li>
@@ -35,8 +35,8 @@
           <ul class="side-nav-dropdown">
             <li><a href="#">Add iruna item</a></li>
             <li><a href="#">Delete iruna item</a></li>
-            <li><a href="#">Find iruna item</a></li>
-            <li><a href="#">Update iruna item</a></li>
+            <li><a href="/admin/irunaitem">Find iruna item</a></li>
+            <li><a href="/admin/irunaitem">Update iruna item</a></li>
           </ul>
         </li>
         <li><i class="fa fa-users fa-fw"></i><a href="#">Manage user</a>

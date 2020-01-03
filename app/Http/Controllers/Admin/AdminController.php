@@ -48,8 +48,10 @@ class AdminController extends Controller
         if(request('name') != null){
             $item->name = request('name');
         }
+        $item->timestamps = false;
         $item->category = request('category');
         $item->save();
+        return redirect()->back();
     }
 
     public function showItem($id){
