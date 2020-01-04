@@ -110,6 +110,8 @@ Route::prefix('admin')->group(function(){
     Route::get('/item/{id}', 'Admin\AdminController@showItem');
     Route::post('/item/edit/{id}', 'Admin\AdminController@editItem');
     Route::get('/search', 'Admin\AdminController@searchItem');
+    Route::get('/createitem', 'Admin\AdminController@createItemView');
+    Route::post('/item/create', 'Admin\AdminController@addItem');
 });
 
 

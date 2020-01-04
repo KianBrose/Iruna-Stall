@@ -38,9 +38,11 @@ class AdminController extends Controller
 
     public function addItem(){
         $item = new Irunaitem;
+        $item->timestamps = false;
         $item->name = request('name');
         $item->category = request('category');
         $item->save();
+        return redirect()->back();
     }
 
     public function editItem($id){
@@ -63,6 +65,10 @@ class AdminController extends Controller
         $input = $request->get('search');
         $irunaitem = Irunaitem::where('name', 'LIKE', "%{$input}%")->paginate(100);
         return view('admin.irunaitem', compact('irunaitem'));
+    }
+
+    public function createItemView(){
+        return view('admin.createitem');
     }
 }
 

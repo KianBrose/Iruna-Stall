@@ -1,7 +1,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8">
-    <title>Dashboard</title>
+    <title>Dashboard | Iruna Global Stall</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="https://fonts.googleapis.com/css?family=Droid+Sans" rel="stylesheet">
@@ -10,6 +10,14 @@
     <script src="js/serviceLoader.js"></script>
   </head>
   <body>
+      <style>
+          td {
+              color: white;
+          }
+          .table-hover tbody tr:hover td, .table-hover tbody tr:hover th {
+  background-color: black;
+} 
+          </style>
     <aside class="side-nav" id="show-side-navigation1">
       <i class="fa fa-bars close-aside hidden-sm hidden-md hidden-lg" data-close="show-side-navigation1"></i>
       <div class="heading">
@@ -102,122 +110,45 @@
         </div>
       </nav>
       <div class="welcome">
-        <div class="container-fluid">
-          <div class="row">
-            <div class="col-md-12">
-              <div class="content">
-                <h2>Welcome to Iruna Global Stall</h2>
-                <p>Here is the recent activity of our website</p>
-              </div>
-            </div>
+          <div class="container fluid">
+          <form style="margin-top: 20px;" action="/admin/item/create" method="POST">
+            @csrf
+                        <div class="form-group">
+                          <label for="name">Name</label>
+                        <input type="text" name="name" class="form-control" id="exampleInputEmail1" aria-describedby="name">
+                        </div>
+                        <div class="form-group">
+                                <label for="inputState">Category</label>
+                                <select id="inputState" class="form-control" name="category">
+                                <option selected>Chests</option>
+                                  <option>Chests</option>
+                                  <option>Ores</option>
+                                  <option>Recovery</option>
+                                  <option>Chests</option>
+                                  <option>Bows</option>
+                                  <option>Claws</option>
+                                  <option>Canes</option>
+                                  <option>Collectibles</option>
+                                  <option>Chests</option>
+                                  <option>Swords</option>
+                                  <option>IslandItems</option>
+                                  <option>Crystas</option>
+                                  <option>Throwing</option>
+                                  <option>Additional</option>
+                                  <option>Special</option>
+                                  <option>AlCrystas</option>
+                                  <option>RelicCrystas</option>
+                                </select>
+                              </div>
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                      </form>
+                
           </div>
-        </div>
       </div>
-      <section class="statistics">
-        <div class="container-fluid">
-          <div class="row">
-            <div class="col-md-4">
-              <div class="box">
-                <i class="fa fa-envelope fa-fw bg-primary"></i>
-                <div class="info">
-                  <h3>1,245</h3> <span>Emails</span>
-                  <p></p>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-4">
-              <div class="box">
-                <i class="fa fa-file fa-fw danger"></i>
-                <div class="info">
-                <h3>{{ $items }}</h3> <span>Items on sale</span>
-                  <p></p>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-4">
-              <div class="box">
-                <i class="fa fa-users fa-fw success"></i>
-                <div class="info">
-                <h3>{{$users->count()}}</h3> <span>Users</span>
-                  <p></p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-      <section class="charts">
-        <div class="container-fluid">
-          <div class="row">
-            <div class="col-md-6">
-              <div class="chart-container">
-                <h3>Chart</h3>
-                <canvas id="myChart"></canvas>
-              </div>
-            </div>
-            <div class="col-md-6">
-              <div class="chart-container">
-                <h3>Chart2</h3>
-                <canvas id="myChart2"></canvas>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-      
-        <section class='statis text-center'>
-          <div class="container-fluid">
-            <div class="row">
-              <div class="col-md-3">
-                <div class="box bg-primary">
-                  <i class="fa fa-eye"></i>
-                  <h3>5,154</h3>
-                  <p class="lead">Page views</p>
-                </div>
-              </div>
-              <div class="col-md-3">
-                <div class="box danger">
-                  <i class="fa fa-user-o"></i>
-                <h3>{{$usersVerified->count()}}</h3>
-                  <p class="lead">Users verified </p>
-                </div>
-              </div>
-              <div class="col-md-3"> 
-                <div class="box warning">
-                  <i class="fa fa-shopping-cart"></i>
-                <h3>{{$items}}</h3>
-                  <p class="lead">Items stored</p>
-                </div>
-              </div>
-              <div class="col-md-3">
-                <div class="box success">
-                  <i class="fa fa-handshake-o"></i>
-                  <h3>5,154</h3>
-                  <p class="lead">Transactions</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-        <section class="chrt3">
-          <div class="container-fluid">
-            <div class="row">
-              <div class="col-md-9">
-                <div class="chart-container">
-                  <canvas id="chart3" width="100%"></canvas>
-                </div>
-              </div>
-              <div class="col-md-4">
-                <div class="box">
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-      </section>
       <script src='http://code.jquery.com/jquery-latest.js'></script>
       <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.bundle.js"></script>
+      <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.bundle.js"></script>-->
       <script src='{{asset('js/admin.js')}}'></script>
-      </body>
-    </html>
+    </section>
+  </body>
+</html>

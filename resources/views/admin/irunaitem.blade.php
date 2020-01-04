@@ -41,7 +41,7 @@
         </li>
         <li><i class="fa fa-bolt fa-fw"></i><a href="#">Manage iruna item</a>
           <ul class="side-nav-dropdown">
-            <li><a href="#">Add iruna item</a></li>
+            <li><a href="/admin/createitem">Add iruna item</a></li>
             <li><a href="#">Delete iruna item</a></li>
             <li><a href="/admin/irunaitem">Find iruna item</a></li>
             <li><a href="/admin/irunaitem">Update iruna item</a></li>
