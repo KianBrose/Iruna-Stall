@@ -77,7 +77,7 @@
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
               <i class="fa fa-align-right"></i>
             </button>
-            <a class="navbar-brand" href="#">my<span class="main-color">Dashboard</span></a>
+            <a class="navbar-brand" href="#">Iruna<span class="main-color">Stall</span></a>
           </div>
           <div class="collapse navbar-collapse navbar-right" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
