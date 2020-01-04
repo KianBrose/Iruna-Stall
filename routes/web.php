@@ -22,9 +22,7 @@ Route::get('/scammers', function () {
     return view('scammers');
 });
 
-Route::get('/tutorial', function () {
-    return view('tutorial');
-});
+Route::get('/tutorial', 'HomeController@tutorial');
 
 Route::get('/search', 'SearchController@search')->name('search');
 Route::get('/account', 'AccountController@show')->middleware('auth', 'checkblocked');

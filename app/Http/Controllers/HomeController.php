@@ -46,4 +46,15 @@ class HomeController extends Controller
             return view('about');
         }
     }
+
+    public function tutorial()
+    {
+        if(Auth::check()){
+            $message = Message::with('user')->groupBy('user_id')->where('receiver_id', auth()->user()->id)->where('read', false)->get();
+            return view('tutorial', compact('message'));
+        }
+        else{
+            return view('tutorial');
+        }
+    }
 }
