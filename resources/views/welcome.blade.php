@@ -53,8 +53,9 @@
 <div id="app">
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <div class="container">
-                <a class="navbar-brand" href="{{ url('/') }}">
-                    Iruna Global Stall
+				
+                <a class="navbar-brand" href="{{ url('/') }}" style="width:200px;">
+						<img alt="Iruna Stall" src="{{asset('img/bannerIS.png')}}" style="width:70%; height:70%">
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
@@ -187,6 +188,9 @@
                       <li><b>Akairi</b></li>
                       <li><b>Robert Gord</b></li>
                     </ul>  
+					<hr>
+                    <h3>2020-01-05 Iruna Stall Update 2.2</h3>
+                    <p>New Iruna Stall banner!</p>
                     <hr>
                     <h3>2020-01-02 Iruna Stall Update 2.1</h3>
                     <p>You can now see the amount of new messages from any page on the site! Will be adding notifications soon!</p>
