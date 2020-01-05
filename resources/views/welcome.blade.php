@@ -188,6 +188,9 @@
                       <li><b>Akairi</b></li>
                       <li><b>Robert Gord</b></li>
                     </ul>  
+					<hr>
+                    <h3>2020-01-05 Iruna Stall Update 2.2</h3>
+                    <p>New Iruna Stall banner!</p>
                     <hr>
                     <h3>2020-01-02 Iruna Stall Update 2.1</h3>
                     <p>You can now see the amount of new messages from any page on the site! Will be adding notifications soon!</p>
