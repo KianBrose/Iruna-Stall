@@ -183,10 +183,9 @@
                     <span style="float: left; font-size: 14px; font-weight: 800;">$0</span>
                     <span style="float: right; font-size: 14px; font-weight: 800;">$5</span>
                     <p style="text-align: center; font-size: 14px; font-weight: 800;">Jan 2020</p>
-                    <h4>Special thanks to our supporters!</h4>
+                    <h4>Special thanks to our supporter!</h4>
                     <ul>
                       <li><b>Akairi</b></li>
-                      <li><b>Robert Gord</b></li>
                     </ul>  
 					<hr>
                     <h3>2020-01-05 Iruna Stall Update 2.2</h3>
