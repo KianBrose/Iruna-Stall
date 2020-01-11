@@ -187,6 +187,7 @@
                     <h6>Note: We recieve slightly less than you donate due to fees</h6>
                     <ul>
                       <li><b>Akairi</b> - 4.43$</li>
+                      <li><b>Espurr</b> - 1.12$</li>
                     </ul>  
 					<hr>
                     <h3>2020-01-05 Iruna Stall Update 2.2</h3>
