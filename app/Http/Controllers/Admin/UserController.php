@@ -36,5 +36,11 @@ class UserController extends Controller
     public function deleteUser(){
 
     }
+
+    public function getUserById($id){
+        $user = User::where('user_id', $id)->firstOrFail();
+        return $user;
+    }
+
     
 }
