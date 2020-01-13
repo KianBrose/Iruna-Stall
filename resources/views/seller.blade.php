@@ -143,9 +143,15 @@
 					<h4>Contact</h4>
 					<hr>
 					<div class="row divider" role="separator" ></div>
-					<h6>Facebook: <a href="{{$user->facebook }}">{{$user->facebook }}</a></h6>
+                    @if($user->facebook != null)
+                    <h6>Facebook: <a href="{{$user->facebook }}">{{$user->facebook }}</a></h6>
+                    @endif
+                    @if($user->discord != null)
 					<h6>Discord: {{$user->discord }} </h6>
+                    @endif
+                    @if($user->whatsapp != null)
 					<h6>Whatsapp: </h6>
+                    @endif
                     <br>
                     @auth
                     @if($add == true)
@@ -320,11 +326,17 @@
                                 <tbody>
                                     @foreach($alSearch as $al)
                                     <tr>
-                                    <td class="als">{{ $al->name }}</td>
-                                    <td class="als">{{ $al->quantity }}</td>
+                                    @if($al->color == "Red")
+                                    <td class="als" style="color:red;"><a style="color:red;" href="/item/alcrystas/{{$al->item_id}}">{{ $al->name }}</a></td>
+                                    @elseif($al->color == "Blue")
+                                    <td class="als" style="color:blue;"><a style="color:blue;" href="/item/alcrystas/{{$al->item_id}}">{{ $al->name }}</a></td>
+                                    @elseif($al->color == "Green")
+                                    <td class="als" style="color:green;"><a style="color:green;" href="/item/alcrystas/{{$al->item_id}}">{{ $al->name }}</a></td>
+                                    @endif
                                     <td class="als">{{ $al->color }}</td>
+                                    <td class="als">{{ $al->quantity }}</td>
                                     <td class="als">{{ number_format($al->price) }}</td>
-                                    </tr>
+                                </tr>
                                     @endforeach
                                 </tbody>
                             </table>
