@@ -320,11 +320,18 @@
                                 <tbody>
                                     @foreach($alSearch as $al)
                                     <tr>
-                                    <td class="als">{{ $al->name }}</td>
-                                    <td class="als">{{ $al->quantity }}</td>
+                                    @if($al->color == "Red")
+                                    <td class="als" style="color:red;"><a style="color:red;" href="/item/alcrystas/{{$al->item_id}}">{{ $al->name }}</a></td>
+                                    @elseif($al->color == "Blue")
+                                    <td class="als" style="color:blue;"><a style="color:blue;" href="/item/alcrystas/{{$al->item_id}}">{{ $al->name }}</a></td>
+                                    @elseif($al->color == "Green")
+                                    <td class="als" style="color:green;"><a style="color:green;" href="/item/alcrystas/{{$al->item_id}}">{{ $al->name }}</a></td>
+                                    @endif
                                     <td class="als">{{ $al->color }}</td>
+                                    <td class="als">{{ $al->quantity }}</td>
                                     <td class="als">{{ number_format($al->price) }}</td>
-                                    </tr>
+                                    <td class="als"><a href="/user/{{ $al->owner_id}}">{{ $al->contact }}</a></td>
+                                </tr>
                                     @endforeach
                                 </tbody>
                             </table>
