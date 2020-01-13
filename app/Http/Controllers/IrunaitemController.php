@@ -11,7 +11,7 @@ class IrunaitemController extends Controller
     const Equipment = array('Claws, Staff, Swords, Throws, Bows, Armors, Additional, Special');
     const Xtal = 'Crystas';
     const Relic = 'RelicCrystas';
-    const AL = 'Alcrystas';
+    const AL = 'AlCrystas';
 
 
     public function __construct()

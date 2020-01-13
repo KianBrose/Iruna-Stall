@@ -110,6 +110,9 @@
         </div>
       </nav>
       <div class="welcome">
+          @if($errors->any())
+          <div class="alert alert-success"> {{$errors->first()}}</div>
+          @endif
           <div class="container fluid">
           <form style="margin-top: 20px;" action="/admin/item/create" method="POST">
             @csrf
@@ -121,10 +124,8 @@
                                 <label for="inputState">Category</label>
                                 <select id="inputState" class="form-control" name="category">
                                 <option selected>Chests</option>
-                                  <option>Chests</option>
                                   <option>Ores</option>
                                   <option>Recovery</option>
-                                  <option>Chests</option>
                                   <option>Bows</option>
                                   <option>Claws</option>
                                   <option>Canes</option>

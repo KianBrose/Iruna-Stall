@@ -124,12 +124,10 @@
                                   <option>Chests</option>
                                   <option>Ores</option>
                                   <option>Recovery</option>
-                                  <option>Chests</option>
                                   <option>Bows</option>
                                   <option>Claws</option>
                                   <option>Canes</option>
                                   <option>Collectibles</option>
-                                  <option>Chests</option>
                                   <option>Swords</option>
                                   <option>IslandItems</option>
                                   <option>Crystas</option>

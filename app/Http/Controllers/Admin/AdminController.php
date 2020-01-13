@@ -10,6 +10,7 @@ use App\Items;
 use App\Relic;
 use App\User;
 use App\Xtal;
+use App\Http\Controllers\IrunaitemController;
 
 class AdminController extends Controller
 {
@@ -37,12 +38,44 @@ class AdminController extends Controller
     }
 
     public function addItem(){
-        $item = new Irunaitem;
-        $item->timestamps = false;
-        $item->name = request('name');
-        $item->category = request('category');
-        $item->save();
-        return redirect()->back();
+        $type = request('category');
+
+
+        $irunaitem = new Irunaitem();
+        $irunaitem->timestamps = false;
+        if(in_array($type, IrunaitemController::Equipment)){
+            $irunaitem->category = request('category');
+            $irunaitem->name = request('name');
+            $irunaitem->save();
+        }
+
+        if($type == IrunaitemController::Xtal){
+            $irunaitem->category = 'Crystas';
+            $irunaitem->name = '◇'.request('name');
+            $irunaitem->save();
+        }
+
+        if($type == IrunaitemController::Relic){
+            $irunaitem->category = 'RelicCrystas';
+            $irunaitem->name = '□'.request('name');
+            $irunaitem->save();
+        }
+
+        if($type == IrunaitemController::AL){
+            $irunaitem->category = 'AlCrystas';
+            $irunaitem->name = '▲'.request('name');
+            $irunaitem->save();
+        }
+        else{
+            if(Irunaitem::where('name', request('name'))->first()){
+
+            }
+            $irunaitem->category = request('category');
+            $irunaitem->name = request('name');
+            $irunaitem->save();
+        }
+        return redirect()->back()->withErrors(['success' => ['Successfully added an item']]);
+
     }
 
     public function editItem($id){
@@ -70,6 +103,7 @@ class AdminController extends Controller
     public function createItemView(){
         return view('admin.createitem');
     }
+
 }
 
 
