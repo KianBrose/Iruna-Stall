@@ -189,6 +189,9 @@
                       <li><b>Akairi</b> - 4.43$</li>
                       <li><b>Espurr</b> - 1.12$</li>
                     </ul>  
+                    <hr>
+                    <h3>2020-01-13 Iruna Stall Update 2.21</h3>
+                    <p>The Seller profiles now have Color AL crystals.<br>Empty contact options will no longer be displayed.</p>
 					<hr>
                     <h3>2020-01-05 Iruna Stall Update 2.2</h3>
                     <p>New Iruna Stall banner!</p>
