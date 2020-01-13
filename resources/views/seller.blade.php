@@ -143,9 +143,15 @@
 					<h4>Contact</h4>
 					<hr>
 					<div class="row divider" role="separator" ></div>
-					<h6>Facebook: <a href="{{$user->facebook }}">{{$user->facebook }}</a></h6>
+                    @if($user->facebook != null)
+                    <h6>Facebook: <a href="{{$user->facebook }}">{{$user->facebook }}</a></h6>
+                    @endif
+                    @if($user->discord != null)
 					<h6>Discord: {{$user->discord }} </h6>
+                    @endif
+                    @if($user->whatsapp != null)
 					<h6>Whatsapp: </h6>
+                    @endif
                     <br>
                     @auth
                     @if($add == true)
