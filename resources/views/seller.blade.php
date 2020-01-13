@@ -336,7 +336,6 @@
                                     <td class="als">{{ $al->color }}</td>
                                     <td class="als">{{ $al->quantity }}</td>
                                     <td class="als">{{ number_format($al->price) }}</td>
-                                    <td class="als"><a href="/user/{{ $al->owner_id}}">{{ $al->contact }}</a></td>
                                 </tr>
                                     @endforeach
                                 </tbody>
