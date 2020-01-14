@@ -114,6 +114,7 @@ Route::prefix('admin')->group(function(){
 
 
 
+
 Route::get('/sitemap', 'SitemapController@index');
 
 Route::get('/messages/{user}', 'MessageController@fetch');
