@@ -111,6 +111,7 @@ Route::prefix('admin')->group(function(){
     Route::get('/createitem', 'Admin\AdminController@createItemView');
     Route::post('/item/create', 'Admin\AdminController@addItem');
     Route::get('/messages', 'Admin\MessageController@fetchAllMessages');
+    Route::get('/friends', 'Admin\MessageController@fetchFriendship');
 });
 
 
