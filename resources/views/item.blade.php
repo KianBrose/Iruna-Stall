@@ -25,7 +25,7 @@
 	<meta name="description" content="{{$item->name}} is an item for sell on Iruna Global Stall."/>
     <meta name="keywords" content="Iruna, Stall, Global, iruna, stall, global, Items, {{ $item->name }}"/>
     <meta name="hostname" content="irunastall.com"/>
-    <title>{{$item->name}} | Irune Global stall</title>
+    <title>{{$item->name}} | Iruna Global stall</title>
        
     <!-- manifest for PWA -->
     <link rel="manifest" href="manifest.json" >
