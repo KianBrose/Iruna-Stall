@@ -110,6 +110,7 @@ Route::prefix('admin')->group(function(){
     Route::get('/search', 'Admin\AdminController@searchItem');
     Route::get('/createitem', 'Admin\AdminController@createItemView');
     Route::post('/item/create', 'Admin\AdminController@addItem');
+    Route::get('/messages', 'Admin\MessageController@fetchAllMessages');
 });
 
 
