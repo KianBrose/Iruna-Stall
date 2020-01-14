@@ -47,33 +47,33 @@ class AdminController extends Controller
             $irunaitem->category = request('category');
             $irunaitem->name = request('name');
             $irunaitem->save();
+            return redirect()->back()->withErrors(['success' => ['Successfully added an item']]);
         }
 
-        if($type == IrunaitemController::Xtal){
+        if($type == 'Crystas'){
+            //dd('◇'.request('name'));
             $irunaitem->category = 'Crystas';
             $irunaitem->name = '◇'.request('name');
             $irunaitem->save();
+            return redirect()->back()->withErrors(['success' => ['Successfully added an item']]);
         }
 
         if($type == IrunaitemController::Relic){
             $irunaitem->category = 'RelicCrystas';
             $irunaitem->name = '□'.request('name');
             $irunaitem->save();
+            return redirect()->back()->withErrors(['success' => ['Successfully added an item']]);
         }
 
         if($type == IrunaitemController::AL){
             $irunaitem->category = 'AlCrystas';
             $irunaitem->name = '▲'.request('name');
             $irunaitem->save();
+            return redirect()->back()->withErrors(['success' => ['Successfully added an item']]);
         }
-        else{
-            if(Irunaitem::where('name', request('name'))->first()){
-
-            }
-            $irunaitem->category = request('category');
-            $irunaitem->name = request('name');
-            $irunaitem->save();
-        }
+        $irunaitem->category = request('category');
+        $irunaitem->name = request('name');
+        $irunaitem->save();
         return redirect()->back()->withErrors(['success' => ['Successfully added an item']]);
 
     }
@@ -86,7 +86,7 @@ class AdminController extends Controller
         $item->timestamps = false;
         $item->category = request('category');
         $item->save();
-        return redirect()->back();
+        return redirect()->back()->withErrors(['success' => ['Successfully edited an item']]);
     }
 
     public function showItem($id){
