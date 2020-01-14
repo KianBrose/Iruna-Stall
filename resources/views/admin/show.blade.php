@@ -121,6 +121,10 @@
                         <input type="text" name="name" class="form-control" id="exampleInputEmail1" aria-describedby="name" value="{{$item->name}}">
                         </div>
                         <div class="form-group">
+                            <label for="desc">Description</label>
+                            <input type="text" name="description" class="form-control" aria-describedby="description" value="{{$item->description}}">
+                            </div>
+                        <div class="form-group">
                                 <label for="inputState">Category</label>
                                 <select id="inputState" class="form-control" name="category">
                                 <option selected>{{$item->category}}</option>

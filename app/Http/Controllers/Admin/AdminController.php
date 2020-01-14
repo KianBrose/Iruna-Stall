@@ -46,6 +46,7 @@ class AdminController extends Controller
         if(in_array($type, IrunaitemController::Equipment)){
             $irunaitem->category = request('category');
             $irunaitem->name = request('name');
+            $irunaitem->description = request('description');
             $irunaitem->save();
             return redirect()->back()->withErrors(['success' => ['Successfully added an item']]);
         }
@@ -54,6 +55,7 @@ class AdminController extends Controller
             //dd('◇'.request('name'));
             $irunaitem->category = 'Crystas';
             $irunaitem->name = '◇'.request('name');
+            $irunaitem->description = request('description');
             $irunaitem->save();
             return redirect()->back()->withErrors(['success' => ['Successfully added an item']]);
         }
@@ -61,6 +63,7 @@ class AdminController extends Controller
         if($type == IrunaitemController::Relic){
             $irunaitem->category = 'RelicCrystas';
             $irunaitem->name = '□'.request('name');
+            $irunaitem->description = request('description');
             $irunaitem->save();
             return redirect()->back()->withErrors(['success' => ['Successfully added an item']]);
         }
@@ -68,11 +71,13 @@ class AdminController extends Controller
         if($type == IrunaitemController::AL){
             $irunaitem->category = 'AlCrystas';
             $irunaitem->name = '▲'.request('name');
+            $irunaitem->description = request('description');
             $irunaitem->save();
             return redirect()->back()->withErrors(['success' => ['Successfully added an item']]);
         }
         $irunaitem->category = request('category');
         $irunaitem->name = request('name');
+        $irunaitem->description = request('description');
         $irunaitem->save();
         return redirect()->back()->withErrors(['success' => ['Successfully added an item']]);
 
@@ -85,6 +90,7 @@ class AdminController extends Controller
         }
         $item->timestamps = false;
         $item->category = request('category');
+        $item->description = request('description');
         $item->save();
         return redirect()->back()->withErrors(['success' => ['Successfully edited an item']]);
     }

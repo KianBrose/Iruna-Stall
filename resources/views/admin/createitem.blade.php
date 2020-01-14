@@ -118,7 +118,11 @@
             @csrf
                         <div class="form-group">
                           <label for="name">Name</label>
-                        <input type="text" name="name" class="form-control" id="exampleInputEmail1" aria-describedby="name">
+                        <input type="text" name="name" class="form-control" aria-describedby="name">
+                        </div>
+                        <div class="form-group">
+                        <label for="desc">Description</label>
+                        <input type="text" name="description" class="form-control" aria-describedby="description">
                         </div>
                         <div class="form-group">
                                 <label for="inputState">Category</label>
