@@ -10,17 +10,17 @@
     <meta name='HandheldFriendly' content='True'>
     <meta name='MobileOptimized' content='320'>
     <meta name='target' content='all'>
-    <meta name="apple-mobile-web-app-title" content="Iruna Global Stall">
+    <meta name="apple-mobile-web-app-title" content="{{ $item->name }} | Iruna Global Stall">
     <meta name='apple-mobile-web-app-capable' content='yes'>
     <meta name='apple-touch-fullscreen' content='yes'>
     <meta name='apple-touch-fullscreen' content='yes'>
-    <meta name='application-name' content="Iruna Global Stall">
+    <meta name='application-name' content="{{ $item->name }} | Iruna Global Stall">
     <link rel="apple-touch-icon" href="https://irunastall.com/img/iruna.jpg">
     <meta name="twitter:card" content="summary" >
-    <meta name="twitter:title" content="Iruna Global Stall" >
+    <meta name="twitter:title" content="{{ $item->name }} | Iruna Global Stall" >
     <meta name="twitter:description" content="{{$item->name}} is an item for sell on Iruna Global Stall" >
     <meta property="og:image" content="https://irunastall.com/img/iruna.jpg">
-    <meta property="og:title" content="Iruna Stall">
+    <meta property="og:title" content="{{ $item->name }} | Iruna Stall">
     <meta property="og:description" content="{{$item->name}} is an item for sell on Iruna Global Stall">
 	<meta name="description" content="{{$item->name}} is an item for sell on Iruna Global Stall."/>
     <meta name="keywords" content="Iruna, Stall, Global, iruna, stall, global, Items, {{ $item->name }}"/>
