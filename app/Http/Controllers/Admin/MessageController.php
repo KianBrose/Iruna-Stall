@@ -23,3 +23,4 @@ class MessageController extends Controller
         return Friend::all();
     }
 }
+?>
