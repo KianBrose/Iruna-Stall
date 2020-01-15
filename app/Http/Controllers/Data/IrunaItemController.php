@@ -49,7 +49,7 @@ class IrunaItemController extends Controller
         private function getEquipmentStatistic($limitNumber)
         {
 
-            return Equipment::groupBy('name')->selectRaw('count(*) as total, name, round(avg(price)) as average_price, count(*) as quantity')->limit($limitNumber)->get();
+            return Equipment::groupBy('name')->selectRaw('count(*) as total, name, round(avg(price)) as average_price, count(*) as quantity')->get();
 
             
         }
@@ -61,7 +61,7 @@ class IrunaItemController extends Controller
         private function getAlCrystasStatistic($limitNumber)
         {
 
-            return Ai::groupBy('name')->selectRaw('count(*) as total, name, round(avg(price)) as average_price, cast(sum(quantity) as unsigned) as quantity')->limit($limitNumber)->get();
+            return Ai::groupBy('name')->selectRaw('count(*) as total, name, round(avg(price)) as average_price, cast(sum(quantity) as unsigned) as quantity')->get();
 
         }
 
@@ -73,7 +73,7 @@ class IrunaItemController extends Controller
         private function getMaterialStatistic($limitNumber)
         {
 
-            return Items::groupBy('name')->selectRaw('count(*) as total, name, round(avg(price)) as average_price, cast(sum(quantity) as unsigned) as quantity')->limit($limitNumber)->get();
+            return Items::groupBy('name')->selectRaw('count(*) as total, name, round(avg(price)) as average_price, cast(sum(quantity) as unsigned) as quantity')->get();
 
         }
 
@@ -85,7 +85,7 @@ class IrunaItemController extends Controller
         private function getRelicStatistic($limitNumber)
         {
 
-            return Relic::groupBy('name')->selectRaw('count(*) as total, name, round(avg(price)) as average_price, cast(sum(quantity) as unsigned) as quantity')->limit($limitNumber)->get();
+            return Relic::groupBy('name')->selectRaw('count(*) as total, name, round(avg(price)) as average_price, cast(sum(quantity) as unsigned) as quantity')->get();
 
         }
 
@@ -108,7 +108,7 @@ class IrunaItemController extends Controller
          * @return array
          */
         private function sortByPopular($collection){
-            return collect($collection)->sortBy('quantity')->reverse()->toArray();
+            return collect($collection)->sortBy('quantity', true)->reverse()->toArray();
         }
     }
 
