@@ -136,5 +136,5 @@ Route::prefix('item')->group(function(){
 });
 
 Route::prefix('status')->group(function(){
-    Route::get('/', 'Data\IrunaItemController@ItemStatistic');
+    Route::get('/', 'Data\IrunaItemController@ItemStatistic')->middleware('isAdmin');
 });
