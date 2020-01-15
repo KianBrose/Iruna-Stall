@@ -134,3 +134,7 @@ Route::prefix('item')->group(function(){
     Route::get('/alcrystas/{id}', 'ItemViewController@getAlItemId');
     Route::get('/relic/{id}', 'ItemViewController@getRelicItemId');
 });
+
+Route::prefix('status')->group(function(){
+    Route::get('/', 'Data\IrunaItemController@ItemStatistic');
+});
