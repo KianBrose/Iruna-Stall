@@ -67,14 +67,11 @@ class AccountController extends Controller
     }
     
     public function view(){
-        $Ai = new Ai();
-        $Equip = new Equipment();
-        $Item = new Items();
-        $alitem = $Ai->getAiItem();
-        $equipitem = $Equip->getEquipmentItems();
-        $item = $Item->getItems();
-        $xtal = Xtal::where('owner_id', Auth::user()->user_id)->paginate(10, ['*'], 'xtalPage');
-        $relic = Relic::where('owner_id', Auth::user()->user_id)->paginate(10, ['*'], 'relicPage');
+        $alitem = Ai::getItems();
+        $equipitem = Equipment::getItems();
+        $item = Items::getItems();
+        $xtal = Xtal::getItems();
+        $relic = Relic::getItems();
         $message = Message::with('user')->groupBy('user_id')->where('receiver_id', auth()->user()->id)->where('read', false)->get();
         return view('viewitem', compact('alitem', 'equipitem', 'item', 'xtal', 'relic', 'message'));
     }

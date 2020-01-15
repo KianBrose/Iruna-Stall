@@ -78,44 +78,8 @@ class User extends Authenticatable implements MustVerifyEmail
     
 
     
-    /*
-        // friendship that I started
-    function friendsOfMine()
-    {
-    return $this->belongsToMany('User', 'friends', 'user_id', 'friend_id')
-        ->wherePivot('accepted', '=', 1) // to filter only accepted
-        ->withPivot('accepted'); // or to fetch accepted value
+    public function scopeActive($query){
+        return $query->where('activate', 1);
     }
-
-    // friendship that I was invited to 
-    function friendOf()
-    {
-    return $this->belongsToMany('User', 'friends', 'friend_id', 'user_id')
-        ->wherePivot('accepted', '=', 1)
-        ->withPivot('accepted');
-    }
-
-    // accessor allowing you call $user->friends
-    public function getFriendsAttribute()
-    {
-        if ( ! array_key_exists('friends', $this->relations)) $this->loadFriends();
-
-        return $this->getRelation('friends');
-    }
-
-    protected function loadFriends()
-    {
-        if ( ! array_key_exists('friends', $this->relations))
-        {
-            $friends = $this->mergeFriends();
-
-            $this->setRelation('friends', $friends);
-        }
-    }
-
-    protected function mergeFriends()
-    {
-        return $this->friendsOfMine->merge($this->friendOf);
-    }*/
     
 }
