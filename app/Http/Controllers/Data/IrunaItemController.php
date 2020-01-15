@@ -108,7 +108,7 @@ class IrunaItemController extends Controller
          * @return array
          */
         private function sortByPopular($collection){
-            return collect($collection)->sortBy('total')->reverse()->toArray();
+            return collect($collection)->sortBy('quantity')->reverse()->toArray();
         }
     }
 
