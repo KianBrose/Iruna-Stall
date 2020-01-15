@@ -55,7 +55,7 @@ class IrunaItemController extends Controller
          */
         private function getAlCrystasStatistic($limitNumber)
         {
-            return Ai::groupBy('name')->selectRaw('count(*) as total, name, round(avg(price)) as price')->limit(10)->get();
+            return Ai::groupBy('name')->selectRaw('count(*) as total, name, round(avg(price)) as price')->limit($limitNumber)->get();
         }
 
         /**
@@ -65,7 +65,7 @@ class IrunaItemController extends Controller
 
         private function getMaterialStatistic($limitNumber)
         {
-            return Items::groupBy('name')->selectRaw('count(*) as total, name, round(avg(price)) as price')->limit(10)->get();
+            return Items::groupBy('name')->selectRaw('count(*) as total, name, round(avg(price)) as price')->limit($limitNumber)->get();
         }
 
         /**
@@ -75,7 +75,7 @@ class IrunaItemController extends Controller
 
         private function getRelicStatistic($limitNumber)
         {
-            return Relic::groupBy('name')->selectRaw('count(*) as total, name, round(avg(price)) as price')->limit(10)->get();
+            return Relic::groupBy('name')->selectRaw('count(*) as total, name, round(avg(price)) as price')->limit($limitNumber)->get();
         }
         /**
          * @param none
