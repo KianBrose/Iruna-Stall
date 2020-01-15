@@ -143,11 +143,7 @@ class ProfileController extends Controller
         } else{
             if(auth()->user()->email == request('email')){
                 auth()->user()->activate = '2';
-                Relic::where('owner_id', auth()->user()->user_id)->delete();
-                Ai::where('owner_id', auth()->user()->user_id)->delete();
-                Equipment::where('owner_id', auth()->user()->user_id)->delete();
-                Items::where('owner_id', auth()->user()->user_id)->delete();
-                Xtal::where('owner_id', auth()->user()->user_id)->delete();
+                $this->deleteAllItems();
                 Alert::toast('Successfully deactivated your account', 'success');
                 redirect('/');
                 auth()->logout();
@@ -178,6 +174,15 @@ class ProfileController extends Controller
     public function getBroker()
     {
         return property_exists($this, 'broker') ? $this->broker : null;
+    }
+
+    public function deleteAllItems(){
+        Relic::where('owner_id', auth()->user()->user_id)->delete();
+        Ai::where('owner_id', auth()->user()->user_id)->delete();
+        Equipment::where('owner_id', auth()->user()->user_id)->delete();
+        Items::where('owner_id', auth()->user()->user_id)->delete();
+        Xtal::where('owner_id', auth()->user()->user_id)->delete();
+
     }
 }
 

@@ -35,7 +35,9 @@ class IrunaItemController extends Controller
 
         private function getXtalStatistic($limitNumber)
         {
+
             return Xtal::groupBy('name')->selectRaw('count(*) as total, name, round(avg(price)) as average_price, sum(quantity) as quantity')->limit($limitNumber)->get();
+
         }
 
         /**
@@ -46,7 +48,10 @@ class IrunaItemController extends Controller
 
         private function getEquipmentStatistic($limitNumber)
         {
+
             return Equipment::groupBy('name')->selectRaw('count(*) as total, name, round(avg(price)) as average_price, count(*) as quantity')->limit($limitNumber)->get();
+
+            
         }
 
         /**
@@ -55,7 +60,9 @@ class IrunaItemController extends Controller
          */
         private function getAlCrystasStatistic($limitNumber)
         {
+
             return Ai::groupBy('name')->selectRaw('count(*) as total, name, round(avg(price)) as average_price, sum(quantity) as quantity')->limit($limitNumber)->get();
+
         }
 
         /**
@@ -65,7 +72,9 @@ class IrunaItemController extends Controller
 
         private function getMaterialStatistic($limitNumber)
         {
+
             return Items::groupBy('name')->selectRaw('count(*) as total, name, round(avg(price)) as average_price, sum(quantity) as quantity')->limit($limitNumber)->get();
+
         }
 
         /**
@@ -75,7 +84,9 @@ class IrunaItemController extends Controller
 
         private function getRelicStatistic($limitNumber)
         {
+
             return Relic::groupBy('name')->selectRaw('count(*) as total, name, round(avg(price)) as average_price, sum(quantity) as quantity')->limit($limitNumber)->get();
+
         }
 
         /**

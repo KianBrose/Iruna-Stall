@@ -12,8 +12,8 @@ class Ai extends Model
     protected $guarded = [];
     protected $fillable = ['name', 'price', 'color', 'quantity', 'contact'];
 
-    public function getAiItem(){
-        return Ai::where('owner_id', Auth::user()->user_id)->paginate(10, ['*'], 'AlPage');
+    public function scopeGetItems($query){
+        return $query->where('owner_id', Auth::user()->user_id)->paginate(10, ['*'], 'AlPage');
     }
 
     public function scopeAdd($name, $color, $price, $quantity){
