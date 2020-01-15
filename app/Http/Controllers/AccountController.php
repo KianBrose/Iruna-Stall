@@ -49,11 +49,12 @@ class AccountController extends Controller
                     }
                 }
             }
-            $equipSearch = Equipment::where('owner_id', $id)->paginate(10, ['*'], 'equipPage');
-            $xtalSearch = Xtal::where('owner_id', $id)->paginate(10, ['*'], 'xtalPage');
-            $itemSearch = Items::where('owner_id', $id)->paginate(10, ['*'], 'itemPage');
-            $alSearch = Ai::where('owner_id', $id)->paginate(10, ['*'], 'alPage');
-            $relicSearch = Relic::where('owner_id', $id)->paginate(10, ['*'], 'relicPage');
+            $equipSearch = $this->getUserEquipment($id);
+            $xtalSearch = $this->getUserCrystas($id);
+            $itemSearch = $this->getUserMaterial($id);
+            $alSearch = $this->getUserAlCrystas($id);
+            $relicSearch = $this->getUserRelicCrystas($id);
+            
             if(Auth::check()){
                 $message = Message::with('user')->groupBy('user_id')->where('receiver_id', auth()->user()->id)->where('read', false)->get();
                 return view('seller', compact('user', 'equipSearch', 'xtalSearch', 'itemSearch', 'alSearch', 'relicSearch', 'add', 'message'));
@@ -68,10 +69,15 @@ class AccountController extends Controller
     
     public function view(){
         $alitem = Ai::getItems();
+
         $equipitem = Equipment::getItems();
+
         $item = Items::getItems();
+
         $xtal = Xtal::getItems();
+
         $relic = Relic::getItems();
+
         $message = Message::with('user')->groupBy('user_id')->where('receiver_id', auth()->user()->id)->where('read', false)->get();
         return view('viewitem', compact('alitem', 'equipitem', 'item', 'xtal', 'relic', 'message'));
     }
@@ -97,7 +103,8 @@ class AccountController extends Controller
         }
     }
 
-    public function addFacebookLink(){
+    public function addFacebookLink()
+    {
         $facebookName = request('name');
         $user = User::where('user_id', auth()->user()->user_id)->firstOrFail();
         if(preg_match('/(?:(?:http|https):\/\/)?(?:www.)?facebook.com\/(?:(?:\w)*#!\/)?(?:pages\/)?(?:[?\w\-]*\/)?(?:profile.php\?id=(?=\d.*))?([\w\-]*)?/', $facebookName)){
@@ -110,4 +117,56 @@ class AccountController extends Controller
             return redirect('/account');
         }
     }
+
+    /**
+     * @private
+     * @param int $id userID to search for
+     * 
+     */
+    private function getUserEquipment($id)
+    {
+        return Equipment::where('owner_id', $id)->paginate(10, ['*'], 'equipPage');
+    }
+
+    /**
+     * @private
+     * @param int $id userID to search for
+     * 
+     */
+    private function getUserCrystas($id)
+    {
+        return Xtal::where('owner_id', $id)->paginate(10, ['*'], 'xtalPage');
+    }
+
+    /**
+     * @private
+     * @param int $id userID to search for
+     * 
+     */
+    private function getUserAlCrystas($id)
+    {
+        return Ai::where('owner_id', $id)->paginate(10, ['*'], 'alPage');
+    }
+
+    /**
+     * @private
+     * @param int $id userID to search for
+     * 
+     */
+    private function getUserMaterial($id)
+    {
+        return Items::where('owner_id', $id)->paginate(10, ['*'], 'itemPage');
+    }
+
+    /**
+     * @private
+     * @param int $id userID to search for
+     * 
+     */
+    private function getUserRelicCrystas($id)
+    {
+        return Relic::where('owner_id', $id)->paginate(10, ['*'], 'relicPage');
+    }
+
+
 }

@@ -81,5 +81,9 @@ class User extends Authenticatable implements MustVerifyEmail
     public function scopeActive($query){
         return $query->where('activate', 1);
     }
+
+    public function scopeBanned($query){
+        return $query->where('activate', 0);
+    }
     
 }

@@ -77,6 +77,7 @@ class IrunaItemController extends Controller
         {
             return Relic::groupBy('name')->selectRaw('count(*) as total, name, round(avg(price)) as price')->limit($limitNumber)->get();
         }
+
         /**
          * @param none
          * @return array
@@ -91,7 +92,10 @@ class IrunaItemController extends Controller
 
             return array($xtalCollection, $equipmentCollection, $materialCollection, $relicCollection, $alCrystasCollection);
         }
-
+        /**
+         * @description sort the collection by number of post. 
+         * @return array
+         */
         private function sortByPopular($collection){
             return collect($collection)->sortBy('total')->reverse()->toArray();
         }
