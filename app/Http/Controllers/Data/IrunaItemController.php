@@ -36,7 +36,7 @@ class IrunaItemController extends Controller
         private function getXtalStatistic($limitNumber)
         {
 
-            return Xtal::groupBy('name')->selectRaw('count(*) as total, name, round(avg(price)) as average_price, cast(sum(quantity) as unsigned) as quantity')->limit($limitNumber)->get();
+            return Xtal::groupBy('name')->selectRaw('count(*) as total, name, round(avg(price)) as average_price, cast(sum(quantity) as unsigned) as quantity')->get();
 
         }
 
