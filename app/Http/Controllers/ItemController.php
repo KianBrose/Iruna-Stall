@@ -38,9 +38,8 @@ class ItemController extends Controller
         $al->routes = "item/ai/{$idTobeUsed}";
         $al->owner_id = Auth::user()->user_id;
         $al->quantity = request('quantity');
-        $priceNumber = substr(request('price'), 0, -1);
-        $priceDenote = strtolower(substr(request('price'), -1));
-        $storedPrice = $this->convertPrice($priceDenote, $priceNumber);
+         
+        $storedPrice = $this->convertPrice(strtolower(substr(request('price'), -1)), substr(request('price'), 0, -1));
         if($storedPrice == null){
             $al->price = request('price');
         }else{
@@ -58,20 +57,15 @@ class ItemController extends Controller
         $request->validated();
         $idTobeUsed = $this->generateID(8);
         $equip = new Equipment();
-        
-        $equipname = preg_replace_callback('/\b(?=[LXIVCDM]+\b)([a-z]+)\b/i', 
-        function($matches) {
-            return strtoupper($matches[0]);
-        }, str_replace(['Of'], ['of'], ucwords(strtolower(request('name')))));
-        $equip->name = $equipname;
+    
+        $equip->name = $this->formatName(request('name'));
         $equip->item_id = $idTobeUsed;
         $equip->owner_id = Auth::user()->user_id;
         $equip->type = request('type');
         $equip->atk = request('atk');
         $equip->def = request('def');
-        $priceNumber = substr(request('price'), 0, -1);
-        $priceDenote = strtolower(substr(request('price'), -1));
-        $storedPrice = $this->convertPrice($priceDenote, $priceNumber);
+
+        $storedPrice = $this->convertPrice(strtolower(substr(request('price'), -1)), substr(request('price'), 0, -1));
         if($storedPrice == null){
             $equip->price = request('price');
         }else{
@@ -98,9 +92,7 @@ class ItemController extends Controller
         $item_id = $this->generateID(12);
         $items->owner_id = Auth::user()->user_id;
         $items->name = $this->formatName(request('name'));
-        $priceDenote = strtolower(substr(request('price'), -1));
-        $priceNumber = substr(request('price'), 0, -1);
-        $storedPrice = $this->convertPrice($priceDenote, $priceNumber);
+        $storedPrice = $this->convertPrice(strtolower(substr(request('price'), -1)), substr(request('price'), 0, -1));
         if($storedPrice == null){
             $items->price = request('price');
         }else{
@@ -123,9 +115,7 @@ class ItemController extends Controller
         $item_id = $this->generateID(7);
         $xtal->name = $this->formatName(request('name'), '◇');
         $xtal->owner_id = Auth::user()->user_id;
-        $priceNumber = substr(request('price'), 0, -1);
-        $priceDenote = strtolower(substr(request('price'), -1));
-        $storedPrice = $this->convertPrice($priceDenote, $priceNumber);
+        $storedPrice = $this->convertPrice(strtolower(substr(request('price'), -1)), substr(request('price'), 0, -1));
 
         if($storedPrice == null){
             $xtal->price = request('price');
@@ -149,9 +139,8 @@ class ItemController extends Controller
         $relic = new Relic(); 
         $relic->name = $this->formatName(request('name'), '□');
         $relic->quantity = request('quantity');
-        $priceNumber = substr(request('price'), 0, -1);
-        $priceDenote = strtolower(substr(request('price'), -1));
-        $storedPrice = $this->convertPrice($priceDenote, $priceNumber);
+        $storedPrice = $this->convertPrice(strtolower(substr(request('price'), -1)), substr(request('price'), 0, -1));
+
         if($storedPrice == null){
             $relic->price = request('price');
         }else{
