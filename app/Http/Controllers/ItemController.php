@@ -9,33 +9,30 @@ use App\Items;
 use App\Xtal;
 use App\Relic;
 use Auth;
+
 use Illuminate\Support\Facades\Validator;
 use App\Http\Requests\StoreIrunaItem;
 use RealRashid\SweetAlert\Facades\Alert;
+
 use App\Http\Requests\StoreIrunaAi;
 use App\Http\Requests\StoreIrunaEquip;
 use App\Http\Requests\StoreIrunaRelic;
 use App\Http\Requests\StoreIrunaXtal;
+
 use App\Irunaitem;
+
+use App\Traits\Price;
+use App\Traits\ItemName;
 
 class ItemController extends Controller
 {
+    use Price, ItemName;
+
     public function createAi(StoreIrunaAi $request){
         $request->validated();
         $idTobeUsed = $this->generateID(10);
         $al = new Ai();
-        if(substr(request('name'), 0, 3) != '▲'){
-            //$xtalname = ucwords(request('name'));
-            
-            $alname = preg_replace_callback('/\b(?=[LXIVCDM]+\b)([a-z]+)\b/i', 
-            function($matches) {
-                return strtoupper($matches[0]);
-            }, str_replace(['Of'], ['of'], ucwords(strtolower(request('name')))));
-            $al->name = '▲'.$alname;
-
-        }else{
-             $al->name = request('name');
-        }
+        $al->name = $this->formatName(request('name'), '▲');
         $al->item_id = $idTobeUsed;
         $al->color = request('color');
         $al->routes = "item/ai/{$idTobeUsed}";
@@ -81,37 +78,8 @@ class ItemController extends Controller
             $equip->price = $storedPrice;
         }
         $equip->slots = request('equipslotamount');
-        if(substr(request('slot1'), 0, 3) != '◇'){
-            //$xtalname = ucwords(request('name'));
-            
-            $xtalname1 = preg_replace_callback('/\b(?=[LXIVCDM]+\b)([a-z]+)\b/i', 
-            function($matches) {
-                return strtoupper($matches[0]);
-            }, ucwords(strtolower(request('slot1'))));
-            if(Irunaitem::getItem('◇'.$xtalname1)->first() != null){
-                $equip->slot1 = '◇'.$xtalname1;
-            }
-           
-
-        }
-        else
-        {
-             $equip->slot1 = request('slot1');
-        }
-
-        if(substr(request('slot2'), 0, 3) != '◇'){
-            $xtalname2 = preg_replace_callback('/\b(?=[LXIVCDM]+\b)([a-z]+)\b/i', 
-            function($matches) {
-                return strtoupper($matches[0]);
-            }, ucwords(strtolower(request('slot2'))));
-            if(Irunaitem::getItem('◇'.$xtalname2)->first() != null){
-                $equip->slot2 = '◇'.$xtalname2;
-            }
-           
-
-        }else{
-             $equip->slot2 = request('slot2');
-        }
+        $equip->slot1 = $this->formatName(request('slot1'), '◇');
+        $equip->slot2 = $this->formatName(request('slot2'), '◇');
         $equip->ability = ucwords(request('ability'));
         $equip->ability_level = request('ability_level');
         $equip->refinement = request('refinement');
@@ -129,8 +97,7 @@ class ItemController extends Controller
         $items = new Items();
         $item_id = $this->generateID(12);
         $items->owner_id = Auth::user()->user_id;
-        $materialname = str_replace(['Of'], ['of'],ucwords(request('name')));
-        $items->name = $materialname;
+        $items->name = $this->formatName(request('name'));
         $priceDenote = strtolower(substr(request('price'), -1));
         $priceNumber = substr(request('price'), 0, -1);
         $storedPrice = $this->convertPrice($priceDenote, $priceNumber);
@@ -154,27 +121,18 @@ class ItemController extends Controller
         $request->validated();
         $xtal = new Xtal();
         $item_id = $this->generateID(7);
-        if(substr(request('name'), 0, 3) != '◇'){
-            //$xtalname = ucwords(request('name'));
-            
-            $xtalname = preg_replace_callback('/\b(?=[LXIVCDM]+\b)([a-z]+)\b/i', 
-            function($matches) {
-                return strtoupper($matches[0]);
-            }, ucwords(strtolower(request('name'))));
-            $xtal->name = '◇'.$xtalname;
-
-        }else{
-             $xtal->name = request('name');
-        }
+        $xtal->name = $this->formatName(request('name'), '◇');
         $xtal->owner_id = Auth::user()->user_id;
         $priceNumber = substr(request('price'), 0, -1);
         $priceDenote = strtolower(substr(request('price'), -1));
         $storedPrice = $this->convertPrice($priceDenote, $priceNumber);
+
         if($storedPrice == null){
             $xtal->price = request('price');
         }else{
             $xtal->price = $storedPrice;
         }
+
         $xtal->quantity = request('quantity');
         $xtal->routes = "item/xtal/{$item_id}";
         $xtal->item_id = $item_id;
@@ -189,18 +147,7 @@ class ItemController extends Controller
         $request->validated();
         $id = $this->generateID(8);
         $relic = new Relic(); 
-        if(substr(request('name'), 0, 3) != '□'){
-            //$xtalname = ucwords(request('name'));
-            
-            $relicname = preg_replace_callback('/\b(?=[LXIVCDM]+\b)([a-z]+)\b/i', 
-            function($matches) {
-                return strtoupper($matches[0]);
-            }, str_replace(['Of'], ['of'], ucwords(strtolower(request('name')))));
-            $relic->name = '□'.$relicname;
-
-        }else{
-             $relic->name = request('name');
-        }
+        $relic->name = $this->formatName(request('name'), '□');
         $relic->quantity = request('quantity');
         $priceNumber = substr(request('price'), 0, -1);
         $priceDenote = strtolower(substr(request('price'), -1));
@@ -315,17 +262,7 @@ class ItemController extends Controller
         }, ucwords(strtolower($string)));
     }
 
-    public function convertPrice($priceDenote, $priceNumber){
-        if($priceDenote == 'b'){
-            return (double)$priceNumber * 1000000000;
-        } 
-        if($priceDenote == 'm'){
-           return (double)$priceNumber * 1000000;
-        }
-        if($priceDenote == 'k'){
-            return (double)$priceNumber * 1000;
-        }
-    }
+    
 
 
 
