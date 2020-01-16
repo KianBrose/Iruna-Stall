@@ -25,38 +25,38 @@ Route::get('/scammers', function () {
 Route::get('/tutorial', 'HomeController@tutorial');
 
 Route::get('/search', 'SearchController@search')->name('search');
-Route::get('/account', 'AccountController@show')->middleware('auth', 'checkblocked');
+Route::get('/account', 'AccountController@show')->middleware('auth' );
 
 /**
  * 
  * User section
  */
-Route::get('/additem', 'AccountController@index')->middleware('verified', 'checkblocked');
+Route::get('/additem', 'AccountController@index')->middleware('verified' );
 Route::get('/item', 'ItemController@showItem');
 Route::get('/user/{id}', 'AccountController@getUserId');
-Route::get('/viewitem', 'AccountController@view')->middleware('verified', 'checkblocked');
-Route::post('user/update/discord', 'AccountController@addDiscordLink')->middleware('auth', 'checkblocked');
-Route::post('/user/update/facebook', 'AccountController@addFacebookLink')->middleware('auth', 'checkblocked');
+Route::get('/viewitem', 'AccountController@view')->middleware('verified' );
+Route::post('user/update/discord', 'AccountController@addDiscordLink')->middleware('auth' );
+Route::post('/user/update/facebook', 'AccountController@addFacebookLink')->middleware('auth' );
 
 /*
 *
 * AI section
 *
 */
-Route::post('/createAi', 'ItemController@createAi')->middleware('verified', 'checkblocked');
+Route::post('/createAi', 'ItemController@createAi')->middleware('verified');
 Route::get('/item/al/{id}', 'AiController@show')->name('Ai');
 Route::get('/item/al/{id}/edit', 'AiController@edit')->middleware('isAdmin');
-Route::patch('/item/al/{id}/update', 'AiController@update')->middleware('verified', 'checkblocked');
-Route::delete('/item/al/{id}/delete', 'AiController@delete')->middleware('verified', 'checkblocked');
+Route::patch('/item/al/{id}/update', 'AiController@update')->middleware('verified' );
+Route::delete('/item/al/{id}/delete', 'AiController@delete')->middleware('verified' );
 
 
 /**
  * 
  * Equipment section
  */
-Route::post('/createEquip', 'ItemController@createEquip')->middleware('verified', 'checkblocked');
-Route::patch('/item/equip/{id}/update', 'EquipmentController@update')->middleware('verified', 'checkblocked');
-Route::delete('/item/equip/{id}/delete', 'EquipmentController@delete')->middleware('verified', 'checkblocked');
+Route::post('/createEquip', 'ItemController@createEquip')->middleware('verified');
+Route::patch('/item/equip/{id}/update', 'EquipmentController@update')->middleware('verified');
+Route::delete('/item/equip/{id}/delete', 'EquipmentController@delete')->middleware('verified');
 Route::get('/item/equip/{id}', 'EquipmentController@show');
 Route::get('/item/equip/{id}/edit', 'EquipmentController@edit')->middleware('isAdmin');
 
@@ -66,9 +66,9 @@ Route::get('/item/equip/{id}/edit', 'EquipmentController@edit')->middleware('isA
  * 
  * Item section
  */
-Route::post('/createItem', 'ItemController@createItem')->middleware('verified', 'checkblocked');
-Route::patch('/item/items/{id}/update', 'ItemsController@update')->middleware('verified', 'checkblocked');
-Route::delete('/item/items/{id}/delete', 'ItemsController@delete')->middleware('verified', 'checkblocked');
+Route::post('/createItem', 'ItemController@createItem')->middleware('verified' );
+Route::patch('/item/items/{id}/update', 'ItemsController@update')->middleware('verified');
+Route::delete('/item/items/{id}/delete', 'ItemsController@delete')->middleware('verified');
 Route::get('/item/items/{id}', 'ItemsController@show');
 Route::get('/item/items/{id}/edit', 'ItemsController@edit')->middleware('isAdmin');
 
