@@ -7,8 +7,12 @@ use Illuminate\Support\Facades\Auth;
 use RealRashid\SweetAlert\Facades\Alert;
 use App\Http\Requests\StoreIrunaItem;
 
+use App\Traits\PriceTrait;
+
 class XtalController extends Controller
 {
+    use PriceTrait;
+
     public function update($id){
         if(Auth::check()){
             $item = Xtal::where('item_id', $id)->firstOrFail();
@@ -16,29 +20,9 @@ class XtalController extends Controller
                 abort(403);
             }
             else{
+                $item->price = $this->updatePrice(request('price'));
 
-                if(strlen(request('price')) > 12){
-                    $item->price = 999999999999;
-                }
-                else if(strlen(request('price')) < 1){
-                    $item->price = 1;
-                } else{
-                    if(in_array(strtolower(substr(request('price'), -1)), StoreIrunaItem::PriceType)){
-                        $priceDenote = strtolower(substr(request('price'), -1));
-                        $priceNumber = substr(request('price'), 0, -1);
-                        try{
-                            if($this->validConvertPrice($priceDenote, $priceNumber)){
-                                $price = $this->convertPrice($priceDenote, $priceNumber);
-                                $item->price = $price;
-                            } 
-                        } catch(Exception $e){
-            
-                        }
-                    }
-                    if(is_numeric(request('price'))){
-                        $item->price = request('price');
-                    } 
-                }
+        
                 if($this->validNumber(request('quantity'))){
                     if((int)request('quantity') > 9999){
                         $item->quantity = 9999;

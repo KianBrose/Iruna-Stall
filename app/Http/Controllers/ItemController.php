@@ -19,14 +19,12 @@ use App\Http\Requests\StoreIrunaEquip;
 use App\Http\Requests\StoreIrunaRelic;
 use App\Http\Requests\StoreIrunaXtal;
 
-use App\Irunaitem;
-
-use App\Traits\Price;
-use App\Traits\ItemName;
+use App\Traits\PriceTrait;
+use App\Traits\ItemPostedTrait;
 
 class ItemController extends Controller
 {
-    use Price, ItemName;
+    use PriceTrait, ItemPostedTrait;
 
     public function createAi(StoreIrunaAi $request){
         $request->validated();
@@ -38,7 +36,7 @@ class ItemController extends Controller
         $al->routes = "item/ai/{$idTobeUsed}";
         $al->owner_id = Auth::user()->user_id;
         $al->quantity = request('quantity');
-         
+
         $storedPrice = $this->convertPrice(strtolower(substr(request('price'), -1)), substr(request('price'), 0, -1));
         if($storedPrice == null){
             $al->price = request('price');
@@ -200,6 +198,7 @@ class ItemController extends Controller
             return view('search', compact('aiSearch', 'equipSearch', 'itemSearch', 'xtalSearch', 'input'));
         }
         else{
+
         }
     }
 

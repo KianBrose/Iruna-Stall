@@ -1,7 +1,7 @@
 <?php
 namespace App\Traits;
 
-trait ItemName{
+trait ItemPostedTrait{
 
 
     /**
@@ -36,6 +36,8 @@ trait ItemName{
              return $name;
         }
     }
+
+    
     
 }
 ?>

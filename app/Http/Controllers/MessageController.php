@@ -53,7 +53,11 @@ class MessageController extends Controller
     }
 
     public function showUnreadMessage(){
-        $message = Message::with('user')->groupBy('user_id')->where('receiver_id', auth()->user()->id)->where('read', false)->get();
+        $message = Message::with('user')
+                    ->groupBy('user_id')
+                    ->where('receiver_id', auth()->user()->id)
+                    ->where('read', false)
+                    ->get();
 
         return $message;
     }

@@ -12,4 +12,11 @@ class Message extends Model
     public function user(){
         return $this->belongsTo(User::class);
     }
+
+    public function scopeUnread($query){
+        return $query->groupBy('user_id')
+                    ->where('receiver_id', auth()->user()->id)
+                    ->where('read', false)
+                    ->get();
+    }
 }
