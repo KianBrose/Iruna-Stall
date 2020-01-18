@@ -16,8 +16,10 @@ class User extends TestCase
      */
     
     public function testAdmin(){
-        $user = factory('App\User'::class)->make();
-        $response = $this->actingAs($user)->get('/blocker');
+        $user = factory('App\User'::class)->make([
+            'isAdmin' => '1'
+        ]);
+        $response = $this->actingAs($user)->get('/admin');
         $response->assertStatus(200);
     }
     public function testViewItemAsAuth(){
@@ -26,11 +28,11 @@ class User extends TestCase
         $response->assertStatus(200);
     }
 
-    public function testViewBlockerAsUser(){
+    public function testAsNoneAdmin(){
         $user = factory('App\User'::class)->make([
             'isAdmin' => '0'
         ]);
-        $response = $this->actingAs($user)->get('/blocker');
+        $response = $this->actingAs($user)->get('/admin');
         if($response->assertStatus(404) || $response->assertStatus(302)){
             return true;
         }
