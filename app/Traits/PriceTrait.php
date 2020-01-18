@@ -41,9 +41,8 @@ trait PriceTrait{
             if(in_array($this->getPriceSymbol($price), $this->getPriceType())){
                 if($this->validConvertPrice($this->getPriceSymbol($price), $this->getPriceNumber($price))){
                     return $this->convertPrice($this->getPriceSymbol($price), $this->getPriceNumber($price));
-                }else{
-                    return 1;
                 }
+                return 1;
             }
             if(is_numeric($price)){
                 return $price;
