@@ -22,7 +22,16 @@ trait ItemPostedTrait{
         
     }
 
-    private function convertSymbol($name, $symbol){
+    /**
+     * 
+     * format name and with symbol
+     * 
+     * @param String $name
+     * @param String $symbol
+     * 
+     * return string
+     */
+    private function convertSymbol($name, $symbol): string{
         if(substr($name, 0, 3) != $symbol){
             
             

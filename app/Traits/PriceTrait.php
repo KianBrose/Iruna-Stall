@@ -24,6 +24,12 @@ trait PriceTrait{
         }
     }
 
+
+    /**
+     * 
+     * return a valid updated price
+     * @param String $price
+     */
     public function updatePrice($price){
         if(strlen($price) > 12){
             return 999999999999;
@@ -32,9 +38,9 @@ trait PriceTrait{
             return 1;
         } 
         else{
-            if(in_array($this->getFirstCharacter($price), $this->getPriceType())){
-                if($this->validConvertPrice($this->getFirstCharacter($price), $this->getPriceNumber($price))){
-                    return $this->convertPrice($this->getFirstCharacter($price), $this->getPriceNumber($price));
+            if(in_array($this->getPriceSymbol($price), $this->getPriceType())){
+                if($this->validConvertPrice($this->getPriceSymbol($price), $this->getPriceNumber($price))){
+                    return $this->convertPrice($this->getPriceSymbol($price), $this->getPriceNumber($price));
                 }else{
                     return 1;
                 }
@@ -46,22 +52,46 @@ trait PriceTrait{
 
     }
 
-    private function getFirstCharacter($string){
+    /**
+     * 
+     * 
+     * find and return price symbol in given string
+     * 
+     * @param String $string
+     */
+    private function getPriceSymbol($string): String{
         return strtolower(substr($string, -1));
     }
     
 
-    private function getPriceNumber($string){
+    /**
+     * 
+     * return only number in string
+     * 
+     * @param String $string
+     */
+    private function getPriceNumber($string): String{
         return substr($string, 0, -1);
     }
 
 
+    /**
+     * 
+     * return array of valid price type
+     */
     private function getPriceType(){
         return array('b', 'm', 'k');
     }
 
-
-    private function validConvertPrice($priceDenote, $priceNumber){
+    /**
+     * return True if the given price number and denote are valid
+     * 
+     * @param String $priceDenote 
+     * @param String $priceNumber
+     * 
+     * @return bool
+     */
+    private function validConvertPrice($priceDenote, $priceNumber): bool{
         if($priceDenote == 'b'){
             return $this->validBillionPrice($priceNumber);
             
@@ -78,9 +108,12 @@ trait PriceTrait{
     
     /**
      * Check for valid billion price
+     * 
+     * @param String $priceNumber
+     * 
      * @return bool
      */
-    private function validBillionPrice($priceNumber){
+    private function validBillionPrice($priceNumber): bool{
         if(is_numeric($priceNumber)){
                 
             if((int)$priceNumber * 1000000000 > 999999999999){
@@ -95,9 +128,13 @@ trait PriceTrait{
     }
     /**
      * check for valid millions price
+     * 
+     * @param String $priceNumber
+     * 
+     * @return bool
      */
 
-    private function validMillionPrice($priceNumber){
+    private function validMillionPrice($priceNumber): bool{
         if(is_numeric($priceNumber)){
             if((int)$priceNumber * 1000000 > 999999999999){
                 return false;
@@ -111,8 +148,12 @@ trait PriceTrait{
 
     /**
      * Check for valid thousands price
+     * 
+     * @param String $priceNumber
+     * 
+     * @return bool
      */
-    private function validThousandsPrice($priceNumber){
+    private function validThousandsPrice($priceNumber): bool{
         if(is_numeric($priceNumber)){
             if((int)$priceNumber * 1000 > 999999999999){
                 return false;
