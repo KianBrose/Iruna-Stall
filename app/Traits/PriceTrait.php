@@ -115,13 +115,7 @@ trait PriceTrait{
      */
     private function validBillionPrice($priceNumber): bool{
         if(is_numeric($priceNumber)){
-                
-            if((int)$priceNumber * 1000000000 > 999999999999){
-                return false;
-            } else{
-                
-                return true;
-            }
+                return (int)$priceNumber * 1000000000 <= 999999999999;
         } else{
             return false;
         }
@@ -136,11 +130,7 @@ trait PriceTrait{
 
     private function validMillionPrice($priceNumber): bool{
         if(is_numeric($priceNumber)){
-            if((int)$priceNumber * 1000000 > 999999999999){
-                return false;
-            } else{
-                return true;
-            }
+            return (int)$priceNumber * 1000000 <= 999999999999;
         } else{
             return false;
         }
@@ -155,11 +145,7 @@ trait PriceTrait{
      */
     private function validThousandsPrice($priceNumber): bool{
         if(is_numeric($priceNumber)){
-            if((int)$priceNumber * 1000 > 999999999999){
-                return false;
-            } else{
-                return true;
-            }
+            return (int)$priceNumber * 1000 <= 999999999999;
         } else{
             return false;
         }
