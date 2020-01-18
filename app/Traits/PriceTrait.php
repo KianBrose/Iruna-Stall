@@ -8,7 +8,7 @@ trait PriceTrait{
      * convert shorcut price to number
      * 
      * @param string $priceDenote
-     * @param number $priceNumber
+     * @param string $priceNumber
      * 
      * @return number
      */
@@ -35,7 +35,9 @@ trait PriceTrait{
             if(in_array($this->getFirstCharacter($price), $this->getPriceType())){
                 if($this->validConvertPrice($this->getFirstCharacter($price), $this->getPriceNumber($price))){
                     return $this->convertPrice($this->getFirstCharacter($price), $this->getPriceNumber($price));
-                } 
+                }else{
+                    return 1;
+                }
             }
             if(is_numeric($price)){
                 return $price;
@@ -61,29 +63,16 @@ trait PriceTrait{
 
     private function validConvertPrice($priceDenote, $priceNumber){
         if($priceDenote == 'b'){
-            
-            if($this->validBillionPrice($priceNumber)){
-                return true;
-            }else{
-                return false;
-            }
+            return $this->validBillionPrice($priceNumber);
             
         }
         if($priceDenote == 'm'){
-            
-            if($this->validMillionPrice($priceNumber)){
-                return true;
-            } else{
-                return false;
-            }
+            return $this->validMillionPrice($priceNumber);
         }
 
         if($priceDenote == 'k'){
-            if($this->validThousandsPrice($priceNumber)){
-                return true;
-            } else{
-                return false;
-            }
+            return $this->validThousandsPrice($priceNumber);
+               
         }
     }
     
@@ -132,6 +121,34 @@ trait PriceTrait{
             }
         } else{
             return false;
+        }
+    }
+
+    /**
+     * 
+     * check if a string is a valid number
+     *
+     * @param String $number
+     * 
+     */
+    private function validNumber(String $number): bool{
+        return ctype_digit($number);
+    }
+
+    /**
+     * check and return number between 9999 and 1
+     * 
+     * @param String $quantity
+     */
+    public function updateQuantity($quantity){
+        if($this->validNumber($quantity)){
+            if((int) $quantity > 9999){
+                return 9999;
+            }elseif((int) $quantity < 1){
+                return 1;
+            }else{
+                return $quantity;
+            }
         }
     }
 }

@@ -29,7 +29,7 @@ trait ItemPostedTrait{
             $itemName = preg_replace_callback('/\b(?=[LXIVCDM]+\b)([a-z]+)\b/i', 
             function($matches) {
                 return strtoupper($matches[0]);
-            }, str_replace(['Of'], ['of'], ucwords(strtolower(request('name')))));
+            }, str_replace(['Of'], ['of'], ucwords(strtolower($name))));
             return $symbol.$itemName;
 
         }else{
