@@ -12,12 +12,19 @@ class Ai extends Model
     protected $guarded = [];
     protected $fillable = ['name', 'price', 'color', 'quantity', 'contact'];
 
-    public function scopeGetItems($query){
+    public function scopeGetItems($query)
+    {
         return $query->where('owner_id', Auth::user()->user_id)->paginate(10, ['*'], 'AlPage');
     }
 
-    public function scopeAdd($name, $color, $price, $quantity){
+    public function scopeAdd($name, $color, $price, $quantity)
+    {
         $createAi = $this->createAi($name, $color, $price, $quantity);
+    }
+
+    public function scopeSearch($query, $input)
+    {
+        return $query->where('name', 'LIKE', "%{$input}%");
     }
 
     private function createAi($name, $color, $price, $quantity){
