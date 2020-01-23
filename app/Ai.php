@@ -22,7 +22,7 @@ class Ai extends Model
         $createAi = $this->createAi($name, $color, $price, $quantity);
     }
 
-    public function scopeSearch($query, $input)
+    public function scopeSearchByName($query, $input)
     {
         return $query->where('name', 'LIKE', "%{$input}%");
     }

@@ -15,7 +15,7 @@ class Relic extends Model
         return $query->where('owner_id', Auth::user()->user_id)->paginate(10, ['*'], 'relicPage');
     }
 
-    public function scopeSearch($query, $input)
+    public function scopeSearchByName($query, $input)
     {
         return $query->where('name', 'LIKE', "%{$input}%");
     }
