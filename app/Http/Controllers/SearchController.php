@@ -28,17 +28,14 @@ class SearchController extends Controller
                 }
                 else{
                    
-                    $alCount = Ai::where('name', 'LIKE', "%{$input}%")->get();
-                    $equipCount = Equipment::where('name', 'LIKE', "%{$input}%")->orWhere('ability', 'LIKE', "%{$input}%")->orWhere('slot1', 'LIKE', "%{$input}%")->orWhere('slot2', 'LIKE', "%{$input}%")->get();
-                    $itemCount = Items::where('name', 'LIKE', "%{$input}%")->get();
-                    $xtalCount = Xtal::where('name', 'LIKE', "%{$input}%")->get();
-                    $relicCount = Relic::where('name', 'LIKE', "%{$input}%")->get();
-                    $totalCount = $alCount->count() + $equipCount->count() + $relicCount->count() + $xtalCount->count() + $itemCount->count();
+                    
+                    $totalCount = $this->countSearchItems($input);
                     $alSearch = Ai::where('name', 'LIKE', "%{$input}%")->orderBy('created_at', 'desc')->paginate(10, ['*'], 'alPage');
                     $equipSearch = Equipment::where('name', 'LIKE', "%{$input}%")->orWhere('ability', 'LIKE', "%{$input}%")->orWhere('slot1', 'LIKE', "%{$input}%")->orWhere('slot2', 'LIKE', "%{$input}%")->orderBy('created_at', 'desc')->paginate(10, ['*'], 'equipPage');
                     $itemSearch = Items::where('name', 'LIKE', "%{$input}%")->orderBy('created_at', 'desc')->paginate(10, ['*'], 'itemPage');
                     $xtalSearch = Xtal::where('name', 'LIKE', "%{$input}%")->orderBy('created_at', 'desc')->paginate(10, ['*'], 'xtalPage');
                     $relicSearch = Relic::where('name', 'LIKE', "%{$input}%")->orderBy('created_at', 'desc')->paginate(10, ['*'], 'relicPage');
+
 
                     if(Auth::check()){
                         $message = Message::with('user')->groupBy('user_id')->where('receiver_id', auth()->user()->id)->where('read', false)->get();
@@ -57,42 +54,26 @@ class SearchController extends Controller
         }
     }
 
-    private function searchEquipment($inputString){
-        $input = $inputString;
-        $random = 'dsfghdjkfdkfdlefrgffefr';
-        $alCount = collect();
-        $equipCount = Equipment::where('name', 'LIKE', "%{$input}%")->orWhere('ability', 'LIKE', "%{$input}%")->orWhere('slot1', 'LIKE', "%{$input}%")->orWhere('slot2', 'LIKE', "%{$input}%")->get();
-        $itemCount = collect();
-        $xtalCount = collect();
-        $relicCount = collect();
-        $totalCount = $alCount->count() + $equipCount->count() + $relicCount->count() + $xtalCount->count() + $itemCount->count();
-        $alSearch = Ai::where('name', 'LIKE', "%{$random}%")->paginate(10, ['*'], 'alPage');
+    private function searchEquipment($input){
+        $equipCount = Equipment::searchByName($input)->searchByAbility($input)->searchBySlot($input)->get();
+        $totalCount = $equipCount->count();
+        $alSearch = $itemSearch = $xtalSearch = $relicSearch = collect();
         $equipSearch = Equipment::where('name', 'LIKE', "%{$input}%")->orWhere('ability', 'LIKE', "%{$input}%")->orWhere('slot1', 'LIKE', "%{$input}%")->orWhere('slot2', 'LIKE', "%{$input}%")->paginate(10, ['*'], 'equipPage');
-        $itemSearch = Items::where('name', 'LIKE', "%{$random}%")->paginate(10, ['*'], 'itemPage');
-        $xtalSearch = Xtal::where('name', 'LIKE', "%{$random}%")->paginate(10, ['*'], 'xtalPage');
-        $relicSearch = Relic::where('name', 'LIKE', "%{$random}%")->paginate(10, ['*'], 'relicPage');
+
         if(Auth::check()){
             $message = Message::with('user')->groupBy('user_id')->where('receiver_id', auth()->user()->id)->where('read', false)->get();
             return view('search', compact('alSearch', 'equipSearch', 'itemSearch', 'xtalSearch', 'input', 'relicSearch', 'totalCount', 'message'));
         }else{
             return view('search', compact('alSearch', 'equipSearch', 'itemSearch', 'xtalSearch', 'input', 'relicSearch', 'totalCount'));
         }
-     //return view('search', compact('alSearch', 'equipSearch', 'itemSearch', 'xtalSearch', 'input', 'relicSearch', 'totalCount'));
     }
 
     private function searchMaterial($input){
-        $random = 'dsfghdjkfdkfdlefrgffefr';
-        $alCount = collect();
-        $equipCount = collect();
-        $itemCount = $itemCount = Items::where('name', 'LIKE', "%{$input}%")->get();
-        $xtalCount = collect();
-        $relicCount = collect();
-        $totalCount = $alCount->count() + $equipCount->count() + $relicCount->count() + $xtalCount->count() + $itemCount->count();
-        $alSearch = Ai::where('name', 'LIKE', "%{$random}%")->paginate(10, ['*'], 'alPage');
-        $equipSearch = Equipment::where('name', 'LIKE', "%{$random}%")->orWhere('ability', 'LIKE', "%{$random}%")->orWhere('slot1', 'LIKE', "%{$random}%")->orWhere('slot2', 'LIKE', "%{$random}%")->paginate(10, ['*'], 'equipPage');
-        $itemSearch = Items::where('name', 'LIKE', "%{$input}%")->orderBy('created_at', 'desc')->paginate(10, ['*'], 'itemPage');
-        $xtalSearch = Xtal::where('name', 'LIKE', "%{$random}%")->paginate(10, ['*'], 'xtalPage');
-        $relicSearch = Relic::where('name', 'LIKE', "%{$random}%")->paginate(10, ['*'], 'relicPage');
+        $itemCount = Items::searchByName($input)->get();
+        $totalCount = $itemCount->count();
+        $alSearch = $equipSearch = $xtalSearch = $relicSearch = collect();
+        $itemSearch = Items::searchByName($input)->orderBy('created_at', 'desc')->paginate(10, ['*'], 'itemPage');
+
         if(Auth::check()){
             $message = Message::with('user')->groupBy('user_id')->where('receiver_id', auth()->user()->id)->where('read', false)->get();
             return view('search', compact('alSearch', 'equipSearch', 'itemSearch', 'xtalSearch', 'input', 'relicSearch', 'totalCount', 'message'));
@@ -108,17 +89,15 @@ class SearchController extends Controller
 
     private function searchXtal($input){
         $random = 'dsfghdjkfdkfdlefrgffefr';
-        $alCount = collect();
-        $equipCount = collect();
-        $itemCount = collect();
         $xtalCount = Xtal::where('name', 'LIKE', "%{$input}%")->get();
-        $relicCount = collect();
-        $totalCount = $alCount->count() + $equipCount->count() + $relicCount->count() + $xtalCount->count() + $itemCount->count();
+        $totalCount = $xtalCount->count();
         $alSearch = Ai::where('name', 'LIKE', "%{$random}%")->paginate(10, ['*'], 'alPage');
         $equipSearch = Equipment::where('name', 'LIKE', "%{$random}%")->orWhere('ability', 'LIKE', "%{$random}%")->orWhere('slot1', 'LIKE', "%{$random}%")->orWhere('slot2', 'LIKE', "%{$random}%")->orderBy('created_at', 'desc')->paginate(10, ['*'], 'equipPage');
         $itemSearch = Items::where('name', 'LIKE', "%{$random}%")->paginate(10, ['*'], 'itemPage');
         $xtalSearch = Xtal::where('name', 'LIKE', "%{$input}%")->orderBy('created_at', 'desc')->paginate(10, ['*'], 'xtalPage');
         $relicSearch = Relic::where('name', 'LIKE', "%{$random}%")->paginate(10, ['*'], 'relicPage');
+
+
         if(Auth::check()){
             $message = Message::with('user')->groupBy('user_id')->where('receiver_id', auth()->user()->id)->where('read', false)->get();
             return view('search', compact('alSearch', 'equipSearch', 'itemSearch', 'xtalSearch', 'input', 'relicSearch', 'totalCount', 'message'));
@@ -266,17 +245,14 @@ class SearchController extends Controller
     private function searchWeapon($inputString){
         $input = $inputString;
         $random = 'dsfghdjkfdkfdlefrgffefr';
-        $alCount = collect();
         if($inputString == ""){
             $equipCount = Equipment::where('type', 'Weapon')->get();
         }else{
             $equipCount = Equipment::where('type', 'Weapon')->where('name', 'LIKE', "%{$input}%")->orWhere('ability', 'LIKE', "%{$input}%")->orWhere('slot1', 'LIKE', "%{$input}%")->orWhere('slot2', 'LIKE', "%{$input}%")->get();
         }
        
-        $itemCount = collect();
-        $xtalCount = collect();
-        $relicCount = collect();
-        $totalCount = $alCount->count() + $equipCount->count() + $relicCount->count() + $xtalCount->count() + $itemCount->count();
+        $totalCount = $equipCount->count();
+
         $alSearch = Ai::where('name', 'LIKE', "%{$random}%")
                     ->paginate(10, ['*'], 'alPage');
         if($inputString == ""){
@@ -372,6 +348,7 @@ class SearchController extends Controller
             $input = trim($inputString);
             return $this->searchSpecial($input);
         }
+
         else if(in_array(strtolower($arr), array('armors', 'armor', 'body', 'bodies'))){
             $inputString = preg_replace('/@([^\s]+)/', '', $input);
             $input = trim($inputString);
@@ -379,12 +356,8 @@ class SearchController extends Controller
         }
 
         else{
-            $alCount = Ai::where('name', 'LIKE', "%{$input}%")->get();
-            $equipCount = Equipment::where('name', 'LIKE', "%{$input}%")->orWhere('ability', 'LIKE', "%{$input}%")->orWhere('slot1', 'LIKE', "%{$input}%")->orWhere('slot2', 'LIKE', "%{$input}%")->get();
-            $itemCount = Items::where('name', 'LIKE', "%{$input}%")->get();
-            $xtalCount = Xtal::where('name', 'LIKE', "%{$input}%")->get();
-            $relicCount = Relic::where('name', 'LIKE', "%{$input}%")->get();
-            $totalCount = $alCount->count() + $equipCount->count() + $relicCount->count() + $xtalCount->count() + $itemCount->count();
+            
+            $totalCount = $this->countSearchItems($input);
             $alSearch = Ai::where('name', 'LIKE', "%{$input}%")->orderBy('created_at', 'desc')->paginate(10, ['*'], 'alPage');
             $equipSearch = Equipment::where('name', 'LIKE', "%{$input}%")->orWhere('ability', 'LIKE', "%{$input}%")->orWhere('slot1', 'LIKE', "%{$input}%")->orWhere('slot2', 'LIKE', "%{$input}%")->orderBy('created_at', 'desc')->paginate(10, ['*'], 'equipPage');
             $itemSearch = Items::where('name', 'LIKE', "%{$input}%")->orderBy('created_at', 'desc')->paginate(10, ['*'], 'itemPage');
@@ -399,5 +372,17 @@ class SearchController extends Controller
             }
             //return view('search', compact('alSearch', 'equipSearch', 'itemSearch', 'xtalSearch', 'input', 'relicSearch', 'totalCount'));
         }
+    }
+
+    private function countSearchItems($item)
+    {
+        $alCount = Ai::searchByName($item)->get();
+        $equipCount = Equipment::searchByName($item)->searchByAbility($item)->searchBySlot($item)->get();
+        $itemCount = Items::searchByName($item)->get();
+        $xtalCount = Xtal::searchByName($item)->get();
+        $relicCount = Relic::searchByName($item)->get();
+
+
+        return $alCount->count() + $equipCount->count() + $relicCount->count() + $xtalCount->count() + $itemCount->count();
     }
 }
