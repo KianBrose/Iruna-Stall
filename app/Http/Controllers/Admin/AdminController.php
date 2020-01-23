@@ -32,11 +32,20 @@ class AdminController extends Controller
         return view('admin.irunaitem', compact('irunaitem'));
     }
 
+
+    /**
+     * 
+     * return all iruna item
+     */
     public function allItems()
     {
         return Irunaitem::all();
     }
 
+    /**
+     * 
+     * 
+     */
     public function addItem(){
         $type = request('category');
 
@@ -52,16 +61,11 @@ class AdminController extends Controller
         }
 
         if($type == 'Crystas'){
-            //dd('◇'.request('name'));
             return $this->createCrystas(request('name'), request('category'), request('description'));
         }
 
         if($type == IrunaitemController::Relic){
-            $irunaitem->category = 'RelicCrystas';
-            $irunaitem->name = '□'.request('name');
-            $irunaitem->description = request('description');
-            $irunaitem->save();
-            return redirect()->back()->withErrors(['success' => ['Successfully added an item']]);
+            return $this->createRelicCrystas(request('name'), request('category'), request('description'));
         }
 
         if($type == IrunaitemController::AL){
@@ -76,28 +80,45 @@ class AdminController extends Controller
 
     }
 
+
+    /**
+     * 
+     * edit existing iruna item
+     * 
+     */
     public function editItem($id){
         $item = Irunaitem::findOrFail($id);
         if(request('name') != null){
             $item->name = request('name');
         }
-        $item->timestamps = false;
         $item->category = request('category');
         $item->description = request('description');
         $item->save();
         return redirect()->back()->withErrors(['success' => ['Successfully edited an item']]);
     }
 
+
+    /**
+     * 
+     * find and show iruna item from database
+     */
     public function showItem($id){
         $item = Irunaitem::findOrFail($id);
         return view('admin.show', compact('item'));
     }
 
+
+    /**
+     * 
+     * search for existing iruna item
+     * 
+     */
     public function searchItem(Request $request){
         $input = $request->get('search');
         $irunaitem = Irunaitem::where('name', 'LIKE', "%{$input}%")->paginate(100);
         return view('admin.irunaitem', compact('irunaitem'));
     }
+
 
     public function createItemView(){
         return view('admin.createitem');
@@ -145,6 +166,30 @@ class AdminController extends Controller
 
 
     }
+
+
+    /**
+     * create relic crystas and save to database
+     * 
+     * @param string $name
+     * @param string $category
+     * @param string $description - optional
+     * 
+     */
+    private function createRelicCrystas($name, $category, $description=null)
+    {
+        Irunaitem::create([
+            'name' => '□'.$name,
+            'category' => $category,
+            'description' => $description
+
+        ]);
+        return redirect()->back()->withErrors(['success' => ['Successfully added an item']]);
+
+
+    }
+
+
 
 }
 
