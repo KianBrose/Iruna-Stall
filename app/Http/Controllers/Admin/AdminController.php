@@ -53,11 +53,7 @@ class AdminController extends Controller
 
         if($type == 'Crystas'){
             //dd('◇'.request('name'));
-            $irunaitem->category = 'Crystas';
-            $irunaitem->name = '◇'.request('name');
-            $irunaitem->description = request('description');
-            $irunaitem->save();
-            return redirect()->back()->withErrors(['success' => ['Successfully added an item']]);
+            return $this->createCrystas(request('name'), request('category'), request('description'));
         }
 
         if($type == IrunaitemController::Relic){
@@ -69,12 +65,9 @@ class AdminController extends Controller
         }
 
         if($type == IrunaitemController::AL){
-            $irunaitem->category = 'AlCrystas';
-            $irunaitem->name = '▲'.request('name');
-            $irunaitem->description = request('description');
-            $irunaitem->save();
-            return redirect()->back()->withErrors(['success' => ['Successfully added an item']]);
+            return $this->createAlCrystas(request('name'), request('category'), request('description'));
         }
+
         $irunaitem->category = request('category');
         $irunaitem->name = request('name');
         $irunaitem->description = request('description');
@@ -108,6 +101,49 @@ class AdminController extends Controller
 
     public function createItemView(){
         return view('admin.createitem');
+    }
+
+    /**
+     * create crystas and save to database
+     * 
+     * @param string $name
+     * @param string $category
+     * @param string $description - optional
+     * 
+     */
+    private function createCrystas($name, $category, $description=null)
+    {
+        Irunaitem::create([
+            'name' => '◇'.$name,
+            'category' => $category,
+            'description' => $description
+
+        ]);
+        return redirect()->back()->withErrors(['success' => ['Successfully added an item']]);
+
+
+    }
+
+
+    /**
+     * create alcrystas and save to database
+     * 
+     * @param string $name
+     * @param string $category
+     * @param string $description - optional
+     * 
+     */
+    private function createAlCrystas($name, $category, $description=null)
+    {
+        Irunaitem::create([
+            'name' => '▲'.$name,
+            'category' => $category,
+            'description' => $description
+
+        ]);
+        return redirect()->back()->withErrors(['success' => ['Successfully added an item']]);
+
+
     }
 
 }
