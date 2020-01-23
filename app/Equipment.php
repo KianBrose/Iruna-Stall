@@ -41,4 +41,12 @@ class Equipment extends Model
         return $query->orWhere('slot1', 'LIKE', "%{$input}%")
                     ->orWhere('slot2', 'LIKE', "%{$input}%");
     }
+
+    /**
+     * 
+     */
+    public function scopeSearchByType($query, $input)
+    {
+        return $query->where('type', $input);
+    }
 }
