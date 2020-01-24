@@ -54,6 +54,10 @@ class SearchController extends Controller
         }
     }
 
+    /**
+     * 
+     * @param string $input
+     */
     private function searchEquipment($input){
         $equipCount = Equipment::searchByName($input)->searchByAbility($input)->searchBySlot($input)->get();
         $totalCount = $equipCount->count();
@@ -68,6 +72,10 @@ class SearchController extends Controller
         }
     }
 
+    /**
+     * 
+     * @param string $input
+     */
     private function searchMaterial($input){
         $itemCount = Items::searchByName($input)->get();
         $totalCount = $itemCount->count();
@@ -84,9 +92,9 @@ class SearchController extends Controller
     }
 
     /**
-     * search xtal type
+     * 
+     * @param string $input
      */
-
     private function searchXtal($input){
         $xtalCount = Xtal::where('name', 'LIKE', "%{$input}%")->get();
         $totalCount = $xtalCount->count();
@@ -105,7 +113,8 @@ class SearchController extends Controller
     }
 
     /**
-     * search relic
+     * 
+     * @param string $input
      */
     private function searchRelic($input){
         $relicCount = Relic::where('name', 'LIKE', "%{$input}%")->get();
@@ -115,6 +124,11 @@ class SearchController extends Controller
         return view('search', compact('alSearch', 'equipSearch', 'itemSearch', 'xtalSearch', 'input', 'relicSearch', 'totalCount'));
     }
 
+
+    /**
+     * 
+     * @param string $input
+     */
     private function searchAdditionalGear($input){
         if($input == ""){
             $equipCount = Equipment::searchByType('Additional')->get();
@@ -141,23 +155,21 @@ class SearchController extends Controller
         //return view('search', compact('alSearch', 'equipSearch', 'itemSearch', 'xtalSearch', 'input', 'relicSearch', 'totalCount'));
     }
 
-    private function searchSpecial($inputString){
-        $input = $inputString;
-        $random = 'dsfghdjkfdkfdlefrgffefr';
-        $alCount = collect();
-        if($inputString == ""){
+    /**
+     * 
+     * @param string $input
+     */
+    private function searchSpecial($input){
+        if($input == ""){
             $equipCount = Equipment::where('type', 'Special')->get();
         }else{
             $equipCount = Equipment::where('type', 'Special')->where('name', 'LIKE', "%{$input}%")->orWhere('ability', 'LIKE', "%{$input}%")->orWhere('slot1', 'LIKE', "%{$input}%")->orWhere('slot2', 'LIKE', "%{$input}%")->get();
         }
-       
-        $itemCount = collect();
-        $xtalCount = collect();
-        $relicCount = collect();
-        $totalCount = $alCount->count() + $equipCount->count() + $relicCount->count() + $xtalCount->count() + $itemCount->count();
-        $alSearch = Ai::where('name', 'LIKE', "%{$random}%")
-                    ->paginate(10, ['*'], 'alPage');
-        if($inputString == ""){
+
+        $totalCount = $equipCount->count();
+        $alSearch = $relicSearch = $itemSearch = $xtalSearch = collect();
+
+        if($input == ""){
             $equipSearch = Equipment::where('type', 'Special')->paginate(10, ['*'], 'equipPage');
         } else{
             $equipSearch = Equipment::where('type','Special')
@@ -167,11 +179,7 @@ class SearchController extends Controller
             ->orWhere('slot2', 'LIKE', "%{$input}%")
             ->paginate(10, ['*'], 'equipPage');
         }
-       
 
-        $itemSearch = Items::where('name', 'LIKE', "%{$random}%")->paginate(10, ['*'], 'itemPage');
-        $xtalSearch = Xtal::where('name', 'LIKE', "%{$random}%")->paginate(10, ['*'], 'xtalPage');
-        $relicSearch = Relic::where('name', 'LIKE', "%{$random}%")->paginate(10, ['*'], 'relicPage');
         if(Auth::check()){
             $message = Message::with('user')->groupBy('user_id')->where('receiver_id', auth()->user()->id)->where('read', false)->get();
             return view('search', compact('alSearch', 'equipSearch', 'itemSearch', 'xtalSearch', 'input', 'relicSearch', 'totalCount', 'message'));
@@ -181,23 +189,19 @@ class SearchController extends Controller
         //return view('search', compact('alSearch', 'equipSearch', 'itemSearch', 'xtalSearch', 'input', 'relicSearch', 'totalCount'));
     }
 
-    private function searchArmor($inputString){
-        $input = $inputString;
-        $random = 'dsfghdjkfdkfdlefrgffefr';
-        $alCount = collect();
-        if($inputString == ""){
+    /**
+     * 
+     * @param string $input
+     */
+    private function searchArmor($input){
+        if($input == ""){
             $equipCount = Equipment::where('type', 'Body')->get();
         }else{
             $equipCount = Equipment::where('type', 'Body')->where('name', 'LIKE', "%{$input}%")->orWhere('ability', 'LIKE', "%{$input}%")->orWhere('slot1', 'LIKE', "%{$input}%")->orWhere('slot2', 'LIKE', "%{$input}%")->get();
         }
-       
-        $itemCount = collect();
-        $xtalCount = collect();
-        $relicCount = collect();
-        $totalCount = $alCount->count() + $equipCount->count() + $relicCount->count() + $xtalCount->count() + $itemCount->count();
-        $alSearch = Ai::where('name', 'LIKE', "%{$random}%")
-                    ->paginate(10, ['*'], 'alPage');
-        if($inputString == ""){
+        $totalCount = $equipCount->count();
+        $alSearch = $relicSearch = $itemSearch = $xtalSearch = collect();
+        if($input == ""){
             $equipSearch = Equipment::where('type', 'Body')->paginate(10, ['*'], 'equipPage');
         } else{
             $equipSearch = Equipment::where('type','Body')
@@ -208,10 +212,7 @@ class SearchController extends Controller
             ->paginate(10, ['*'], 'equipPage');
         }
        
-
-        $itemSearch = Items::where('name', 'LIKE', "%{$random}%")->paginate(10, ['*'], 'itemPage');
-        $xtalSearch = Xtal::where('name', 'LIKE', "%{$random}%")->paginate(10, ['*'], 'xtalPage');
-        $relicSearch = Relic::where('name', 'LIKE', "%{$random}%")->paginate(10, ['*'], 'relicPage');
+        
         if(Auth::check()){
             $message = Message::with('user')->groupBy('user_id')->where('receiver_id', auth()->user()->id)->where('read', false)->get();
             return view('search', compact('alSearch', 'equipSearch', 'itemSearch', 'xtalSearch', 'input', 'relicSearch', 'totalCount', 'message'));
@@ -221,6 +222,10 @@ class SearchController extends Controller
         //return view('search', compact('alSearch', 'equipSearch', 'itemSearch', 'xtalSearch', 'input', 'relicSearch', 'totalCount'));
     }
 
+    /**
+     * 
+     * @param string $input
+     */
     private function searchWeapon($inputString){
         $input = $inputString;
         $random = 'dsfghdjkfdkfdlefrgffefr';
