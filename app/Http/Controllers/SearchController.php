@@ -212,7 +212,7 @@ class SearchController extends Controller
             ->paginate(10, ['*'], 'equipPage');
         }
        
-        
+
         if(Auth::check()){
             $message = Message::with('user')->groupBy('user_id')->where('receiver_id', auth()->user()->id)->where('read', false)->get();
             return view('search', compact('alSearch', 'equipSearch', 'itemSearch', 'xtalSearch', 'input', 'relicSearch', 'totalCount', 'message'));
@@ -224,12 +224,29 @@ class SearchController extends Controller
 
     /**
      * 
+     * 
+     */
+    private function searchAlCrystas($input)
+    {
+        $alCount = Ai::where('name', 'LIKE', "%{$input}%")->get();
+
+        $totalCount = $alCount->count();
+        $alSearch = Ai::where('name', 'LIKE', "%{$input}%")->orderBy('created_at', 'desc')->paginate(10, ['*'], 'alPage');
+        $equipSearch = $itemSearch = $xtalSearch = $relicSearch = collect();
+        if(Auth::check()){
+            $message = Message::with('user')->groupBy('user_id')->where('receiver_id', auth()->user()->id)->where('read', false)->get();
+            return view('search', compact('alSearch', 'equipSearch', 'itemSearch', 'xtalSearch', 'input', 'relicSearch', 'totalCount', 'message'));
+        }else{
+            return view('search', compact('alSearch', 'equipSearch', 'itemSearch', 'xtalSearch', 'input', 'relicSearch', 'totalCount'));
+        }
+    }
+
+    /**
+     * 
      * @param string $input
      */
-    private function searchWeapon($inputString){
-        $input = $inputString;
-        $random = 'dsfghdjkfdkfdlefrgffefr';
-        if($inputString == ""){
+    private function searchWeapon($input){
+        if($input == ""){
             $equipCount = Equipment::where('type', 'Weapon')->get();
         }else{
             $equipCount = Equipment::where('type', 'Weapon')->where('name', 'LIKE', "%{$input}%")->orWhere('ability', 'LIKE', "%{$input}%")->orWhere('slot1', 'LIKE', "%{$input}%")->orWhere('slot2', 'LIKE', "%{$input}%")->get();
@@ -237,11 +254,13 @@ class SearchController extends Controller
        
         $totalCount = $equipCount->count();
 
-        $alSearch = Ai::where('name', 'LIKE', "%{$random}%")
-                    ->paginate(10, ['*'], 'alPage');
-        if($inputString == ""){
+        $alSearch = $itemSearch = $xtalSearch = $relicSearch = collect();
+
+        if($input == ""){
             $equipSearch = Equipment::where('type', 'Weapon')->paginate(10, ['*'], 'equipPage');
-        } else{
+        } 
+        else
+        {
             $equipSearch = Equipment::where('type','Weapon')
             ->where('name', 'LIKE', "%{$input}%")
             ->orWhere('ability', 'LIKE', "%{$input}%")
@@ -251,9 +270,7 @@ class SearchController extends Controller
         }
        
 
-        $itemSearch = Items::where('name', 'LIKE', "%{$random}%")->paginate(10, ['*'], 'itemPage');
-        $xtalSearch = Xtal::where('name', 'LIKE', "%{$random}%")->paginate(10, ['*'], 'xtalPage');
-        $relicSearch = Relic::where('name', 'LIKE', "%{$random}%")->paginate(10, ['*'], 'relicPage');
+        
         if(Auth::check()){
             $message = Message::with('user')->groupBy('user_id')->where('receiver_id', auth()->user()->id)->where('read', false)->get();
             return view('search', compact('alSearch', 'equipSearch', 'itemSearch', 'xtalSearch', 'input', 'relicSearch', 'totalCount', 'message'));
@@ -274,25 +291,8 @@ class SearchController extends Controller
         else if(strtolower($arr) == 'al' || strtolower($arr) == 'alcrystas'){
             $inputString = preg_replace('/@([^\s]+)/', '', $input);
             $input = trim($inputString);
-            $random = 'dsfghdjkfdkfdlefrgffefr';
-            $alCount = Ai::where('name', 'LIKE', "%{$input}%")->get();
-            $equipCount = collect();
-            $itemCount = collect();
-            $xtalCount = collect();
-            $relicCount = collect();
-            $totalCount = $alCount->count() + $equipCount->count() + $relicCount->count() + $xtalCount->count() + $itemCount->count();
-            $alSearch = Ai::where('name', 'LIKE', "%{$input}%")->orderBy('created_at', 'desc')->paginate(10, ['*'], 'alPage');
-            $equipSearch = Equipment::where('name', 'LIKE', "%{$random}%")->orWhere('ability', 'LIKE', "%{$random}%")->orWhere('slot1', 'LIKE', "%{$random}%")->orWhere('slot2', 'LIKE', "%{$random}%")->paginate(10, ['*'], 'equipPage');
-            $itemSearch = Items::where('name', 'LIKE', "%{$random}%")->paginate(10, ['*'], 'itemPage');
-            $xtalSearch = Xtal::where('name', 'LIKE', "%{$random}%")->paginate(10, ['*'], 'xtalPage');
-            $relicSearch = Relic::where('name', 'LIKE', "%{$random}%")->paginate(10, ['*'], 'relicPage');
-            if(Auth::check()){
-                $message = Message::with('user')->groupBy('user_id')->where('receiver_id', auth()->user()->id)->where('read', false)->get();
-                return view('search', compact('alSearch', 'equipSearch', 'itemSearch', 'xtalSearch', 'input', 'relicSearch', 'totalCount', 'message'));
-            }else{
-                return view('search', compact('alSearch', 'equipSearch', 'itemSearch', 'xtalSearch', 'input', 'relicSearch', 'totalCount'));
-            }
-            //return view('search', compact('alSearch', 'equipSearch', 'itemSearch', 'xtalSearch', 'input', 'relicSearch', 'totalCount'));
+            return $this->searchAlCrystas($input);
+            
         }
 
         else if(strtolower($arr) == 'items' || strtolower($arr) == 'item' || strtolower($arr) == 'material'|| strtolower($arr) == 'materials'){
