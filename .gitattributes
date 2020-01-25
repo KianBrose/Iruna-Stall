@@ -2,4 +2,5 @@
 *.css linguist-vendored
 *.scss linguist-vendored
 public/vendor/*.js linguist-vendored
+public/js/app.js linguist-vendored
 CHANGELOG.md export-ignore
