@@ -1,5 +1,5 @@
 * text=auto
 *.css linguist-vendored
 *.scss linguist-vendored
-public/vendor/sweetalert/sweetalert.all.js linguist-vendored
+public/vendor/*.js linguist-vendored
 CHANGELOG.md export-ignore
