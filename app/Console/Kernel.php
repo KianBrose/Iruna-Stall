@@ -3,6 +3,7 @@
 namespace App\Console;
 
 use App\Console\Commands\AdminCommand;
+use App\Console\Commands\AdminCreateCommand;
 use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
 use Illuminate\Support\Facades\DB;
@@ -15,7 +16,8 @@ class Kernel extends ConsoleKernel
      * @var array
      */
     protected $commands = [
-        AdminCommand::class
+        AdminCommand::class,
+        AdminCreateCommand::class
     ];
 
     /**
