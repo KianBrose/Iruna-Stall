@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://irunastall.com/img/bannerIS.png"/>
+  <img src="https://irunastall.com/img/bannerIS.png" width="100" height="100"/>
 </p>
 <h3 align="center">
   Iruna Global Stall Project
