@@ -105,14 +105,14 @@
                       </div>
                     </div>
                     <span style="float: left; font-size: 14px; font-weight: 800;">$0</span>
-                    <span style="float: right; font-size: 14px; font-weight: 800;">$5</span>
-                    <p style="text-align: center; font-size: 14px; font-weight: 800;">Jan 2020</p>
+                    <span style="float: right; font-size: 14px; font-weight: 800;">$15</span>
+                    <p style="text-align: center; font-size: 14px; font-weight: 800;">Feb 2020</p>
                     <h4>Special thanks to our supporter!</h4>
                     <h6>Note: We recieve slightly less than you donate due to fees</h6>
-                    <ul>
+                    <!--<ul>
                       <li><b>Akairi</b> - 4.43$</li>
                       <li><b>Espurr</b> - 1.12$</li>
-                    </ul>  
+                    </ul>-->  
                     <hr>
                     <h3>2020-01-13 Iruna Stall Update 2.21</h3>
                     <p>The Seller profiles now have Color AL crystals.<br>Empty contact options will no longer be displayed.</p>
