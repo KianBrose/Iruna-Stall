@@ -11,7 +11,7 @@
     <meta property="og:description" content="Find, buy and sell items for free on the Iruna Online Global Stall! In the Global Stall, you can post your items as a seller and search for items as a buyer. The stall is free to use and requires no account to search for items.">
 	<meta name="description" content="Find, buy and sell items for free on the Iruna Online Global Stall! In the Global Stall, you can post your items as a seller and search for items as a buyer. The stall is free to use and requires no account to search for items."/>
 	<meta name="keywords" content="Iruna, Stall, Global, iruna, stall, global, Iruna Global stall"/>
-	<title>Iruna Global Stall</title>
+	<title>Iruna Global Stall Wiki</title>
 	<meta name="hostname" content="irunastall.com"/>
 	<meta name="csrf-token" content="{{ csrf_token() }}">
 	
@@ -114,40 +114,56 @@
 
                 <div style="height: auto !important;">
 		    		<br>
-                    <h4>Add item</h4>
+                    <h4>Add Wiki Item	</h4>
                     <hr>
 					<div>
-						<p>Welcome to the add item page! If this is your first time here, please refer to this <a href="/tutorial">quick guide</a> on how to add an item!</p>
-							<div class="alert alert-success">Please make the use of autocomplete if you are not sure about spelling.</div>
+						<p>Welcome to the wiki add item page!</p>
+							<div class="alert alert-success">Please write down the names correctly as there is no edit function of these yet.</div>
 							
 							@if ($errors->any())
     						<div class="alert alert-danger">{{ $errors->first() }}</div>
 							@endif
+
+
 							<select name="itemtype" class="form-control2" id="itemtype"> 
 							   <option>Choose type</option>
-							   <option value="1">Equipment</option>
-							   <option value="2">Items</option>
-							   <option value="3">Xtal</option>
-							   <option value="4">AL Crystal</option>
-							   <option value="5">Relic</option>
+							   <option value="1">Item</option>
+							   <option value="2">Monster</option>
 							</select>
 
-							<div id="equip" style="display:none;">
-								<form action="/createEquip" method="POST">
-									@csrf
-							<tr>
-								<td>
-									<label for="name">Item Name:</label>
-								</td>
-								<td  style="padding-left:10px;">
-									<input type="text" class="form-control iteminput" style="width: 400px" name="name" id="equipment"/>
-								</td>
-								@error('name')
-						<div style="color:red;"> {{ $message }}</div>
-						@enderror
+							<div id="item" style="display:none;">
+								<form action="/wikiAddItem" method="POST">
+								@csrf
+								<tr>
+									<td>
+										<label for="name">Item Name:</label>
+									</td>
+									<td  style="padding-left:10px;">
+										<input type="text" class="form-control iteminput" style="width: 400px" name="name" id="itemname"/>
+									</td>
 
-							</tr>
-							<tr>
+									<select name="itemcategory" class="form-control2" id="itemtype"> 
+									   <option>Choose type</option>
+									   <option value="1">Equipment</option>
+									   <option value="2">Xtal</option>
+									   <option value="3">AL Crystal</option>
+									   <option value="4">Relic</option>
+									   <option value="5">Recovery</option>
+									   <option value="6">Strengthening</option>
+									   <option value="7">Teleport</option>
+									   <option value="8">Collectible</option>
+									   <option value="9">Ore</option>
+									   <option value="10">Island object</option>
+									   <option value="11">Pet</option>
+									</select>
+
+
+
+									@error('name')
+									<div style="color:red;"> {{ $message }}</div>
+									@enderror
+
+								</tr>
 								<td>
 									<label for="atk">ATK:</label>
 								</td>
