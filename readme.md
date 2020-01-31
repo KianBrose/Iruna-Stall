@@ -29,6 +29,9 @@ In order to work on this project on your machine, you can follow the instruction
     ./bin/install.sh
     ```
 
+## License
+
+This project is licensed under the terms of the [MIT license](/LICENSE).
 
 
 
