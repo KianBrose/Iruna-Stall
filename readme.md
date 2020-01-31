@@ -1,5 +1,9 @@
-# Iruna Global Stall project
-
+<p align="center">
+  <img src="https://irunastall.com/img/bannerIS.png"/>
+</p>
+<h3 align="center">
+  Iruna Global Stall Project
+</h3>
 
 ## Requirement
 
