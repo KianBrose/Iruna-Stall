@@ -1,9 +1,13 @@
 <p align="center">
-  <img src="https://irunastall.com/img/bannerIS.png" width="100" height="100"/>
+  <img src="https://irunastall.com/img/bannerIS.png" width="150" height="100"/>
 </p>
 <h3 align="center">
   Iruna Global Stall Project
 </h3>
+
+## What is Iruna Stall?
+
+Iruna Stall is a web service that aims to facilitate the process of buying and selling items from the game Iruna Online
 
 ## Requirement
 
@@ -32,6 +36,15 @@ In order to work on this project on your machine, you can follow the instruction
     ```bash
     ./bin/install.sh
     ```
+## Contributors
+
+<table>
+  <tr>
+    <td align="center"><a href="https://github.com/polowis"><img src="https://avatars0.githubusercontent.com/u/39208974?s=460&v=4" width="100px;" alt="polowis"/><br /><sub><b>Polowis</b></sub></a><br/></td>
+    <td align="center"><a href="https://github.com/17kibr"><img src="https://avatars2.githubusercontent.com/u/45287789?s=460&v=4" width="100px;" alt="kian"/><br /><sub><b>Kian Brose</b></sub></a><br/></td>
+    <td align="center"><a href="https://github.com/Mr-Kumar-Abhishek"><img src="https://avatars2.githubusercontent.com/u/13070012?s=460&v=4" width="100px;" alt="kumar"/><br /><sub><b>Abhishek Kumar</b></sub></a><br /></td>
+</tr>
+</table> 
 
 ## License
 
