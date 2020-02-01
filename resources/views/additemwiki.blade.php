@@ -486,7 +486,7 @@
 							default:
 								$("#item").show()
 								$("#monster").hide()
-								$("#hiddentextdescription").show()
+								$("#hiddentextdescription").hide()
 								break;
 						}
 					});
