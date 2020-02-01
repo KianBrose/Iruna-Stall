@@ -441,7 +441,7 @@
 								$("#ability2").hide()
 								$("#ability3").hide()
 								$("#ability4").hide()
-								$("#yesdropability").hide()
+								$("#yesdropability").show()
 								break;
 						}
 					});
