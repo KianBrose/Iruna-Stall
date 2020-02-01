@@ -255,6 +255,7 @@
 									   <option value="1">Yes</option>
 									   <option value="2">No</option>
 								</select>
+								<br>
 								<div id="hiddentextdescription" style="display:none;">
 									<td>
 										<label for="name">Hidden Text/Description:</label>
@@ -470,6 +471,22 @@
 								$("#ability3").hide()
 								$("#ability4").hide()
 								$("#yesdropability").hide()
+								break;
+						}
+					});
+					$('#hashiddeneffect').on('change',function(){
+					var selection = $(this).val();
+						switch(selection)
+						{
+							case "1":
+								$("#item").show()
+								$("#monster").hide()
+								$("#hiddentextdescription").show()
+								break;
+							default:
+								$("#item").show()
+								$("#monster").hide()
+								$("#hiddentextdescription").show()
 								break;
 						}
 					});
