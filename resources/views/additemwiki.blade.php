@@ -141,7 +141,7 @@
 									<td  style="padding-left:10px;">
 										<input type="text" class="form-control iteminput" style="width: 400px" name="name" id="itemname"/>
 									</td>
-
+									<br>
 									<select name="itemcategory" class="form-control2" id="itemcategory"> 
 									   <option>Choose type</option>
 									   <option value="1">Equipment</option>
@@ -159,6 +159,7 @@
 								</tr>
 								<div id="equipmentcategory" style="display:none;">
 									<tr>
+										<br>
 										<select name="equipcategory" class="form-control2" id="equipcategory"> 
 										   <option>Choose type</option>
 										   <option value="1">Weapon</option>
@@ -167,6 +168,7 @@
 										   <option value="4">Special</option>
 										</select>
 										<div id="equipmentcategoryweapon" style="display:none;">
+											<br>
 											<select name="itemcategory" class="form-control2" id="itemtype"> 
 											   <option>Choose type</option>
 											   <option value="1">Throw</option>
@@ -190,12 +192,14 @@
 									<td  style="padding-left:10px;">
 										<input type="text" class="form-control iteminput" style="width: 400px" name="name" id="equipdef"/>
 									</td>
+									<br>
 									<select name="candropabi" class="form-control2" id="candropabi"> 
 									   <option>Drops with ability?</option>
 									   <option value="1">Yes</option>
 									   <option value="2">No</option>
 									</select>
 									<div id="yesdropability" style="display:none;">
+										<br>
 										<select name="yescandropabi" class="form-control2" id="yescandropabi"> 
 										   <option>How many abilities can i drop?</option>
 										   <option value="1">1</option>
@@ -245,6 +249,7 @@
 								<td  style="padding-left:10px;">
 									<input type="text" class="form-control iteminput" style="width: 400px" name="name" id="textdescription"/>
 								</td>
+								<br>
 								<select name="hashiddeneffect" class="form-control2" id="hashiddeneffect"> 
 									   <option>Has hidden effect?</option>
 									   <option value="1">Yes</option>
