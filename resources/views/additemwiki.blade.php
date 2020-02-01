@@ -125,14 +125,14 @@
 							@endif
 
 
-							<select name="itemtype" class="form-control2" id="itemtype"> 
+							<select name="wikiinputtype" class="form-control2" id="itemtype"> 
 							   <option>Choose type</option>
 							   <option value="1">Item</option>
 							   <option value="2">Monster</option>
 							</select>
 
 							<div id="item" style="display:none;">
-								<form action="/wikiAddItem" method="POST">
+								<form action="/wikiadditem" method="POST">
 								@csrf
 								<tr>
 									<td>
@@ -156,322 +156,104 @@
 									   <option value="10">Island object</option>
 									   <option value="11">Pet</option>
 									</select>
-
-
-
-									@error('name')
-									<div style="color:red;"> {{ $message }}</div>
-									@enderror
-
 								</tr>
-								<td>
-									<label for="atk">ATK:</label>
-								</td>
-								<td  style="padding-left:10px;">
-								<input type="number" class="form-control iteminput" style="width: 400px" name="atk" id="atk" value="{{ old('atk') }}"/>
-								</td>
-								@error('atk')
-								<div style="color:red;"> {{ $message }}</div>
-								@enderror
-							</tr>
-							<tr>
-								<td>
-									<label for="def">DEF:</label>
-								</td>
-								<td  style="padding-left:10px;">
-									<input type="number" class="form-control iteminput" style="width: 400px" name="def" id="def"/>
-								</td>
-								@error('def')
-								<div style="color:red;"> {{ $message }}</div>
-								@enderror
-							</tr>
-							<tr>
-								<br>
-								<td>
-									<label for="Test">Refinement:</label>
-								</td>
-								<td  style="padding-left:10px;">
-									<select name="refinement" class="form-control2" id="refinement"> 
-									   <option selected value="0">0</option>
-									   <option value="1">1</option>
-									   <option value="2">2</option>
-									   <option value="3">3</option>
-									   <option value="4">4</option>
-									   <option value="5">5</option>
-									   <option value="6">6</option>
-									   <option value="7">7</option>
-									   <option value="8">8</option>
-									   <option value="9">9</option>
+								<div id="equipmentcategory" style="display:none;">
+									<tr>
+										<select name="itemcategory" class="form-control2" id="itemtype"> 
+										   <option>Choose type</option>
+										   <option value="1">Weapon</option>
+										   <option value="2">Body</option>
+										   <option value="3">Additional</option>
+										   <option value="4">Special</option>
+										</select>
+										<div id="equipmentcategoryweapon" style="display:none;">
+											<select name="itemcategory" class="form-control2" id="itemtype"> 
+											   <option>Choose type</option>
+											   <option value="1">Throw</option>
+											   <option value="2">Sword</option>
+											   <option value="3">Claw</option>
+											   <option value="4">Rod</option>
+											   <option value="5">Bow</option>
+											</select>
+										</div>
+										<td>
+											<label for="name">ATK:</label>
+										</td>
+										<td  style="padding-left:10px;">
+											<input type="text" class="form-control iteminput" style="width: 400px" name="name" id="equipatk"/>
+										</td>
+										<td>
+											<label for="name">DEF:</label>
+										</td>
+										<td  style="padding-left:10px;">
+											<input type="text" class="form-control iteminput" style="width: 400px" name="name" id="equipdef"/>
+										</td>
+									</tr>
+								</div>
+								<div id="monster" style="display:none;">
+								<form action="/wikiaddmonster" method="POST">
+								@csrf
+								<tr>
+									<td>
+										<label for="name">Monster Name:</label>
+									</td>
+									<td  style="padding-left:10px;">
+										<input type="text" class="form-control iteminput" style="width: 400px" name="name" id="itemname"/>
+									</td>
+
+									<select name="itemcategory" class="form-control2" id="itemtype"> 
+									   <option>Choose type</option>
+									   <option value="1">Equipment</option>
+									   <option value="2">Xtal</option>
+									   <option value="3">AL Crystal</option>
+									   <option value="4">Relic</option>
+									   <option value="5">Recovery</option>
+									   <option value="6">Strengthening</option>
+									   <option value="7">Teleport</option>
+									   <option value="8">Collectible</option>
+									   <option value="9">Ore</option>
+									   <option value="10">Island object</option>
+									   <option value="11">Pet</option>
 									</select>
-									<br>
-								</td>
-							</tr>
-							<tr>
-								<br>
-								<td>
-									<label for="type">Type:</label>
-								</td>
-								<td  style="padding-left:10px;">
-									<select name="type" class="form-control2" id="type"> 
-									   <option selected>Weapon</option>
-									   <option>Body</option>
-									   <option>Additional</option>
-									   <option>Special</option>
-									</select>
-									<br>
-								</td>
-							</tr>
-							<tr>
-								<br>
-								<td>
-									<label for="Test">Slots:</label>
-								</td>
-								<td  style="padding-left:10px;">
-									<select name="equipslotamount" class="form-control2" id="equipslotamount"> 
-									   <option selected value="0">0</option>
-									   <option value="1">1</option>
-									   <option value="2">2</option>
-									</select>
-									<br>
-								</td>
-								<br>
-							</tr>
-							<div id="slot1" style="display:none;">
-							<tr>
-								<td>
-									<label for="slot1">Slot 1:</label>
-								</td>
-								<td  style="padding-left:10px;">
-									<input type="text" class="form-control iteminput crystas" style="width: 400px" name="slot1" id="slot1"/>
-								</td>
-								<br>
-							</tr>
-							</div>
-							<div id="slot2" style="display:none;">
-							<tr>
-								<td>
-									<label for="Test">Slot 2:</label>
-								</td>
-								<td  style="padding-left:10px;">
-									<input type="text" class="form-control iteminput crystas" style="width: 400px" name="slot2" id="slot"/>
-								</td>
-								<br>
-							</tr>
-							</div>
-							<tr>
-								<td>
-									<label for="Test">Ability:</label>
-								</td>
-								<td  style="padding-left:10px;">
-									<select name="abidrop" class="form-control2" id="abidrop"> 
-									   <option selected value="0">No</option>
-									   <option value="1">Yes</option>
-									</select>
-								</td>
-								<br>
-							</tr>
-							<div id="hasabil" style="display:none;">
-							<tr>
-								<td>
-									<label for="Test">Ability name:</label>
-								</td>
-								<td  style="padding-left:10px;">
-									<input type="text" class="form-control iteminput" style="width: 400px" name="ability" id="ability" value=""/>
-								</td>
-							</tr>
-							<tr>
-								<td>
-									<label for="Test">Ability level:</label>
-								</td>
-								<td  style="padding-left:10px;">
-									<input type="number" max="5" class="form-control iteminput" style="width: 400px" name="ability_level" id="ability_level" value="0"/>
-								</td>
-							</tr>
-							</div>
-							<tr>
-								<br>
-								<td>
-									<label for="Test">Price:</label>
-								</td>
-								<td  style="padding-left:10px;">
-									<input  class="form-control iteminput" style="width: 400px" name="price" id="price" val/>
-								</td>
-							</tr>
+								</tr>
+								<div id="equipmentcategory" style="display:none;">
+									<tr>
+										<select name="itemcategory" class="form-control2" id="itemtype"> 
+										   <option>Choose type</option>
+										   <option value="1">Weapon</option>
+										   <option value="2">Body</option>
+										   <option value="3">Additional</option>
+										   <option value="4">Special</option>
+										</select>
+										<div id="equipmentcategoryweapon" style="display:none;">
+											<select name="itemcategory" class="form-control2" id="itemtype"> 
+											   <option>Choose type</option>
+											   <option value="1">Throw</option>
+											   <option value="2">Sword</option>
+											   <option value="3">Claw</option>
+											   <option value="4">Rod</option>
+											   <option value="5">Bow</option>
+											</select>
+										</div>
+										<td>
+											<label for="name">ATK:</label>
+										</td>
+										<td  style="padding-left:10px;">
+											<input type="text" class="form-control iteminput" style="width: 400px" name="name" id="equipatk"/>
+										</td>
+										<td>
+											<label for="name">DEF:</label>
+										</td>
+										<td  style="padding-left:10px;">
+											<input type="text" class="form-control iteminput" style="width: 400px" name="name" id="equipdef"/>
+										</td>
+									</tr>
+								</div>
+
+
+
 								<br><input type="submit" class="btn btn-success" style="width: 150px" name="search_button" id="search_button" value="Add new item"/>
 							</form>
-							</div>
-
-							<div id="item" style="display:none;">
-								<form action="/createItem" method="POST">
-									@csrf
-							<tr>
-								<td>
-									<label for="Test">Item Name:</label>
-								</td>
-								<td  style="padding-left:10px;">
-								<input type="text" class="form-control iteminput" style="width: 400px" name="name" id="material" value="{{ old('name') }}"/>
-								</td>
-								@error('fielderror')
-									<div style="color:red;"> {{ $message }}</div>
-								@enderror
-								@error('name')
-									<div style="color:red;"> {{ $message }}</div>
-								@enderror
-							</tr>
-							<tr>
-								<td>
-									<label for="Test">Quantity:</label>
-								</td>
-								<td  style="padding-left:10px;">
-								<input type="number" class="form-control iteminput" style="width: 400px" name="quantity" id="itemqty" value={{ old('quantity') }}/>
-								</td>
-								@error('quantity')
-								<div style="color:red;"> {{ $message }}</div>
-								@enderror
-							</tr>
-							<tr>
-								<td>
-									<label for="Test">Price per item:</label>
-								</td>
-								<td  style="padding-left:10px;">
-								<input  class="form-control iteminput" style="width: 400px" name="price" id="itemprice" value="{{ old('price')}}"/>
-								</td>
-							</tr>
-								<br><input type="submit" class="btn btn-success" style="width: 150px" name="search_button" id="search_button" value="Add new item" onclick="window.location.href='/additem.php'"/>
-							</div>
-						</form>
-
-							<div id="xtal" style="display:none;">
-								<form action="/createXtal" method="POST">
-									@csrf
-							<tr>
-								<td>
-									<label for="Test">Xtal Name:</label>
-								</td>
-								<td  style="padding-left:10px;">
-								<input type="text" class="form-control iteminput crystas" style="width: 400px" name="name" id="name" value="{{ old('name')}}"/>
-								</td>
-							</tr>
-							<tr>
-								<td>
-									<label for="Test">Quantity:</label>
-								</td>
-								<td  style="padding-left:10px;">
-								<input type="number"  class="form-control iteminput" style="width: 400px" name="quantity" id="quantity" value={{ old('quantity')}}/>
-								</td>
-								@error('quantity')
-								<div style="color:red;"> {{ $message }}</div>
-								@enderror
-							
-							</tr>
-							<tr>
-								<td>
-									<label for="Test">Price per item:</label>
-								</td>
-								<td  style="padding-left:10px;">
-									<input   class="form-control iteminput" style="width: 400px" name="price" id="xtalprice"/>
-								</td>
-								@error('price')
-								<div style="color:red;"> {{ $message }}</div>
-								@enderror
-							</tr>
-								<br><input type="submit" class="btn btn-success" style="width: 150px" name="search_button" id="search_button" value="Add new item"/>
-								</form>
-							</div>
-						
-							<div id="al" style="display:none;">
-								<form action="/createAi" method="POST">
-									@csrf
-							<tr>
-								<td>
-									<label for="name">Item Name:</label>
-								</td>
-								
-								<td  style="padding-left:10px;">
-								<input type="text" class="form-control iteminput" style="width: 400px" name="name" id="alcrystas" value="{{ old('name') }}"/>
-								</td>
-								@error('name')
-									<div style="color:red;"> {{ $message }}</div>
-								@enderror
-							</tr>
-							<tr>
-								<td>
-									<label for="quantity">Quantity:</label>
-								</td>
-								<td  style="padding-left:10px;">
-									<input type="number"  class="form-control iteminput" style="width: 400px" name="quantity" id="quantity" value="{{ old('quantity') }}"/>
-								</td>
-								@error('quantity')
-									<div style="color:red;"> {{ $message }}</div>
-								@enderror
-		
-							</tr>
-							<tr>
-								<br>
-								<td>
-									<label for="color">Color:</label>
-								</td>
-								<td  style="padding-left:10px;">
-									<select name="color" class="form-control2" id="color"> 
-									   <option selected>Red</option>
-									   <option>Green</option>
-									   <option>Blue</option>
-									</select>
-								</td>
-								
-							</tr>
-
-							<tr>
-								<br>
-								<td>
-									<label for="price">Price per item:</label>
-								</td>
-								<td  style="padding-left:10px;">
-									<input  class="form-control iteminput" style="width: 400px" name="price" id="price" value="{{ old('price') }}"/>
-								</td>
-								@error('price')
-						<div style="color:red;"> {{ $message }}</div>
-						@enderror
-							</tr>
-								<br><input type="submit" class="btn btn-success" style="width: 150px" name="search_button" id="search_button" value="Add new item" "/>
-								</form>
-							</div>
-
-							<div id="relic" style="display:none;">
-								<form action="/createRelic" method="POST">
-									@csrf
-							<tr>
-								<td>
-									<label for="Test">Relic Name:</label>
-								</td>
-								<td  style="padding-left:10px;">
-								<input type="text" class="form-control iteminput" style="width: 400px" name="name" id="relicname" value="{{ old('name') }}"/>
-								</td>
-							</tr>
-							<tr>
-								<td>
-									<label for="Test">Quantity:</label>
-								</td>
-								<td  style="padding-left:10px;">
-								<input type="number"  min="0" class="form-control iteminput" style="width: 400px" name="quantity" id="quantity" value="{{ old('quantity') }}"/>
-								</td>
-								@error('quantity')
-								<div style="color:red;"> {{ $message }}</div>
-								@enderror
-							</tr>
-							<tr>
-								<td>
-									<label for="Test">Price per item:</label>
-								</td>
-								<td  style="padding-left:10px;">
-								<input  min="0" class="form-control iteminput" style="width: 400px" name="price" id="price" value="{{ old('price')}}"/>
-								</td>
-								@error('price')
-								<div style="color:red;"> {{ $message }}</div>
-								@enderror
-							</tr>
-								<br><input type="submit" class="btn btn-success" style="width: 150px" name="search_button" id="search_button" value="Add new item"/>
-								</form>
 							</div>
 					
 					
@@ -480,105 +262,21 @@
     				<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     				<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 					<script>    
-					$('#itemtype').on('change',function(){
+					$('#wikiinputtype').on('change',function(){
 					var selection = $(this).val();
 						switch(selection)
 						{
 							case "1":
-								$("#equip").show()
-								$("#item").hide()
-								$("#xtal").hide()
-								$("#al").hide()
-								$("#relic").hide()
-								break;
-							case "2":
-								$("#equip").hide()
 								$("#item").show()
-								$("#xtal").hide()
-								$("#al").hide()
-								$("#relic").hide()
-								break;
-							case "3":
-								$("#equip").hide()
-								$("#item").hide()
-								$("#xtal").show()
-								$("#al").hide()
-								$("#relic").hide()
-								break;
-							case "4":
-								$("#equip").hide()
-								$("#item").hide()
-								$("#xtal").hide()
-								$("#al").show()
-								$("#relic").hide()
-								break;
-							case "5":
-								$("#equip").hide()
-								$("#item").hide()
-								$("#xtal").hide()
-								$("#al").hide()
-								$("#relic").show()
-								break;
-							default:
-								$("#equip").hide()
-								$("#item").hide()
-								$("#xtal").hide()
-								$("#al").hide()
-								$("#relic").hide()
-								break;
-						}
-					});
-					$('#equipslotamount').on('change',function(){
-					var selection = $(this).val();
-						switch(selection)
-						{
-							case "0":
-								$("#slot1").hide()
-								$("#slot2").hide()
-								$("#equip").show()
-								break;
-							case "1":
-								$("#slot1").show()
-								$("#slot2").hide()
-								$("#equip").show()
+								$("#monster").hide()
 								break;
 							case "2":
-								$("#slot1").show()
-								$("#slot2").show()
-								$("#equip").show()
+								$("#item").hide()
+								$("#monster").show()
 								break;
 							default:
-								$("#slot1").hide()
-								$("#slot2").hide()
-								$("#equip").hide()
 								$("#item").hide()
-								$("#xtal").hide()
-								$("#al").hide()
-								$("#relic").hide()
-								break;
-						}
-					});
-					$('#abidrop').on('change',function(){
-					var selection = $(this).val();
-						switch(selection)
-						{
-							case "0":
-								$("#hasabil").hide()
-								$("#equip").show()
-								break;
-							case "1":
-								$("#hasabil").show()
-								$("#equip").show()
-								break;
-							default:
-								$("#hasabil").hide()
-								$("#slot1").hide()
-								$("#slot2").hide()
-								$("#equip").hide()
-								$("#item").hide()
-								$("#xtal").hide()
-								$("#al").hide()
-								$("#relic").hide()
+								$("#monster").hide()
 								break;
 						}
 					});
