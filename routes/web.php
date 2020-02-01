@@ -18,7 +18,7 @@ Auth::routes(['verify' => true]);
 
 Route::get('/about', 'HomeController@about');
 
-Route::get('/itemwikitest', 'HomeController@additemwiki');
+Route::get('/additemwiki', 'HomeController@wiki');
 
 Route::get('/scammers', function () {
     return view('scammers');
