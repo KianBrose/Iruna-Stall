@@ -178,6 +178,7 @@
 										</div>
 									</tr>
 									<td>
+										<br>
 									<label for="name">ATK:</label>
 									</td>
 									<td  style="padding-left:10px;">
@@ -238,6 +239,7 @@
 								</div>
 
 								<td>
+									<br>
 									<label for="name">Text/Description:</label>
 								</td>
 								<td  style="padding-left:10px;">
