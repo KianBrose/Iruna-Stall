@@ -324,11 +324,6 @@
 								$("#monster").hide()
 								$("#equipmentcategory").show()
 								$("#equipmentcategoryweapon").hide()
-								$("#ability1").hide()
-								$("#ability2").hide()
-								$("#ability3").hide()
-								$("#ability4").hide()
-								$("#yesdropability").hide()
 								break;
 							default:
 								$("#item").show()
@@ -352,22 +347,12 @@
 								$("#monster").hide()
 								$("#equipmentcategory").show()
 								$("#equipmentcategoryweapon").show()
-								$("#ability1").hide()
-								$("#ability2").hide()
-								$("#ability3").hide()
-								$("#ability4").hide()
-								$("#yesdropability").hide()
 								break;
 							default:
 								$("#item").show()
 								$("#monster").hide()
 								$("#equipmentcategory").show()
 								$("#equipmentcategoryweapon").hide()
-								$("#ability1").hide()
-								$("#ability2").hide()
-								$("#ability3").hide()
-								$("#ability4").hide()
-								$("#yesdropability").hide()
 								break;
 						}
 					});
