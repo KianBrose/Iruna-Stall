@@ -159,7 +159,7 @@
 								</tr>
 								<div id="equipmentcategory" style="display:none;">
 									<tr>
-										<select name="itemcategory" class="form-control2" id="itemtype"> 
+										<select name="equipcategory" class="form-control2" id="equipcategory"> 
 										   <option>Choose type</option>
 										   <option value="1">Weapon</option>
 										   <option value="2">Body</option>
@@ -176,83 +176,89 @@
 											   <option value="5">Bow</option>
 											</select>
 										</div>
-										<td>
-											<label for="name">ATK:</label>
-										</td>
-										<td  style="padding-left:10px;">
-											<input type="text" class="form-control iteminput" style="width: 400px" name="name" id="equipatk"/>
-										</td>
-										<td>
-											<label for="name">DEF:</label>
-										</td>
-										<td  style="padding-left:10px;">
-											<input type="text" class="form-control iteminput" style="width: 400px" name="name" id="equipdef"/>
-										</td>
 									</tr>
-								</div>
-								<div id="monster" style="display:none;">
-								<form action="/wikiaddmonster" method="POST">
-								@csrf
-								<tr>
 									<td>
-										<label for="name">Monster Name:</label>
+									<label for="name">ATK:</label>
 									</td>
 									<td  style="padding-left:10px;">
-										<input type="text" class="form-control iteminput" style="width: 400px" name="name" id="itemname"/>
+										<input type="text" class="form-control iteminput" style="width: 400px" name="name" id="equipatk"/>
 									</td>
-
-									<select name="itemcategory" class="form-control2" id="itemtype"> 
-									   <option>Choose type</option>
-									   <option value="1">Equipment</option>
-									   <option value="2">Xtal</option>
-									   <option value="3">AL Crystal</option>
-									   <option value="4">Relic</option>
-									   <option value="5">Recovery</option>
-									   <option value="6">Strengthening</option>
-									   <option value="7">Teleport</option>
-									   <option value="8">Collectible</option>
-									   <option value="9">Ore</option>
-									   <option value="10">Island object</option>
-									   <option value="11">Pet</option>
+									<td>
+										<label for="name">DEF:</label>
+									</td>
+									<td  style="padding-left:10px;">
+										<input type="text" class="form-control iteminput" style="width: 400px" name="name" id="equipdef"/>
+									</td>
+									<select name="candropabi" class="form-control2" id="candropabi"> 
+									   <option>Drops with ability?</option>
+									   <option value="1">Yes</option>
+									   <option value="2">No</option>
 									</select>
-								</tr>
-								<div id="equipmentcategory" style="display:none;">
-									<tr>
-										<select name="itemcategory" class="form-control2" id="itemtype"> 
-										   <option>Choose type</option>
-										   <option value="1">Weapon</option>
-										   <option value="2">Body</option>
-										   <option value="3">Additional</option>
-										   <option value="4">Special</option>
+									<div id="yesdropability" style="display:none;">
+										<select name="yescandropabi" class="form-control2" id="yescandropabi"> 
+										   <option>How many abilities can i drop?</option>
+										   <option value="1">1</option>
+										   <option value="2">2</option>
+										   <option value="3">3</option>
+										   <option value="4">4</option>
 										</select>
-										<div id="equipmentcategoryweapon" style="display:none;">
-											<select name="itemcategory" class="form-control2" id="itemtype"> 
-											   <option>Choose type</option>
-											   <option value="1">Throw</option>
-											   <option value="2">Sword</option>
-											   <option value="3">Claw</option>
-											   <option value="4">Rod</option>
-											   <option value="5">Bow</option>
-											</select>
+										<div id="ability1" style="display:none;">
+											<td>
+												<label for="name">Ability 1 name:</label>
+											</td>
+											<td  style="padding-left:10px;">
+												<input type="text" class="form-control iteminput" style="width: 400px" name="name" id="abi1"/>
+											</td>
 										</div>
-										<td>
-											<label for="name">ATK:</label>
-										</td>
-										<td  style="padding-left:10px;">
-											<input type="text" class="form-control iteminput" style="width: 400px" name="name" id="equipatk"/>
-										</td>
-										<td>
-											<label for="name">DEF:</label>
-										</td>
-										<td  style="padding-left:10px;">
-											<input type="text" class="form-control iteminput" style="width: 400px" name="name" id="equipdef"/>
-										</td>
-									</tr>
+										<div id="ability2" style="display:none;">
+											<td>
+												<label for="name">Ability 2 name:</label>
+											</td>
+											<td  style="padding-left:10px;">
+												<input type="text" class="form-control iteminput" style="width: 400px" name="name" id="abi2"/>
+											</td>
+										</div>
+										<div id="ability3" style="display:none;">
+											<td>
+												<label for="name">Ability 3 name:</label>
+											</td>
+											<td  style="padding-left:10px;">
+												<input type="text" class="form-control iteminput" style="width: 400px" name="name" id="abi3"/>
+											</td>
+										</div>
+										<div id="ability4" style="display:none;">
+											<td>
+												<label for="name">Ability 4 name:</label>
+											</td>
+											<td  style="padding-left:10px;">
+												<input type="text" class="form-control iteminput" style="width: 400px" name="name" id="abi4"/>
+											</td>
+										</div>
+									</div>
 								</div>
 
-
+								<td>
+									<label for="name">Text/Description:</label>
+								</td>
+								<td  style="padding-left:10px;">
+									<input type="text" class="form-control iteminput" style="width: 400px" name="name" id="textdescription"/>
+								</td>
+								<select name="hashiddeneffect" class="form-control2" id="hashiddeneffect"> 
+									   <option>Has hidden effect?</option>
+									   <option value="1">Yes</option>
+									   <option value="2">No</option>
+								</select>
+								<div id="hiddentextdescription" style="display:none;">
+									<td>
+										<label for="name">Hidden Text/Description:</label>
+									</td>
+									<td  style="padding-left:10px;">
+										<input type="text" class="form-control iteminput" style="width: 400px" name="name" id="hiddentextdesc"/>
+									</td>
+								</div>
 
 								<br><input type="submit" class="btn btn-success" style="width: 150px" name="search_button" id="search_button" value="Add new item"/>
+								</div>
 							</form>
 							</div>
 					
@@ -269,14 +275,194 @@
 							case "1":
 								$("#item").show()
 								$("#monster").hide()
+								$("#equipmentcategory").hide()
+								$("#equipmentcategoryweapon").hide()
+								$("#hiddentextdescription").hide()
+								$("#ability1").hide()
+								$("#ability2").hide()
+								$("#ability3").hide()
+								$("#ability4").hide()
+								$("#yesdropability").hide()
 								break;
 							case "2":
 								$("#item").hide()
 								$("#monster").show()
+								$("#equipmentcategory").hide()
+								$("#equipmentcategoryweapon").hide()
+								$("#hiddentextdescription").hide()
+								$("#ability1").hide()
+								$("#ability2").hide()
+								$("#ability3").hide()
+								$("#ability4").hide()
+								$("#yesdropability").hide()
 								break;
 							default:
 								$("#item").hide()
 								$("#monster").hide()
+								$("#equipmentcategory").hide()
+								$("#equipmentcategoryweapon").hide()
+								$("#hiddentextdescription").hide()
+								$("#ability1").hide()
+								$("#ability2").hide()
+								$("#ability3").hide()
+								$("#ability4").hide()
+								$("#yesdropability").hide()
+								break;
+						}
+					});
+					$('#itemcategory').on('change',function(){
+					var selection = $(this).val();
+						switch(selection)
+						{
+							case "1":
+								$("#item").show()
+								$("#monster").hide()
+								$("#equipmentcategory").show()
+								$("#equipmentcategoryweapon").hide()
+								$("#hiddentextdescription").hide()
+								$("#ability1").hide()
+								$("#ability2").hide()
+								$("#ability3").hide()
+								$("#ability4").hide()
+								$("#yesdropability").hide()
+								break;
+							default:
+								$("#item").show()
+								$("#monster").hide()
+								$("#equipmentcategory").hide()
+								$("#equipmentcategoryweapon").hide()
+								$("#hiddentextdescription").hide()
+								$("#ability1").hide()
+								$("#ability2").hide()
+								$("#ability3").hide()
+								$("#ability4").hide()
+								$("#yesdropability").hide()
+								break;
+						}
+					});
+					$('#equipcategory').on('change',function(){
+					var selection = $(this).val();
+						switch(selection)
+						{
+							case "1":
+								$("#item").show()
+								$("#monster").hide()
+								$("#equipmentcategory").show()
+								$("#equipmentcategoryweapon").show()
+								$("#hiddentextdescription").hide()
+								$("#ability1").hide()
+								$("#ability2").hide()
+								$("#ability3").hide()
+								$("#ability4").hide()
+								$("#yesdropability").hide()
+								break;
+							default:
+								$("#item").show()
+								$("#monster").hide()
+								$("#equipmentcategory").show()
+								$("#equipmentcategoryweapon").hide()
+								$("#hiddentextdescription").hide()
+								$("#ability1").hide()
+								$("#ability2").hide()
+								$("#ability3").hide()
+								$("#ability4").hide()
+								$("#yesdropability").hide()
+								break;
+						}
+					});
+					$('#candropabi').on('change',function(){
+					var selection = $(this).val();
+						switch(selection)
+						{
+							case "1":
+								$("#item").show()
+								$("#monster").hide()
+								$("#equipmentcategory").show()
+								$("#equipmentcategoryweapon").show()
+								$("#hiddentextdescription").hide()
+								$("#ability1").hide()
+								$("#ability2").hide()
+								$("#ability3").hide()
+								$("#ability4").hide()
+								$("#yesdropability").show()
+								break;
+							default:
+								$("#item").show()
+								$("#monster").hide()
+								$("#equipmentcategory").show()
+								$("#equipmentcategoryweapon").show()
+								$("#hiddentextdescription").hide()
+								$("#ability1").hide()
+								$("#ability2").hide()
+								$("#ability3").hide()
+								$("#ability4").hide()
+								$("#yesdropability").hide()
+								break;
+						}
+					});
+					$('#yescandropabi').on('change',function(){
+					var selection = $(this).val();
+						switch(selection)
+						{
+							case "1":
+								$("#item").show()
+								$("#monster").hide()
+								$("#equipmentcategory").show()
+								$("#equipmentcategoryweapon").show()
+								$("#hiddentextdescription").hide()
+								$("#ability1").show()
+								$("#ability2").hide()
+								$("#ability3").hide()
+								$("#ability4").hide()
+								$("#yesdropability").show()
+								break;
+							case "2":
+								$("#item").show()
+								$("#monster").hide()
+								$("#equipmentcategory").show()
+								$("#equipmentcategoryweapon").show()
+								$("#hiddentextdescription").hide()
+								$("#ability1").show()
+								$("#ability2").show()
+								$("#ability3").hide()
+								$("#ability4").hide()
+								$("#yesdropability").show()
+								break;
+							case "3":
+								$("#item").show()
+								$("#monster").hide()
+								$("#equipmentcategory").show()
+								$("#equipmentcategoryweapon").show()
+								$("#hiddentextdescription").hide()
+								$("#ability1").show()
+								$("#ability2").show()
+								$("#ability3").show()
+								$("#ability4").hide()
+								$("#yesdropability").show()
+								break;
+							case "4":
+								$("#item").show()
+								$("#monster").hide()
+								$("#equipmentcategory").show()
+								$("#equipmentcategoryweapon").show()
+								$("#hiddentextdescription").hide()
+								$("#ability1").show()
+								$("#ability2").show()
+								$("#ability3").show()
+								$("#ability4").show()
+								$("#yesdropability").show()
+								break;
+							default:
+								$("#item").show()
+								$("#monster").hide()
+								$("#equipmentcategory").show()
+								$("#equipmentcategoryweapon").show()
+								$("#hiddentextdescription").hide()
+								$("#ability1").hide()
+								$("#ability2").hide()
+								$("#ability3").hide()
+								$("#ability4").hide()
+								$("#yesdropability").hide()
 								break;
 						}
 					});
