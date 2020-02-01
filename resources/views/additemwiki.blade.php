@@ -125,7 +125,7 @@
 							@endif
 
 
-							<select name="wikiinputtype" class="form-control2" id="itemtype"> 
+							<select name="wikiinputtype" class="form-control2" id="wikiinputtype"> 
 							   <option>Choose type</option>
 							   <option value="1">Item</option>
 							   <option value="2">Monster</option>
@@ -142,7 +142,7 @@
 										<input type="text" class="form-control iteminput" style="width: 400px" name="name" id="itemname"/>
 									</td>
 
-									<select name="itemcategory" class="form-control2" id="itemtype"> 
+									<select name="itemcategory" class="form-control2" id="itemcategory"> 
 									   <option>Choose type</option>
 									   <option value="1">Equipment</option>
 									   <option value="2">Xtal</option>
@@ -297,134 +297,6 @@
 <script type="text/javascript" id="cookieinfo"
     src="//cookieinfoscript.com/js/cookieinfo.min.js">
 </script>
-<script>
-	$(document).ready(function() {
-		
-		$( "#ability" ).autocomplete({
-			source: function(request, response) {
-				$.ajax({
-				url: "{{secure_url('api/searchability')}}",
-				data: {
-						term : request.term
-				},
-				dataType: "json",
-				success: function(data){
-				var resp = $.map(data,function(obj){
-						return obj.type;
-				}); 
-
-				response(resp);
-				}
-			});
-		},
-		minLength: 3
-		});
-
-		$( "#equipment" ).autocomplete({
-			source: function(request, response) {
-				$.ajax({
-				url: "{{secure_url('api/searchequip')}}",
-				data: {
-						term : request.term
-				},
-				dataType: "json",
-				success: function(data){
-				var resp = $.map(data,function(obj){
-						return obj.name;
-				}); 
-
-				response(resp);
-				}
-			});
-		},
-		minLength: 3
-		});
-		$( "#alcrystas" ).autocomplete({
-			source: function(request, response) {
-				$.ajax({
-				url: "{{secure_url('api/searchal')}}",
-				data: {
-						term : request.term
-				},
-				dataType: "json",
-				success: function(data){
-				var resp = $.map(data,function(obj){
-						return obj.name;
-				}); 
-
-				response(resp);
-				}
-			});
-		},
-		minLength: 3
-		});
-
-		$( "#material" ).autocomplete({
-			source: function(request, response) {
-				$.ajax({
-				url: "{{secure_url('api/searchmaterial')}}",
-				data: {
-						term : request.term
-				},
-				dataType: "json",
-				success: function(data){
-				var resp = $.map(data,function(obj){
-						return obj.name;
-				}); 
-
-				response(resp);
-				}
-			});
-		},
-		minLength: 3
-		});
-		$( "#relicname" ).autocomplete({
-			source: function(request, response) {
-				$.ajax({
-				url: "{{secure_url('api/searchrelic')}}",
-				data: {
-						term : request.term
-				},
-				dataType: "json",
-				success: function(data){
-				var resp = $.map(data,function(obj){
-						return obj.name;
-				}); 
-
-				response(resp);
-				}
-			});
-		},
-		minLength: 3
-		});
-
-		$( ".crystas" ).autocomplete({
-			source: function(request, response) {
-				$.ajax({
-				url: "{{secure_url('api/searchcrystas')}}",
-				data: {
-						term : request.term
-				},
-				dataType: "json",
-				success: function(data){
-				var resp = $.map(data,function(obj){
-						return obj.name;
-				}); 
-
-				response(resp);
-				}
-			});
-		},
-		minLength: 3
-		});
-
-
-
-		
-	});
-		
-
-	</script>
 </body>
 
 </html>
