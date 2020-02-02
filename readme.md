@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://irunastall.com/img/bannerIS.png" width="150" height="100"/>
+  <img src="https://irunastall.com/img/bannerIS.png" width="170" height="100"/>
 </p>
 <h3 align="center">
   Iruna Global Stall Project
@@ -36,6 +36,12 @@ In order to work on this project on your machine, you can follow the instruction
     ```bash
     ./bin/install.sh
     ```
+## Testing
+
+```bash
+$ phpunit
+```
+
 ## Contributors
 
 <table>
