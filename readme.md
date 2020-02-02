@@ -38,6 +38,7 @@ In order to work on this project on your machine, you can follow the instruction
     ```
 ## Testing
 
+Run `$ phpunit ` to ensure all test cases are passed
 ```bash
 $ phpunit
 ```
