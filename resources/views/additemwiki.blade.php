@@ -200,45 +200,12 @@
 									</select>
 									<div id="yesdropability" style="display:none;">
 										<br>
-										<select name="yescandropabi" class="form-control2" id="yescandropabi"> 
-										   <option>How many abilities can i drop?</option>
-										   <option value="1">1</option>
-										   <option value="2">2</option>
-										   <option value="3">3</option>
-										   <option value="4">4</option>
-										</select>
-										<div id="ability1" style="display:none;">
 											<td>
-												<label for="name">Ability 1 name:</label>
+												<label for="name">Ability name(s):</label>
 											</td>
 											<td  style="padding-left:10px;">
-												<input type="text" class="form-control iteminput" style="width: 400px" name="name" id="abi1"/>
+												<input type="text" class="form-control iteminput" style="width: 400px" name="name" id="abilitynames"/>
 											</td>
-										</div>
-										<div id="ability2" style="display:none;">
-											<td>
-												<label for="name">Ability 2 name:</label>
-											</td>
-											<td  style="padding-left:10px;">
-												<input type="text" class="form-control iteminput" style="width: 400px" name="name" id="abi2"/>
-											</td>
-										</div>
-										<div id="ability3" style="display:none;">
-											<td>
-												<label for="name">Ability 3 name:</label>
-											</td>
-											<td  style="padding-left:10px;">
-												<input type="text" class="form-control iteminput" style="width: 400px" name="name" id="abi3"/>
-											</td>
-										</div>
-										<div id="ability4" style="display:none;">
-											<td>
-												<label for="name">Ability 4 name:</label>
-											</td>
-											<td  style="padding-left:10px;">
-												<input type="text" class="form-control iteminput" style="width: 400px" name="name" id="abi4"/>
-											</td>
-										</div>
 									</div>
 								</div>
 
@@ -285,10 +252,6 @@
 								$("#monster").hide()
 								$("#equipmentcategory").hide()
 								$("#equipmentcategoryweapon").hide()
-								$("#ability1").hide()
-								$("#ability2").hide()
-								$("#ability3").hide()
-								$("#ability4").hide()
 								$("#yesdropability").hide()
 								break;
 							case "2":
@@ -296,10 +259,6 @@
 								$("#monster").show()
 								$("#equipmentcategory").hide()
 								$("#equipmentcategoryweapon").hide()
-								$("#ability1").hide()
-								$("#ability2").hide()
-								$("#ability3").hide()
-								$("#ability4").hide()
 								$("#yesdropability").hide()
 								break;
 							default:
@@ -307,10 +266,6 @@
 								$("#monster").hide()
 								$("#equipmentcategory").hide()
 								$("#equipmentcategoryweapon").hide()
-								$("#ability1").hide()
-								$("#ability2").hide()
-								$("#ability3").hide()
-								$("#ability4").hide()
 								$("#yesdropability").hide()
 								break;
 						}
@@ -330,10 +285,6 @@
 								$("#monster").hide()
 								$("#equipmentcategory").hide()
 								$("#equipmentcategoryweapon").hide()
-								$("#ability1").hide()
-								$("#ability2").hide()
-								$("#ability3").hide()
-								$("#ability4").hide()
 								$("#yesdropability").hide()
 								break;
 						}
@@ -365,10 +316,6 @@
 								$("#monster").hide()
 								$("#equipmentcategory").show()
 								$("#equipmentcategoryweapon").show()
-								$("#ability1").hide()
-								$("#ability2").hide()
-								$("#ability3").hide()
-								$("#ability4").hide()
 								$("#yesdropability").show()
 								break;
 							default:
@@ -376,10 +323,6 @@
 								$("#monster").hide()
 								$("#equipmentcategory").show()
 								$("#equipmentcategoryweapon").show()
-								$("#ability1").hide()
-								$("#ability2").hide()
-								$("#ability3").hide()
-								$("#ability4").hide()
 								$("#yesdropability").hide()
 								break;
 						}
@@ -393,10 +336,6 @@
 								$("#monster").hide()
 								$("#equipmentcategory").show()
 								$("#equipmentcategoryweapon").show()
-								$("#ability1").show()
-								$("#ability2").hide()
-								$("#ability3").hide()
-								$("#ability4").hide()
 								$("#yesdropability").show()
 								break;
 							case "2":
@@ -404,10 +343,6 @@
 								$("#monster").hide()
 								$("#equipmentcategory").show()
 								$("#equipmentcategoryweapon").show()
-								$("#ability1").show()
-								$("#ability2").show()
-								$("#ability3").hide()
-								$("#ability4").hide()
 								$("#yesdropability").show()
 								break;
 							case "3":
@@ -415,10 +350,6 @@
 								$("#monster").hide()
 								$("#equipmentcategory").show()
 								$("#equipmentcategoryweapon").show()
-								$("#ability1").show()
-								$("#ability2").show()
-								$("#ability3").show()
-								$("#ability4").hide()
 								$("#yesdropability").show()
 								break;
 							case "4":
@@ -426,10 +357,6 @@
 								$("#monster").hide()
 								$("#equipmentcategory").show()
 								$("#equipmentcategoryweapon").show()
-								$("#ability1").show()
-								$("#ability2").show()
-								$("#ability3").show()
-								$("#ability4").show()
 								$("#yesdropability").show()
 								break;
 							default:
@@ -437,10 +364,6 @@
 								$("#monster").hide()
 								$("#equipmentcategory").show()
 								$("#equipmentcategoryweapon").show()
-								$("#ability1").hide()
-								$("#ability2").hide()
-								$("#ability3").hide()
-								$("#ability4").hide()
 								$("#yesdropability").show()
 								break;
 						}
