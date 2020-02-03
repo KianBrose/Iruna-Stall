@@ -71,13 +71,13 @@ class AdminCommand extends Command
         $user = User::where('email', $adminEmail)->firstOrFail();
         if($user) {
             if(!Hash::check($adminPassword, $user->password)) {
-                $this->error('Your password does not match');
+                $this->error('Your password or your email is wrong, please try again');
             }
             else {
                 return $this->hasAdminRole($user);
             }
         } else {
-            $this->error('We could not find your email address, make sure you spell it correctly');
+            $this->error('Your password or your email is wrong, please try again');
         }
         
     }
