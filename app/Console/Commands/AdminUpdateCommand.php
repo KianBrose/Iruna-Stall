@@ -2,25 +2,25 @@
 
 namespace App\Console\Commands;
 
-use App\User;
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\Hash;
+use App\User;
 
-class AdminCommand extends Command
+class AdminUpdateCommand extends Command
 {
     /**
      * The name and signature of the console command.
      *
      * @var string
      */
-    protected $signature = 'admin:set {userEmail : The user email you wish set the permission}';
+    protected $signature = 'admin:update';
 
     /**
-     * Set user as an admin
+     * The console command description.
      *
      * @var string
      */
-    protected $description = 'Set user as an admin';
+    protected $description = 'Update admin status';
 
     /**
      * Create a new command instance.
@@ -39,9 +39,6 @@ class AdminCommand extends Command
      */
     public function handle()
     {
-
-        $userEmail = $this->argument('userEmail');
-
         $this->info('We need to make sure that only people with admin permission can execute this command');
 
         // get admin email
@@ -51,15 +48,16 @@ class AdminCommand extends Command
         $adminPassword = $this->secret('What is your password');
 
         $isAdmin = $this->hasAdminPermission($adminEmail, $adminPassword);
-        
+
         if($isAdmin){
-            $this->setAdminPersmission($userEmail);
+            $this->update();
         }
+
     }
 
     /**
      * 
-     * check if an admin has permission to set other as admin
+     * check if an admin has permission to perform update action
      * 
      * @param string $adminEmail
      * @param string $adminPassword
@@ -98,46 +96,17 @@ class AdminCommand extends Command
 
     /**
      * 
-     * check if users table has valid email
+     * Set editor role to admin user
      * 
-     * @param string $email
-     * 
-     * @return App\User 
+     * @return void
      */
-    protected function usersHasEmail($email)
+    protected function update()
     {
-        $user = User::where('email', $email)->firstOrFail();
-
-        if($user){
-            return $user;
-        }
-
-        return null;
-
-    }
-
-    /**
-     * 
-     * set target user as admin
-     * 
-     * @param string $userEmail
-     * 
-     * @return mixed
-     */
-    protected function setAdminPersmission($userEmail)
-    {
-
-        $user = $this->usersHasEmail($userEmail);
-
-        if($user == null) {
-            $this->error('We could not find that user email address, make sure you spell it correctly');
-        }
-        else {
-            $user->isAdmin = 1;
+        $users = User::where('isAdmin', 1)->get();
+        foreach($users as $user){
+            $user->editor = 1;
             $user->save();
-            $this->info('Successfully set target: '.$user->email.' as admin');
+            $this->info('Successfully assign user '.$user->name.' to editor role');
         }
     }
-
-
 }

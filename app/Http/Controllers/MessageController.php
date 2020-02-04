@@ -19,15 +19,17 @@ class MessageController extends Controller
         return view('chat.private');
     }
 
-    public function fetch(User $user){
+    public function fetch(User $user)
+    {
         $privateMessage = Message::with('user')
-        ->where(['user_id'=> auth()->id(), 'receiver_id'=> $user->id])
-        ->orWhere(function($query) use($user){
+        ->where(['user_id'=> auth()->id(), 'receiver_id' => $user->id])
+        ->orWhere(function($query) use ($user){
             $query->where(['user_id' => $user->id, 'receiver_id' => auth()->id()]);
         })
         ->get();
         
-        foreach($privateMessage as $message){
+        foreach($privateMessage as $message)
+        {
             if($message->receiver_id == auth()->id()){
                 $message->read = true;
                 $message->save();
@@ -37,7 +39,8 @@ class MessageController extends Controller
 
     }
 
-    public function sendMessage(Request $request, User $user){
+    public function sendMessage(Request $request, User $user)
+    {
         $input = $request->all();
         $input['receiver_id']=$user->id;
         $message =auth()->user()->messages()->create($input);
@@ -52,7 +55,8 @@ class MessageController extends Controller
        return Auth::user()->friendsOfMine()->merge(Auth::user()->friendsOf());
     }
 
-    public function showUnreadMessage(){
+    public function showUnreadMessage()
+    {
         $message = Message::with('user')
                     ->groupBy('user_id')
                     ->where('receiver_id', auth()->user()->id)
