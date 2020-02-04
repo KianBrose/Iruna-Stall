@@ -65,9 +65,25 @@ class UpdateController extends Controller
         ]);
     }
 
-
+    /**
+     * 
+     * update existing item
+     * 
+     * @param string $name
+     * @param string $category
+     * @param string $description
+     * 
+     * @return void
+     * 
+     */
     private function updateExistItems($name, $category, $description)
     {
+        $item = Irunaitem::where('name', $name)->first();
+
+        $item->name = $this->convert($name, $category);
+        $item->category = $category;
+        $item->description = $description;
+        $item->save();
 
     }
 
