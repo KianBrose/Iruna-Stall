@@ -236,6 +236,59 @@
 								</div>
 							</form>
 							</div>
+
+							<div id="monster" style="display:none;">
+								<form action="/wikiaddmonster" method="POST">
+								@csrf
+								<tr>
+									<td>
+										<label for="name">Monster Name:</label>
+									</td>
+									<td  style="padding-left:10px;">
+										<input type="text" class="form-control iteminput" style="width: 400px" name="name" id="monstername"/>
+									</td>
+									<br>
+									<td>
+										<label for="name">Level(s):</label>
+									</td>
+									<td  style="padding-left:10px;">
+										<input type="text" class="form-control iteminput" style="width: 400px" name="name" id="levels"/>
+									</td>
+									<br>
+									<td>
+										<label for="name">HP:</label>
+									</td>
+									<td  style="padding-left:10px;">
+										<input type="text" class="form-control iteminput" style="width: 400px" name="name" id="hp"/>
+									</td>
+									<br>
+									<td>
+										<label for="name">XP:</label>
+									</td>
+									<td  style="padding-left:10px;">
+										<input type="text" class="form-control iteminput" style="width: 400px" name="name" id="xp"/>
+									</td>
+									<br>
+									<td>
+										<label for="name">Location(s):</label>
+									</td>
+									<td  style="padding-left:10px;">
+										<input type="text" class="form-control iteminput" style="width: 400px" name="name" id="monsterlocations"/>
+									</td>
+									<br>
+									<td>
+										<label for="name">Monster drop(s):</label>
+									</td>
+									<td  style="padding-left:10px;">
+										<input type="text" class="form-control iteminput" style="width: 400px" name="name" id="monsterdrops"/>
+									</td>
+									<br>
+
+
+								<br><input type="submit" class="btn btn-success" style="width: 150px" name="search_button" id="search_button" value="Add new monster"/>
+								</div>
+							</form>
+							</div>
 					
 					
 					<script src="https://code.jquery.com/jquery-3.4.1.min.js"   integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="   crossorigin="anonymous"></script>
