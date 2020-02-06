@@ -20,9 +20,9 @@ class UpdateController extends Controller
     public function create()
     {
         if($this->exists(request('name'))) {
-            return $this->updateExistItems(request('name'), request('category'), request('description'));
+            return $this->updateExistItems(request('name'), request('category'), request('description'), request('monster'));
         } else {
-            return $this->makeItems(request('name'), request('category'), request('description'));
+            return $this->makeItems(request('name'), request('category'), request('description'), request('monster'));
         }
     }
 
@@ -56,12 +56,13 @@ class UpdateController extends Controller
      * 
      * @return void
      */
-    private function makeItems($name, $category, $description)
+    private function makeItems($name, $category, $description, $monster)
     {
         Irunaitem::create([
             'name' => $this->convert($name, $category),
             'category' => $category,
-            'description' => $description
+            'description' => $description,
+            'monster' => $monster
         ]);
     }
 
@@ -76,13 +77,14 @@ class UpdateController extends Controller
      * @return void
      * 
      */
-    private function updateExistItems($name, $category, $description)
+    private function updateExistItems($name, $category, $description, $monster)
     {
         $item = Irunaitem::where('name', $name)->first();
 
         $item->name = $this->convert($name, $category);
         $item->category = $category;
         $item->description = $description;
+        $item->monster = $monster;
         $item->save();
 
     }
