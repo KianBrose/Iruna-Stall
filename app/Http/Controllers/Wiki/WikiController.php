@@ -1,5 +1,5 @@
 <?php
-namespace App\Http\Controllers\Admin;
+namespace App\Http\Controllers\Wiki;
 
 use App\Message;
 use App\Http\Controllers\Controller;
