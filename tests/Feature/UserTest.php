@@ -37,5 +37,23 @@ class User extends TestCase
         }
     }
 
+    public function testAsEditors()
+    {
+        $user = factory('App\User'::class)->make([
+            'editor' => '1'
+        ]);
+        $response = $this->actingAs($user)->get('/wiki/editor/item/add');
+        $response->assertStatus(200);
+    }
+
+    public function testAsNoneEditor()
+    {
+        $user = factory('App\User'::class)->make();
+        $response = $this->actingAs($user)->get('/wiki/editor/item/ad');
+        if($response->assertStatus(404) || $response->assertStatus(302)){
+            return true;
+        }
+    }
+
 
 }
