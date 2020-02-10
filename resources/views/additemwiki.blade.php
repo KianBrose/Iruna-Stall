@@ -129,6 +129,7 @@
 							   <option>Choose type</option>
 							   <option value="1">Item</option>
 							   <option value="2">Monster</option>
+							   <option value="3">Production</option>
 							</select>
 
 							<div id="item" style="display:none;">
@@ -289,6 +290,117 @@
 								</div>
 							</form>
 							</div>
+
+							<div id="prod" style="display:none;">
+								<form action="/wikiaddprod" method="POST">
+								@csrf
+								<tr>
+									<td>
+										<label for="name">Production recipe name:</label>
+									</td>
+									<td  style="padding-left:10px;">
+										<input type="text" class="form-control iteminput" style="width: 400px" name="name" id="itemname"/>
+									</td>
+									<br>
+								</tr>
+								<select name="prodtype1" class="form-control2" id="prodtype1"> 
+									   <option>Production type</option>
+									   <option value="1">Smithing</option>
+									   <option value="2">Carpentry</option>
+									   <option value="3">Tailoring</option>
+									   <option value="4">Chasing</option>
+									   <option value="5">Alchemy</option>
+									   <option value="6">Cooking</option>
+								</select>
+								<select name="prodtype2" class="form-control2" id="prodtype2"> 
+									   <option>Requires second prod?</option>
+									   <option value="0">No</option>
+									   <option value="1">Smithing</option>
+									   <option value="2">Carpentry</option>
+									   <option value="3">Tailoring</option>
+									   <option value="4">Chasing</option>
+									   <option value="5">Alchemy</option>
+									   <option value="6">Cooking</option>
+								</select>
+								<select name="prodtype3" class="form-control2" id="prodtype3"> 
+									   <option>Requires third prod?</option>
+									   <option value="0">No</option>
+									   <option value="1">Smithing</option>
+									   <option value="2">Carpentry</option>
+									   <option value="3">Tailoring</option>
+									   <option value="4">Chasing</option>
+									   <option value="5">Alchemy</option>
+									   <option value="6">Cooking</option>
+								</select>
+								<select name="prodtype4" class="form-control2" id="prodtype4"> 
+									   <option>Requires second prod?</option>
+									   <option value="0">No</option>
+									   <option value="1">Smithing</option>
+									   <option value="2">Carpentry</option>
+									   <option value="3">Tailoring</option>
+									   <option value="4">Chasing</option>
+									   <option value="5">Alchemy</option>
+									   <option value="6">Cooking</option>
+								</select>
+								<br>
+								<td>
+									<br>
+									<label for="name">Enter level for production(s), example (90,20,10 would be lvl 90 for first prod, lvl 20 for second etc):</label>
+								</td>
+								<td  style="padding-left:10px;">
+									<input type="text" class="form-control iteminput" style="width: 400px" name="name" id="prodlevels"/>
+								</td>
+								<br>
+								<td>
+									<br>
+									<label for="name">Component one & QTY (example:zirconium,55 would be 55 zirconium)</label>
+								</td>
+								<td  style="padding-left:10px;">
+									<input type="text" class="form-control iteminput" style="width: 400px" name="name" id="component1"/>
+								</td>
+								<br>
+								<td>
+									<br>
+									<label for="name">Component two & QTY</label>
+								</td>
+								<td  style="padding-left:10px;">
+									<input type="text" class="form-control iteminput" style="width: 400px" name="name" id="component2"/>
+								</td>
+								<td>
+									<br>
+									<label for="name">Component three & QTY</label>
+								</td>
+								<td  style="padding-left:10px;">
+									<input type="text" class="form-control iteminput" style="width: 400px" name="name" id="component3"/>
+								</td>
+								<td>
+									<br>
+									<label for="name">Component four & QTY</label>
+								</td>
+								<td  style="padding-left:10px;">
+									<input type="text" class="form-control iteminput" style="width: 400px" name="name" id="component4"/>
+								</td>
+								<td>
+									<br>
+									<label for="name">Component five & QTY</label>
+								</td>
+								<td  style="padding-left:10px;">
+									<input type="text" class="form-control iteminput" style="width: 400px" name="name" id="component5"/>
+								</td>
+								<br>
+								<td>
+									<br>
+									<label for="name">Item from prod:</label>
+								</td>
+								<td  style="padding-left:10px;">
+									<input type="text" class="form-control iteminput" style="width: 400px" name="name" id="itemfromprod"/>
+								</td>
+								<br>
+
+								<br><input type="submit" class="btn btn-success" style="width: 150px" name="search_button" id="search_button" value="Add recipe"/>
+								</div>
+							</form>
+							</div>
 					
 					
 					<script src="https://code.jquery.com/jquery-3.4.1.min.js"   integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="   crossorigin="anonymous"></script>
@@ -303,6 +415,7 @@
 							case "1":
 								$("#item").show()
 								$("#monster").hide()
+								$("#prod").hide()
 								$("#equipmentcategory").hide()
 								$("#equipmentcategoryweapon").hide()
 								$("#yesdropability").hide()
@@ -310,6 +423,15 @@
 							case "2":
 								$("#item").hide()
 								$("#monster").show()
+								$("#prod").hide()
+								$("#equipmentcategory").hide()
+								$("#equipmentcategoryweapon").hide()
+								$("#yesdropability").hide()
+								break;
+							case "3":
+								$("#item").hide()
+								$("#monster").hide()
+								$("#prod").show()
 								$("#equipmentcategory").hide()
 								$("#equipmentcategoryweapon").hide()
 								$("#yesdropability").hide()
