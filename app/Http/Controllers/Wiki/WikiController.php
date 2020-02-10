@@ -3,6 +3,7 @@ namespace App\Http\Controllers\Wiki;
 
 use App\Message;
 use App\Http\Controllers\Controller;
+use Auth;
 
 class WikiController extends Controller
 {
