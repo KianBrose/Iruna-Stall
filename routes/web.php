@@ -142,5 +142,5 @@ Route::prefix('status')->group(function(){
 });
 
 Route::prefix('wiki/editor')->group(function(){
-    Route::get('/item/add', 'Wiki\WikiController@showAddWiki');
+    Route::get('/add', 'Wiki\WikiController@showAddWiki');
 });
