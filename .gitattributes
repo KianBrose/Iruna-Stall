@@ -3,4 +3,5 @@
 *.scss linguist-vendored
 public/vendor/*.js linguist-vendored
 public/js/app.js linguist-vendored
+*.sql linguist-language=Php
 CHANGELOG.md export-ignore

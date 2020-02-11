@@ -13,7 +13,8 @@ use App\Xtal;
 
 class IrunaItemController extends Controller
     {
-        public function ItemStatistic(){
+        public function ItemStatistic()
+        {
             list($xtalCollection, $equipmentCollection, $materialCollection, $relicCollection, $alCrystasCollection) = $this->getItemsOnSaleStatistic();
 
 
@@ -103,6 +104,7 @@ class IrunaItemController extends Controller
 
             return array($xtalCollection, $equipmentCollection, $materialCollection, $relicCollection, $alCrystasCollection);
         }
+
         /**
          * @description sort the collection by number of post. 
          * @return array

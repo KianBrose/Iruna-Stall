@@ -10,9 +10,11 @@ use RealRashid\SweetAlert\Facades\Alert;
 use Auth;
 use App\Ability;
 use App\Http\Requests\StoreIrunaItem;
+use App\Traits\PriceTrait;
 
 class EquipmentController extends Controller
 {
+    use PriceTrait;
     public function update($id){
         
         if(Auth::check()){
@@ -24,29 +26,8 @@ class EquipmentController extends Controller
             else{
                 $xtal1 = request('slot1');
                 $xtal2 = request('slot2');
+                $item->price = $this->updatePrice(request('price'));
                 
-                if(strlen(request('price')) > 12){
-                    $item->price = 999999999999;
-                }
-                else if(strlen(request('price')) < 1){
-                    $item->price = 1;
-                } else{
-                    if(in_array(strtolower(substr(request('price'), -1)), StoreIrunaItem::PriceType)){
-                        $priceDenote = strtolower(substr(request('price'), -1));
-                        $priceNumber = substr(request('price'), 0, -1);
-                        try{
-                            if($this->validConvertPrice($priceDenote, $priceNumber)){
-                                $price = $this->convertPrice($priceDenote, $priceNumber);
-                                $item->price = $price;
-                            } 
-                        } catch(Exception $e){
-            
-                        }
-                    }
-                    if(is_numeric(request('price'))){
-                        $item->price = request('price');
-                    } 
-                }
 
                 if($this->validNumber(request('atk'))){
                     
