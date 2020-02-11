@@ -42,14 +42,14 @@ class User extends TestCase
         $user = factory('App\User'::class)->make([
             'editor' => '1'
         ]);
-        $response = $this->actingAs($user)->get('/wiki/editor/item/add');
+        $response = $this->actingAs($user)->get('/wiki/editor/add');
         $response->assertStatus(200);
     }
 
     public function testAsNoneEditor()
     {
         $user = factory('App\User'::class)->make();
-        $response = $this->actingAs($user)->get('/wiki/editor/item/ad');
+        $response = $this->actingAs($user)->get('/wiki/editor/add');
         if($response->assertStatus(404) || $response->assertStatus(302)){
             return true;
         }
