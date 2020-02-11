@@ -117,7 +117,7 @@
                     <h4>Add item</h4>
                     <hr>
 					<div>
-						<p>Welcome to the add item page! If this is your first time here, please refer to this <a>quick guide</a> on how to add an item!</p>
+						<p>Welcome to the add item page! If this is your first time here, please refer to this <a href="/tutorial">quick guide</a> on how to add an item!</p>
 							<div class="alert alert-success">Please make the use of autocomplete if you are not sure about spelling.</div>
 							
 							@if ($errors->any())

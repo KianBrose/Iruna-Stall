@@ -109,10 +109,14 @@
                     <p style="text-align: center; font-size: 14px; font-weight: 800;">Feb 2020</p>
                     <h4>Special thanks to our supporter!</h4>
                     <h6>Note: We recieve slightly less than you donate due to fees</h6>
-                    <!--<ul>
+                    <!--
+                    <ul>
                       <li><b>Akairi</b> - 4.43$</li>
                       <li><b>Espurr</b> - 1.12$</li>
-                    </ul>-->  
+                    </ul>  -->
+                    <hr>
+                    <h3>2020-02-01 Iruna Stall Update 2.3</h3>
+                    <p>UPDATE: We are currently working on making a Wiki section for the irunastall with all items in the game! We will also work on making a detailed map of every single EP in iruna!</p>
                     <hr>
                     <h3>2020-01-13 Iruna Stall Update 2.21</h3>
                     <p>The Seller profiles now have Color AL crystals.<br>Empty contact options will no longer be displayed.</p>

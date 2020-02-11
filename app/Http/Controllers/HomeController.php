@@ -57,4 +57,9 @@ class HomeController extends Controller
             return view('tutorial');
         }
     }
+
+    public function wiki()
+    {
+        return view('additemwiki');
+    }
 }
