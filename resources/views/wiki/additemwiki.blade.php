@@ -296,7 +296,7 @@
 								@csrf
 								<tr>
 									<td>
-										<label for="name">Production recipe name:</label>
+										<label for="name">Item name:</label>
 									</td>
 									<td  style="padding-left:10px;">
 										<input type="text" class="form-control iteminput" style="width: 400px" name="name" id="itemname"/>
@@ -312,6 +312,7 @@
 									   <option value="5">Alchemy</option>
 									   <option value="6">Cooking</option>
 								</select>
+								<br>
 								<select name="prodtype2" class="form-control2" id="prodtype2"> 
 									   <option>Requires second prod?</option>
 									   <option value="0">No</option>
@@ -322,6 +323,7 @@
 									   <option value="5">Alchemy</option>
 									   <option value="6">Cooking</option>
 								</select>
+								<br>
 								<select name="prodtype3" class="form-control2" id="prodtype3"> 
 									   <option>Requires third prod?</option>
 									   <option value="0">No</option>
@@ -332,8 +334,9 @@
 									   <option value="5">Alchemy</option>
 									   <option value="6">Cooking</option>
 								</select>
+								<br>
 								<select name="prodtype4" class="form-control2" id="prodtype4"> 
-									   <option>Requires second prod?</option>
+									   <option>Requires fourth prod?</option>
 									   <option value="0">No</option>
 									   <option value="1">Smithing</option>
 									   <option value="2">Carpentry</option>
@@ -386,14 +389,6 @@
 								</td>
 								<td  style="padding-left:10px;">
 									<input type="text" class="form-control iteminput" style="width: 400px" name="name" id="component5"/>
-								</td>
-								<br>
-								<td>
-									<br>
-									<label for="name">Item from prod:</label>
-								</td>
-								<td  style="padding-left:10px;">
-									<input type="text" class="form-control iteminput" style="width: 400px" name="name" id="itemfromprod"/>
 								</td>
 								<br>
 
