@@ -15,14 +15,14 @@
 	<meta name="hostname" content="irunastall.com"/>
 	<meta name="csrf-token" content="{{ csrf_token() }}">
 	
-	<link rel="manifest" href="manifest.json" >
-	<script src="js/serviceLoader.js"></script>
+	<link rel="manifest" href="{{asset('manifest.json')}}" >
+	<script src="{{asset('js/serviceLoader.js')}}"></script>
     <!-- bootstrap css -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 	<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
     <!-- Fonts -->
 	<link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
-	<link href="css/style.css" rel="stylesheet">
+	<link href="{{asset('css/style.css')}}" rel="stylesheet">
 	<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 	<script>
 		 (adsbygoogle = window.adsbygoogle || []).push({
@@ -140,7 +140,7 @@
 										<label for="name">Item Name:</label>
 									</td>
 									<td  style="padding-left:10px;">
-										<input type="text" class="form-control iteminput" style="width: 400px" name="name" id="itemname"/>
+										<input type="text" class="form-control iteminput" style="width: 400px" name="name" />
 									</td>
 									<br>
 									<select name="itemcategory" class="form-control2" id="itemcategory"> 
@@ -233,7 +233,7 @@
 									</td>
 								</div>
 
-								<br><input type="submit" class="btn btn-success" style="width: 150px" name="search_button" id="search_button" value="Add new item"/>
+								<br><input type="submit" class="btn btn-success" style="width: 150px" name="search_button" id="search_button1" value="Add new item"/>
 								</div>
 							</form>
 							</div>
@@ -286,7 +286,7 @@
 									<br>
 
 
-								<br><input type="submit" class="btn btn-success" style="width: 150px" name="search_button" id="search_button" value="Add new monster"/>
+								<br><input type="submit" class="btn btn-success" style="width: 150px" name="search_button" id="search_button2" value="Add new monster"/>
 								</div>
 							</form>
 							</div>
@@ -299,7 +299,7 @@
 										<label for="name">Item name:</label>
 									</td>
 									<td  style="padding-left:10px;">
-										<input type="text" class="form-control iteminput" style="width: 400px" name="name" id="itemname"/>
+										<input type="text" class="form-control iteminput" style="width: 400px" name="name" id=""/>
 									</td>
 									<br>
 								</tr>
@@ -392,7 +392,7 @@
 								</td>
 								<br>
 
-								<br><input type="submit" class="btn btn-success" style="width: 150px" name="search_button" id="search_button" value="Add recipe"/>
+								<br><input type="submit" class="btn btn-success" style="width: 150px" name="search_button" id="search_button3" value="Add recipe"/>
 								</div>
 							</form>
 							</div>
