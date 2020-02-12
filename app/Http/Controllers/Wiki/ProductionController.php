@@ -10,6 +10,21 @@ class ProductionController extends Controller
     {
         $this->middleware('editor');
     }
+
+    public function create()
+    {
+
+    }
+
+    public function update()
+    {
+
+    }
+
+    public function edit()
+    {
+        
+    }
 }
 
 ?>

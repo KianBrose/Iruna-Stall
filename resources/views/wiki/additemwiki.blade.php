@@ -172,11 +172,11 @@
 											<br>
 											<select name="itemcategory" class="form-control2" id="itemtype"> 
 											   <option>Choose type</option>
-											   <option value="1">Throw</option>
-											   <option value="2">Sword</option>
-											   <option value="3">Claw</option>
-											   <option value="4">Rod</option>
-											   <option value="5">Bow</option>
+											   <option value="1">Throwing</option>
+											   <option value="2">Swords</option>
+											   <option value="3">Claws</option>
+											   <option value="4">Staffs</option>
+											   <option value="5">Bows</option>
 											</select>
 										</div>
 									</tr>
