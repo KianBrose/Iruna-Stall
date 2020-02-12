@@ -145,17 +145,20 @@
 									<br>
 									<select name="itemcategory" class="form-control2" id="itemcategory"> 
 									   <option>Choose type</option>
-									   <option value="1">Equipment</option>
-									   <option value="2">Xtal</option>
-									   <option value="3">AL Crystal</option>
-									   <option value="4">Relic</option>
-									   <option value="5">Recovery</option>
-									   <option value="6">Strengthening</option>
-									   <option value="7">Teleport</option>
-									   <option value="8">Collectible</option>
-									   <option value="9">Ore</option>
-									   <option value="10">Island object</option>
-									   <option value="11">Pet</option>
+									   <option>AlCrystas</option>
+									   <option>Collectibles</option>
+									   <option>Crystas</option>
+									   <option>Chests</option>
+									   <option>Equipment</option>
+									   <option>Island Objects</option>
+									   <option>Ores</option>
+									   <option>Recovery</option>
+									   <option>RelicCrystas </option>
+									   <option>Strengthening</option>
+									   <option>Status</option>
+									   <option>Teleport</option>
+									   <option>Pets</option>
+									   
 									</select>
 								</tr>
 								<div id="equipmentcategory" style="display:none;">
@@ -444,7 +447,7 @@
 					var selection = $(this).val();
 						switch(selection)
 						{
-							case "1":
+							case "Equipment":
 								$("#item").show()
 								$("#monster").hide()
 								$("#equipmentcategory").show()
