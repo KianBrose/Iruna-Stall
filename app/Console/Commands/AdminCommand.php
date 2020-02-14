@@ -133,10 +133,22 @@ class AdminCommand extends Command
             $this->error('We could not find that user email address, make sure you spell it correctly');
         }
         else {
-            $user->isAdmin = 1;
-            $user->save();
-            $this->info('Successfully set target: '.$user->email.' as admin');
+            return $this->set($user);
         }
+    }
+
+    /**
+     * Set user as admin
+     * 
+     * @param App\User $user
+     * 
+     * @return void
+     */
+    protected function set(App\User $user)
+    {
+        $user->isAdmin = 1;
+        $user->save();
+        $this->info('Successfully set target: '.$user->email.' as admin');
     }
 
 
