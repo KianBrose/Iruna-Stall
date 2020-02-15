@@ -166,20 +166,20 @@
 										<br>
 										<select name="equipcategory" class="form-control2" id="equipcategory"> 
 										   <option>Choose type</option>
-										   <option value="1">Weapon</option>
-										   <option value="2">Body</option>
-										   <option value="3">Additional</option>
-										   <option value="4">Special</option>
+										   <option>Weapon</option>
+										   <option>Body</option>
+										   <option>Additional</option>
+										   <option>Special</option>
 										</select>
 										<div id="equipmentcategoryweapon" style="display:none;">
 											<br>
 											<select name="itemcategory" class="form-control2" id="itemtype"> 
 											   <option>Choose type</option>
-											   <option value="1">Throwing</option>
-											   <option value="2">Swords</option>
-											   <option value="3">Claws</option>
-											   <option value="4">Staffs</option>
-											   <option value="5">Bows</option>
+											   <option>Throwing</option>
+											   <option>Swords</option>
+											   <option>Claws</option>
+											   <option>Staffs</option>
+											   <option>Bows</option>
 											</select>
 										</div>
 									</tr>
@@ -188,14 +188,17 @@
 									<label for="name">ATK:</label>
 									</td>
 									<td  style="padding-left:10px;">
-										<input type="text" class="form-control iteminput" style="width: 400px" name="name" id="equipatk"/>
+										<input type="text" class="form-control iteminput" style="width: 400px" name="atk" id="equipatk"/>
 									</td>
+									<div style="color:green;">You might also specify atk range such as 10 - 15</div>
 									<td>
 										<label for="name">DEF:</label>
 									</td>
+									
 									<td  style="padding-left:10px;">
-										<input type="text" class="form-control iteminput" style="width: 400px" name="name" id="equipdef"/>
+										<input type="text" class="form-control iteminput" style="width: 400px" name="atk" id="equipdef"/>
 									</td>
+									<div style="color:green;">You might also specify def range such as 10 - 15</div>
 									<br>
 									<select name="candropabi" class="form-control2" id="candropabi"> 
 									   <option>Drops with ability?</option>
@@ -208,7 +211,7 @@
 												<label for="name">Ability name(s):</label>
 											</td>
 											<td  style="padding-left:10px;">
-												<input type="text" class="form-control iteminput" style="width: 400px" name="name" id="abilitynames"/>
+												<input type="text" class="form-control iteminput" style="width: 400px" name="ability" id="abilitynames"/>
 											</td>
 									</div>
 								</div>
@@ -218,7 +221,7 @@
 									<label for="name">Text/Description:</label>
 								</td>
 								<td  style="padding-left:10px;">
-									<input type="text" class="form-control iteminput" style="width: 400px" name="name" id="textdescription"/>
+									<input type="text" class="form-control iteminput" style="width: 400px" name="description" id="textdescription"/>
 								</td>
 								<br>
 								<select name="hashiddeneffect" class="form-control2" id="hashiddeneffect"> 
@@ -232,7 +235,7 @@
 										<label for="name">Hidden Text/Description:</label>
 									</td>
 									<td  style="padding-left:10px;">
-										<input type="text" class="form-control iteminput" style="width: 400px" name="name" id="hiddentextdesc"/>
+										<input type="text" class="form-control iteminput" style="width: 400px" name="hidden_effect" id="hiddentextdesc"/>
 									</td>
 								</div>
 
@@ -466,7 +469,7 @@
 					var selection = $(this).val();
 						switch(selection)
 						{
-							case "1":
+							case "Weapon":
 								$("#item").show()
 								$("#monster").hide()
 								$("#equipmentcategory").show()
