@@ -144,7 +144,7 @@
 									</td>
 									<br>
 									<select name="itemcategory" class="form-control2" id="itemcategory"> 
-									   <option>Choose type</option>
+									   <option value="1">Choose type</option>
 									   <option>AlCrystas</option>
 									   <option>Collectibles</option>
 									   <option>Crystas</option>
@@ -165,7 +165,7 @@
 									<tr>
 										<br>
 										<select name="equipcategory" class="form-control2" id="equipcategory"> 
-										   <option>Choose type</option>
+										   <option value="1">Choose type</option>
 										   <option>Weapon</option>
 										   <option>Body</option>
 										   <option>Additional</option>
@@ -173,8 +173,8 @@
 										</select>
 										<div id="equipmentcategoryweapon" style="display:none;">
 											<br>
-											<select name="itemcategory" class="form-control2" id="itemtype"> 
-											   <option>Choose type</option>
+											<select name="equiptypecategory" class="form-control2" id="itemtype"> 
+											   <option value="1">Choose type</option>
 											   <option>Throwing</option>
 											   <option>Swords</option>
 											   <option>Claws</option>
@@ -252,14 +252,14 @@
 										<label for="name">Monster Name:</label>
 									</td>
 									<td  style="padding-left:10px;">
-										<input type="text" class="form-control iteminput" style="width: 400px" name="name" id="monstername"/>
+										<input type="text" class="form-control iteminput" style="width: 400px" name="monster_name" id="monstername"/>
 									</td>
 									<br>
 									<td>
 										<label for="name">Level(s):</label>
 									</td>
 									<td  style="padding-left:10px;">
-										<input type="text" class="form-control iteminput" style="width: 400px" name="name" id="levels"/>
+										<input type="text" class="form-control iteminput" style="width: 400px" name="monster_level" id="levels"/>
 									</td>
 									<br>
 									<td>
