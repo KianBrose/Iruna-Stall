@@ -172,7 +172,7 @@
                         <button class="btn btn-primary">Follow {{$user->name}}</button>
                     </form>
                     @endguest
-
+                    <p><b>If the user's contact doesn't work, please contact the administrator on discord via Kian#4093 or send a mail to opencore0@gmail.com</b></p>
 					<h4>Seller's items</h4>
 					<hr>
                     <div class="row divider" role="separator" ></div>
