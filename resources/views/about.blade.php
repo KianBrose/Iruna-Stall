@@ -1,19 +1,17 @@
 
 <!DOCTYPE html>
-<html lang="en-US">
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 
-<!-- Mirrored from 137.74.152.181/irunastall-about-us-2/ by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 15 Apr 2020 10:05:44 GMT -->
-<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+
 <head>
-	<meta charset="UTF-8">
-    <meta charset="UTF-8">
-    <title>Iruna Global Stall | Iruna Online</title>
+    <meta charset="utf-8">
+	<title> About | Iruna Global Stall</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="robots" content="index, follow" >
-    <meta name="description" content="Iruna Stall is a platform to find, buy and sell items for free! In the Iruna Global Stall, you can post your items as a seller and search for items as a buyer. The stall is free to use and requires no account to search for items.">
-    <meta name="keywords" content="Iruna, Stall, Global, iruna, stall, global, Iruna Online, buy, sell, trade, Iruna enchanter skills, Iruna struggler, Iruna monk, Iruna online classes, samurai, ninja, leveling, dragon, crystal, quest, Toram online" >
+    <meta name="description" content="Find about Iruna Stall on how it used to find, buy and sell items for free! In the Iruna Global Stall, you can post your items as a seller and search for items without the need for registration.">
+    <meta name="keywords" content="Iruna, Stall, Global, iruna, stall, global, Iruna Online, buy, sell, trade, about, Kian Brose, Kumar, Polowis, terms, service, contact" >
     <meta name="hostname" content="irunastall.com" >
-    <meta name='subject' content="Iruna Global Stall">
+    <meta name='subject' content="About Iruna Global Stall">
     <meta name="author" content="Kian Brose" >
     <meta name='coverage' content='Worldwide'>
     <meta name='distribution' content='Global'>
@@ -21,24 +19,27 @@
     <meta name='HandheldFriendly' content='True'>
     <meta name='MobileOptimized' content='320'>
     <meta name='target' content='all'>
-    <meta name="apple-mobile-web-app-title" content="Iruna Global Stall">
+    <meta name="apple-mobile-web-app-title" content="About | Iruna Global Stall">
     <meta name='apple-mobile-web-app-capable' content='yes'>
     <meta name='apple-touch-fullscreen' content='yes'>
     <meta name='apple-touch-fullscreen' content='yes'>
     <meta name='application-name' content="Iruna Global Stall">
     <link rel="apple-touch-icon" href="https://irunastall.com/img/iruna.jpg">
     <meta name="twitter:card" content="summary" >
-    <meta name="twitter:title" content="Iruna Global Stall" >
-    <meta name="twitter:description" content="Iruna global stall is platform to find, buy and sell items of Iruna online game. Account is not needed for searching for items" >
+    <meta name="twitter:title" content="About | Iruna Global Stall" >
+    <meta name="twitter:description" content="Know about Iruna global stall. This is a platform to find, buy and sell items of Iruna online game. Account is not needed for searching for items" >
     <meta property="og:title" content="Iruna Stall">
     <meta property="og:type" content="website" >
-    <meta property="og:description" content="Find, buy and sell items for free on the Iruna Online Global Stall! In the Global Stall, you can post your items as a seller and search for items as a buyer. The stall is free to use and requires no account to search for items.">
+    <meta property="og:description" content="Know about on how to find, buy and sell items for free on the Iruna Online Global Stall! In the Global Stall, you can post your items as a seller and search for items as a buyer. The stall is free to use and requires no account to search for items.">
     <meta property="og:image" content="https://irunastall.com/img/iruna.jpg">
     <meta property="og:url" content="https://irunastall.com" >
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
 
     <link rel="canonical" href="https://irunastall.com" >
+    
+    <link rel="manifest" href="manifest.json" >
+    <script src="js/serviceLoader.js"></script>
     
     <!-- manifest for PWA -->
     <link rel="manifest" href="manifest.json" >
