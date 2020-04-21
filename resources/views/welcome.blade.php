@@ -68,7 +68,7 @@
                                             <div class="elementor-widget-container">
                                                 <div class="elementor-image">
                                                     <a href="https://irunastall.com/">
-                                                        <img width="2123" height="1000" src="../wp-content/uploads/2020/04/irunastalllogo.png" class="attachment-full size-full wp-post-image" alt="" srcset="http://137.74.152.181/wp-content/uploads/2020/04/irunastalllogo.png 2123w, http://137.74.152.181/wp-content/uploads/2020/04/irunastalllogo-300x141.png 300w, http://137.74.152.181/wp-content/uploads/2020/04/irunastalllogo-1024x482.png 1024w, http://137.74.152.181/wp-content/uploads/2020/04/irunastalllogo-768x362.png 768w, http://137.74.152.181/wp-content/uploads/2020/04/irunastalllogo-1536x724.png 1536w, http://137.74.152.181/wp-content/uploads/2020/04/irunastalllogo-2048x965.png 2048w, http://137.74.152.181/wp-content/uploads/2020/04/irunastalllogo-416x196.png 416w, http://137.74.152.181/wp-content/uploads/2020/04/irunastalllogo-64x30.png 64w" sizes="(max-width: 2123px) 100vw, 2123px" /> </a>
+                                                        <img width="2123" height="1000" src="{{ asset('img/whitelogo.png') }}" class="attachment-full size-full wp-post-image" alt="" srcset="{{ asset('img/whitelogo.png') }}" sizes="(max-width: 2123px) 100vw, 2123px" /> </a>
                                                 </div>
                                             </div>
                                         </div>
