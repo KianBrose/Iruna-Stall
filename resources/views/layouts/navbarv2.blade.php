@@ -77,3 +77,47 @@
                         </div>
                     </div>
                 </section>
+                <section class="elementor-element elementor-element-c3a1c6d elementor-section-full_width elementor-hidden-desktop elementor-hidden-tablet elementor-section-height-default elementor-section-height-default elementor-section elementor-top-section" data-id="c3a1c6d" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+                    <div class="elementor-container elementor-column-gap-extended">
+                        <div class="elementor-row">
+                            <div class="elementor-element elementor-element-9834dff elementor-hidden-desktop elementor-hidden-tablet elementor-column elementor-col-50 elementor-top-column" data-id="9834dff" data-element_type="column">
+                                <div class="elementor-column-wrap  elementor-element-populated">
+                                    <div class="elementor-widget-wrap">
+                                        <div class="elementor-element elementor-element-c1d94c5 elementor-align-right elementor-mobile-align-center elementor-hidden-desktop elementor-hidden-tablet elementor-widget elementor-widget-button" data-id="c1d94c5" data-element_type="widget" data-widget_type="button.default">
+                                            <div class="elementor-widget-container">
+                                                <div class="elementor-button-wrapper">
+                                                    <a href="#" class="elementor-button-link elementor-button elementor-size-md elementor-animation-grow" role="button">
+                                                        <span class="elementor-button-content-wrapper">
+                        <span class="elementor-button-icon elementor-align-icon-right">
+                <i aria-hidden="true" class="fas fa-chevron-right"></i>         </span>
+                                                        <span class="elementor-button-text">Sign In</span>
+                                                        </span>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="elementor-element elementor-element-72dfa65 elementor-hidden-desktop elementor-hidden-tablet elementor-column elementor-col-50 elementor-top-column" data-id="72dfa65" data-element_type="column">
+                                <div class="elementor-column-wrap  elementor-element-populated">
+                                    <div class="elementor-widget-wrap">
+                                        <div class="elementor-element elementor-element-de0b52d elementor-align-right elementor-mobile-align-center elementor-hidden-desktop elementor-hidden-tablet elementor-widget elementor-widget-button" data-id="de0b52d" data-element_type="widget" data-widget_type="button.default">
+                                            <div class="elementor-widget-container">
+                                                <div class="elementor-button-wrapper">
+                                                    <a href="#" class="elementor-button-link elementor-button elementor-size-md elementor-animation-grow" role="button">
+                                                        <span class="elementor-button-content-wrapper">
+                        <span class="elementor-button-icon elementor-align-icon-right">
+                <i aria-hidden="true" class="fas fa-chevron-right"></i>         </span>
+                                                        <span class="elementor-button-text">Sell</span>
+                                                        </span>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
