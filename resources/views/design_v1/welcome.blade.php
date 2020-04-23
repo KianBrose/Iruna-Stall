@@ -50,7 +50,7 @@
 
 <body>
         
-@include('layouts.navbarv2')
+@include('layouts.navbar')
 
     <div class="container">
         <div class="row" >
