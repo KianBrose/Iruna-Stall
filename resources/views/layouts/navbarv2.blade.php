@@ -8,13 +8,33 @@
                             <div class="elementor-widget-container">
                                 <div class="elementor-image">
                                     <a href="https://irunastall.com/">
-                                        <img width="2123" height="1000" src="../wp-content/uploads/2020/04/irunastalllogo.png" class="attachment-full size-full wp-post-image" alt="" srcset="http://137.74.152.181/wp-content/uploads/2020/04/irunastalllogo.png 2123w, http://137.74.152.181/wp-content/uploads/2020/04/irunastalllogo-300x141.png 300w, http://137.74.152.181/wp-content/uploads/2020/04/irunastalllogo-1024x482.png 1024w, http://137.74.152.181/wp-content/uploads/2020/04/irunastalllogo-768x362.png 768w, http://137.74.152.181/wp-content/uploads/2020/04/irunastalllogo-1536x724.png 1536w, http://137.74.152.181/wp-content/uploads/2020/04/irunastalllogo-2048x965.png 2048w, http://137.74.152.181/wp-content/uploads/2020/04/irunastalllogo-416x196.png 416w, http://137.74.152.181/wp-content/uploads/2020/04/irunastalllogo-64x30.png 64w" sizes="(max-width: 2123px) 100vw, 2123px" /> </a>
+                                        <img width="2123" height="1000" src="{{ asset('img/whitelogo.png') }}" class="attachment-full size-full wp-post-image" alt="" srcset="{{ asset('img/whitelogo.png') }}" sizes="(max-width: 2123px) 100vw, 2123px" /> </a>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+                            <section class="elementor-element elementor-element-d619cf6 elementor-section-full_width elementor-hidden-desktop elementor-hidden-tablet elementor-section-height-default elementor-section-height-default elementor-section elementor-top-section" data-id="d619cf6" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+                    <div class="elementor-container elementor-column-gap-extended">
+                        <div class="elementor-row">
+                            <div class="elementor-element elementor-element-71859de elementor-hidden-desktop elementor-hidden-tablet elementor-column elementor-col-100 elementor-top-column" data-id="71859de" data-element_type="column">
+                                <div class="elementor-column-wrap  elementor-element-populated">
+                                    <div class="elementor-widget-wrap">
+                                        <div class="elementor-element elementor-element-c616fcc elementor-hidden-desktop elementor-hidden-tablet elementor-widget elementor-widget-image" data-id="c616fcc" data-element_type="widget" data-widget_type="image.default">
+                                            <div class="elementor-widget-container">
+                                                <div class="elementor-image">
+                                                    <a href="https://irunastall.com/">
+                                                        <img width="2123" height="1000" src="{{ asset('img/whitelogo.png') }}" class="attachment-full size-full wp-post-image" alt="" srcset="{{ asset('img/whitelogo.png') }}" sizes="(max-width: 2123px) 100vw, 2123px" /> </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
             <div class="elementor-element elementor-element-7b5d9df elementor-column elementor-col-25 elementor-top-column" data-id="7b5d9df" data-element_type="column">
                 <div class="elementor-column-wrap">
                     <div class="elementor-widget-wrap">
