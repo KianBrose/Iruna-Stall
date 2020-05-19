@@ -87,6 +87,9 @@
 							<button type="submit" class="btn btn-primary mb-2" value="Search" style="width:100%; background-color: green; ">Iruna stall tutorial</button>
 					</form>
 					<hr>
+                    <p>Alright so you guys deserve a little update since developement has been "frozen" for a few months. All of the developers are currently busy with end of year work and we have not been able finish making Irunastall V2 functional. Good news is, as of 2020-05-22 I will be free from personal tasks and will be able to finish the developement as soon as I can. Thank you for being patient.
+                        <br><br>
+                        On a side note, I have noticed that there are quite a few accounts where the contact information is either broken or doesn't work and item posts that are no longer for sale. I have taken notice of this and will implement a "report" button on user profiles to report inactivity or broken links. An automatic item post deletion system will be set up where items will be automatically removed 1 month after they are posted. Expect these changes soon<br>Sincerely, Kian</p>
 					<p style="color:red;"><b>We need your help to keep this website alive and ad-free!</b><br>
 					<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
 					<input type="hidden" name="cmd" value="_donations" />
