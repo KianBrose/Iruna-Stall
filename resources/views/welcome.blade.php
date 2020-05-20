@@ -100,7 +100,7 @@
                                                 <form action="/search" name="form1" method="GET">
                                                     @csrf
                                                 <div class="search-bar">
-                                                    <div class="icon"></div>
+                                                    <div class="icon" src="{{ asset('img/searchicon.png') }}"></div>
                                                     
                                                     <input id="search" name="search" type="text" placeholder="Search for any equipment, xtal, al, material or relic">
                                                 </div>
@@ -165,7 +165,8 @@
  
     
     
-    
+    <link rel="icon" href="{{ asset('img/searchicon.png') }}" sizes="32x32" />
+    <link rel="icon" href="{{ asset('img/searchicon.png') }}" sizes="192x192" />
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"   integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="   crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"   integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU="   crossorigin="anonymous"></script>
     <script>
