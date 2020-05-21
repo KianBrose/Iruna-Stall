@@ -93,7 +93,7 @@
                                  </div>
                                  <div class="elementor-element elementor-element-9bd68d5 elementor-widget elementor-widget-heading" data-id="9bd68d5" data-element_type="widget" data-widget_type="heading.default">
                                     <div class="elementor-widget-container">
-                                       <h2 class="elementor-heading-title elementor-size-default">Facebook Profile Link</h2>
+                                       <h2 class="elementor-heading-title elementor-size-default">Facebook Contact</h2>
                                     </div>
                                  </div>
                                  <div class="elementor-element elementor-element-777acf3 elementor-widget elementor-widget-text-editor" data-id="777acf3" data-element_type="widget" data-widget_type="text-editor.default">
@@ -102,7 +102,7 @@
                                           <form action="/addfacebook" method="POST" id="itemform">
                                           <div class="form__group field">
                                              <input type="input" class="form__field" placeholder="Name" name="name" id="name" required="">
-                                             <label for="name" class="form__label">Facebook</label>
+                                             <label for="name" class="form__label" style="font-size:20px">Facebook</label>
                                           </div>
                                           <br>
                                           <div class="elementor-element elementor-element-29bb990 elementor-widget elementor-widget-button" data-id="29bb990" data-element_type="widget" data-widget_type="button.default">
@@ -121,13 +121,19 @@
                                        </div>
                                     </div>
                                  </div>
+
+                                 <div class="elementor-element elementor-element-9bd68d5 elementor-widget elementor-widget-heading" data-id="9bd68d5" data-element_type="widget" data-widget_type="heading.default">
+                                    <div class="elementor-widget-container">
+                                       <h2 class="elementor-heading-title elementor-size-default">Discord Contact</h2>
+                                    </div>
+                                 </div>
                                  <div class="elementor-element elementor-element-777acf3 elementor-widget elementor-widget-text-editor" data-id="777acf3" data-element_type="widget" data-widget_type="text-editor.default">
                                     <div class="elementor-widget-container">
                                        <div class="elementor-text-editor elementor-clearfix">
                                           <form action="/adddiscord" method="POST" id="itemform">
                                           <div class="form__group field">
                                              <input type="input" class="form__field" placeholder="Name" name="name" id="name" required="">
-                                             <label for="name" class="form__label">Discord</label>
+                                             <label for="name" class="form__label" style="font-size:20px">Discord</label>
                                           </div>
                                           <br>
                                           <div class="elementor-element elementor-element-29bb990 elementor-widget elementor-widget-button" data-id="29bb990" data-element_type="widget" data-widget_type="button.default">
