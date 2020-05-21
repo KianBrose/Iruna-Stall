@@ -227,7 +227,7 @@
                                           </div>
                                           <br>
                                           <div class="form__group field">
-                                             <input type="password" class="form__field" placeholder="Name" name="name" id="name" required="">
+                                             <input type="input" class="form__field" placeholder="Name" name="name" id="name" required="">
                                              <label for="name" class="form__label" style="font-size:20px">Email address</label>
                                           </div>
                                           <br>
@@ -262,7 +262,7 @@
                                           </div>
                                           <br>
                                           <div class="form__group field">
-                                             <input type="password" class="form__field" placeholder="Name" name="name" id="name" required="">
+                                             <input type="input" class="form__field" placeholder="Name" name="name" id="name" required="">
                                              <label for="name" class="form__label" style="font-size:20px">Email address</label>
                                           </div>
                                           <br>
