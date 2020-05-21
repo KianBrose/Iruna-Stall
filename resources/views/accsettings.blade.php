@@ -110,10 +110,12 @@
                                                 @csrf
                                                 <p>Your current facebook profile link: {{ auth()->user()->facebook }}</p>
                                                 <br>
-                                                <div class="input-group">
-                                                   <label>New FB profile link</label>
-                                                   <input class="form-control" type="text" name="name" style="margin-left:18px;">
-                                                </div>
+                                                <tr>
+                                                    <div class="form__group field">
+                                                      <input type="input" class="form__field" placeholder="Facebook Profile Link" name="name" id='name' required />
+                                                      <label for="name" class="form__label">Facebook Profile Link</label>
+                                                    </div>
+                                                </tr>
                                                 <div class="input-group">
                                                    <br>
                                                    <button type="submit" class="btn btn-success" name="user_changefacebook">Apply changes</button>
