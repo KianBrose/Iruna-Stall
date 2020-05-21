@@ -18,6 +18,8 @@ Auth::routes(['verify' => true]);
 
 Route::get('/about', 'HomeController@about');
 
+Route::get('/account', 'HomeController@account');
+
 
 
 Route::get('/scammers', function () {
