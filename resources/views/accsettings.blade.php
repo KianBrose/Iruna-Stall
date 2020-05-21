@@ -104,13 +104,30 @@
                                              <input type="input" class="form__field" placeholder="Name" name="name" id="name" required="">
                                              <label for="name" class="form__label">Facebook</label>
                                           </div>
-                                          <div class="form__group field">
-                                             <input type="input" class="form__field" placeholder="Name" name="name" id="name" required="">
-                                             <label for="name" class="form__label">Quantity</label>
+                                          <br>
+                                          <div class="elementor-element elementor-element-29bb990 elementor-widget elementor-widget-button" data-id="29bb990" data-element_type="widget" data-widget_type="button.default">
+                                             <div class="elementor-widget-container">
+                                                <div class="elementor-button-wrapper">
+                                                   <a href="javascript:{}" onclick="document.getElementById('itemform').submit();" class="elementor-button-link elementor-button elementor-size-lg elementor-animation-grow" role="button">
+                                                   <span class="elementor-button-content-wrapper">
+                                                   <span class="elementor-button-icon elementor-align-icon-right">
+                                                   <i aria-hidden="true" class="fas fa-chevron-right"></i>         </span>
+                                                   <span class="elementor-button-text">Apply changes</span>
+                                                   </span>
+                                                   </a>
+                                                </div>
+                                             </div>
                                           </div>
+                                       </div>
+                                    </div>
+                                 </div>
+                                 <div class="elementor-element elementor-element-777acf3 elementor-widget elementor-widget-text-editor" data-id="777acf3" data-element_type="widget" data-widget_type="text-editor.default">
+                                    <div class="elementor-widget-container">
+                                       <div class="elementor-text-editor elementor-clearfix">
+                                          <form action="/adddiscord" method="POST" id="itemform">
                                           <div class="form__group field">
                                              <input type="input" class="form__field" placeholder="Name" name="name" id="name" required="">
-                                             <label for="name" class="form__label">Price</label>
+                                             <label for="name" class="form__label">Discord</label>
                                           </div>
                                           <br>
                                           <div class="elementor-element elementor-element-29bb990 elementor-widget elementor-widget-button" data-id="29bb990" data-element_type="widget" data-widget_type="button.default">
@@ -120,7 +137,7 @@
                                                    <span class="elementor-button-content-wrapper">
                                                    <span class="elementor-button-icon elementor-align-icon-right">
                                                    <i aria-hidden="true" class="fas fa-chevron-right"></i>         </span>
-                                                   <span class="elementor-button-text">Apply</span>
+                                                   <span class="elementor-button-text">Apply changes</span>
                                                    </span>
                                                    </a>
                                                 </div>
