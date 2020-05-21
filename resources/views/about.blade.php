@@ -108,7 +108,7 @@
                                             <div class="elementor-element elementor-element-777acf3 elementor-widget elementor-widget-text-editor" data-id="777acf3" data-element_type="widget" data-widget_type="text-editor.default">
                                                 <div class="elementor-widget-container">
                                                     <div class="elementor-text-editor elementor-clearfix">
-                                                        <p>Contact K¹#8224 on discord if you have any difficulties, problems or suggestions about our site. If you wish to talk to us directly please join the Iruna online discord using the following link: https://discord.gg/NH75NqA</p>
+                                                        <p>Contact Kian#4093 on discord if you have any difficulties, problems or suggestions about our site. If you wish to talk to us directly please join the Iruna online discord using the following link: https://discord.gg/NH75NqA</p>
                                                     </div>
                                                 </div>
                                             </div>
