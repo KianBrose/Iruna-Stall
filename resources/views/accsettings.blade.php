@@ -38,6 +38,7 @@
       <link rel="manifest" href="manifest.json">
       <script src="js/serviceLoader.js"></script>
       <link href="{{asset('css/icons/all.css')}}" rel="stylesheet">
+      <link href="{{asset('css/additem.css')}}" rel="stylesheet">
       <link rel="stylesheet" href="{{ asset('css/main.css') }}">
       <link rel="stylesheet" href="{{ asset('css/mainsearchbar.css') }}">
       <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;800&display=swap" rel="stylesheet">
