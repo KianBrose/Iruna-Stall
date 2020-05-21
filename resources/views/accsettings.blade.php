@@ -100,52 +100,32 @@
                                     <div class="elementor-widget-container">
                                        <div class="elementor-text-editor elementor-clearfix">
                                           <form action="/addfacebook" method="POST" id="itemform">
-                                                            
-                                                                <div class="form__group field">
-                                                                  <input type="input" class="form__field" placeholder="Name" name="name" id="name" required="">
-                                                                  <label for="name" class="form__label">Facebook</label>
-                                                                </div>
-                                                            
-                                                            
-                                                                <div class="form__group field">
-                                                                  <input type="input" class="form__field" placeholder="Name" name="name" id="name" required="">
-                                                                  <label for="name" class="form__label">Quantity</label>
-                                                                </div>
-                                                            
-                                                            
-                                                                <div class="form__group field">
-                                                                  <input type="input" class="form__field" placeholder="Name" name="name" id="name" required="">
-                                                                  <label for="name" class="form__label">Price</label>
-                                                                </div>
-                                                            
-                                                            <br>
-                                                            <div class="elementor-element elementor-element-5580a03 elementor-widget elementor-widget-button" data-id="5580a03" data-element_type="widget" data-widget_type="button.default">
-                                                                <div class="elementor-widget-container">
-                                                                    <div class="elementor-button-wrapper">
-                                                                        <a href="javascript:{}" onclick="document.getElementById('itemform').submit();" class="elementor-button-link elementor-button elementor-size-sm elementor-animation-grow" role="button">
-                                                                            <span class="elementor-button-content-wrapper">
-                                                                                <span class="elementor-button-icon elementor-align-icon-right">
-                                                                                    <i aria-hidden="true" class="fas fa-chevron-right"></i>			
-                                                                                </span>
-                                                                                <span class="elementor-button-text">Apply</span>
-                                                                            </span>
-                                                                        </a>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            <div class="elementor-element elementor-element-29bb990 elementor-align-center elementor-widget elementor-widget-button" data-id="29bb990" data-element_type="widget" data-widget_type="button.default">
-                                    <div class="elementor-widget-container">
-                                       <div class="elementor-button-wrapper">
-                                          <a href="https://irunastall.com/" class="elementor-button-link elementor-button elementor-size-lg elementor-animation-grow" role="button">
-                                          <span class="elementor-button-content-wrapper">
-                                          <span class="elementor-button-icon elementor-align-icon-right">
-                                          <i aria-hidden="true" class="fas fa-chevron-right"></i>         </span>
-                                          <span class="elementor-button-text">Apply</span>
-                                          </span>
-                                          </a>
-                                       </div>
-                                    </div>
-                                 </div>
+                                          <div class="form__group field">
+                                             <input type="input" class="form__field" placeholder="Name" name="name" id="name" required="">
+                                             <label for="name" class="form__label">Facebook</label>
+                                          </div>
+                                          <div class="form__group field">
+                                             <input type="input" class="form__field" placeholder="Name" name="name" id="name" required="">
+                                             <label for="name" class="form__label">Quantity</label>
+                                          </div>
+                                          <div class="form__group field">
+                                             <input type="input" class="form__field" placeholder="Name" name="name" id="name" required="">
+                                             <label for="name" class="form__label">Price</label>
+                                          </div>
+                                          <br>
+                                          <div class="elementor-element elementor-element-29bb990 elementor-widget elementor-widget-button" data-id="29bb990" data-element_type="widget" data-widget_type="button.default">
+                                             <div class="elementor-widget-container">
+                                                <div class="elementor-button-wrapper">
+                                                   <a href="javascript:{}" onclick="document.getElementById('itemform').submit();" class="elementor-button-link elementor-button elementor-size-lg elementor-animation-grow" role="button">
+                                                   <span class="elementor-button-content-wrapper">
+                                                   <span class="elementor-button-icon elementor-align-icon-right">
+                                                   <i aria-hidden="true" class="fas fa-chevron-right"></i>         </span>
+                                                   <span class="elementor-button-text">Apply</span>
+                                                   </span>
+                                                   </a>
+                                                </div>
+                                             </div>
+                                          </div>
                                        </div>
                                     </div>
                                  </div>
