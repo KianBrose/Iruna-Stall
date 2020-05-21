@@ -273,7 +273,7 @@
                                                    <span class="elementor-button-content-wrapper">
                                                    <span class="elementor-button-icon elementor-align-icon-right">
                                                    <i aria-hidden="true" class="fas fa-chevron-right"></i>         </span>
-                                                   <span class="elementor-button-text">Change password</span>
+                                                   <span class="elementor-button-text" style="color:red;">Delete account</span>
                                                    </span>
                                                    </a>
                                                 </div>
