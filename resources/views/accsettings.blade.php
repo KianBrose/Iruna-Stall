@@ -152,6 +152,66 @@
                                        </div>
                                     </div>
                                  </div>
+                                 <div class="elementor-element elementor-element-9bd68d5 elementor-widget elementor-widget-heading" data-id="9bd68d5" data-element_type="widget" data-widget_type="heading.default">
+                                    <div class="elementor-widget-container">
+                                       <h2 class="elementor-heading-title elementor-size-default">Whatsapp Contact</h2>
+                                    </div>
+                                 </div>
+                                 <div class="elementor-element elementor-element-777acf3 elementor-widget elementor-widget-text-editor" data-id="777acf3" data-element_type="widget" data-widget_type="text-editor.default">
+                                    <div class="elementor-widget-container">
+                                       <div class="elementor-text-editor elementor-clearfix">
+                                          <form action="/adddiscord" method="POST" id="itemform">
+                                          <div class="form__group field">
+                                             <input type="input" class="form__field" placeholder="Name" name="name" id="name" required="">
+                                             <label for="name" class="form__label" style="font-size:20px">Whatsapp number</label>
+                                          </div>
+                                          <br>
+                                          <div class="elementor-element elementor-element-29bb990 elementor-widget elementor-widget-button" data-id="29bb990" data-element_type="widget" data-widget_type="button.default">
+                                             <div class="elementor-widget-container">
+                                                <div class="elementor-button-wrapper">
+                                                   <a href="javascript:{}" onclick="document.getElementById('itemform').submit();" class="elementor-button-link elementor-button elementor-size-lg elementor-animation-grow" role="button">
+                                                   <span class="elementor-button-content-wrapper">
+                                                   <span class="elementor-button-icon elementor-align-icon-right">
+                                                   <i aria-hidden="true" class="fas fa-chevron-right"></i>         </span>
+                                                   <span class="elementor-button-text">Apply changes</span>
+                                                   </span>
+                                                   </a>
+                                                </div>
+                                             </div>
+                                          </div>
+                                       </div>
+                                    </div>
+                                 </div>
+                                 <div class="elementor-element elementor-element-9bd68d5 elementor-widget elementor-widget-heading" data-id="9bd68d5" data-element_type="widget" data-widget_type="heading.default">
+                                    <div class="elementor-widget-container">
+                                       <h2 class="elementor-heading-title elementor-size-default">Snapchat Contact</h2>
+                                    </div>
+                                 </div>
+                                 <div class="elementor-element elementor-element-777acf3 elementor-widget elementor-widget-text-editor" data-id="777acf3" data-element_type="widget" data-widget_type="text-editor.default">
+                                    <div class="elementor-widget-container">
+                                       <div class="elementor-text-editor elementor-clearfix">
+                                          <form action="/adddiscord" method="POST" id="itemform">
+                                          <div class="form__group field">
+                                             <input type="input" class="form__field" placeholder="Name" name="name" id="name" required="">
+                                             <label for="name" class="form__label" style="font-size:20px">Snapchat name</label>
+                                          </div>
+                                          <br>
+                                          <div class="elementor-element elementor-element-29bb990 elementor-widget elementor-widget-button" data-id="29bb990" data-element_type="widget" data-widget_type="button.default">
+                                             <div class="elementor-widget-container">
+                                                <div class="elementor-button-wrapper">
+                                                   <a href="javascript:{}" onclick="document.getElementById('itemform').submit();" class="elementor-button-link elementor-button elementor-size-lg elementor-animation-grow" role="button">
+                                                   <span class="elementor-button-content-wrapper">
+                                                   <span class="elementor-button-icon elementor-align-icon-right">
+                                                   <i aria-hidden="true" class="fas fa-chevron-right"></i>         </span>
+                                                   <span class="elementor-button-text">Apply changes</span>
+                                                   </span>
+                                                   </a>
+                                                </div>
+                                             </div>
+                                          </div>
+                                       </div>
+                                    </div>
+                                 </div>
                                  <div class="elementor-element elementor-element-29bb990 elementor-align-center elementor-widget elementor-widget-button" data-id="29bb990" data-element_type="widget" data-widget_type="button.default">
                                     <div class="elementor-widget-container">
                                        <div class="elementor-button-wrapper">
