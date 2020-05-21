@@ -100,94 +100,41 @@
                                  <div class="elementor-element elementor-element-777acf3 elementor-widget elementor-widget-text-editor" data-id="777acf3" data-element_type="widget" data-widget_type="text-editor.default">
                                     <div class="elementor-widget-container">
                                        <div class="elementor-text-editor elementor-clearfix">
-                                          <hr>
-                                          @if((auth()->user()->facebook == null or auth()->user()->facebook == "") and (auth()->user()->discord == null or auth()->user()->discord == "" ))
-                                          <div class="alert alert-danger"> You're missing contact information. How should we contact you?
-                                          </div>
-                                          @endif
-                                          <div>
-                                             <h3>Facebook Profile Link</h3>
-                                             <form  action="/user/update/facebook" method="POST">
-                                                @csrf
-                                                <p>Your current facebook profile link: {{ auth()->user()->facebook }}</p>
-                                                <br>
-                                                <tr>
-                                                    <div class="form__group field">
-                                                      <input type="input" class="form__field" placeholder="Facebook Profile Link" name="name" id='name' required />
-                                                      <label for="name" class="form__label">Facebook Profile Link</label>
-                                                    </div>
-                                                </tr>
-                                                <div class="input-group">
-                                                   <br>
-                                                   <button type="submit" class="btn btn-success" name="user_changefacebook">Apply changes</button>
-                                                </div>
-                                             </form>
-                                             <hr>
-                                             <h3>Discord Tag</h3>
-                                             <form  action="user/update/discord" method="POST">
-                                                @csrf
-                                                <p>Your current discord tag: {{ auth()->user()->discord }} </p>
-                                                <br>
-                                                <div class="input-group">
-                                                   <label>New Discord Tag</label>
-                                                   <input class="form-control" type="text" name="name" style="margin-left:40px;">
-                                                </div>
-                                                <div class="input-group">
-                                                   <br>
-                                                   <button type="submit" class="btn btn-success" name="user_changediscord">Apply changes</button>
-                                                </div>
-                                             </form>
-                                             <hr>
-                                             <h3>Change Password</h3>
-                                             @error('current_password')
-                                             <div style="color:red;"> {{ $message }}</div>
-                                             @enderror
-                                             @error('current_email')
-                                             <div style="color:red;"> {{ $message }}</div>
-                                             @enderror
-                                             @error('success')
-                                             <div style="color:green;"> {{ $message }}</div>
-                                             @enderror
-                                             <form  action="/user/updatepassword" method="POST">
-                                                @csrf
-                                                <div class="input-group">
-                                                   <label>Old password</label>
-                                                   <input class="form-control" type="password" name="password" style="margin-left:15px;">
-                                                </div>
-                                                <div class="input-group">
-                                                   <label>Email address</label>
-                                                   <input class="form-control" type="text" name="email" style="margin-left:15px;">
-                                                </div>
-                                                <div class="input-group">
-                                                   <br>
-                                                   <button type="submit" class="btn btn-success" name="user_changepass">Change Password</button>
-                                                </div>
-                                             </form>
-                                             <hr/>
-                                             @error('wrong_password')
-                                             <div style="color:red;"> {{ $message }}</div>
-                                             @enderror
-                                             @error('wrong_email')
-                                             <div style="color:red;"> {{ $message }}</div>
-                                             @enderror
-                                             <h3 style="color:red;"><b>Delete Account &#38; All Posts</b></h3>
-                                             <form action="/user/delete" method="POST">
-                                                @csrf
-                                                @method('delete')
-                                                <div class="input-group">
-                                                   <label>Email</label>
-                                                   <input class="form-control" type="text" name="email" style="margin-left:45px;">
-                                                </div>
-                                                <div class="input-group">
-                                                   <label>Password</label>
-                                                   <input class="form-control" type="password" name="password" style="margin-left:17px;">
-                                                </div>
-                                                <div class="input-group">
-                                                   <br>
-                                                   <button type="submit" class="btn btn-danger"style="margin-top: 10px;"><b>DELETE ACCOUNT</b></button>
-                                                </div>
-                                             </form>
-                                          </div>
+                                          <form action="/addfacebook" method="POST" id="itemform">
+                                                            
+                                                                <div class="form__group field">
+                                                                  <input type="input" class="form__field" placeholder="Name" name="name" id="name" required="">
+                                                                  <label for="name" class="form__label">Facebook</label>
+                                                                </div>
+                                                            
+                                                            
+                                                                <div class="form__group field">
+                                                                  <input type="input" class="form__field" placeholder="Name" name="name" id="name" required="">
+                                                                  <label for="name" class="form__label">Quantity</label>
+                                                                </div>
+                                                            
+                                                            
+                                                                <div class="form__group field">
+                                                                  <input type="input" class="form__field" placeholder="Name" name="name" id="name" required="">
+                                                                  <label for="name" class="form__label">Price</label>
+                                                                </div>
+                                                            
+                                                            <br>
+                                                            <div class="elementor-element elementor-element-5580a03 elementor-widget elementor-widget-button" data-id="5580a03" data-element_type="widget" data-widget_type="button.default">
+                                                                <div class="elementor-widget-container">
+                                                                    <div class="elementor-button-wrapper">
+                                                                        <a href="javascript:{}" onclick="document.getElementById('itemform').submit();" class="elementor-button-link elementor-button elementor-size-sm elementor-animation-grow" role="button">
+                                                                            <span class="elementor-button-content-wrapper">
+                                                                                <span class="elementor-button-icon elementor-align-icon-right">
+                                                                                    <i aria-hidden="true" class="fas fa-chevron-right"></i>			
+                                                                                </span>
+                                                                                <span class="elementor-button-text">Apply</span>
+                                                                            </span>
+                                                                        </a>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </form>
                                        </div>
                                     </div>
                                  </div>
