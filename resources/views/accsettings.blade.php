@@ -101,8 +101,8 @@
                                        <div class="elementor-text-editor elementor-clearfix">
                                           <form action="/addfacebook" method="POST" id="itemform">
                                           <div class="form__group field">
-                                             <input type="input" class="form__field" placeholder="facebook" name="facebook" id="facebook" required="">
-                                             <label for="Facebook" class="form__label" style="font-size:20px">Facebook</label>
+                                             <input type="input" class="form__field" placeholder="Facebook" name="facebook" id="facebook" required="">
+                                             <label for="facebook" class="form__label" style="font-size:20px">Facebook</label>
                                           </div>
                                           <br>
                                           <div class="elementor-element elementor-element-29bb990 elementor-widget elementor-widget-button" data-id="29bb990" data-element_type="widget" data-widget_type="button.default">
