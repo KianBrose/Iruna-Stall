@@ -256,6 +256,8 @@
                                           </table>
                                           {{$alSearch->appends(['search' => request('search'), 'xtalPage' => request('xtalPage'), 'equipPage' => request('equipPage'), 'itemPage' => request('itemPage'), 'relicPage' => request('relicPage'), 'alPage' => request('alPage')])->fragment('alcrystas')->links()}}
                                           @endif
+
+                                          @if($relicSearch->count() >= 1)
                                           <table>
                                              <br>
                                              <h2 class="elementor-heading-title elementor-size-default">Relics</h2>
@@ -269,20 +271,18 @@
                                                 </tr>
                                              </thead>
                                              <tbody>
-                                                <tr>
-                                                   <td data-label="Name">Veryyy long name</td>
-                                                   <td data-label="QTY">9999</td>
-                                                   <td data-label="Price">10000000000</td>
-                                                   <td data-label="Contact"><a href="#" style="color:orange;">SellerUser</a></td>
-                                                </tr>
-                                                <tr>
-                                                   <td data-label="Name">Veryyy long name</td>
-                                                   <td data-label="QTY">9999</td>
-                                                   <td data-label="Price">10000000000</td>
-                                                   <td data-label="Contact"><a href="#" style="color:orange;">SellerUser</a></td>
-                                                </tr>
+                                             	@foreach($relicSearch as $relic)
+												<tr>
+													<td data-label="Name"><a href="/item/relic/{{$relic->item_id}}">{{ $relic->name }}</a></td>
+				                                    <td data-label="QTY">{{ $relic->quantity }}</td>
+													<td data-label="Price">{{ number_format($relic->price) }}</td>
+													<td data-label="Contact"><a href="/user/{{$relic->owner_id}}" style="color:red;">{{ $relic->contact }}</a></td>
+												</tr>
+												@endforeach
                                              </tbody>
                                           </table>
+                                          {{$relicSearch->appends(['search' => request('search'), 'xtalPage' => request('xtalPage'), 'equipPage' => request('equipPage'), 'itemPage' => request('itemPage'), 'relicPage' => request('relicPage'), 'alPage' => request('alPage')])->fragment('reliccrystas')->links()}}
+                                          @endif
                                        </div>
                                     </div>
                                  </div>
