@@ -86,7 +86,7 @@
                                     <div class="elementor-element elementor-element-1b0a1a8 elementor-widget elementor-widget-heading" data-id="1b0a1a8" data-element_type="widget" data-widget_type="heading.default">
                                        <div class="elementor-widget-container">
                                           <br>
-                                          <h4>Search Results: {{ $input }}</h4>
+                                          <h4 style="color:white;">Search Results: {{ $input }}</h4>
                                           <br>
                                           @error('searcherror')
                                           <div style="color:red">{{$message}}</div>
