@@ -1,5 +1,6 @@
 .pagination {
   display: inline-block;
+  list-style-type: none;
 }
 
 .pagination a {
