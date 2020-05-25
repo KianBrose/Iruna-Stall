@@ -167,6 +167,8 @@
                                           </table>
                                           {{$equipSearch->appends(['search' => request('search'), 'xtalPage' => request('xtalPage'), 'equipPage' => request('equipPage'), 'itemPage' => request('itemPage'), 'relicPage' => request('relicPage'), 'alPage' => request('alPage')])->fragment('equip')->links()}}
                                           @endif
+
+                                          @if($itemSearch->count() >= 1)
                                           <table>
                                              <br>
                                              <h2 class="elementor-heading-title elementor-size-default">Materials</h2>
@@ -180,20 +182,18 @@
                                                 </tr>
                                              </thead>
                                              <tbody>
-                                                <tr>
-                                                   <td data-label="Name">Veryyy long name</td>
-                                                   <td data-label="QTY">9999</td>
-                                                   <td data-label="Price">10000000000</td>
-                                                   <td data-label="Contact"><a href="#" style="color:orange;">SellerUser</a></td>
-                                                </tr>
-                                                <tr>
-                                                   <td data-label="Name">Veryyy long name</td>
-                                                   <td data-label="QTY">9999</td>
-                                                   <td data-label="Price">10000000000</td>
-                                                   <td data-label="Contact"><a href="#" style="color:orange;">SellerUser</a></td>
-                                                </tr>
+                                             	@foreach($itemSearch as $item)
+												<tr>
+													<td data-label="Name"><a href="/item/material/{{$item->item_id}}">{{ $item->name }}</td>
+													<td data-label="QTY">{{ $item->quantity }}</td>
+													<td data-label="Price">{{ number_format($item->price) }}</td>
+													<td data-label="Contact"><a href="/user/{{ $item->owner_id}}" style="color:orange;">{{ $item->contact }}</a></td>
+												</tr>
+												@endforeach
                                              </tbody>
                                           </table>
+                                          {{$itemSearch->appends(['search' => request('search'), 'xtalPage' => request('xtalPage'), 'equipPage' => request('equipPage'), 'itemPage' => request('itemPage'), 'relicPage' => request('relicPage'), 'alPage' => request('alPage')])->fragment('material')->links() }}
+                                          @endif
                                           <table>
                                              <br>
                                              <h2 class="elementor-heading-title elementor-size-default">Xtals</h2>
