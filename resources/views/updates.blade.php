@@ -100,45 +100,45 @@
                                     <div class="elementor-widget-container">
                                        <div class="elementor-text-editor elementor-clearfix">
                                           <hr>
-                                          <h3>2020-02-01 Iruna Stall Update 2.3</h3>
+                                          <h3 style="color:white;">2020-02-01 Iruna Stall Update 2.3</h3>
                                           <p>UPDATE: We are currently working on making a Wiki section for the irunastall with all items in the game! We will also work on making a detailed map of every single EP in iruna!</p>
                                           <hr>
-                                          <h3>2020-01-13 Iruna Stall Update 2.21</h3>
+                                          <h3 style="color:white;">2020-01-13 Iruna Stall Update 2.21</h3>
                                           <p>The Seller profiles now have Color AL crystals.<br>Empty contact options will no longer be displayed.</p>
                                           <hr>
-                                          <h3>2020-01-05 Iruna Stall Update 2.2</h3>
+                                          <h3 style="color:white;">2020-01-05 Iruna Stall Update 2.2</h3>
                                           <p>New Iruna Stall banner!</p>
                                           <hr>
-                                          <h3>2020-01-02 Iruna Stall Update 2.1</h3>
+                                          <h3 style="color:white;">2020-01-02 Iruna Stall Update 2.1</h3>
                                           <p>You can now see the amount of new messages from any page on the site! Will be adding notifications soon!</p>
                                           <hr>
-                                          <h3>2020-01-01 Iruna Stall Update 2.0</h3>
+                                          <h3 style="color:white;">2020-01-01 Iruna Stall Update 2.0</h3>
                                           <p><b>CHRISTMAS UPDATE 2020</b><br>We now have a functioning chat feature! Check it out <a href="/private">here</a> or click on a user's profile to send them a message! (We are working on notifications and adding the chat to the navbar)</p>
                                           <hr>
-                                          <h3>2019-12-27 Iruna Stall Update 1.51</h3>
+                                          <h3 style="color:white;">2019-12-27 Iruna Stall Update 1.51</h3>
                                           <p>Removed Guides due to SEO issues</p>
                                           <hr>
-                                          <h3>2019-12-22 Iruna Stall Update 1.5</h3>
+                                          <h3 style="color:white;">2019-12-22 Iruna Stall Update 1.5</h3>
                                           <p>Fixed some minor display issues for mobile devices, an "Add" button has been added to user profiles for the upcomming Chat feature (not implemented/working yet). The following new category searches have been added: @add  @adds  @additional  @gear  @gears  @spec  @specs, @special  @specials  @body  @armor  @armors  @bodies</p>
                                           <hr>
-                                          <h3>2019-12-06 Iruna Stall Update 1.17</h3>
+                                          <h3 style="color:white;">2019-12-06 Iruna Stall Update 1.17</h3>
                                           <p>We renamed the account page to "Settings" which can now be found under the name when loggin in</p>
                                           <hr>
-                                          <h3>2019-12-06 Iruna Stall Update 1.15</h3>
+                                          <h3 style="color:white;">2019-12-06 Iruna Stall Update 1.15</h3>
                                           <p>We apologise for the error when adding items, it's fixed now.<br> You can now display all items within a category by searching for @equipment  or @xtal  ...<br>Full list: @equip  @equipment  @al  @alcrystas  @xtal  @crystas  @relic  @reliccrystas  @item  @items  @material  @add  @adds  @additional  @gear  @gears  @spec  @specs  @special  @specials  @body  @armor  @armors  @bodies</p>
                                           <hr>
-                                          <h3>2019-12-06 Iruna Stall Update 1.12</h3>
+                                          <h3 style="color:white;">2019-12-06 Iruna Stall Update 1.12</h3>
                                           <p>The <a href="/guides">guides section</a> has been added with the permission of Ryu! More guides shall be updated soon</p>
                                           <hr>
-                                          <h3>2019-12-06 Iruna Stall Update 1.1</h3>
+                                          <h3 style="color:white;">2019-12-06 Iruna Stall Update 1.1</h3>
                                           <p>You can now enter prices with K / M / B as shortcuts! Example: 100K 100k 100M 100M 100B 100b</p>
                                           <br>
                                           <p>This feature works both in add item and in view my items page!</p>
                                           <hr>
-                                          <h3>2019-12-06 Iruna Stall Update 1.02</h3>
+                                          <h3 style="color:white;">2019-12-06 Iruna Stall Update 1.02</h3>
                                           <p>The AL Crystal section now has <span style="color:#ff0000;">C</span><span style="color:#ff7f00;">o</span><span style="color:#ff0000;">l</span><span style="color:#00ff00;">o</span><span style="color:#00ffff;">r</span> text!</p>
                                           <hr>
-                                          <h3>2019-12-06 Iruna Stall Update 1.01</h3>
+                                          <h3 style="color:white;">2019-12-06 Iruna Stall Update 1.01</h3>
                                           <p>Here are the latest features we added:</p>
                                           <ul>
                                              <li>You can now search for Abilities inside equipment! Note that the name of the ability has to be added manually, our autocomplete only works for items</li>
