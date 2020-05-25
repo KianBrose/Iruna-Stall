@@ -230,8 +230,8 @@
                                              <thead>
                                                 <tr>
                                                    <th scope="col">Name</th>
-                                                   <th scope="col">QTY</th>
                                                    <th scope="col">Color</th>
+                                                   <th scope="col">QTY</th>
                                                    <th scope="col">Price</th>
                                                    <th scope="col">Contact</th>
                                                 </tr>
