@@ -110,7 +110,7 @@
 												@enderror
 												<p>There are {{$totalCount }} results</p>
 												<hr>
-												@if($equipSearch->count() >= 1)
+												
                                                 <table>
                                                   <h2 class="elementor-heading-title elementor-size-default">Equipment</h2>
                                                     <br>
