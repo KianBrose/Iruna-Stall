@@ -100,7 +100,7 @@
                                                 <form action="/search" name="form1" method="GET">
                                                     @csrf
                                                 <div class="search-bar">
-                                                    <div class="icon" style="background-image:url(https://www.stickpng.com/assets/images/585e4ae1cb11b227491c3393.png);"></div>
+                                                    <div class="icon" style="background-image:url(http://192.168.1.106/img/searchicon.png);"></div>
                                                     
                                                     <input id="search" name="search" type="text" placeholder="Search for any equipment, xtal, al, material or relic">
                                                 </div>
