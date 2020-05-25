@@ -117,7 +117,7 @@
                                             <div class="elementor-widget-container">
                                                 <h2 class="elementor-heading-title elementor-size-default">Contact</h2> </div>
                                         </div>
-                                        <section class="elementor-element elementor-element-8ade268 elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-inner-section" data-id="8ade268" data-element_type="section">
+                                        <section class="elementor-element elementor-element-8ade268 elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-inner-section" data-id="8ade268" data-element_type="section" style="background-color:#00A5FF;">
                                             <div class="elementor-container elementor-column-gap-default">
                                                 <div class="elementor-row">
                                                     <div class="elementor-element elementor-element-ce6cb3a elementor-column elementor-col-25 elementor-inner-column" data-id="ce6cb3a" data-element_type="column">
@@ -211,7 +211,7 @@
                         </div>
                     </div>
                 </section>
-                <section class="elementor-element elementor-element-cbff812 elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-top-section" data-id="cbff812" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+                <section class="elementor-element elementor-element-cbff812 elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-top-section" data-id="cbff812" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}" style="background-color:#00A5FF;">
                     <div class="elementor-container elementor-column-gap-default">
                         <div class="elementor-row">
                             <div class="elementor-element elementor-element-fa4c44f elementor-column elementor-col-100 elementor-top-column" data-id="fa4c44f" data-element_type="column">
