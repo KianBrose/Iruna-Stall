@@ -67,7 +67,7 @@
                   </div>
                </section>
                @include('layouts.navbarv2')
-               <section class="elementor-element elementor-element-16e6ebd elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-top-section" data-id="16e6ebd" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+               <section class="elementor-element elementor-element-9ee35cc elementor-section-full_width elementor-section-height-default elementor-section-height-default elementor-section elementor-top-section" data-id="9ee35cc" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
                   <div class="elementor-container elementor-column-gap-default">
                      <div class="elementor-row">
                         <div class="elementor-element elementor-element-9a97296 elementor-column elementor-col-100 elementor-top-column" data-id="9a97296" data-element_type="column">
