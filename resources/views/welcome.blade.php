@@ -46,6 +46,7 @@
     <link rel="stylesheet" href="{{ asset('css/mainsearchbar.css') }}">
     <link rel="stylesheet" href="{{ asset('css/autocomplete.css') }}">
     <link rel="stylesheet" href="{{ asset('css/landingpage.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/jquery-ui.css') }}">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;800&display=swap" rel="stylesheet">
     
    
