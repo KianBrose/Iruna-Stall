@@ -99,6 +99,175 @@
                                                 
                                                 
                                             </div>
+                                            <div class="elementor-element elementor-element-1b0a1a8 elementor-widget elementor-widget-heading" data-id="1b0a1a8" data-element_type="widget" data-widget_type="heading.default">
+                                            <div class="elementor-widget-container">
+                                                <table>
+                                                  <h2 class="elementor-heading-title elementor-size-default">Equipment</h2>
+                                                    <br>
+                                                  <thead>
+                                                    <tr>
+                                                      <th scope="col">Name</th>
+                                                      <th scope="col">ATK</th>
+                                                      <th scope="col">DEF</th>
+                                                      <th scope="col">Refinement</th>
+                                                      <th scope="col">Slots</th>
+                                                      <th scope="col">Slot1</th>
+                                                      <th scope="col">Slot2</th>
+                                                      <th scope="col">Ability</th>
+                                                      <th scope="col">Ability Lv</th>
+                                                      <th scope="col">Price</th>
+                                                      <th scope="col">Contact</th>
+                                                    </tr>
+                                                  </thead>
+                                                  <tbody>
+                                                    <tr>
+                                                      <td data-label="Name">Veryyy long name</td>
+                                                      <td data-label="ATK">222</td>
+                                                      <td data-label="DEF">333</td>
+                                                      <td data-label="Refinement">9</td>
+                                                      <td data-label="Slots">2</td>
+                                                      <td data-label="Slot1">Tsuchimono King</td>
+                                                      <td data-label="Slot2">Tsuchimono King</td>
+                                                      <td data-label="Ability">Long ability name</td>
+                                                      <td data-label="Ability Lv">5</td>
+                                                      <td data-label="Price">10000000000</td>
+                                                      <td data-label="Contact"><a href="#">SellerUser</a></td>
+                                                    </tr>
+                                                    <tr>
+                                                      <td data-label="Name">1</td>
+                                                      <td data-label="ATK">2</td>
+                                                      <td data-label="DEF">3</td>
+                                                      <td data-label="Refinement">4</td>
+                                                      <td data-label="Slots">5</td>
+                                                      <td data-label="Slot1">6</td>
+                                                      <td data-label="Slot2">7</td>
+                                                      <td data-label="Ability">8</td>
+                                                      <td data-label="Ability Lv">9</td>
+                                                      <td data-label="Price">10</td>
+                                                      <td data-label="Contact"><a href="#">SellerUser</a></td>
+                                                    </tr>
+                                                  </tbody>
+                                                </table>
+                                                
+                                                <table>
+                                                  <h2 class="elementor-heading-title elementor-size-default">Materials</h2>
+                                                    <br>
+                                                  <thead>
+                                                    <tr>
+                                                      <th scope="col">Name</th>
+                                                      <th scope="col">QTY</th>
+                                                      <th scope="col">Price</th>
+                                                      <th scope="col">Contact</th>
+                                                    </tr>
+                                                  </thead>
+                                                  <tbody>
+                                                    <tr>
+                                                      <td data-label="Name">Veryyy long name</td>
+                                                      <td data-label="QTY">9999</td>
+                                                      <td data-label="Price">10000000000</td>
+                                                      <td data-label="Contact"><a href="#">SellerUser</a></td>
+                                                    </tr>
+                                                    <tr>
+                                                      <td data-label="Name">Veryyy long name</td>
+                                                      <td data-label="QTY">9999</td>
+                                                      <td data-label="Price">10000000000</td>
+                                                      <td data-label="Contact"><a href="#">SellerUser</a></td>
+                                                    </tr>
+                                                  </tbody>
+                                                </table>
+                                                
+                                                <table>
+                                                  <h2 class="elementor-heading-title elementor-size-default">Xtals</h2>
+                                                    <br>
+                                                  <thead>
+                                                    <tr>
+                                                      <th scope="col">Name</th>
+                                                      <th scope="col">QTY</th>
+                                                      <th scope="col">Price</th>
+                                                      <th scope="col">Contact</th>
+                                                    </tr>
+                                                  </thead>
+                                                  <tbody>
+                                                    <tr>
+                                                      <td data-label="Name">Veryyy long name</td>
+                                                      <td data-label="QTY">9999</td>
+                                                      <td data-label="Price">10000000000</td>
+                                                      <td data-label="Contact"><a href="#">SellerUser</a></td>
+                                                    </tr>
+                                                    <tr>
+                                                      <td data-label="Name">Veryyy long name</td>
+                                                      <td data-label="QTY">9999</td>
+                                                      <td data-label="Price">10000000000</td>
+                                                      <td data-label="Contact"><a href="#">SellerUser</a></td>
+                                                    </tr>
+                                                  </tbody>
+                                                </table>
+                                                
+                                                <table>
+                                                  <h2 class="elementor-heading-title elementor-size-default">AL's</h2>
+                                                    <br>
+                                                  <thead>
+                                                    <tr>
+                                                      <th scope="col">Name</th>
+                                                      <th scope="col">QTY</th>
+                                                      <th scope="col">Color</th>
+                                                      <th scope="col">Price</th>
+                                                      <th scope="col">Contact</th>
+                                                    </tr>
+                                                  </thead>
+                                                  <tbody>
+                                                    <tr>
+                                                      <td data-label="Name" style="color:red;">Veryyy long name</td>
+                                                      <td data-label="QTY">9999</td>
+                                                      <td data-label="Color" style="color:red;">Red</td>
+                                                      <td data-label="Price">10000000000</td>
+                                                      <td data-label="Contact"><a href="#">SellerUser</a></td>
+                                                    </tr>
+                                                    <tr>
+                                                      <td data-label="Name" style="color:blue;">Veryyy long name</td>
+                                                      <td data-label="QTY">9999</td>
+                                                      <td data-label="Color" style="color:blue;">Blue</td>
+                                                      <td data-label="Price">10000000000</td>
+                                                      <td data-label="Contact"><a href="#">SellerUser</a></td>
+                                                    </tr>
+                                                      <tr>
+                                                      <td data-label="Name" style="color:green;">Veryyy long name</td>
+                                                      <td data-label="QTY">9999</td>
+                                                      <td data-label="Color" style="color:green;">Green</td>
+                                                      <td data-label="Price">10000000000</td>
+                                                      <td data-label="Contact"><a href="#">SellerUser</a></td>
+                                                    </tr>
+                                                  </tbody>
+                                                </table>
+                                                
+                                                <table>
+                                                  <h2 class="elementor-heading-title elementor-size-default">Relics</h2>
+                                                    <br>
+                                                  <thead>
+                                                    <tr>
+                                                      <th scope="col">Name</th>
+                                                      <th scope="col">QTY</th>
+                                                      <th scope="col">Price</th>
+                                                      <th scope="col">Contact</th>
+                                                    </tr>
+                                                  </thead>
+                                                  <tbody>
+                                                    <tr>
+                                                      <td data-label="Name">Veryyy long name</td>
+                                                      <td data-label="QTY">9999</td>
+                                                      <td data-label="Price">10000000000</td>
+                                                      <td data-label="Contact"><a href="#">SellerUser</a></td>
+                                                    </tr>
+                                                    <tr>
+                                                      <td data-label="Name">Veryyy long name</td>
+                                                      <td data-label="QTY">9999</td>
+                                                      <td data-label="Price">10000000000</td>
+                                                      <td data-label="Contact"><a href="#">SellerUser</a></td>
+                                                    </tr>
+                                                  </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
                                         </div>
                                     </div>
                                 </div>
