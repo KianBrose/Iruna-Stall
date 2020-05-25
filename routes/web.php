@@ -17,7 +17,6 @@ Route::get('/', 'HomeController@index');
 Auth::routes(['verify' => true]);
 
 Route::get('/about', 'HomeController@about');
-Route::get('/updates', 'HomeController@updates');
 
 Route::get('/account', 'HomeController@account');
 
@@ -25,6 +24,10 @@ Route::get('/account', 'HomeController@account');
 
 Route::get('/scammers', function () {
     return view('scammers');
+});
+
+Route::get('/updates', function () {
+    return view('updates');
 });
 
 Route::get('/tutorial', 'HomeController@tutorial');
