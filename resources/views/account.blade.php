@@ -1,716 +1,516 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-
-<head>
-    <meta charset="utf-8">
-   <meta name="viewport" content="width=device-width, initial-scale=1">
-   <link ref="stylesheet" href="css/style.css">
-   <meta name="robots" content="index, follow"/>
-   <meta property="og:image" content="https://irunastall.com/img/iruna.jpg">
-    <meta property="og:title" content="Iruna Stall">
-    <meta property="og:description" content="Find, buy and sell items for free on the Iruna Online Global Stall! In the Global Stall, you can post your items as a seller and search for items as a buyer. The stall is free to use and requires no account to search for items.">
-   <meta name="description" content="Find, buy and sell items for free on the Iruna Online Global Stall! In the Global Stall, you can post your items as a seller and search for items as a buyer. The stall is free to use and requires no account to search for items."/>
-   <meta name="keywords" content="Iruna, Stall, Global, iruna, stall, global, Iruna Global stall"/>
-   <title>Iruna Global Stall</title>
-   <meta name="hostname" content="irunastall.com"/>
-   <meta name="csrf-token" content="{{ csrf_token() }}">
-   
-   <link rel="manifest" href="manifest.json" >
-   <script src="js/serviceLoader.js"></script>
-    <!-- bootstrap css -->
-   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-   <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-    <!-- Fonts -->
-   <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
-   <link href="css/style.css" rel="stylesheet">
-   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-   <script>
-       (adsbygoogle = window.adsbygoogle || []).push({
-           google_ad_client: "ca-pub-8585623774913935",
-           enable_page_level_ads: true
-       });
-   </script>
-</head>
-
-<body>
-<div id="app">
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <div class="container">
-                <a class="navbar-brand" href="{{ url('/') }}" style="width:200px;">
-                  <img alt="Iruna Stall" src="{{asset('img/bannerIS.png')}}" style="width:70%; height:70%">
-                </a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <!-- Left Side Of Navbar -->
-          <ul class="navbar-nav ml-auto">
-            <li class="nav-item">
-                             
-                        </li>
-         <li class="nav-item">
-                             <a class="nav-link" href="/additem">Add item</a>
-                        </li>
-         <li class="nav-item">
-                             <a class="nav-link" href="/viewitem">View my items</a>
-                        </li>
-         <li class="nav-item">
-                             <a class="nav-link" href="/scammers">Scammer list</a>
-                        </li>
-         <li class="nav-item">
-                             <a class="nav-link" href="/about">About</a>
-                        </li>
-          </ul>
-                    <!-- Right Side Of Navbar -->
-                    <ul class="navbar-nav ml-auto">
-                        <!-- Authentication Links -->
-                        @guest
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
-                            </li>
-                            @if (Route::has('register'))
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
-                                </li>
-                            @endif
-                        @else
-                            <li class="nav-item dropdown notification">
-                           @if($message->count() >= 1)
-                           <span class="badge" style="font-weight: 900;">{{$message->count()}}</span>
-                              @endif
-                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                    {{ Auth::user()->name }} <span class="caret"></span>
-                                </a>
-
-                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                           <a class="dropdown-item" href="/user/{{ auth()->user()->user_id }}">Profile</a>
-                           <a class="dropdown-item" href="/account">Settings</a>
-                           <a class="dropdown-item" href="/private">
-                              <span>Messages</span>
-                              @if($message->count() >= 1)
-                             <span style="color: red; font-weight: 900;">{{$message->count()}}</span>
-                             @endif</a>
-                                    <a class="dropdown-item" href="{{ route('logout') }}"
-                                       onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                        {{ __('Logout') }}
-                                    </a>
-
-                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                        @csrf
-                                    </form>
-                                </div>
-                            </li>
-                        @endguest
-                    </ul>
-                </div>
+   <head>
+      <meta charset="utf-8">
+      <title> Account settings | Iruna Global Stall</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="robots" content="index, follow">
+      <meta name="description" content="Find about Iruna Stall on how it used to find, buy and sell items for free! In the Iruna Global Stall, you can post your items as a seller and search for items without the need for registration.">
+      <meta name="keywords" content="Iruna, Stall, Global, iruna, stall, global, Iruna Online, buy, sell, trade, about, Kian Brose, Kumar, Polowis, terms, service, contact">
+      <meta name="hostname" content="irunastall.com">
+      <meta name='subject' content="About Iruna Global Stall">
+      <meta name="author" content="Kian Brose">
+      <meta name='coverage' content='Worldwide'>
+      <meta name='distribution' content='Global'>
+      <meta name='rating' content='General'>
+      <meta name='HandheldFriendly' content='True'>
+      <meta name='MobileOptimized' content='320'>
+      <meta name='target' content='all'>
+      <meta name="apple-mobile-web-app-title" content="Account settings | Iruna Global Stall">
+      <meta name='apple-mobile-web-app-capable' content='yes'>
+      <meta name='apple-touch-fullscreen' content='yes'>
+      <meta name='apple-touch-fullscreen' content='yes'>
+      <meta name='application-name' content="Iruna Global Stall">
+      <link rel="apple-touch-icon" href="https://irunastall.com/img/iruna.jpg">
+      <meta name="twitter:card" content="summary">
+      <meta name="twitter:title" content="Account settings | Iruna Global Stall">
+      <meta name="twitter:description" content="Know about Iruna global stall. This is a platform to find, buy and sell items of Iruna online game. Account is not needed for searching for items">
+      <meta property="og:title" content="Iruna Stall">
+      <meta property="og:type" content="website">
+      <meta property="og:description" content="Know about on how to find, buy and sell items for free on the Iruna Online Global Stall! In the Global Stall, you can post your items as a seller and search for items as a buyer. The stall is free to use and requires no account to search for items.">
+      <meta property="og:image" content="https://irunastall.com/img/iruna.jpg">
+      <meta property="og:url" content="https://irunastall.com">
+      <meta name="csrf-token" content="{{ csrf_token() }}">
+      <link rel="canonical" href="https://irunastall.com">
+      <link rel="manifest" href="manifest.json">
+      <script src="js/serviceLoader.js"></script>
+      <!-- manifest for PWA -->
+      <link rel="manifest" href="manifest.json">
+      <script src="js/serviceLoader.js"></script>
+      <link href="{{asset('css/icons/all.css')}}" rel="stylesheet">
+      <link href="{{asset('css/additem.css')}}" rel="stylesheet">
+      <link rel="stylesheet" href="{{ asset('css/mainsearchbar.css') }}">
+      <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;800&display=swap" rel="stylesheet">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+   <body class="page-template page-template-elementor_canvas page page-id-2358 wp-custom-logo wp-embed-responsive theme-storefront woocommerce-no-js wcz-woocommerce wcz-btn-style-default ehf-template-storefront ehf-stylesheet-storefront woo-variation-gallery woo-variation-gallery-theme-storefront woo-variation-gallery-theme-child-storefront woo-variation-swatches woo-variation-swatches-theme-storefront woo-variation-swatches-theme-child-storefront woo-variation-swatches-style-squared woo-variation-swatches-attribute-behavior-blur woo-variation-swatches-tooltip-enabled woo-variation-swatches-stylesheet-enabled storefront-full-width-content storefront-align-wide right-sidebar woocommerce-active elementor-default elementor-template-canvas elementor-kit-1727 elementor-page elementor-page-2358">
+      <div data-elementor-type="wp-page" data-elementor-id="2358" class="elementor elementor-2358" data-elementor-settings="[]">
+         <div class="elementor-inner">
+            <div class="elementor-section-wrap">
+               <section class="elementor-element elementor-element-d619cf6 elementor-section-full_width elementor-hidden-desktop elementor-hidden-tablet elementor-section-height-default elementor-section-height-default elementor-section elementor-top-section" data-id="d619cf6" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+                  <div class="elementor-container elementor-column-gap-extended">
+                     <div class="elementor-row">
+                        <div class="elementor-element elementor-element-71859de elementor-hidden-desktop elementor-hidden-tablet elementor-column elementor-col-100 elementor-top-column" data-id="71859de" data-element_type="column">
+                           <div class="elementor-column-wrap  elementor-element-populated">
+                              <div class="elementor-widget-wrap">
+                                 <div class="elementor-element elementor-element-c616fcc elementor-hidden-desktop elementor-hidden-tablet elementor-widget elementor-widget-image" data-id="c616fcc" data-element_type="widget" data-widget_type="image.default">
+                                    <div class="elementor-widget-container">
+                                       <div class="elementor-image">
+                                          <a href="https://irunastall.com/">
+                                          <img width="2123" height="1000" src="{{ asset('img/whitelogo.png') }}" class="attachment-full size-full wp-post-image" alt="" srcset="{{ asset('img/whitelogo.png') }}" sizes="(max-width: 2123px) 100vw, 2123px" /> </a>
+                                       </div>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </section>
+               @include('layouts.navbarv2')
+               <section class="elementor-element elementor-element-16e6ebd elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-top-section" data-id="16e6ebd" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}" style="background-color:#00a5ff;">
+                  <div class="elementor-container elementor-column-gap-default">
+                     <div class="elementor-row">
+                        <div class="elementor-element elementor-element-9a97296 elementor-column elementor-col-100 elementor-top-column" data-id="9a97296" data-element_type="column">
+                           <div class="elementor-column-wrap  elementor-element-populated">
+                              <div class="elementor-widget-wrap">
+                                 <div class="elementor-element elementor-element-6d1da58 elementor-widget elementor-widget-heading" data-id="6d1da58" data-element_type="widget" data-widget_type="heading.default">
+                                    <div class="elementor-widget-container">
+                                       <h2 class="elementor-heading-title elementor-size-default">Add item</h2>
+                                    </div>
+                                 </div>
+                                 <div class="elementor-element elementor-element-fa9d1bf elementor-widget elementor-widget-text-editor" data-id="fa9d1bf" data-element_type="widget" data-widget_type="text-editor.default">
+                                    <div class="elementor-widget-container">
+                                       <div class="elementor-text-editor elementor-clearfix">
+                                          <p style="color:white;">Welcome to the add item page! If this is your first time here, please refer to this <a href="https://irunastall.com/tutorial" style="color:orange;">quick guide</a> on how to add an item!</p>
+                                       </div>
+                                    </div>
+                                 </div>
+                                 <div class="elementor-element elementor-element-944d886 elementor-widget elementor-widget-text-editor" data-id="944d886" data-element_type="widget" data-widget_type="text-editor.default">
+                                    <div class="elementor-widget-container">
+                                       <div class="elementor-text-editor elementor-clearfix">
+                                          <select name="itemtype" class="form-control2" id="itemtype">
+                                             <option>Choose type</option>
+                                             <option value="1">Equipment</option>
+                                             <option value="2">Items</option>
+                                             <option value="3">Xtal</option>
+                                             <option value="4">AL Crystal</option>
+                                             <option value="5">Relic</option>
+                                          </select>
+                                          <div id="equip" style="display:none;">
+                                             <form action="/createEquip" method="POST" id="equipform">
+                                                <tr>
+                                                   <div class="form__group field">
+                                                      <input type="input" class="form__field" placeholder="EquipmentName" name="equipname" id='equipname' required />
+                                                      <label for="equipname" class="form__label">Equipment Name</label>
+                                                   </div>
+                                                </tr>
+                                                <tr>
+                                                   <div class="form__group field">
+                                                      <input type="input" class="form__field" placeholder="ATK" name="atk" id='atk' required />
+                                                      <label for="atk" class="form__label">ATK</label>
+                                                   </div>
+                                                </tr>
+                                                <tr>
+                                                   <div class="form__group field">
+                                                      <input type="input" class="form__field" placeholder="DEF" name="def" id='def' required />
+                                                      <label for="def" class="form__label">DEF</label>
+                                                   </div>
+                                                </tr>
+                                                <tr>
+                                                   <br>
+                                                   <td>
+                                                      <label for="Test" style="color:white;">Refinement:</label>
+                                                   </td>
+                                                   <td style="padding-left:10px;">
+                                                      <select name="refinement" class="form-control2" id="refinement">
+                                                         <option selected value="0">0</option>
+                                                         <option value="1">1</option>
+                                                         <option value="2">2</option>
+                                                         <option value="3">3</option>
+                                                         <option value="4">4</option>
+                                                         <option value="5">5</option>
+                                                         <option value="6">6</option>
+                                                         <option value="7">7</option>
+                                                         <option value="8">8</option>
+                                                         <option value="9">9</option>
+                                                      </select>
+                                                      <br>
+                                                   </td>
+                                                </tr>
+                                                <tr>
+                                                   <br>
+                                                   <td>
+                                                      <label for="type" style="color:white;">Type:</label>
+                                                   </td>
+                                                   <td style="padding-left:10px;">
+                                                      <select name="type" class="form-control2" id="type">
+                                                         <option selected>Weapon</option>
+                                                         <option>Body</option>
+                                                         <option>Additional</option>
+                                                         <option>Special</option>
+                                                      </select>
+                                                      <br>
+                                                   </td>
+                                                </tr>
+                                                <tr>
+                                                   <br>
+                                                   <td>
+                                                      <label for="Test" style="color:white;">Slots:</label>
+                                                   </td>
+                                                   <td style="padding-left:10px;">
+                                                      <select name="equipslotamount" class="form-control2" id="equipslotamount">
+                                                         <option selected value="0">0</option>
+                                                         <option value="1">1</option>
+                                                         <option value="2">2</option>
+                                                      </select>
+                                                   </td>
+                                                </tr>
+                                                <br>
+                                                <div id="slot1" style="display:none;">
+                                                   <tr>
+                                                      <div class="form__group field">
+                                                         <input type="input" class="form__field" placeholder="Slot1" name="slot1" id='slot1' required />
+                                                         <label for="slot1" class="form__label">Slot 1</label>
+                                                      </div>
+                                                   </tr>
+                                                </div>
+                                                <div id="slot2" style="display:none;">
+                                                   <tr>
+                                                      <div class="form__group field">
+                                                         <input type="input" class="form__field" placeholder="Slot2" name="slot2" id='slot2' required />
+                                                         <label for="slot2" class="form__label">Slot 2</label>
+                                                      </div>
+                                                   </tr>
+                                                </div>
+                                                <br>
+                                                <tr>
+                                                   <td>
+                                                      
+                                                      <label for="Test" style="color:white;">Ability:</label>
+                                                   </td>
+                                                   <td style="padding-left:10px;">
+                                                      <select name="abidrop" class="form-control2" id="abidrop">
+                                                         <option selected value="0">No</option>
+                                                         <option value="1">Yes</option>
+                                                      </select>
+                                                   </td>
+                                                   <br>
+                                                </tr>
+                                                <div id="hasabil" style="display:none;">
+                                                   <tr>
+                                                      <div class="form__group field">
+                                                         <input type="input" class="form__field" placeholder="AbilityName" name="abilityname" id='abilityname' required />
+                                                         <label for="abilityname" class="form__label">Ability name</label>
+                                                      </div>
+                                                   </tr>
+                                                   <tr>
+                                                      <div class="form__group field">
+                                                         <input type="input" class="form__field" placeholder="AbilityLevel" name="abilitylevel" id='abilitylevel' required />
+                                                         <label for="abilitylevel" class="form__label">Ability level</label>
+                                                      </div>
+                                                   </tr>
+                                                </div>
+                                                <tr>
+                                                   <div class="form__group field">
+                                                      <input type="input" class="form__field" placeholder="EquipmentPrice" name="equipmentprice" id='equipmentprice' required />
+                                                      <label for="equipmentprice" class="form__label">Price</label>
+                                                   </div>
+                                                </tr>
+                                                <br>
+                                                <div class="elementor-element elementor-element-5580a03 elementor-widget elementor-widget-button" data-id="5580a03" data-element_type="widget" data-widget_type="button.default">
+                                                   <div class="elementor-widget-container">
+                                                      <div class="elementor-button-wrapper">
+                                                         <a href="javascript:{}" onclick="document.getElementById('equipform').submit();" class="elementor-button-link elementor-button elementor-size-sm elementor-animation-grow" role="button">
+                                                         <span class="elementor-button-content-wrapper">
+                                                         <span class="elementor-button-icon elementor-align-icon-right">
+                                                         <i aria-hidden="true" class="fas fa-chevron-right"></i>      
+                                                         </span>
+                                                         <span class="elementor-button-text">Add item</span>
+                                                         </span>
+                                                         </a>
+                                                      </div>
+                                                   </div>
+                                                </div>
+                                             </form>
+                                          </div>
+                                          <div id="item" style="display:none;">
+                                             <form action="/createItem" method="POST" id="itemform">
+                                                <tr>
+                                                   <div class="form__group field">
+                                                      <input type="input" class="form__field" placeholder="ItemName" name="itemname" id='itemname' required />
+                                                      <label for="itemname" class="form__label">Item Name</label>
+                                                   </div>
+                                                </tr>
+                                                <tr>
+                                                   <div class="form__group field">
+                                                      <input type="input" class="form__field" placeholder="QTY" name="qty" id='qty' required />
+                                                      <label for="qty" class="form__label">Quantity</label>
+                                                   </div>
+                                                </tr>
+                                                <tr>
+                                                   <div class="form__group field">
+                                                      <input type="input" class="form__field" placeholder="ItemPrice" name="itemprice" id='itemprice' required />
+                                                      <label for="itemprice" class="form__label">Price</label>
+                                                   </div>
+                                                </tr>
+                                                <br>
+                                                <div class="elementor-element elementor-element-5580a03 elementor-widget elementor-widget-button" data-id="5580a03" data-element_type="widget" data-widget_type="button.default">
+                                                   <div class="elementor-widget-container">
+                                                      <div class="elementor-button-wrapper">
+                                                         <a href="javascript:{}" onclick="document.getElementById('itemform').submit();" class="elementor-button-link elementor-button elementor-size-sm elementor-animation-grow" role="button">
+                                                         <span class="elementor-button-content-wrapper">
+                                                         <span class="elementor-button-icon elementor-align-icon-right">
+                                                         <i aria-hidden="true" class="fas fa-chevron-right"></i>      
+                                                         </span>
+                                                         <span class="elementor-button-text">Add item</span>
+                                                         </span>
+                                                         </a>
+                                                      </div>
+                                                   </div>
+                                                </div>
+                                             </form>
+                                          </div>
+                                          <div id="xtal" style="display:none;">
+                                             <form action="/createXtal" method="POST" id="xtalform">
+                                                <tr>
+                                                   <div class="form__group field">
+                                                      <input type="input" class="form__field" placeholder="XtalName" name="xtalname" id='xtalname' required />
+                                                      <label for="xtalname" class="form__label">Xtal Name</label>
+                                                   </div>
+                                                </tr>
+                                                <tr>
+                                                   <div class="form__group field">
+                                                      <input type="input" class="form__field" placeholder="XtalQTY" name="xtalqty" id='xtalqty' required />
+                                                      <label for="xtalqty" class="form__label">Quantity</label>
+                                                   </div>
+                                                </tr>
+                                                <tr>
+                                                   <div class="form__group field">
+                                                      <input type="input" class="form__field" placeholder="XtalPrice" name="xtalprice" id='xtalprice' required />
+                                                      <label for="xtalprice" class="form__label">Price</label>
+                                                   </div>
+                                                </tr>
+                                                <br>
+                                                <div class="elementor-element elementor-element-5580a03 elementor-widget elementor-widget-button" data-id="5580a03" data-element_type="widget" data-widget_type="button.default">
+                                                   <div class="elementor-widget-container">
+                                                      <div class="elementor-button-wrapper">
+                                                         <a href="javascript:{}" onclick="document.getElementById('xtalform').submit();" class="elementor-button-link elementor-button elementor-size-sm elementor-animation-grow" role="button">
+                                                         <span class="elementor-button-content-wrapper">
+                                                         <span class="elementor-button-icon elementor-align-icon-right">
+                                                         <i aria-hidden="true" class="fas fa-chevron-right"></i>      
+                                                         </span>
+                                                         <span class="elementor-button-text">Add item</span>
+                                                         </span>
+                                                         </a>
+                                                      </div>
+                                                   </div>
+                                                </div>
+                                             </form>
+                                          </div>
+                                          <div id="al" style="display:none;">
+                                             <form action="/createAi" method="POST" id="alform">
+                                                <tr>
+                                                   <div class="form__group field">
+                                                      <input type="input" class="form__field" placeholder="AlName" name="alname" id='alname' required />
+                                                      <label for="alname" class="form__label">AL Name</label>
+                                                   </div>
+                                                </tr>
+                                                <tr>
+                                                   <div class="form__group field">
+                                                      <input type="input" class="form__field" placeholder="AlQTY" name="alqty" id='alqty' required />
+                                                      <label for="alqty" class="form__label">Quantity</label>
+                                                   </div>
+                                                </tr>
+                                                <tr>
+                                                   <br>
+                                                   <td>
+                                                      <label for="color" style="color:white;">Color:</label>
+                                                   </td>
+                                                   <td style="padding-left:10px;">
+                                                      <select name="color" class="form-control2" id="color">
+                                                         <option selected>Red</option>
+                                                         <option>Green</option>
+                                                         <option>Blue</option>
+                                                      </select>
+                                                   </td>
+                                                </tr>
+                                                <tr>
+                                                   <div class="form__group field">
+                                                      <input type="input" class="form__field" placeholder="AlPrice" name="alprice" id='alprice' required />
+                                                      <label for="alprice" class="form__label">Price</label>
+                                                   </div>
+                                                </tr>
+                                                <br>
+                                                <div class="elementor-element elementor-element-5580a03 elementor-widget elementor-widget-button" data-id="5580a03" data-element_type="widget" data-widget_type="button.default">
+                                                   <div class="elementor-widget-container">
+                                                      <div class="elementor-button-wrapper">
+                                                         <a href="javascript:{}" onclick="document.getElementById('alform').submit();" class="elementor-button-link elementor-button elementor-size-sm elementor-animation-grow" role="button">
+                                                         <span class="elementor-button-content-wrapper">
+                                                         <span class="elementor-button-icon elementor-align-icon-right">
+                                                         <i aria-hidden="true" class="fas fa-chevron-right"></i>      
+                                                         </span>
+                                                         <span class="elementor-button-text">Add item</span>
+                                                         </span>
+                                                         </a>
+                                                      </div>
+                                                   </div>
+                                                </div>
+                                             </form>
+                                          </div>
+                                          <div id="relic" style="display:none;">
+                                             <form action="/createRelic" method="POST" id="relicform">
+                                                <tr>
+                                                   <div class="form__group field">
+                                                      <input type="input" class="form__field" placeholder="RelicName" name="relicname" id='relicname' required />
+                                                      <label for="relicname" class="form__label">Relic Name</label>
+                                                   </div>
+                                                </tr>
+                                                <tr>
+                                                   <div class="form__group field">
+                                                      <input type="input" class="form__field" placeholder="RelicQTY" name="relicqty" id='relicqty' required />
+                                                      <label for="relicqty" class="form__label">Quantity</label>
+                                                   </div>
+                                                </tr>
+                                                <tr>
+                                                   <div class="form__group field">
+                                                      <input type="input" class="form__field" placeholder="RelicPrice" name="relicprice" id='relicprice' required />
+                                                      <label for="relicprice" class="form__label">Price</label>
+                                                   </div>
+                                                </tr>
+                                                <br>
+                                                <div class="elementor-element elementor-element-5580a03 elementor-widget elementor-widget-button" data-id="5580a03" data-element_type="widget" data-widget_type="button.default">
+                                                   <div class="elementor-widget-container">
+                                                      <div class="elementor-button-wrapper">
+                                                         <a href="javascript:{}" onclick="document.getElementById('relicform').submit();" class="elementor-button-link elementor-button elementor-size-sm elementor-animation-grow" role="button">
+                                                         <span class="elementor-button-content-wrapper">
+                                                         <span class="elementor-button-icon elementor-align-icon-right">
+                                                         <i aria-hidden="true" class="fas fa-chevron-right"></i>      
+                                                         </span>
+                                                         <span class="elementor-button-text">Add item</span>
+                                                         </span>
+                                                         </a>
+                                                      </div>
+                                                   </div>
+                                                </div>
+                                             </form>
+                                          </div>
+                                       </div>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </section>
+               @include('layouts.footer')
             </div>
-        </nav>
-    </div>
-    <div class="container">
-        <div class="row" >
-            <div class="col-md-7 offset-md-3" >
-
-                <div style="height: auto !important;">
-               <br>
-                    <h4>Add item</h4>
-                    <hr>
-               <div>
-                  <p>Welcome to the add item page! If this is your first time here, please refer to this <a href="/tutorial">quick guide</a> on how to add an item!</p>
-                     <div class="alert alert-success">Please make the use of autocomplete if you are not sure about spelling.</div>
-                     
-                     @if ($errors->any())
-                     <div class="alert alert-danger">{{ $errors->first() }}</div>
-                     @endif
-                     <select name="itemtype" class="form-control2" id="itemtype"> 
-                        <option>Choose type</option>
-                        <option value="1">Equipment</option>
-                        <option value="2">Items</option>
-                        <option value="3">Xtal</option>
-                        <option value="4">AL Crystal</option>
-                        <option value="5">Relic</option>
-                     </select>
-
-                     <div id="equip" style="display:none;">
-                        <form action="/createEquip" method="POST">
-                           @csrf
-                     <tr>
-                        <td>
-                           <label for="name">Item Name:</label>
-                        </td>
-                        <td  style="padding-left:10px;">
-                           <input type="text" class="form-control iteminput" style="width: 400px" name="name" id="equipment"/>
-                        </td>
-                        @error('name')
-                  <div style="color:red;"> {{ $message }}</div>
-                  @enderror
-
-                     </tr>
-                     <tr>
-                        <td>
-                           <label for="atk">ATK:</label>
-                        </td>
-                        <td  style="padding-left:10px;">
-                        <input type="number" class="form-control iteminput" style="width: 400px" name="atk" id="atk" value="{{ old('atk') }}"/>
-                        </td>
-                        @error('atk')
-                        <div style="color:red;"> {{ $message }}</div>
-                        @enderror
-                     </tr>
-                     <tr>
-                        <td>
-                           <label for="def">DEF:</label>
-                        </td>
-                        <td  style="padding-left:10px;">
-                           <input type="number" class="form-control iteminput" style="width: 400px" name="def" id="def"/>
-                        </td>
-                        @error('def')
-                        <div style="color:red;"> {{ $message }}</div>
-                        @enderror
-                     </tr>
-                     <tr>
-                        <br>
-                        <td>
-                           <label for="Test">Refinement:</label>
-                        </td>
-                        <td  style="padding-left:10px;">
-                           <select name="refinement" class="form-control2" id="refinement"> 
-                              <option selected value="0">0</option>
-                              <option value="1">1</option>
-                              <option value="2">2</option>
-                              <option value="3">3</option>
-                              <option value="4">4</option>
-                              <option value="5">5</option>
-                              <option value="6">6</option>
-                              <option value="7">7</option>
-                              <option value="8">8</option>
-                              <option value="9">9</option>
-                           </select>
-                           <br>
-                        </td>
-                     </tr>
-                     <tr>
-                        <br>
-                        <td>
-                           <label for="type">Type:</label>
-                        </td>
-                        <td  style="padding-left:10px;">
-                           <select name="type" class="form-control2" id="type"> 
-                              <option selected>Weapon</option>
-                              <option>Body</option>
-                              <option>Additional</option>
-                              <option>Special</option>
-                           </select>
-                           <br>
-                        </td>
-                     </tr>
-                     <tr>
-                        <br>
-                        <td>
-                           <label for="Test">Slots:</label>
-                        </td>
-                        <td  style="padding-left:10px;">
-                           <select name="equipslotamount" class="form-control2" id="equipslotamount"> 
-                              <option selected value="0">0</option>
-                              <option value="1">1</option>
-                              <option value="2">2</option>
-                           </select>
-                           <br>
-                        </td>
-                        <br>
-                     </tr>
-                     <div id="slot1" style="display:none;">
-                     <tr>
-                        <td>
-                           <label for="slot1">Slot 1:</label>
-                        </td>
-                        <td  style="padding-left:10px;">
-                           <input type="text" class="form-control iteminput crystas" style="width: 400px" name="slot1" id="slot1"/>
-                        </td>
-                        <br>
-                     </tr>
-                     </div>
-                     <div id="slot2" style="display:none;">
-                     <tr>
-                        <td>
-                           <label for="Test">Slot 2:</label>
-                        </td>
-                        <td  style="padding-left:10px;">
-                           <input type="text" class="form-control iteminput crystas" style="width: 400px" name="slot2" id="slot"/>
-                        </td>
-                        <br>
-                     </tr>
-                     </div>
-                     <tr>
-                        <td>
-                           <label for="Test">Ability:</label>
-                        </td>
-                        <td  style="padding-left:10px;">
-                           <select name="abidrop" class="form-control2" id="abidrop"> 
-                              <option selected value="0">No</option>
-                              <option value="1">Yes</option>
-                           </select>
-                        </td>
-                        <br>
-                     </tr>
-                     <div id="hasabil" style="display:none;">
-                     <tr>
-                        <td>
-                           <label for="Test">Ability name:</label>
-                        </td>
-                        <td  style="padding-left:10px;">
-                           <input type="text" class="form-control iteminput" style="width: 400px" name="ability" id="ability" value=""/>
-                        </td>
-                     </tr>
-                     <tr>
-                        <td>
-                           <label for="Test">Ability level:</label>
-                        </td>
-                        <td  style="padding-left:10px;">
-                           <input type="number" max="5" class="form-control iteminput" style="width: 400px" name="ability_level" id="ability_level" value="0"/>
-                        </td>
-                     </tr>
-                     </div>
-                     <tr>
-                        <br>
-                        <td>
-                           <label for="Test">Price:</label>
-                        </td>
-                        <td  style="padding-left:10px;">
-                           <input  class="form-control iteminput" style="width: 400px" name="price" id="price" val/>
-                        </td>
-                     </tr>
-                        <br><input type="submit" class="btn btn-success" style="width: 150px" name="search_button" id="search_button" value="Add new item"/>
-                     </form>
-                     </div>
-
-                     <div id="item" style="display:none;">
-                        <form action="/createItem" method="POST">
-                           @csrf
-                     <tr>
-                        <td>
-                           <label for="Test">Item Name:</label>
-                        </td>
-                        <td  style="padding-left:10px;">
-                        <input type="text" class="form-control iteminput" style="width: 400px" name="name" id="material" value="{{ old('name') }}"/>
-                        </td>
-                        @error('fielderror')
-                           <div style="color:red;"> {{ $message }}</div>
-                        @enderror
-                        @error('name')
-                           <div style="color:red;"> {{ $message }}</div>
-                        @enderror
-                     </tr>
-                     <tr>
-                        <td>
-                           <label for="Test">Quantity:</label>
-                        </td>
-                        <td  style="padding-left:10px;">
-                        <input type="number" class="form-control iteminput" style="width: 400px" name="quantity" id="itemqty" value={{ old('quantity') }}/>
-                        </td>
-                        @error('quantity')
-                        <div style="color:red;"> {{ $message }}</div>
-                        @enderror
-                     </tr>
-                     <tr>
-                        <td>
-                           <label for="Test">Price per item:</label>
-                        </td>
-                        <td  style="padding-left:10px;">
-                        <input  class="form-control iteminput" style="width: 400px" name="price" id="itemprice" value="{{ old('price')}}"/>
-                        </td>
-                     </tr>
-                        <br><input type="submit" class="btn btn-success" style="width: 150px" name="search_button" id="search_button" value="Add new item" onclick="window.location.href='/additem.php'"/>
-                     </div>
-                  </form>
-
-                     <div id="xtal" style="display:none;">
-                        <form action="/createXtal" method="POST">
-                           @csrf
-                     <tr>
-                        <td>
-                           <label for="Test">Xtal Name:</label>
-                        </td>
-                        <td  style="padding-left:10px;">
-                        <input type="text" class="form-control iteminput crystas" style="width: 400px" name="name" id="name" value="{{ old('name')}}"/>
-                        </td>
-                     </tr>
-                     <tr>
-                        <td>
-                           <label for="Test">Quantity:</label>
-                        </td>
-                        <td  style="padding-left:10px;">
-                        <input type="number"  class="form-control iteminput" style="width: 400px" name="quantity" id="quantity" value={{ old('quantity')}}/>
-                        </td>
-                        @error('quantity')
-                        <div style="color:red;"> {{ $message }}</div>
-                        @enderror
-                     
-                     </tr>
-                     <tr>
-                        <td>
-                           <label for="Test">Price per item:</label>
-                        </td>
-                        <td  style="padding-left:10px;">
-                           <input   class="form-control iteminput" style="width: 400px" name="price" id="xtalprice"/>
-                        </td>
-                        @error('price')
-                        <div style="color:red;"> {{ $message }}</div>
-                        @enderror
-                     </tr>
-                        <br><input type="submit" class="btn btn-success" style="width: 150px" name="search_button" id="search_button" value="Add new item"/>
-                        </form>
-                     </div>
-                  
-                     <div id="al" style="display:none;">
-                        <form action="/createAi" method="POST">
-                           @csrf
-                     <tr>
-                        <td>
-                           <label for="name">Item Name:</label>
-                        </td>
-                        
-                        <td  style="padding-left:10px;">
-                        <input type="text" class="form-control iteminput" style="width: 400px" name="name" id="alcrystas" value="{{ old('name') }}"/>
-                        </td>
-                        @error('name')
-                           <div style="color:red;"> {{ $message }}</div>
-                        @enderror
-                     </tr>
-                     <tr>
-                        <td>
-                           <label for="quantity">Quantity:</label>
-                        </td>
-                        <td  style="padding-left:10px;">
-                           <input type="number"  class="form-control iteminput" style="width: 400px" name="quantity" id="quantity" value="{{ old('quantity') }}"/>
-                        </td>
-                        @error('quantity')
-                           <div style="color:red;"> {{ $message }}</div>
-                        @enderror
-      
-                     </tr>
-                     <tr>
-                        <br>
-                        <td>
-                           <label for="color">Color:</label>
-                        </td>
-                        <td  style="padding-left:10px;">
-                           <select name="color" class="form-control2" id="color"> 
-                              <option selected>Red</option>
-                              <option>Green</option>
-                              <option>Blue</option>
-                           </select>
-                        </td>
-                        
-                     </tr>
-
-                     <tr>
-                        <br>
-                        <td>
-                           <label for="price">Price per item:</label>
-                        </td>
-                        <td  style="padding-left:10px;">
-                           <input  class="form-control iteminput" style="width: 400px" name="price" id="price" value="{{ old('price') }}"/>
-                        </td>
-                        @error('price')
-                  <div style="color:red;"> {{ $message }}</div>
-                  @enderror
-                     </tr>
-                        <br><input type="submit" class="btn btn-success" style="width: 150px" name="search_button" id="search_button" value="Add new item" "/>
-                        </form>
-                     </div>
-
-                     <div id="relic" style="display:none;">
-                        <form action="/createRelic" method="POST">
-                           @csrf
-                     <tr>
-                        <td>
-                           <label for="Test">Relic Name:</label>
-                        </td>
-                        <td  style="padding-left:10px;">
-                        <input type="text" class="form-control iteminput" style="width: 400px" name="name" id="relicname" value="{{ old('name') }}"/>
-                        </td>
-                     </tr>
-                     <tr>
-                        <td>
-                           <label for="Test">Quantity:</label>
-                        </td>
-                        <td  style="padding-left:10px;">
-                        <input type="number"  min="0" class="form-control iteminput" style="width: 400px" name="quantity" id="quantity" value="{{ old('quantity') }}"/>
-                        </td>
-                        @error('quantity')
-                        <div style="color:red;"> {{ $message }}</div>
-                        @enderror
-                     </tr>
-                     <tr>
-                        <td>
-                           <label for="Test">Price per item:</label>
-                        </td>
-                        <td  style="padding-left:10px;">
-                        <input  min="0" class="form-control iteminput" style="width: 400px" name="price" id="price" value="{{ old('price')}}"/>
-                        </td>
-                        @error('price')
-                        <div style="color:red;"> {{ $message }}</div>
-                        @enderror
-                     </tr>
-                        <br><input type="submit" class="btn btn-success" style="width: 150px" name="search_button" id="search_button" value="Add new item"/>
-                        </form>
-                     </div>
-               
-               
-               <script src="https://code.jquery.com/jquery-3.4.1.min.js"   integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="   crossorigin="anonymous"></script>
-               <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"   integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU="   crossorigin="anonymous"></script>
-               <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-               <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-               <script>    
-               $('#itemtype').on('change',function(){
-               var selection = $(this).val();
-                  switch(selection)
-                  {
-                     case "1":
-                        $("#equip").show()
-                        $("#item").hide()
-                        $("#xtal").hide()
-                        $("#al").hide()
-                        $("#relic").hide()
-                        break;
-                     case "2":
-                        $("#equip").hide()
-                        $("#item").show()
-                        $("#xtal").hide()
-                        $("#al").hide()
-                        $("#relic").hide()
-                        break;
-                     case "3":
-                        $("#equip").hide()
-                        $("#item").hide()
-                        $("#xtal").show()
-                        $("#al").hide()
-                        $("#relic").hide()
-                        break;
-                     case "4":
-                        $("#equip").hide()
-                        $("#item").hide()
-                        $("#xtal").hide()
-                        $("#al").show()
-                        $("#relic").hide()
-                        break;
-                     case "5":
-                        $("#equip").hide()
-                        $("#item").hide()
-                        $("#xtal").hide()
-                        $("#al").hide()
-                        $("#relic").show()
-                        break;
-                     default:
-                        $("#equip").hide()
-                        $("#item").hide()
-                        $("#xtal").hide()
-                        $("#al").hide()
-                        $("#relic").hide()
-                        break;
-                  }
-               });
-               $('#equipslotamount').on('change',function(){
-               var selection = $(this).val();
-                  switch(selection)
-                  {
-                     case "0":
-                        $("#slot1").hide()
-                        $("#slot2").hide()
-                        $("#equip").show()
-                        break;
-                     case "1":
-                        $("#slot1").show()
-                        $("#slot2").hide()
-                        $("#equip").show()
-                        break;
-                     case "2":
-                        $("#slot1").show()
-                        $("#slot2").show()
-                        $("#equip").show()
-                        break;
-                     default:
-                        $("#slot1").hide()
-                        $("#slot2").hide()
-                        $("#equip").hide()
-                        $("#item").hide()
-                        $("#xtal").hide()
-                        $("#al").hide()
-                        $("#relic").hide()
-                        break;
-                  }
-               });
-               $('#abidrop').on('change',function(){
-               var selection = $(this).val();
-                  switch(selection)
-                  {
-                     case "0":
-                        $("#hasabil").hide()
-                        $("#equip").show()
-                        break;
-                     case "1":
-                        $("#hasabil").show()
-                        $("#equip").show()
-                        break;
-                     default:
-                        $("#hasabil").hide()
-                        $("#slot1").hide()
-                        $("#slot2").hide()
-                        $("#equip").hide()
-                        $("#item").hide()
-                        $("#xtal").hide()
-                        $("#al").hide()
-                        $("#relic").hide()
-                        break;
-                  }
-               });
-               </script>
-
-               </div>
-
-                    <div class="row divider" role="separator" ></div>
-
-
-                    <div class="row divider" role="separator" style="margin-top:20px;"></div>
-                </div>
-            </div>
-        </div>
-    </div>
-    @include('sweetalert::alert')
-   <!-- bootstrap js -->
-<script type="text/javascript" id="cookieinfo"
-    src="//cookieinfoscript.com/js/cookieinfo.min.js">
-</script>
-<script>
-   $(document).ready(function() {
-      
-      $( "#ability" ).autocomplete({
-         source: function(request, response) {
-            $.ajax({
-            url: "{{secure_url('api/searchability')}}",
-            data: {
-                  term : request.term
-            },
-            dataType: "json",
-            success: function(data){
-            var resp = $.map(data,function(obj){
-                  return obj.type;
-            }); 
-
-            response(resp);
-            }
+         </div>
+      </div>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+      <script type="text/javascript">    
+         $('#itemtype').on('change',function(){
+         var selection = $(this).val();
+          switch(selection)
+          {
+            case "1":
+              $("#equip").show()
+              $("#item").hide()
+              $("#xtal").hide()
+              $("#al").hide()
+              $("#relic").hide()
+              break;
+            case "2":
+              $("#equip").hide()
+              $("#item").show()
+              $("#xtal").hide()
+              $("#al").hide()
+              $("#relic").hide()
+              break;
+            case "3":
+              $("#equip").hide()
+              $("#item").hide()
+              $("#xtal").show()
+              $("#al").hide()
+              $("#relic").hide()
+              break;
+            case "4":
+              $("#equip").hide()
+              $("#item").hide()
+              $("#xtal").hide()
+              $("#al").show()
+              $("#relic").hide()
+              break;
+            case "5":
+              $("#equip").hide()
+              $("#item").hide()
+              $("#xtal").hide()
+              $("#al").hide()
+              $("#relic").show()
+              break;
+            default:
+              $("#equip").hide()
+              $("#item").hide()
+              $("#xtal").hide()
+              $("#al").hide()
+              $("#relic").hide()
+              break;
+          }
          });
-      },
-      minLength: 3
-      });
-
-      $( "#equipment" ).autocomplete({
-         source: function(request, response) {
-            $.ajax({
-            url: "{{secure_url('api/searchequip')}}",
-            data: {
-                  term : request.term
-            },
-            dataType: "json",
-            success: function(data){
-            var resp = $.map(data,function(obj){
-                  return obj.name;
-            }); 
-
-            response(resp);
-            }
+         $('#equipslotamount').on('change',function(){
+         var selection = $(this).val();
+          switch(selection)
+          {
+            case "0":
+              $("#slot1").hide()
+              $("#slot2").hide()
+              $("#equip").show()
+              break;
+            case "1":
+              $("#slot1").show()
+              $("#slot2").hide()
+              $("#equip").show()
+              break;
+            case "2":
+              $("#slot1").show()
+              $("#slot2").show()
+              $("#equip").show()
+              break;
+            default:
+              $("#slot1").hide()
+              $("#slot2").hide()
+              $("#equip").hide()
+              $("#item").hide()
+              $("#xtal").hide()
+              $("#al").hide()
+              $("#relic").hide()
+              break;
+          }
          });
-      },
-      minLength: 3
-      });
-      $( "#alcrystas" ).autocomplete({
-         source: function(request, response) {
-            $.ajax({
-            url: "{{secure_url('api/searchal')}}",
-            data: {
-                  term : request.term
-            },
-            dataType: "json",
-            success: function(data){
-            var resp = $.map(data,function(obj){
-                  return obj.name;
-            }); 
-
-            response(resp);
-            }
+         $('#abidrop').on('change',function(){
+         var selection = $(this).val();
+          switch(selection)
+          {
+            case "0":
+              $("#hasabil").hide()
+              $("#equip").show()
+              break;
+            case "1":
+              $("#hasabil").show()
+              $("#equip").show()
+              break;
+            default:
+              $("#hasabil").hide()
+              $("#slot1").hide()
+              $("#slot2").hide()
+              $("#equip").hide()
+              $("#item").hide()
+              $("#xtal").hide()
+              $("#al").hide()
+              $("#relic").hide()
+              break;
+          }
          });
-      },
-      minLength: 3
-      });
-
-      $( "#material" ).autocomplete({
-         source: function(request, response) {
-            $.ajax({
-            url: "{{secure_url('api/searchmaterial')}}",
-            data: {
-                  term : request.term
-            },
-            dataType: "json",
-            success: function(data){
-            var resp = $.map(data,function(obj){
-                  return obj.name;
-            }); 
-
-            response(resp);
-            }
-         });
-      },
-      minLength: 3
-      });
-      $( "#relicname" ).autocomplete({
-         source: function(request, response) {
-            $.ajax({
-            url: "{{secure_url('api/searchrelic')}}",
-            data: {
-                  term : request.term
-            },
-            dataType: "json",
-            success: function(data){
-            var resp = $.map(data,function(obj){
-                  return obj.name;
-            }); 
-
-            response(resp);
-            }
-         });
-      },
-      minLength: 3
-      });
-
-      $( ".crystas" ).autocomplete({
-         source: function(request, response) {
-            $.ajax({
-            url: "{{secure_url('api/searchcrystas')}}",
-            data: {
-                  term : request.term
-            },
-            dataType: "json",
-            success: function(data){
-            var resp = $.map(data,function(obj){
-                  return obj.name;
-            }); 
-
-            response(resp);
-            }
-         });
-      },
-      minLength: 3
-      });
-
-
-
-      
-   });
-      
-
-   </script>
-</body>
-
+      </script>
+   </body>
 </html>
