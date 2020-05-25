@@ -17,6 +17,7 @@ Route::get('/', 'HomeController@index');
 Auth::routes(['verify' => true]);
 
 Route::get('/about', 'HomeController@about');
+Route::get('/updates', 'HomeController@updates');
 
 Route::get('/account', 'HomeController@account');
 
