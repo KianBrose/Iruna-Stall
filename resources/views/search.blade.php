@@ -160,7 +160,7 @@
 														@endif
 														<td data-label="Ability Lv">{{ $equip->ability_level}}</td>
 														<td data-label="Price">{{ number_format($equip->price )}}</td>
-														<td data-label="Contact"><a href="/user/{{$equip->owner_id}}">{{ $equip->contact }}</a></td>
+														<td data-label="Contact"><a href="/user/{{$equip->owner_id}}" style="color:orange;">{{ $equip->contact }}</a></td>
 													</tr>
                                              	@endforeach
                                              </tbody>
