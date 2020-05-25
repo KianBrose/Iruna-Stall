@@ -84,7 +84,7 @@
                                  <div class="elementor-element elementor-element-fa9d1bf elementor-widget elementor-widget-text-editor" data-id="fa9d1bf" data-element_type="widget" data-widget_type="text-editor.default">
                                     <div class="elementor-widget-container">
                                        <div class="elementor-text-editor elementor-clearfix">
-                                          <p style="color:white;">Welcome to the add item page! If this is your first time here, please refer to this <a href="https://irunastall.com/tutorial" style="color:orange;">quick guide</a> on how to add an item!</p>
+                                          <p style="color:white;">Welcome to the add item page! If this is your first time here, please refer to this <a href="https://irunastall.com/tutorial" style="color:red;">quick guide</a> on how to add an item!</p>
                                        </div>
                                     </div>
                                  </div>
