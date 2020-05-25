@@ -1,333 +1,277 @@
-@extends('layouts.main')
-@section('title')
-<meta name='coverage' content='Worldwide'>
+<!DOCTYPE html>
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+
+<head>
+    <meta charset="utf-8">
+    <title> About | Iruna Global Stall</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="index, follow">
+    <meta name="description" content="Find about Iruna Stall on how it used to find, buy and sell items for free! In the Iruna Global Stall, you can post your items as a seller and search for items without the need for registration.">
+    <meta name="keywords" content="Iruna, Stall, Global, iruna, stall, global, Iruna Online, buy, sell, trade, about, Kian Brose, Kumar, Polowis, terms, service, contact">
+    <meta name="hostname" content="irunastall.com">
+    <meta name='subject' content="About Iruna Global Stall">
+    <meta name="author" content="Kian Brose">
+    <meta name='coverage' content='Worldwide'>
     <meta name='distribution' content='Global'>
     <meta name='rating' content='General'>
     <meta name='HandheldFriendly' content='True'>
     <meta name='MobileOptimized' content='320'>
     <meta name='target' content='all'>
-    <meta name="apple-mobile-web-app-title" content="Iruna Global Stall">
+    <meta name="apple-mobile-web-app-title" content="About | Iruna Global Stall">
     <meta name='apple-mobile-web-app-capable' content='yes'>
     <meta name='apple-touch-fullscreen' content='yes'>
     <meta name='apple-touch-fullscreen' content='yes'>
     <meta name='application-name' content="Iruna Global Stall">
     <link rel="apple-touch-icon" href="https://irunastall.com/img/iruna.jpg">
-    <meta name="twitter:card" content="summary" >
-    <meta name="twitter:title" content="Search | Iruna Global Stall" >
-    <meta name="twitter:description" content="Search for item in Iruna Global Stall" >
-    <meta property="og:title" content="Search | Iruna Global Stall">
-    <meta property="og:type" content="website" >
-    <meta property="og:description" content="Search for item in Iruna Global Stall">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="About | Iruna Global Stall">
+    <meta name="twitter:description" content="Know about Iruna global stall. This is a platform to find, buy and sell items of Iruna online game. Account is not needed for searching for items">
+    <meta property="og:title" content="Iruna Stall">
+    <meta property="og:type" content="website">
+    <meta property="og:description" content="Know about on how to find, buy and sell items for free on the Iruna Online Global Stall! In the Global Stall, you can post your items as a seller and search for items as a buyer. The stall is free to use and requires no account to search for items.">
     <meta property="og:image" content="https://irunastall.com/img/iruna.jpg">
-	<meta property="og:url" content="https://irunastall.com" >
-	   
-    <!-- manifest for PWA -->
-    <link rel="manifest" href="manifest.json" >
+    <meta property="og:url" content="https://irunastall.com">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+
+    <link rel="canonical" href="https://irunastall.com">
+
+    <link rel="manifest" href="manifest.json">
     <script src="js/serviceLoader.js"></script>
-@endsection
 
-@section('content')
+    <!-- manifest for PWA -->
+    <link rel="manifest" href="manifest.json">
+    <script src="js/serviceLoader.js"></script>
+    <link href="{{asset('css/icons/all.css')}}" rel="stylesheet">
+    <link rel="stylesheet" href="{{ asset('css/main.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/mainsearchbar.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;800&display=swap" rel="stylesheet">
 
-<link href="{{ asset('css/mainsearch.css') }}" rel="stylesheet">
-<link href="{{ asset('css/util.css') }}" rel="stylesheet">
-<link href="{{ asset('css/style.css') }}" rel="stylesheet">
-<div class="container">
-    <div class="row" >
-        <div class="col-md-7 offset-md-2" >
-            <br>
-            <br>
-			<form class="form-inline" name="form1" id="form1" action="/search" method="GET">
-				@csrf
-			  <div class="form-group mb-2" style="width:80%">
-				<label for="search" class="sr-only">Item name</label>
-				<input type="text" class="form-control ui-autocomplete-input" id="search"  name="search" placeholder="Item name" autocomplete="off" style="width:98%">
-			  </div>
-			  <button type="submit" class="btn btn-primary mb-2" name="search_button" id="search_button" value="Search" style="width:20%">Search</button>
-			</form>
-			@error('searcherror')
-			<div style="color:red">{{$message}}</div>
-			<br>
-			@enderror
-        </div>
-    </div>
-</div>
-<div class="container">
-    <div class="row" >
-        <div class="col-md-7 offset-md-2" >
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
 
-            <div style="height: auto !important;">
-                <br>
-				<h4>Search Results: {{ $input }}</h4>
-				<br>
-				@error('searcherror')
-				<div style="color:red">{{$message}}</div>
-				<br>
-				@enderror
-				<p>There are {{$totalCount }} results</p>
-				<hr>
-				@if($equipSearch->count() >= 1)
-				<h4>Equipment</h4>
-				<br>
-				<div>
-					<div>
-						<table id="equip">
-							<thead>
-								<tr class="table100-head">
-									<th class="equipment">Name</th>
-									<th class="equipment">ATK</th>
-									<th class="equipment">DEF</th>
-									<th class="equipment">Refinement</th>
-									<th class="equipment">Slots</th>
-									<th class="equipment">Slot 1</th>
-									<th class="equipment">Slot 2</th>
-									<th class="equipment">Ability</th>
-									<th class="equipment">Ability Lv</th>
-									<th class="equipment">Price</th>
-									<th class="equipment">Contact</th>
-								</tr>
-							</thead>
-							<tbody>
-								@foreach ($equipSearch as $equip)
-									
-								
-								<tr>
-									<td class="equipment"><a href="item/equip/{{$equip->item_id}}">{{ $equip->name }}</a></td>
-									<td class="equipment">{{ $equip->atk }}</td>
-									<td class="equipment">{{ $equip->def }}</td>
-									<td class="equipment">{{ $equip->refinement }}</td>
-									<td class="equipment">{{ $equip->slots }}</td>
-									@if ($equip->slots == 0)
-										<td class="equipment">/</td>
-										<td class="equipment">/</td>
-									@elseif ($equip->slots == 1)
-										@if ($equip->slot1 == null)
-											<td class="equipment">empty</td>
-											<td class="equipment">/</td>
-										@else
-											<td class="equipment">{{ $equip->slot1 }}</td>
-											<td class="equipment">/</td>
-										@endif
-									@elseif ($equip->slots == 2)
-										@if ($equip->slot1 != null)
-											@if ($equip->slot2 != null)
-												<td class="equipment">{{ $equip->slot1 }}</td>
-												<td class="equipment">{{ $equip->slot2 }}</td>
-											@else
-												<td class="equipment">{{ $equip->slot1 }}</td>
-												<td class="equipment">empty</td>
-											@endif
-										@elseif ($equip->slot1 == null)
-											@if ($equip->slot2 == null)
-												<td class="equipment">empty</td>
-												<td class="equipment">empty</td>
-											@else
-												<td class="equipment">empty</td>
-												<td class="equipment">{{ $equip->slot2 }}</td>
-											@endif
-										@endif
-									@endif
-									
-									@if ($equip->ability == null)
-										<td class="equipment">none</td>
-									@else
-										<td class="equipment">{{ $equip->ability }}</td>
-									@endif
-									<td class="equipment">{{ $equip->ability_level}}</td>
-									<td class="equipment">{{ number_format($equip->price )}}</td>
-									<td class="equipment"><a href="/user/{{$equip->owner_id}}">{{ $equip->contact }}</a></td>
-								</tr>
-								@endforeach
-							</tbody>
-						</table>
-						{{$equipSearch->appends(['search' => request('search'), 'xtalPage' => request('xtalPage'), 'equipPage' => request('equipPage'), 'itemPage' => request('itemPage'), 'relicPage' => request('relicPage'), 'alPage' => request('alPage')])->fragment('equip')->links()}}
-					</div>
-				</div>
-				@endif
-				
-				<br>
-				@if($itemSearch->count() >= 1)
-				<h4>Materials</h4>
-				<br>
-				<div>
-					<div>
-						<table id="material">
-							<thead>
-								<tr class="table100-head">
-									<th class="materials">Name</th>
-									<th class="materials">QTY</th>
-									<th class="materials">Price</th>
-									<th class="materials">Contact</th>
-								</tr>
-							</thead>
-							<tbody>
-								@foreach($itemSearch as $item)
-								<tr>
-									<td class="materials"><a href="/item/material/{{$item->item_id}}">{{ $item->name }}</td>
-									<td class="materials">{{ $item->quantity }}</td>
-									<td class="materials">{{ number_format($item->price) }}</td>
-									<td class="materials"><a href="/user/{{ $item->owner_id}}">{{ $item->contact }}</a></td>
-								</tr>
-								@endforeach
-							</tbody>
-						</table>
-						{{$itemSearch->appends(['search' => request('search'), 'xtalPage' => request('xtalPage'), 'equipPage' => request('equipPage'), 'itemPage' => request('itemPage'), 'relicPage' => request('relicPage'), 'alPage' => request('alPage')])->fragment('material')->links() }}
-					</div>
-				</div>
-				@endif
-				<br>
-				@if($xtalSearch->count() >= 1)
-				<h4>Xtals</h4>
-				<br>
-				<div>
-					<div>
-						<table id="xtal">
-							<thead>
-								<tr class="table100-head">
-									<th class="xtals">Name</th>
-									<th class="xtals">QTY</th>
-									<th class="xtals">Price</th>
-									<th class="xtals">Contact</th>
-								</tr>
-							</thead>
-							<tbody>
-								@foreach ($xtalSearch as $xtal)
-									
-								
-								<tr>
-								<td class="xtals"><a href="/item/xtal/{{$xtal->item_id}}">{{ $xtal->name }}</a></td>
-									<td class="xtals">{{ $xtal->quantity }}</td>
-									<td class="xtals">{{ number_format($xtal->price) }}</td>
-									<td class="xtals"><a href="/user/{{ $xtal->owner_id}}">{{ $xtal->contact }}</a></td>
-								</tr>
-								@endforeach
-							</tbody>
-						</table>
-						{{$xtalSearch->appends(['search' => request('search'), 'xtalPage' => request('xtalPage'), 'equipPage' => request('equipPage'), 'itemPage' => request('itemPage'), 'relicPage' => request('relicPage'), 'alPage' => request('alPage')])->fragment('xtal')->links()}}
-					</div>
-				</div>
-				@endif
-				<br>
-				@if($alSearch->count() >= 1)
-				<h4>AL Crystals</h4>
-				<br>
-				<div>
-					<div>
-						<table id="alcrystas">
-							<thead>
-								<tr class="table100-head">
-									<th class="als">Name</th>
-									<th class="als">Color</th>
-									<th class="als">QTY</th>
-									<th class="als">Price</th>
-									<th class="als">Contact</th>
-								</tr>
-							</thead>
-							<tbody>
-								@foreach($alSearch as $al)
-									
-								
-								<tr>
-                                    @if($al->color == "Red")
-                                    <td class="als" style="color:red;"><a style="color:red;" href="/item/alcrystas/{{$al->item_id}}">{{ $al->name }}</a></td>
-                                    @elseif($al->color == "Blue")
-                                    <td class="als" style="color:blue;"><a style="color:blue;" href="/item/alcrystas/{{$al->item_id}}">{{ $al->name }}</a></td>
-                                    @elseif($al->color == "Green")
-                                    <td class="als" style="color:green;"><a style="color:green;" href="/item/alcrystas/{{$al->item_id}}">{{ $al->name }}</a></td>
-                                    @endif
-									<td class="als">{{ $al->color }}</td>
-									<td class="als">{{ $al->quantity }}</td>
-									<td class="als">{{ number_format($al->price) }}</td>
-									<td class="als"><a href="/user/{{ $al->owner_id}}">{{ $al->contact }}</a></td>
-								</tr>
-								@endforeach
-							</tbody>
-						</table>
-						{{$alSearch->appends(['search' => request('search'), 'xtalPage' => request('xtalPage'), 'equipPage' => request('equipPage'), 'itemPage' => request('itemPage'), 'relicPage' => request('relicPage'), 'alPage' => request('alPage')])->fragment('alcrystas')->links()}}
-					</div>
-				</div>
-				@endif
-				<br>
-				@if($relicSearch->count() >= 1)
-				<h4>Relics</h4>
-				<br>
-				<div>
-					<div>
-						<table id="reliccrystas">
-							<thead>
-								<tr class="table100-head">
-									<th class="relics">Name</th>
-									<th class="relics">QTY</th>
-									<th class="relics">Price</th>
-									<th class="relics">Contact</th>
-								</tr>
-							</thead>
-							<tbody>
-								@foreach($relicSearch as $relic)
-								<tr>
-									<td class="relics"><a href="/item/relic/{{$relic->item_id}}">{{ $relic->name }}</a></td>
-                                    <td class="relics">{{ $relic->quantity }}</td>
-									<td class="relics">{{ number_format($relic->price) }}</td>
-									<td class="relics"><a href="/user/{{$relic->owner_id}}">{{ $relic->contact }}</a></td>
-								</tr>
-								@endforeach
-							</tbody>
-						</table>
-						{{$relicSearch->appends(['search' => request('search'), 'xtalPage' => request('xtalPage'), 'equipPage' => request('equipPage'), 'itemPage' => request('itemPage'), 'relicPage' => request('relicPage'), 'alPage' => request('alPage')])->fragment('reliccrystas')->links()}}
-					</div>
-				</div>
-				@endif
+    <body class="page-template page-template-elementor_canvas page page-id-2358 wp-custom-logo wp-embed-responsive theme-storefront woocommerce-no-js wcz-woocommerce wcz-btn-style-default ehf-template-storefront ehf-stylesheet-storefront woo-variation-gallery woo-variation-gallery-theme-storefront woo-variation-gallery-theme-child-storefront woo-variation-swatches woo-variation-swatches-theme-storefront woo-variation-swatches-theme-child-storefront woo-variation-swatches-style-squared woo-variation-swatches-attribute-behavior-blur woo-variation-swatches-tooltip-enabled woo-variation-swatches-stylesheet-enabled storefront-full-width-content storefront-align-wide right-sidebar woocommerce-active elementor-default elementor-template-canvas elementor-kit-1727 elementor-page elementor-page-2358">
+        <div data-elementor-type="wp-page" data-elementor-id="2358" class="elementor elementor-2358" data-elementor-settings="[]">
+            <div class="elementor-inner">
+                <div class="elementor-section-wrap">
+                    <section class="elementor-element elementor-element-d619cf6 elementor-section-full_width elementor-hidden-desktop elementor-hidden-tablet elementor-section-height-default elementor-section-height-default elementor-section elementor-top-section" data-id="d619cf6" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+                        <div class="elementor-container elementor-column-gap-extended">
+                            <div class="elementor-row">
+                                <div class="elementor-element elementor-element-71859de elementor-hidden-desktop elementor-hidden-tablet elementor-column elementor-col-100 elementor-top-column" data-id="71859de" data-element_type="column">
+                                    <div class="elementor-column-wrap  elementor-element-populated">
+                                        <div class="elementor-widget-wrap">
+                                            <div class="elementor-element elementor-element-c616fcc elementor-hidden-desktop elementor-hidden-tablet elementor-widget elementor-widget-image" data-id="c616fcc" data-element_type="widget" data-widget_type="image.default">
+                                                <div class="elementor-widget-container">
+                                                    <div class="elementor-image">
+                                                        <a href="https://irunastall.com/">
+                                                            <img width="2123" height="1000" src="{{ asset('img/whitelogo.png') }}" class="attachment-full size-full wp-post-image" alt="" srcset="{{ asset('img/whitelogo.png') }}" sizes="(max-width: 2123px) 100vw, 2123px" /> </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    @include('layouts.navbarv2')
+                    <section class="elementor-element elementor-element-16e6ebd elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-top-section" data-id="16e6ebd" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+                    <div class="elementor-container elementor-column-gap-default">
+                        <div class="elementor-row">
+                            <div class="elementor-element elementor-element-9a97296 elementor-column elementor-col-100 elementor-top-column" data-id="9a97296" data-element_type="column">
+                                <div class="elementor-column-wrap  elementor-element-populated">
+                                    <div class="elementor-widget-wrap">
+                                        <div class="elementor-element elementor-element-6d1da58 elementor-widget elementor-widget-heading" data-id="6d1da58" data-element_type="widget" data-widget_type="heading.default">
+                                            <div class="elementor-widget-container">
+                                                
+                                                <div class="search-bar">
+                                                    <div class="icon"></div>
+                                                    <input type="text" placeholder="Search for any equipment, xtal, al, material or relic">
+                                                </div>
+                                            
+                                            </div>
+                                        </div>
+                                        <div class="elementor-element elementor-element-89ff3dd elementor-widget elementor-widget-heading" data-id="89ff3dd" data-element_type="widget" data-widget_type="heading.default">
+                                            <div class="elementor-widget-container">
+                                                <h2 class="elementor-heading-title elementor-size-default">There are 999 results</h2> </div>
+                                        </div>
+                                        <div class="elementor-element elementor-element-1b0a1a8 elementor-widget elementor-widget-heading" data-id="1b0a1a8" data-element_type="widget" data-widget_type="heading.default">
+                                            <div class="elementor-widget-container">
+                                                <table>
+                                                  <h2 class="elementor-heading-title elementor-size-default">Equipment</h2>
+                                                    <br>
+                                                  <thead>
+                                                    <tr>
+                                                      <th scope="col">Name</th>
+                                                      <th scope="col">ATK</th>
+                                                      <th scope="col">DEF</th>
+                                                      <th scope="col">Refinement</th>
+                                                      <th scope="col">Slots</th>
+                                                      <th scope="col">Slot1</th>
+                                                      <th scope="col">Slot2</th>
+                                                      <th scope="col">Ability</th>
+                                                      <th scope="col">Ability Lv</th>
+                                                      <th scope="col">Price</th>
+                                                      <th scope="col">Contact</th>
+                                                    </tr>
+                                                  </thead>
+                                                  <tbody>
+                                                    <tr>
+                                                      <td data-label="Name">Veryyy long name</td>
+                                                      <td data-label="ATK">222</td>
+                                                      <td data-label="DEF">333</td>
+                                                      <td data-label="Refinement">9</td>
+                                                      <td data-label="Slots">2</td>
+                                                      <td data-label="Slot1">Tsuchimono King</td>
+                                                      <td data-label="Slot2">Tsuchimono King</td>
+                                                      <td data-label="Ability">Long ability name</td>
+                                                      <td data-label="Ability Lv">5</td>
+                                                      <td data-label="Price">10000000000</td>
+                                                      <td data-label="Contact"><a href="#">SellerUser</a></td>
+                                                    </tr>
+                                                    <tr>
+                                                      <td data-label="Name">1</td>
+                                                      <td data-label="ATK">2</td>
+                                                      <td data-label="DEF">3</td>
+                                                      <td data-label="Refinement">4</td>
+                                                      <td data-label="Slots">5</td>
+                                                      <td data-label="Slot1">6</td>
+                                                      <td data-label="Slot2">7</td>
+                                                      <td data-label="Ability">8</td>
+                                                      <td data-label="Ability Lv">9</td>
+                                                      <td data-label="Price">10</td>
+                                                      <td data-label="Contact"><a href="#">SellerUser</a></td>
+                                                    </tr>
+                                                  </tbody>
+                                                </table>
+                                                
+                                                <table>
+                                                  <h2 class="elementor-heading-title elementor-size-default">Materials</h2>
+                                                    <br>
+                                                  <thead>
+                                                    <tr>
+                                                      <th scope="col">Name</th>
+                                                      <th scope="col">QTY</th>
+                                                      <th scope="col">Price</th>
+                                                      <th scope="col">Contact</th>
+                                                    </tr>
+                                                  </thead>
+                                                  <tbody>
+                                                    <tr>
+                                                      <td data-label="Name">Veryyy long name</td>
+                                                      <td data-label="QTY">9999</td>
+                                                      <td data-label="Price">10000000000</td>
+                                                      <td data-label="Contact"><a href="#">SellerUser</a></td>
+                                                    </tr>
+                                                    <tr>
+                                                      <td data-label="Name">Veryyy long name</td>
+                                                      <td data-label="QTY">9999</td>
+                                                      <td data-label="Price">10000000000</td>
+                                                      <td data-label="Contact"><a href="#">SellerUser</a></td>
+                                                    </tr>
+                                                  </tbody>
+                                                </table>
+                                                
+                                                <table>
+                                                  <h2 class="elementor-heading-title elementor-size-default">Xtals</h2>
+                                                    <br>
+                                                  <thead>
+                                                    <tr>
+                                                      <th scope="col">Name</th>
+                                                      <th scope="col">QTY</th>
+                                                      <th scope="col">Price</th>
+                                                      <th scope="col">Contact</th>
+                                                    </tr>
+                                                  </thead>
+                                                  <tbody>
+                                                    <tr>
+                                                      <td data-label="Name">Veryyy long name</td>
+                                                      <td data-label="QTY">9999</td>
+                                                      <td data-label="Price">10000000000</td>
+                                                      <td data-label="Contact"><a href="#">SellerUser</a></td>
+                                                    </tr>
+                                                    <tr>
+                                                      <td data-label="Name">Veryyy long name</td>
+                                                      <td data-label="QTY">9999</td>
+                                                      <td data-label="Price">10000000000</td>
+                                                      <td data-label="Contact"><a href="#">SellerUser</a></td>
+                                                    </tr>
+                                                  </tbody>
+                                                </table>
+                                                
+                                                <table>
+                                                  <h2 class="elementor-heading-title elementor-size-default">AL's</h2>
+                                                    <br>
+                                                  <thead>
+                                                    <tr>
+                                                      <th scope="col">Name</th>
+                                                      <th scope="col">QTY</th>
+                                                      <th scope="col">Color</th>
+                                                      <th scope="col">Price</th>
+                                                      <th scope="col">Contact</th>
+                                                    </tr>
+                                                  </thead>
+                                                  <tbody>
+                                                    <tr>
+                                                      <td data-label="Name" style="color:red;">Veryyy long name</td>
+                                                      <td data-label="QTY">9999</td>
+                                                      <td data-label="Color" style="color:red;">Red</td>
+                                                      <td data-label="Price">10000000000</td>
+                                                      <td data-label="Contact"><a href="#">SellerUser</a></td>
+                                                    </tr>
+                                                    <tr>
+                                                      <td data-label="Name" style="color:blue;">Veryyy long name</td>
+                                                      <td data-label="QTY">9999</td>
+                                                      <td data-label="Color" style="color:blue;">Blue</td>
+                                                      <td data-label="Price">10000000000</td>
+                                                      <td data-label="Contact"><a href="#">SellerUser</a></td>
+                                                    </tr>
+                                                      <tr>
+                                                      <td data-label="Name" style="color:green;">Veryyy long name</td>
+                                                      <td data-label="QTY">9999</td>
+                                                      <td data-label="Color" style="color:green;">Green</td>
+                                                      <td data-label="Price">10000000000</td>
+                                                      <td data-label="Contact"><a href="#">SellerUser</a></td>
+                                                    </tr>
+                                                  </tbody>
+                                                </table>
+                                                
+                                                <table>
+                                                  <h2 class="elementor-heading-title elementor-size-default">Relics</h2>
+                                                    <br>
+                                                  <thead>
+                                                    <tr>
+                                                      <th scope="col">Name</th>
+                                                      <th scope="col">QTY</th>
+                                                      <th scope="col">Price</th>
+                                                      <th scope="col">Contact</th>
+                                                    </tr>
+                                                  </thead>
+                                                  <tbody>
+                                                    <tr>
+                                                      <td data-label="Name">Veryyy long name</td>
+                                                      <td data-label="QTY">9999</td>
+                                                      <td data-label="Price">10000000000</td>
+                                                      <td data-label="Contact"><a href="#">SellerUser</a></td>
+                                                    </tr>
+                                                    <tr>
+                                                      <td data-label="Name">Veryyy long name</td>
+                                                      <td data-label="QTY">9999</td>
+                                                      <td data-label="Price">10000000000</td>
+                                                      <td data-label="Contact"><a href="#">SellerUser</a></td>
+                                                    </tr>
+                                                  </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                    @include('layouts.footer')
+                </div>
             </div>
         </div>
 
-
-		<script src="https://code.jquery.com/jquery-3.4.1.min.js"   integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="   crossorigin="anonymous"></script>
-		<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"   integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU="   crossorigin="anonymous"></script>
-		
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-		<script type="text/javascript" id="cookieinfo"
-		src="//cookieinfoscript.com/js/cookieinfo.min.js"></script>
-
-		<script>
-			
-				$(document).ready(function() {
-					
-				$( "#search" ).autocomplete({
-			   
-				source: function(request, response) {
-					$.ajax({
-					url: "{{secure_url('api/searchitem')}}",
-					data: {
-							term : request.term
-					 },
-					dataType: "json",
-					success: function(data){
-					   var resp = $.map(data,function(obj){
-							return obj.name;
-					   }); 
-		 
-					   response(resp);
-					}
-				});
-			},
-			minLength: 3
-		 });
-		});
-
-		/*(function($){
-			window.onbeforeunload = function(e){    
-				window.name += ' [' + $(window).scrollTop().toString() + '[' + $(window).scrollLeft().toString();
-			};
-				$.maintainscroll = setTimeout(function() {
-				if(window.name.indexOf('[') > 0)
-				{
-				var parts = window.name.split('['); 
-				window.name = $.trim(parts[0]);
-				window.scrollTo(parseInt(parts[parts.length - 1]), parseInt(parts[parts.length - 2]));
-				}   
-			}) 
-			$.maintainscroll();
-		})(jQuery);*/
-		</script>
-
-@endsection
+    </body>
+</html>
