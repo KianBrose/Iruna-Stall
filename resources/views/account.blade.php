@@ -170,24 +170,18 @@
                                                             </tr>
                                                             <div id="slot1" style="display:none;">
                                                                 <tr>
-                                                                    <td>
-                                                                        <label for="slot1" style="color:white;">Slot 1:</label>
-                                                                    </td>
-                                                                    <td style="padding-left:10px;">
-                                                                        <input type="text" class="form-control iteminput crystas" style="width: 400px" name="slot1" id="slot1" />
-                                                                    </td>
-                                                                    <br>
+                                                                    <div class="form__group field">
+                                                                  <input type="input" class="form__field" placeholder="Name" name="name" id='name' required />
+                                                                  <label for="name" class="form__label">Slot 1</label>
+                                                                </div>
                                                                 </tr>
                                                             </div>
                                                             <div id="slot2" style="display:none;">
                                                                 <tr>
-                                                                    <td>
-                                                                        <label for="Test" style="color:white;">Slot 2:</label>
-                                                                    </td>
-                                                                    <td style="padding-left:10px;">
-                                                                        <input type="text" class="form-control iteminput crystas" style="width: 400px" name="slot2" id="slot" />
-                                                                    </td>
-                                                                    <br>
+                                                                    <div class="form__group field">
+                                                                  <input type="input" class="form__field" placeholder="Name" name="name" id='name' required />
+                                                                  <label for="name" class="form__label">Slot 2</label>
+                                                                </div>
                                                                 </tr>
                                                             </div>
                                                             <tr>
