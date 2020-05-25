@@ -118,7 +118,7 @@
                                                                 <div class="elementor-element elementor-element-e33c164 elementor-align-right elementor-widget elementor-widget-button" data-id="e33c164" data-element_type="widget" data-widget_type="button.default">
                                                                     <div class="elementor-widget-container">
                                                                         <div class="elementor-button-wrapper">
-                                                                            <a href="#" class="elementor-button-link elementor-button elementor-size-lg elementor-animation-grow" role="button">
+                                                                            <a href="/tutorial" class="elementor-button-link elementor-button elementor-size-lg elementor-animation-grow" role="button">
                                                                                 <span class="elementor-button-content-wrapper">
 						<span class="elementor-button-text">How it works</span>
                                                                                 </span>
@@ -135,7 +135,7 @@
                                                                 <div class="elementor-element elementor-element-f7949a3 elementor-align-left elementor-widget elementor-widget-button" data-id="f7949a3" data-element_type="widget" data-widget_type="button.default">
                                                                     <div class="elementor-widget-container">
                                                                         <div class="elementor-button-wrapper">
-                                                                            <a href="#" class="elementor-button-link elementor-button elementor-size-lg elementor-animation-grow" role="button">
+                                                                            <a href="/search?search_button=Search" class="elementor-button-link elementor-button elementor-size-lg elementor-animation-grow" role="button">
                                                                                 <span class="elementor-button-content-wrapper">
 						<span class="elementor-button-text">Browse Items</span>
                                                                                 </span>
