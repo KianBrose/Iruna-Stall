@@ -100,7 +100,7 @@
                                                     <a href="https://irunastall.com/" class="elementor-button-link elementor-button elementor-size-lg elementor-animation-grow" role="button">
                                                         <span class="elementor-button-content-wrapper">
                         <span class="elementor-button-icon elementor-align-icon-right">
-                <i aria-hidden="true" class="fas fa-chevron-right"></i>         </span>
+                <i aria-hidden="true" class="fas fa-chevron-right" style="font-size: 30px;"></i>         </span>
                                                         <span class="elementor-button-text">Report</span>
                                                         </span>
                                                     </a>
@@ -126,10 +126,10 @@
                                                                 <div class="elementor-element elementor-element-8532a98 elementor-align-center elementor-widget elementor-widget-button" data-id="8532a98" data-element_type="widget" data-widget_type="button.default">
                                                                     <div class="elementor-widget-container">
                                                                         <div class="elementor-button-wrapper">
-                                                                            <a href="https://facebook.com/" class="elementor-button-link elementor-button elementor-size-md elementor-animation-grow" role="button">
+                                                                            <a href="https://facebook.com/" class="elementor-button-link elementor-button elementor-size-md elementor-animation-grow" role="button" style="padding: 25px 34px 25px 34px;">
                                                                                 <span class="elementor-button-content-wrapper">
                         <span class="elementor-button-icon elementor-align-icon-left">
-                <i aria-hidden="true" class="fab fa-facebook-f"></i>            </span>
+                <i aria-hidden="true" class="fab fa-facebook-f" style="font-size: 30px;"></i>            </span>
                                                                                 <span class="elementor-button-text"></span>
                                                                                 </span>
                                                                             </a>
@@ -145,10 +145,10 @@
                                                                 <div class="elementor-element elementor-element-4553669 elementor-align-center elementor-widget elementor-widget-button" data-id="4553669" data-element_type="widget" data-widget_type="button.default">
                                                                     <div class="elementor-widget-container">
                                                                         <div class="elementor-button-wrapper">
-                                                                            <a href="https://facebook.com/" class="elementor-button-link elementor-button elementor-size-md elementor-animation-grow" role="button">
+                                                                            <a href="https://facebook.com/" class="elementor-button-link elementor-button elementor-size-md elementor-animation-grow" role="button" style="padding: 25px 34px 25px 34px;">
                                                                                 <span class="elementor-button-content-wrapper">
                         <span class="elementor-button-icon elementor-align-icon-left">
-                <i aria-hidden="true" class="fab fa-whatsapp"></i>          </span>
+                <i aria-hidden="true" class="fab fa-whatsapp" style="font-size: 30px;"></i>          </span>
                                                                                 <span class="elementor-button-text"></span>
                                                                                 </span>
                                                                             </a>
@@ -164,10 +164,10 @@
                                                                 <div class="elementor-element elementor-element-a011617 elementor-align-center elementor-widget elementor-widget-button" data-id="a011617" data-element_type="widget" data-widget_type="button.default">
                                                                     <div class="elementor-widget-container">
                                                                         <div class="elementor-button-wrapper">
-                                                                            <a href="https://facebook.com/" class="elementor-button-link elementor-button elementor-size-md elementor-animation-grow" role="button">
+                                                                            <a href="https://facebook.com/" class="elementor-button-link elementor-button elementor-size-md elementor-animation-grow" role="button" style="padding: 25px 34px 25px 34px;">
                                                                                 <span class="elementor-button-content-wrapper">
                         <span class="elementor-button-icon elementor-align-icon-left">
-                <i aria-hidden="true" class="fab fa-discord"></i>           </span>
+                <i aria-hidden="true" class="fab fa-discord" style="font-size: 30px;"></i>           </span>
                                                                                 <span class="elementor-button-text"></span>
                                                                                 </span>
                                                                             </a>
@@ -183,10 +183,10 @@
                                                                 <div class="elementor-element elementor-element-a91f849 elementor-align-center elementor-widget elementor-widget-button" data-id="a91f849" data-element_type="widget" data-widget_type="button.default">
                                                                     <div class="elementor-widget-container">
                                                                         <div class="elementor-button-wrapper">
-                                                                            <a href="https://facebook.com/" class="elementor-button-link elementor-button elementor-size-md elementor-animation-grow" role="button">
+                                                                            <a href="https://facebook.com/" class="elementor-button-link elementor-button elementor-size-md elementor-animation-grow" role="button" style="padding: 25px 34px 25px 34px;">
                                                                                 <span class="elementor-button-content-wrapper">
                         <span class="elementor-button-icon elementor-align-icon-left">
-                <i aria-hidden="true" class="fab fa-snapchat-ghost"></i>            </span>
+                <i aria-hidden="true" class="fab fa-snapchat-ghost" style="font-size: 30px;"></i>            </span>
                                                                                 <span class="elementor-button-text"></span>
                                                                                 </span>
                                                                             </a>
