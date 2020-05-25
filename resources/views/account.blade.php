@@ -100,20 +100,20 @@
                                              <form action="/createEquip" method="POST" id="equipform">
                                                 <tr>
                                                    <div class="form__group field">
-                                                      <input type="input" class="form__field" placeholder="Name" name="name" id='name' required />
-                                                      <label for="name" class="form__label">Equipment Name</label>
+                                                      <input type="input" class="form__field" placeholder="Equipment name" name="equipname" id='equipname' required />
+                                                      <label for="equipname" class="form__label">Equipment Name</label>
                                                    </div>
                                                 </tr>
                                                 <tr>
                                                    <div class="form__group field">
-                                                      <input type="input" class="form__field" placeholder="Name" name="name" id='name' required />
-                                                      <label for="name" class="form__label">ATK</label>
+                                                      <input type="input" class="form__field" placeholder="ATK" name="atk" id='atk' required />
+                                                      <label for="atk" class="form__label">ATK</label>
                                                    </div>
                                                 </tr>
                                                 <tr>
                                                    <div class="form__group field">
-                                                      <input type="input" class="form__field" placeholder="Name" name="name" id='name' required />
-                                                      <label for="name" class="form__label">DEF</label>
+                                                      <input type="input" class="form__field" placeholder="DEF" name="def" id='def' required />
+                                                      <label for="def" class="form__label">DEF</label>
                                                    </div>
                                                 </tr>
                                                 <tr>
@@ -169,16 +169,16 @@
                                                 <div id="slot1" style="display:none;">
                                                    <tr>
                                                       <div class="form__group field">
-                                                         <input type="input" class="form__field" placeholder="Name" name="name" id='name' required />
-                                                         <label for="name" class="form__label">Slot 1</label>
+                                                         <input type="input" class="form__field" placeholder="Slot1" name="slot1" id='slot1' required />
+                                                         <label for="slot1" class="form__label">Slot 1</label>
                                                       </div>
                                                    </tr>
                                                 </div>
                                                 <div id="slot2" style="display:none;">
                                                    <tr>
                                                       <div class="form__group field">
-                                                         <input type="input" class="form__field" placeholder="Name" name="name" id='name' required />
-                                                         <label for="name" class="form__label">Slot 2</label>
+                                                         <input type="input" class="form__field" placeholder="Slot2" name="slot2" id='slot2' required />
+                                                         <label for="slot2" class="form__label">Slot 2</label>
                                                       </div>
                                                    </tr>
                                                 </div>
@@ -199,21 +199,21 @@
                                                 <div id="hasabil" style="display:none;">
                                                    <tr>
                                                       <div class="form__group field">
-                                                         <input type="input" class="form__field" placeholder="Name" name="name" id='name' required />
-                                                         <label for="name" class="form__label">Ability name</label>
+                                                         <input type="input" class="form__field" placeholder="AbilityName" name="abilityname" id='abilityname' required />
+                                                         <label for="abilityname" class="form__label">Ability name</label>
                                                       </div>
                                                    </tr>
                                                    <tr>
                                                       <div class="form__group field">
-                                                         <input type="input" class="form__field" placeholder="Name" name="name" id='name' required />
-                                                         <label for="name" class="form__label">Ability level</label>
+                                                         <input type="input" class="form__field" placeholder="AbilityLevel" name="abilitylevel" id='abilitylevel' required />
+                                                         <label for="abilitylevel" class="form__label">Ability level</label>
                                                       </div>
                                                    </tr>
                                                 </div>
                                                 <tr>
                                                    <div class="form__group field">
-                                                      <input type="input" class="form__field" placeholder="Name" name="name" id='name' required />
-                                                      <label for="name" class="form__label">Price</label>
+                                                      <input type="input" class="form__field" placeholder="EquipmentPrice" name="equipmentprice" id='equipmentprice' required />
+                                                      <label for="equipmentprice" class="form__label">Price</label>
                                                    </div>
                                                 </tr>
                                                 <br>
@@ -237,20 +237,20 @@
                                              <form action="/createItem" method="POST" id="itemform">
                                                 <tr>
                                                    <div class="form__group field">
-                                                      <input type="input" class="form__field" placeholder="Name" name="name" id='name' required />
-                                                      <label for="name" class="form__label">Item Name</label>
+                                                      <input type="input" class="form__field" placeholder="ItemName" name="itemname" id='itemname' required />
+                                                      <label for="itemname" class="form__label">Item Name</label>
                                                    </div>
                                                 </tr>
                                                 <tr>
                                                    <div class="form__group field">
-                                                      <input type="input" class="form__field" placeholder="Name" name="name" id='name' required />
-                                                      <label for="name" class="form__label">Quantity</label>
+                                                      <input type="input" class="form__field" placeholder="QTY" name="qty" id='qty' required />
+                                                      <label for="qty" class="form__label">Quantity</label>
                                                    </div>
                                                 </tr>
                                                 <tr>
                                                    <div class="form__group field">
-                                                      <input type="input" class="form__field" placeholder="Name" name="name" id='name' required />
-                                                      <label for="name" class="form__label">Price</label>
+                                                      <input type="input" class="form__field" placeholder="ItemPrice" name="itemprice" id='itemprice' required />
+                                                      <label for="itemprice" class="form__label">Price</label>
                                                    </div>
                                                 </tr>
                                                 <br>
@@ -274,20 +274,20 @@
                                              <form action="/createXtal" method="POST" id="xtalform">
                                                 <tr>
                                                    <div class="form__group field">
-                                                      <input type="input" class="form__field" placeholder="Name" name="name" id='name' required />
-                                                      <label for="name" class="form__label">Xtal Name</label>
+                                                      <input type="input" class="form__field" placeholder="XtalName" name="xtalname" id='xtalname' required />
+                                                      <label for="xtalname" class="form__label">Xtal Name</label>
                                                    </div>
                                                 </tr>
                                                 <tr>
                                                    <div class="form__group field">
-                                                      <input type="input" class="form__field" placeholder="Name" name="name" id='name' required />
-                                                      <label for="name" class="form__label">Quantity</label>
+                                                      <input type="input" class="form__field" placeholder="XtalQTY" name="xtalqty" id='xtalqty' required />
+                                                      <label for="xtalqty" class="form__label">Quantity</label>
                                                    </div>
                                                 </tr>
                                                 <tr>
                                                    <div class="form__group field">
-                                                      <input type="input" class="form__field" placeholder="Name" name="name" id='name' required />
-                                                      <label for="name" class="form__label">Price</label>
+                                                      <input type="input" class="form__field" placeholder="XtalPrice" name="xtalprice" id='xtalprice' required />
+                                                      <label for="xtalprice" class="form__label">Price</label>
                                                    </div>
                                                 </tr>
                                                 <br>
@@ -311,14 +311,14 @@
                                              <form action="/createAi" method="POST" id="alform">
                                                 <tr>
                                                    <div class="form__group field">
-                                                      <input type="input" class="form__field" placeholder="Name" name="name" id='name' required />
-                                                      <label for="name" class="form__label">AL Name</label>
+                                                      <input type="input" class="form__field" placeholder="AlName" name="alname" id='alname' required />
+                                                      <label for="alname" class="form__label">AL Name</label>
                                                    </div>
                                                 </tr>
                                                 <tr>
                                                    <div class="form__group field">
-                                                      <input type="input" class="form__field" placeholder="Name" name="name" id='name' required />
-                                                      <label for="name" class="form__label">Quantity</label>
+                                                      <input type="input" class="form__field" placeholder="AlQTY" name="alqty" id='alqty' required />
+                                                      <label for="alqty" class="form__label">Quantity</label>
                                                    </div>
                                                 </tr>
                                                 <tr>
@@ -336,8 +336,8 @@
                                                 </tr>
                                                 <tr>
                                                    <div class="form__group field">
-                                                      <input type="input" class="form__field" placeholder="Name" name="name" id='name' required />
-                                                      <label for="name" class="form__label">Price</label>
+                                                      <input type="input" class="form__field" placeholder="AlPrice" name="alprice" id='alprice' required />
+                                                      <label for="alprice" class="form__label">Price</label>
                                                    </div>
                                                 </tr>
                                                 <br>
@@ -361,20 +361,20 @@
                                              <form action="/createRelic" method="POST" id="relicform">
                                                 <tr>
                                                    <div class="form__group field">
-                                                      <input type="input" class="form__field" placeholder="Name" name="name" id='name' required />
-                                                      <label for="name" class="form__label">Relic Name</label>
+                                                      <input type="input" class="form__field" placeholder="RelicName" name="relicname" id='relicname' required />
+                                                      <label for="relicname" class="form__label">Relic Name</label>
                                                    </div>
                                                 </tr>
                                                 <tr>
                                                    <div class="form__group field">
-                                                      <input type="input" class="form__field" placeholder="Name" name="name" id='name' required />
-                                                      <label for="name" class="form__label">Quantity</label>
+                                                      <input type="input" class="form__field" placeholder="RelicQTY" name="relicqty" id='relicqty' required />
+                                                      <label for="relicqty" class="form__label">Quantity</label>
                                                    </div>
                                                 </tr>
                                                 <tr>
                                                    <div class="form__group field">
-                                                      <input type="input" class="form__field" placeholder="Name" name="name" id='name' required />
-                                                      <label for="name" class="form__label">Price</label>
+                                                      <input type="input" class="form__field" placeholder="RelicPrice" name="relicprice" id='relicprice' required />
+                                                      <label for="relicprice" class="form__label">Price</label>
                                                    </div>
                                                 </tr>
                                                 <br>
