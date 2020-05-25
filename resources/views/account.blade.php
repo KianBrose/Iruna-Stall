@@ -68,455 +68,447 @@
                </section>
                @include('layouts.navbarv2')
                <section class="elementor-element elementor-element-16e6ebd elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-top-section" data-id="16e6ebd" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}" style="background-color:#00a5ff;">
-                    <div class="elementor-container elementor-column-gap-default">
-                        <div class="elementor-row">
-                            <div class="elementor-element elementor-element-9a97296 elementor-column elementor-col-100 elementor-top-column" data-id="9a97296" data-element_type="column">
-                                <div class="elementor-column-wrap  elementor-element-populated">
-                                    <div class="elementor-widget-wrap">
-                                        <div class="elementor-element elementor-element-6d1da58 elementor-widget elementor-widget-heading" data-id="6d1da58" data-element_type="widget" data-widget_type="heading.default">
-                                            <div class="elementor-widget-container">
-                                                <h2 class="elementor-heading-title elementor-size-default">Add item</h2> </div>
-                                        </div>
-                                        <div class="elementor-element elementor-element-fa9d1bf elementor-widget elementor-widget-text-editor" data-id="fa9d1bf" data-element_type="widget" data-widget_type="text-editor.default">
-                                            <div class="elementor-widget-container">
-                                                <div class="elementor-text-editor elementor-clearfix">
-                                                    <p style="color:white;">Welcome to the add item page! If this is your first time here, please refer to this <a href="https://irunastall.com/tutorial" style="color:orange;">quick guide</a> on how to add an item!</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="elementor-element elementor-element-944d886 elementor-widget elementor-widget-text-editor" data-id="944d886" data-element_type="widget" data-widget_type="text-editor.default">
-                                            <div class="elementor-widget-container">
-                                                <div class="elementor-text-editor elementor-clearfix">
-
-                                                    <select name="itemtype" class="form-control2" id="itemtype">
-                                                        <option>Choose type</option>
-                                                        <option value="1">Equipment</option>
-                                                        <option value="2">Items</option>
-                                                        <option value="3">Xtal</option>
-                                                        <option value="4">AL Crystal</option>
-                                                        <option value="5">Relic</option>
-                                                    </select>
-
-                                                    <div id="equip" style="display:none;">
-                                                        <form action="/createEquip" method="POST" id="equipform">
-                                                            <tr>
-                                                                <div class="form__group field">
-                                                                  <input type="input" class="form__field" placeholder="Name" name="name" id='name' required />
-                                                                  <label for="name" class="form__label">Equipment Name</label>
-                                                                </div>
-                                                            </tr>
-                                                            <tr>
-                                                                <div class="form__group field">
-                                                                  <input type="input" class="form__field" placeholder="Name" name="name" id='name' required />
-                                                                  <label for="name" class="form__label">ATK</label>
-                                                                </div>
-                                                            </tr>
-                                                            <tr>
-                                                                <div class="form__group field">
-                                                                  <input type="input" class="form__field" placeholder="Name" name="name" id='name' required />
-                                                                  <label for="name" class="form__label">DEF</label>
-                                                                </div>
-                                                            </tr>
-                                                            <tr>
-                                                                <br>
-                                                                <td>
-                                                                    <label for="Test" style="color:white;">Refinement:</label>
-                                                                </td>
-                                                                <td style="padding-left:10px;">
-                                                                    <select name="refinement" class="form-control2" id="refinement">
-                                                                        <option selected value="0">0</option>
-                                                                        <option value="1">1</option>
-                                                                        <option value="2">2</option>
-                                                                        <option value="3">3</option>
-                                                                        <option value="4">4</option>
-                                                                        <option value="5">5</option>
-                                                                        <option value="6">6</option>
-                                                                        <option value="7">7</option>
-                                                                        <option value="8">8</option>
-                                                                        <option value="9">9</option>
-                                                                    </select>
-                                                                    <br>
-                                                                </td>
-                                                            </tr>
-                                                            <tr>
-                                                                <br>
-                                                                <td>
-                                                                    <label for="type" style="color:white;">Type:</label>
-                                                                </td>
-                                                                <td style="padding-left:10px;">
-                                                                    <select name="type" class="form-control2" id="type">
-                                                                        <option selected>Weapon</option>
-                                                                        <option>Body</option>
-                                                                        <option>Additional</option>
-                                                                        <option>Special</option>
-                                                                    </select>
-                                                                    <br>
-                                                                </td>
-                                                            </tr>
-                                                            <tr>
-                                                                <br>
-                                                                <td>
-                                                                    <label for="Test" style="color:white;">Slots:</label>
-                                                                </td>
-                                                                <td style="padding-left:10px;">
-                                                                    <select name="equipslotamount" class="form-control2" id="equipslotamount">
-                                                                        <option selected value="0">0</option>
-                                                                        <option value="1">1</option>
-                                                                        <option value="2">2</option>
-                                                                    </select>
-                                                                </td>
-                                                            </tr>
-                                                            <div id="slot1" style="display:none;">
-                                                                <tr>
-                                                                    <div class="form__group field">
-                                                                  <input type="input" class="form__field" placeholder="Name" name="name" id='name' required />
-                                                                  <label for="name" class="form__label">Slot 1</label>
-                                                                </div>
-                                                                </tr>
-                                                            </div>
-                                                            <div id="slot2" style="display:none;">
-                                                                <tr>
-                                                                    <div class="form__group field">
-                                                                  <input type="input" class="form__field" placeholder="Name" name="name" id='name' required />
-                                                                  <label for="name" class="form__label">Slot 2</label>
-                                                                </div>
-                                                                </tr>
-                                                            </div>
-                                                            <tr>
-                                                            	<br>
-                                                                <td>
-                                                                    <label for="Test" style="color:white;">Ability:</label>
-                                                                </td>
-                                                                <td style="padding-left:10px;">
-                                                                    <select name="abidrop" class="form-control2" id="abidrop">
-                                                                        <option selected value="0">No</option>
-                                                                        <option value="1">Yes</option>
-                                                                    </select>
-                                                                </td>
-                                                                <br>
-                                                            </tr>
-                                                            <div id="hasabil" style="display:none;">
-                                                                <tr>
-                                                                    <div class="form__group field">
-                                                                  <input type="input" class="form__field" placeholder="Name" name="name" id='name' required />
-                                                                  <label for="name" class="form__label">Ability name</label>
-                                                                </div>
-                                                                </tr>
-                                                                <tr>
-                                                                    <div class="form__group field">
-                                                                  <input type="input" class="form__field" placeholder="Name" name="name" id='name' required />
-                                                                  <label for="name" class="form__label">Ability level</label>
-                                                                </div>
-                                                                </tr>
-                                                            </div>
-                                                            <tr>
-                                                                <div class="form__group field">
-                                                                  <input type="input" class="form__field" placeholder="Name" name="name" id='name' required />
-                                                                  <label for="name" class="form__label">Price</label>
-                                                                </div>
-                                                            </tr>
-                                                            <br>
-                                                            <div class="elementor-element elementor-element-5580a03 elementor-widget elementor-widget-button" data-id="5580a03" data-element_type="widget" data-widget_type="button.default">
-                                                                <div class="elementor-widget-container">
-                                                                    <div class="elementor-button-wrapper">
-                                                                        <a href="javascript:{}" onclick="document.getElementById('equipform').submit();" class="elementor-button-link elementor-button elementor-size-sm elementor-animation-grow" role="button">
-                                                                            <span class="elementor-button-content-wrapper">
-                                                                                <span class="elementor-button-icon elementor-align-icon-right">
-                                                                                    <i aria-hidden="true" class="fas fa-chevron-right"></i>			
-                                                                                </span>
-                                                                                <span class="elementor-button-text">Add item</span>
-                                                                            </span>
-                                                                        </a>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </form>
-                                                    </div>
-
-                                                    <div id="item" style="display:none;">
-                                                        <form action="/createItem" method="POST" id="itemform">
-                                                            <tr>
-                                                                <div class="form__group field">
-                                                                  <input type="input" class="form__field" placeholder="Name" name="name" id='name' required />
-                                                                  <label for="name" class="form__label">Item Name</label>
-                                                                </div>
-                                                            </tr>
-                                                            <tr>
-                                                                <div class="form__group field">
-                                                                  <input type="input" class="form__field" placeholder="Name" name="name" id='name' required />
-                                                                  <label for="name" class="form__label">Quantity</label>
-                                                                </div>
-                                                            </tr>
-                                                            <tr>
-                                                                <div class="form__group field">
-                                                                  <input type="input" class="form__field" placeholder="Name" name="name" id='name' required />
-                                                                  <label for="name" class="form__label">Price</label>
-                                                                </div>
-                                                            </tr>
-                                                            <br>
-                                                            <div class="elementor-element elementor-element-5580a03 elementor-widget elementor-widget-button" data-id="5580a03" data-element_type="widget" data-widget_type="button.default">
-                                                                <div class="elementor-widget-container">
-                                                                    <div class="elementor-button-wrapper">
-                                                                        <a href="javascript:{}" onclick="document.getElementById('itemform').submit();" class="elementor-button-link elementor-button elementor-size-sm elementor-animation-grow" role="button">
-                                                                            <span class="elementor-button-content-wrapper">
-                                                                                <span class="elementor-button-icon elementor-align-icon-right">
-                                                                                    <i aria-hidden="true" class="fas fa-chevron-right"></i>			
-                                                                                </span>
-                                                                                <span class="elementor-button-text">Add item</span>
-                                                                            </span>
-                                                                        </a>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </form>
-                                                    </div>
-
-                                                    <div id="xtal" style="display:none;">
-                                                        <form action="/createXtal" method="POST" id="xtalform">
-                                                            <tr>
-                                                                <div class="form__group field">
-                                                                  <input type="input" class="form__field" placeholder="Name" name="name" id='name' required />
-                                                                  <label for="name" class="form__label">Xtal Name</label>
-                                                                </div>
-                                                            </tr>
-                                                            <tr>
-                                                                <div class="form__group field">
-                                                                  <input type="input" class="form__field" placeholder="Name" name="name" id='name' required />
-                                                                  <label for="name" class="form__label">Quantity</label>
-                                                                </div>
-                                                            </tr>
-                                                            <tr>
-                                                                <div class="form__group field">
-                                                                  <input type="input" class="form__field" placeholder="Name" name="name" id='name' required />
-                                                                  <label for="name" class="form__label">Price</label>
-                                                                </div>
-                                                            </tr>
-                                                            <br>
-                                                            <div class="elementor-element elementor-element-5580a03 elementor-widget elementor-widget-button" data-id="5580a03" data-element_type="widget" data-widget_type="button.default">
-                                                                <div class="elementor-widget-container">
-                                                                    <div class="elementor-button-wrapper">
-                                                                        <a href="javascript:{}" onclick="document.getElementById('xtalform').submit();" class="elementor-button-link elementor-button elementor-size-sm elementor-animation-grow" role="button">
-                                                                            <span class="elementor-button-content-wrapper">
-                                                                                <span class="elementor-button-icon elementor-align-icon-right">
-                                                                                    <i aria-hidden="true" class="fas fa-chevron-right"></i>			
-                                                                                </span>
-                                                                                <span class="elementor-button-text">Add item</span>
-                                                                            </span>
-                                                                        </a>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </form>
-                                                    </div>
-
-                                                    <div id="al" style="display:none;">
-                                                        <form action="/createAi" method="POST" id="alform">
-                                                            <tr>
-                                                                <div class="form__group field">
-                                                                  <input type="input" class="form__field" placeholder="Name" name="name" id='name' required />
-                                                                  <label for="name" class="form__label">AL Name</label>
-                                                                </div>
-                                                            </tr>
-                                                            <tr>
-                                                                <div class="form__group field">
-                                                                  <input type="input" class="form__field" placeholder="Name" name="name" id='name' required />
-                                                                  <label for="name" class="form__label">Quantity</label>
-                                                                </div>
-                                                            </tr>
-                                                            <tr>
-                                                                <br>
-                                                                <td>
-                                                                    <label for="color" style="color:white;">Color:</label>
-                                                                </td>
-                                                                <td style="padding-left:10px;">
-                                                                    <select name="color" class="form-control2" id="color">
-                                                                        <option selected>Red</option>
-                                                                        <option>Green</option>
-                                                                        <option>Blue</option>
-                                                                    </select>
-                                                                </td>
-
-                                                            </tr>
-
-                                                            <tr>
-                                                                <div class="form__group field">
-                                                                  <input type="input" class="form__field" placeholder="Name" name="name" id='name' required />
-                                                                  <label for="name" class="form__label">Price</label>
-                                                                </div>
-                                                            </tr>
-                                                            <br>
-                                                            <div class="elementor-element elementor-element-5580a03 elementor-widget elementor-widget-button" data-id="5580a03" data-element_type="widget" data-widget_type="button.default">
-                                                                <div class="elementor-widget-container">
-                                                                    <div class="elementor-button-wrapper">
-                                                                        <a href="javascript:{}" onclick="document.getElementById('alform').submit();" class="elementor-button-link elementor-button elementor-size-sm elementor-animation-grow" role="button">
-                                                                            <span class="elementor-button-content-wrapper">
-                                                                                <span class="elementor-button-icon elementor-align-icon-right">
-                                                                                    <i aria-hidden="true" class="fas fa-chevron-right"></i>			
-                                                                                </span>
-                                                                                <span class="elementor-button-text">Add item</span>
-                                                                            </span>
-                                                                        </a>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </form>
-                                                    </div>
-
-                                                    <div id="relic" style="display:none;">
-                                                        <form action="/createRelic" method="POST" id="relicform">
-                                                            <tr>
-                                                                <div class="form__group field">
-                                                                  <input type="input" class="form__field" placeholder="Name" name="name" id='name' required />
-                                                                  <label for="name" class="form__label">Relic Name</label>
-                                                                </div>
-                                                            </tr>
-                                                            <tr>
-                                                                <div class="form__group field">
-                                                                  <input type="input" class="form__field" placeholder="Name" name="name" id='name' required />
-                                                                  <label for="name" class="form__label">Quantity</label>
-                                                                </div>
-                                                            </tr>
-                                                            <tr>
-                                                                <div class="form__group field">
-                                                                  <input type="input" class="form__field" placeholder="Name" name="name" id='name' required />
-                                                                  <label for="name" class="form__label">Price</label>
-                                                                </div>
-                                                            </tr>
-                                                            <br>
-                                                            <div class="elementor-element elementor-element-5580a03 elementor-widget elementor-widget-button" data-id="5580a03" data-element_type="widget" data-widget_type="button.default">
-                                                                <div class="elementor-widget-container">
-                                                                    <div class="elementor-button-wrapper">
-                                                                        <a href="javascript:{}" onclick="document.getElementById('relicform').submit();" class="elementor-button-link elementor-button elementor-size-sm elementor-animation-grow" role="button">
-                                                                            <span class="elementor-button-content-wrapper">
-                                                                                <span class="elementor-button-icon elementor-align-icon-right">
-                                                                                    <i aria-hidden="true" class="fas fa-chevron-right"></i>			
-                                                                                </span>
-                                                                                <span class="elementor-button-text">Add item</span>
-                                                                            </span>
-                                                                        </a>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </form>
-                                                    </div>
-
-                                                </div>
-                                            </div>
-                                        </div>
+                  <div class="elementor-container elementor-column-gap-default">
+                     <div class="elementor-row">
+                        <div class="elementor-element elementor-element-9a97296 elementor-column elementor-col-100 elementor-top-column" data-id="9a97296" data-element_type="column">
+                           <div class="elementor-column-wrap  elementor-element-populated">
+                              <div class="elementor-widget-wrap">
+                                 <div class="elementor-element elementor-element-6d1da58 elementor-widget elementor-widget-heading" data-id="6d1da58" data-element_type="widget" data-widget_type="heading.default">
+                                    <div class="elementor-widget-container">
+                                       <h2 class="elementor-heading-title elementor-size-default">Add item</h2>
                                     </div>
-                                </div>
-                            </div>
+                                 </div>
+                                 <div class="elementor-element elementor-element-fa9d1bf elementor-widget elementor-widget-text-editor" data-id="fa9d1bf" data-element_type="widget" data-widget_type="text-editor.default">
+                                    <div class="elementor-widget-container">
+                                       <div class="elementor-text-editor elementor-clearfix">
+                                          <p style="color:white;">Welcome to the add item page! If this is your first time here, please refer to this <a href="https://irunastall.com/tutorial" style="color:orange;">quick guide</a> on how to add an item!</p>
+                                       </div>
+                                    </div>
+                                 </div>
+                                 <div class="elementor-element elementor-element-944d886 elementor-widget elementor-widget-text-editor" data-id="944d886" data-element_type="widget" data-widget_type="text-editor.default">
+                                    <div class="elementor-widget-container">
+                                       <div class="elementor-text-editor elementor-clearfix">
+                                          <select name="itemtype" class="form-control2" id="itemtype">
+                                             <option>Choose type</option>
+                                             <option value="1">Equipment</option>
+                                             <option value="2">Items</option>
+                                             <option value="3">Xtal</option>
+                                             <option value="4">AL Crystal</option>
+                                             <option value="5">Relic</option>
+                                          </select>
+                                          <div id="equip" style="display:none;">
+                                             <form action="/createEquip" method="POST" id="equipform">
+                                                <tr>
+                                                   <div class="form__group field">
+                                                      <input type="input" class="form__field" placeholder="Name" name="name" id='name' required />
+                                                      <label for="name" class="form__label">Equipment Name</label>
+                                                   </div>
+                                                </tr>
+                                                <tr>
+                                                   <div class="form__group field">
+                                                      <input type="input" class="form__field" placeholder="Name" name="name" id='name' required />
+                                                      <label for="name" class="form__label">ATK</label>
+                                                   </div>
+                                                </tr>
+                                                <tr>
+                                                   <div class="form__group field">
+                                                      <input type="input" class="form__field" placeholder="Name" name="name" id='name' required />
+                                                      <label for="name" class="form__label">DEF</label>
+                                                   </div>
+                                                </tr>
+                                                <tr>
+                                                   <br>
+                                                   <td>
+                                                      <label for="Test" style="color:white;">Refinement:</label>
+                                                   </td>
+                                                   <td style="padding-left:10px;">
+                                                      <select name="refinement" class="form-control2" id="refinement">
+                                                         <option selected value="0">0</option>
+                                                         <option value="1">1</option>
+                                                         <option value="2">2</option>
+                                                         <option value="3">3</option>
+                                                         <option value="4">4</option>
+                                                         <option value="5">5</option>
+                                                         <option value="6">6</option>
+                                                         <option value="7">7</option>
+                                                         <option value="8">8</option>
+                                                         <option value="9">9</option>
+                                                      </select>
+                                                      <br>
+                                                   </td>
+                                                </tr>
+                                                <tr>
+                                                   <br>
+                                                   <td>
+                                                      <label for="type" style="color:white;">Type:</label>
+                                                   </td>
+                                                   <td style="padding-left:10px;">
+                                                      <select name="type" class="form-control2" id="type">
+                                                         <option selected>Weapon</option>
+                                                         <option>Body</option>
+                                                         <option>Additional</option>
+                                                         <option>Special</option>
+                                                      </select>
+                                                      <br>
+                                                   </td>
+                                                </tr>
+                                                <tr>
+                                                   <br>
+                                                   <td>
+                                                      <label for="Test" style="color:white;">Slots:</label>
+                                                   </td>
+                                                   <td style="padding-left:10px;">
+                                                      <select name="equipslotamount" class="form-control2" id="equipslotamount">
+                                                         <option selected value="0">0</option>
+                                                         <option value="1">1</option>
+                                                         <option value="2">2</option>
+                                                      </select>
+                                                   </td>
+                                                </tr>
+                                                <div id="slot1" style="display:none;">
+                                                   <tr>
+                                                      <div class="form__group field">
+                                                         <input type="input" class="form__field" placeholder="Name" name="name" id='name' required />
+                                                         <label for="name" class="form__label">Slot 1</label>
+                                                      </div>
+                                                   </tr>
+                                                </div>
+                                                <div id="slot2" style="display:none;">
+                                                   <tr>
+                                                      <div class="form__group field">
+                                                         <input type="input" class="form__field" placeholder="Name" name="name" id='name' required />
+                                                         <label for="name" class="form__label">Slot 2</label>
+                                                      </div>
+                                                   </tr>
+                                                </div>
+                                                <tr>
+                                                   <td>
+                                                      <br>
+                                                      <label for="Test" style="color:white;">Ability:</label>
+                                                   </td>
+                                                   <td style="padding-left:10px;">
+                                                      <select name="abidrop" class="form-control2" id="abidrop">
+                                                         <option selected value="0">No</option>
+                                                         <option value="1">Yes</option>
+                                                      </select>
+                                                   </td>
+                                                   <br>
+                                                </tr>
+                                                <div id="hasabil" style="display:none;">
+                                                   <tr>
+                                                      <div class="form__group field">
+                                                         <input type="input" class="form__field" placeholder="Name" name="name" id='name' required />
+                                                         <label for="name" class="form__label">Ability name</label>
+                                                      </div>
+                                                   </tr>
+                                                   <tr>
+                                                      <div class="form__group field">
+                                                         <input type="input" class="form__field" placeholder="Name" name="name" id='name' required />
+                                                         <label for="name" class="form__label">Ability level</label>
+                                                      </div>
+                                                   </tr>
+                                                </div>
+                                                <tr>
+                                                   <div class="form__group field">
+                                                      <input type="input" class="form__field" placeholder="Name" name="name" id='name' required />
+                                                      <label for="name" class="form__label">Price</label>
+                                                   </div>
+                                                </tr>
+                                                <br>
+                                                <div class="elementor-element elementor-element-5580a03 elementor-widget elementor-widget-button" data-id="5580a03" data-element_type="widget" data-widget_type="button.default">
+                                                   <div class="elementor-widget-container">
+                                                      <div class="elementor-button-wrapper">
+                                                         <a href="javascript:{}" onclick="document.getElementById('equipform').submit();" class="elementor-button-link elementor-button elementor-size-sm elementor-animation-grow" role="button">
+                                                         <span class="elementor-button-content-wrapper">
+                                                         <span class="elementor-button-icon elementor-align-icon-right">
+                                                         <i aria-hidden="true" class="fas fa-chevron-right"></i>			
+                                                         </span>
+                                                         <span class="elementor-button-text">Add item</span>
+                                                         </span>
+                                                         </a>
+                                                      </div>
+                                                   </div>
+                                                </div>
+                                             </form>
+                                          </div>
+                                          <div id="item" style="display:none;">
+                                             <form action="/createItem" method="POST" id="itemform">
+                                                <tr>
+                                                   <div class="form__group field">
+                                                      <input type="input" class="form__field" placeholder="Name" name="name" id='name' required />
+                                                      <label for="name" class="form__label">Item Name</label>
+                                                   </div>
+                                                </tr>
+                                                <tr>
+                                                   <div class="form__group field">
+                                                      <input type="input" class="form__field" placeholder="Name" name="name" id='name' required />
+                                                      <label for="name" class="form__label">Quantity</label>
+                                                   </div>
+                                                </tr>
+                                                <tr>
+                                                   <div class="form__group field">
+                                                      <input type="input" class="form__field" placeholder="Name" name="name" id='name' required />
+                                                      <label for="name" class="form__label">Price</label>
+                                                   </div>
+                                                </tr>
+                                                <br>
+                                                <div class="elementor-element elementor-element-5580a03 elementor-widget elementor-widget-button" data-id="5580a03" data-element_type="widget" data-widget_type="button.default">
+                                                   <div class="elementor-widget-container">
+                                                      <div class="elementor-button-wrapper">
+                                                         <a href="javascript:{}" onclick="document.getElementById('itemform').submit();" class="elementor-button-link elementor-button elementor-size-sm elementor-animation-grow" role="button">
+                                                         <span class="elementor-button-content-wrapper">
+                                                         <span class="elementor-button-icon elementor-align-icon-right">
+                                                         <i aria-hidden="true" class="fas fa-chevron-right"></i>			
+                                                         </span>
+                                                         <span class="elementor-button-text">Add item</span>
+                                                         </span>
+                                                         </a>
+                                                      </div>
+                                                   </div>
+                                                </div>
+                                             </form>
+                                          </div>
+                                          <div id="xtal" style="display:none;">
+                                             <form action="/createXtal" method="POST" id="xtalform">
+                                                <tr>
+                                                   <div class="form__group field">
+                                                      <input type="input" class="form__field" placeholder="Name" name="name" id='name' required />
+                                                      <label for="name" class="form__label">Xtal Name</label>
+                                                   </div>
+                                                </tr>
+                                                <tr>
+                                                   <div class="form__group field">
+                                                      <input type="input" class="form__field" placeholder="Name" name="name" id='name' required />
+                                                      <label for="name" class="form__label">Quantity</label>
+                                                   </div>
+                                                </tr>
+                                                <tr>
+                                                   <div class="form__group field">
+                                                      <input type="input" class="form__field" placeholder="Name" name="name" id='name' required />
+                                                      <label for="name" class="form__label">Price</label>
+                                                   </div>
+                                                </tr>
+                                                <br>
+                                                <div class="elementor-element elementor-element-5580a03 elementor-widget elementor-widget-button" data-id="5580a03" data-element_type="widget" data-widget_type="button.default">
+                                                   <div class="elementor-widget-container">
+                                                      <div class="elementor-button-wrapper">
+                                                         <a href="javascript:{}" onclick="document.getElementById('xtalform').submit();" class="elementor-button-link elementor-button elementor-size-sm elementor-animation-grow" role="button">
+                                                         <span class="elementor-button-content-wrapper">
+                                                         <span class="elementor-button-icon elementor-align-icon-right">
+                                                         <i aria-hidden="true" class="fas fa-chevron-right"></i>			
+                                                         </span>
+                                                         <span class="elementor-button-text">Add item</span>
+                                                         </span>
+                                                         </a>
+                                                      </div>
+                                                   </div>
+                                                </div>
+                                             </form>
+                                          </div>
+                                          <div id="al" style="display:none;">
+                                             <form action="/createAi" method="POST" id="alform">
+                                                <tr>
+                                                   <div class="form__group field">
+                                                      <input type="input" class="form__field" placeholder="Name" name="name" id='name' required />
+                                                      <label for="name" class="form__label">AL Name</label>
+                                                   </div>
+                                                </tr>
+                                                <tr>
+                                                   <div class="form__group field">
+                                                      <input type="input" class="form__field" placeholder="Name" name="name" id='name' required />
+                                                      <label for="name" class="form__label">Quantity</label>
+                                                   </div>
+                                                </tr>
+                                                <tr>
+                                                   <br>
+                                                   <td>
+                                                      <label for="color" style="color:white;">Color:</label>
+                                                   </td>
+                                                   <td style="padding-left:10px;">
+                                                      <select name="color" class="form-control2" id="color">
+                                                         <option selected>Red</option>
+                                                         <option>Green</option>
+                                                         <option>Blue</option>
+                                                      </select>
+                                                   </td>
+                                                </tr>
+                                                <tr>
+                                                   <div class="form__group field">
+                                                      <input type="input" class="form__field" placeholder="Name" name="name" id='name' required />
+                                                      <label for="name" class="form__label">Price</label>
+                                                   </div>
+                                                </tr>
+                                                <br>
+                                                <div class="elementor-element elementor-element-5580a03 elementor-widget elementor-widget-button" data-id="5580a03" data-element_type="widget" data-widget_type="button.default">
+                                                   <div class="elementor-widget-container">
+                                                      <div class="elementor-button-wrapper">
+                                                         <a href="javascript:{}" onclick="document.getElementById('alform').submit();" class="elementor-button-link elementor-button elementor-size-sm elementor-animation-grow" role="button">
+                                                         <span class="elementor-button-content-wrapper">
+                                                         <span class="elementor-button-icon elementor-align-icon-right">
+                                                         <i aria-hidden="true" class="fas fa-chevron-right"></i>			
+                                                         </span>
+                                                         <span class="elementor-button-text">Add item</span>
+                                                         </span>
+                                                         </a>
+                                                      </div>
+                                                   </div>
+                                                </div>
+                                             </form>
+                                          </div>
+                                          <div id="relic" style="display:none;">
+                                             <form action="/createRelic" method="POST" id="relicform">
+                                                <tr>
+                                                   <div class="form__group field">
+                                                      <input type="input" class="form__field" placeholder="Name" name="name" id='name' required />
+                                                      <label for="name" class="form__label">Relic Name</label>
+                                                   </div>
+                                                </tr>
+                                                <tr>
+                                                   <div class="form__group field">
+                                                      <input type="input" class="form__field" placeholder="Name" name="name" id='name' required />
+                                                      <label for="name" class="form__label">Quantity</label>
+                                                   </div>
+                                                </tr>
+                                                <tr>
+                                                   <div class="form__group field">
+                                                      <input type="input" class="form__field" placeholder="Name" name="name" id='name' required />
+                                                      <label for="name" class="form__label">Price</label>
+                                                   </div>
+                                                </tr>
+                                                <br>
+                                                <div class="elementor-element elementor-element-5580a03 elementor-widget elementor-widget-button" data-id="5580a03" data-element_type="widget" data-widget_type="button.default">
+                                                   <div class="elementor-widget-container">
+                                                      <div class="elementor-button-wrapper">
+                                                         <a href="javascript:{}" onclick="document.getElementById('relicform').submit();" class="elementor-button-link elementor-button elementor-size-sm elementor-animation-grow" role="button">
+                                                         <span class="elementor-button-content-wrapper">
+                                                         <span class="elementor-button-icon elementor-align-icon-right">
+                                                         <i aria-hidden="true" class="fas fa-chevron-right"></i>			
+                                                         </span>
+                                                         <span class="elementor-button-text">Add item</span>
+                                                         </span>
+                                                         </a>
+                                                      </div>
+                                                   </div>
+                                                </div>
+                                             </form>
+                                          </div>
+                                       </div>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
                         </div>
-                    </div>
-                </section>
+                     </div>
+                  </div>
+               </section>
                @include('layouts.footer')
             </div>
          </div>
       </div>
-          <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script type="text/javascript">    
-					$('#itemtype').on('change',function(){
-					var selection = $(this).val();
-						switch(selection)
-						{
-							case "1":
-								$("#equip").show()
-								$("#item").hide()
-								$("#xtal").hide()
-								$("#al").hide()
-								$("#relic").hide()
-								break;
-							case "2":
-								$("#equip").hide()
-								$("#item").show()
-								$("#xtal").hide()
-								$("#al").hide()
-								$("#relic").hide()
-								break;
-							case "3":
-								$("#equip").hide()
-								$("#item").hide()
-								$("#xtal").show()
-								$("#al").hide()
-								$("#relic").hide()
-								break;
-							case "4":
-								$("#equip").hide()
-								$("#item").hide()
-								$("#xtal").hide()
-								$("#al").show()
-								$("#relic").hide()
-								break;
-							case "5":
-								$("#equip").hide()
-								$("#item").hide()
-								$("#xtal").hide()
-								$("#al").hide()
-								$("#relic").show()
-								break;
-							default:
-								$("#equip").hide()
-								$("#item").hide()
-								$("#xtal").hide()
-								$("#al").hide()
-								$("#relic").hide()
-								break;
-						}
-					});
-					$('#equipslotamount').on('change',function(){
-					var selection = $(this).val();
-						switch(selection)
-						{
-							case "0":
-								$("#slot1").hide()
-								$("#slot2").hide()
-								$("#equip").show()
-								break;
-							case "1":
-								$("#slot1").show()
-								$("#slot2").hide()
-								$("#equip").show()
-								break;
-							case "2":
-								$("#slot1").show()
-								$("#slot2").show()
-								$("#equip").show()
-								break;
-							default:
-								$("#slot1").hide()
-								$("#slot2").hide()
-								$("#equip").hide()
-								$("#item").hide()
-								$("#xtal").hide()
-								$("#al").hide()
-								$("#relic").hide()
-								break;
-						}
-					});
-					$('#abidrop').on('change',function(){
-					var selection = $(this).val();
-						switch(selection)
-						{
-							case "0":
-								$("#hasabil").hide()
-								$("#equip").show()
-								break;
-							case "1":
-								$("#hasabil").show()
-								$("#equip").show()
-								break;
-							default:
-								$("#hasabil").hide()
-								$("#slot1").hide()
-								$("#slot2").hide()
-								$("#equip").hide()
-								$("#item").hide()
-								$("#xtal").hide()
-								$("#al").hide()
-								$("#relic").hide()
-								break;
-						}
-					});
-					</script>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+      <script type="text/javascript">    
+         $('#itemtype').on('change',function(){
+         var selection = $(this).val();
+         	switch(selection)
+         	{
+         		case "1":
+         			$("#equip").show()
+         			$("#item").hide()
+         			$("#xtal").hide()
+         			$("#al").hide()
+         			$("#relic").hide()
+         			break;
+         		case "2":
+         			$("#equip").hide()
+         			$("#item").show()
+         			$("#xtal").hide()
+         			$("#al").hide()
+         			$("#relic").hide()
+         			break;
+         		case "3":
+         			$("#equip").hide()
+         			$("#item").hide()
+         			$("#xtal").show()
+         			$("#al").hide()
+         			$("#relic").hide()
+         			break;
+         		case "4":
+         			$("#equip").hide()
+         			$("#item").hide()
+         			$("#xtal").hide()
+         			$("#al").show()
+         			$("#relic").hide()
+         			break;
+         		case "5":
+         			$("#equip").hide()
+         			$("#item").hide()
+         			$("#xtal").hide()
+         			$("#al").hide()
+         			$("#relic").show()
+         			break;
+         		default:
+         			$("#equip").hide()
+         			$("#item").hide()
+         			$("#xtal").hide()
+         			$("#al").hide()
+         			$("#relic").hide()
+         			break;
+         	}
+         });
+         $('#equipslotamount').on('change',function(){
+         var selection = $(this).val();
+         	switch(selection)
+         	{
+         		case "0":
+         			$("#slot1").hide()
+         			$("#slot2").hide()
+         			$("#equip").show()
+         			break;
+         		case "1":
+         			$("#slot1").show()
+         			$("#slot2").hide()
+         			$("#equip").show()
+         			break;
+         		case "2":
+         			$("#slot1").show()
+         			$("#slot2").show()
+         			$("#equip").show()
+         			break;
+         		default:
+         			$("#slot1").hide()
+         			$("#slot2").hide()
+         			$("#equip").hide()
+         			$("#item").hide()
+         			$("#xtal").hide()
+         			$("#al").hide()
+         			$("#relic").hide()
+         			break;
+         	}
+         });
+         $('#abidrop').on('change',function(){
+         var selection = $(this).val();
+         	switch(selection)
+         	{
+         		case "0":
+         			$("#hasabil").hide()
+         			$("#equip").show()
+         			break;
+         		case "1":
+         			$("#hasabil").show()
+         			$("#equip").show()
+         			break;
+         		default:
+         			$("#hasabil").hide()
+         			$("#slot1").hide()
+         			$("#slot2").hide()
+         			$("#equip").hide()
+         			$("#item").hide()
+         			$("#xtal").hide()
+         			$("#al").hide()
+         			$("#relic").hide()
+         			break;
+         	}
+         });
+      </script>
    </body>
 </html>
