@@ -51,17 +51,17 @@
                                  <div class="elementor-widget-wrap">
                                     <div class="elementor-element elementor-element-4d30e39 elementor-widget elementor-widget-heading" data-id="4d30e39" data-element_type="widget" data-widget_type="heading.default">
                                        <div class="elementor-widget-container">
-                                          <h2 class="elementor-heading-title elementor-size-default"><a href="https://irunastall.com/updates">Update log</a></h2>
+                                          <h2 class="elementor-heading-title elementor-size-default"><a href="/updates">Update log</a></h2>
                                        </div>
                                     </div>
                                     <div class="elementor-element elementor-element-62db6fb elementor-widget elementor-widget-heading" data-id="62db6fb" data-element_type="widget" data-widget_type="heading.default">
                                        <div class="elementor-widget-container">
-                                          <h2 class="elementor-heading-title elementor-size-default"><a href="https://irunastall.com/upcomming">Upcomming features</a></h2>
+                                          <h2 class="elementor-heading-title elementor-size-default"><a href="/upcomming">Upcomming features</a></h2>
                                        </div>
                                     </div>
                                     <div class="elementor-element elementor-element-1c8e6e1 elementor-widget elementor-widget-heading" data-id="1c8e6e1" data-element_type="widget" data-widget_type="heading.default">
                                        <div class="elementor-widget-container">
-                                          <h2 class="elementor-heading-title elementor-size-default"><a href="https://irunastall.com/pricecheck">Price check(comming soon)</a></h2>
+                                          <h2 class="elementor-heading-title elementor-size-default"><a href="/pricecheck">Price check(comming soon)</a></h2>
                                        </div>
                                     </div>
                                     <div class="elementor-element elementor-element-b14fa85 elementor-widget elementor-widget-heading" data-id="b14fa85" data-element_type="widget" data-widget_type="heading.default">
@@ -77,22 +77,22 @@
                                  <div class="elementor-widget-wrap">
                                     <div class="elementor-element elementor-element-739130a elementor-widget elementor-widget-heading" data-id="739130a" data-element_type="widget" data-widget_type="heading.default">
                                        <div class="elementor-widget-container">
-                                          <h2 class="elementor-heading-title elementor-size-default"><a href="https://irunastall.com/about">About us</a></h2>
+                                          <h2 class="elementor-heading-title elementor-size-default"><a href="/about">About us</a></h2>
                                        </div>
                                     </div>
                                     <div class="elementor-element elementor-element-466e431 elementor-widget elementor-widget-heading" data-id="466e431" data-element_type="widget" data-widget_type="heading.default">
                                        <div class="elementor-widget-container">
-                                          <h2 class="elementor-heading-title elementor-size-default"><a href="https://irunastall.com/about">Contact us</a></h2>
+                                          <h2 class="elementor-heading-title elementor-size-default"><a href="/about">Contact us</a></h2>
                                        </div>
                                     </div>
                                     <div class="elementor-element elementor-element-262e072 elementor-widget elementor-widget-heading" data-id="262e072" data-element_type="widget" data-widget_type="heading.default">
                                        <div class="elementor-widget-container">
-                                          <h2 class="elementor-heading-title elementor-size-default"><a href="https://irunastall.com/about">Terms & Conditions</a></h2>
+                                          <h2 class="elementor-heading-title elementor-size-default"><a href="/about">Terms & Conditions</a></h2>
                                        </div>
                                     </div>
                                     <div class="elementor-element elementor-element-16b8f8e elementor-widget elementor-widget-heading" data-id="16b8f8e" data-element_type="widget" data-widget_type="heading.default">
                                        <div class="elementor-widget-container">
-                                          <h2 class="elementor-heading-title elementor-size-default"><a href="https://irunastall.com/about">Privacy policy</a></h2>
+                                          <h2 class="elementor-heading-title elementor-size-default"><a href="/about">Privacy policy</a></h2>
                                        </div>
                                     </div>
                                  </div>
