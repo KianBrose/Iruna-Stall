@@ -160,7 +160,7 @@
 														@endif
 														<td data-label="Ability Lv">{{ $equip->ability_level}}</td>
 														<td data-label="Price">{{ number_format($equip->price )}}</td>
-														<td data-label="Contact"><a href="/user/{{$equip->owner_id}}" style="color:orange;">{{ $equip->contact }}</a></td>
+														<td data-label="Contact"><a href="/user/{{$equip->owner_id}}" style="color:red;">{{ $equip->contact }}</a></td>
 													</tr>
                                              	@endforeach
                                              </tbody>
@@ -187,13 +187,15 @@
 													<td data-label="Name"><a href="/item/material/{{$item->item_id}}">{{ $item->name }}</td>
 													<td data-label="QTY">{{ $item->quantity }}</td>
 													<td data-label="Price">{{ number_format($item->price) }}</td>
-													<td data-label="Contact"><a href="/user/{{ $item->owner_id}}" style="color:orange;">{{ $item->contact }}</a></td>
+													<td data-label="Contact"><a href="/user/{{ $item->owner_id}}" style="color:red;">{{ $item->contact }}</a></td>
 												</tr>
 												@endforeach
                                              </tbody>
                                           </table>
                                           {{$itemSearch->appends(['search' => request('search'), 'xtalPage' => request('xtalPage'), 'equipPage' => request('equipPage'), 'itemPage' => request('itemPage'), 'relicPage' => request('relicPage'), 'alPage' => request('alPage')])->fragment('material')->links() }}
                                           @endif
+
+                                          @if($xtalSearch->count() >= 1)
                                           <table>
                                              <br>
                                              <h2 class="elementor-heading-title elementor-size-default">Xtals</h2>
@@ -207,20 +209,20 @@
                                                 </tr>
                                              </thead>
                                              <tbody>
-                                                <tr>
-                                                   <td data-label="Name">Veryyy long name</td>
-                                                   <td data-label="QTY">9999</td>
-                                                   <td data-label="Price">10000000000</td>
-                                                   <td data-label="Contact"><a href="#" style="color:orange;">SellerUser</a></td>
-                                                </tr>
-                                                <tr>
-                                                   <td data-label="Name">Veryyy long name</td>
-                                                   <td data-label="QTY">9999</td>
-                                                   <td data-label="Price">10000000000</td>
-                                                   <td data-label="Contact"><a href="#" style="color:orange;">SellerUser</a></td>
-                                                </tr>
+                                             	@foreach ($xtalSearch as $xtal)
+												<tr>
+													<td data-label="Name"><a href="/item/xtal/{{$xtal->item_id}}">{{ $xtal->name }}</a></td>
+													<td data-label="QTY">{{ $xtal->quantity }}</td>
+													<td data-label="Price">{{ number_format($xtal->price) }}</td>
+													<td data-label="Contact"><a href="/user/{{ $xtal->owner_id}}" style="color:red;">{{ $xtal->contact }}</a></td>
+												</tr>
+												@endforeach
                                              </tbody>
                                           </table>
+                                          {{$xtalSearch->appends(['search' => request('search'), 'xtalPage' => request('xtalPage'), 'equipPage' => request('equipPage'), 'itemPage' => request('itemPage'), 'relicPage' => request('relicPage'), 'alPage' => request('alPage')])->fragment('xtal')->links()}}
+                                          @endif
+
+                                          @if($alSearch->count() >= 1)
                                           <table>
                                              <br>
                                              <h2 class="elementor-heading-title elementor-size-default">AL's</h2>
@@ -235,29 +237,25 @@
                                                 </tr>
                                              </thead>
                                              <tbody>
-                                                <tr>
-                                                   <td data-label="Name" style="color:red;">Veryyy long name</td>
-                                                   <td data-label="QTY">9999</td>
-                                                   <td data-label="Color" style="color:red;">Red</td>
-                                                   <td data-label="Price">10000000000</td>
-                                                   <td data-label="Contact"><a href="#" style="color:orange;">SellerUser</a></td>
-                                                </tr>
-                                                <tr>
-                                                   <td data-label="Name" style="color:blue;">Veryyy long name</td>
-                                                   <td data-label="QTY">9999</td>
-                                                   <td data-label="Color" style="color:blue;">Blue</td>
-                                                   <td data-label="Price">10000000000</td>
-                                                   <td data-label="Contact"><a href="#" style="color:orange;">SellerUser</a></td>
-                                                </tr>
-                                                <tr>
-                                                   <td data-label="Name" style="color:green;">Veryyy long name</td>
-                                                   <td data-label="QTY">9999</td>
-                                                   <td data-label="Color" style="color:green;">Green</td>
-                                                   <td data-label="Price">10000000000</td>
-                                                   <td data-label="Contact"><a href="#" style="color:orange;">SellerUser</a></td>
-                                                </tr>
+                                             	@foreach($alSearch as $al)
+												<tr>
+				                                    @if($al->color == "Red")
+				                                    <td data-label="Name" style="color:red;"><a style="color:red;" href="/item/alcrystas/{{$al->item_id}}">{{ $al->name }}</a></td>
+				                                    @elseif($al->color == "Blue")
+				                                    <td data-label="Name" style="color:blue;"><a style="color:blue;" href="/item/alcrystas/{{$al->item_id}}">{{ $al->name }}</a></td>
+				                                    @elseif($al->color == "Green")
+				                                    <td data-label="Name" style="color:green;"><a style="color:green;" href="/item/alcrystas/{{$al->item_id}}">{{ $al->name }}</a></td>
+				                                    @endif
+													<td data-label="Color">{{ $al->color }}</td>
+													<td data-label="QTY">{{ $al->quantity }}</td>
+													<td data-label="Price">{{ number_format($al->price) }}</td>
+													<td data-label="Contact"><a href="/user/{{ $al->owner_id}}">{{ $al->contact }}</a></td>
+												</tr>
+												@endforeach
                                              </tbody>
                                           </table>
+                                          {{$alSearch->appends(['search' => request('search'), 'xtalPage' => request('xtalPage'), 'equipPage' => request('equipPage'), 'itemPage' => request('itemPage'), 'relicPage' => request('relicPage'), 'alPage' => request('alPage')])->fragment('alcrystas')->links()}}
+                                          @endif
                                           <table>
                                              <br>
                                              <h2 class="elementor-heading-title elementor-size-default">Relics</h2>
