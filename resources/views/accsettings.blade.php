@@ -101,8 +101,8 @@
                                        <div class="elementor-text-editor elementor-clearfix">
                                           <form action="/addfacebook" method="POST" id="itemform">
                                           <div class="form__group field">
-                                             <input type="input" class="form__field" placeholder="Name" name="name" id="name" required="">
-                                             <label for="name" class="form__label" style="font-size:20px">Facebook</label>
+                                             <input type="input" class="form__field" placeholder="facebook" name="facebook" id="facebook" required="">
+                                             <label for="Facebook" class="form__label" style="font-size:20px">Facebook</label>
                                           </div>
                                           <br>
                                           <div class="elementor-element elementor-element-29bb990 elementor-widget elementor-widget-button" data-id="29bb990" data-element_type="widget" data-widget_type="button.default">
@@ -132,8 +132,8 @@
                                        <div class="elementor-text-editor elementor-clearfix">
                                           <form action="/adddiscord" method="POST" id="itemform">
                                           <div class="form__group field">
-                                             <input type="input" class="form__field" placeholder="Name" name="name" id="name" required="">
-                                             <label for="name" class="form__label" style="font-size:20px">Discord</label>
+                                             <input type="input" class="form__field" placeholder="Discord" name="discord" id="discord" required="">
+                                             <label for="discord" class="form__label" style="font-size:20px">Discord</label>
                                           </div>
                                           <br>
                                           <div class="elementor-element elementor-element-29bb990 elementor-widget elementor-widget-button" data-id="29bb990" data-element_type="widget" data-widget_type="button.default">
@@ -160,10 +160,10 @@
                                  <div class="elementor-element elementor-element-777acf3 elementor-widget elementor-widget-text-editor" data-id="777acf3" data-element_type="widget" data-widget_type="text-editor.default">
                                     <div class="elementor-widget-container">
                                        <div class="elementor-text-editor elementor-clearfix">
-                                          <form action="/adddiscord" method="POST" id="itemform">
+                                          <form action="/addwhatsapp" method="POST" id="itemform">
                                           <div class="form__group field">
-                                             <input type="input" class="form__field" placeholder="Name" name="name" id="name" required="">
-                                             <label for="name" class="form__label" style="font-size:20px">Whatsapp number</label>
+                                             <input type="input" class="form__field" placeholder="Whatsapp" name="whatsapp" id="whatsapp" required="">
+                                             <label for="whatsapp" class="form__label" style="font-size:20px">Whatsapp number</label>
                                           </div>
                                           <br>
                                           <div class="elementor-element elementor-element-29bb990 elementor-widget elementor-widget-button" data-id="29bb990" data-element_type="widget" data-widget_type="button.default">
@@ -190,10 +190,10 @@
                                  <div class="elementor-element elementor-element-777acf3 elementor-widget elementor-widget-text-editor" data-id="777acf3" data-element_type="widget" data-widget_type="text-editor.default">
                                     <div class="elementor-widget-container">
                                        <div class="elementor-text-editor elementor-clearfix">
-                                          <form action="/adddiscord" method="POST" id="itemform">
+                                          <form action="/addsnapchat" method="POST" id="itemform">
                                           <div class="form__group field">
-                                             <input type="input" class="form__field" placeholder="Name" name="name" id="name" required="">
-                                             <label for="name" class="form__label" style="font-size:20px">Snapchat name</label>
+                                             <input type="input" class="form__field" placeholder="Snapchat" name="snapchat" id="snapchat" required="">
+                                             <label for="snapchat" class="form__label" style="font-size:20px">Snapchat name</label>
                                           </div>
                                           <br>
                                           <div class="elementor-element elementor-element-29bb990 elementor-widget elementor-widget-button" data-id="29bb990" data-element_type="widget" data-widget_type="button.default">
@@ -220,15 +220,15 @@
                                  <div class="elementor-element elementor-element-777acf3 elementor-widget elementor-widget-text-editor" data-id="777acf3" data-element_type="widget" data-widget_type="text-editor.default">
                                     <div class="elementor-widget-container">
                                        <div class="elementor-text-editor elementor-clearfix">
-                                          <form action="/adddiscord" method="POST" id="itemform">
+                                          <form action="/changepass" method="POST" id="itemform">
                                           <div class="form__group field">
-                                             <input type="password" class="form__field" placeholder="Name" name="name" id="name" required="">
-                                             <label for="name" class="form__label" style="font-size:20px">Old password</label>
+                                             <input type="password" class="form__field" placeholder="Password" name="password" id="password" required="">
+                                             <label for="password" class="form__label" style="font-size:20px">Old password</label>
                                           </div>
                                           <br>
                                           <div class="form__group field">
-                                             <input type="input" class="form__field" placeholder="Name" name="name" id="name" required="">
-                                             <label for="name" class="form__label" style="font-size:20px">Email address</label>
+                                             <input type="input" class="form__field" placeholder="Email" name="email" id="email" required="">
+                                             <label for="email" class="form__label" style="font-size:20px">Email address</label>
                                           </div>
                                           <br>
                                           <div class="elementor-element elementor-element-29bb990 elementor-widget elementor-widget-button" data-id="29bb990" data-element_type="widget" data-widget_type="button.default">
@@ -255,15 +255,15 @@
                                  <div class="elementor-element elementor-element-777acf3 elementor-widget elementor-widget-text-editor" data-id="777acf3" data-element_type="widget" data-widget_type="text-editor.default">
                                     <div class="elementor-widget-container">
                                        <div class="elementor-text-editor elementor-clearfix">
-                                          <form action="/adddiscord" method="POST" id="itemform">
+                                          <form action="/deleteacc" method="POST" id="itemform">
                                           <div class="form__group field">
-                                             <input type="password" class="form__field" placeholder="Name" name="name" id="name" required="">
-                                             <label for="name" class="form__label" style="font-size:20px">Password</label>
+                                             <input type="password" class="form__field" placeholder="Password" name="password1" id="password1" required="">
+                                             <label for="password1" class="form__label" style="font-size:20px">Password</label>
                                           </div>
                                           <br>
                                           <div class="form__group field">
-                                             <input type="input" class="form__field" placeholder="Name" name="name" id="name" required="">
-                                             <label for="name" class="form__label" style="font-size:20px">Email address</label>
+                                             <input type="input" class="form__field" placeholder="Email" name="email1" id="email1" required="">
+                                             <label for="email1" class="form__label" style="font-size:20px">Email address</label>
                                           </div>
                                           <br>
                                           <div class="elementor-element elementor-element-29bb990 elementor-widget elementor-widget-button" data-id="29bb990" data-element_type="widget" data-widget_type="button.default">
