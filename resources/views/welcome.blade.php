@@ -100,7 +100,7 @@
                                                 <form action="/search" name="form1" method="GET">
                                                     @csrf
                                                 <div class="search-bar">
-                                                    <div class="icon" style="background-image:url(https://new.irunastall.com/img/searchicon.png);"></div>
+                                                    <div class="icon" style="background-image:url({{ asset('img/searchicon.png') }});"></div>
                                                     
                                                     <input id="search" name="search" type="text" placeholder="Search for any equipment, xtal, al, material or relic">
                                                 </div>
