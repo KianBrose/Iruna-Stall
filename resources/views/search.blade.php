@@ -40,6 +40,8 @@
       <link rel="stylesheet" href="{{ asset('css/mainsearchbar.css') }}">
       <link rel="stylesheet" href="{{ asset('css/searchpage.css') }}">
       <link rel="stylesheet" href="{{ asset('css/searchpagination.css') }}">
+      <link rel="stylesheet" href="{{ asset('css/jquery-ui.css') }}">
+      <link rel="stylesheet" href="{{ asset('css/autocomplete.css') }}">
       <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;800&display=swap" rel="stylesheet">
       <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
    </head>

@@ -8,7 +8,7 @@
       <meta name="description" content="Find about Iruna Stall on how it used to find, buy and sell items for free! In the Iruna Global Stall, you can post your items as a seller and search for items without the need for registration.">
       <meta name="keywords" content="Iruna, Stall, Global, iruna, stall, global, Iruna Online, buy, sell, trade, about, Kian Brose, Kumar, Polowis, terms, service, contact">
       <meta name="hostname" content="irunastall.com">
-      <meta name='subject' content="About Iruna Global Stall">
+      <meta name='subject' content="{{$item->name}} | Iruna Global Stall">
       <meta name="author" content="Kian Brose">
       <meta name='coverage' content='Worldwide'>
       <meta name='distribution' content='Global'>
