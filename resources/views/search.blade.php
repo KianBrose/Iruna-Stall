@@ -249,7 +249,7 @@
 													<td data-label="Color">{{ $al->color }}</td>
 													<td data-label="QTY">{{ $al->quantity }}</td>
 													<td data-label="Price">{{ number_format($al->price) }}</td>
-													<td data-label="Contact"><a href="/user/{{ $al->owner_id}}">{{ $al->contact }}</a></td>
+													<td data-label="Contact"><a href="/user/{{ $al->owner_id}}" style="color:red;">{{ $al->contact }}</a></td>
 												</tr>
 												@endforeach
                                              </tbody>
