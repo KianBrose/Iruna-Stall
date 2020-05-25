@@ -108,7 +108,7 @@
                                              <h6>Quantity: {{number_format($item->quantity)}}</h6>
                                              <br>
                                              <h6>Posted at: {{date_format($item->created_at, "d/m/Y")}}</h6>
-                                             <h6>Seller: <a href="/user/{{ $item->owner_id}}">{{ $item->contact }}</a></h6>
+                                             <h6>Seller: <a href="/user/{{ $item->owner_id}}" style="color:orange;">{{ $item->contact }}</a></h6>
                                              @elseif($item->category == 'equipment')
                                              <h6>Name: {{$item->name}}</h6>
                                              <h6>ATK: {{$item->atk}}</h6>
@@ -152,7 +152,7 @@
                                              <h6>Ability: {{ $item->ability }}</h6>
                                              <h6> Ability's level: {{$item->ability_level}}</h6>
                                              @endif
-                                             <h6>Seller: <a href="/user/{{ $item->owner_id}}">{{ $item->contact }}</a></h6>
+                                             <h6>Seller: <a href="/user/{{ $item->owner_id}}" style="color:orange;">{{ $item->contact }}</a></h6>
                                              @elseif($item->category == 'item')
                                              <h6>Name: {{$item->name }} </h6>
                                              <br>
@@ -161,7 +161,7 @@
                                              <h6>Quantity: {{number_format($item->quantity)}}</h6>
                                              <br>
                                              <h6>Posted at: {{date_format($item->created_at, "d/m/Y")}}</h6>
-                                             <h6>Seller: <a href="/user/{{ $item->owner_id}}">{{ $item->contact }}</a></h6>
+                                             <h6>Seller: <a href="/user/{{ $item->owner_id}}" style="color:orange;">{{ $item->contact }}</a></h6>
                                              @elseif($item->category == 'ai')
                                              <h6>Name: {{$item->name }} </h6>
                                              <br>
@@ -171,7 +171,7 @@
                                              <h6>Quantity: {{number_format($item->quantity)}}</h6>
                                              <br>
                                              <h6>Posted at: {{date_format($item->created_at, "d/m/Y")}}</h6>
-                                             <h6>Seller: <a href="/user/{{ $item->owner_id}}">{{ $item->contact }}</a></h6>
+                                             <h6>Seller: <a href="/user/{{ $item->owner_id}}" style="color:orange;">{{ $item->contact }}</a></h6>
                                              @elseif($item->category == 'relic')
                                              <h6>Name: {{$item->name }} </h6>
                                              <br>
@@ -180,7 +180,7 @@
                                              <h6>Quantity: {{number_format($item->quantity)}}</h6>
                                              <br>
                                              <h6>Posted at: {{date_format($item->created_at, "d/m/Y")}}</h6>
-                                             <h6>Seller: <a href="/user/{{ $item->owner_id}}">{{ $item->contact }}</a></h6>
+                                             <h6>Seller: <a href="/user/{{ $item->owner_id}}" style="color:orange;">{{ $item->contact }}</a></h6>
                                              @endif
                                           </div>
                                        </div>
