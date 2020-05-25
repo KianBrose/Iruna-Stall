@@ -100,7 +100,7 @@
                                              <form action="/createEquip" method="POST" id="equipform">
                                                 <tr>
                                                    <div class="form__group field">
-                                                      <input type="input" class="form__field" placeholder="Equipment name" name="equipname" id='equipname' required />
+                                                      <input type="input" class="form__field" placeholder="EquipmentName" name="equipname" id='equipname' required />
                                                       <label for="equipname" class="form__label">Equipment Name</label>
                                                    </div>
                                                 </tr>
