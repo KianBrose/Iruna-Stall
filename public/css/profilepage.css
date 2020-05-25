@@ -12007,18 +12007,8 @@ ul.elementor-icon-list-items.elementor-inline-items .elementor-inline-item {
 
 .elementor-button {
     display: inline-block;
-    line-height: 1;
-    background-color: #818a91;
-    font-size: 15px;
-    padding: 12px 24px;
-    -webkit-border-radius: 3px;
-    border-radius: 3px;
     color: #fff;
     fill: #fff;
-    text-align: center;
-    -webkit-transition: all .3s;
-    -o-transition: all .3s;
-    transition: all .3s
 }
 
 .elementor-button:focus,
@@ -15621,7 +15611,6 @@ button.swiper-pagination-bullet {
 .elementor-widget-button .elementor-button {
     font-family: "Roboto", Sans-serif;
     font-weight: 500;
-    background-color: #61ce70
 }
 
 .elementor-widget-divider {
