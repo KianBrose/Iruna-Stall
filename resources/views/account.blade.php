@@ -120,7 +120,7 @@
                                                             <tr>
                                                                 <br>
                                                                 <td>
-                                                                    <label for="Test">Refinement:</label>
+                                                                    <label for="Test" style="color:white;">Refinement:</label>
                                                                 </td>
                                                                 <td style="padding-left:10px;">
                                                                     <select name="refinement" class="form-control2" id="refinement">
@@ -141,7 +141,7 @@
                                                             <tr>
                                                                 <br>
                                                                 <td>
-                                                                    <label for="type">Type:</label>
+                                                                    <label for="type" style="color:white;">Type:</label>
                                                                 </td>
                                                                 <td style="padding-left:10px;">
                                                                     <select name="type" class="form-control2" id="type">
@@ -156,7 +156,7 @@
                                                             <tr>
                                                                 <br>
                                                                 <td>
-                                                                    <label for="Test">Slots:</label>
+                                                                    <label for="Test" style="color:white;">Slots:</label>
                                                                 </td>
                                                                 <td style="padding-left:10px;">
                                                                     <select name="equipslotamount" class="form-control2" id="equipslotamount">
@@ -171,7 +171,7 @@
                                                             <div id="slot1" style="display:none;">
                                                                 <tr>
                                                                     <td>
-                                                                        <label for="slot1">Slot 1:</label>
+                                                                        <label for="slot1" style="color:white;">Slot 1:</label>
                                                                     </td>
                                                                     <td style="padding-left:10px;">
                                                                         <input type="text" class="form-control iteminput crystas" style="width: 400px" name="slot1" id="slot1" />
@@ -182,7 +182,7 @@
                                                             <div id="slot2" style="display:none;">
                                                                 <tr>
                                                                     <td>
-                                                                        <label for="Test">Slot 2:</label>
+                                                                        <label for="Test" style="color:white;">Slot 2:</label>
                                                                     </td>
                                                                     <td style="padding-left:10px;">
                                                                         <input type="text" class="form-control iteminput crystas" style="width: 400px" name="slot2" id="slot" />
@@ -192,7 +192,7 @@
                                                             </div>
                                                             <tr>
                                                                 <td>
-                                                                    <label for="Test">Ability:</label>
+                                                                    <label for="Test" style="color:white;">Ability:</label>
                                                                 </td>
                                                                 <td style="padding-left:10px;">
                                                                     <select name="abidrop" class="form-control2" id="abidrop">
@@ -205,7 +205,7 @@
                                                             <div id="hasabil" style="display:none;">
                                                                 <tr>
                                                                     <td>
-                                                                        <label for="Test">Ability name:</label>
+                                                                        <label for="Test" style="color:white;">Ability name:</label>
                                                                     </td>
                                                                     <td style="padding-left:10px;">
                                                                         <input type="text" class="form-control iteminput" style="width: 400px" name="ability" id="ability" value="" />
@@ -213,7 +213,7 @@
                                                                 </tr>
                                                                 <tr>
                                                                     <td>
-                                                                        <label for="Test">Ability level:</label>
+                                                                        <label for="Test" style="color:white;">Ability level:</label>
                                                                     </td>
                                                                     <td style="padding-left:10px;">
                                                                         <input type="number" max="5" class="form-control iteminput" style="width: 400px" name="ability_level" id="ability_level" value="0" />
@@ -337,7 +337,7 @@
                                                             <tr>
                                                                 <br>
                                                                 <td>
-                                                                    <label for="color">Color:</label>
+                                                                    <label for="color" style="color:white;">Color:</label>
                                                                 </td>
                                                                 <td style="padding-left:10px;">
                                                                     <select name="color" class="form-control2" id="color">
