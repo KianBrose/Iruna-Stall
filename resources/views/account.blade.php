@@ -183,6 +183,7 @@
                                                                 </tr>
                                                             </div>
                                                             <tr>
+                                                            	<br>
                                                                 <td>
                                                                     <label for="Test" style="color:white;">Ability:</label>
                                                                 </td>
@@ -196,20 +197,16 @@
                                                             </tr>
                                                             <div id="hasabil" style="display:none;">
                                                                 <tr>
-                                                                    <td>
-                                                                        <label for="Test" style="color:white;">Ability name:</label>
-                                                                    </td>
-                                                                    <td style="padding-left:10px;">
-                                                                        <input type="text" class="form-control iteminput" style="width: 400px" name="ability" id="ability" value="" />
-                                                                    </td>
+                                                                    <div class="form__group field">
+                                                                  <input type="input" class="form__field" placeholder="Name" name="name" id='name' required />
+                                                                  <label for="name" class="form__label">Ability name</label>
+                                                                </div>
                                                                 </tr>
                                                                 <tr>
-                                                                    <td>
-                                                                        <label for="Test" style="color:white;">Ability level:</label>
-                                                                    </td>
-                                                                    <td style="padding-left:10px;">
-                                                                        <input type="number" max="5" class="form-control iteminput" style="width: 400px" name="ability_level" id="ability_level" value="0" />
-                                                                    </td>
+                                                                    <div class="form__group field">
+                                                                  <input type="input" class="form__field" placeholder="Name" name="name" id='name' required />
+                                                                  <label for="name" class="form__label">Ability level</label>
+                                                                </div>
                                                                 </tr>
                                                             </div>
                                                             <tr>
