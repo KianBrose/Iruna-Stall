@@ -101,6 +101,16 @@
                                             </div>
                                             <div class="elementor-element elementor-element-1b0a1a8 elementor-widget elementor-widget-heading" data-id="1b0a1a8" data-element_type="widget" data-widget_type="heading.default">
                                             <div class="elementor-widget-container">
+                                            	<br>
+												<h4>Search Results: {{ $input }}</h4>
+												<br>
+												@error('searcherror')
+												<div style="color:red">{{$message}}</div>
+												<br>
+												@enderror
+												<p>There are {{$totalCount }} results</p>
+												<hr>
+												@if($equipSearch->count() >= 1)
                                                 <table>
                                                   <h2 class="elementor-heading-title elementor-size-default">Equipment</h2>
                                                     <br>
