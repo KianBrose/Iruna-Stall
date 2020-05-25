@@ -86,21 +86,21 @@
                             <div class="elementor-element elementor-element-9bb1b36 elementor-column elementor-col-100 elementor-top-column" data-id="9bb1b36" data-element_type="column">
                                 <div class="elementor-column-wrap  elementor-element-populated">
                                     <div class="elementor-widget-wrap">
-                                        <div class="elementor-element elementor-element-6d1da58 elementor-widget elementor-widget-heading" data-id="6d1da58" data-element_type="widget" data-widget_type="heading.default">
+                                        <div class="elementor-element elementor-element-106c54e elementor-widget elementor-widget-heading" data-id="106c54e" data-element_type="widget" data-widget_type="heading.default">
                                             <div class="elementor-widget-container">
                                                 
+                                                <form action="/search" name="form1" method="GET">
+                                                    @csrf
                                                 <div class="search-bar">
-                                                    <div class="icon"></div>
-                                                    <input type="text" placeholder="Search for any equipment, xtal, al, material or relic">
+                                                    <div class="icon" style="background-image:url({{ asset('img/searchicon.png') }});"></div>
+                                                    
+                                                    <input id="search" name="search" type="text" placeholder="Search for any equipment, xtal, al, material or relic">
                                                 </div>
-                                            
+                                                </form>
+                                                
+                                                
                                             </div>
-                                        </div>
-                                        <div class="elementor-element elementor-element-89ff3dd elementor-widget elementor-widget-heading" data-id="89ff3dd" data-element_type="widget" data-widget_type="heading.default">
-                                            <div class="elementor-widget-container">
-                                                <h2 class="elementor-heading-title elementor-size-default">There are 999 results</h2> </div>
-                                        </div>
-                                        <div class="elementor-element elementor-element-1b0a1a8 elementor-widget elementor-widget-heading" data-id="1b0a1a8" data-element_type="widget" data-widget_type="heading.default">
+                                            <div class="elementor-element elementor-element-1b0a1a8 elementor-widget elementor-widget-heading" data-id="1b0a1a8" data-element_type="widget" data-widget_type="heading.default">
                                             <div class="elementor-widget-container">
                                                 <table>
                                                   <h2 class="elementor-heading-title elementor-size-default">Equipment</h2>
@@ -268,6 +268,7 @@
                                                   </tbody>
                                                 </table>
                                             </div>
+                                        </div>
                                         </div>
                                     </div>
                                 </div>
