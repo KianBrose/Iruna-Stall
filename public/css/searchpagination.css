@@ -1,5 +1,11 @@
+nav {
+  display: flex; 
+  width: 100%;
+  justify-content: center;
+}
+
 .pagination {
-  display: inline-block;
+  display: flex; /*instead of inline-block*/
   list-style-type: none;
 }
 
