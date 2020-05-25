@@ -67,18 +67,12 @@
                   </div>
                </section>
                @include('layouts.navbarv2')
-               <section class="elementor-element elementor-element-9ee35cc elementor-section-full_width elementor-section-height-default elementor-section-height-default elementor-section elementor-top-section" data-id="9ee35cc" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
-                  <div class="elementor-container elementor-column-gap-default">
-                     <div class="elementor-row">
-                        <div class="elementor-element elementor-element-67b31e2 elementor-column elementor-col-33 elementor-top-column" data-id="67b31e2" data-element_type="column">
-                           <div class="elementor-column-wrap">
-                              <div class="elementor-widget-wrap">
-                              </div>
-                           </div>
-                        </div>
-                        <div class="elementor-element elementor-element-9bb1b36 elementor-column elementor-col-33 elementor-top-column" data-id="9bb1b36" data-element_type="column">
-                           <div class="elementor-column-wrap  elementor-element-populated">
-                              <div class="elementor-widget-wrap">
+               <section class="elementor-element elementor-element-16e6ebd elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-top-section" data-id="16e6ebd" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+                    <div class="elementor-container elementor-column-gap-default">
+                        <div class="elementor-row">
+                            <div class="elementor-element elementor-element-9a97296 elementor-column elementor-col-100 elementor-top-column" data-id="9a97296" data-element_type="column">
+                                <div class="elementor-column-wrap  elementor-element-populated">
+                                    <div class="elementor-widget-wrap">
                                         <div class="elementor-element elementor-element-6d1da58 elementor-widget elementor-widget-heading" data-id="6d1da58" data-element_type="widget" data-widget_type="heading.default">
                                             <div class="elementor-widget-container">
                                                 <h2 class="elementor-heading-title elementor-size-default">Add item</h2> </div>
@@ -421,17 +415,11 @@
                                             </div>
                                         </div>
                                     </div>
-                           </div>
+                                </div>
+                            </div>
                         </div>
-                        <div class="elementor-element elementor-element-c96e6fb elementor-column elementor-col-33 elementor-top-column" data-id="c96e6fb" data-element_type="column">
-                           <div class="elementor-column-wrap">
-                              <div class="elementor-widget-wrap">
-                              </div>
-                           </div>
-                        </div>
-                     </div>
-                  </div>
-               </section>
+                    </div>
+                </section>
                @include('layouts.footer')
             </div>
          </div>
