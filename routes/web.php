@@ -29,6 +29,10 @@ Route::get('/scammers', function () {
 Route::get('/updates', function () {
     return view('updates');
 });
+Route::get('/upcomming', function () {
+    return view('upcomming');
+});
+
 
 Route::get('/tutorial', 'HomeController@tutorial');
 
