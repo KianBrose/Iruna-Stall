@@ -67,7 +67,7 @@
                   </div>
                </section>
                @include('layouts.navbarv2')
-               <section class="elementor-element elementor-element-16e6ebd elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-top-section" data-id="16e6ebd" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+               <section class="elementor-element elementor-element-16e6ebd elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-top-section" data-id="16e6ebd" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}" style="background-color:#00a5ff;">
                     <div class="elementor-container elementor-column-gap-default">
                         <div class="elementor-row">
                             <div class="elementor-element elementor-element-9a97296 elementor-column elementor-col-100 elementor-top-column" data-id="9a97296" data-element_type="column">
@@ -80,7 +80,7 @@
                                         <div class="elementor-element elementor-element-fa9d1bf elementor-widget elementor-widget-text-editor" data-id="fa9d1bf" data-element_type="widget" data-widget_type="text-editor.default">
                                             <div class="elementor-widget-container">
                                                 <div class="elementor-text-editor elementor-clearfix">
-                                                    <p>Welcome to the add item page! If this is your first time here, please refer to this <a href="https://irunastall.com/tutorial">quick guide</a> on how to add an item!</p>
+                                                    <p style="color:white;">Welcome to the add item page! If this is your first time here, please refer to this <a href="https://irunastall.com/tutorial" style="color:orange;">quick guide</a> on how to add an item!</p>
                                                 </div>
                                             </div>
                                         </div>
