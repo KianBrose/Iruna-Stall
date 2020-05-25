@@ -2,13 +2,13 @@
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
    <head>
       <meta charset="utf-8">
-      <title> Account settings | Iruna Global Stall</title>
+      <title> Add item | Iruna Global Stall</title>
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <meta name="robots" content="index, follow">
       <meta name="description" content="Find about Iruna Stall on how it used to find, buy and sell items for free! In the Iruna Global Stall, you can post your items as a seller and search for items without the need for registration.">
       <meta name="keywords" content="Iruna, Stall, Global, iruna, stall, global, Iruna Online, buy, sell, trade, about, Kian Brose, Kumar, Polowis, terms, service, contact">
       <meta name="hostname" content="irunastall.com">
-      <meta name='subject' content="Iruna Global Stall Account Settings">
+      <meta name='subject' content="Iruna Global Stall Add Item">
       <meta name="author" content="Kian Brose">
       <meta name='coverage' content='Worldwide'>
       <meta name='distribution' content='Global'>
@@ -16,14 +16,14 @@
       <meta name='HandheldFriendly' content='True'>
       <meta name='MobileOptimized' content='320'>
       <meta name='target' content='all'>
-      <meta name="apple-mobile-web-app-title" content="Account settings | Iruna Global Stall">
+      <meta name="apple-mobile-web-app-title" content="Add item | Iruna Global Stall">
       <meta name='apple-mobile-web-app-capable' content='yes'>
       <meta name='apple-touch-fullscreen' content='yes'>
       <meta name='apple-touch-fullscreen' content='yes'>
       <meta name='application-name' content="Iruna Global Stall">
       <link rel="apple-touch-icon" href="https://irunastall.com/img/iruna.jpg">
       <meta name="twitter:card" content="summary">
-      <meta name="twitter:title" content="Account settings | Iruna Global Stall">
+      <meta name="twitter:title" content="Add item | Iruna Global Stall">
       <meta name="twitter:description" content="Know about Iruna global stall. This is a platform to find, buy and sell items of Iruna online game. Account is not needed for searching for items">
       <meta property="og:title" content="Iruna Stall">
       <meta property="og:type" content="website">
@@ -40,6 +40,9 @@
       <link href="{{asset('css/icons/all.css')}}" rel="stylesheet">
       <link href="{{asset('css/additem.css')}}" rel="stylesheet">
       <link rel="stylesheet" href="{{ asset('css/mainsearchbar.css') }}">
+      <link rel="stylesheet" href="{{ asset('css/autocomplete.css') }}">
+      <link rel="stylesheet" href="{{ asset('css/jquery-ui.css') }}">
+
       <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;800&display=swap" rel="stylesheet">
       <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
    <body class="page-template page-template-elementor_canvas page page-id-2358 wp-custom-logo wp-embed-responsive theme-storefront woocommerce-no-js wcz-woocommerce wcz-btn-style-default ehf-template-storefront ehf-stylesheet-storefront woo-variation-gallery woo-variation-gallery-theme-storefront woo-variation-gallery-theme-child-storefront woo-variation-swatches woo-variation-swatches-theme-storefront woo-variation-swatches-theme-child-storefront woo-variation-swatches-style-squared woo-variation-swatches-attribute-behavior-blur woo-variation-swatches-tooltip-enabled woo-variation-swatches-stylesheet-enabled storefront-full-width-content storefront-align-wide right-sidebar woocommerce-active elementor-default elementor-template-canvas elementor-kit-1727 elementor-page elementor-page-2358">
@@ -100,8 +103,8 @@
                                              <form action="/createEquip" method="POST" id="equipform">
                                                 <tr>
                                                    <div class="form__group field">
-                                                      <input type="input" class="form__field" placeholder="EquipmentName" name="equipname" id='equipname' required />
-                                                      <label for="equipname" class="form__label">Equipment Name</label>
+                                                      <input type="input" class="form__field" placeholder="EquipmentName" name="equipment" id='equipment' required />
+                                                      <label for="equipment" class="form__label">Equipment Name</label>
                                                    </div>
                                                 </tr>
                                                 <tr>
@@ -170,7 +173,7 @@
                                                    <tr>
                                                       <div class="form__group field">
                                                          <input type="input" class="form__field" placeholder="Slot1" name="slot1" id='slot1' required />
-                                                         <label for="slot1" class="form__label">Slot 1</label>
+                                                         <label for="slot1" class="form__label crystas">Slot 1</label>
                                                       </div>
                                                    </tr>
                                                 </div>
@@ -178,7 +181,7 @@
                                                    <tr>
                                                       <div class="form__group field">
                                                          <input type="input" class="form__field" placeholder="Slot2" name="slot2" id='slot2' required />
-                                                         <label for="slot2" class="form__label">Slot 2</label>
+                                                         <label for="slot2" class="form__label crystas">Slot 2</label>
                                                       </div>
                                                    </tr>
                                                 </div>
@@ -199,8 +202,8 @@
                                                 <div id="hasabil" style="display:none;">
                                                    <tr>
                                                       <div class="form__group field">
-                                                         <input type="input" class="form__field" placeholder="AbilityName" name="abilityname" id='abilityname' required />
-                                                         <label for="abilityname" class="form__label">Ability name</label>
+                                                         <input type="input" class="form__field" placeholder="AbilityName" name="ability" id='ability' required />
+                                                         <label for="ability" class="form__label">Ability name</label>
                                                       </div>
                                                    </tr>
                                                    <tr>
@@ -237,8 +240,8 @@
                                              <form action="/createItem" method="POST" id="itemform">
                                                 <tr>
                                                    <div class="form__group field">
-                                                      <input type="input" class="form__field" placeholder="ItemName" name="itemname" id='itemname' required />
-                                                      <label for="itemname" class="form__label">Item Name</label>
+                                                      <input type="input" class="form__field" placeholder="ItemName" name="material" id='material' required />
+                                                      <label for="material" class="form__label">Item Name</label>
                                                    </div>
                                                 </tr>
                                                 <tr>
@@ -311,8 +314,8 @@
                                              <form action="/createAi" method="POST" id="alform">
                                                 <tr>
                                                    <div class="form__group field">
-                                                      <input type="input" class="form__field" placeholder="AlName" name="alname" id='alname' required />
-                                                      <label for="alname" class="form__label">AL Name</label>
+                                                      <input type="input" class="form__field" placeholder="AlName" name="alcrystas" id='alcrystas' required />
+                                                      <label for="alcrystas" class="form__label">AL Name</label>
                                                    </div>
                                                 </tr>
                                                 <tr>
@@ -512,5 +515,133 @@
           }
          });
       </script>
+      <script>
+   $(document).ready(function() {
+      
+      $( "#ability" ).autocomplete({
+         source: function(request, response) {
+            $.ajax({
+            url: "{{secure_url('api/searchability')}}",
+            data: {
+                  term : request.term
+            },
+            dataType: "json",
+            success: function(data){
+            var resp = $.map(data,function(obj){
+                  return obj.type;
+            }); 
+
+            response(resp);
+            }
+         });
+      },
+      minLength: 3
+      });
+
+      $( "#equipment" ).autocomplete({
+         source: function(request, response) {
+            $.ajax({
+            url: "{{secure_url('api/searchequip')}}",
+            data: {
+                  term : request.term
+            },
+            dataType: "json",
+            success: function(data){
+            var resp = $.map(data,function(obj){
+                  return obj.name;
+            }); 
+
+            response(resp);
+            }
+         });
+      },
+      minLength: 3
+      });
+      $( "#alcrystas" ).autocomplete({
+         source: function(request, response) {
+            $.ajax({
+            url: "{{secure_url('api/searchal')}}",
+            data: {
+                  term : request.term
+            },
+            dataType: "json",
+            success: function(data){
+            var resp = $.map(data,function(obj){
+                  return obj.name;
+            }); 
+
+            response(resp);
+            }
+         });
+      },
+      minLength: 3
+      });
+
+      $( "#material" ).autocomplete({
+         source: function(request, response) {
+            $.ajax({
+            url: "{{secure_url('api/searchmaterial')}}",
+            data: {
+                  term : request.term
+            },
+            dataType: "json",
+            success: function(data){
+            var resp = $.map(data,function(obj){
+                  return obj.name;
+            }); 
+
+            response(resp);
+            }
+         });
+      },
+      minLength: 3
+      });
+      $( "#relicname" ).autocomplete({
+         source: function(request, response) {
+            $.ajax({
+            url: "{{secure_url('api/searchrelic')}}",
+            data: {
+                  term : request.term
+            },
+            dataType: "json",
+            success: function(data){
+            var resp = $.map(data,function(obj){
+                  return obj.name;
+            }); 
+
+            response(resp);
+            }
+         });
+      },
+      minLength: 3
+      });
+
+      $( ".crystas" ).autocomplete({
+         source: function(request, response) {
+            $.ajax({
+            url: "{{secure_url('api/searchcrystas')}}",
+            data: {
+                  term : request.term
+            },
+            dataType: "json",
+            success: function(data){
+            var resp = $.map(data,function(obj){
+                  return obj.name;
+            }); 
+
+            response(resp);
+            }
+         });
+      },
+      minLength: 3
+      });
+
+
+
+      
+   });
+      
+
+   </script>
    </body>
 </html>
