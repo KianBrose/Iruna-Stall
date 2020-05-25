@@ -45,9 +45,9 @@ table {
   border-collapse: collapse;
   margin: 10;
   padding: 0;
-  width: 100%;
+  width: 90%;
+  margin: 0 0 0 5%;
   table-layout: fixed;
-    
 }
 
 table caption {
