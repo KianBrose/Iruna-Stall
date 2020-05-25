@@ -165,6 +165,7 @@
                                                       </select>
                                                    </td>
                                                 </tr>
+                                                <br>
                                                 <div id="slot1" style="display:none;">
                                                    <tr>
                                                       <div class="form__group field">
@@ -181,9 +182,10 @@
                                                       </div>
                                                    </tr>
                                                 </div>
+                                                <br>
                                                 <tr>
                                                    <td>
-                                                      <br>
+                                                      
                                                       <label for="Test" style="color:white;">Ability:</label>
                                                    </td>
                                                    <td style="padding-left:10px;">
