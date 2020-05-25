@@ -94,6 +94,7 @@
                                           @enderror
                                           <p style="color:white;">There are {{$totalCount }} results</p>
                                           <hr>
+                                          @if($equipSearch->count() >= 1)
                                           <table>
                                              <h2 class="elementor-heading-title elementor-size-default">Equipment</h2>
                                              <br>
@@ -113,34 +114,58 @@
                                                 </tr>
                                              </thead>
                                              <tbody>
-                                                <tr>
-                                                   <td data-label="Name">Veryyy long name</td>
-                                                   <td data-label="ATK">222</td>
-                                                   <td data-label="DEF">333</td>
-                                                   <td data-label="Refinement">9</td>
-                                                   <td data-label="Slots">2</td>
-                                                   <td data-label="Slot1">Tsuchimono King</td>
-                                                   <td data-label="Slot2">Tsuchimono King</td>
-                                                   <td data-label="Ability">Long ability name</td>
-                                                   <td data-label="Ability Lv">5</td>
-                                                   <td data-label="Price">10000000000</td>
-                                                   <td data-label="Contact"><a href="#" style="color:orange;">SellerUser</a></td>
-                                                </tr>
-                                                <tr>
-                                                   <td data-label="Name">1</td>
-                                                   <td data-label="ATK">2</td>
-                                                   <td data-label="DEF">3</td>
-                                                   <td data-label="Refinement">4</td>
-                                                   <td data-label="Slots">5</td>
-                                                   <td data-label="Slot1">6</td>
-                                                   <td data-label="Slot2">7</td>
-                                                   <td data-label="Ability">8</td>
-                                                   <td data-label="Ability Lv">9</td>
-                                                   <td data-label="Price">10</td>
-                                                   <td data-label="Contact"><a href="#" style="color:orange;">SellerUser</a></td>
-                                                </tr>
+                                             	@foreach ($equipSearch as $equip)
+	                                             	<tr>
+														<td data-label="Name"><a href="item/equip/{{$equip->item_id}}">{{ $equip->name }}</a></td>
+														<td data-label="ATK">{{ $equip->atk }}</td>
+														<td data-label="DEF">{{ $equip->def }}</td>
+														<td data-label="Refinement">{{ $equip->refinement }}</td>
+														<td data-label="Slots">{{ $equip->slots }}</td>
+														@if ($equip->slots == 0)
+															<td data-label="Slot1">/</td>
+															<td data-label="Slot2">/</td>
+														@elseif ($equip->slots == 1)
+															@if ($equip->slot1 == null)
+																<td data-label="Slot1">empty</td>
+																<td data-label="Slot2">/</td>
+															@else
+																<td data-label="Slot1">{{ $equip->slot1 }}</td>
+																<td data-label="Slot2">/</td>
+															@endif
+														@elseif ($equip->slots == 2)
+															@if ($equip->slot1 != null)
+																@if ($equip->slot2 != null)
+																	<td data-label="Slot1">{{ $equip->slot1 }}</td>
+																	<td data-label="Slot2">{{ $equip->slot2 }}</td>
+																@else
+																	<td data-label="Slot1">{{ $equip->slot1 }}</td>
+																	<td data-label="Slot2">empty</td>
+																@endif
+															@elseif ($equip->slot1 == null)
+																@if ($equip->slot2 == null)
+																	<td data-label="Slot1">empty</td>
+																	<td data-label="Slot2">empty</td>
+																@else
+																	<td data-label="Slot1">empty</td>
+																	<td data-label="Slot2">{{ $equip->slot2 }}</td>
+																@endif
+															@endif
+														@endif
+														
+														@if ($equip->ability == null)
+															<td data-label="Ability">none</td>
+														@else
+															<td data-label="Ability">{{ $equip->ability }}</td>
+														@endif
+														<td data-label="Ability Lv">{{ $equip->ability_level}}</td>
+														<td data-label="Price">{{ number_format($equip->price )}}</td>
+														<td data-label="Contact"><a href="/user/{{$equip->owner_id}}">{{ $equip->contact }}</a></td>
+													</tr>
+                                             	@endforeach
                                              </tbody>
                                           </table>
+                                          {{$equipSearch->appends(['search' => request('search'), 'xtalPage' => request('xtalPage'), 'equipPage' => request('equipPage'), 'itemPage' => request('itemPage'), 'relicPage' => request('relicPage'), 'alPage' => request('alPage')])->fragment('equip')->links()}}
+                                          @endif
                                           <table>
                                              <br>
                                              <h2 class="elementor-heading-title elementor-size-default">Materials</h2>
