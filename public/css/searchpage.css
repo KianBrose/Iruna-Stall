@@ -4,12 +4,12 @@
     align-items: center;
     background-color: #F8F8F8;
     height: 60px;
-    width: 90%;
+    width: 80%;
     left: 20%;
     padding: 10px;
     border-radius: 12px;
     margin-top: 5%;
-    margin: 1% 0 0 5%;
+    margin: 1% 0 0 10%;
 }
 
 .search-bar > .icon {
@@ -45,8 +45,8 @@ table {
   border-collapse: collapse;
   margin: 10;
   padding: 0;
-  width: 90%;
-  margin: 0 0 0 5%;
+  width: 80%;
+  margin: 0 0 0 10%;
   table-layout: fixed;
 }
 
