@@ -150,7 +150,7 @@
                                                 </table>
                                                 
                                                 <table>
-                                                  <h2 class="elementor-heading-title elementor-size-default">Materials</h2>
+                                                  <br><h2 class="elementor-heading-title elementor-size-default">Materials</h2>
                                                     <br>
                                                   <thead>
                                                     <tr>
@@ -177,7 +177,7 @@
                                                 </table>
                                                 
                                                 <table>
-                                                  <h2 class="elementor-heading-title elementor-size-default">Xtals</h2>
+                                                  <br><h2 class="elementor-heading-title elementor-size-default">Xtals</h2>
                                                     <br>
                                                   <thead>
                                                     <tr>
@@ -204,7 +204,7 @@
                                                 </table>
                                                 
                                                 <table>
-                                                  <h2 class="elementor-heading-title elementor-size-default">AL's</h2>
+                                                  <br><h2 class="elementor-heading-title elementor-size-default">AL's</h2>
                                                     <br>
                                                   <thead>
                                                     <tr>
@@ -241,7 +241,7 @@
                                                 </table>
                                                 
                                                 <table>
-                                                  <h2 class="elementor-heading-title elementor-size-default">Relics</h2>
+                                                  <br><h2 class="elementor-heading-title elementor-size-default">Relics</h2>
                                                     <br>
                                                   <thead>
                                                     <tr>
