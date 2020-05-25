@@ -164,9 +164,7 @@
                                                                         <option value="1">1</option>
                                                                         <option value="2">2</option>
                                                                     </select>
-                                                                    <br>
                                                                 </td>
-                                                                <br>
                                                             </tr>
                                                             <div id="slot1" style="display:none;">
                                                                 <tr>
