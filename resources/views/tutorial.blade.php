@@ -101,11 +101,11 @@
                                        <div class="elementor-text-editor elementor-clearfix">
                                           <p>As a buyer, you do not need to register an account to search for items.
                                              <br>
-                                             To search for an item, simply go to our main page and enter the item name of the item you want to search for. You can also press the "<a href="https://irunastall.com/search?search_button=Search"><b>Browse All</b></a>" button to view all items we currently have.
+                                             To search for an item, simply go to our main page and enter the item name of the item you want to search for. You can also press the "<a style="color:red;" href="https://irunastall.com/search?search_button=Search"><b>Browse All</b></a>" button to view all items we currently have.
                                              <br>
                                              Once you found the item you want, press/click on the buyer's name in the <b>Contact</b> row to go to the seller's profile. You will find his/her contact information there so you can negotiate and arrange a place to trade.
                                           </p>
-                                          <p>To search for <b>abilities inside equipment</b>, enter the ability name into the search bar and press <a href="/"><b>Search</b></a>. Please note that <b>the autofill function will not suggest ability names, so the abilities have to be entered manually</b>.</p>
+                                          <p>To search for <b>abilities inside equipment</b>, enter the ability name into the search bar and press <a style="color:red;" href="/"><b>Search</b></a>. Please note that <b>the autofill function will not suggest ability names, so the abilities have to be entered manually</b>.</p>
                                           <p>Searching for XTALS will also display equipment with the XTAL inside it</p>
                                        </div>
                                     </div>
@@ -118,9 +118,9 @@
                                  <div class="elementor-element elementor-element-010137f elementor-widget elementor-widget-text-editor" data-id="010137f" data-element_type="widget" data-widget_type="text-editor.default">
                                     <div class="elementor-widget-container">
                                        <div class="elementor-text-editor elementor-clearfix">
-                                          <p>As a seller, <b>you need to <a href="/register">register an account</a> to be able to post items in our database</b>.</p>
-                                          <p>Once you have created your account, go to the <a href="/account"><b>Account</b></a> page to enter your contact information. If a buyer is interested in any of your items you will get contacted through our 2 available methods: Facebook and Discord (We plan on adding more later).</p>
-                                          <p>If you have entered contact information, please head to the <a href="/additem"><b>Add item</b></a> page to be able to add items of any category.</p>
+                                          <p>As a seller, <b>you need to <a style="color:red;" href="/register" >register an account</a> to be able to post items in our database</b>.</p>
+                                          <p>Once you have created your account, go to the <a style="color:red;" href="/account"><b>Account</b></a> page to enter your contact information. If a buyer is interested in any of your items you will get contacted through our 2 available methods: Facebook and Discord (We plan on adding more later).</p>
+                                          <p>If you have entered contact information, please head to the <a style="color:red;" href="/additem"><b>Add item</b></a> page to be able to add items of any category.</p>
                                           <p>Please note that the prices have to be entered in full numerical values without symbols or spaces, example: 750000000</p>
                                           <p>Please enter the price <b>per item</b> when adding Materials, Xtals, ALs and Relics</p>
                                        </div>
