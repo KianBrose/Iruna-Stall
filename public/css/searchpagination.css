@@ -36,7 +36,7 @@ nav {
   border: 2px solid #ddd;
 }
 
-.pagination :hover:not(.active) {background-color: #ddd;border-radius: 5px;}
+.pagination :hover:not(.active) {color: #00A5FF; background-color: #ddd;border-radius: 5px;}
 
 .pagination :first-child {
   border-top-left-radius: 5px;
