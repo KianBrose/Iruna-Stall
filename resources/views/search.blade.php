@@ -131,7 +131,7 @@
                                                       <td data-label="Ability">Long ability name</td>
                                                       <td data-label="Ability Lv">5</td>
                                                       <td data-label="Price">10000000000</td>
-                                                      <td data-label="Contact"><a href="#">SellerUser</a></td>
+                                                      <td data-label="Contact"><a href="#" style="color:orange;">SellerUser</a></td>
                                                     </tr>
                                                     <tr>
                                                       <td data-label="Name">1</td>
@@ -144,7 +144,7 @@
                                                       <td data-label="Ability">8</td>
                                                       <td data-label="Ability Lv">9</td>
                                                       <td data-label="Price">10</td>
-                                                      <td data-label="Contact"><a href="#">SellerUser</a></td>
+                                                      <td data-label="Contact"><a href="#" style="color:orange;">SellerUser</a></td>
                                                     </tr>
                                                   </tbody>
                                                 </table>
@@ -165,13 +165,13 @@
                                                       <td data-label="Name">Veryyy long name</td>
                                                       <td data-label="QTY">9999</td>
                                                       <td data-label="Price">10000000000</td>
-                                                      <td data-label="Contact"><a href="#">SellerUser</a></td>
+                                                      <td data-label="Contact"><a href="#" style="color:orange;">SellerUser</a></td>
                                                     </tr>
                                                     <tr>
                                                       <td data-label="Name">Veryyy long name</td>
                                                       <td data-label="QTY">9999</td>
                                                       <td data-label="Price">10000000000</td>
-                                                      <td data-label="Contact"><a href="#">SellerUser</a></td>
+                                                      <td data-label="Contact"><a href="#" style="color:orange;">SellerUser</a></td>
                                                     </tr>
                                                   </tbody>
                                                 </table>
@@ -192,13 +192,13 @@
                                                       <td data-label="Name">Veryyy long name</td>
                                                       <td data-label="QTY">9999</td>
                                                       <td data-label="Price">10000000000</td>
-                                                      <td data-label="Contact"><a href="#">SellerUser</a></td>
+                                                      <td data-label="Contact"><a href="#" style="color:orange;">SellerUser</a></td>
                                                     </tr>
                                                     <tr>
                                                       <td data-label="Name">Veryyy long name</td>
                                                       <td data-label="QTY">9999</td>
                                                       <td data-label="Price">10000000000</td>
-                                                      <td data-label="Contact"><a href="#">SellerUser</a></td>
+                                                      <td data-label="Contact"><a href="#" style="color:orange;">SellerUser</a></td>
                                                     </tr>
                                                   </tbody>
                                                 </table>
@@ -221,21 +221,21 @@
                                                       <td data-label="QTY">9999</td>
                                                       <td data-label="Color" style="color:red;">Red</td>
                                                       <td data-label="Price">10000000000</td>
-                                                      <td data-label="Contact"><a href="#">SellerUser</a></td>
+                                                      <td data-label="Contact"><a href="#" style="color:orange;">SellerUser</a></td>
                                                     </tr>
                                                     <tr>
                                                       <td data-label="Name" style="color:blue;">Veryyy long name</td>
                                                       <td data-label="QTY">9999</td>
                                                       <td data-label="Color" style="color:blue;">Blue</td>
                                                       <td data-label="Price">10000000000</td>
-                                                      <td data-label="Contact"><a href="#">SellerUser</a></td>
+                                                      <td data-label="Contact"><a href="#" style="color:orange;">SellerUser</a></td>
                                                     </tr>
                                                       <tr>
                                                       <td data-label="Name" style="color:green;">Veryyy long name</td>
                                                       <td data-label="QTY">9999</td>
                                                       <td data-label="Color" style="color:green;">Green</td>
                                                       <td data-label="Price">10000000000</td>
-                                                      <td data-label="Contact"><a href="#">SellerUser</a></td>
+                                                      <td data-label="Contact"><a href="#" style="color:orange;">SellerUser</a></td>
                                                     </tr>
                                                   </tbody>
                                                 </table>
@@ -256,13 +256,13 @@
                                                       <td data-label="Name">Veryyy long name</td>
                                                       <td data-label="QTY">9999</td>
                                                       <td data-label="Price">10000000000</td>
-                                                      <td data-label="Contact"><a href="#">SellerUser</a></td>
+                                                      <td data-label="Contact"><a href="#" style="color:orange;">SellerUser</a></td>
                                                     </tr>
                                                     <tr>
                                                       <td data-label="Name">Veryyy long name</td>
                                                       <td data-label="QTY">9999</td>
                                                       <td data-label="Price">10000000000</td>
-                                                      <td data-label="Contact"><a href="#">SellerUser</a></td>
+                                                      <td data-label="Contact"><a href="#" style="color:orange;">SellerUser</a></td>
                                                     </tr>
                                                   </tbody>
                                                 </table>
