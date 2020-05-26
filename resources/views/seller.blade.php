@@ -99,7 +99,7 @@
                                  <div class="" data-id="9b24551" data-element_type="widget" data-widget_type="button.default">
                                     <div class="elementor-widget-container">
                                        <div class="elementor-button-wrapper">
-                                          <a href="https://irunastall.com/" class="report-box" role="button">
+                                          <a href="/report" class="report-box" role="button">
                                           <span class="elementor-button-content-wrapper">
                                           <span class="elementor-button-text" style="padding-top:4px">Report</span>
                                           </span>

@@ -32,6 +32,10 @@ Route::get('/updates', function () {
 Route::get('/upcomming', function () {
     return view('upcomming');
 });
+Route::get('/report', function () {
+    return view('report');
+});
+
 
 
 Route::get('/tutorial', 'HomeController@tutorial');
