@@ -1,7 +1,59 @@
 .facebook-box {
+    display: flex;
+    color:white;
 	font-family: "Montserrat", Sans-serif;
     background-color: rgba(2, 1, 1, 0);
     border-style: solid;
     border-width: 3px 3px;
     border-radius: 12px 12px 12px 12px
+}
+
+.facebook-box:hover {
+    transition: 0.3s;
+    transform: scale(1.1);
+}
+
+.whatsapp-box {
+    display: flex;
+    color:white;
+	font-family: "Montserrat", Sans-serif;
+    background-color: rgba(2, 1, 1, 0);
+    border-style: solid;
+    border-width: 3px 3px;
+    border-radius: 12px 12px 12px 12px
+}
+
+.whatsapp-box:hover {
+    transition: 0.3s;
+    transform: scale(1.1);
+}
+
+.discord-box {
+    display: flex;
+    color:white;
+	font-family: "Montserrat", Sans-serif;
+    background-color: rgba(2, 1, 1, 0);
+    border-style: solid;
+    border-width: 3px 3px;
+    border-radius: 12px 12px 12px 12px
+}
+
+.discord-box:hover {
+    transition: 0.3s;
+    transform: scale(1.1);
+}
+
+.snapchat-box {
+    display: flex;
+    color:white;
+	font-family: "Montserrat", Sans-serif;
+    background-color: rgba(2, 1, 1, 0);
+    border-style: solid;
+    border-width: 3px 3px;
+    border-radius: 12px 12px 12px 12px
+}
+
+.snapchat-box:hover {
+    transition: 0.3s;
+    transform: scale(1.1);
 }
