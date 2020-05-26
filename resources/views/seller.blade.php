@@ -223,7 +223,7 @@
                                     <div class="elementor-widget-container">
                                        @if($equipSearch->count() >= 1)
                                        <table>
-                                          <h2 class="elementor-heading-title elementor-size-default">Equipment</h2>
+                                          <h2 class="elementor-heading-title elementor-size-default" style="text-align: center;">Equipment</h2>
                                           <br>
                                           <thead>
                                              <tr>
@@ -293,7 +293,7 @@
                                        @if($itemSearch->count() >= 1)
                                        <table>
                                           <br>
-                                          <h2 class="elementor-heading-title elementor-size-default">Materials</h2>
+                                          <h2 class="elementor-heading-title elementor-size-default" style="text-align: center;">Materials</h2>
                                           <br>
                                           <thead>
                                              <tr>
@@ -320,7 +320,7 @@
                                        @if($xtalSearch->count() >= 1)
                                        <table>
                                           <br>
-                                          <h2 class="elementor-heading-title elementor-size-default">Xtals</h2>
+                                          <h2 class="elementor-heading-title elementor-size-default" style="text-align: center;">Xtals</h2>
                                           <br>
                                           <thead>
                                              <tr>
@@ -344,7 +344,7 @@
                                        @if($alSearch->count() >= 1)
                                        <table>
                                           <br>
-                                          <h2 class="elementor-heading-title elementor-size-default">AL's</h2>
+                                          <h2 class="elementor-heading-title elementor-size-default" style="text-align: center;">AL's</h2>
                                           <br>
                                           <thead>
                                              <tr>
@@ -376,7 +376,7 @@
                                        @if($relicSearch->count() >= 1)
                                        <table>
                                           <br>
-                                          <h2 class="elementor-heading-title elementor-size-default">Relics</h2>
+                                          <h2 class="elementor-heading-title elementor-size-default" style="text-align: center;">Relics</h2>
                                           <br>
                                           <thead>
                                              <tr>
