@@ -128,7 +128,11 @@
                                                    <div class="" data-id="8532a98" data-element_type="widget" data-widget_type="button.default">
                                                       <div class="elementor-widget-container">
                                                          <div class="elementor-button-wrapper">
-                                                            <a href="https://facebook.com/" class="facebook-box" role="button" style="padding: 25px 42px 25px 34px;">
+                                                          @if($user->facebook != null)
+                                                            <a href="{{$user->facebook }}" class="facebook-box" role="button" style="padding: 25px 42px 25px 34px;">
+                                                          @else
+                                                            <a href="#" class="facebook-box" role="button" style="padding: 25px 42px 25px 34px;">
+                                                          @endif
                                                             <span class="elementor-button-content-wrapper">
                                                             <span class="elementor-button-icon elementor-align-icon-left">
                                                             <i aria-hidden="true" class="fab fa-facebook-f" style="font-size: 30px; margin-right: -9.5px; padding-left:3px"></i>            </span>
@@ -147,7 +151,11 @@
                                                    <div class="" data-id="4553669" data-element_type="widget" data-widget_type="button.default">
                                                       <div class="elementor-widget-container">
                                                          <div class="elementor-button-wrapper">
-                                                            <a href="https://facebook.com/" class="whatsapp-box" role="button" style="padding: 25px 34px 25px 34px;">
+                                                          @if($user->whatsapp != null)
+                                                            <a href="{{$user->whatsapp }}" class="whatsapp-box" role="button" style="padding: 25px 34px 25px 34px;">
+                                                          @else
+                                                            <a href="#" class="whatsapp-box" role="button" style="padding: 25px 34px 25px 34px;">
+                                                          @endif
                                                             <span class="elementor-button-content-wrapper">
                                                             <span class="elementor-button-icon elementor-align-icon-left">
                                                             <i aria-hidden="true" class="fab fa-whatsapp" style="font-size: 30px; margin-right: -6px;"></i>          </span>
@@ -166,7 +174,11 @@
                                                    <div class="" data-id="a011617" data-element_type="widget" data-widget_type="button.default">
                                                       <div class="elementor-widget-container">
                                                          <div class="elementor-button-wrapper">
-                                                            <a href="https://facebook.com/" class="discord-box" role="button" style="padding: 25px 34px 25px 34px;">
+                                                          @if($user->discord != null)
+                                                            <a href="{{$user->discord }}" class="discord-box" role="button" style="padding: 25px 34px 25px 34px;">
+                                                          @else
+                                                            <a href="#" class="discord-box" role="button" style="padding: 25px 34px 25px 34px;">
+                                                          @endif
                                                             <span class="elementor-button-content-wrapper">
                                                             <span class="elementor-button-icon elementor-align-icon-left">
                                                             <i aria-hidden="true" class="fab fa-discord" style="font-size: 30px; margin-right: -6px;"></i>           </span>
@@ -185,7 +197,11 @@
                                                    <div class="" data-id="a91f849" data-element_type="widget" data-widget_type="button.default">
                                                       <div class="elementor-widget-container">
                                                          <div class="elementor-button-wrapper">
-                                                            <a href="https://facebook.com/" class="snapchat-box" role="button" style="padding: 25px 34px 25px 34px;">
+                                                          @if($user->snapchat != null)
+                                                            <a href="{{$user->snapchat }}" class="snapchat-box" role="button" style="padding: 25px 34px 25px 34px;">
+                                                          @else
+                                                            <a href="#" class="snapchat-box" role="button" style="padding: 25px 34px 25px 34px;">
+                                                          @endif
                                                             <span class="elementor-button-content-wrapper">
                                                             <span class="elementor-button-icon elementor-align-icon-left">
                                                             <i aria-hidden="true" class="fab fa-snapchat-ghost" style="font-size: 30px; margin-right: -9.75px;"></i>            </span>
