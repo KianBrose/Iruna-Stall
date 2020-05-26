@@ -129,7 +129,7 @@
                                                                             <a href="https://facebook.com/" class="elementor-button-link elementor-button elementor-size-md elementor-animation-grow" role="button" style="padding: 25px 42px 25px 34px;">
                                                                                 <span class="elementor-button-content-wrapper">
                         <span class="elementor-button-icon elementor-align-icon-left">
-                <i aria-hidden="true" class="fab fa-facebook-f" style="font-size: 30px;"></i>            </span>
+                <i aria-hidden="true" class="fab fa-facebook-f" style="font-size: 30px; margin-right: -9.5px; padding-left:3px"></i>            </span>
                                                                                 <span class="elementor-button-text"></span>
                                                                                 </span>
                                                                             </a>
@@ -148,7 +148,7 @@
                                                                             <a href="https://facebook.com/" class="elementor-button-link elementor-button elementor-size-md elementor-animation-grow" role="button" style="padding: 25px 34px 25px 34px;">
                                                                                 <span class="elementor-button-content-wrapper">
                         <span class="elementor-button-icon elementor-align-icon-left">
-                <i aria-hidden="true" class="fab fa-whatsapp" style="font-size: 30px;"></i>          </span>
+                <i aria-hidden="true" class="fab fa-whatsapp" style="font-size: 30px; margin-right: -6px;"></i>          </span>
                                                                                 <span class="elementor-button-text"></span>
                                                                                 </span>
                                                                             </a>
@@ -167,7 +167,7 @@
                                                                             <a href="https://facebook.com/" class="elementor-button-link elementor-button elementor-size-md elementor-animation-grow" role="button" style="padding: 25px 34px 25px 34px;">
                                                                                 <span class="elementor-button-content-wrapper">
                         <span class="elementor-button-icon elementor-align-icon-left">
-                <i aria-hidden="true" class="fab fa-discord" style="font-size: 30px;"></i>           </span>
+                <i aria-hidden="true" class="fab fa-discord" style="font-size: 30px; margin-right: -6px;"></i>           </span>
                                                                                 <span class="elementor-button-text"></span>
                                                                                 </span>
                                                                             </a>
@@ -186,7 +186,7 @@
                                                                             <a href="https://facebook.com/" class="elementor-button-link elementor-button elementor-size-md elementor-animation-grow" role="button" style="padding: 25px 34px 25px 34px;">
                                                                                 <span class="elementor-button-content-wrapper">
                         <span class="elementor-button-icon elementor-align-icon-left">
-                <i aria-hidden="true" class="fab fa-snapchat-ghost" style="font-size: 30px;"></i>            </span>
+                <i aria-hidden="true" class="fab fa-snapchat-ghost" style="font-size: 30px; margin-right: -9.75px;"></i>            </span>
                                                                                 <span class="elementor-button-text"></span>
                                                                                 </span>
                                                                             </a>
