@@ -38,7 +38,7 @@
       <script src="js/serviceLoader.js"></script>
       <link href="{{asset('css/icons/all.css')}}" rel="stylesheet">
       <link rel="stylesheet" href="{{ asset('css/profilepage.css') }}">
-      <link rel="stylesheet" href="{{ asset('css/searchpage.css') }}">
+      <link rel="stylesheet" href="{{ asset('css/sellerpage.css') }}">
       <link rel="stylesheet" href="{{ asset('css/searchpagination.css') }}">
       <link rel="stylesheet" href="{{ asset('css/jquery-ui.css') }}">
       <link rel="stylesheet" href="{{ asset('css/autocomplete.css') }}">
