@@ -67,6 +67,13 @@
                                 @endif
                             </div>
                         </div>
+                        <div class="form-group row">
+                            <div class="col-md-6 offset-md-4">
+                                <div class="form-check">
+                                    <p>Don't have an account? <a href="/register">Create one now</a></p>
+                                </div>
+                            </div>
+                        </div>
                     </form>
                 </div>
             </div>
