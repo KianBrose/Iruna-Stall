@@ -106,14 +106,13 @@
                            <a href="{{ route('login') }}" class="elementor-button-link elementor-button elementor-size-md elementor-animation-grow" role="button">
                            <span class="elementor-button-content-wrapper">
                            <span class="elementor-button-icon elementor-align-icon-right">
-                           <i aria-hidden="true" class="fas fa-chevron-right"></i>         </span>
+                           <i aria-hidden="true" class="fas fa-chevron-right"></i></span>
                            <span class="elementor-button-text">Sign In</span> @else
                            <a href="{{ route('login') }}" class="elementor-button-link elementor-button elementor-size-md elementor-animation-grow" role="button" onclick="event.preventDefault();
                               document.getElementById('logout-form').submit();">
                               >
                               <span class="elementor-button-content-wrapper">
-                                 <span class="elementor-button-icon elementor-align-icon-right">
-                                 <i aria-hidden="true" class="fas fa-chevron-right"></i></span>
+                                 
                                  <span class="elementor-button-text">Logout</span>
                                  <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                     @csrf
