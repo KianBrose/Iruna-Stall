@@ -105,7 +105,7 @@
                                                 <div class="search-bar">
                                                     <div class="icon" style="background-image:url({{ asset('img/searchicon.png') }});"></div>
                                                     
-                                                    <input id="search" name="search" type="text" placeholder="Search for any equipment, xtal, al, material or relic" style="padding-right: 60px;">
+                                                    <input id="search" name="search" type="text" placeholder="Search for any equipment, xtal, al, material or relic" style="padding-right: 60px;" class="mobileinput">
                                                 </div>
                                                 </form>
                                                 

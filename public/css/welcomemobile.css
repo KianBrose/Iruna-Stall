@@ -4,4 +4,13 @@
 	{
 		visibility:hidden;
 	}
+	.search-bar
+	{
+		margin: 0 0 0 2.5%;
+		width: 90%;
+	}
+	.mobileinput
+	{
+		font-size: 15px;
+	}
 }
