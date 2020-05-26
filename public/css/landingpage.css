@@ -48,17 +48,16 @@
 
 @media only screen and (min-device-width: 0px) and (max-device-width: 768px) 
 {
-    .welcomeshadow 
+    .search-bar > input[type=text] 
     {
-        visibility:hidden;
-    }
-    .search-bar
-    {
-        margin: 0 0 0 2.5%;
-        width: 90%;
-    }
-    .mobileinput
-    {
-        font-size: 15px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+    flex: 1;
+    text-align: center;
+    background: none;
+    border: none;
+    height: 100%;
+    outline: none;
     }
 }
