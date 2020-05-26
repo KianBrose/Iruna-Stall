@@ -99,26 +99,6 @@
          <div class="elementor-element elementor-element-9834dff elementor-hidden-desktop elementor-hidden-tablet elementor-column elementor-col-50 elementor-top-column" data-id="9834dff" data-element_type="column">
             <div class="elementor-column-wrap  elementor-element-populated">
                <div class="elementor-widget-wrap">
-                  <div class="elementor-button-wrapper">
-                     @guest
-                     <a href="{{ route('login') }}" class="elementor-button-link elementor-button elementor-size-xl elementor-animation-grow" role="button">
-                     <span class="elementor-button-content-wrapper">
-                     <span class="elementor-button-icon elementor-align-icon-right">
-                     <i aria-hidden="true" class="fas fa-chevron-right"></i></span>
-                     <span class="elementor-button-text">Sign In</span> @else
-                     <a href="{{ route('logout') }}" class="elementor-button-link elementor-button elementor-size-xl elementor-animation-grow" role="button" onclick="event.preventDefault();
-                        document.getElementById('logout-form').submit();">
-                        <span class="elementor-button-content-wrapper">
-                           <span class="elementor-button-icon elementor-align-icon-right">
-                           <i aria-hidden="true" class="fas fa-chevron-right"></i></span>
-                           <span class="elementor-button-text">Logout</span>
-                           <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                              @csrf
-                           </form>
-                           @endguest
-                        </span>
-                     </a>
-                  </div>
                   <div class="elementor-element elementor-element-c1d94c5 elementor-align-right elementor-mobile-align-center elementor-hidden-desktop elementor-hidden-tablet elementor-widget elementor-widget-button" data-id="c1d94c5" data-element_type="widget" data-widget_type="button.default">
                      <div class="elementor-widget-container">
                         <div class="elementor-button-wrapper">
