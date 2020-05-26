@@ -131,7 +131,7 @@
                                                           @if($user->facebook != null)
                                                             <a href="{{$user->facebook }}" class="facebook-box" role="button" style="padding: 25px 42px 25px 34px;">
                                                           @else
-                                                            <a href="#" class="facebook-box" role="button" style="padding: 25px 42px 25px 34px;">
+                                                            <a href="#" class="facebook-box disabled" role="button" style="padding: 25px 42px 25px 34px;">
                                                           @endif
                                                             <span class="elementor-button-content-wrapper">
                                                             <span class="elementor-button-icon elementor-align-icon-left">
@@ -154,7 +154,7 @@
                                                           @if($user->whatsapp != null)
                                                             <a href="{{$user->whatsapp }}" class="whatsapp-box" role="button" style="padding: 25px 34px 25px 34px;">
                                                           @else
-                                                            <a href="#" class="whatsapp-box" role="button" style="padding: 25px 34px 25px 34px;">
+                                                            <a href="#" class="whatsapp-box disabled" role="button" style="padding: 25px 34px 25px 34px;">
                                                           @endif
                                                             <span class="elementor-button-content-wrapper">
                                                             <span class="elementor-button-icon elementor-align-icon-left">
@@ -177,7 +177,7 @@
                                                           @if($user->discord != null)
                                                             <a href="{{$user->discord }}" class="discord-box" role="button" style="padding: 25px 34px 25px 34px;">
                                                           @else
-                                                            <a href="#" class="discord-box" role="button" style="padding: 25px 34px 25px 34px;">
+                                                            <a href="#" class="discord-box disabled" role="button" style="padding: 25px 34px 25px 34px;">
                                                           @endif
                                                             <span class="elementor-button-content-wrapper">
                                                             <span class="elementor-button-icon elementor-align-icon-left">
@@ -200,7 +200,7 @@
                                                           @if($user->snapchat != null)
                                                             <a href="{{$user->snapchat }}" class="snapchat-box" role="button" style="padding: 25px 34px 25px 34px;">
                                                           @else
-                                                            <a href="#" class="snapchat-box" role="button" style="padding: 25px 34px 25px 34px;">
+                                                            <a href="#" class="snapchat-box disabled" role="button" style="padding: 25px 34px 25px 34px;">
                                                           @endif
                                                             <span class="elementor-button-content-wrapper">
                                                             <span class="elementor-button-icon elementor-align-icon-left">
