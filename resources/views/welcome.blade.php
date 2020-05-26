@@ -47,6 +47,7 @@
     <link rel="stylesheet" href="{{ asset('css/autocomplete.css') }}">
     <link rel="stylesheet" href="{{ asset('css/landingpage.css') }}">
     <link rel="stylesheet" href="{{ asset('css/jquery-ui.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/welcomemobile.css') }}">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;800&display=swap" rel="stylesheet">
     
    
@@ -89,7 +90,7 @@
                                     <div class="elementor-widget-wrap">
                                         <div class="elementor-element elementor-element-6d1da58 elementor-widget elementor-widget-heading" data-id="6d1da58" data-element_type="widget" data-widget_type="heading.default">
                                             <div class="elementor-widget-container">
-                                                <h2 class="elementor-heading-title elementor-size-default">Hi! What are you looking for today?</h2> </div>
+                                                <h2 class="elementor-heading-title elementor-size-default welcomeshadow">Hi! What are you looking for today?</h2> </div>
                                         </div>
                                         <div class="elementor-element elementor-element-0493476 elementor-widget elementor-widget-heading" data-id="0493476" data-element_type="widget" data-widget_type="heading.default">
                                             <div class="elementor-widget-container">
