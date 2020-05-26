@@ -113,7 +113,7 @@
                               >
                               <span class="elementor-button-content-wrapper">
                                  <span class="elementor-button-icon elementor-align-icon-right">
-                                 <i aria-hidden="true" class="fas fa-chevron-right"></i></span>
+                                 </span>
                                  <span class="elementor-button-text">Logout</span>
                                  <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                     @csrf
