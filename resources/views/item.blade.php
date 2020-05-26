@@ -82,7 +82,7 @@
                               <div class="elementor-widget-wrap">
                                  <div class="elementor-element elementor-element-6d1da58 elementor-widget elementor-widget-heading" data-id="6d1da58" data-element_type="widget" data-widget_type="heading.default">
                                     <div class="elementor-widget-container">
-                                       <h2 class="elementor-heading-title elementor-size-default">About, Contact, Privacy Policy & TOS</h2>
+                                       <h2 class="elementor-heading-title elementor-size-default">Item page</h2>
                                     </div>
                                  </div>
                                  <div class="elementor-element elementor-element-af0f7c5 elementor-widget elementor-widget-spacer" data-id="af0f7c5" data-element_type="widget" data-widget_type="spacer.default">
