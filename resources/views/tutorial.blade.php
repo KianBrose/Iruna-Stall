@@ -39,7 +39,7 @@
       <script src="js/serviceLoader.js"></script>
       <link href="{{asset('css/icons/all.css')}}" rel="stylesheet">
       <link rel="stylesheet" href="{{ asset('css/main.css') }}">
-      <link rel="stylesheet" href="{{ asset('css/mainsearchbar.css') }}">
+      <link rel="stylesheet" href="{{ asset('css/universal.css') }}">
       <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;800&display=swap" rel="stylesheet">
       <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
    <body class="page-template page-template-elementor_canvas page page-id-2358 wp-custom-logo wp-embed-responsive theme-storefront woocommerce-no-js wcz-woocommerce wcz-btn-style-default ehf-template-storefront ehf-stylesheet-storefront woo-variation-gallery woo-variation-gallery-theme-storefront woo-variation-gallery-theme-child-storefront woo-variation-swatches woo-variation-swatches-theme-storefront woo-variation-swatches-theme-child-storefront woo-variation-swatches-style-squared woo-variation-swatches-attribute-behavior-blur woo-variation-swatches-tooltip-enabled woo-variation-swatches-stylesheet-enabled storefront-full-width-content storefront-align-wide right-sidebar woocommerce-active elementor-default elementor-template-canvas elementor-kit-1727 elementor-page elementor-page-2358">

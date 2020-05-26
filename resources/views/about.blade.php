@@ -43,7 +43,7 @@
     <script src="js/serviceLoader.js"></script>
     <link href="{{asset('css/icons/all.css')}}" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('css/main.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/mainsearchbar.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/universal.css') }}">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;800&display=swap" rel="stylesheet">
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />

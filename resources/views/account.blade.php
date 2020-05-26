@@ -39,7 +39,7 @@
       <script src="js/serviceLoader.js"></script>
       <link href="{{asset('css/icons/all.css')}}" rel="stylesheet">
       <link href="{{asset('css/additem.css')}}" rel="stylesheet">
-      <link rel="stylesheet" href="{{ asset('css/mainsearchbar.css') }}">
+      <link rel="stylesheet" href="{{ asset('css/universal.css') }}">
       <link rel="stylesheet" href="{{ asset('css/autocomplete.css') }}">
       <link rel="stylesheet" href="{{ asset('css/jquery-ui.css') }}">
 
