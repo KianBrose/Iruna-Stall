@@ -19964,8 +19964,8 @@ button.swiper-pagination-bullet {
     font-style: normal;
     font-weight: 900;
     font-display: auto;
-    src: url(https://irunastall.com/wp-content/plugins/elementor/assets/lib/font-awesome/webfonts/fa-solid-900.eot);
-    src: url(https://irunastall.com/wp-content/plugins/elementor/assets/lib/font-awesome/webfonts/fa-solid-900.eot?#iefix) format("embedded-opentype"), url() format("woff2"), url() format("woff"), url(https://irunastall.com/wp-content/plugins/elementor/assets/lib/font-awesome/webfonts/fa-solid-900.ttf) format("truetype"), url(https://irunastall.com/wp-content/plugins/elementor/assets/lib/font-awesome/webfonts/fa-solid-900.svg#fontawesome) format("svg")
+    src: url(.eot);
+    src: url(.eot?#iefix) format("embedded-opentype"), url() format("woff2"), url() format("woff"), url(.ttf) format("truetype"), url(.svg#fontawesome) format("svg")
 }
 
 .fa,
