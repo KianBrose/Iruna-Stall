@@ -115,7 +115,7 @@
                                     <div class="elementor-widget-wrap">
                                         <div class="elementor-element elementor-element-5c7e03f elementor-widget elementor-widget-heading" data-id="5c7e03f" data-element_type="widget" data-widget_type="heading.default">
                                             <div class="elementor-widget-container">
-                                                <h2 class="elementor-heading-title elementor-size-default">Contact</h2> </div>
+                                                <h2 class="elementor-heading-title elementor-size-default" style="text-align: center;">Contact</h2> </div>
                                         </div>
                                         <section class="elementor-element elementor-element-8ade268 elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-section elementor-inner-section" data-id="8ade268" data-element_type="section">
                                             <div class="elementor-container elementor-column-gap-default">
@@ -221,7 +221,7 @@
                                             <div class="elementor-widget-container">
                                                 
                                                 <table>
-                                                  <h2 class="elementor-heading-title elementor-size-default">Equipment</h2>
+                                                  <h2 class="elementor-heading-title elementor-size-default" style="text-align: center;">Equipment</h2>
                                                     <br>
                                                   <thead>
                                                     <tr>
@@ -266,7 +266,7 @@
                                                 </table>
                                                 
                                                 <table>
-                                                  <h2 class="elementor-heading-title elementor-size-default">Materials</h2>
+                                                  <h2 class="elementor-heading-title elementor-size-default" style="text-align: center;">Materials</h2>
                                                     <br>
                                                   <thead>
                                                     <tr>
@@ -290,7 +290,7 @@
                                                 </table>
                                                 
                                                 <table>
-                                                  <h2 class="elementor-heading-title elementor-size-default">Xtals</h2>
+                                                  <h2 class="elementor-heading-title elementor-size-default" style="text-align: center;">Xtals</h2>
                                                     <br>
                                                   <thead>
                                                     <tr>
@@ -314,7 +314,7 @@
                                                 </table>
                                                 
                                                 <table>
-                                                  <h2 class="elementor-heading-title elementor-size-default">AL's</h2>
+                                                  <h2 class="elementor-heading-title elementor-size-default" style="text-align: center;">AL's</h2>
                                                     <br>
                                                   <thead>
                                                     <tr>
@@ -347,7 +347,7 @@
                                                 </table>
                                                 
                                                 <table>
-                                                  <h2 class="elementor-heading-title elementor-size-default">Relics</h2>
+                                                  <h2 class="elementor-heading-title elementor-size-default" style="text-align: center;">Relics</h2>
                                                     <br>
                                                   <thead>
                                                     <tr>
