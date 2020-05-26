@@ -1,1 +1,7 @@
-@media only screen and (min-device-width: 0px) and (max-device-width: 720px) {.welcomeshadow {visibility:hidden;}}
+@media only screen and (min-device-width: 0px) and (max-device-width: 768px) 
+{
+	.welcomeshadow 
+	{
+		visibility:hidden;
+	}
+}
