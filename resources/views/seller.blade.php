@@ -266,7 +266,7 @@
                                                 </table>
                                                 
                                                 <table>
-                                                  <h2 class="elementor-heading-title elementor-size-default" style="text-align: center;">Materials</h2>
+                                                  <br><h2 class="elementor-heading-title elementor-size-default" style="text-align: center;">Materials</h2>
                                                     <br>
                                                   <thead>
                                                     <tr>
@@ -290,7 +290,7 @@
                                                 </table>
                                                 
                                                 <table>
-                                                  <h2 class="elementor-heading-title elementor-size-default" style="text-align: center;">Xtals</h2>
+                                                  <br><h2 class="elementor-heading-title elementor-size-default" style="text-align: center;">Xtals</h2>
                                                     <br>
                                                   <thead>
                                                     <tr>
@@ -314,7 +314,7 @@
                                                 </table>
                                                 
                                                 <table>
-                                                  <h2 class="elementor-heading-title elementor-size-default" style="text-align: center;">AL's</h2>
+                                                  <br><h2 class="elementor-heading-title elementor-size-default" style="text-align: center;">AL's</h2>
                                                     <br>
                                                   <thead>
                                                     <tr>
@@ -347,7 +347,7 @@
                                                 </table>
                                                 
                                                 <table>
-                                                  <h2 class="elementor-heading-title elementor-size-default" style="text-align: center;">Relics</h2>
+                                                  <br><h2 class="elementor-heading-title elementor-size-default" style="text-align: center;">Relics</h2>
                                                     <br>
                                                   <thead>
                                                     <tr>
