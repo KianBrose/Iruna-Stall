@@ -36,7 +36,6 @@
 
 .search-bar > input[type=text] {
     font-family: 'Montserrat', sans-serif;
-    font-size: 25px;
     font-weight: 600;
     flex: 1;
     text-align: center;
@@ -44,20 +43,4 @@
     border: none;
     height: 100%;
     outline: none;
-}
-
-@media only screen and (min-device-width: 0px) and (max-device-width: 768px) 
-{
-    .search-bar > input[type=text] 
-    {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 15px;
-    font-weight: 600;
-    flex: 1;
-    text-align: center;
-    background: none;
-    border: none;
-    height: 100%;
-    outline: none;
-    }
 }
