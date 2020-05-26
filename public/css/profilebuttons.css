@@ -75,6 +75,7 @@
 }
 
 a.disabled {
-  pointer-events: none;
-  cursor: default;
+    color:#ff6300;
+    pointer-events: none;
+    cursor: default;
 }
