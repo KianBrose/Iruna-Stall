@@ -42,6 +42,7 @@
       <link rel="stylesheet" href="{{ asset('css/searchpagination.css') }}">
       <link rel="stylesheet" href="{{ asset('css/jquery-ui.css') }}">
       <link rel="stylesheet" href="{{ asset('css/autocomplete.css') }}">
+      <link rel="stylesheet" href="{{ asset('css/profilebuttons.css') }}">
       <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;800&display=swap" rel="stylesheet">
       <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
    </head>
@@ -125,7 +126,7 @@
                                           <div class="elementor-element elementor-element-ce6cb3a elementor-column elementor-col-25 elementor-inner-column" data-id="ce6cb3a" data-element_type="column">
                                              <div class="elementor-column-wrap  elementor-element-populated">
                                                 <div class="elementor-widget-wrap">
-                                                   <div class="elementor-element elementor-element-8532a98 elementor-align-center elementor-widget elementor-widget-button" data-id="8532a98" data-element_type="widget" data-widget_type="button.default">
+                                                   <div class="facebook-box" data-id="8532a98" data-element_type="widget" data-widget_type="button.default">
                                                       <div class="elementor-widget-container">
                                                          <div class="elementor-button-wrapper">
                                                             <a href="https://facebook.com/" class="elementor-button-link elementor-button elementor-size-md elementor-animation-grow" role="button" style="padding: 25px 42px 25px 34px;">
