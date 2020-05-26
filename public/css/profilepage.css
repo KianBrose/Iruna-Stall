@@ -10723,10 +10723,11 @@ button.swiper-pagination-bullet {
 }
 
 .elementor-2326 .elementor-element.elementor-element-8532a98 .elementor-button {
-    font-size: 30px;
+    font-family: "Montserrat", Sans-serif;
     background-color: rgba(2, 1, 1, 0);
     border-style: solid;
-    padding: 25px 34px 25px 34px
+    border-width: 3px 3px;
+    border-radius: 12px 12px 12px 12px
 }
 
 .elementor-2326 .elementor-element.elementor-element-8532a98 .elementor-button:hover,
