@@ -1,5 +1,1 @@
-@media screen and (max-width: 1022px) {
-  #welcomeshadow {
-    display:none
-  }
-}
+@media only screen and (min-device-width: 0px) and (max-device-width: 720px) {.welcomeshadow {visibility:hidden;}}

@@ -90,11 +90,11 @@
                                     <div class="elementor-widget-wrap">
                                         <div class="elementor-element elementor-element-6d1da58 elementor-widget elementor-widget-heading" data-id="6d1da58" data-element_type="widget" data-widget_type="heading.default">
                                             <div class="elementor-widget-container">
-                                                <h2 class="elementor-heading-title elementor-size-default welcomeshadow">Hi! What are you looking for today?</h2> </div>
+                                                <h2 class="elementor-heading-title elementor-size-default">Hi! What are you looking for today?</h2> </div>
                                         </div>
                                         <div class="elementor-element elementor-element-0493476 elementor-widget elementor-widget-heading" data-id="0493476" data-element_type="widget" data-widget_type="heading.default">
                                             <div class="elementor-widget-container">
-                                                <h2 class="elementor-heading-title elementor-size-default">Hi! What are you looking for today?</h2> </div>
+                                                <h2 class="elementor-heading-title elementor-size-default welcomeshadow">Hi! What are you looking for today?</h2> </div>
                                         </div>
                                         
                                         <div class="elementor-element elementor-element-106c54e elementor-widget elementor-widget-heading" data-id="106c54e" data-element_type="widget" data-widget_type="heading.default">
