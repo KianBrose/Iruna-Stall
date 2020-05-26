@@ -124,7 +124,7 @@
                                        <div class="elementor-row">
                                           <div class="elementor-element elementor-element-ce6cb3a elementor-column elementor-col-25 elementor-inner-column" data-id="ce6cb3a" data-element_type="column" style="width:50%;">
                                              <div class="elementor-column-wrap  elementor-element-populated">
-                                                <div class="elementor-widget-wrap">
+                                                <div class="elementor-widget-wrap" style="display: flex;align-items: center;justify-content: center;">
                                                    <div class="" data-id="8532a98" data-element_type="widget" data-widget_type="button.default">
                                                       <div class="elementor-widget-container">
                                                          <div class="elementor-button-wrapper">
@@ -143,7 +143,7 @@
                                           </div>
                                           <div class="elementor-element elementor-element-8bbf858 elementor-column elementor-col-25 elementor-inner-column" data-id="8bbf858" data-element_type="column" style="width:50%;">
                                              <div class="elementor-column-wrap  elementor-element-populated">
-                                                <div class="elementor-widget-wrap">
+                                                <div class="elementor-widget-wrap" style="display: flex;align-items: center;justify-content: center;">
                                                    <div class="" data-id="4553669" data-element_type="widget" data-widget_type="button.default">
                                                       <div class="elementor-widget-container">
                                                          <div class="elementor-button-wrapper">
@@ -162,7 +162,7 @@
                                           </div>
                                           <div class="elementor-element elementor-element-5bcfc32 elementor-column elementor-col-25 elementor-inner-column" data-id="5bcfc32" data-element_type="column" style="width:50%;">
                                              <div class="elementor-column-wrap  elementor-element-populated">
-                                                <div class="elementor-widget-wrap">
+                                                <div class="elementor-widget-wrap" style="display: flex;align-items: center;justify-content: center;">
                                                    <div class="" data-id="a011617" data-element_type="widget" data-widget_type="button.default">
                                                       <div class="elementor-widget-container">
                                                          <div class="elementor-button-wrapper">
@@ -181,7 +181,7 @@
                                           </div>
                                           <div class="elementor-element elementor-element-43715b7 elementor-column elementor-col-25 elementor-inner-column" data-id="43715b7" data-element_type="column" style="width:50%;">
                                              <div class="elementor-column-wrap  elementor-element-populated">
-                                                <div class="elementor-widget-wrap">
+                                                <div class="elementor-widget-wrap" style="display: flex;align-items: center;justify-content: center;">
                                                    <div class="" data-id="a91f849" data-element_type="widget" data-widget_type="button.default">
                                                       <div class="elementor-widget-container">
                                                          <div class="elementor-button-wrapper">
