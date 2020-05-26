@@ -73,3 +73,28 @@
     transition: 0.3s;
     transform: scale(1.1);
 }
+
+@media (min-width:1000px)  {  
+    .facebook-box 
+	{
+		position: absolute;
+		left: 25%;
+	}
+	.whatsapp-box 
+	{
+		position: absolute;
+		left: 50%;
+	}
+	.discord-box 
+	{
+		position: absolute;
+		top: 50%; 
+		left: 25%;
+	}
+	.snapchat-box 
+	{
+		position: absolute;
+		top: 50%; 
+		left: 50%;
+	}
+}
