@@ -102,7 +102,7 @@
                                           <a href="https://irunastall.com/" class="report-box" role="button">
                                           <span class="elementor-button-content-wrapper">
                                           <span class="elementor-button-icon elementor-align-icon-right">
-                                          <i aria-hidden="true" class="fas fa-chevron-right" style="font-size: 30px;"></i>         </span>
+                                          <i aria-hidden="true" class="fas fa-chevron-right" style="font-size: 30px;margin-left: 10px;"></i>         </span>
                                           <span class="elementor-button-text" style="padding-top:4px">Report</span>
                                           </span>
                                           </a>
