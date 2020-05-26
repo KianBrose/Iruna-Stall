@@ -89,8 +89,8 @@
                                         <div class="elementor-element elementor-element-aef0ddf elementor-widget elementor-widget-text-editor" data-id="aef0ddf" data-element_type="widget" data-widget_type="text-editor.default">
                                             <div class="elementor-widget-container">
                                                 <div class="elementor-text-editor elementor-clearfix">
-                                                    <p>Username: [Username]</p>
-                                                    <p>Date Registered: [Date Registered]</p>
+                                                    <p style="color: white;"><b>Username: {{ $user->name }}</b></p>
+                                                    <p style="color: white;"><b>Date Registered: {{ date_format($user->created_at, "d/m/Y") }}</b></p>
                                                 </div>
                                             </div>
                                         </div>
