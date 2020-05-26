@@ -90,7 +90,7 @@
                                  <div class="elementor-element elementor-element-944d886 elementor-widget elementor-widget-text-editor" data-id="944d886" data-element_type="widget" data-widget_type="text-editor.default">
                                     <div class="elementor-widget-container">
                                        <div class="elementor-text-editor elementor-clearfix">
-                                          <form action="/createEquip" method="POST" id="equipform">
+                                          <form action="/report" method="POST" id="report">
                                              <label for="Test" style="color:white;">Reason for report:</label>
                                              <br>
                                              <select name="reason" class="form-control2" id="reason">
@@ -104,7 +104,7 @@
                                              <div class="elementor-element elementor-element-5580a03 elementor-widget elementor-widget-button" data-id="5580a03" data-element_type="widget" data-widget_type="button.default">
                                                 <div class="elementor-widget-container">
                                                    <div class="elementor-button-wrapper">
-                                                      <a href="javascript:{}" onclick="document.getElementById('equipform').submit();" class="elementor-button-link elementor-button elementor-size-sm elementor-animation-grow" role="button">
+                                                      <a href="javascript:{}" onclick="document.getElementById('report').submit();" class="elementor-button-link elementor-button elementor-size-sm elementor-animation-grow" role="button">
                                                       <span class="elementor-button-content-wrapper">
                                                       <span class="elementor-button-icon elementor-align-icon-right">
                                                       <i aria-hidden="true" class="fas fa-chevron-right"></i>      
