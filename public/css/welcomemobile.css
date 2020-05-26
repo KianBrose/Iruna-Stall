@@ -1,3 +1,35 @@
+@media (min-width:100px)  {  
+	.welcomeshadow 
+	{
+		visibility:hidden;
+	}
+	.search-bar
+	{
+		margin: 0 0 0 5%;
+		width: 90%;
+	}
+	.mobileinput
+	{
+		font-size: 15px;
+	}
+}
+
+@media (min-width:400px)  {  
+	.welcomeshadow 
+	{
+		visibility:hidden;
+	}
+	.search-bar
+	{
+		margin: 0 0 0 5%;
+		width: 90%;
+	}
+	.mobileinput
+	{
+		font-size: 15px;
+	}
+}
+
 @media (min-width:400px)  {  
 	.welcomeshadow 
 	{
