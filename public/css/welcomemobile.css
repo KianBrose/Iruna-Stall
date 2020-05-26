@@ -1,13 +1,24 @@
-@media only screen and (min-device-width: 768px) and (max-device-width: 100%) 
+.mobileinput
 {
-	.mobileinput
-	{
-		font-size: 25px;
-	}
+	font-size: 25px;
 }
 
-@media only screen and (min-device-width: 0px) and (max-device-width: 768px) 
-{
+@media (min-width:480px)  {  
+	.welcomeshadow 
+	{
+		visibility:hidden;
+	}
+	.search-bar
+	{
+		margin: 0 0 0 2.5%;
+		width: 90%;
+	}
+	.mobileinput
+	{
+		font-size: 10px;
+	}
+}
+@media (min-width:600px)  {  
 	.welcomeshadow 
 	{
 		visibility:hidden;
@@ -20,5 +31,20 @@
 	.mobileinput
 	{
 		font-size: 15px;
+	}
+}
+@media (min-width:801px)  {  
+	.welcomeshadow 
+	{
+		visibility:hidden;
+	}
+	.search-bar
+	{
+		margin: 0 0 0 2.5%;
+		width: 90%;
+	}
+	.mobileinput
+	{
+		font-size: 20px;
 	}
 }
