@@ -111,12 +111,13 @@
                     </div>
                     <span style="float: left; font-size: 14px; font-weight: 800;">$0</span>
                     <span style="float: right; font-size: 14px; font-weight: 800;">$5</span>
-                    <p style="text-align: center; font-size: 14px; font-weight: 800;">May 2020</p>
-                    <h4>Special thanks to our supporter!</h4>
-
+                    <p style="text-align: center; font-size: 14px; font-weight: 800;">June 2020</p>
+                    <!--
+                    <h4>Special thanks to our supporter(s)!</h4>
                     <ul>
-                      <li><b>Robert</b> - 5$</li>
+                      <li></li>
                     </ul>
+                    -->
                     <hr>
                     <h3>2020-02-01 Iruna Stall Update 2.3</h3>
                     <p>UPDATE: We are currently working on making a Wiki section for the irunastall with all items in the game! We will also work on making a detailed map of every single EP in iruna!</p>
