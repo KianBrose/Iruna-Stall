@@ -62,13 +62,10 @@
                @endif
             </div>
          </div>
-         <div class="container">
-         <div class="row">
-            <div class="col">
-            </div>
-            <div class="col-12">
-               @if($equipSearch->count() >= 1)
-               <table>
+
+         @if($equipSearch->count() >= 1)
+         <table>
+            <div class="row">
                   <h2 class="elementor-heading-title elementor-size-default" style="text-align: center; color: white;">Equipment</h2>
                   <br>
                   <thead>
@@ -133,119 +130,116 @@
                      </tr>
                      @endforeach
                   </tbody>
-               </table>
-               {{$equipSearch->appends(['search' => request('search'), 'xtalPage' => request('xtalPage'), 'equipPage' => request('equipPage'), 'itemPage' => request('itemPage'), 'relicPage' => request('relicPage'), 'alPage' => request('alPage')])->fragment('equip')->links()}}
-               @endif
-               @if($itemSearch->count() >= 1)
-               <table>
-                  <br>
-                  <h2 class="elementor-heading-title elementor-size-default" style="text-align: center;">Materials</h2>
-                  <br>
-                  <thead>
-                     <tr>
-                        <th scope="col">Name</th>
-                        <th scope="col">QTY</th>
-                        <th scope="col">Price</th>
-                     </tr>
-                  </thead>
-                  <tbody>
-                     @foreach($itemSearch as $item)
-                     <tr>
-                        <td data-label="Name">
-                           <a href="/item/material/{{$item->item_id}}">
-                              {{ $item->name }}
-                        </td>
-                        <td data-label="QTY">{{ $item->quantity }}</td>
-                        <td data-label="Price">{{ number_format($item->price) }}</td>
-                     </tr>
-                     @endforeach
-                  </tbody>
-               </table>
-               {{$itemSearch->appends(['search' => request('search'), 'xtalPage' => request('xtalPage'), 'equipPage' => request('equipPage'), 'itemPage' => request('itemPage'), 'relicPage' => request('relicPage'), 'alPage' => request('alPage')])->fragment('material')->links() }}
-               @endif
-               @if($xtalSearch->count() >= 1)
-               <table>
-               <br>
-               <h2 class="elementor-heading-title elementor-size-default" style="text-align: center;">Xtals</h2>
-               <br>
-               <thead>
-               <tr>
-               <th scope="col">Name</th>
-               <th scope="col">QTY</th>
-               <th scope="col">Price</th>
-               </tr>
-               </thead>
-               <tbody>
-               @foreach ($xtalSearch as $xtal)
-               <tr>
-               <td data-label="Name"><a href="/item/xtal/{{$xtal->item_id}}">{{ $xtal->name }}</a></td>
-               <td data-label="QTY">{{ $xtal->quantity }}</td>
-               <td data-label="Price">{{ number_format($xtal->price) }}</td>
-               </tr>
-               @endforeach
-               </tbody>
-               </table>
-               {{$xtalSearch->appends(['search' => request('search'), 'xtalPage' => request('xtalPage'), 'equipPage' => request('equipPage'), 'itemPage' => request('itemPage'), 'relicPage' => request('relicPage'), 'alPage' => request('alPage')])->fragment('xtal')->links()}}
-               @endif
-               @if($alSearch->count() >= 1)
-               <table>
-                  <br>
-                  <h2 class="elementor-heading-title elementor-size-default" style="text-align: center;">AL's</h2>
-                  <br>
-                  <thead>
-                     <tr>
-                        <th scope="col">Name</th>
-                        <th scope="col">Color</th>
-                        <th scope="col">QTY</th>
-                        <th scope="col">Price</th>
-                     </tr>
-                  </thead>
-                  <tbody>
-                     @foreach($alSearch as $al)
-                     <tr>
-                        @if($al->color == "Red")
-                        <td data-label="Name" style="color:red;"><a style="color:red;" href="/item/alcrystas/{{$al->item_id}}">{{ $al->name }}</a></td>
-                        @elseif($al->color == "Blue")
-                        <td data-label="Name" style="color:blue;"><a style="color:blue;" href="/item/alcrystas/{{$al->item_id}}">{{ $al->name }}</a></td>
-                        @elseif($al->color == "Green")
-                        <td data-label="Name" style="color:green;"><a style="color:green;" href="/item/alcrystas/{{$al->item_id}}">{{ $al->name }}</a></td>
-                        @endif
-                        <td data-label="Color">{{ $al->color }}</td>
-                        <td data-label="QTY">{{ $al->quantity }}</td>
-                        <td data-label="Price">{{ number_format($al->price) }}</td>
-                     </tr>
-                     @endforeach
-                  </tbody>
-               </table>
-               {{$alSearch->appends(['search' => request('search'), 'xtalPage' => request('xtalPage'), 'equipPage' => request('equipPage'), 'itemPage' => request('itemPage'), 'relicPage' => request('relicPage'), 'alPage' => request('alPage')])->fragment('alcrystas')->links()}}
-               @endif
-               @if($relicSearch->count() >= 1)
-               <table>
-                  <br>
-                  <h2 class="elementor-heading-title elementor-size-default" style="text-align: center;">Relics</h2>
-                  <br>
-                  <thead>
-                     <tr>
-                        <th scope="col">Name</th>
-                        <th scope="col">QTY</th>
-                        <th scope="col">Price</th>
-                     </tr>
-                  </thead>
-                  <tbody>
-                     @foreach($relicSearch as $relic)
-                     <tr>
-                        <td data-label="Name"><a href="/item/relic/{{$relic->item_id}}">{{ $relic->name }}</a></td>
-                        <td data-label="QTY">{{ $relic->quantity }}</td>
-                        <td data-label="Price">{{ number_format($relic->price) }}</td>
-                     </tr>
-                     @endforeach
-                  </tbody>
-               </table>
-               {{$relicSearch->appends(['search' => request('search'), 'xtalPage' => request('xtalPage'), 'equipPage' => request('equipPage'), 'itemPage' => request('itemPage'), 'relicPage' => request('relicPage'), 'alPage' => request('alPage')])->fragment('reliccrystas')->links()}}
-               @endif
-            </div>
-            <div class="col">
-            </div>
+         </table>
+         {{$equipSearch->appends(['search' => request('search'), 'xtalPage' => request('xtalPage'), 'equipPage' => request('equipPage'), 'itemPage' => request('itemPage'), 'relicPage' => request('relicPage'), 'alPage' => request('alPage')])->fragment('equip')->links()}}
+         @endif
+         @if($itemSearch->count() >= 1)
+         <table>
+         <br>
+         <h2 class="elementor-heading-title elementor-size-default" style="text-align: center;">Materials</h2>
+         <br>
+         <thead>
+         <tr>
+         <th scope="col">Name</th>
+         <th scope="col">QTY</th>
+         <th scope="col">Price</th>
+         </tr>
+         </thead>
+         <tbody>
+         @foreach($itemSearch as $item)
+         <tr>
+         <td data-label="Name">
+         <a href="/item/material/{{$item->item_id}}">
+         {{ $item->name }}
+         </td>
+         <td data-label="QTY">{{ $item->quantity }}</td>
+         <td data-label="Price">{{ number_format($item->price) }}</td>
+         </tr>
+         @endforeach
+         </tbody>
+         </table>
+         {{$itemSearch->appends(['search' => request('search'), 'xtalPage' => request('xtalPage'), 'equipPage' => request('equipPage'), 'itemPage' => request('itemPage'), 'relicPage' => request('relicPage'), 'alPage' => request('alPage')])->fragment('material')->links() }}
+         @endif
+         @if($xtalSearch->count() >= 1)
+         <table>
+         <br>
+         <h2 class="elementor-heading-title elementor-size-default" style="text-align: center;">Xtals</h2>
+         <br>
+         <thead>
+         <tr>
+         <th scope="col">Name</th>
+         <th scope="col">QTY</th>
+         <th scope="col">Price</th>
+         </tr>
+         </thead>
+         <tbody>
+         @foreach ($xtalSearch as $xtal)
+         <tr>
+         <td data-label="Name"><a href="/item/xtal/{{$xtal->item_id}}">{{ $xtal->name }}</a></td>
+         <td data-label="QTY">{{ $xtal->quantity }}</td>
+         <td data-label="Price">{{ number_format($xtal->price) }}</td>
+         </tr>
+         @endforeach
+         </tbody>
+         </table>
+         {{$xtalSearch->appends(['search' => request('search'), 'xtalPage' => request('xtalPage'), 'equipPage' => request('equipPage'), 'itemPage' => request('itemPage'), 'relicPage' => request('relicPage'), 'alPage' => request('alPage')])->fragment('xtal')->links()}}
+         @endif
+         @if($alSearch->count() >= 1)
+         <table>
+         <br>
+         <h2 class="elementor-heading-title elementor-size-default" style="text-align: center;">AL's</h2>
+         <br>
+         <thead>
+         <tr>
+         <th scope="col">Name</th>
+         <th scope="col">Color</th>
+         <th scope="col">QTY</th>
+         <th scope="col">Price</th>
+         </tr>
+         </thead>
+         <tbody>
+         @foreach($alSearch as $al)
+         <tr>
+         @if($al->color == "Red")
+         <td data-label="Name" style="color:red;"><a style="color:red;" href="/item/alcrystas/{{$al->item_id}}">{{ $al->name }}</a></td>
+         @elseif($al->color == "Blue")
+         <td data-label="Name" style="color:blue;"><a style="color:blue;" href="/item/alcrystas/{{$al->item_id}}">{{ $al->name }}</a></td>
+         @elseif($al->color == "Green")
+         <td data-label="Name" style="color:green;"><a style="color:green;" href="/item/alcrystas/{{$al->item_id}}">{{ $al->name }}</a></td>
+         @endif
+         <td data-label="Color">{{ $al->color }}</td>
+         <td data-label="QTY">{{ $al->quantity }}</td>
+         <td data-label="Price">{{ number_format($al->price) }}</td>
+         </tr>
+         @endforeach
+         </tbody>
+         </table>
+         {{$alSearch->appends(['search' => request('search'), 'xtalPage' => request('xtalPage'), 'equipPage' => request('equipPage'), 'itemPage' => request('itemPage'), 'relicPage' => request('relicPage'), 'alPage' => request('alPage')])->fragment('alcrystas')->links()}}
+         @endif
+         @if($relicSearch->count() >= 1)
+         <table>
+         <br>
+         <h2 class="elementor-heading-title elementor-size-default" style="text-align: center;">Relics</h2>
+         <br>
+         <thead>
+         <tr>
+         <th scope="col">Name</th>
+         <th scope="col">QTY</th>
+         <th scope="col">Price</th>
+         </tr>
+         </thead>
+         <tbody>
+         @foreach($relicSearch as $relic)
+         <tr>
+         <td data-label="Name"><a href="/item/relic/{{$relic->item_id}}">{{ $relic->name }}</a></td>
+         <td data-label="QTY">{{ $relic->quantity }}</td>
+         <td data-label="Price">{{ number_format($relic->price) }}</td>
+         </tr>
+         @endforeach
+         </tbody>
+         </table>
+         {{$relicSearch->appends(['search' => request('search'), 'xtalPage' => request('xtalPage'), 'equipPage' => request('equipPage'), 'itemPage' => request('itemPage'), 'relicPage' => request('relicPage'), 'alPage' => request('alPage')])->fragment('reliccrystas')->links()}}
+         @endif
          </div>
       </section>
       @include('layouts/NewIrunaStall.footer')
