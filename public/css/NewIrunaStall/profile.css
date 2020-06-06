@@ -5,9 +5,7 @@
 }
 @media (min-width: 1024px) and (max-width: 1920px) { 
 	.row{
-		color:white;
 		font-family: 'Montserrat', sans-serif;
-		font-size: 40px;
 	}
 	.col{
 		text-align: center;
@@ -45,9 +43,7 @@
 }	
 @media (min-width: 731px) and (max-width: 1024px) { 
 	.row{
-		color:white;
 		font-family: 'Montserrat', sans-serif;
-		font-size: 40px;
 	}
 	.col{
 		text-align: center;
@@ -113,9 +109,7 @@
 }	
 @media (min-width: 0px) and (max-width: 731px) { 
 	.row{
-		color:white;
 		font-family: 'Montserrat', sans-serif;
-		font-size: 20px;
 	}
 	.col{
 		text-align: center;
