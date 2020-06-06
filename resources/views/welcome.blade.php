@@ -29,7 +29,7 @@
          <form method="get" class="searchform" action="">
             <div class="inner">
                <div class="tb">
-                  <div class="td"><input type="text" id="search" placeholder="Search" class="maininput" required></div>
+                  <div class="td"><input type="text" id="search" placeholder="Search" class="maininput ui-autocomplete-input" autocomplete="off" required></div>
                </div>
             </div>
          </form>
