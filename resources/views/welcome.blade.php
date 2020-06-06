@@ -29,7 +29,7 @@
          <form method="get" class="searchform" action="">
             <div class="inner">
                <div class="tb">
-                  <div class="td"><input type="text" placeholder="Search" class="maininput" required></div>
+                  <div class="td"><input type="text" id="search" placeholder="Search" class="maininput" required></div>
                </div>
             </div>
          </form>
@@ -48,5 +48,30 @@
       </div>
       </section>
       @include('layouts/NewIrunaStall.footer')
+      <script type="text/javascript">
+        $(document).ready(function() {
+            
+        $( "#search" ).autocomplete({
+       
+                 source: function(request, response) {
+                     $.ajax({
+                     url: "https://irunastall.com/api/searchitem",
+                     data: {
+                             term : request.term
+                      },
+                     dataType: "json",
+                     success: function(data){
+                        var resp = $.map(data,function(obj){
+                             return obj.name;
+                        }); 
+          
+                        response(resp);
+                     }
+                 });
+             },
+             minLength: 3
+          });
+         });
+        </script>
    </body>
 </html>
