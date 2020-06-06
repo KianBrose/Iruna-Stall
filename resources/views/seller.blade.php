@@ -66,7 +66,7 @@
          @if($equipSearch->count() >= 1)
          <table>
             <div class="row">
-                  <h2 class="elementor-heading-title elementor-size-default" style="text-align: center; color: white;">Equipment</h2>
+                  <h2>Equipment</h2>
                   <br>
                   <thead>
                      <tr>
@@ -136,7 +136,7 @@
          @if($itemSearch->count() >= 1)
          <table>
          <br>
-         <h2 class="elementor-heading-title elementor-size-default" style="text-align: center;">Materials</h2>
+         <h2>Materials</h2>
          <br>
          <thead>
          <tr>
@@ -163,7 +163,7 @@
          @if($xtalSearch->count() >= 1)
          <table>
          <br>
-         <h2 class="elementor-heading-title elementor-size-default" style="text-align: center;">Xtals</h2>
+         <h2>Xtals</h2>
          <br>
          <thead>
          <tr>
@@ -187,7 +187,7 @@
          @if($alSearch->count() >= 1)
          <table>
          <br>
-         <h2 class="elementor-heading-title elementor-size-default" style="text-align: center;">AL's</h2>
+         <h2>AL's</h2>
          <br>
          <thead>
          <tr>
@@ -219,7 +219,7 @@
          @if($relicSearch->count() >= 1)
          <table>
          <br>
-         <h2 class="elementor-heading-title elementor-size-default" style="text-align: center;">Relics</h2>
+         <h2>Relics</h2>
          <br>
          <thead>
          <tr>
