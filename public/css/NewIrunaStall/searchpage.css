@@ -18,6 +18,11 @@ h1{
 .footer1{display:inline-block;}
 .footer2{display:inline-block;}
 .footer3{display:inline-block;}
+.equipmenttitle{
+	font-family: 'Montserrat', sans-serif;
+	font-weight: 500px;
+	color:white;
+}
 @media (min-width: 1024px) and (max-width: 1920px) { 
 	.logo{
 		width: 10%;

@@ -48,7 +48,7 @@
             <hr>
             @if($equipSearch->count() >= 1)
             <table>
-               <h2 class="elementor-heading-title elementor-size-default">Equipment</h2>
+               <h2 class="equipmenttitle">Equipment</h2>
                <br>
                <thead>
                   <tr>
@@ -120,7 +120,7 @@
             @if($itemSearch->count() >= 1)
             <table>
                <br>
-               <h2 class="elementor-heading-title elementor-size-default">Materials</h2>
+               <h2 class="equipmenttitle">Materials</h2>
                <br>
                <thead>
                   <tr>
@@ -149,7 +149,7 @@
             @if($xtalSearch->count() >= 1)
             <table>
                <br>
-               <h2 class="elementor-heading-title elementor-size-default">Xtals</h2>
+               <h2 class="equipmenttitle">Xtals</h2>
                <br>
                <thead>
                   <tr>
@@ -175,7 +175,7 @@
             @if($alSearch->count() >= 1)
             <table>
                <br>
-               <h2 class="elementor-heading-title elementor-size-default">AL's</h2>
+               <h2 class="equipmenttitle">AL's</h2>
                <br>
                <thead>
                   <tr>
@@ -209,7 +209,7 @@
             @if($relicSearch->count() >= 1)
             <table>
                <br>
-               <h2 class="elementor-heading-title elementor-size-default">Relics</h2>
+               <h2 class="equipmenttitle">Relics</h2>
                <br>
                <thead>
                   <tr>
