@@ -3,8 +3,7 @@ table {
   border-collapse: collapse;
   margin: 10;
   padding: 0;
-  width: 80%;
-  margin: 0 0 0 10%;
+  width: 100%;
   table-layout: fixed;
 }
 
