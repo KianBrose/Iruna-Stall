@@ -9,10 +9,10 @@
       <!-- Montserrat font -->
       <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
       <!-- Main CSS file -->
-      <link rel="stylesheet" type="text/css" href="css/main.css">
-      <link rel="stylesheet" type="text/css" href="css/profile.css">
-      <link rel="stylesheet" type="text/css" href="css/table.css">
-      <link rel="stylesheet" type="text/css" href="css/fontawesome/all.css">
+      <link rel="stylesheet" type="text/css" href="{{ asset('css/NewIrunaStall/main.css') }}">
+      <link rel="stylesheet" type="text/css" href="{{ asset('css/NewIrunaStall/profile.css') }}">
+      <link rel="stylesheet" type="text/css" href="{{ asset('css/NewIrunaStall/table.css') }}">
+      <link rel="stylesheet" type="text/css" href="{{ asset('css/NewIrunaStall/fontawesome/all.css') }}">
       <!-- Bootstrap css-->
       <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
       <!-- FontAwesome -->

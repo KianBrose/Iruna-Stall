@@ -1,0 +1,185 @@
+.disabled {
+  color: currentColor;
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+@media (min-width: 1024px) and (max-width: 1920px) { 
+	.row{
+		color:white;
+		font-family: 'Montserrat', sans-serif;
+		font-size: 40px;
+	}
+	.col{
+		text-align: center;
+	}
+	.col-6{
+		text-align: center;
+	}
+	.topinfo{
+		padding-top: 20px;
+	}
+	.userinfo{
+		font-size: 20px;
+	}
+	.contactbutton{
+		color: white;
+		border-radius: 20px;
+		border-style: solid;
+		border-width: 4px;
+		border-color: white;
+		padding: 20px 40px 20px 40px;
+	}
+	.reportbutton{
+		font-size: 20px;
+		color: white;
+		border-radius: 20px;
+		border-style: solid;
+		border-width: 4px;
+		border-color: white;
+		padding: 20px 40px 20px 40px;
+		display: inline-block;
+	}
+	.reportbutton:hover{
+		transform: scale(1.1);
+	}
+}	
+@media (min-width: 731px) and (max-width: 1024px) { 
+	.row{
+		color:white;
+		font-family: 'Montserrat', sans-serif;
+		font-size: 40px;
+	}
+	.col{
+		text-align: center;
+	}
+	.col-6{
+		text-align: center;
+	}
+	.topinfo{
+		padding-top: 100px;
+	}
+	.userinfo{
+		font-size: 20px;
+	}
+	.contactbutton{
+		color: white;
+		border-radius: 20px;
+		border-style: solid;
+		border-width: 4px;
+		border-color: white;
+		padding: 20px 40px 20px 40px;
+	}
+	.facebook{
+		display:inline-flex;
+		width:45%;
+		margin-bottom: 10px;
+		text-align:center;
+	}
+	.whatsapp{
+		display:inline-flex;
+		width:45%;
+		margin-bottom: 10px;
+		text-align:center;
+	}
+	.discord{
+		display:inline-flex;
+		width:45%;
+		margin-bottom: 10px;
+		text-align:center;
+	}
+	.snapchat{
+		display:inline-flex;
+		width:45%;
+		margin-bottom: 10px;
+		text-align:center;
+	}
+	.responsiveicon {
+		display: inline-block;
+	    width: 100%;	
+	}
+	.reportbutton{
+		font-size: 20px;
+		color: white;
+		border-radius: 20px;
+		border-style: solid;
+		border-width: 4px;
+		border-color: white;
+		padding: 20px 40px 20px 40px;
+		display: inline-block;
+	}
+	.reportbutton:hover{
+		transform: scale(1.1);
+	}
+}	
+@media (min-width: 0px) and (max-width: 731px) { 
+	.row{
+		color:white;
+		font-family: 'Montserrat', sans-serif;
+		font-size: 20px;
+	}
+	.col{
+		text-align: center;
+	}
+	.col-6{
+		text-align: center;
+	}
+	.userdate{
+		font-size: 15px;
+	}
+	.topinfo{
+		padding-top: 20px;
+		font-size: 30px;
+	}
+	.userinfo{
+		font-size: 10px;
+	}
+	.contactbutton{
+		color: white;
+		border-radius: 20px;
+		border-style: solid;
+		border-width: 4px;
+		border-color: white;
+		padding: 20px 30px 20px 30px;
+	}
+	.facebook{
+		display:inline-flex;
+		width:80%;
+		margin-bottom: 5px;
+		text-align:center;
+	}
+	.whatsapp{
+		display:inline-flex;
+		width:80%;
+		margin-bottom: 5px;
+		text-align:center;
+	}
+	.discord{
+		display:inline-flex;
+		width:80%;
+		margin-bottom: 5px;
+		text-align:center;
+	}
+	.snapchat{
+		display:inline-flex;
+		width:80%;
+		margin-bottom: 5px;
+		text-align:center;
+	}
+	.responsiveicon {
+		display: inline-block;
+	    width: 100%;	
+	}
+	.reportbutton{
+		font-size: 15px;
+		color: white;
+		border-radius: 20px;
+		border-style: solid;
+		border-width: 4px;
+		border-color: white;
+		padding: 10px 20px 10px 20px;
+		display: inline-block;
+	}
+	.reportbutton:hover{
+		transform: scale(1.1);
+	}
+}
