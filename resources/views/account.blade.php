@@ -99,14 +99,14 @@
                         <span class="input-group-text"><input type="checkbox" aria-label="Slot 1"></span>
                         <span class="input-group-text">Slot 1</span>
                       </div>
-                      <input type="email" class="form-control" aria-label="Slot 1 XTAL name">
+                      <input type="email" class="form-control" placeholder="Leave empty if slot is empty" aria-label="Slot 1 XTAL name">
                     </div>
                     <div class="input-group mb-3">
                       <div class="input-group-prepend">
                         <span class="input-group-text"><input type="checkbox" aria-label="Slot 2"></span>
                         <span class="input-group-text">Slot 2</span>
                       </div>
-                      <input type="email" class="form-control" aria-label="Slot 2 XTAL name">
+                      <input type="email" class="form-control" placeholder="Leave empty if slot is empty" aria-label="Slot 2 XTAL name">
                     </div>
                     <div class="input-group mb-3">
                       <div class="input-group-prepend">
