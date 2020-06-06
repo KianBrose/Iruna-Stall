@@ -278,7 +278,7 @@
             else {
                $("#abilitylevel").hide()
             }
-         }
+         });
          $('#itemtype').on('change',function(){
          var selection = $(this).val();
            switch(selection)
