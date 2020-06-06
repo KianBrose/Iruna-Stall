@@ -15,6 +15,11 @@
       <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
       <!-- FontAwesome -->
       <script src="https://use.fontawesome.com/69ee5d596f.js"></script>
+      <style> 
+      body{
+         color:white;
+      }
+      </style>
    </head>
    <body>
       <!-- Bootstrap js -->
@@ -28,7 +33,7 @@
           <div class="col">
           </div>
           <div class="col-6-auto">
-            <h1 class="title">About, Contact, Privacy Policy & TOS</h1>
+            <h1 class="title">Item's details</h1>
           </div>
           <div class="col">
           </div>
@@ -40,7 +45,6 @@
           </div>
           <div class="col-12">
             <br>
-                                             <h4>Item's details</h4>
                                              <hr>
                                              @if($item->category == 'xtal')
                                              <div class="row divider" role="separator" ></div>
