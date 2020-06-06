@@ -3,8 +3,16 @@
   cursor: not-allowed;
   opacity: 0.5;
 }
+.table{
+	color:black;
+	font-size: 20px;
+}
 @media (min-width: 1024px) and (max-width: 1920px) { 
-
+	.row{
+		color:white;
+		font-family: 'Montserrat', sans-serif;
+		font-size: 40px;
+	}
 	.col{
 		text-align: center;
 	}
