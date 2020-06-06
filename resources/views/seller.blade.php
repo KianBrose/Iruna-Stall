@@ -30,7 +30,7 @@
             <div class="col title">Contact</div>
          </div>
          <br>
-         <div class="row">
+         <div class="row topsection">
             <div class="col-6">
                <h4 class="userdate">Username: {{ $user->name }}<br>Date Registered: {{ date_format($user->created_at, "d/m/Y") }}</h4>
                <br>
@@ -65,7 +65,7 @@
          <div class="container">
            <div class="row">
              <div class="col"></div>
-             <div class="col-10">
+             <div class="col-12">
                @if($equipSearch->count() >= 1)
          <table>
             <h2>Equipment</h2>

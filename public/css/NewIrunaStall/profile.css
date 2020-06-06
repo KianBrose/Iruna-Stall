@@ -7,6 +7,10 @@
 	.row{
 		font-family: 'Montserrat', sans-serif;
 	}
+	.topsection{
+		color: white;
+		font-size: 40px;
+	}
 	.col{
 		text-align: center;
 	}
@@ -44,6 +48,10 @@
 @media (min-width: 731px) and (max-width: 1024px) { 
 	.row{
 		font-family: 'Montserrat', sans-serif;
+	}
+	.topsection{
+		color: white;
+		font-size: 40px;
 	}
 	.col{
 		text-align: center;
@@ -110,6 +118,10 @@
 @media (min-width: 0px) and (max-width: 731px) { 
 	.row{
 		font-family: 'Montserrat', sans-serif;
+	}
+	.topsection{
+		color: white;
+		font-size: 20px;
 	}
 	.col{
 		text-align: center;
