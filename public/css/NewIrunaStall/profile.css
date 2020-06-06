@@ -4,11 +4,7 @@
   opacity: 0.5;
 }
 @media (min-width: 1024px) and (max-width: 1920px) { 
-	.row{
-		color:white;
-		font-family: 'Montserrat', sans-serif;
-		font-size: 40px;
-	}
+
 	.col{
 		text-align: center;
 	}
