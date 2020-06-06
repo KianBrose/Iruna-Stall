@@ -113,7 +113,7 @@
                         <span class="input-group-text"><input type="checkbox" id="hasability" aria-label="Ability"></span>
                         <span class="input-group-text">Ability</span>
                       </div>
-                      <input type="email" class="form-control" aria-label="Ability">
+                      <input type="email" class="form-control" placeholder="Enter ability name here" aria-label="Ability">
                     </div>
                     <div class="input-group mb-3" style="display: none;" id="abilitylevel">
                       <div class="input-group-prepend">
