@@ -110,12 +110,12 @@
                     </div>
                     <div class="input-group mb-3">
                       <div class="input-group-prepend">
-                        <span class="input-group-text"><input type="checkbox" aria-label="Ability"></span>
+                        <span class="input-group-text"><input type="checkbox" id="hasability" aria-label="Ability"></span>
                         <span class="input-group-text">Ability</span>
                       </div>
-                      <input type="email" class="form-control" aria-label="Slot 2 XTAL name">
+                      <input type="email" class="form-control" aria-label="Ability">
                     </div>
-                    <div class="input-group mb-3">
+                    <div class="input-group mb-3" style="display: none;" id="abilitylevel">
                       <div class="input-group-prepend">
                         <label class="input-group-text" for="inputGroupSelect01">Ability Level</label>
                       </div>
@@ -271,6 +271,14 @@
       </section>
       @include('layouts/NewIrunaStall.footer')
       <script>    
+         $('#hasability').on('change',function(){
+            if (document.getElementById('hasability').checked) {
+               $("#abilitylevel").show()
+            } 
+            else {
+               $("#abilitylevel").hide()
+            }
+         }
          $('#itemtype').on('change',function(){
          var selection = $(this).val();
            switch(selection)
