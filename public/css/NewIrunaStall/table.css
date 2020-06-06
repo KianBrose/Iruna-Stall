@@ -22,13 +22,11 @@ table th,
 table td {
   padding: .625em;
   text-align: center;
-  color: black;
 }
 
 table th {
   font-size: .85em;
   text-transform: uppercase;
-  color: black;
 }
 
 @media screen and (max-width: 1022px) {
@@ -56,7 +54,6 @@ table th {
     border-bottom: 3px solid #ddd;
     display: block;
     margin-bottom: .625em;
-    color: black;
       
   }
   
@@ -65,7 +62,6 @@ table th {
     display: block;
     font-size: .8em;
     text-align: right;
-    color: black;
   }
   
   table td::before {
@@ -77,11 +73,9 @@ table th {
     float: left;
     font-weight: bold;
     text-transform: uppercase;
-    color: black;
   }
   
   table td:last-child {
     border-bottom: 0;
-    color: black;
   }
 }
