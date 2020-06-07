@@ -15,6 +15,13 @@
       <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
       <!-- FontAwesome -->
       <script src="https://use.fontawesome.com/69ee5d596f.js"></script>
+      <style type="text/css">
+        body{
+          font-family: 'Montserrat', sans-serif;
+          font-weight: 500px;
+          color: white;
+        }
+      </style>
    </head>
    <body>
       <!-- Bootstrap js -->
@@ -67,28 +74,30 @@
                   </fieldset>
 
 
+                  <div class="form-group">
+                    <label for="reason">Reason for report</label>
+                    <select class="form-control" id="reason">
+                      <option value="0">The user scammed you (We will ask for more details via Email)</option>
+                      <option value="1">The price listed is ridiculous/fake/misleading</option>
+                      <option value="2">Some items are no longer for sale</option>
+                      <option value="3">Seller refuses to sell item</option>
+                      <option value="4">Seller's contact information is broken/doesn't work</option>
+                      <option value="5">Seller hasn't replied to messages in over 48 hours</option>
+                    </select>
+                  </div>
 
-                    <div class="form-row">
-                      <div class="col-md-12 mb-3">
-                        <label for="validationCustom03">Reason for report</label>
-                        <input type="email" class="form-control" id="validationCustom03" placeholder="City" required>
-                        <div class="invalid-feedback">
-                          Please provide a valid city.
-                        </div>
-                      </div>
-                    </div>
                     <div class="form-group">
                       <div class="form-check">
                         <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
                         <label class="form-check-label" for="invalidCheck">
-                          Agree to terms and conditions
+                          Agree to <a href="/about">terms and conditions</a>
                         </label>
                         <div class="invalid-feedback">
                           You must agree before submitting.
                         </div>
                       </div>
                     </div>
-                    <button class="btn btn-primary" type="submit">Submit form</button>
+                    <button class="btn btn-primary" type="submit">Submit report</button>
                   </form>
 
                   <script>
