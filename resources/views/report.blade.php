@@ -41,6 +41,7 @@
                <div class="col-10">
 
                   <form class="needs-validation" novalidate>
+                    <fieldset disabled>
                     <div class="form-row">
                       <div class="col-md-12 mb-3">
                         <label for="validationCustomUsername">Report</label>
@@ -48,7 +49,7 @@
                           <div class="input-group-prepend">
                             <span class="input-group-text" id="inputGroupPrepend">User</span>
                           </div>
-                          <input type="text" class="form-control" id="validationCustomUsername disabledTextInput" placeholder="UserToReport" aria-describedby="inputGroupPrepend" required>
+                          <input type="email" class="form-control" id="validationCustomUsername disabledTextInput" placeholder="UserToReport" aria-describedby="inputGroupPrepend" required>
                         </div>
                       </div>
                     </div>
@@ -59,17 +60,18 @@
                           <div class="input-group-prepend">
                             <span class="input-group-text" id="inputGroupPrepend">User</span>
                           </div>
-                          <input type="text" class="form-control" id="validationCustomUsername disabledTextInput" placeholder="UserReporting" aria-describedby="inputGroupPrepend" required>
+                          <input type="email" class="form-control" id="validationCustomUsername disabledTextInput" placeholder="UserReporting" aria-describedby="inputGroupPrepend" required>
                         </div>
                       </div>
                     </div>
+                  </fieldset>
 
 
 
                     <div class="form-row">
                       <div class="col-md-12 mb-3">
                         <label for="validationCustom03">Reason for report</label>
-                        <input type="text" class="form-control" id="validationCustom03" placeholder="City" required>
+                        <input type="email" class="form-control" id="validationCustom03" placeholder="City" required>
                         <div class="invalid-feedback">
                           Please provide a valid city.
                         </div>
