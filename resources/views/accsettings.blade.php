@@ -46,13 +46,13 @@
                         <label class="sr-only" for="inlineFormInputGroup">FB Link</label>
                         <div class="input-group mb-2">
                           <div class="input-group-prepend">
-                            <div class="input-group-text">Facebook Link</div>
+                            <div class="input-group-text">https://www.facebook.com/</div>
                           </div>
-                          <input type="email" class="form-control" id="inlineFormInputGroup" placeholder="ex: https://www.facebook.com/kian.brosebrito">
+                          <input type="email" class="form-control" id="inlineFormInputGroup" placeholder="kian.brosebrito">
                         </div>
                       </div>
                       <div class="col-2">
-                        <button type="submit" class="btn btn-primary mb-2">Submit</button>
+                        <button type="submit" class="btn btn-primary mb-2">Save</button>
                       </div>
                     </div>
                   </form>
@@ -64,13 +64,14 @@
                           <div class="input-group-prepend">
                             <div class="input-group-text">Discord ID</div>
                           </div>
-                          <input type="email" class="form-control" id="inlineFormInputGroup" placeholder="ex: 197766618732953601">
+                          <input type="email" class="form-control" id="inlineFormInputGroup" placeholder="197766618732953601">
                         </div>
                       </div>
                       <div class="col-2">
-                        <button type="submit" class="btn btn-primary mb-2">Submit</button>
+                        <button type="submit" class="btn btn-primary mb-2">Save</button>
                       </div>
                     </div>
+                    <p><a href="https://support.discord.com/hc/en-us/articles/206346498-Where-can-I-find-my-User-Server-Message-ID-">How to get Discord ID?</a></p>
                   </form>
                   <form>
                     <div class="form-row align-items-center">
@@ -80,11 +81,11 @@
                           <div class="input-group-prepend">
                             <div class="input-group-text">Whatsapp Number</div>
                           </div>
-                          <input type="email" class="form-control" id="inlineFormInputGroup" placeholder="ex: +xxxxxxxxxxx">
+                          <input type="email" class="form-control" id="inlineFormInputGroup" placeholder="+xxxxxxxxxxx">
                         </div>
                       </div>
                       <div class="col-2">
-                        <button type="submit" class="btn btn-primary mb-2">Submit</button>
+                        <button type="submit" class="btn btn-primary mb-2">Save</button>
                       </div>
                     </div>
                   </form>
@@ -100,7 +101,7 @@
                         </div>
                       </div>
                       <div class="col-2">
-                        <button type="submit" class="btn btn-primary mb-2">Submit</button>
+                        <button type="submit" class="btn btn-primary mb-2">Save</button>
                       </div>
                     </div>
                   </form>
