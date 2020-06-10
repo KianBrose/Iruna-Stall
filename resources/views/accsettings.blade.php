@@ -126,6 +126,7 @@
                       </div>
                     </div>
                   </form>
+                  <br><br>
                   <hr>
                   <h2 style="color:red;">Delete account & all posts</h2>
                   <form>
