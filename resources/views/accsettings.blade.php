@@ -42,7 +42,7 @@
 
                   <form>
                     <div class="form-row align-items-center">
-                      <div class="col-auto">
+                      <div class="col-10">
                         <label class="sr-only" for="inlineFormInputGroup">FB Link</label>
                         <div class="input-group mb-2">
                           <div class="input-group-prepend">
@@ -51,14 +51,14 @@
                           <input type="email" class="form-control" id="inlineFormInputGroup" placeholder="ex: https://www.facebook.com/kian.brosebrito">
                         </div>
                       </div>
-                      <div class="col-auto">
+                      <div class="col-2">
                         <button type="submit" class="btn btn-primary mb-2">Submit</button>
                       </div>
                     </div>
                   </form>
                   <form>
                     <div class="form-row align-items-center">
-                      <div class="col-auto">
+                      <div class="col-10">
                         <label class="sr-only" for="inlineFormInputGroup">Discord ID</label>
                         <div class="input-group mb-2">
                           <div class="input-group-prepend">
@@ -67,14 +67,14 @@
                           <input type="email" class="form-control" id="inlineFormInputGroup" placeholder="ex: 197766618732953601">
                         </div>
                       </div>
-                      <div class="col-auto">
+                      <div class="col-2">
                         <button type="submit" class="btn btn-primary mb-2">Submit</button>
                       </div>
                     </div>
                   </form>
                   <form>
                     <div class="form-row align-items-center">
-                      <div class="col-auto">
+                      <div class="col-10">
                         <label class="sr-only" for="inlineFormInputGroup"></label>
                         <div class="input-group mb-2">
                           <div class="input-group-prepend">
@@ -83,14 +83,14 @@
                           <input type="email" class="form-control" id="inlineFormInputGroup" placeholder="ex: +xxxxxxxxxxx">
                         </div>
                       </div>
-                      <div class="col-auto">
+                      <div class="col-2">
                         <button type="submit" class="btn btn-primary mb-2">Submit</button>
                       </div>
                     </div>
                   </form>
                   <form>
                     <div class="form-row align-items-center">
-                      <div class="col-auto">
+                      <div class="col-10">
                         <label class="sr-only" for="inlineFormInputGroup"></label>
                         <div class="input-group mb-2">
                           <div class="input-group-prepend">
@@ -99,7 +99,7 @@
                           <input type="email" class="form-control" id="inlineFormInputGroup" placeholder="Snapchat Username">
                         </div>
                       </div>
-                      <div class="col-auto">
+                      <div class="col-2">
                         <button type="submit" class="btn btn-primary mb-2">Submit</button>
                       </div>
                     </div>
