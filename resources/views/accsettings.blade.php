@@ -122,7 +122,7 @@
                     </div>
                     <div class="form-group row">
                       <div class="col-sm-10">
-                        <button type="submit" class="btn btn-primary">Send reset password email</button>
+                        <button type="submit" class="btn btn-primary">Reset password</button>
                       </div>
                     </div>
                   </form>
