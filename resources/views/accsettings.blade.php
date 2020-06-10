@@ -107,7 +107,7 @@
                   </form>
                   <hr>
                   <h2 style="color:white;">Change password</h2>
-                  <form>
+                  <form style="min-height:200px;">
                     <div class="form-group row">
                       <label for="inputEmail3" class="col-sm-2 col-form-label">Email</label>
                       <div class="col-sm-10">
