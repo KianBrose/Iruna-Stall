@@ -505,7 +505,7 @@ h1{
 	.sell{
 		position: absolute;
 		margin-top: 16px;
-		margin-left: -14em;
+		margin-left: -45%;
 		font-size: 25px;
 		font-family: 'Montserrat', sans-serif;
 		font-weight: 500px;
@@ -514,13 +514,13 @@ h1{
 		background: #55b9f3;
 		box-shadow:  5px 5px 5px #387aa0, 
 		             -5px -5px 5px #72f8ff;
-		padding: 40px 80px 40px 80px;	
+		padding: 40px 80px 40px 80px;
 	}
 	.sell:hover{
 		position: absolute;
 		margin-top: 16px;
-		margin-left: -12em;
-		font-size: 35px;
+		margin-left: -45%;
+		font-size: 25px;
 		font-family: 'Montserrat', sans-serif;
 		font-weight: 500px;
 		color: white;
@@ -532,7 +532,7 @@ h1{
 	}
 	.signin{
 		position: absolute;
-		margin-left: -26em;
+		margin-left: -85%;
     	font-size: 25px;
 		font-family: 'Montserrat', sans-serif;
 		font-weight: 500px;
@@ -545,8 +545,8 @@ h1{
 	}
 	.signin:hover{
 		position: absolute;
-		margin-left: -23em;
-		font-size: 35px;
+		margin-left: -85%;
+    	font-size: 25px;
 		font-family: 'Montserrat', sans-serif;
 		font-weight: 500px;
 		color: white;
