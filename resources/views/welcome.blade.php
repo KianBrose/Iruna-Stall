@@ -27,6 +27,7 @@
       <meta name="twitter:description" content="Iruna global stall is platform to find, buy and sell items of Iruna online game. Account is not needed for searching for items">
       <meta property="og:title" content="Iruna Stall">
       <meta property="og:type" content="website">
+      <meta property="og:image" content="https://irunastall.com/img/iruna.jpg">
       <meta property="og:description" content="Find, buy and sell items for free on the Iruna Online Global Stall! In the Global Stall, you can post your items as a seller and search for items as a buyer. The stall is free to use and requires no account to search for items.">
       <meta name='application-name' content="Iruna Global Stall">
       <meta property="og:url" content="https://irunastall.com">
