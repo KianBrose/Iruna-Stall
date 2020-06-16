@@ -29,7 +29,7 @@ h1{
 	}
 	.sell{
 		font-family: 'Montserrat', sans-serif;
-		font-weight: 500px;
+		font-weight: 500;
 		color: white;
 		position: absolute;
 		right:0;
@@ -52,7 +52,7 @@ h1{
 	}
 	.signin{
 		font-family: 'Montserrat', sans-serif;
-		font-weight: 500px;
+		font-weight: 500;
 		color: white;
 		position: absolute;
 		right:0;
@@ -77,7 +77,7 @@ h1{
 		text-align: center;
 		text-shadow: 5px 5px 0px #2a7eaa;
 		font-family: 'Montserrat', sans-serif;
-		font-weight: 500px;
+		font-weight: 500;
 		color:white;
 		display: flex !important;
 		justify-content: center !important;
@@ -218,7 +218,7 @@ h1{
 		border-color: white;
 		border-radius: 8px;
 		font-family: 'Montserrat', sans-serif;
-		font-weight: 500px;
+		font-weight: 500;
 	}
 	.browse{
 		font-size: 30px;
@@ -230,7 +230,7 @@ h1{
 		border-color: white;
 		border-radius: 8px;
 		font-family: 'Montserrat', sans-serif;
-		font-weight: 500px;
+		font-weight: 500;
 	}
 	.tutorial:hover {
 	  transform: scale(1.1);
@@ -269,7 +269,7 @@ h1{
 		margin-left: -40%;
 		font-size: 25px;
 		font-family: 'Montserrat', sans-serif;
-		font-weight: 500px;
+		font-weight: 500;
 		color: white;
 		border-radius: 20px;
 		background: #55b9f3;
@@ -283,7 +283,7 @@ h1{
 		margin-left: -40%;
 		font-size: 25px;
 		font-family: 'Montserrat', sans-serif;
-		font-weight: 500px;
+		font-weight: 500;
 		color: white;
 		border-radius: 20px;
 		background: #55b9f3;
@@ -297,7 +297,7 @@ h1{
 		margin-left: -80%;
     	font-size: 25px;
 		font-family: 'Montserrat', sans-serif;
-		font-weight: 500px;
+		font-weight: 500;
 		color: white;
 		border-radius: 20px;
 		background: #55b9f3;
@@ -311,7 +311,7 @@ h1{
 		margin-left: -80%;
     	font-size: 25px;
 		font-family: 'Montserrat', sans-serif;
-		font-weight: 500px;
+		font-weight: 500;
 		color: white;
 		border-radius: 20px;
 		background: #55b9f3;
@@ -324,7 +324,7 @@ h1{
 		margin-top: 2em;
 		text-shadow: 5px 5px 0px #2a7eaa;
 		font-family: 'Montserrat', sans-serif;
-		font-weight: 500px;
+		font-weight: 500;
 		color:white;
 		display: flex !important;
 		justify-content: center !important;
@@ -451,7 +451,7 @@ h1{
 		border-color: white;
 		border-radius: 8px;
 		font-family: 'Montserrat', sans-serif;
-		font-weight: 500px;
+		font-weight: 500;
 		font-size: 35px;
 	}
 	.browse{
@@ -467,7 +467,7 @@ h1{
 		border-color: white;
 		border-radius: 8px;
 		font-family: 'Montserrat', sans-serif;
-		font-weight: 500px;
+		font-weight: 500;
 		font-size: 35px;
 	}
 	.tutorial:hover {
@@ -508,7 +508,7 @@ h1{
 		margin-left: -45%;
 		font-size: 25px;
 		font-family: 'Montserrat', sans-serif;
-		font-weight: 500px;
+		font-weight: 500;
 		color: white;
 		border-radius: 20px;
 		background: #55b9f3;
@@ -522,7 +522,7 @@ h1{
 		margin-left: -45%;
 		font-size: 25px;
 		font-family: 'Montserrat', sans-serif;
-		font-weight: 500px;
+		font-weight: 500;
 		color: white;
 		border-radius: 20px;
 		background: #55b9f3;
@@ -535,7 +535,7 @@ h1{
 		margin-left: -85%;
     	font-size: 25px;
 		font-family: 'Montserrat', sans-serif;
-		font-weight: 500px;
+		font-weight: 500;
 		color: white;
 		border-radius: 20px;
 		background: #55b9f3;
@@ -548,7 +548,7 @@ h1{
 		margin-left: -85%;
     	font-size: 25px;
 		font-family: 'Montserrat', sans-serif;
-		font-weight: 500px;
+		font-weight: 500;
 		color: white;
 		border-radius: 20px;
 		background: #55b9f3;
@@ -560,7 +560,7 @@ h1{
 		text-align: center;
 		text-shadow: 5px 5px 0px #2a7eaa;
 		font-family: 'Montserrat', sans-serif;
-		font-weight: 500px;
+		font-weight: 500;
 		color:white;
 		display: flex !important;
 		justify-content: center !important;
@@ -687,7 +687,7 @@ h1{
 		border-color: white;
 		border-radius: 8px;
 		font-family: 'Montserrat', sans-serif;
-		font-weight: 500px;
+		font-weight: 500;
 		font-size: 35px;
 	}
 	.browse{
@@ -703,7 +703,7 @@ h1{
 		border-color: white;
 		border-radius: 8px;
 		font-family: 'Montserrat', sans-serif;
-		font-weight: 500px;
+		font-weight: 500;
 		font-size: 35px;
 	}
 	.tutorial:hover {
@@ -755,7 +755,7 @@ h1{
 		margin-right:10px;
 		font-size: 16px;
 		font-family: 'Montserrat', sans-serif;
-		font-weight: 500px;
+		font-weight: 500;
 		color: white;
 		border-radius: 20px;
 		background: #55b9f3;
@@ -770,7 +770,7 @@ h1{
 		margin-right:10px;
 		font-size: 16px;
 		font-family: 'Montserrat', sans-serif;
-		font-weight: 500px;
+		font-weight: 500;
 		color: white;
 		border-radius: 20px;
 		background: #55b9f3;
@@ -784,7 +784,7 @@ h1{
 		margin-left:10px;
 		font-size: 16px;
 		font-family: 'Montserrat', sans-serif;
-		font-weight: 500px;
+		font-weight: 500;
 		color: white;
 		border-radius: 20px;
 		background: #55b9f3;
@@ -798,7 +798,7 @@ h1{
 		margin-left:10px;
 		font-size: 16px;
 		font-family: 'Montserrat', sans-serif;
-		font-weight: 500px;
+		font-weight: 500;
 		color: white;
 		border-radius: 20px;
 		background: #55b9f3;
@@ -810,7 +810,7 @@ h1{
 		text-align: center;
 		text-shadow: 2px 2px 0px #2a7eaa;
 		font-family: 'Montserrat', sans-serif;
-		font-weight: 500px;
+		font-weight: 500;
 		color:white;
 		display: flex !important;
 		justify-content: center !important;
@@ -939,7 +939,7 @@ h1{
 		border-color: white;
 		border-radius: 8px;
 		font-family: 'Montserrat', sans-serif;
-		font-weight: 500px;
+		font-weight: 500;
 		font-size: 15px;
 	}
 	.browse{
@@ -955,7 +955,7 @@ h1{
 		border-color: white;
 		border-radius: 8px;
 		font-family: 'Montserrat', sans-serif;
-		font-weight: 500px;
+		font-weight: 500;
 		font-size: 15px;
 	}
 	.tutorial:hover {
