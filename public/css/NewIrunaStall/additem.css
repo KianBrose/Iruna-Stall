@@ -18,6 +18,14 @@ form{
 .footer1{display:inline-block;}
 .footer2{display:inline-block;}
 .footer3{display:inline-block;}
+/* report button */
+
+.report-button {
+	padding: 1rem!important;
+	width: auto;
+	height: 4rem;
+}
+
 @media (min-width: 1024px) and (max-width: 1920px) { 
 	.itemaddfield{
 		min-height: 100vh;
