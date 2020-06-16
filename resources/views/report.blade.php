@@ -97,7 +97,9 @@
                         </div>
                       </div>
                     </div>
-                    <button class="btn btn-primary" type="submit">Submit report</button>
+                    <div class="form-group">
+                      <button class="btn btn-primary report-button" type="submit">Submit report</button>
+                    </div>
                   </form>
 
                   <script>

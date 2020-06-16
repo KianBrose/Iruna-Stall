@@ -409,6 +409,14 @@ form{
 	    cursor: pointer;
 	}
 
+	/* report button */
+
+	.report-button {
+		padding: 1rem!important;
+		width: auto;
+		height: 4rem;
+	}
+
 	#s-circle
 	{
 	    position: relative;
