@@ -8,6 +8,7 @@ const staticAssets = [
     './js/serviceLoader.js',
     './serviceWorker.js',
     './css/style.css',
+    './css/NewIrunaStall/main.css',
     './vendor/sweetalert/sweetalert.all.js'
 ];
 
