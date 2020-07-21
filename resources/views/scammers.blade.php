@@ -134,6 +134,7 @@
                         <h5>Submit a report here: <a href="https://forms.gle/USYfinLsJsXW5k4n9">https://forms.gle/USYfinLsJsXW5k4n9</a></h5>
 					</div>
                     <hr>
+                    <h1>Nobody has been reported yet as of 2020-07-21, i tried making this page so that we could have a unique & global scammer list but oh well...</h1>
                     <table>
                       <tr>
                         <th>Scammer ID</th>
