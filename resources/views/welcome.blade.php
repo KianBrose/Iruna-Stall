@@ -87,11 +87,10 @@
 							<button type="submit" class="btn btn-primary mb-2" value="Search" style="width:100%; background-color: green; ">Iruna stall tutorial</button>
 					</form>
                     <hr>
-                    <p>Hey hey! I'm free now! Been working full time for two days, and I'm glad to announce progress is going smoothly. You can now view the beta of Irunastall V2 here: <a href="https://new.irunastall.com">New Irunastall</a>. The website still is not completely functional, working on that. But expect it soon enough!</p>
+                    <h4>New Functionality update!</h4>
+                    <p>Item posts of any kind get automatically removed after 1 month so that only active items remain in the database!</p>
 					<hr>
-                    <p>Alright so you guys deserve a little update since developement has been "frozen" for a few months. All of the developers are currently busy with end of year work and we have not been able finish making Irunastall V2 functional. Good news is, as of 2020-05-22 I will be free from personal tasks and will be able to finish the developement as soon as I can. Thank you for being patient.
-                        <br><br>
-                        On a side note, I have noticed that there are quite a few accounts where the contact information is either broken or doesn't work and item posts that are no longer for sale. I have taken notice of this and will implement a "report" button on user profiles to report inactivity or broken links. An automatic item post deletion system will be set up where items will be automatically removed 1 month after they are posted. Expect these changes soon<br>Sincerely, Kian</p>
+                    <p>The Report function is currently being implemented</p>
 
                     <!--
 					<p style="color:red;"><b>We need your help to keep this website alive and ad-free!</b><br>
@@ -119,6 +118,9 @@
                       <li></li>
                     </ul>
                     -->
+                    <hr>
+                    <h3>2020-07-21 Iruna Stall Update 2.4</h3>
+                    <p>Wah, It's been a LONG time since the last update... Anyways, items will now get automatically removed after 1 month of inactivity! We implemented this so that items that are "forgotten" are removed. Happy browsing!</p>
                     <hr>
                     <h3>2020-02-01 Iruna Stall Update 2.3</h3>
                     <p>UPDATE: We are currently working on making a Wiki section for the irunastall with all items in the game! We will also work on making a detailed map of every single EP in iruna!</p>
