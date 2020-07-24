@@ -17,7 +17,8 @@ class Kernel extends ConsoleKernel
      */
     protected $commands = [
         AdminCommand::class,
-        AdminCreateCommand::class
+        AdminCreateCommand::class,
+        Commands\AutomaticPostDeletion::class
     ];
 
     /**
@@ -30,13 +31,16 @@ class Kernel extends ConsoleKernel
     {
         // $schedule->command('inspire')
         //          ->hourly();
-        $schedule->call(function(){
-            DB::table('ai')->where('created_at', '<', 'NOW() - INTERVAL 1 MONTH')->delete();
-            DB::table('relic')->where('created_at', '<', 'NOW() - INTERVAL 1 MONTH')->delete();
-            DB::table('xtal')->where('created_at', '<', 'NOW() - INTERVAL 1 MONTH')->delete();
-            DB::table('equipment')->where('created_at', '<', 'NOW() - INTERVAL 1 MONTH')->delete();
-            DB::table('item')->where('created_at', '<', 'NOW() - INTERVAL 1 MONTH')->delete();
-        })->hourly();
+        //$schedule->call(function(){
+        //    DB::table('ai')->where('created_at', '<', 'NOW() - INTERVAL 1 MONTH')->delete();
+        //    DB::table('relic')->where('created_at', '<', 'NOW() - INTERVAL 1 MONTH')->delete();
+        //    DB::table('xtal')->where('created_at', '<', 'NOW() - INTERVAL 1 MONTH')->delete();
+        //    DB::table('equipment')->where('created_at', '<', 'NOW() - INTERVAL 1 MONTH')->delete();
+        //    DB::table('item')->where('created_at', '<', 'NOW() - INTERVAL 1 MONTH')->delete();
+        //})->hourly();
+        $schedule->command('delete:old')
+            //->hourly();
+	    ->everyFiveMinutes();
     }
 
     /**
