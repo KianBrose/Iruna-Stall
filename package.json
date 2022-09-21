@@ -26,6 +26,6 @@
     "dependencies": {
         "laravel-echo": "^1.6.1",
         "pusher-js": "^5.0.3",
-        "vuetify": "^2.1.14"
+        "vuetify": "^2.6.10"
     }
 }
